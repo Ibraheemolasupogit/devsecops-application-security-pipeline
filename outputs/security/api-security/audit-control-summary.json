@@ -1,0 +1,28 @@
+{
+  "audited_event_types": [
+    "access_request_approved",
+    "access_request_rejected",
+    "access_request_submitted",
+    "access_request_viewed",
+    "audit_events_viewed",
+    "authentication_failed",
+    "authentication_succeeded",
+    "authorisation_denied",
+    "dataset_viewed",
+    "invalid_workflow_transition_attempted",
+    "self_approval_denied"
+  ],
+  "security_event_types": [
+    "authentication_succeeded",
+    "authentication_failed",
+    "authorisation_denied",
+    "access_request_viewed",
+    "self_approval_denied",
+    "audit_events_viewed"
+  ],
+  "sensitive_data_policy": {
+    "correlation_id_logged": true,
+    "decision_reason_logged": true,
+    "raw_bearer_token_logged": false
+  }
+}

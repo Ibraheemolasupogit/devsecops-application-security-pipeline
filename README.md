@@ -8,7 +8,7 @@ It is not a production genomics platform.
 
 It is not affiliated with or endorsed by Genomics England.
 
-Authentication, production authorisation, AWS infrastructure, Terraform and automated AppSec scanning are intentionally deferred to later milestones.
+AWS infrastructure, Terraform, external identity-provider integration and automated AppSec scanning are intentionally deferred to later milestones.
 
 ## Problem Statement
 
@@ -20,6 +20,8 @@ Milestone 1 delivered the application foundation.
 
 Milestone 2 delivered security architecture and threat modelling for the current application and anticipated future cloud-native context.
 
+Milestone 3 delivered local signed JWT authentication, role-based authorisation, object-level access controls, separation of requester and approver duties, API security headers, and deterministic API-security evidence.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -27,7 +29,7 @@ Implemented:
 - FastAPI application using Pydantic v2 and a `src/` layout.
 - Deterministic synthetic dataset catalogue.
 - Access request creation, retrieval, approval, and rejection.
-- Local simulated reviewer context for workflow decisions.
+- Local workflow decisions for access requests.
 - Structured audit events for significant actions.
 - Central exception handling with correlation IDs.
 - Explicit CORS configuration without wildcard origins.
@@ -48,6 +50,22 @@ Implemented:
 - Tests covering schema validation, traceability, deterministic evidence, checksums and report generation.
 
 Not implemented in Milestone 2: production authentication, RBAC enforcement, object-level authorisation implementation, AWS resources, Terraform, AppSec scanners, release gates, vulnerability lifecycle, cloud deployment or Security Champions programme.
+
+## Milestone 3 Scope
+
+Implemented:
+
+- RS256 JWT validation with issuer, audience, expiry, not-before, subject, role and JWT ID checks.
+- Central authenticated principal model.
+- Deny-by-default role-to-permission matrix for researcher, approver, data custodian, security auditor and application administrator roles.
+- Authentication and authorisation dependencies for all `/api/v1/*` routes.
+- Object-level authorisation for access requests and restricted dataset detail.
+- Separation of duties preventing any requester, including an administrator, from approving or rejecting their own request.
+- Mass-assignment protection by deriving requester identity from the token subject.
+- Security headers, explicit CORS checks and bounded correlation ID handling.
+- API-security evidence under `outputs/security/api-security/` and reports under `reports/security/`.
+
+Not implemented in Milestone 3: external OIDC/JWKS integration, durable policy storage, production rate limiting, immutable audit logging, AWS resources, Terraform, AppSec scanners, release gates, vulnerability lifecycle, cloud deployment or Security Champions programme.
 
 ## API Capabilities
 
@@ -84,8 +102,8 @@ flowchart LR
 ```mermaid
 stateDiagram-v2
     [*] --> pending: submit access request
-    pending --> approved: simulated reviewer approves
-    pending --> rejected: simulated reviewer rejects
+    pending --> approved: authenticated approver approves
+    pending --> rejected: authenticated approver rejects
     pending --> withdrawn: reserved enum state
     approved --> approved: invalid transition rejected
     rejected --> rejected: invalid transition rejected
@@ -112,7 +130,9 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make type-check`: run mypy.
 - `make test`: run pytest.
 - `make test-coverage`: run pytest with coverage threshold.
-- `make quality`: run format, lint, type, and coverage checks.
+- `make auth-test`: run focused authentication security tests.
+- `make api-security-test`: run API authentication and authorisation security tests.
+- `make quality`: run format, lint, type, coverage, auth, API-security and evidence checks.
 - `make run`: start the local API on `127.0.0.1:8000`.
 - `make docker-build`: build the local Docker image.
 - `make docker-run`: run the local Docker image.
@@ -146,6 +166,28 @@ make threat-model-report
 
 `make quality` validates the threat model and verifies committed evidence. It does not regenerate tracked evidence unexpectedly.
 
+## Local JWT Development
+
+The local API accepts signed RS256 JWTs using synthetic test keys under `tests/fixtures/keys/`. These keys are for local development and tests only.
+
+```bash
+make dev-token-researcher
+make dev-token-approver
+make dev-token-auditor
+```
+
+Use the emitted token as `Authorization: Bearer <token>` for `/api/v1/*` routes. `/health` and local OpenAPI docs remain unauthenticated.
+
+## API Security Commands
+
+```bash
+make auth-test
+make api-security-test
+make api-security-evidence
+make verify-api-security-evidence
+make api-security-report
+```
+
 ## Threat Model Evidence
 
 Generated outputs:
@@ -163,6 +205,25 @@ Generated reports:
 - `reports/security/security-requirements-report.md`
 - `reports/security/control-traceability-report.md`
 - `reports/security/residual-risk-report.md`
+
+## API Security Evidence
+
+Generated outputs:
+
+- `outputs/security/api-security/authentication-control-summary.json`
+- `outputs/security/api-security/authorisation-matrix.json`
+- `outputs/security/api-security/endpoint-security-inventory.json`
+- `outputs/security/api-security/negative-test-summary.json`
+- `outputs/security/api-security/audit-control-summary.json`
+- `outputs/security/api-security/api-security-summary.json`
+- `outputs/security/api-security/evidence-manifest.json`
+
+Generated reports:
+
+- `reports/security/api-security-report.md`
+- `reports/security/authentication-report.md`
+- `reports/security/authorisation-report.md`
+- `reports/security/negative-security-testing-report.md`
 
 ## Repository Structure
 
@@ -190,14 +251,16 @@ The seed catalogue contains deterministic, synthetic, non-identifiable dataset m
 
 Current implemented controls include schema validation, field length limits, stable error responses, explicit CORS allow-listing, structured audit events, correlation ID propagation, invalid workflow transition rejection, non-root container runtime configuration, pinned dependencies, CI quality checks and threat-model traceability validation.
 
-Planned future controls include production authentication, RBAC, object-level authorisation, separation of requester and approver duties, rate limiting, immutable audit logging, secret scanning, dependency scanning, SBOM generation, container scanning, IaC scanning, least-privilege cloud IAM, encrypted future storage and protected release workflows.
+Milestone 3 also implements local signed JWT authentication, RBAC, object-level authorisation, separation of requester and approver duties, audit-event access restrictions, security headers and API-security evidence verification.
+
+Planned future controls include external IdP integration, rate limiting, immutable audit logging, secret scanning, dependency scanning, SBOM generation, container scanning, IaC scanning, least-privilege cloud IAM, encrypted future storage and protected release workflows.
 
 This repository does not claim production-grade identity, authorisation, monitoring, cloud or scanner coverage.
 
 ## Limitations
 
-State is in memory and resets when the app restarts. The approval actor is a documented local simulation. Audit retrieval is a local demonstration endpoint. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances.
+State is in memory and resets when the app restarts. JWT keys under `tests/fixtures/keys/` are synthetic local development material only. Audit retrieval is a local demonstration endpoint restricted by role. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances.
 
 ## Future Milestones
 
-Later milestones may add authentication, object-level authorisation, CI/CD security controls, AWS/Terraform security, vulnerability management, risk-based release gates, and Security Champions enablement.
+Later milestones may add external identity-provider integration, CI/CD security controls, AWS/Terraform security, vulnerability management, risk-based release gates, and Security Champions enablement.

@@ -7,12 +7,12 @@
 | SR-API-003 | api_security | implemented | Milestone 1 |
 | SR-API-004 | configuration | implemented | Milestone 1 |
 | SR-API-005 | api_security | planned | Milestone 4 |
-| SR-AUTH-001 | authentication | planned | Milestone 3 |
-| SR-AUTHZ-001 | authorisation | planned | Milestone 3 |
-| SR-AUTHZ-002 | authorisation | planned | Milestone 3 |
-| SR-AUTHZ-003 | authorisation | planned | Milestone 3 |
-| SR-AUTHZ-004 | workflow_integrity | planned | Milestone 3 |
-| SR-AUTHZ-005 | authorisation | planned | Milestone 3 |
+| SR-AUTH-001 | authentication | implemented | Milestone 3 |
+| SR-AUTHZ-001 | authorisation | implemented | Milestone 3 |
+| SR-AUTHZ-002 | authorisation | implemented | Milestone 3 |
+| SR-AUTHZ-003 | authorisation | implemented | Milestone 3 |
+| SR-AUTHZ-004 | workflow_integrity | implemented | Milestone 3 |
+| SR-AUTHZ-005 | authorisation | implemented | Milestone 3 |
 | SR-CI-001 | ci_cd | implemented | Milestone 2 |
 | SR-CI-002 | ci_cd | planned | Milestone 4 |
 | SR-CI-003 | ci_cd | planned | Milestone 7 |
@@ -28,7 +28,7 @@
 | SR-LOG-001 | audit_logging | implemented | Milestone 1 |
 | SR-LOG-002 | audit_logging | planned | Milestone 6 |
 | SR-LOG-003 | audit_logging | implemented | Milestone 1 |
-| SR-LOG-004 | audit_logging | planned | Milestone 3 |
+| SR-LOG-004 | audit_logging | implemented | Milestone 3 |
 | SR-REVIEW-001 | governance | implemented | Milestone 2 |
 | SR-SECRETS-001 | secrets | planned | Milestone 5 |
 | SR-SUPPLY-001 | supply_chain | planned | Milestone 5 |

@@ -15,7 +15,7 @@
     "interface_type": "HTTP GET",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-003"],
-    "validation_expectation": "Stable ordering and no individual-level records."
+    "validation_expectation": "Bearer token required; stable ordering and no individual-level records."
   },
   {
     "entry_point_id": "EP-003",
@@ -24,7 +24,7 @@
     "interface_type": "HTTP GET with path parameter",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-003"],
-    "validation_expectation": "Unknown dataset returns controlled error."
+    "validation_expectation": "Bearer token required; restricted detail requires entitlement."
   },
   {
     "entry_point_id": "EP-004",
@@ -33,7 +33,7 @@
     "interface_type": "HTTP POST JSON",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-002", "TB-003"],
-    "validation_expectation": "Pydantic validation, enum controls and length limits."
+    "validation_expectation": "Bearer token required; Pydantic validation, enum controls and length limits."
   },
   {
     "entry_point_id": "EP-005",
@@ -42,7 +42,7 @@
     "interface_type": "HTTP GET",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-003"],
-    "validation_expectation": "Future production use requires authorisation filtering."
+    "validation_expectation": "Bearer token required; response filtered by role and owner."
   },
   {
     "entry_point_id": "EP-006",
@@ -51,7 +51,7 @@
     "interface_type": "HTTP GET with path parameter",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-003"],
-    "validation_expectation": "Unknown request returns controlled error."
+    "validation_expectation": "Bearer token required; unauthorised object access returns not found."
   },
   {
     "entry_point_id": "EP-007",
@@ -60,7 +60,7 @@
     "interface_type": "HTTP POST JSON",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"],
-    "validation_expectation": "State transition validation and simulated reviewer context."
+    "validation_expectation": "Approver permission, state transition validation and separation of duties."
   },
   {
     "entry_point_id": "EP-008",
@@ -69,7 +69,7 @@
     "interface_type": "HTTP POST JSON",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"],
-    "validation_expectation": "State transition validation and simulated reviewer context."
+    "validation_expectation": "Reject permission, state transition validation and separation of duties."
   },
   {
     "entry_point_id": "EP-009",
@@ -78,7 +78,7 @@
     "interface_type": "HTTP GET",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-004"],
-    "validation_expectation": "Explicitly documented as non-production local capability."
+    "validation_expectation": "Auditor or administrator permission required."
   },
   {
     "entry_point_id": "EP-010",
@@ -87,12 +87,12 @@
     "interface_type": "HTTP header",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-001", "TB-004"],
-    "validation_expectation": "Future validation should constrain format and length."
+    "validation_expectation": "Format and length are constrained; malformed values are replaced."
   },
   {
     "entry_point_id": "EP-011",
     "name": "Application configuration and environment variables",
-    "description": "Settings including CORS origins and simulated reviewer details.",
+    "description": "Settings including CORS origins and JWT validation details.",
     "interface_type": "environment configuration",
     "current_or_future": "current",
     "trust_boundary_ids": ["TB-005"],

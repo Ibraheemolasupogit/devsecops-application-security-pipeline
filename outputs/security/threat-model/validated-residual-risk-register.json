@@ -1,20 +1,22 @@
 [
   {
     "control_limitations": [
-      "unauthenticated local endpoints remain callable"
+      "synthetic local key material is not a production identity provider"
     ],
     "current_controls": [
-      "documentation states authentication is deferred"
+      "signed JWT validation",
+      "issuer and audience checks",
+      "short-lived local development tokens"
     ],
-    "description": "Production authentication is not implemented in the current local reference application.",
+    "description": "Local RS256 JWT authentication exists; external production identity provider integration remains future work.",
     "planned_milestone": "Milestone 3",
     "related_threat_ids": [
       "THR-AUTH-001",
       "THR-AUTH-002"
     ],
     "residual_impact": "high",
-    "residual_likelihood": "high",
-    "residual_rating": "high",
+    "residual_likelihood": "medium",
+    "residual_rating": "medium",
     "review_date": "2026-07-11",
     "risk_id": "RR-001",
     "risk_owner": "application_admin",
@@ -23,26 +25,28 @@
   },
   {
     "control_limitations": [
-      "no production identity context is enforced"
+      "policy persistence and external entitlement systems remain future work"
     ],
     "current_controls": [
-      "state transition validation",
-      "simulated reviewer documented"
+      "role-to-permission matrix",
+      "object-level access checks",
+      "separation-of-duties enforcement",
+      "hidden object denial responses"
     ],
-    "description": "RBAC, object-level authorisation and separation of duties are deferred.",
+    "description": "RBAC, object-level authorisation and separation of duties are implemented for the local API.",
     "planned_milestone": "Milestone 3",
     "related_threat_ids": [
       "THR-AUTHZ-001",
       "THR-AUTHZ-002",
       "THR-AUTHZ-003"
     ],
-    "residual_impact": "high",
-    "residual_likelihood": "high",
-    "residual_rating": "high",
+    "residual_impact": "medium",
+    "residual_likelihood": "low",
+    "residual_rating": "low",
     "review_date": "2026-07-11",
     "risk_id": "RR-002",
     "risk_owner": "product_security_engineer",
-    "status": "mitigation_planned",
+    "status": "accepted",
     "treatment": "mitigate"
   },
   {
@@ -69,13 +73,14 @@
   },
   {
     "control_limitations": [
-      "audit integrity and access restrictions are not production-grade"
+      "audit integrity, retention and central log shipping are future production controls"
     ],
     "current_controls": [
       "structured audit generation",
-      "local-only documentation"
+      "auditor-only retrieval",
+      "auth failure and authorisation denial audit events"
     ],
-    "description": "Audit events are in memory and the local audit endpoint is not a production pattern.",
+    "description": "Audit events are in memory; audit retrieval is role restricted but not production-durable.",
     "planned_milestone": "Milestone 3",
     "related_threat_ids": [
       "THR-AUDIT-001",
@@ -83,8 +88,8 @@
       "THR-AUDIT-004"
     ],
     "residual_impact": "medium",
-    "residual_likelihood": "medium",
-    "residual_rating": "medium",
+    "residual_likelihood": "low",
+    "residual_rating": "low",
     "review_date": "2026-07-11",
     "risk_id": "RR-004",
     "risk_owner": "security_auditor",
@@ -167,16 +172,19 @@
   },
   {
     "control_limitations": [
-      "controls are not a substitute for production auth, platform controls or release gates"
+      "controls are not a substitute for production platform controls or release gates"
     ],
     "current_controls": [
       "schema validation",
       "safe errors",
       "CORS allow-list",
+      "security headers",
       "state transition checks",
+      "JWT auth",
+      "RBAC",
       "threat-model validation"
     ],
-    "description": "Implemented Milestone 1 and 2 controls reduce but do not eliminate local API and governance risks.",
+    "description": "Implemented Milestone 1, 2 and 3 controls reduce but do not eliminate local API and governance risks.",
     "planned_milestone": "Milestone 2",
     "related_threat_ids": [
       "THR-API-001",

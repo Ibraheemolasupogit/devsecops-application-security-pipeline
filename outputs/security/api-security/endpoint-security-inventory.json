@@ -1,0 +1,68 @@
+[
+  {
+    "method": "GET",
+    "object_authorisation": "not_applicable",
+    "path": "/api/v1/datasets",
+    "required_permissions": [
+      "dataset:list"
+    ]
+  },
+  {
+    "method": "GET",
+    "object_authorisation": "restricted datasets require custodian/admin role or approved request",
+    "path": "/api/v1/datasets/{dataset_id}",
+    "required_permissions": [
+      "dataset:read"
+    ]
+  },
+  {
+    "method": "POST",
+    "object_authorisation": "requester identity is derived from token subject",
+    "path": "/api/v1/access-requests",
+    "required_permissions": [
+      "access_request:create"
+    ]
+  },
+  {
+    "method": "GET",
+    "object_authorisation": "researchers see own requests; privileged reviewers see permitted queue",
+    "path": "/api/v1/access-requests",
+    "required_permissions": [
+      "access_request:list_own",
+      "access_request:list_all"
+    ]
+  },
+  {
+    "method": "GET",
+    "object_authorisation": "unauthorised object access returns not found",
+    "path": "/api/v1/access-requests/{request_id}",
+    "required_permissions": [
+      "access_request:read_own",
+      "access_request:read_all"
+    ]
+  },
+  {
+    "method": "POST",
+    "object_authorisation": "requester cannot approve own request",
+    "path": "/api/v1/access-requests/{request_id}/approve",
+    "required_permissions": [
+      "access_request:approve"
+    ]
+  },
+  {
+    "method": "POST",
+    "object_authorisation": "requester cannot reject own request",
+    "path": "/api/v1/access-requests/{request_id}/reject",
+    "required_permissions": [
+      "access_request:reject"
+    ]
+  },
+  {
+    "method": "GET",
+    "object_authorisation": "audit records require security-auditor or administrator permission",
+    "path": "/api/v1/audit-events",
+    "required_permissions": [
+      "audit_event:read"
+    ]
+  }
+]

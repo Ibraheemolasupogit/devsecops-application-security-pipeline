@@ -6,7 +6,7 @@
   "input_files": {
     "actors": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/actors.yaml",
-      "sha256": "5a7a74ef30758c090617678f1ed5f9fe619acd79d78b92724a24a75cef39b222"
+      "sha256": "0cc8da27fb6155cd86e9a75a084617b677a083f89de860099ab24d31647cd46e"
     },
     "assets": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/assets.yaml",
@@ -14,53 +14,53 @@
     },
     "data_flows": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/data-flows.yaml",
-      "sha256": "0eedf30eb93f47784c71c358340be75a2ed313a9919faa4bb0030f3f18801cee"
+      "sha256": "27daf3476d55272fd7a75f5fcdaa21e340e178df52b896a4025c7cd8eb56ee26"
     },
     "entry_points": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/entry-points.yaml",
-      "sha256": "f155df7493711b8ad91daa4df917475fca0aaa5155fc605fad0f9b5bde70f143"
+      "sha256": "b89d9fec7f37ce75f08bb6ffb664d0ecd9c518ef396ba4f59545cf4a48ad0785"
     },
     "requirements": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/security-requirements.yaml",
-      "sha256": "6f840330dbcea51fb685ee03bf711ae668cc81dc0b6b591ac0e233cb8f3b81dc"
+      "sha256": "c74773c9955af9275466a03cc893f5393d96c9d572dad5142cc90894a61012bc"
     },
     "residual_risks": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/residual-risk-register.yaml",
-      "sha256": "425f036b886d27211d1b470fbb2c2d94be7850cba7dd7b7945b5e127b103c820"
+      "sha256": "cd2f53dd5f5563622815a36925078799e3621f775a2d97f740d8f3f87e4fcf88"
     },
     "threats": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/threat-register.yaml",
-      "sha256": "969d309963debfe5955a4b444311913f26b703278c313b4880186c9bd2610dae"
+      "sha256": "abebe0f9f1559cc61b3f9d6f10a79e6856b87591759e8dea9aa1a72e99c1a4fb"
     },
     "traceability": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/control-traceability.yaml",
-      "sha256": "926759ca835b98635b83abf8b7da65ad20ef59668eaf881a866ab4061f966672"
+      "sha256": "66611bef71b7ea934313fca95fac9774d27449d0250f085500d9ece51b324699"
     },
     "trust_boundaries": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/trust-boundaries.yaml",
-      "sha256": "078932f4e3caac40ff874747f1e9bf4369f7a9cf3ec93198b15b15b911143c5a"
+      "sha256": "8cd3c8004bc228d4afe35debe87bca00498f1f8dd411b4b386a2d1b46f376db9"
     }
   },
   "output_files": {
     "threat-model-summary.json": {
       "path": "threat-model-summary.json",
-      "sha256": "5b6a9458bf7fdcb0a4c6f894d2992ec6fbd4de1dfc0843fbf95c928a32e610c0"
+      "sha256": "66a3a6feee1ff32a9a99f6a6da58d00315319dc9f251a3e34aac2402e3d76131"
     },
     "validated-control-traceability.json": {
       "path": "validated-control-traceability.json",
-      "sha256": "4ccbdc611ee03cf77e07759c129b36faf045a16b3df9383b2f8f66bb190cbf34"
+      "sha256": "8b203457226aa682908a7296078dc24d72d27ef64ce53948e123ca3ecf329a22"
     },
     "validated-residual-risk-register.json": {
       "path": "validated-residual-risk-register.json",
-      "sha256": "6784fe436aa6e1901014da1584788d6a7c0956d50b17df66dd00bf7bdd5e5d20"
+      "sha256": "b3439fd5bf202216c15d71749d3c6e9c1dd7f6b1cae220a7d17d2b560ce045d5"
     },
     "validated-security-requirements.json": {
       "path": "validated-security-requirements.json",
-      "sha256": "1a6c817385c6a68b3598fa3790692190a5da5e5fa0cfebefc7e4030be790010c"
+      "sha256": "5a9bab660e2366d07d687abbe72af977403f6087bc8d8bd92855156308752f96"
     },
     "validated-threat-register.json": {
       "path": "validated-threat-register.json",
-      "sha256": "0f9f85adf20c1cc876ad22c8a495dffa7b16455c7a6d76bfa73e0047d4223c5c"
+      "sha256": "f58efc437103141c804db9b15ad3aeb55d968aaf0dfd78ca32fd5927e0556660"
     }
   },
   "project_version": "0.1.0",

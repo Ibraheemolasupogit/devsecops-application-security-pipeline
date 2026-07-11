@@ -15,7 +15,7 @@ Implemented controls:
 - Non-root Docker runtime user.
 - Local quality gates for formatting, linting, typing, and coverage.
 
-Deferred controls:
+Deferred from Milestone 1:
 
 - Production authentication and authorisation.
 - JWT, OIDC, RBAC, and object-level authorisation.
@@ -23,4 +23,4 @@ Deferred controls:
 - SAST, SCA, secret scanning, SBOM, IaC scanning, container scanning, DAST, and API fuzzing.
 - AWS, Terraform, deployment, release gates, and vulnerability lifecycle workflows.
 
-Milestone 2 now documents these deferred controls in the threat model and requirements register. Documentation of a future control does not mean the control is implemented.
+Milestone 2 documented these deferred controls in the threat model and requirements register. Milestone 3 implements local signed JWT authentication, RBAC, object-level authorisation and separation of duties, while external IdP integration remains future work.

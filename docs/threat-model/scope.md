@@ -11,6 +11,8 @@ In scope:
 - Local FastAPI service.
 - Synthetic dataset metadata.
 - Access request submission, retrieval, approval and rejection.
+- Local RS256 JWT authentication.
+- Role-based and object-level authorisation.
 - Structured audit events.
 - Local Makefile and CI validation.
 - Dockerfile and pinned dependencies.
@@ -28,8 +30,8 @@ The dataset catalogue is synthetic and non-identifiable. Access requests and aud
 - All data is synthetic.
 - The repository contains no real patient or genomic data.
 - No AWS account, Terraform state or cloud deployment exists.
-- Current approval identity is simulated and local only.
+- Current authentication uses synthetic local JWT keys only.
 
 ## Exclusions
 
-Production authentication, RBAC enforcement, object-level authorisation implementation, AWS resources, Terraform, AppSec scanners, release gates and vulnerability lifecycle features are excluded from Milestone 2.
+External IdP integration, durable policy storage, AWS resources, Terraform, AppSec scanners, release gates and vulnerability lifecycle features are excluded from Milestone 3.

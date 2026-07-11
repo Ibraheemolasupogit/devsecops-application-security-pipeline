@@ -1,0 +1,40 @@
+{
+  "algorithm_policy": {
+    "accepted_algorithms": [
+      "RS256"
+    ],
+    "arbitrary_algorithms_allowed": false,
+    "none_algorithm_allowed": false
+  },
+  "claim_validation": [
+    "issuer",
+    "audience",
+    "subject",
+    "roles",
+    "expiration",
+    "issued_at",
+    "not_before",
+    "jwt_id",
+    "maximum_lifetime"
+  ],
+  "identity_source_policy": {
+    "accepted_identity_source": "Authorization: Bearer <token>",
+    "query_string_identity_allowed": false,
+    "untrusted_identity_header_allowed": false
+  },
+  "local_key_material": {
+    "private_key_path": "tests/fixtures/keys/dev_private_key.pem",
+    "public_key_path": "tests/fixtures/keys/dev_public_key.pem",
+    "purpose": "synthetic local development and test tokens only"
+  },
+  "protected_route_policy": {
+    "protected_prefixes": [
+      "/api/v1/*"
+    ],
+    "public_routes": [
+      "/health",
+      "/docs",
+      "/openapi.json"
+    ]
+  }
+}

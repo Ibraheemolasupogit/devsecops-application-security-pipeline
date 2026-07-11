@@ -4,8 +4,8 @@
     "source_zone": "external or local API client",
     "destination_zone": "FastAPI routing layer",
     "data_crossing": "HTTP requests, path parameters, JSON bodies and headers",
-    "authentication_expectation": "Milestone 1 has no production authentication; future auth required.",
-    "authorisation_expectation": "Milestone 1 has no final authorisation; future deny-by-default required.",
+    "authentication_expectation": "Local RS256 JWT authentication required for /api/v1 routes.",
+    "authorisation_expectation": "Deny-by-default role permissions and object checks required.",
     "encryption_expectation": "Local HTTP only; future TLS termination required.",
     "logging_expectation": "Correlation IDs and security-relevant events should be logged.",
     "primary_risks": ["spoofing", "tampering", "denial_of_service"]
@@ -15,8 +15,8 @@
     "source_zone": "API schemas",
     "destination_zone": "application services",
     "data_crossing": "validated request models",
-    "authentication_expectation": "identity context in future middleware",
-    "authorisation_expectation": "service layer must enforce workflow rules",
+    "authentication_expectation": "authenticated principal passed from route dependencies",
+    "authorisation_expectation": "service layer must enforce workflow and object rules",
     "encryption_expectation": "in-process boundary",
     "logging_expectation": "invalid transitions and decisions logged",
     "primary_risks": ["tampering", "elevation_of_privilege"]
@@ -38,7 +38,7 @@
     "destination_zone": "audit event store",
     "data_crossing": "structured audit events and correlation IDs",
     "authentication_expectation": "runtime internal only",
-    "authorisation_expectation": "future audit read access must be restricted",
+    "authorisation_expectation": "audit read access restricted to auditor or administrator roles",
     "encryption_expectation": "in-process now; future encrypted transport and storage",
     "logging_expectation": "events must be complete and tamper-resistant in production",
     "primary_risks": ["repudiation", "information_disclosure", "tampering"]
@@ -60,7 +60,7 @@
     "destination_zone": "CI/CD build environment",
     "data_crossing": "source code, workflow definitions, dependencies and build artefacts",
     "authentication_expectation": "GitHub workflow identity",
-    "authorisation_expectation": "minimal permissions; no deployment privileges in Milestone 2",
+    "authorisation_expectation": "minimal permissions; no deployment privileges in Milestone 3",
     "encryption_expectation": "platform-managed transport",
     "logging_expectation": "CI logs and evidence outputs",
     "primary_risks": ["supply_chain", "artefact_tampering"]
@@ -93,7 +93,7 @@
     "destination_zone": "future private service components",
     "data_crossing": "external API traffic through controlled edge",
     "authentication_expectation": "future identity provider integration",
-    "authorisation_expectation": "future RBAC and object-level checks",
+    "authorisation_expectation": "future edge policy plus application RBAC and object-level checks",
     "encryption_expectation": "TLS",
     "logging_expectation": "edge and application logs",
     "primary_risks": ["public_exposure", "denial_of_service"]

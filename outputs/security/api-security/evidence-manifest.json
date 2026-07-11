@@ -1,0 +1,61 @@
+{
+  "generation_metadata": {
+    "generated_at": "2026-01-01T00:00:00Z",
+    "generator": "genomic_research_access_api.security.api_security.evidence"
+  },
+  "input_files": {
+    "access_request_routes": {
+      "path": "src/genomic_research_access_api/api/routes/access_requests.py",
+      "sha256": "44b3aab146da236ddb14fc9168d92524f4ff063834cb71bb940a6cfb832701ea"
+    },
+    "audit_event_routes": {
+      "path": "src/genomic_research_access_api/api/routes/audit_events.py",
+      "sha256": "53d1a8f63ca05bd80c18699925c3c5242392b5e7a2af709d0fd7e483b0c64cb7"
+    },
+    "authorisation_matrix": {
+      "path": "src/genomic_research_access_api/security/authorisation.py",
+      "sha256": "0aa979ca10f819a6b7e1c4d8924fc756cb03abd02a81f9af2bf89c418696c8a9"
+    },
+    "dataset_routes": {
+      "path": "src/genomic_research_access_api/api/routes/datasets.py",
+      "sha256": "d79e0b60204e75c5c96e26f411c2dd7e31689fb15eeabf655c9bc4cc354260ef"
+    },
+    "jwt_validator": {
+      "path": "src/genomic_research_access_api/security/authentication/jwt_validator.py",
+      "sha256": "86fec461c42521a40eb4a3d9e5e9b75afa686e0618899dbd0dfd97152452248c"
+    },
+    "security_tests": {
+      "path": "tests/security/test_api_security_controls.py",
+      "sha256": "72cf3f0ed83d652d1d7959af1ecf55f855f1bd49ab4a29eada78f45bc53693d8"
+    }
+  },
+  "output_files": {
+    "api-security-summary.json": {
+      "path": "api-security-summary.json",
+      "sha256": "e745e3337e00c0095ccac3992827ebb2ad2d1b94727774079ce543d4bb129181"
+    },
+    "audit-control-summary.json": {
+      "path": "audit-control-summary.json",
+      "sha256": "03586655c6cd3306b2befd9f0f2e4aa6ff1bf1bb71986eca1d3fca25dd16fe33"
+    },
+    "authentication-control-summary.json": {
+      "path": "authentication-control-summary.json",
+      "sha256": "d7f83a639a13e87a1dd1553547848f3ed9de5f7cf12ef05c69718c221d8257fa"
+    },
+    "authorisation-matrix.json": {
+      "path": "authorisation-matrix.json",
+      "sha256": "5158f742e38bde4355af3b0b4a9d7a552cd75dad6cce3353d41a0db6ffa43147"
+    },
+    "endpoint-security-inventory.json": {
+      "path": "endpoint-security-inventory.json",
+      "sha256": "daa722895ccb107ef180f023b76ebec06ca6e5b5de2ff351329ba3c603fb895d"
+    },
+    "negative-test-summary.json": {
+      "path": "negative-test-summary.json",
+      "sha256": "797e8a3ef5f4f6b70223cb489818fac607ec71823192e18332a05cef891b4d55"
+    }
+  },
+  "project_version": "0.1.0",
+  "run_id": "api-security-2026-01-01T00:00:00Z",
+  "schema_version": "1.0"
+}

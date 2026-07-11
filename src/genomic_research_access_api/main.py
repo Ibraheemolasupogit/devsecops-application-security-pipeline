@@ -1,5 +1,6 @@
 """FastAPI application factory."""
 
+import re
 from collections.abc import Callable
 from typing import cast
 from uuid import uuid4
@@ -37,9 +38,13 @@ def create_app(
     configure_logging()
     settings = get_settings()
     make_id = id_factory or (lambda: str(uuid4()))
+    docs_url = "/docs" if settings.expose_api_docs else None
+    openapi_url = "/openapi.json" if settings.expose_api_docs else None
     app = FastAPI(
         title="Genomic Research Access API",
         version=__version__,
+        docs_url=docs_url,
+        openapi_url=openapi_url,
         description=(
             "Synthetic, non-identifiable portfolio API for controlled genomic research "
             "dataset access workflows."
@@ -59,10 +64,32 @@ def create_app(
     async def correlation_id_middleware(
         request: Request, call_next: RequestResponseEndpoint
     ) -> Response:
-        correlation_id = request.headers.get("X-Correlation-ID") or str(uuid4())
+        supplied_correlation_id = request.headers.get("X-Correlation-ID")
+        correlation_id = (
+            supplied_correlation_id
+            if supplied_correlation_id
+            and re.fullmatch(r"[A-Za-z0-9._:-]{1,100}", supplied_correlation_id)
+            else str(uuid4())
+        )
         request.state.correlation_id = correlation_id
         response = await call_next(request)
         response.headers["X-Correlation-ID"] = correlation_id
+        return response
+
+    @app.middleware("http")
+    async def security_headers_middleware(
+        request: Request, call_next: RequestResponseEndpoint
+    ) -> Response:
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Referrer-Policy"] = "no-referrer"
+        response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+        response.headers["Content-Security-Policy"] = "default-src 'self'; frame-ancestors 'none'"
+        if request.url.path.startswith("/api/"):
+            response.headers["Cache-Control"] = "no-store"
+        if settings.enable_hsts:
+            response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
         return response
 
     dataset_repository = DatasetRepository(synthetic_datasets())
@@ -70,7 +97,9 @@ def create_app(
     audit_event_repository = AuditEventRepository()
     audit_service = AuditService(audit_event_repository, clock, make_id)
     app.state.audit_service = audit_service
-    app.state.dataset_service = DatasetService(dataset_repository, audit_service)
+    app.state.dataset_service = DatasetService(
+        dataset_repository, access_request_repository, audit_service
+    )
     app.state.access_request_service = AccessRequestService(
         access_request_repository=access_request_repository,
         dataset_repository=dataset_repository,

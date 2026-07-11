@@ -3,7 +3,7 @@
     "actor_id": "ACT-001",
     "type": "human",
     "trust_level": "partially_trusted",
-    "authentication_status": "simulated in Milestone 1, future authenticated user",
+    "authentication_status": "local JWT-authenticated researcher",
     "privileges": ["submit access request", "view permitted catalogue metadata"],
     "expected_actions": ["submit research purpose", "retrieve own workflow status in future"],
     "potential_misuse": ["attempt unapproved dataset access", "enumerate request identifiers"]
@@ -12,7 +12,7 @@
     "actor_id": "ACT-002",
     "type": "human",
     "trust_level": "partially_trusted",
-    "authentication_status": "simulated local reviewer in Milestone 1",
+    "authentication_status": "local JWT-authenticated approver",
     "privileges": ["approve request", "reject request"],
     "expected_actions": ["review pending access requests", "record decision reason"],
     "potential_misuse": ["approve inappropriate access", "approve own request"]
@@ -21,7 +21,7 @@
     "actor_id": "ACT-003",
     "type": "human",
     "trust_level": "trusted",
-    "authentication_status": "future authenticated role",
+    "authentication_status": "local JWT-authenticated data custodian role",
     "privileges": ["manage dataset metadata policy"],
     "expected_actions": ["maintain dataset catalogue", "support access governance"],
     "potential_misuse": ["misclassify dataset", "alter access levels without review"]
@@ -30,7 +30,7 @@
     "actor_id": "ACT-004",
     "type": "human",
     "trust_level": "trusted",
-    "authentication_status": "future authenticated role",
+    "authentication_status": "local JWT-authenticated security auditor role",
     "privileges": ["review audit events", "review security evidence"],
     "expected_actions": ["investigate suspicious workflow activity"],
     "potential_misuse": ["overexpose audit details", "suppress findings"]
@@ -39,7 +39,7 @@
     "actor_id": "ACT-005",
     "type": "human",
     "trust_level": "trusted",
-    "authentication_status": "future authenticated administrator",
+    "authentication_status": "local JWT-authenticated administrator",
     "privileges": ["configure application", "operate service"],
     "expected_actions": ["maintain safe configuration", "support operations"],
     "potential_misuse": ["weaken CORS", "enable insecure defaults"]
@@ -102,8 +102,8 @@
     "actor_id": "ACT-012",
     "type": "non-human",
     "trust_level": "untrusted",
-    "authentication_status": "current unauthenticated HTTP caller",
-    "privileges": ["call current local API endpoints"],
+    "authentication_status": "unauthenticated HTTP caller or malformed bearer token",
+    "privileges": ["call public local health and documentation endpoints"],
     "expected_actions": ["exercise API for local demo"],
     "potential_misuse": ["send oversized payloads", "spoof correlation IDs"]
   },

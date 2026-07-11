@@ -22,6 +22,20 @@ make quality
 
 This runs formatting checks, linting, mypy, and coverage-enforced tests.
 
+It also runs authentication/API-security tests and verifies committed threat-model and API-security evidence.
+
+## Local API Tokens
+
+Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:
+
+```bash
+make dev-token-researcher
+make dev-token-approver
+make dev-token-auditor
+```
+
+Use the emitted token as `Authorization: Bearer <token>`. The local private key is synthetic test material in `tests/fixtures/keys/` and must not be reused outside this repository.
+
 ## Docker
 
 ```bash

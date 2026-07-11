@@ -1,8 +1,9 @@
 """Application configuration with secure local defaults."""
 
 from functools import lru_cache
+from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -16,11 +17,32 @@ class Settings(BaseSettings):
 
     service_name: str = "genomic-research-access-api"
     environment: str = "local"
+    jwt_algorithm: str = "RS256"
+    jwt_issuer: str = "https://local.dev/genomic-research-access-api"
+    jwt_audience: str = "genomic-research-access-api"
+    jwt_public_key_path: Path = Path("tests/fixtures/keys/dev_public_key.pem")
+    jwt_clock_skew_seconds: int = 30
+    jwt_maximum_lifetime_seconds: int = 900
+    expose_api_docs: bool = True
+    enable_hsts: bool = False
     cors_allowed_origins: tuple[str, ...] = Field(
         default=("http://localhost:8000", "http://127.0.0.1:8000")
     )
-    simulated_reviewer_id: str = "local-approver-001"
-    simulated_reviewer_role: str = "approver"
+
+    @model_validator(mode="after")
+    def validate_security_settings(self) -> "Settings":
+        if self.jwt_algorithm != "RS256":
+            raise ValueError("Only RS256 is supported for local JWT validation.")
+        if "*" in self.cors_allowed_origins:
+            raise ValueError("Wildcard CORS origins are not permitted.")
+        if self.environment != "local" and self.expose_api_docs:
+            raise ValueError("API documentation exposure must be disabled outside local mode.")
+        if self.environment != "local" and not self.jwt_public_key_path:
+            raise ValueError("A JWT public key source is required outside local mode.")
+        return self
+
+    def load_jwt_public_key(self) -> str:
+        return self.jwt_public_key_path.read_text(encoding="utf-8")
 
 
 @lru_cache

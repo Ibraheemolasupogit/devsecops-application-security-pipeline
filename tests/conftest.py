@@ -5,6 +5,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from genomic_research_access_api.main import create_app
+from genomic_research_access_api.security.authentication.dev_tokens import issue_dev_token
 
 
 class DeterministicIds:
@@ -37,7 +38,36 @@ def client() -> Iterator[TestClient]:
 def access_request_payload() -> dict[str, str]:
     return {
         "dataset_id": "syn-rare-disease-001",
-        "requester_id": "researcher-001",
         "research_purpose": "Evaluate aggregate rare disease cohort characteristics.",
         "requested_access_level": "aggregate_analysis",
     }
+
+
+def auth_header(subject: str, *, expires_in_seconds: int = 300) -> dict[str, str]:
+    token = issue_dev_token(subject=subject, expires_in_seconds=expires_in_seconds)
+    return {"Authorization": f"Bearer {token}"}
+
+
+@pytest.fixture
+def researcher_headers() -> dict[str, str]:
+    return auth_header("researcher-001")
+
+
+@pytest.fixture
+def researcher_two_headers() -> dict[str, str]:
+    return auth_header("researcher-002")
+
+
+@pytest.fixture
+def approver_headers() -> dict[str, str]:
+    return auth_header("approver-001")
+
+
+@pytest.fixture
+def auditor_headers() -> dict[str, str]:
+    return auth_header("auditor-001")
+
+
+@pytest.fixture
+def admin_headers() -> dict[str, str]:
+    return auth_header("admin-001")

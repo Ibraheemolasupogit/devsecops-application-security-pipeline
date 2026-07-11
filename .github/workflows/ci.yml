@@ -43,11 +43,20 @@ jobs:
       - name: Tests with coverage
         run: pytest --cov --cov-report=term-missing --cov-fail-under=85
 
+      - name: Authentication security tests
+        run: pytest tests/security/test_api_security_controls.py -q -k "token or auth"
+
+      - name: API security tests
+        run: pytest tests/security/test_api_security_controls.py -q
+
       - name: Threat model validation
         run: python -m genomic_research_access_api.security.threat_model.validate
 
       - name: Threat model evidence verification
         run: python -m genomic_research_access_api.security.threat_model.evidence --verify
+
+      - name: API security evidence verification
+        run: python -m genomic_research_access_api.security.api_security.evidence --verify
 
       - name: Application import and OpenAPI validation
         run: python -c "from genomic_research_access_api.main import app; assert app.openapi()['info']['title'] == 'Genomic Research Access API'"

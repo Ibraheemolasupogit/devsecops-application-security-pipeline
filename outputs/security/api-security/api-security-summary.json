@@ -1,0 +1,15 @@
+{
+  "authentication_status": "implemented",
+  "authorisation_status": "implemented",
+  "negative_security_test_count": 24,
+  "protected_api_route_count": 8,
+  "role_count": 5,
+  "supported_roles": [
+    "application_admin",
+    "approver",
+    "data_custodian",
+    "researcher",
+    "security_auditor"
+  ],
+  "validation_status": "passed"
+}

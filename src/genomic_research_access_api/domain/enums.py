@@ -35,11 +35,17 @@ class ActorRole(StrEnum):
 
 
 class AuditEventType(StrEnum):
+    AUTHENTICATION_SUCCEEDED = "authentication_succeeded"
+    AUTHENTICATION_FAILED = "authentication_failed"
+    AUTHORISATION_DENIED = "authorisation_denied"
     DATASET_VIEWED = "dataset_viewed"
     ACCESS_REQUEST_SUBMITTED = "access_request_submitted"
+    ACCESS_REQUEST_VIEWED = "access_request_viewed"
     ACCESS_REQUEST_APPROVED = "access_request_approved"
     ACCESS_REQUEST_REJECTED = "access_request_rejected"
+    SELF_APPROVAL_DENIED = "self_approval_denied"
     INVALID_WORKFLOW_TRANSITION_ATTEMPTED = "invalid_workflow_transition_attempted"
+    AUDIT_EVENTS_VIEWED = "audit_events_viewed"
 
 
 class AuditOutcome(StrEnum):

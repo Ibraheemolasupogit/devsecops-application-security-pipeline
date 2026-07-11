@@ -19,7 +19,6 @@ BoundedIdentifier = Annotated[
 
 class AccessRequestCreate(ApiModel):
     dataset_id: BoundedIdentifier
-    requester_id: BoundedIdentifier
     research_purpose: BoundedText
     requested_access_level: AccessLevel
 
@@ -46,5 +45,13 @@ class AccessRequestResponse(ApiModel):
 
 class DecisionRequest(ApiModel):
     decision_reason: BoundedText = Field(
-        description="Reason recorded by the simulated local reviewer context."
+        description="Reason recorded by the authenticated reviewer principal."
     )
+
+
+class ApprovalDecisionRequest(DecisionRequest):
+    decision_reason: BoundedText = Field(description="Approval reason recorded by the reviewer.")
+
+
+class RejectionDecisionRequest(DecisionRequest):
+    decision_reason: BoundedText = Field(description="Rejection reason recorded by the reviewer.")

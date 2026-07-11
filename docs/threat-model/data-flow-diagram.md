@@ -4,7 +4,9 @@
 
 ```mermaid
 flowchart LR
-    Client["External/local client"] -->|"HTTP requests"| App["FastAPI app"]
+    Client["External/local client"] -->|"HTTP requests with bearer token"| App["FastAPI app"]
+    App -->|"validate JWT and permissions"| Auth["Auth dependencies"]
+    Auth -->|"principal"| Service["Service layer"]
     App -->|"validated models"| Service["Service layer"]
     Service -->|"read/write"| Repo["In-memory repositories"]
     Service -->|"structured events"| Audit["Audit service"]
@@ -20,7 +22,8 @@ sequenceDiagram
     participant Service
     participant Repo
     participant Audit
-    Client->>API: POST /api/v1/access-requests
+    Client->>API: POST /api/v1/access-requests with JWT
+    API->>API: validate token and access_request:create permission
     API->>Service: validated AccessRequestCreate
     Service->>Repo: create pending request
     Service->>Audit: access_request_submitted
@@ -32,8 +35,8 @@ sequenceDiagram
 ```mermaid
 stateDiagram-v2
     [*] --> pending
-    pending --> approved: approve with simulated reviewer
-    pending --> rejected: reject with simulated reviewer
+    pending --> approved: authenticated approver approves
+    pending --> rejected: authenticated approver rejects
     approved --> approved: invalid transition rejected
     rejected --> rejected: invalid transition rejected
 ```

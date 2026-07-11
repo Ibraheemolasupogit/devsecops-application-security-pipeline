@@ -19,12 +19,11 @@
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 11,
-    "planned": 23
+    "implemented": 18,
+    "planned": 16
   },
   "residual_risks_by_rating": {
-    "high": 2,
-    "low": 1,
+    "low": 3,
     "medium": 6
   },
   "threats_by_inherent_risk": {

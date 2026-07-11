@@ -1,13 +1,13 @@
 [
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-security-requirements.json"
+      "outputs/security/api-security/negative-test-summary.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/schemas/access_requests.py",
-      "future Milestone 3 authorisation"
+      "src/genomic_research_access_api/security/authentication/dependencies.py"
     ],
-    "notes": "Current schema validation reduces tampering risk; production authorisation remains future work.",
+    "notes": "Schema validation and deny-by-default authorisation reduce tampering risk.",
     "requirement_ids": [
       "SR-API-001",
       "SR-AUTHZ-003"
@@ -17,7 +17,7 @@
     "traceability_id": "TRACE-001",
     "verification_methods": [
       "pytest validation tests",
-      "future negative authorisation tests"
+      "negative authorisation tests"
     ]
   },
   {
@@ -41,13 +41,13 @@
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-threat-register.json"
+      "outputs/security/api-security/endpoint-security-inventory.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/data/seed.py",
-      "future Milestone 3 object-level authorisation"
+      "src/genomic_research_access_api/services/datasets.py"
     ],
-    "notes": "Current data is synthetic; future metadata access needs authorisation.",
+    "notes": "Current data is synthetic and restricted dataset detail now requires entitlement.",
     "requirement_ids": [
       "SR-AUTHZ-002",
       "SR-DATA-001"
@@ -57,7 +57,7 @@
     "traceability_id": "TRACE-003",
     "verification_methods": [
       "seed data tests",
-      "future object-level tests"
+      "object-level authorisation tests"
     ]
   },
   {
@@ -116,7 +116,7 @@
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-security-requirements.json"
+      "outputs/security/api-security/endpoint-security-inventory.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/main.py"
@@ -129,15 +129,16 @@
     "threat_id": "THR-API-007",
     "traceability_id": "TRACE-007",
     "verification_methods": [
-      "configuration review"
+      "CORS and security header tests"
     ]
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/threat-model-summary.json"
+      "outputs/security/api-security/authentication-control-summary.json"
     ],
     "implementation_references": [
       "README.md",
+      "src/genomic_research_access_api/config.py",
       "future release workflow"
     ],
     "notes": "Local defaults are documented as non-production.",
@@ -150,6 +151,7 @@
     "traceability_id": "TRACE-008",
     "verification_methods": [
       "documentation review",
+      "configuration validation",
       "future deployment gates"
     ]
   },
@@ -176,13 +178,13 @@
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-threat-register.json"
+      "outputs/security/api-security/audit-control-summary.json"
     ],
     "implementation_references": [
       "docs/limitations.md",
-      "future audit authorisation"
+      "src/genomic_research_access_api/api/routes/audit_events.py"
     ],
-    "notes": "Audit retrieval is local demonstration only.",
+    "notes": "Audit retrieval is local in-memory only and now restricted by role.",
     "requirement_ids": [
       "SR-AUTHZ-002",
       "SR-LOG-004"
@@ -192,12 +194,12 @@
     "traceability_id": "TRACE-010",
     "verification_methods": [
       "documentation review",
-      "future RBAC tests"
+      "audit RBAC tests"
     ]
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-security-requirements.json"
+      "outputs/security/api-security/negative-test-summary.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/schemas/access_requests.py",
@@ -213,17 +215,17 @@
     "traceability_id": "TRACE-011",
     "verification_methods": [
       "schema tests",
-      "correlation tests"
+      "correlation validation tests"
     ]
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-security-requirements.json"
+      "outputs/security/api-security/negative-test-summary.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/main.py"
     ],
-    "notes": "Correlation IDs propagate today; stricter validation remains future work.",
+    "notes": "Correlation IDs propagate and malformed or oversized values are replaced.",
     "requirement_ids": [
       "SR-LOG-003"
     ],
@@ -231,18 +233,17 @@
     "threat_id": "THR-AUDIT-004",
     "traceability_id": "TRACE-012",
     "verification_methods": [
-      "correlation propagation tests",
-      "future format validation"
+      "correlation propagation and format validation tests"
     ]
   },
   {
     "evidence_references": [
-      "future authentication evidence"
+      "outputs/security/api-security/authentication-control-summary.json"
     ],
     "implementation_references": [
-      "future Milestone 3 authentication"
+      "src/genomic_research_access_api/security/authentication/jwt_validator.py"
     ],
-    "notes": "Production authentication is not implemented.",
+    "notes": "Local RS256 JWT validation is implemented with a future external identity provider still required.",
     "requirement_ids": [
       "SR-AUTH-001"
     ],
@@ -250,18 +251,19 @@
     "threat_id": "THR-AUTH-001",
     "traceability_id": "TRACE-013",
     "verification_methods": [
-      "future authentication tests"
+      "JWT authentication tests"
     ]
   },
   {
     "evidence_references": [
-      "future authentication evidence"
+      "outputs/security/api-security/authentication-control-summary.json"
     ],
     "implementation_references": [
       "README.md",
+      "src/genomic_research_access_api/security/authentication/jwt_validator.py",
       "future deployment readiness gates"
     ],
-    "notes": "The service must not be deployed as production without authentication.",
+    "notes": "The service validates local RS256 JWTs; production deployment still requires trusted IdP configuration.",
     "requirement_ids": [
       "SR-AUTH-001",
       "SR-CI-003"
@@ -270,18 +272,19 @@
     "threat_id": "THR-AUTH-002",
     "traceability_id": "TRACE-014",
     "verification_methods": [
-      "future auth tests",
+      "JWT authentication tests",
       "future release review"
     ]
   },
   {
     "evidence_references": [
-      "future authorisation evidence"
+      "outputs/security/api-security/endpoint-security-inventory.json"
     ],
     "implementation_references": [
-      "future Milestone 3 authorisation"
+      "src/genomic_research_access_api/services/access_requests.py",
+      "src/genomic_research_access_api/services/datasets.py"
     ],
-    "notes": "BOLA is deferred to Milestone 3.",
+    "notes": "BOLA checks are implemented for access requests and restricted datasets.",
     "requirement_ids": [
       "SR-AUTHZ-002",
       "SR-AUTHZ-005"
@@ -290,17 +293,17 @@
     "threat_id": "THR-AUTHZ-001",
     "traceability_id": "TRACE-015",
     "verification_methods": [
-      "future object-level tests"
+      "object-level authorisation tests"
     ]
   },
   {
     "evidence_references": [
-      "future authorisation evidence"
+      "outputs/security/api-security/authorisation-matrix.json"
     ],
     "implementation_references": [
-      "future Milestone 3 RBAC"
+      "src/genomic_research_access_api/security/authorisation.py"
     ],
-    "notes": "Function-level authorisation is deferred.",
+    "notes": "Function-level authorisation is enforced through route dependencies.",
     "requirement_ids": [
       "SR-AUTHZ-001",
       "SR-AUTHZ-005"
@@ -309,17 +312,17 @@
     "threat_id": "THR-AUTHZ-002",
     "traceability_id": "TRACE-016",
     "verification_methods": [
-      "future role tests"
+      "role matrix tests"
     ]
   },
   {
     "evidence_references": [
-      "future workflow evidence"
+      "outputs/security/api-security/negative-test-summary.json"
     ],
     "implementation_references": [
-      "future separation-of-duties checks"
+      "src/genomic_research_access_api/services/access_requests.py"
     ],
-    "notes": "Requester and approver separation is planned.",
+    "notes": "Requester and approver separation is enforced for approval and rejection.",
     "requirement_ids": [
       "SR-AUTHZ-003",
       "SR-AUTHZ-004"
@@ -328,7 +331,7 @@
     "threat_id": "THR-AUTHZ-003",
     "traceability_id": "TRACE-017",
     "verification_methods": [
-      "future workflow tests"
+      "separation-of-duties workflow tests"
     ]
   },
   {
