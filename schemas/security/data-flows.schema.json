@@ -1,0 +1,45 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "data": {
+        "title": "Data",
+        "type": "string"
+      },
+      "data_flow_id": {
+        "title": "Data Flow Id",
+        "type": "string"
+      },
+      "destination": {
+        "title": "Destination",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "source": {
+        "title": "Source",
+        "type": "string"
+      },
+      "trust_boundary_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Trust Boundary Ids",
+        "type": "array"
+      }
+    },
+    "required": [
+      "data_flow_id",
+      "name",
+      "source",
+      "destination",
+      "data",
+      "trust_boundary_ids"
+    ],
+    "title": "DataFlow",
+    "type": "object"
+  },
+  "type": "array"
+}

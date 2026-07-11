@@ -1,0 +1,1716 @@
+[
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-011",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-004",
+      "ASSET-008"
+    ],
+    "attack_scenario": "A caller modifies request fields or decision payloads to alter access intent or decision context.",
+    "data_flow_ids": [
+      "DF-004",
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "An attacker alters submitted dataset or access request fields to change workflow intent.",
+    "entry_point_ids": [
+      "EP-004",
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "Pydantic schemas",
+      "controlled enums",
+      "state transition checks"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future authenticated actor context",
+      "future object-level authorisation"
+    ],
+    "preconditions": [
+      "API reachable",
+      "caller can submit JSON payloads"
+    ],
+    "references": [
+      "OWASP API8:2023"
+    ],
+    "required_controls": [
+      "SR-API-001",
+      "SR-AUTHZ-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "tampering",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-API-001",
+    "title": "Request tampering",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-002"
+    ],
+    "verification_methods": [
+      "pytest API validation tests",
+      "threat-model validation"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-008"
+    ],
+    "attack_scenario": "A payload includes reviewed_by, status or reviewed_at to bypass service decisions.",
+    "data_flow_ids": [
+      "DF-004",
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "A caller submits extra properties hoping to set server-controlled fields.",
+    "entry_point_ids": [
+      "EP-004",
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "explicit Pydantic request schemas",
+      "service-owned status assignment"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API3:2023 Broken Object Property Level Authorization",
+    "planned_controls": [
+      "future API contract review"
+    ],
+    "preconditions": [
+      "caller can submit JSON payloads"
+    ],
+    "references": [
+      "OWASP API3:2023"
+    ],
+    "required_controls": [
+      "SR-API-001",
+      "SR-API-002"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "tampering",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-API-002",
+    "title": "Mass assignment or unexpected properties",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-002"
+    ],
+    "verification_methods": [
+      "schema tests",
+      "API tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-011",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-002",
+      "ASSET-003",
+      "ASSET-004"
+    ],
+    "attack_scenario": "A caller lists or retrieves records that should be restricted once real identity is introduced.",
+    "data_flow_ids": [
+      "DF-002",
+      "DF-003",
+      "DF-005"
+    ],
+    "description": "Dataset or request metadata is exposed beyond intended users in future production.",
+    "entry_point_ids": [
+      "EP-002",
+      "EP-003",
+      "EP-005",
+      "EP-006"
+    ],
+    "existing_controls": [
+      "synthetic data only",
+      "no individual-level genomic records"
+    ],
+    "impact": "medium",
+    "inherent_risk": "high",
+    "likelihood": "high",
+    "owasp_api_category": "API1:2023 Broken Object Level Authorization",
+    "planned_controls": [
+      "future RBAC",
+      "future object-level authorisation"
+    ],
+    "preconditions": [
+      "API endpoint reachable"
+    ],
+    "references": [
+      "OWASP API1:2023"
+    ],
+    "required_controls": [
+      "SR-AUTHZ-002",
+      "SR-DATA-001"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "data_custodian",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-API-003",
+    "title": "Sensitive metadata disclosure",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-003"
+    ],
+    "verification_methods": [
+      "future authorisation tests",
+      "current seed-data tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-006",
+      "ASSET-007"
+    ],
+    "attack_scenario": "A malformed request triggers verbose exception output.",
+    "data_flow_ids": [
+      "DF-003",
+      "DF-004",
+      "DF-005"
+    ],
+    "description": "Errors disclose stack traces or implementation details useful to attackers.",
+    "entry_point_ids": [
+      "EP-003",
+      "EP-004",
+      "EP-006"
+    ],
+    "existing_controls": [
+      "central exception handlers",
+      "stable error responses"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future production logging review"
+    ],
+    "preconditions": [
+      "caller can trigger errors"
+    ],
+    "references": [
+      "OWASP API8:2023"
+    ],
+    "required_controls": [
+      "SR-API-003"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-API-004",
+    "title": "Excessive error detail",
+    "trust_boundary_ids": [
+      "TB-001"
+    ],
+    "verification_methods": [
+      "structured error response tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-007",
+      "ASSET-003"
+    ],
+    "attack_scenario": "Repeated submissions or list calls exhaust process memory or CPU.",
+    "data_flow_ids": [
+      "DF-004",
+      "DF-005",
+      "DF-008"
+    ],
+    "description": "A caller consumes runtime resources with expensive or repeated requests.",
+    "entry_point_ids": [
+      "EP-004",
+      "EP-005",
+      "EP-009"
+    ],
+    "existing_controls": [
+      "field length limits"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API4:2023 Unrestricted Resource Consumption",
+    "planned_controls": [
+      "future rate limiting or compensating platform controls"
+    ],
+    "preconditions": [
+      "API reachable",
+      "no production rate limiting"
+    ],
+    "references": [
+      "OWASP API4:2023"
+    ],
+    "required_controls": [
+      "SR-API-005"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "denial_of_service",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-API-005",
+    "title": "Denial of service through resource exhaustion",
+    "trust_boundary_ids": [
+      "TB-001"
+    ],
+    "verification_methods": [
+      "future performance and rate-limit tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-013"
+    ],
+    "attack_scenario": "An attacker submits many access requests and exhausts memory or storage.",
+    "data_flow_ids": [
+      "DF-004"
+    ],
+    "description": "Runtime-created in-memory requests grow without operational bounds.",
+    "entry_point_ids": [
+      "EP-004"
+    ],
+    "existing_controls": [
+      "local-only in-memory design documented"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API4:2023 Unrestricted Resource Consumption",
+    "planned_controls": [
+      "future storage quotas",
+      "future rate limiting"
+    ],
+    "preconditions": [
+      "request creation endpoint reachable"
+    ],
+    "references": [
+      "OWASP API4:2023"
+    ],
+    "required_controls": [
+      "SR-API-005"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "denial_of_service",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-API-006",
+    "title": "Unbounded request volume",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-003"
+    ],
+    "verification_methods": [
+      "future quota validation"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-005",
+      "ACT-010"
+    ],
+    "asset_ids": [
+      "ASSET-006",
+      "ASSET-003"
+    ],
+    "attack_scenario": "A wildcard origin is enabled and browser clients can read unintended responses.",
+    "data_flow_ids": [
+      "DF-004"
+    ],
+    "description": "Overly broad CORS configuration allows unintended browser origins.",
+    "entry_point_ids": [
+      "EP-011"
+    ],
+    "existing_controls": [
+      "explicit local CORS allow-list",
+      "no wildcard CORS"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future environment-specific configuration review"
+    ],
+    "preconditions": [
+      "configuration change accepted"
+    ],
+    "references": [
+      "OWASP API8:2023"
+    ],
+    "required_controls": [
+      "SR-API-004"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-API-007",
+    "title": "Misconfigured CORS",
+    "trust_boundary_ids": [
+      "TB-005"
+    ],
+    "verification_methods": [
+      "configuration review",
+      "tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-005",
+      "ACT-007"
+    ],
+    "asset_ids": [
+      "ASSET-006",
+      "ASSET-011",
+      "ASSET-012"
+    ],
+    "attack_scenario": "Future deployment carries local simulated actor settings into production.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "Local defaults are accidentally reused in future production.",
+    "entry_point_ids": [
+      "EP-011",
+      "EP-016"
+    ],
+    "existing_controls": [
+      "documentation states auth is deferred"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future environment validation",
+      "future deployment gates"
+    ],
+    "preconditions": [
+      "future deployment without configuration gate"
+    ],
+    "references": [
+      "OWASP API8:2023"
+    ],
+    "required_controls": [
+      "SR-API-004",
+      "SR-CI-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-API-008",
+    "title": "Insecure default configuration",
+    "trust_boundary_ids": [
+      "TB-005",
+      "TB-010"
+    ],
+    "verification_methods": [
+      "future deployment validation tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-011",
+      "ACT-013",
+      "ACT-018"
+    ],
+    "asset_ids": [
+      "ASSET-005",
+      "ASSET-018"
+    ],
+    "attack_scenario": "A compromised actor performs workflow actions without reliable audit evidence.",
+    "data_flow_ids": [
+      "DF-003",
+      "DF-004",
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "Security-relevant actions are not recorded or audit records are altered.",
+    "entry_point_ids": [
+      "EP-003",
+      "EP-004",
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "structured audit event generation",
+      "audit event tests"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API10:2023 Unsafe Consumption of APIs",
+    "planned_controls": [
+      "future immutable central audit logging"
+    ],
+    "preconditions": [
+      "audit store lacks integrity guarantees"
+    ],
+    "references": [
+      "STRIDE repudiation"
+    ],
+    "required_controls": [
+      "SR-LOG-001",
+      "SR-LOG-002"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "security_auditor",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "repudiation",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUDIT-001",
+    "title": "Missing or altered audit records",
+    "trust_boundary_ids": [
+      "TB-004",
+      "TB-008"
+    ],
+    "verification_methods": [
+      "audit event tests",
+      "future log integrity checks"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-005",
+      "ASSET-010"
+    ],
+    "attack_scenario": "A caller uses the local audit endpoint to inspect request activity.",
+    "data_flow_ids": [
+      "DF-008"
+    ],
+    "description": "Audit events reveal workflow details to unauthorised users.",
+    "entry_point_ids": [
+      "EP-009"
+    ],
+    "existing_controls": [
+      "endpoint documented as local demonstration only"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API3:2023 Broken Object Property Level Authorization",
+    "planned_controls": [
+      "future removal or strict audit-read authorisation"
+    ],
+    "preconditions": [
+      "audit endpoint reachable"
+    ],
+    "references": [
+      "OWASP API3:2023"
+    ],
+    "required_controls": [
+      "SR-LOG-004",
+      "SR-AUTHZ-002"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "security_auditor",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUDIT-002",
+    "title": "Audit-event information leakage",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-004"
+    ],
+    "verification_methods": [
+      "documentation review",
+      "future authorisation tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-005",
+      "ASSET-010"
+    ],
+    "attack_scenario": "A crafted requester ID or correlation ID pollutes audit trails.",
+    "data_flow_ids": [
+      "DF-004"
+    ],
+    "description": "User-controlled values introduce misleading content into logs or audit details.",
+    "entry_point_ids": [
+      "EP-004",
+      "EP-010"
+    ],
+    "existing_controls": [
+      "bounded requester ID pattern",
+      "structured audit event fields"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future correlation ID validation"
+    ],
+    "preconditions": [
+      "user-controlled values are logged"
+    ],
+    "references": [
+      "OWASP logging guidance"
+    ],
+    "required_controls": [
+      "SR-LOG-003",
+      "SR-API-001"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "security_auditor",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "tampering",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUDIT-003",
+    "title": "Log injection",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-004"
+    ],
+    "verification_methods": [
+      "schema validation tests",
+      "future log validation"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-010",
+      "ASSET-005"
+    ],
+    "attack_scenario": "A caller reuses or crafts correlation IDs to confuse investigation timelines.",
+    "data_flow_ids": [
+      "DF-003",
+      "DF-004",
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "An attacker supplies misleading correlation IDs to disrupt traceability.",
+    "entry_point_ids": [
+      "EP-010"
+    ],
+    "existing_controls": [
+      "correlation IDs are propagated consistently"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future format and length validation",
+      "server-generated canonical trace ID"
+    ],
+    "preconditions": [
+      "API accepts caller-supplied correlation ID"
+    ],
+    "references": [
+      "STRIDE repudiation"
+    ],
+    "required_controls": [
+      "SR-LOG-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "security_auditor",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "repudiation",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUDIT-004",
+    "title": "Correlation ID spoofing or abuse",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-004"
+    ],
+    "verification_methods": [
+      "correlation propagation tests",
+      "future validation tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-011"
+    ],
+    "asset_ids": [
+      "ASSET-011",
+      "ASSET-003"
+    ],
+    "attack_scenario": "A forged token or compromised identity submits or retrieves requests.",
+    "data_flow_ids": [
+      "DF-004",
+      "DF-005"
+    ],
+    "description": "A future attacker uses stolen or forged credentials to act as a researcher.",
+    "entry_point_ids": [
+      "EP-004",
+      "EP-006"
+    ],
+    "existing_controls": [
+      "none; production authentication deferred"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API2:2023 Broken Authentication",
+    "planned_controls": [
+      "OIDC/JWT validation in future milestone"
+    ],
+    "preconditions": [
+      "future authentication exists",
+      "identity proofing or token validation fails"
+    ],
+    "references": [
+      "OWASP API2:2023"
+    ],
+    "required_controls": [
+      "SR-AUTH-001"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "spoofing",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUTH-001",
+    "title": "Stolen or forged researcher identity",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-009"
+    ],
+    "verification_methods": [
+      "future authentication tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-005",
+      "ACT-010",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-006",
+      "ASSET-011"
+    ],
+    "attack_scenario": "Unauthenticated callers use workflow endpoints if deployed as-is.",
+    "data_flow_ids": [
+      "DF-004",
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "The current simulated actor context is mistaken for production authentication.",
+    "entry_point_ids": [
+      "EP-004",
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "documentation explicitly defers authentication"
+    ],
+    "impact": "high",
+    "inherent_risk": "critical",
+    "likelihood": "high",
+    "owasp_api_category": "API2:2023 Broken Authentication",
+    "planned_controls": [
+      "production authentication in Milestone 3"
+    ],
+    "preconditions": [
+      "service exposed beyond local demo"
+    ],
+    "references": [
+      "OWASP API2:2023"
+    ],
+    "required_controls": [
+      "SR-AUTH-001",
+      "SR-CI-003"
+    ],
+    "residual_risk": "high",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "spoofing",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUTH-002",
+    "title": "Missing production authentication",
+    "trust_boundary_ids": [
+      "TB-001"
+    ],
+    "verification_methods": [
+      "future authentication tests",
+      "deployment readiness review"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-001",
+      "ACT-010",
+      "ACT-011"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-004"
+    ],
+    "attack_scenario": "An attacker enumerates request IDs and retrieves records they do not own.",
+    "data_flow_ids": [
+      "DF-005"
+    ],
+    "description": "A caller accesses another actor's access request or dataset decision.",
+    "entry_point_ids": [
+      "EP-005",
+      "EP-006"
+    ],
+    "existing_controls": [
+      "UUID runtime IDs reduce guessing but do not enforce authorisation"
+    ],
+    "impact": "high",
+    "inherent_risk": "critical",
+    "likelihood": "high",
+    "owasp_api_category": "API1:2023 Broken Object Level Authorization",
+    "planned_controls": [
+      "object-level authorisation in Milestone 3"
+    ],
+    "preconditions": [
+      "predictable or discoverable request IDs",
+      "no object-level check"
+    ],
+    "references": [
+      "OWASP API1:2023"
+    ],
+    "required_controls": [
+      "SR-AUTHZ-002",
+      "SR-AUTHZ-005"
+    ],
+    "residual_risk": "high",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUTHZ-001",
+    "title": "Broken object-level authorisation",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-003"
+    ],
+    "verification_methods": [
+      "future object-level tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-001",
+      "ACT-010",
+      "ACT-011"
+    ],
+    "asset_ids": [
+      "ASSET-004"
+    ],
+    "attack_scenario": "A researcher calls approver-only endpoints to approve access.",
+    "data_flow_ids": [
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "A non-approver invokes approval or rejection operations.",
+    "entry_point_ids": [
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "simulated approver context documents deferred auth"
+    ],
+    "impact": "high",
+    "inherent_risk": "critical",
+    "likelihood": "high",
+    "owasp_api_category": "API5:2023 Broken Function Level Authorization",
+    "planned_controls": [
+      "future RBAC enforcement"
+    ],
+    "preconditions": [
+      "endpoint reachable",
+      "role checks missing"
+    ],
+    "references": [
+      "OWASP API5:2023"
+    ],
+    "required_controls": [
+      "SR-AUTHZ-001",
+      "SR-AUTHZ-005"
+    ],
+    "residual_risk": "high",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUTHZ-002",
+    "title": "Broken function-level authorisation",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-002"
+    ],
+    "verification_methods": [
+      "future role-based tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-001",
+      "ACT-002",
+      "ACT-011"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-004"
+    ],
+    "attack_scenario": "A user with multiple roles approves their own pending request.",
+    "data_flow_ids": [
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "A requester also acts as approver and bypasses separation of duties.",
+    "entry_point_ids": [
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "decision reviewer is recorded"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API5:2023 Broken Function Level Authorization",
+    "planned_controls": [
+      "future requester-approver separation"
+    ],
+    "preconditions": [
+      "future identity and roles exist",
+      "separation rule missing"
+    ],
+    "references": [
+      "least privilege"
+    ],
+    "required_controls": [
+      "SR-AUTHZ-003",
+      "SR-AUTHZ-004"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "data_custodian",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUTHZ-003",
+    "title": "Researcher approving their own request",
+    "trust_boundary_ids": [
+      "TB-001",
+      "TB-002"
+    ],
+    "verification_methods": [
+      "future separation-of-duties tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-010",
+      "ACT-011",
+      "ACT-012"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-004"
+    ],
+    "attack_scenario": "A finalised request is approved or rejected again.",
+    "data_flow_ids": [
+      "DF-006",
+      "DF-007"
+    ],
+    "description": "An attacker changes request state outside the allowed workflow.",
+    "entry_point_ids": [
+      "EP-007",
+      "EP-008"
+    ],
+    "existing_controls": [
+      "invalid transition rejection",
+      "invalid transition audit event"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API5:2023 Broken Function Level Authorization",
+    "planned_controls": [
+      "future role checks"
+    ],
+    "preconditions": [
+      "request exists",
+      "caller can reach decision endpoint"
+    ],
+    "references": [
+      "workflow integrity"
+    ],
+    "required_controls": [
+      "SR-AUTHZ-004",
+      "SR-LOG-001"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "application_admin",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "tampering",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-AUTHZ-004",
+    "title": "Unauthorised request status manipulation",
+    "trust_boundary_ids": [
+      "TB-002",
+      "TB-003"
+    ],
+    "verification_methods": [
+      "invalid transition tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-014",
+      "ACT-015"
+    ],
+    "asset_ids": [
+      "ASSET-014",
+      "ASSET-015"
+    ],
+    "attack_scenario": "A compromised workflow token is abused to publish or deploy malicious artefacts.",
+    "data_flow_ids": [
+      "DF-009",
+      "DF-010"
+    ],
+    "description": "Future CI/CD identity can deploy or modify resources beyond intended scope.",
+    "entry_point_ids": [
+      "EP-014",
+      "EP-016"
+    ],
+    "existing_controls": [
+      "current CI permissions are read-only",
+      "no deployment steps"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "short-lived deployment identity",
+      "protected release workflow"
+    ],
+    "preconditions": [
+      "future deployment credentials exist",
+      "permissions are broad"
+    ],
+    "references": [
+      "least privilege CI/CD"
+    ],
+    "required_controls": [
+      "SR-CI-002",
+      "SR-CI-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-CI-001",
+    "title": "Overprivileged CI/CD identity",
+    "trust_boundary_ids": [
+      "TB-006",
+      "TB-007"
+    ],
+    "verification_methods": [
+      "workflow review",
+      "future IAM tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-017",
+      "ACT-014"
+    ],
+    "asset_ids": [
+      "ASSET-016"
+    ],
+    "attack_scenario": "A known vulnerable image layer is exploitable when deployed.",
+    "data_flow_ids": [
+      "DF-009",
+      "DF-010"
+    ],
+    "description": "A vulnerable base image or dependency is shipped in a future container.",
+    "entry_point_ids": [
+      "EP-012",
+      "EP-013"
+    ],
+    "existing_controls": [
+      "pinned slim Python base image"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "container vulnerability scanning in later milestone"
+    ],
+    "preconditions": [
+      "container image built",
+      "vulnerable package present"
+    ],
+    "references": [
+      "container hardening"
+    ],
+    "required_controls": [
+      "SR-CONTAINER-001"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-CONTAINER-001",
+    "title": "Container image vulnerability",
+    "trust_boundary_ids": [
+      "TB-006"
+    ],
+    "verification_methods": [
+      "future container scan"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-013",
+      "ACT-017"
+    ],
+    "asset_ids": [
+      "ASSET-016"
+    ],
+    "attack_scenario": "Runtime compromise gains container root privileges.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "A runtime container runs with root privileges and increases blast radius.",
+    "entry_point_ids": [
+      "EP-012"
+    ],
+    "existing_controls": [
+      "Dockerfile creates non-root appuser"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "future runtime security context checks"
+    ],
+    "preconditions": [
+      "container deployed",
+      "process compromise"
+    ],
+    "references": [
+      "container least privilege"
+    ],
+    "required_controls": [
+      "SR-CONTAINER-002"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-CONTAINER-002",
+    "title": "Container running as root",
+    "trust_boundary_ids": [
+      "TB-006",
+      "TB-008"
+    ],
+    "verification_methods": [
+      "Dockerfile review"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-007",
+      "ACT-015"
+    ],
+    "asset_ids": [
+      "ASSET-017",
+      "ASSET-013"
+    ],
+    "attack_scenario": "State is stored unencrypted or with broad read permissions.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "Future Terraform state exposes secrets or infrastructure details.",
+    "entry_point_ids": [
+      "EP-015"
+    ],
+    "existing_controls": [
+      "Terraform is not implemented"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "encrypted remote state",
+      "IaC review in later milestone"
+    ],
+    "preconditions": [
+      "future Terraform introduced"
+    ],
+    "references": [
+      "Terraform state security"
+    ],
+    "required_controls": [
+      "SR-IAC-002",
+      "SR-IAC-001"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-IAC-001",
+    "title": "Insecure Terraform state",
+    "trust_boundary_ids": [
+      "TB-007"
+    ],
+    "verification_methods": [
+      "future IaC validation"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-007",
+      "ACT-010"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-004",
+      "ASSET-005",
+      "ASSET-013"
+    ],
+    "attack_scenario": "Infrastructure configuration exposes application data storage publicly.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "A future datastore is reachable from the public network.",
+    "entry_point_ids": [
+      "EP-015"
+    ],
+    "existing_controls": [
+      "no cloud datastore currently exists"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "private networking",
+      "IaC scanning later"
+    ],
+    "preconditions": [
+      "future datastore exists",
+      "network controls misconfigured"
+    ],
+    "references": [
+      "cloud network exposure"
+    ],
+    "required_controls": [
+      "SR-IAC-001",
+      "SR-DATA-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-IAC-002",
+    "title": "Publicly exposed future datastore",
+    "trust_boundary_ids": [
+      "TB-008",
+      "TB-009"
+    ],
+    "verification_methods": [
+      "future IaC tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-016"
+    ],
+    "asset_ids": [
+      "ASSET-012",
+      "ASSET-013"
+    ],
+    "attack_scenario": "Runtime compromise uses broad IAM permissions to access unrelated secrets or data.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "The deployed runtime identity can access more cloud resources than required.",
+    "entry_point_ids": [
+      "EP-016"
+    ],
+    "existing_controls": [
+      "no cloud workload identity currently exists"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "least-privilege IAM in later milestone"
+    ],
+    "preconditions": [
+      "future cloud workload identity exists"
+    ],
+    "references": [
+      "cloud IAM least privilege"
+    ],
+    "required_controls": [
+      "SR-IAM-001"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-IAM-001",
+    "title": "Overprivileged future workload identity",
+    "trust_boundary_ids": [
+      "TB-008",
+      "TB-010"
+    ],
+    "verification_methods": [
+      "future IAM policy review"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-007",
+      "ACT-016"
+    ],
+    "asset_ids": [
+      "ASSET-003",
+      "ASSET-004",
+      "ASSET-005"
+    ],
+    "attack_scenario": "Storage compromise exposes workflow and audit data.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "Future durable storage lacks encryption at rest or in transit.",
+    "entry_point_ids": [
+      "EP-015",
+      "EP-017"
+    ],
+    "existing_controls": [
+      "no durable production storage currently exists"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "encrypted transport and storage in later milestone"
+    ],
+    "preconditions": [
+      "future storage exists",
+      "encryption is missing or disabled"
+    ],
+    "references": [
+      "encryption at rest"
+    ],
+    "required_controls": [
+      "SR-DATA-002",
+      "SR-DATA-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-IAM-002",
+    "title": "Unencrypted future storage",
+    "trust_boundary_ids": [
+      "TB-008",
+      "TB-010"
+    ],
+    "verification_methods": [
+      "future cloud configuration tests"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-008",
+      "ACT-009"
+    ],
+    "asset_ids": [
+      "ASSET-018",
+      "ASSET-009"
+    ],
+    "attack_scenario": "A later change bypasses threat-model update and leaves untracked risk.",
+    "data_flow_ids": [
+      "DF-009"
+    ],
+    "description": "Threat model and requirements become stale as architecture changes.",
+    "entry_point_ids": [
+      "EP-014"
+    ],
+    "existing_controls": [
+      "Milestone 2 validation and evidence"
+    ],
+    "impact": "medium",
+    "inherent_risk": "medium",
+    "likelihood": "medium",
+    "owasp_api_category": "API9:2023 Improper Inventory Management",
+    "planned_controls": [
+      "future review cadence and release gates"
+    ],
+    "preconditions": [
+      "architecture changes",
+      "review process not followed"
+    ],
+    "references": [
+      "OWASP API9:2023"
+    ],
+    "required_controls": [
+      "SR-TM-001",
+      "SR-REVIEW-001"
+    ],
+    "residual_risk": "low",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "repudiation",
+    "technical_owner": "product_security_engineer",
+    "threat_id": "THR-REVIEW-001",
+    "title": "Expired or missing future security review",
+    "trust_boundary_ids": [
+      "TB-006"
+    ],
+    "verification_methods": [
+      "threat-model validator",
+      "review process"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-006",
+      "ACT-011"
+    ],
+    "asset_ids": [
+      "ASSET-006",
+      "ASSET-009",
+      "ASSET-014"
+    ],
+    "attack_scenario": "A credential is committed to the repository and later abused.",
+    "data_flow_ids": [
+      "DF-009"
+    ],
+    "description": "A developer commits credentials, tokens or cloud identifiers.",
+    "entry_point_ids": [
+      "EP-011",
+      "EP-014"
+    ],
+    "existing_controls": [
+      ".gitignore excludes .env files",
+      "documentation forbids real credentials"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "secret scanning in later milestone",
+      "secret externalisation"
+    ],
+    "preconditions": [
+      "developer has repository write access"
+    ],
+    "references": [
+      "secret management"
+    ],
+    "required_controls": [
+      "SR-SECRETS-001",
+      "SR-SUPPLY-004"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "information_disclosure",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-SECRETS-001",
+    "title": "Hardcoded credentials",
+    "trust_boundary_ids": [
+      "TB-005",
+      "TB-006"
+    ],
+    "verification_methods": [
+      "manual inspection",
+      "future secret scanning"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-014",
+      "ACT-010"
+    ],
+    "asset_ids": [
+      "ASSET-007",
+      "ASSET-015"
+    ],
+    "attack_scenario": "A compromised dependency changes API behaviour or steals future secrets.",
+    "data_flow_ids": [
+      "DF-009"
+    ],
+    "description": "A runtime or dev dependency contains malicious or vulnerable code.",
+    "entry_point_ids": [
+      "EP-013"
+    ],
+    "existing_controls": [
+      "dependencies pinned in pyproject.toml"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "dependency scanning and SBOM in later milestone"
+    ],
+    "preconditions": [
+      "dependency installed in local or CI environment"
+    ],
+    "references": [
+      "software supply chain"
+    ],
+    "required_controls": [
+      "SR-SUPPLY-001",
+      "SR-SUPPLY-002"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-SUPPLY-001",
+    "title": "Dependency compromise",
+    "trust_boundary_ids": [
+      "TB-006"
+    ],
+    "verification_methods": [
+      "future SCA and SBOM checks"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-006",
+      "ACT-014"
+    ],
+    "asset_ids": [
+      "ASSET-007",
+      "ASSET-015"
+    ],
+    "attack_scenario": "A package version is changed without review and alters runtime behavior.",
+    "data_flow_ids": [
+      "DF-009"
+    ],
+    "description": "A dependency update introduces malicious behavior.",
+    "entry_point_ids": [
+      "EP-013"
+    ],
+    "existing_controls": [
+      "pinned versions",
+      "CI tests"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "dependency review and SCA in later milestone"
+    ],
+    "preconditions": [
+      "dependency update proposed"
+    ],
+    "references": [
+      "supply-chain review"
+    ],
+    "required_controls": [
+      "SR-SUPPLY-001",
+      "SR-CI-001"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "product_security_engineer",
+    "scope": "current_and_future",
+    "status": "active",
+    "stride_category": "tampering",
+    "technical_owner": "software_engineer",
+    "threat_id": "THR-SUPPLY-002",
+    "title": "Malicious package update",
+    "trust_boundary_ids": [
+      "TB-006"
+    ],
+    "verification_methods": [
+      "code review",
+      "future SCA"
+    ]
+  },
+  {
+    "actor_ids": [
+      "ACT-014",
+      "ACT-017"
+    ],
+    "asset_ids": [
+      "ASSET-015",
+      "ASSET-016"
+    ],
+    "attack_scenario": "An attacker swaps a built image before future deployment.",
+    "data_flow_ids": [
+      "DF-009",
+      "DF-010"
+    ],
+    "description": "A future artefact or image is altered after build or lacks provenance.",
+    "entry_point_ids": [
+      "EP-012",
+      "EP-014"
+    ],
+    "existing_controls": [
+      "no deployment exists",
+      "Docker build validation only"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "artefact signing and protected release workflow in later milestone"
+    ],
+    "preconditions": [
+      "future registry and deployment flow exist"
+    ],
+    "references": [
+      "artefact provenance"
+    ],
+    "required_controls": [
+      "SR-SUPPLY-003",
+      "SR-CI-003"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-07-11",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "tampering",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-SUPPLY-003",
+    "title": "Unsigned or altered build artefact",
+    "trust_boundary_ids": [
+      "TB-006",
+      "TB-007"
+    ],
+    "verification_methods": [
+      "future provenance verification"
+    ]
+  }
+]

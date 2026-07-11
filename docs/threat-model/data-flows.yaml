@@ -1,0 +1,82 @@
+[
+  {
+    "data_flow_id": "DF-001",
+    "name": "Health check",
+    "source": "API client",
+    "destination": "FastAPI app",
+    "data": "health request and fixed service metadata response",
+    "trust_boundary_ids": ["TB-001"]
+  },
+  {
+    "data_flow_id": "DF-002",
+    "name": "Dataset catalogue listing",
+    "source": "API client",
+    "destination": "dataset service and repository",
+    "data": "synthetic dataset metadata",
+    "trust_boundary_ids": ["TB-001", "TB-003"]
+  },
+  {
+    "data_flow_id": "DF-003",
+    "name": "Dataset lookup and audit",
+    "source": "API client",
+    "destination": "dataset service and audit service",
+    "data": "dataset identifier, dataset response and dataset_viewed audit event",
+    "trust_boundary_ids": ["TB-001", "TB-003", "TB-004"]
+  },
+  {
+    "data_flow_id": "DF-004",
+    "name": "Access request submission",
+    "source": "researcher or API client",
+    "destination": "access request service",
+    "data": "dataset_id, requester_id, research_purpose and requested_access_level",
+    "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"]
+  },
+  {
+    "data_flow_id": "DF-005",
+    "name": "Access request retrieval",
+    "source": "API client",
+    "destination": "access request repository",
+    "data": "request identifiers and access request records",
+    "trust_boundary_ids": ["TB-001", "TB-003"]
+  },
+  {
+    "data_flow_id": "DF-006",
+    "name": "Approval decision",
+    "source": "simulated reviewer context",
+    "destination": "access request service and audit service",
+    "data": "decision reason, reviewer, status transition and audit event",
+    "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"]
+  },
+  {
+    "data_flow_id": "DF-007",
+    "name": "Rejection decision",
+    "source": "simulated reviewer context",
+    "destination": "access request service and audit service",
+    "data": "decision reason, reviewer, status transition and audit event",
+    "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"]
+  },
+  {
+    "data_flow_id": "DF-008",
+    "name": "Audit event retrieval",
+    "source": "local demo API client",
+    "destination": "audit event repository",
+    "data": "structured audit event list",
+    "trust_boundary_ids": ["TB-001", "TB-004"]
+  },
+  {
+    "data_flow_id": "DF-009",
+    "name": "CI quality validation",
+    "source": "source repository",
+    "destination": "CI build environment",
+    "data": "source, tests, dependencies and quality outputs",
+    "trust_boundary_ids": ["TB-006"]
+  },
+  {
+    "data_flow_id": "DF-010",
+    "name": "Future cloud deployment",
+    "source": "future CI/CD workflow",
+    "destination": "future cloud runtime",
+    "data": "container images, infrastructure changes and deployment identity assertions",
+    "trust_boundary_ids": ["TB-007", "TB-008", "TB-009", "TB-010"]
+  }
+]

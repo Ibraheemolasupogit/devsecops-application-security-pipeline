@@ -1,0 +1,164 @@
+[
+  {
+    "actor_id": "ACT-001",
+    "type": "human",
+    "trust_level": "partially_trusted",
+    "authentication_status": "simulated in Milestone 1, future authenticated user",
+    "privileges": ["submit access request", "view permitted catalogue metadata"],
+    "expected_actions": ["submit research purpose", "retrieve own workflow status in future"],
+    "potential_misuse": ["attempt unapproved dataset access", "enumerate request identifiers"]
+  },
+  {
+    "actor_id": "ACT-002",
+    "type": "human",
+    "trust_level": "partially_trusted",
+    "authentication_status": "simulated local reviewer in Milestone 1",
+    "privileges": ["approve request", "reject request"],
+    "expected_actions": ["review pending access requests", "record decision reason"],
+    "potential_misuse": ["approve inappropriate access", "approve own request"]
+  },
+  {
+    "actor_id": "ACT-003",
+    "type": "human",
+    "trust_level": "trusted",
+    "authentication_status": "future authenticated role",
+    "privileges": ["manage dataset metadata policy"],
+    "expected_actions": ["maintain dataset catalogue", "support access governance"],
+    "potential_misuse": ["misclassify dataset", "alter access levels without review"]
+  },
+  {
+    "actor_id": "ACT-004",
+    "type": "human",
+    "trust_level": "trusted",
+    "authentication_status": "future authenticated role",
+    "privileges": ["review audit events", "review security evidence"],
+    "expected_actions": ["investigate suspicious workflow activity"],
+    "potential_misuse": ["overexpose audit details", "suppress findings"]
+  },
+  {
+    "actor_id": "ACT-005",
+    "type": "human",
+    "trust_level": "trusted",
+    "authentication_status": "future authenticated administrator",
+    "privileges": ["configure application", "operate service"],
+    "expected_actions": ["maintain safe configuration", "support operations"],
+    "potential_misuse": ["weaken CORS", "enable insecure defaults"]
+  },
+  {
+    "actor_id": "ACT-006",
+    "type": "human",
+    "trust_level": "trusted",
+    "authentication_status": "repository collaborator",
+    "privileges": ["modify source code", "run local tests"],
+    "expected_actions": ["implement reviewed changes", "avoid committing secrets"],
+    "potential_misuse": ["commit credential", "bypass tests"]
+  },
+  {
+    "actor_id": "ACT-007",
+    "type": "human",
+    "trust_level": "trusted",
+    "authentication_status": "future platform role",
+    "privileges": ["maintain runtime platform", "configure future cloud controls"],
+    "expected_actions": ["operate least-privilege infrastructure"],
+    "potential_misuse": ["overprivilege workload identity", "expose datastore"]
+  },
+  {
+    "actor_id": "ACT-008",
+    "type": "human",
+    "trust_level": "trusted",
+    "authentication_status": "repository maintainer",
+    "privileges": ["define security requirements", "review threat model"],
+    "expected_actions": ["translate threats into controls", "validate evidence"],
+    "potential_misuse": ["accept stale risks", "overstate implemented controls"]
+  },
+  {
+    "actor_id": "ACT-009",
+    "type": "human",
+    "trust_level": "partially_trusted",
+    "authentication_status": "future engineering role",
+    "privileges": ["raise squad security feedback"],
+    "expected_actions": ["support secure development practices"],
+    "potential_misuse": ["misapply guidance", "treat future controls as implemented"]
+  },
+  {
+    "actor_id": "ACT-010",
+    "type": "human",
+    "trust_level": "untrusted",
+    "authentication_status": "unauthenticated or hostile",
+    "privileges": ["none expected"],
+    "expected_actions": ["none"],
+    "potential_misuse": ["enumerate APIs", "submit malformed payloads", "attempt denial of service"]
+  },
+  {
+    "actor_id": "ACT-011",
+    "type": "human",
+    "trust_level": "partially_trusted",
+    "authentication_status": "valid but malicious or compromised account",
+    "privileges": ["depends on compromised role"],
+    "expected_actions": ["none malicious"],
+    "potential_misuse": ["abuse legitimate privileges", "alter workflow decisions"]
+  },
+  {
+    "actor_id": "ACT-012",
+    "type": "non-human",
+    "trust_level": "untrusted",
+    "authentication_status": "current unauthenticated HTTP caller",
+    "privileges": ["call current local API endpoints"],
+    "expected_actions": ["exercise API for local demo"],
+    "potential_misuse": ["send oversized payloads", "spoof correlation IDs"]
+  },
+  {
+    "actor_id": "ACT-013",
+    "type": "non-human",
+    "trust_level": "trusted",
+    "authentication_status": "local process identity",
+    "privileges": ["execute application code", "access in-memory state"],
+    "expected_actions": ["serve API", "record audit events"],
+    "potential_misuse": ["process compromised through dependency or config flaw"]
+  },
+  {
+    "actor_id": "ACT-014",
+    "type": "non-human",
+    "trust_level": "partially_trusted",
+    "authentication_status": "GitHub Actions workflow identity",
+    "privileges": ["install dependencies", "run tests", "build Docker image"],
+    "expected_actions": ["validate repository changes"],
+    "potential_misuse": ["publish altered artefact if overprivileged"]
+  },
+  {
+    "actor_id": "ACT-015",
+    "type": "non-human",
+    "trust_level": "future_trusted",
+    "authentication_status": "future federated deployment identity",
+    "privileges": ["future deployment actions"],
+    "expected_actions": ["deploy approved artefacts in later milestones"],
+    "potential_misuse": ["deploy malicious artefact if overprivileged"]
+  },
+  {
+    "actor_id": "ACT-016",
+    "type": "non-human",
+    "trust_level": "future_trusted",
+    "authentication_status": "future runtime workload identity",
+    "privileges": ["future datastore and logging access"],
+    "expected_actions": ["read/write authorised runtime resources"],
+    "potential_misuse": ["access secrets or data beyond service need"]
+  },
+  {
+    "actor_id": "ACT-017",
+    "type": "non-human",
+    "trust_level": "future_trusted",
+    "authentication_status": "future registry service identity",
+    "privileges": ["store and serve container images"],
+    "expected_actions": ["provide approved images to deployment"],
+    "potential_misuse": ["serve unsigned or altered image"]
+  },
+  {
+    "actor_id": "ACT-018",
+    "type": "non-human",
+    "trust_level": "future_trusted",
+    "authentication_status": "future logging service identity",
+    "privileges": ["receive and retain application logs"],
+    "expected_actions": ["store audit and operational events"],
+    "potential_misuse": ["leak sensitive audit details if misconfigured"]
+  }
+]

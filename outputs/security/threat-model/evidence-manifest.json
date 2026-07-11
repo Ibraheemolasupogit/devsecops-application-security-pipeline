@@ -1,0 +1,69 @@
+{
+  "generation_metadata": {
+    "generated_at": "2026-01-01T00:00:00Z",
+    "generator": "genomic_research_access_api.security.threat_model.evidence"
+  },
+  "input_files": {
+    "actors": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/actors.yaml",
+      "sha256": "5a7a74ef30758c090617678f1ed5f9fe619acd79d78b92724a24a75cef39b222"
+    },
+    "assets": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/assets.yaml",
+      "sha256": "07dfe24ff0a51d4cc6c36c79b6e631ac46eb51f77893a9dd620415bbc82408bf"
+    },
+    "data_flows": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/data-flows.yaml",
+      "sha256": "0eedf30eb93f47784c71c358340be75a2ed313a9919faa4bb0030f3f18801cee"
+    },
+    "entry_points": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/entry-points.yaml",
+      "sha256": "f155df7493711b8ad91daa4df917475fca0aaa5155fc605fad0f9b5bde70f143"
+    },
+    "requirements": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/security-requirements.yaml",
+      "sha256": "6f840330dbcea51fb685ee03bf711ae668cc81dc0b6b591ac0e233cb8f3b81dc"
+    },
+    "residual_risks": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/residual-risk-register.yaml",
+      "sha256": "425f036b886d27211d1b470fbb2c2d94be7850cba7dd7b7945b5e127b103c820"
+    },
+    "threats": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/threat-register.yaml",
+      "sha256": "969d309963debfe5955a4b444311913f26b703278c313b4880186c9bd2610dae"
+    },
+    "traceability": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/control-traceability.yaml",
+      "sha256": "926759ca835b98635b83abf8b7da65ad20ef59668eaf881a866ab4061f966672"
+    },
+    "trust_boundaries": {
+      "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/trust-boundaries.yaml",
+      "sha256": "078932f4e3caac40ff874747f1e9bf4369f7a9cf3ec93198b15b15b911143c5a"
+    }
+  },
+  "output_files": {
+    "threat-model-summary.json": {
+      "path": "threat-model-summary.json",
+      "sha256": "5b6a9458bf7fdcb0a4c6f894d2992ec6fbd4de1dfc0843fbf95c928a32e610c0"
+    },
+    "validated-control-traceability.json": {
+      "path": "validated-control-traceability.json",
+      "sha256": "4ccbdc611ee03cf77e07759c129b36faf045a16b3df9383b2f8f66bb190cbf34"
+    },
+    "validated-residual-risk-register.json": {
+      "path": "validated-residual-risk-register.json",
+      "sha256": "6784fe436aa6e1901014da1584788d6a7c0956d50b17df66dd00bf7bdd5e5d20"
+    },
+    "validated-security-requirements.json": {
+      "path": "validated-security-requirements.json",
+      "sha256": "1a6c817385c6a68b3598fa3790692190a5da5e5fa0cfebefc7e4030be790010c"
+    },
+    "validated-threat-register.json": {
+      "path": "validated-threat-register.json",
+      "sha256": "0f9f85adf20c1cc876ad22c8a495dffa7b16455c7a6d76bfa73e0047d4223c5c"
+    }
+  },
+  "project_version": "0.1.0",
+  "run_id": "threat-model-2026-01-01T00:00:00Z",
+  "schema_version": "1.0"
+}

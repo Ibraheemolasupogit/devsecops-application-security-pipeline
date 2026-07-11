@@ -1,0 +1,302 @@
+[
+  {
+    "traceability_id": "TRACE-001",
+    "threat_id": "THR-API-001",
+    "requirement_ids": ["SR-API-001", "SR-AUTHZ-003"],
+    "implementation_references": ["src/genomic_research_access_api/schemas/access_requests.py", "future Milestone 3 authorisation"],
+    "verification_methods": ["pytest validation tests", "future negative authorisation tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Current schema validation reduces tampering risk; production authorisation remains future work."
+  },
+  {
+    "traceability_id": "TRACE-002",
+    "threat_id": "THR-API-002",
+    "requirement_ids": ["SR-API-001", "SR-API-002"],
+    "implementation_references": ["src/genomic_research_access_api/schemas/access_requests.py"],
+    "verification_methods": ["pytest validation tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Explicit schemas and length limits are implemented."
+  },
+  {
+    "traceability_id": "TRACE-003",
+    "threat_id": "THR-API-003",
+    "requirement_ids": ["SR-AUTHZ-002", "SR-DATA-001"],
+    "implementation_references": ["src/genomic_research_access_api/data/seed.py", "future Milestone 3 object-level authorisation"],
+    "verification_methods": ["seed data tests", "future object-level tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-threat-register.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Current data is synthetic; future metadata access needs authorisation."
+  },
+  {
+    "traceability_id": "TRACE-004",
+    "threat_id": "THR-API-004",
+    "requirement_ids": ["SR-API-003"],
+    "implementation_references": ["src/genomic_research_access_api/exceptions/handlers.py"],
+    "verification_methods": ["structured error tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Safe error responses are implemented."
+  },
+  {
+    "traceability_id": "TRACE-005",
+    "threat_id": "THR-API-005",
+    "requirement_ids": ["SR-API-005"],
+    "implementation_references": ["future platform or API rate limiting"],
+    "verification_methods": ["future rate-limit tests"],
+    "evidence_references": ["future operational evidence"],
+    "residual_risk_id": "RR-003",
+    "notes": "Resource controls are planned, not implemented."
+  },
+  {
+    "traceability_id": "TRACE-006",
+    "threat_id": "THR-API-006",
+    "requirement_ids": ["SR-API-005"],
+    "implementation_references": ["future quota or persistence limits"],
+    "verification_methods": ["future quota tests"],
+    "evidence_references": ["future operational evidence"],
+    "residual_risk_id": "RR-003",
+    "notes": "Current in-memory state is for local demonstration only."
+  },
+  {
+    "traceability_id": "TRACE-007",
+    "threat_id": "THR-API-007",
+    "requirement_ids": ["SR-API-004"],
+    "implementation_references": ["src/genomic_research_access_api/main.py"],
+    "verification_methods": ["configuration review"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "CORS is explicitly allow-listed."
+  },
+  {
+    "traceability_id": "TRACE-008",
+    "threat_id": "THR-API-008",
+    "requirement_ids": ["SR-API-004", "SR-CI-003"],
+    "implementation_references": ["README.md", "future release workflow"],
+    "verification_methods": ["documentation review", "future deployment gates"],
+    "evidence_references": ["outputs/security/threat-model/threat-model-summary.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Local defaults are documented as non-production."
+  },
+  {
+    "traceability_id": "TRACE-009",
+    "threat_id": "THR-AUDIT-001",
+    "requirement_ids": ["SR-LOG-001", "SR-LOG-002"],
+    "implementation_references": ["src/genomic_research_access_api/audit/service.py", "future immutable logging"],
+    "verification_methods": ["audit tests", "future integrity validation"],
+    "evidence_references": ["outputs/security/threat-model/validated-control-traceability.json"],
+    "residual_risk_id": "RR-004",
+    "notes": "Audit generation exists; immutable production logging is future work."
+  },
+  {
+    "traceability_id": "TRACE-010",
+    "threat_id": "THR-AUDIT-002",
+    "requirement_ids": ["SR-AUTHZ-002", "SR-LOG-004"],
+    "implementation_references": ["docs/limitations.md", "future audit authorisation"],
+    "verification_methods": ["documentation review", "future RBAC tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-threat-register.json"],
+    "residual_risk_id": "RR-004",
+    "notes": "Audit retrieval is local demonstration only."
+  },
+  {
+    "traceability_id": "TRACE-011",
+    "threat_id": "THR-AUDIT-003",
+    "requirement_ids": ["SR-API-001", "SR-LOG-003"],
+    "implementation_references": ["src/genomic_research_access_api/schemas/access_requests.py", "src/genomic_research_access_api/main.py"],
+    "verification_methods": ["schema tests", "correlation tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Structured logging and bounded identifiers reduce log injection risk."
+  },
+  {
+    "traceability_id": "TRACE-012",
+    "threat_id": "THR-AUDIT-004",
+    "requirement_ids": ["SR-LOG-003"],
+    "implementation_references": ["src/genomic_research_access_api/main.py"],
+    "verification_methods": ["correlation propagation tests", "future format validation"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-004",
+    "notes": "Correlation IDs propagate today; stricter validation remains future work."
+  },
+  {
+    "traceability_id": "TRACE-013",
+    "threat_id": "THR-AUTH-001",
+    "requirement_ids": ["SR-AUTH-001"],
+    "implementation_references": ["future Milestone 3 authentication"],
+    "verification_methods": ["future authentication tests"],
+    "evidence_references": ["future authentication evidence"],
+    "residual_risk_id": "RR-001",
+    "notes": "Production authentication is not implemented."
+  },
+  {
+    "traceability_id": "TRACE-014",
+    "threat_id": "THR-AUTH-002",
+    "requirement_ids": ["SR-AUTH-001", "SR-CI-003"],
+    "implementation_references": ["README.md", "future deployment readiness gates"],
+    "verification_methods": ["future auth tests", "future release review"],
+    "evidence_references": ["future authentication evidence"],
+    "residual_risk_id": "RR-001",
+    "notes": "The service must not be deployed as production without authentication."
+  },
+  {
+    "traceability_id": "TRACE-015",
+    "threat_id": "THR-AUTHZ-001",
+    "requirement_ids": ["SR-AUTHZ-002", "SR-AUTHZ-005"],
+    "implementation_references": ["future Milestone 3 authorisation"],
+    "verification_methods": ["future object-level tests"],
+    "evidence_references": ["future authorisation evidence"],
+    "residual_risk_id": "RR-002",
+    "notes": "BOLA is deferred to Milestone 3."
+  },
+  {
+    "traceability_id": "TRACE-016",
+    "threat_id": "THR-AUTHZ-002",
+    "requirement_ids": ["SR-AUTHZ-001", "SR-AUTHZ-005"],
+    "implementation_references": ["future Milestone 3 RBAC"],
+    "verification_methods": ["future role tests"],
+    "evidence_references": ["future authorisation evidence"],
+    "residual_risk_id": "RR-002",
+    "notes": "Function-level authorisation is deferred."
+  },
+  {
+    "traceability_id": "TRACE-017",
+    "threat_id": "THR-AUTHZ-003",
+    "requirement_ids": ["SR-AUTHZ-003", "SR-AUTHZ-004"],
+    "implementation_references": ["future separation-of-duties checks"],
+    "verification_methods": ["future workflow tests"],
+    "evidence_references": ["future workflow evidence"],
+    "residual_risk_id": "RR-002",
+    "notes": "Requester and approver separation is planned."
+  },
+  {
+    "traceability_id": "TRACE-018",
+    "threat_id": "THR-AUTHZ-004",
+    "requirement_ids": ["SR-AUTHZ-004", "SR-LOG-001"],
+    "implementation_references": ["src/genomic_research_access_api/services/access_requests.py", "src/genomic_research_access_api/audit/service.py"],
+    "verification_methods": ["invalid transition tests"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "State transitions are enforced for current workflow."
+  },
+  {
+    "traceability_id": "TRACE-019",
+    "threat_id": "THR-CI-001",
+    "requirement_ids": ["SR-CI-002", "SR-CI-003", "SR-IAM-002"],
+    "implementation_references": [".github/workflows/ci.yml", "future deployment IAM"],
+    "verification_methods": ["workflow review", "future IAM validation"],
+    "evidence_references": ["future CI/CD evidence"],
+    "residual_risk_id": "RR-009",
+    "notes": "Current CI has no deployment permissions; future identity must remain scoped."
+  },
+  {
+    "traceability_id": "TRACE-020",
+    "threat_id": "THR-CONTAINER-001",
+    "requirement_ids": ["SR-CONTAINER-001"],
+    "implementation_references": ["future container scanning"],
+    "verification_methods": ["future image scan"],
+    "evidence_references": ["future scanner evidence"],
+    "residual_risk_id": "RR-007",
+    "notes": "Container scanning is explicitly future work."
+  },
+  {
+    "traceability_id": "TRACE-021",
+    "threat_id": "THR-CONTAINER-002",
+    "requirement_ids": ["SR-CONTAINER-002"],
+    "implementation_references": ["Dockerfile"],
+    "verification_methods": ["Dockerfile review"],
+    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
+    "residual_risk_id": "RR-007",
+    "notes": "Non-root runtime user is implemented."
+  },
+  {
+    "traceability_id": "TRACE-022",
+    "threat_id": "THR-IAC-001",
+    "requirement_ids": ["SR-IAC-001", "SR-IAC-002"],
+    "implementation_references": ["future IaC validation"],
+    "verification_methods": ["future Terraform state review"],
+    "evidence_references": ["future IaC evidence"],
+    "residual_risk_id": "RR-006",
+    "notes": "Terraform is not implemented in Milestone 2."
+  },
+  {
+    "traceability_id": "TRACE-023",
+    "threat_id": "THR-IAC-002",
+    "requirement_ids": ["SR-DATA-003", "SR-IAC-001"],
+    "implementation_references": ["future private datastore configuration"],
+    "verification_methods": ["future IaC network tests"],
+    "evidence_references": ["future cloud evidence"],
+    "residual_risk_id": "RR-006",
+    "notes": "No cloud datastore exists today."
+  },
+  {
+    "traceability_id": "TRACE-024",
+    "threat_id": "THR-IAM-001",
+    "requirement_ids": ["SR-IAM-001"],
+    "implementation_references": ["future workload IAM"],
+    "verification_methods": ["future IAM least-privilege review"],
+    "evidence_references": ["future IAM evidence"],
+    "residual_risk_id": "RR-006",
+    "notes": "Workload identity is future work."
+  },
+  {
+    "traceability_id": "TRACE-025",
+    "threat_id": "THR-IAM-002",
+    "requirement_ids": ["SR-DATA-002", "SR-DATA-003"],
+    "implementation_references": ["future encrypted transport and storage"],
+    "verification_methods": ["future cloud configuration tests"],
+    "evidence_references": ["future cloud evidence"],
+    "residual_risk_id": "RR-006",
+    "notes": "No production storage currently exists."
+  },
+  {
+    "traceability_id": "TRACE-026",
+    "threat_id": "THR-REVIEW-001",
+    "requirement_ids": ["SR-REVIEW-001", "SR-TM-001"],
+    "implementation_references": ["docs/threat-model/review-process.md", "src/genomic_research_access_api/security/threat_model/validation.py"],
+    "verification_methods": ["make threat-model-validate"],
+    "evidence_references": ["outputs/security/threat-model/evidence-manifest.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Milestone 2 adds deterministic traceability validation."
+  },
+  {
+    "traceability_id": "TRACE-027",
+    "threat_id": "THR-SECRETS-001",
+    "requirement_ids": ["SR-SECRETS-001", "SR-SUPPLY-004"],
+    "implementation_references": [".gitignore", "future secret scanning"],
+    "verification_methods": ["manual inspection", "future scanner"],
+    "evidence_references": ["future scanner evidence"],
+    "residual_risk_id": "RR-005",
+    "notes": "Secret scanning is future work; no real secrets are required now."
+  },
+  {
+    "traceability_id": "TRACE-028",
+    "threat_id": "THR-SUPPLY-001",
+    "requirement_ids": ["SR-SUPPLY-001", "SR-SUPPLY-002"],
+    "implementation_references": ["pyproject.toml", "future SCA and SBOM"],
+    "verification_methods": ["future dependency scanning"],
+    "evidence_references": ["future scanner evidence"],
+    "residual_risk_id": "RR-005",
+    "notes": "Dependencies are pinned; automated scanning is deferred."
+  },
+  {
+    "traceability_id": "TRACE-029",
+    "threat_id": "THR-SUPPLY-002",
+    "requirement_ids": ["SR-CI-001", "SR-SUPPLY-001"],
+    "implementation_references": [".github/workflows/ci.yml", "future dependency review"],
+    "verification_methods": ["CI tests", "future SCA"],
+    "evidence_references": ["outputs/security/threat-model/evidence-manifest.json"],
+    "residual_risk_id": "RR-005",
+    "notes": "Quality checks reduce accidental update risk but not malicious dependency risk."
+  },
+  {
+    "traceability_id": "TRACE-030",
+    "threat_id": "THR-SUPPLY-003",
+    "requirement_ids": ["SR-CI-003", "SR-SUPPLY-003"],
+    "implementation_references": ["future release workflow"],
+    "verification_methods": ["future provenance checks"],
+    "evidence_references": ["future release evidence"],
+    "residual_risk_id": "RR-005",
+    "notes": "Release provenance is planned for later milestones."
+  }
+]

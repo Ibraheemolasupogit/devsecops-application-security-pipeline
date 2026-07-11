@@ -1,0 +1,155 @@
+[
+  {
+    "entry_point_id": "EP-001",
+    "name": "GET /health",
+    "description": "Health endpoint returning service status and version.",
+    "interface_type": "HTTP GET",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001"],
+    "validation_expectation": "No request body; safe fixed response."
+  },
+  {
+    "entry_point_id": "EP-002",
+    "name": "GET /api/v1/datasets",
+    "description": "Dataset catalogue listing endpoint.",
+    "interface_type": "HTTP GET",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-003"],
+    "validation_expectation": "Stable ordering and no individual-level records."
+  },
+  {
+    "entry_point_id": "EP-003",
+    "name": "GET /api/v1/datasets/{dataset_id}",
+    "description": "Dataset lookup using path parameter.",
+    "interface_type": "HTTP GET with path parameter",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-003"],
+    "validation_expectation": "Unknown dataset returns controlled error."
+  },
+  {
+    "entry_point_id": "EP-004",
+    "name": "POST /api/v1/access-requests",
+    "description": "Access request submission payload.",
+    "interface_type": "HTTP POST JSON",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-002", "TB-003"],
+    "validation_expectation": "Pydantic validation, enum controls and length limits."
+  },
+  {
+    "entry_point_id": "EP-005",
+    "name": "GET /api/v1/access-requests",
+    "description": "Access request list endpoint.",
+    "interface_type": "HTTP GET",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-003"],
+    "validation_expectation": "Future production use requires authorisation filtering."
+  },
+  {
+    "entry_point_id": "EP-006",
+    "name": "GET /api/v1/access-requests/{request_id}",
+    "description": "Access request lookup using path parameter.",
+    "interface_type": "HTTP GET with path parameter",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-003"],
+    "validation_expectation": "Unknown request returns controlled error."
+  },
+  {
+    "entry_point_id": "EP-007",
+    "name": "POST /api/v1/access-requests/{request_id}/approve",
+    "description": "Approval operation with decision reason.",
+    "interface_type": "HTTP POST JSON",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"],
+    "validation_expectation": "State transition validation and simulated reviewer context."
+  },
+  {
+    "entry_point_id": "EP-008",
+    "name": "POST /api/v1/access-requests/{request_id}/reject",
+    "description": "Rejection operation with decision reason.",
+    "interface_type": "HTTP POST JSON",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-002", "TB-003", "TB-004"],
+    "validation_expectation": "State transition validation and simulated reviewer context."
+  },
+  {
+    "entry_point_id": "EP-009",
+    "name": "GET /api/v1/audit-events",
+    "description": "Local demonstration audit event retrieval endpoint.",
+    "interface_type": "HTTP GET",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-004"],
+    "validation_expectation": "Explicitly documented as non-production local capability."
+  },
+  {
+    "entry_point_id": "EP-010",
+    "name": "X-Correlation-ID header",
+    "description": "Optional request header propagated to responses and audit events.",
+    "interface_type": "HTTP header",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-001", "TB-004"],
+    "validation_expectation": "Future validation should constrain format and length."
+  },
+  {
+    "entry_point_id": "EP-011",
+    "name": "Application configuration and environment variables",
+    "description": "Settings including CORS origins and simulated reviewer details.",
+    "interface_type": "environment configuration",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-005"],
+    "validation_expectation": "No secrets; secure defaults."
+  },
+  {
+    "entry_point_id": "EP-012",
+    "name": "Container image",
+    "description": "Docker build context and runtime image definition.",
+    "interface_type": "container artefact",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-006"],
+    "validation_expectation": "Pinned base image, non-root runtime user and no embedded secrets."
+  },
+  {
+    "entry_point_id": "EP-013",
+    "name": "Dependency installation",
+    "description": "Pinned Python dependencies installed by Makefile and CI.",
+    "interface_type": "package installation",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-006"],
+    "validation_expectation": "Pinned versions; later milestones add SCA."
+  },
+  {
+    "entry_point_id": "EP-014",
+    "name": "CI/CD workflow definitions",
+    "description": "GitHub Actions workflow for local quality validation.",
+    "interface_type": "workflow definition",
+    "current_or_future": "current",
+    "trust_boundary_ids": ["TB-006"],
+    "validation_expectation": "Pinned actions and minimal permissions."
+  },
+  {
+    "entry_point_id": "EP-015",
+    "name": "Future Terraform inputs",
+    "description": "Future infrastructure variables and configuration inputs.",
+    "interface_type": "infrastructure input",
+    "current_or_future": "future",
+    "trust_boundary_ids": ["TB-007", "TB-009"],
+    "validation_expectation": "Later milestones require IaC validation and secret controls."
+  },
+  {
+    "entry_point_id": "EP-016",
+    "name": "Future cloud IAM trust policies",
+    "description": "Future trust relationships for CI/CD and workload identities.",
+    "interface_type": "cloud IAM configuration",
+    "current_or_future": "future",
+    "trust_boundary_ids": ["TB-007", "TB-010"],
+    "validation_expectation": "Least privilege and short-lived credentials in later milestones."
+  },
+  {
+    "entry_point_id": "EP-017",
+    "name": "Future logging integrations",
+    "description": "Future outbound audit and application log integration.",
+    "interface_type": "logging sink integration",
+    "current_or_future": "future",
+    "trust_boundary_ids": ["TB-008"],
+    "validation_expectation": "Protect confidentiality and integrity of audit events."
+  }
+]

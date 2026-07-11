@@ -1,6 +1,6 @@
 # Genomic Research Access API
 
-This repository demonstrates Milestone 1 of a cloud-native Product Security and DevSecOps portfolio: a secure foundation and small FastAPI reference product for controlled access to synthetic research dataset metadata.
+This repository demonstrates a cloud-native Product Security and DevSecOps portfolio around a small FastAPI reference product for controlled access to synthetic research dataset metadata.
 
 This repository uses synthetic, non-identifiable demonstration data only.
 
@@ -8,11 +8,17 @@ It is not a production genomics platform.
 
 It is not affiliated with or endorsed by Genomics England.
 
-Authentication, production authorisation, AWS infrastructure and automated AppSec scanning are intentionally deferred to later milestones.
+Authentication, production authorisation, AWS infrastructure, Terraform and automated AppSec scanning are intentionally deferred to later milestones.
 
 ## Problem Statement
 
 Product security work is most effective when engineers have a concrete product surface to secure. This repository provides that surface: a small API with dataset catalogue, access request workflow, structured audit events, validation, stable error responses, and local quality gates.
+
+## Milestones Delivered
+
+Milestone 1 delivered the application foundation.
+
+Milestone 2 delivered security architecture and threat modelling for the current application and anticipated future cloud-native context.
 
 ## Milestone 1 Scope
 
@@ -29,6 +35,19 @@ Implemented:
 - Dockerfile, Makefile, and GitHub Actions CI.
 
 Not implemented in Milestone 1: production authentication, JWT/OIDC, final RBAC, object-level authorisation, AWS, Terraform, threat modelling, AppSec scanners, risk gates, vulnerability lifecycle, cloud deployment, or Security Champions programme.
+
+## Milestone 2 Scope
+
+Implemented:
+
+- STRIDE-based threat model under `docs/threat-model/`.
+- Machine-readable assets, actors, entry points, data flows, trust boundaries, threat register, requirements register, traceability register and residual-risk register.
+- Typed validation utility: `python -m genomic_research_access_api.security.threat_model.validate`.
+- Deterministic evidence outputs under `outputs/security/threat-model/`.
+- Generated reports under `reports/security/`.
+- Tests covering schema validation, traceability, deterministic evidence, checksums and report generation.
+
+Not implemented in Milestone 2: production authentication, RBAC enforcement, object-level authorisation implementation, AWS resources, Terraform, AppSec scanners, release gates, vulnerability lifecycle, cloud deployment or Security Champions programme.
 
 ## API Capabilities
 
@@ -114,7 +133,36 @@ The image uses `python:3.11.13-slim-bookworm`, a non-root runtime user, an expli
 make quality
 ```
 
-Tests cover health, dataset lookup, unknown resources, access request workflow, audit events, structured errors, correlation IDs, OpenAPI generation, and deterministic seed data.
+Tests cover health, dataset lookup, unknown resources, access request workflow, audit events, structured errors, correlation IDs, OpenAPI generation, deterministic seed data and threat-model traceability.
+
+## Threat Model Commands
+
+```bash
+make threat-model-validate
+make threat-model-evidence
+make verify-threat-model-evidence
+make threat-model-report
+```
+
+`make quality` validates the threat model and verifies committed evidence. It does not regenerate tracked evidence unexpectedly.
+
+## Threat Model Evidence
+
+Generated outputs:
+
+- `outputs/security/threat-model/validated-threat-register.json`
+- `outputs/security/threat-model/validated-security-requirements.json`
+- `outputs/security/threat-model/validated-control-traceability.json`
+- `outputs/security/threat-model/validated-residual-risk-register.json`
+- `outputs/security/threat-model/threat-model-summary.json`
+- `outputs/security/threat-model/evidence-manifest.json`
+
+Generated reports:
+
+- `reports/security/threat-model-report.md`
+- `reports/security/security-requirements-report.md`
+- `reports/security/control-traceability-report.md`
+- `reports/security/residual-risk-report.md`
 
 ## Repository Structure
 
@@ -140,12 +188,16 @@ The seed catalogue contains deterministic, synthetic, non-identifiable dataset m
 
 ## Security Posture
 
-Milestone 1 provides secure local defaults and clean extension points. It does not claim production-grade identity, authorisation, monitoring, or scanner coverage.
+Current implemented controls include schema validation, field length limits, stable error responses, explicit CORS allow-listing, structured audit events, correlation ID propagation, invalid workflow transition rejection, non-root container runtime configuration, pinned dependencies, CI quality checks and threat-model traceability validation.
+
+Planned future controls include production authentication, RBAC, object-level authorisation, separation of requester and approver duties, rate limiting, immutable audit logging, secret scanning, dependency scanning, SBOM generation, container scanning, IaC scanning, least-privilege cloud IAM, encrypted future storage and protected release workflows.
+
+This repository does not claim production-grade identity, authorisation, monitoring, cloud or scanner coverage.
 
 ## Limitations
 
-State is in memory and resets when the app restarts. The approval actor is a documented local simulation. Audit retrieval is a local demonstration endpoint.
+State is in memory and resets when the app restarts. The approval actor is a documented local simulation. Audit retrieval is a local demonstration endpoint. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances.
 
 ## Future Milestones
 
-Later milestones may add authentication, object-level authorisation, threat modelling, CI/CD security controls, AWS/Terraform security, vulnerability management, risk-based release gates, and Security Champions enablement.
+Later milestones may add authentication, object-level authorisation, CI/CD security controls, AWS/Terraform security, vulnerability management, risk-based release gates, and Security Champions enablement.

@@ -1,0 +1,54 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "current_or_future": {
+        "enum": [
+          "current",
+          "future"
+        ],
+        "title": "Current Or Future",
+        "type": "string"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "entry_point_id": {
+        "title": "Entry Point Id",
+        "type": "string"
+      },
+      "interface_type": {
+        "title": "Interface Type",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "trust_boundary_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Trust Boundary Ids",
+        "type": "array"
+      },
+      "validation_expectation": {
+        "title": "Validation Expectation",
+        "type": "string"
+      }
+    },
+    "required": [
+      "entry_point_id",
+      "name",
+      "description",
+      "interface_type",
+      "current_or_future",
+      "trust_boundary_ids",
+      "validation_expectation"
+    ],
+    "title": "EntryPoint",
+    "type": "object"
+  },
+  "type": "array"
+}

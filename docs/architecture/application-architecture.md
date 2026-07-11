@@ -35,3 +35,18 @@ flowchart TB
 ## Extension Points
 
 The repository and service boundaries are intentionally simple. Later milestones can replace in-memory persistence, add real identity, enforce object-level authorisation, and attach scanner or cloud controls without redesigning the Milestone 1 API foundation.
+
+## Milestone 2 Security Architecture
+
+Milestone 2 adds a validated threat model without changing runtime API behaviour.
+
+```mermaid
+flowchart LR
+    Source["Machine-readable threat-model registers"] --> Validator["Threat-model validator"]
+    Validator --> Evidence["Deterministic evidence JSON"]
+    Validator --> Reports["Generated Markdown reports"]
+    Evidence --> CI["CI evidence verification"]
+    App["Milestone 1 FastAPI app"] --> Source
+```
+
+The threat model analyses both the current local implementation and anticipated cloud-native context. Future identity, AWS, Terraform and scanner controls are modelled as planned controls only.

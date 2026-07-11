@@ -1,0 +1,60 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "authentication_expectation": {
+        "title": "Authentication Expectation",
+        "type": "string"
+      },
+      "authorisation_expectation": {
+        "title": "Authorisation Expectation",
+        "type": "string"
+      },
+      "boundary_id": {
+        "title": "Boundary Id",
+        "type": "string"
+      },
+      "data_crossing": {
+        "title": "Data Crossing",
+        "type": "string"
+      },
+      "destination_zone": {
+        "title": "Destination Zone",
+        "type": "string"
+      },
+      "encryption_expectation": {
+        "title": "Encryption Expectation",
+        "type": "string"
+      },
+      "logging_expectation": {
+        "title": "Logging Expectation",
+        "type": "string"
+      },
+      "primary_risks": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Primary Risks",
+        "type": "array"
+      },
+      "source_zone": {
+        "title": "Source Zone",
+        "type": "string"
+      }
+    },
+    "required": [
+      "boundary_id",
+      "source_zone",
+      "destination_zone",
+      "data_crossing",
+      "authentication_expectation",
+      "authorisation_expectation",
+      "encryption_expectation",
+      "logging_expectation",
+      "primary_risks"
+    ],
+    "title": "TrustBoundary",
+    "type": "object"
+  },
+  "type": "array"
+}

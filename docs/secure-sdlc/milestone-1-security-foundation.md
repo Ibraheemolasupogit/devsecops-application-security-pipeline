@@ -22,3 +22,5 @@ Deferred controls:
 - Threat modelling and STRIDE registers.
 - SAST, SCA, secret scanning, SBOM, IaC scanning, container scanning, DAST, and API fuzzing.
 - AWS, Terraform, deployment, release gates, and vulnerability lifecycle workflows.
+
+Milestone 2 now documents these deferred controls in the threat model and requirements register. Documentation of a future control does not mean the control is implemented.

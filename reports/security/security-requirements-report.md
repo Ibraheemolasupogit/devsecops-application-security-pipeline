@@ -1,0 +1,38 @@
+# Security Requirements Report
+
+| Requirement | Category | Status | Planned Milestone |
+| --- | --- | --- | --- |
+| SR-API-001 | api_security | implemented | Milestone 1 |
+| SR-API-002 | api_security | implemented | Milestone 1 |
+| SR-API-003 | api_security | implemented | Milestone 1 |
+| SR-API-004 | configuration | implemented | Milestone 1 |
+| SR-API-005 | api_security | planned | Milestone 4 |
+| SR-AUTH-001 | authentication | planned | Milestone 3 |
+| SR-AUTHZ-001 | authorisation | planned | Milestone 3 |
+| SR-AUTHZ-002 | authorisation | planned | Milestone 3 |
+| SR-AUTHZ-003 | authorisation | planned | Milestone 3 |
+| SR-AUTHZ-004 | workflow_integrity | planned | Milestone 3 |
+| SR-AUTHZ-005 | authorisation | planned | Milestone 3 |
+| SR-CI-001 | ci_cd | implemented | Milestone 2 |
+| SR-CI-002 | ci_cd | planned | Milestone 4 |
+| SR-CI-003 | ci_cd | planned | Milestone 7 |
+| SR-CONTAINER-001 | container_security | planned | Milestone 5 |
+| SR-CONTAINER-002 | container_security | implemented | Milestone 1 |
+| SR-DATA-001 | data_protection | implemented | Milestone 1 |
+| SR-DATA-002 | data_protection | planned | Milestone 6 |
+| SR-DATA-003 | data_protection | planned | Milestone 6 |
+| SR-IAC-001 | infrastructure_security | planned | Milestone 6 |
+| SR-IAC-002 | infrastructure_security | planned | Milestone 6 |
+| SR-IAM-001 | iam | planned | Milestone 6 |
+| SR-IAM-002 | iam | planned | Milestone 6 |
+| SR-LOG-001 | audit_logging | implemented | Milestone 1 |
+| SR-LOG-002 | audit_logging | planned | Milestone 6 |
+| SR-LOG-003 | audit_logging | implemented | Milestone 1 |
+| SR-LOG-004 | audit_logging | planned | Milestone 3 |
+| SR-REVIEW-001 | governance | implemented | Milestone 2 |
+| SR-SECRETS-001 | secrets | planned | Milestone 5 |
+| SR-SUPPLY-001 | supply_chain | planned | Milestone 5 |
+| SR-SUPPLY-002 | supply_chain | planned | Milestone 5 |
+| SR-SUPPLY-003 | supply_chain | planned | Milestone 7 |
+| SR-SUPPLY-004 | supply_chain | planned | Milestone 5 |
+| SR-TM-001 | secure_design | implemented | Milestone 2 |

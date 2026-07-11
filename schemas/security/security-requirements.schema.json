@@ -1,0 +1,123 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "category": {
+        "title": "Category",
+        "type": "string"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "evidence_reference": {
+        "title": "Evidence Reference",
+        "type": "string"
+      },
+      "implementation_reference": {
+        "title": "Implementation Reference",
+        "type": "string"
+      },
+      "implementation_status": {
+        "enum": [
+          "implemented",
+          "planned",
+          "assumed",
+          "not_started"
+        ],
+        "title": "Implementation Status",
+        "type": "string"
+      },
+      "owner": {
+        "title": "Owner",
+        "type": "string"
+      },
+      "planned_milestone": {
+        "title": "Planned Milestone",
+        "type": "string"
+      },
+      "policy_source": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Policy Source"
+      },
+      "priority": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ],
+        "title": "Priority",
+        "type": "string"
+      },
+      "requirement_id": {
+        "title": "Requirement Id",
+        "type": "string"
+      },
+      "residual_risk": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ],
+        "title": "Residual Risk",
+        "type": "string"
+      },
+      "source_threat_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Source Threat Ids",
+        "type": "array"
+      },
+      "status": {
+        "enum": [
+          "active",
+          "deferred"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "title": {
+        "title": "Title",
+        "type": "string"
+      },
+      "verification_method": {
+        "title": "Verification Method",
+        "type": "string"
+      },
+      "verification_reference": {
+        "title": "Verification Reference",
+        "type": "string"
+      }
+    },
+    "required": [
+      "requirement_id",
+      "title",
+      "description",
+      "category",
+      "priority",
+      "status",
+      "implementation_status",
+      "implementation_reference",
+      "verification_method",
+      "verification_reference",
+      "evidence_reference",
+      "owner",
+      "residual_risk",
+      "planned_milestone"
+    ],
+    "title": "SecurityRequirement",
+    "type": "object"
+  },
+  "type": "array"
+}

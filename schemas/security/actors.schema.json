@@ -1,0 +1,66 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "actor_id": {
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "authentication_status": {
+        "title": "Authentication Status",
+        "type": "string"
+      },
+      "expected_actions": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Expected Actions",
+        "type": "array"
+      },
+      "potential_misuse": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Potential Misuse",
+        "type": "array"
+      },
+      "privileges": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Privileges",
+        "type": "array"
+      },
+      "trust_level": {
+        "enum": [
+          "trusted",
+          "partially_trusted",
+          "untrusted",
+          "future_trusted"
+        ],
+        "title": "Trust Level",
+        "type": "string"
+      },
+      "type": {
+        "enum": [
+          "human",
+          "non-human"
+        ],
+        "title": "Type",
+        "type": "string"
+      }
+    },
+    "required": [
+      "actor_id",
+      "type",
+      "trust_level",
+      "authentication_status",
+      "privileges",
+      "expected_actions",
+      "potential_misuse"
+    ],
+    "title": "Actor",
+    "type": "object"
+  },
+  "type": "array"
+}

@@ -1,0 +1,81 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "applicable_controls": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Applicable Controls",
+        "type": "array"
+      },
+      "asset_id": {
+        "title": "Asset Id",
+        "type": "string"
+      },
+      "availability_requirement": {
+        "title": "Availability Requirement",
+        "type": "string"
+      },
+      "classification": {
+        "enum": [
+          "public",
+          "internal",
+          "sensitive",
+          "security-sensitive"
+        ],
+        "title": "Classification",
+        "type": "string"
+      },
+      "confidentiality_requirement": {
+        "title": "Confidentiality Requirement",
+        "type": "string"
+      },
+      "current_storage": {
+        "title": "Current Storage",
+        "type": "string"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "future_storage": {
+        "title": "Future Storage",
+        "type": "string"
+      },
+      "integrity_requirement": {
+        "title": "Integrity Requirement",
+        "type": "string"
+      },
+      "name": {
+        "title": "Name",
+        "type": "string"
+      },
+      "owner": {
+        "title": "Owner",
+        "type": "string"
+      },
+      "retention_expectation": {
+        "title": "Retention Expectation",
+        "type": "string"
+      }
+    },
+    "required": [
+      "asset_id",
+      "name",
+      "description",
+      "classification",
+      "confidentiality_requirement",
+      "integrity_requirement",
+      "availability_requirement",
+      "owner",
+      "current_storage",
+      "future_storage",
+      "retention_expectation",
+      "applicable_controls"
+    ],
+    "title": "Asset",
+    "type": "object"
+  },
+  "type": "array"
+}

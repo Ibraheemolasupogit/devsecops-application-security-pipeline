@@ -1,0 +1,700 @@
+[
+  {
+    "category": "api_security",
+    "description": "All JSON request bodies must be validated with explicit schemas, enum controls and rejected malformed input.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/schemas/access_requests.py",
+    "implementation_status": "implemented",
+    "owner": "software_engineer",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-API-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-API-001",
+      "THR-API-002",
+      "THR-AUDIT-003"
+    ],
+    "status": "active",
+    "title": "Request schema validation",
+    "verification_method": "pytest API validation tests",
+    "verification_reference": "tests/api/test_access_requests.py"
+  },
+  {
+    "category": "api_security",
+    "description": "Externally supplied identifiers and text fields must have controlled maximum lengths.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/schemas/access_requests.py",
+    "implementation_status": "implemented",
+    "owner": "software_engineer",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-API-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-API-002"
+    ],
+    "status": "active",
+    "title": "Input length limits",
+    "verification_method": "pytest validation tests",
+    "verification_reference": "tests/api/test_access_requests.py"
+  },
+  {
+    "category": "api_security",
+    "description": "API errors must use stable JSON structures and avoid returning stack traces.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/exceptions/handlers.py",
+    "implementation_status": "implemented",
+    "owner": "software_engineer",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-API-003",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-API-004"
+    ],
+    "status": "active",
+    "title": "Safe error handling",
+    "verification_method": "structured error response tests",
+    "verification_reference": "tests/api/test_datasets.py"
+  },
+  {
+    "category": "configuration",
+    "description": "CORS must be explicitly allow-listed and local-only defaults must not be treated as production-ready.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/main.py",
+    "implementation_status": "implemented",
+    "owner": "application_admin",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-API-004",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-API-007",
+      "THR-API-008"
+    ],
+    "status": "active",
+    "title": "Secure CORS and environment defaults",
+    "verification_method": "configuration review and future deployment validation",
+    "verification_reference": "tests/integration/test_openapi_and_correlation.py"
+  },
+  {
+    "category": "api_security",
+    "description": "Production deployment must apply rate limiting, quotas or platform controls for abusive request volume.",
+    "evidence_reference": "future operational evidence",
+    "implementation_reference": "Not implemented; planned for future production controls.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 4",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-API-005",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-API-005",
+      "THR-API-006"
+    ],
+    "status": "active",
+    "title": "Rate limiting or compensating resource controls",
+    "verification_method": "future rate-limit and quota tests",
+    "verification_reference": "future test suite"
+  },
+  {
+    "category": "authentication",
+    "description": "Production APIs must validate authenticated identities using a trusted provider before protected actions.",
+    "evidence_reference": "future authentication evidence",
+    "implementation_reference": "Not implemented; authentication is deferred.",
+    "implementation_status": "planned",
+    "owner": "application_admin",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "critical",
+    "requirement_id": "SR-AUTH-001",
+    "residual_risk": "high",
+    "source_threat_ids": [
+      "THR-AUTH-001",
+      "THR-AUTH-002"
+    ],
+    "status": "active",
+    "title": "Production authentication",
+    "verification_method": "future auth integration and negative tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "authorisation",
+    "description": "Only actors with approved roles may perform privileged workflow functions.",
+    "evidence_reference": "future authorisation evidence",
+    "implementation_reference": "Not implemented; RBAC enforcement is deferred.",
+    "implementation_status": "planned",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "critical",
+    "requirement_id": "SR-AUTHZ-001",
+    "residual_risk": "high",
+    "source_threat_ids": [
+      "THR-AUTHZ-002"
+    ],
+    "status": "active",
+    "title": "Role-based authorisation",
+    "verification_method": "future role matrix tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "authorisation",
+    "description": "Access to datasets, access requests and audit records must be authorised per object and actor.",
+    "evidence_reference": "future authorisation evidence",
+    "implementation_reference": "Not implemented; object-level authorisation is deferred.",
+    "implementation_status": "planned",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "critical",
+    "requirement_id": "SR-AUTHZ-002",
+    "residual_risk": "high",
+    "source_threat_ids": [
+      "THR-API-003",
+      "THR-AUDIT-002",
+      "THR-AUTHZ-001"
+    ],
+    "status": "active",
+    "title": "Object-level authorisation",
+    "verification_method": "future object-level access tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "authorisation",
+    "description": "Unknown or unauthorised actors must receive no access unless explicitly granted.",
+    "evidence_reference": "future authorisation evidence",
+    "implementation_reference": "Not implemented; deny-by-default production policy is deferred.",
+    "implementation_status": "planned",
+    "owner": "application_admin",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "critical",
+    "requirement_id": "SR-AUTHZ-003",
+    "residual_risk": "high",
+    "source_threat_ids": [
+      "THR-API-001",
+      "THR-AUTHZ-003"
+    ],
+    "status": "active",
+    "title": "Deny-by-default access",
+    "verification_method": "future negative authorisation tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "workflow_integrity",
+    "description": "A requester must not approve or reject their own access request in production workflows.",
+    "evidence_reference": "future workflow evidence",
+    "implementation_reference": "Not implemented; current reviewer is simulated.",
+    "implementation_status": "planned",
+    "owner": "data_custodian",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-AUTHZ-004",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-AUTHZ-003",
+      "THR-AUTHZ-004"
+    ],
+    "status": "active",
+    "title": "Separation of requester and approver duties",
+    "verification_method": "future workflow authorisation tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "authorisation",
+    "description": "Approval and rejection endpoints must require authenticated approver privileges before use.",
+    "evidence_reference": "future authorisation evidence",
+    "implementation_reference": "Not implemented; simulated actor context is local only.",
+    "implementation_status": "planned",
+    "owner": "application_admin",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "critical",
+    "requirement_id": "SR-AUTHZ-005",
+    "residual_risk": "high",
+    "source_threat_ids": [
+      "THR-AUTHZ-001",
+      "THR-AUTHZ-002"
+    ],
+    "status": "active",
+    "title": "Protected approval functions",
+    "verification_method": "future protected endpoint tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "ci_cd",
+    "description": "Source changes must pass format, lint, type, test and threat-model validation checks.",
+    "evidence_reference": "outputs/security/threat-model/evidence-manifest.json",
+    "implementation_reference": ".github/workflows/ci.yml",
+    "implementation_status": "implemented",
+    "owner": "software_engineer",
+    "planned_milestone": "Milestone 2",
+    "policy_source": "repository governance",
+    "priority": "high",
+    "requirement_id": "SR-CI-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SUPPLY-002"
+    ],
+    "status": "active",
+    "title": "Protected source and quality workflow",
+    "verification_method": "CI and local make quality",
+    "verification_reference": "Makefile"
+  },
+  {
+    "category": "ci_cd",
+    "description": "Future deployment workflows must use short-lived credentials rather than static secrets.",
+    "evidence_reference": "future CI/CD evidence",
+    "implementation_reference": "Not implemented; deployment is out of scope.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 4",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-CI-002",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
+    "status": "active",
+    "title": "Short-lived CI/CD credentials",
+    "verification_method": "future CI identity review",
+    "verification_reference": "future Milestone 4 or 6 evidence"
+  },
+  {
+    "category": "ci_cd",
+    "description": "Future releases must be gated on approved source, validated evidence and least-privilege deployment identity.",
+    "evidence_reference": "future release evidence",
+    "implementation_reference": "Not implemented; release gates are deferred.",
+    "implementation_status": "planned",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 7",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-CI-003",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-API-008",
+      "THR-AUTH-002",
+      "THR-CI-001",
+      "THR-SUPPLY-003"
+    ],
+    "status": "active",
+    "title": "Protected release workflow",
+    "verification_method": "future release gate tests",
+    "verification_reference": "future release evidence"
+  },
+  {
+    "category": "container_security",
+    "description": "Future container images must be scanned before release.",
+    "evidence_reference": "future scanner evidence",
+    "implementation_reference": "Not implemented; container scanning is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 5",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-CONTAINER-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-CONTAINER-001"
+    ],
+    "status": "active",
+    "title": "Container vulnerability scanning",
+    "verification_method": "future container scan",
+    "verification_reference": "future scanner evidence"
+  },
+  {
+    "category": "container_security",
+    "description": "Container runtime must not execute the application as root.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "Dockerfile",
+    "implementation_status": "implemented",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-CONTAINER-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-CONTAINER-002"
+    ],
+    "status": "active",
+    "title": "Non-root container execution",
+    "verification_method": "Dockerfile review and future image tests",
+    "verification_reference": "Dockerfile"
+  },
+  {
+    "category": "data_protection",
+    "description": "The repository must contain only synthetic, deterministic and non-identifiable data.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/data/seed.py",
+    "implementation_status": "implemented",
+    "owner": "data_custodian",
+    "planned_milestone": "Milestone 1",
+    "policy_source": "portfolio data-safety requirement",
+    "priority": "high",
+    "requirement_id": "SR-DATA-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-API-003"
+    ],
+    "status": "active",
+    "title": "Synthetic data boundary",
+    "verification_method": "seed-data tests and manual inspection",
+    "verification_reference": "tests/unit/test_seed_data.py"
+  },
+  {
+    "category": "data_protection",
+    "description": "Future production traffic must use encrypted transport between clients and service components.",
+    "evidence_reference": "future cloud evidence",
+    "implementation_reference": "Not implemented; cloud deployment is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-DATA-002",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-IAM-002"
+    ],
+    "status": "active",
+    "title": "Encrypted transport",
+    "verification_method": "future infrastructure validation",
+    "verification_reference": "future cloud evidence"
+  },
+  {
+    "category": "data_protection",
+    "description": "Future durable datastores, logs and infrastructure state must be encrypted at rest.",
+    "evidence_reference": "future cloud evidence",
+    "implementation_reference": "Not implemented; durable cloud storage is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-DATA-003",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-IAC-002",
+      "THR-IAM-002"
+    ],
+    "status": "active",
+    "title": "Encrypted storage",
+    "verification_method": "future IaC and cloud configuration validation",
+    "verification_reference": "future cloud evidence"
+  },
+  {
+    "category": "infrastructure_security",
+    "description": "Future infrastructure definitions must be reviewed and scanned before deployment.",
+    "evidence_reference": "future IaC evidence",
+    "implementation_reference": "Not implemented; Terraform and IaC scanning are deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-IAC-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-IAC-001",
+      "THR-IAC-002"
+    ],
+    "status": "active",
+    "title": "IaC scanning and review",
+    "verification_method": "future IaC scanner and review evidence",
+    "verification_reference": "future Milestone 6 evidence"
+  },
+  {
+    "category": "infrastructure_security",
+    "description": "Future Terraform state must use an encrypted backend with restricted access.",
+    "evidence_reference": "future IaC evidence",
+    "implementation_reference": "Not implemented; Terraform is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-IAC-002",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-IAC-001"
+    ],
+    "status": "active",
+    "title": "Secure Terraform state",
+    "verification_method": "future backend configuration review",
+    "verification_reference": "future Milestone 6 evidence"
+  },
+  {
+    "category": "iam",
+    "description": "Future runtime identity must have only permissions required by the service.",
+    "evidence_reference": "future IAM evidence",
+    "implementation_reference": "Not implemented; workload IAM is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-IAM-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-IAM-001"
+    ],
+    "status": "active",
+    "title": "Least-privilege workload IAM",
+    "verification_method": "future IAM policy tests and review",
+    "verification_reference": "future Milestone 6 evidence"
+  },
+  {
+    "category": "iam",
+    "description": "Future deployment identity must have scoped and time-bound permissions.",
+    "evidence_reference": "future IAM evidence",
+    "implementation_reference": "Not implemented; deployment IAM is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-IAM-002",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
+    "status": "active",
+    "title": "Least-privilege deployment IAM",
+    "verification_method": "future IAM policy review",
+    "verification_reference": "future Milestone 6 evidence"
+  },
+  {
+    "category": "audit_logging",
+    "description": "Dataset views, request submissions, decisions and invalid transitions must generate structured audit events.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/audit/service.py",
+    "implementation_status": "implemented",
+    "owner": "security_auditor",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-LOG-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-AUDIT-001",
+      "THR-AUTHZ-004"
+    ],
+    "status": "active",
+    "title": "Security-relevant event logging",
+    "verification_method": "audit event tests",
+    "verification_reference": "tests/api/test_access_requests.py"
+  },
+  {
+    "category": "audit_logging",
+    "description": "Future audit events must be protected against unauthorised alteration or deletion.",
+    "evidence_reference": "future logging evidence",
+    "implementation_reference": "Not implemented; immutable audit storage is deferred.",
+    "implementation_status": "planned",
+    "owner": "security_auditor",
+    "planned_milestone": "Milestone 6",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-LOG-002",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-AUDIT-001"
+    ],
+    "status": "active",
+    "title": "Audit-event integrity",
+    "verification_method": "future log integrity validation",
+    "verification_reference": "future monitoring evidence"
+  },
+  {
+    "category": "audit_logging",
+    "description": "Correlation IDs must be generated or accepted safely with future format and length validation.",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "implementation_reference": "src/genomic_research_access_api/main.py",
+    "implementation_status": "implemented",
+    "owner": "software_engineer",
+    "planned_milestone": "Milestone 1",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-LOG-003",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-AUDIT-003",
+      "THR-AUDIT-004"
+    ],
+    "status": "active",
+    "title": "Correlation ID generation and validation",
+    "verification_method": "correlation ID propagation tests and future format validation",
+    "verification_reference": "tests/integration/test_openapi_and_correlation.py"
+  },
+  {
+    "category": "audit_logging",
+    "description": "Production audit event retrieval must be removed from public API or restricted to authorised auditors.",
+    "evidence_reference": "future audit access evidence",
+    "implementation_reference": "Not implemented; current endpoint is local demonstration only.",
+    "implementation_status": "planned",
+    "owner": "security_auditor",
+    "planned_milestone": "Milestone 3",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-LOG-004",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-AUDIT-002"
+    ],
+    "status": "active",
+    "title": "Restrict audit-event retrieval",
+    "verification_method": "future endpoint exposure and RBAC tests",
+    "verification_reference": "future Milestone 3 tests"
+  },
+  {
+    "category": "governance",
+    "description": "Security reviews must be refreshed when architecture, data flows or deployment assumptions change.",
+    "evidence_reference": "outputs/security/threat-model/threat-model-summary.json",
+    "implementation_reference": "docs/threat-model/review-process.md",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 2",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-REVIEW-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Security review cadence",
+    "verification_method": "threat-model validation and review process",
+    "verification_reference": "src/genomic_research_access_api/security/threat_model/validation.py"
+  },
+  {
+    "category": "secrets",
+    "description": "Secrets must not be committed and future runtime secrets must be externalised.",
+    "evidence_reference": "future secrets evidence",
+    "implementation_reference": "Not implemented; no real secrets are required in Milestone 2.",
+    "implementation_status": "planned",
+    "owner": "application_admin",
+    "planned_milestone": "Milestone 5",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-SECRETS-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SECRETS-001"
+    ],
+    "status": "active",
+    "title": "Secret externalisation",
+    "verification_method": "future secret scanning and configuration review",
+    "verification_reference": "future Milestone 5 evidence"
+  },
+  {
+    "category": "supply_chain",
+    "description": "Dependencies must be scanned for known vulnerabilities in later scanner milestones.",
+    "evidence_reference": "future scanner evidence",
+    "implementation_reference": "Not implemented; SCA is explicitly deferred.",
+    "implementation_status": "planned",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 5",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-SUPPLY-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SUPPLY-001",
+      "THR-SUPPLY-002"
+    ],
+    "status": "active",
+    "title": "Dependency scanning",
+    "verification_method": "future dependency scan",
+    "verification_reference": "future Milestone 5 evidence"
+  },
+  {
+    "category": "supply_chain",
+    "description": "Future builds should produce a software bill of materials for dependency visibility.",
+    "evidence_reference": "future SBOM evidence",
+    "implementation_reference": "Not implemented; SBOM generation is deferred.",
+    "implementation_status": "planned",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 5",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-SUPPLY-002",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "SBOM generation",
+    "verification_method": "future SBOM generation check",
+    "verification_reference": "future Milestone 5 evidence"
+  },
+  {
+    "category": "supply_chain",
+    "description": "Future build artefacts and images must be attributable to reviewed source and protected from alteration.",
+    "evidence_reference": "future artefact evidence",
+    "implementation_reference": "Not implemented; release provenance is deferred.",
+    "implementation_status": "planned",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 7",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-SUPPLY-003",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SUPPLY-003"
+    ],
+    "status": "active",
+    "title": "Artefact provenance",
+    "verification_method": "future provenance verification",
+    "verification_reference": "future release evidence"
+  },
+  {
+    "category": "supply_chain",
+    "description": "Repository changes must be scanned for committed secrets in a later scanner milestone.",
+    "evidence_reference": "future scanner evidence",
+    "implementation_reference": "Not implemented; secret scanning is explicitly deferred.",
+    "implementation_status": "planned",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 5",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-SUPPLY-004",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SECRETS-001"
+    ],
+    "status": "active",
+    "title": "Secret scanning",
+    "verification_method": "future secret scanning",
+    "verification_reference": "future Milestone 5 evidence"
+  },
+  {
+    "category": "secure_design",
+    "description": "Threats, requirements, controls, evidence and residual risks must be linked and validated.",
+    "evidence_reference": "outputs/security/threat-model/evidence-manifest.json",
+    "implementation_reference": "src/genomic_research_access_api/security/threat_model/validation.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 2",
+    "policy_source": "Milestone 2 secure-design requirement",
+    "priority": "high",
+    "requirement_id": "SR-TM-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Threat-model traceability validation",
+    "verification_method": "make threat-model-validate",
+    "verification_reference": "tests/security/test_threat_model_validation.py"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "evidence_references": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Evidence References",
+        "type": "array"
+      },
+      "implementation_references": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Implementation References",
+        "type": "array"
+      },
+      "notes": {
+        "title": "Notes",
+        "type": "string"
+      },
+      "requirement_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Requirement Ids",
+        "type": "array"
+      },
+      "residual_risk_id": {
+        "title": "Residual Risk Id",
+        "type": "string"
+      },
+      "threat_id": {
+        "title": "Threat Id",
+        "type": "string"
+      },
+      "traceability_id": {
+        "title": "Traceability Id",
+        "type": "string"
+      },
+      "verification_methods": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Verification Methods",
+        "type": "array"
+      }
+    },
+    "required": [
+      "traceability_id",
+      "threat_id",
+      "requirement_ids",
+      "implementation_references",
+      "verification_methods",
+      "evidence_references",
+      "residual_risk_id",
+      "notes"
+    ],
+    "title": "TraceabilityLink",
+    "type": "object"
+  },
+  "type": "array"
+}

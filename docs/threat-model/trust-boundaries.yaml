@@ -1,0 +1,112 @@
+[
+  {
+    "boundary_id": "TB-001",
+    "source_zone": "external or local API client",
+    "destination_zone": "FastAPI routing layer",
+    "data_crossing": "HTTP requests, path parameters, JSON bodies and headers",
+    "authentication_expectation": "Milestone 1 has no production authentication; future auth required.",
+    "authorisation_expectation": "Milestone 1 has no final authorisation; future deny-by-default required.",
+    "encryption_expectation": "Local HTTP only; future TLS termination required.",
+    "logging_expectation": "Correlation IDs and security-relevant events should be logged.",
+    "primary_risks": ["spoofing", "tampering", "denial_of_service"]
+  },
+  {
+    "boundary_id": "TB-002",
+    "source_zone": "API schemas",
+    "destination_zone": "application services",
+    "data_crossing": "validated request models",
+    "authentication_expectation": "identity context in future middleware",
+    "authorisation_expectation": "service layer must enforce workflow rules",
+    "encryption_expectation": "in-process boundary",
+    "logging_expectation": "invalid transitions and decisions logged",
+    "primary_risks": ["tampering", "elevation_of_privilege"]
+  },
+  {
+    "boundary_id": "TB-003",
+    "source_zone": "application services",
+    "destination_zone": "in-memory repositories",
+    "data_crossing": "datasets and access request records",
+    "authentication_expectation": "runtime internal only",
+    "authorisation_expectation": "service-owned access path",
+    "encryption_expectation": "in-process boundary",
+    "logging_expectation": "auditable workflow changes",
+    "primary_risks": ["tampering", "information_disclosure"]
+  },
+  {
+    "boundary_id": "TB-004",
+    "source_zone": "application services",
+    "destination_zone": "audit event store",
+    "data_crossing": "structured audit events and correlation IDs",
+    "authentication_expectation": "runtime internal only",
+    "authorisation_expectation": "future audit read access must be restricted",
+    "encryption_expectation": "in-process now; future encrypted transport and storage",
+    "logging_expectation": "events must be complete and tamper-resistant in production",
+    "primary_risks": ["repudiation", "information_disclosure", "tampering"]
+  },
+  {
+    "boundary_id": "TB-005",
+    "source_zone": "developer workstation",
+    "destination_zone": "source repository and local runtime",
+    "data_crossing": "configuration, source changes and environment values",
+    "authentication_expectation": "repository access managed outside application",
+    "authorisation_expectation": "maintainer access should be least privilege",
+    "encryption_expectation": "local controls and Git transport",
+    "logging_expectation": "Git history and CI logs",
+    "primary_risks": ["hardcoded_credentials", "insecure_defaults"]
+  },
+  {
+    "boundary_id": "TB-006",
+    "source_zone": "source repository",
+    "destination_zone": "CI/CD build environment",
+    "data_crossing": "source code, workflow definitions, dependencies and build artefacts",
+    "authentication_expectation": "GitHub workflow identity",
+    "authorisation_expectation": "minimal permissions; no deployment privileges in Milestone 2",
+    "encryption_expectation": "platform-managed transport",
+    "logging_expectation": "CI logs and evidence outputs",
+    "primary_risks": ["supply_chain", "artefact_tampering"]
+  },
+  {
+    "boundary_id": "TB-007",
+    "source_zone": "future CI/CD workflow",
+    "destination_zone": "future AWS control plane",
+    "data_crossing": "future deployment requests and federated identity assertions",
+    "authentication_expectation": "future short-lived federated identity",
+    "authorisation_expectation": "least privilege deployment role",
+    "encryption_expectation": "TLS and cloud provider controls",
+    "logging_expectation": "cloud audit logs",
+    "primary_risks": ["overprivileged_identity", "unauthorised_deployment"]
+  },
+  {
+    "boundary_id": "TB-008",
+    "source_zone": "future runtime",
+    "destination_zone": "future datastore and logging service",
+    "data_crossing": "access requests, decisions and audit events",
+    "authentication_expectation": "future workload identity",
+    "authorisation_expectation": "least privilege runtime permissions",
+    "encryption_expectation": "TLS plus encrypted storage",
+    "logging_expectation": "centralised immutable audit logging",
+    "primary_risks": ["data_exposure", "audit_tampering"]
+  },
+  {
+    "boundary_id": "TB-009",
+    "source_zone": "future public network",
+    "destination_zone": "future private service components",
+    "data_crossing": "external API traffic through controlled edge",
+    "authentication_expectation": "future identity provider integration",
+    "authorisation_expectation": "future RBAC and object-level checks",
+    "encryption_expectation": "TLS",
+    "logging_expectation": "edge and application logs",
+    "primary_risks": ["public_exposure", "denial_of_service"]
+  },
+  {
+    "boundary_id": "TB-010",
+    "source_zone": "future application role",
+    "destination_zone": "future secrets and encryption services",
+    "data_crossing": "secret retrieval and key-use requests",
+    "authentication_expectation": "future workload identity",
+    "authorisation_expectation": "least privilege per secret and key",
+    "encryption_expectation": "TLS and provider-managed key protection",
+    "logging_expectation": "cloud audit trail",
+    "primary_risks": ["secret_exposure", "privilege_escalation"]
+  }
+]

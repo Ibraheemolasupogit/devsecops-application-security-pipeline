@@ -1,0 +1,115 @@
+{
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "control_limitations": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Control Limitations",
+        "type": "array"
+      },
+      "current_controls": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Current Controls",
+        "type": "array"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "planned_milestone": {
+        "title": "Planned Milestone",
+        "type": "string"
+      },
+      "related_threat_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Related Threat Ids",
+        "type": "array"
+      },
+      "residual_impact": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ],
+        "title": "Residual Impact",
+        "type": "string"
+      },
+      "residual_likelihood": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ],
+        "title": "Residual Likelihood",
+        "type": "string"
+      },
+      "residual_rating": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ],
+        "title": "Residual Rating",
+        "type": "string"
+      },
+      "review_date": {
+        "title": "Review Date",
+        "type": "string"
+      },
+      "risk_id": {
+        "title": "Risk Id",
+        "type": "string"
+      },
+      "risk_owner": {
+        "title": "Risk Owner",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "open",
+          "accepted",
+          "mitigation_planned"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "treatment": {
+        "enum": [
+          "accept",
+          "mitigate",
+          "transfer",
+          "avoid"
+        ],
+        "title": "Treatment",
+        "type": "string"
+      }
+    },
+    "required": [
+      "risk_id",
+      "related_threat_ids",
+      "description",
+      "current_controls",
+      "control_limitations",
+      "residual_likelihood",
+      "residual_impact",
+      "residual_rating",
+      "risk_owner",
+      "treatment",
+      "planned_milestone",
+      "review_date",
+      "status"
+    ],
+    "title": "ResidualRisk",
+    "type": "object"
+  },
+  "type": "array"
+}
