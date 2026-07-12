@@ -1,0 +1,1 @@
+{"check_type": "terraform", "results": {"failed_checks": []}, "summary": {"passed": 296, "failed": 0, "skipped": 27, "parsing_errors": 0, "resource_count": 78, "checkov_version": "3.2.281"}}

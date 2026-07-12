@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "tools": {
+    "gitleaks": {"version": "8.24.3", "execution": "local-binary-or-pinned-container", "container_image": "zricethezav/gitleaks:v8.24.3"},
+    "semgrep": {"version": "1.78.0", "execution": "python-security-extra"},
+    "bandit": {"version": "1.7.10", "execution": "python-security-extra"},
+    "pip-audit": {"version": "2.7.3", "execution": "python-security-extra"},
+    "cyclonedx": {"version": "4.0.0", "execution": "python-security-extra"},
+    "checkov": {"version": "3.2.281", "execution": "python-security-extra"},
+    "trivy": {"version": "0.54.1", "execution": "local-binary-or-pinned-container", "container_image": "aquasec/trivy:0.54.1"}
+  }
+}

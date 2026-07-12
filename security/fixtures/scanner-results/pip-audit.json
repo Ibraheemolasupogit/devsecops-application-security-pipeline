@@ -1,0 +1,15 @@
+{
+  "dependencies": [
+    {
+      "name": "example-vulnerable-package",
+      "version": "1.0.0",
+      "vulns": [
+        {
+          "id": "PYSEC-EXAMPLE-1",
+          "aliases": ["CVE-2099-0001"],
+          "fix_versions": ["1.0.1"]
+        }
+      ]
+    }
+  ]
+}

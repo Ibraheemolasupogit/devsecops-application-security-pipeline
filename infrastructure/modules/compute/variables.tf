@@ -22,6 +22,9 @@ variable "alb_security_group_id" {
 variable "ecs_tasks_security_group_id" {
   type = string
 }
+variable "kms_key_arn" {
+  type = string
+}
 variable "task_execution_role_arn" {
   type = string
 }

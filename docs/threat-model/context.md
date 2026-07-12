@@ -21,7 +21,8 @@ Anticipated future context:
 - External identity-provider integration.
 - Cloud-native runtime and datastore.
 - CI/CD security controls.
-- Future AWS and Terraform security.
+- Non-deployed AWS Terraform security.
+- Local/CI AppSec scanner evidence.
 - Future vulnerability and release workflows.
 
-Future cloud, scanner and deployment controls are analysed as planned or assumed only. They are not implemented in Milestone 3.
+Future cloud deployment and release controls are analysed as planned or assumed only. They are not implemented in Milestone 5.

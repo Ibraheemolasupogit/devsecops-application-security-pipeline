@@ -1,0 +1,8 @@
+{
+  "summary": {"passed": 1, "failed": 1, "skipped": 0},
+  "results": {
+    "failed_checks": [
+      {"check_id": "CKV_AWS_53", "file_path": "security/fixtures/insecure/public_s3.tf"}
+    ]
+  }
+}

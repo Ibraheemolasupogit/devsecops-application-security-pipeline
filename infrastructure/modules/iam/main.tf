@@ -115,6 +115,7 @@ resource "aws_iam_role_policy_attachment" "runtime" {
 }
 
 data "aws_iam_policy_document" "github_oidc_assume" {
+  #checkov:skip=CKV_AWS_358:Repository and ref are exact Terraform variables consumed by both environments; Checkov cannot resolve the known organization through the module boundary.
   statement {
     actions = ["sts:AssumeRoleWithWebIdentity"]
     principals {
@@ -127,7 +128,7 @@ data "aws_iam_policy_document" "github_oidc_assume" {
       values   = ["sts.amazonaws.com"]
     }
     condition {
-      test     = "StringLike"
+      test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
       values   = ["repo:${var.github_repository}:${var.github_ref}"]
     }
@@ -215,7 +216,7 @@ resource "aws_iam_role_policy" "vpc_flow_logs" {
     Statement = [{
       Effect   = "Allow"
       Action   = ["logs:CreateLogStream", "logs:PutLogEvents", "logs:DescribeLogGroups", "logs:DescribeLogStreams"]
-      Resource = "*"
+      Resource = "${var.vpc_flow_log_group_arn}:*"
     }]
   })
 }

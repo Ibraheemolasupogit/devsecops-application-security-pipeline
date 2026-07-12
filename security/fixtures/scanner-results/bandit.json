@@ -1,0 +1,10 @@
+{
+  "results": [
+    {
+      "filename": "security/fixtures/insecure/unsafe_subprocess.py",
+      "test_id": "B602",
+      "issue_severity": "HIGH",
+      "issue_confidence": "HIGH"
+    }
+  ]
+}

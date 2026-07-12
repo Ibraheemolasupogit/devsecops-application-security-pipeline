@@ -8,7 +8,7 @@ It is not a production genomics platform.
 
 It is not affiliated with or endorsed by Genomics England.
 
-AWS infrastructure, Terraform, external identity-provider integration and automated AppSec scanning are intentionally deferred to later milestones.
+AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration, cloud deployment, release gates and vulnerability-management operations are deferred to later milestones.
 
 ## Problem Statement
 
@@ -23,6 +23,8 @@ Milestone 2 delivered security architecture and threat modelling for the current
 Milestone 3 delivered local signed JWT authentication, role-based authorisation, object-level access controls, separation of requester and approver duties, API security headers, and deterministic API-security evidence.
 
 Milestone 4 delivered a secure AWS ECS Fargate Terraform reference architecture, local infrastructure policy tests, deterministic infrastructure evidence and cloud-security documentation. It did not deploy resources.
+
+Milestone 5 delivered the core AppSec pipeline: pinned scanner configuration, Semgrep and Bandit SAST, project-scoped pip-audit SCA, deterministic CycloneDX SBOM evidence, Checkov IaC reporting, Gitleaks and Trivy wrapper targets, AppSec reports and SHA-pinned security workflows.
 
 ## Milestone 1 Scope
 
@@ -85,6 +87,23 @@ Implemented as code and local validation:
 - Infrastructure policy tests and deterministic evidence.
 
 Not implemented in Milestone 4: Terraform apply, AWS deployment, Cognito, external OIDC discovery, live DNS, Route 53, ACM issuance, WAF rules, scanner pipelines, release gates, vulnerability lifecycle or Security Champions programme.
+
+## Milestone 5 Scope
+
+Implemented as local pipeline configuration and evidence:
+
+- Pinned scanner inventory under `security/config/tools.yaml`.
+- Gitleaks configuration with a narrowly governed test-fixture suppression.
+- Custom Semgrep rules with unit tests for requester identity, Authorization logging, JWT algorithms and `shell=True`.
+- Bandit SAST with medium/high policy thresholds.
+- Project-scoped pip-audit dependency scanning.
+- Deterministic CycloneDX SBOM generation and validation.
+- Checkov Terraform scanning with findings captured as AppSec evidence.
+- Trivy container scan wrapper using a pinned container image when no local binary exists.
+- AppSec evidence under `outputs/security/appsec/` and reports under `reports/security/`.
+- Separate SHA-pinned GitHub Actions workflows for AppSec, container security and Terraform security.
+
+Not implemented in Milestone 5: vulnerability triage workflow, release approval gates, artifact signing/provenance, cloud deployment, scanner dashboards, Security Champions programme or AWS resource creation.
 
 ## API Capabilities
 
@@ -156,6 +175,16 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make terraform-validate`: validate dev/prod Terraform if Terraform is installed.
 - `make infrastructure-test`: run local infrastructure policy tests without AWS credentials.
 - `make verify-infrastructure-evidence`: verify deterministic infrastructure evidence.
+- `make security-tools`: print pinned AppSec scanner inventory.
+- `make secrets-scan`: run Gitleaks via local binary or pinned container.
+- `make semgrep-test`: run Semgrep custom rule tests.
+- `make sast`: run Semgrep and Bandit.
+- `make sca`: run dependency audit and SBOM validation.
+- `make checkov-scan`: run Checkov and record Terraform findings.
+- `make container-build-security`: build the local image for scanning.
+- `make container-scan`: run Trivy against the local image.
+- `make appsec-evidence`: generate deterministic AppSec evidence.
+- `make verify-appsec-evidence`: verify AppSec evidence checksums and SBOM shape.
 - `make quality`: run format, lint, type, coverage, auth, API-security, infrastructure and evidence checks.
 - `make run`: start the local API on `127.0.0.1:8000`.
 - `make docker-build`: build the local Docker image.
@@ -211,6 +240,21 @@ make api-security-evidence
 make verify-api-security-evidence
 make api-security-report
 ```
+
+## AppSec Pipeline Commands
+
+```bash
+make security-tools
+make semgrep-test
+make sast
+make sca
+make checkov-scan
+make appsec-evidence
+make verify-appsec-evidence
+make appsec-report
+```
+
+`make secrets-scan`, `make container-build-security` and `make container-scan` require either native scanner binaries or a running Docker daemon for pinned container fallbacks.
 
 ## Threat Model Evidence
 
@@ -300,9 +344,9 @@ Milestone 3 also implements local signed JWT authentication, RBAC, object-level 
 
 Milestone 4 adds secure AWS Terraform configuration for private ECS, least-privilege role separation, encrypted DynamoDB/Secrets/CloudTrail storage, CloudWatch/CloudTrail observability and secure remote-state design. These controls are configured and locally validated, not deployed.
 
-Planned future controls include external IdP integration, production rate limiting, scanner execution, findings ingestion, SBOM generation, risk gates, vulnerability lifecycle and Security Champions enablement.
+Planned future controls include external IdP integration, production rate limiting, findings ingestion, release risk gates, vulnerability lifecycle and Security Champions enablement.
 
-This repository does not claim production-grade identity, authorisation, monitoring, cloud or scanner coverage.
+This repository does not claim production-grade identity, monitoring, cloud deployment, vulnerability-management workflow or release-gate coverage.
 
 ## Limitations
 
@@ -310,4 +354,4 @@ State is in memory and resets when the app restarts. JWT keys under `tests/fixtu
 
 ## Future Milestones
 
-Later milestones may add external identity-provider integration, scanner execution, vulnerability management, risk-based release gates, and Security Champions enablement.
+Later milestones may add external identity-provider integration, vulnerability management, risk-based release gates, and Security Champions enablement.

@@ -31,6 +31,9 @@ variable "secrets_key_arn" {
 variable "audit_key_arn" {
   type = string
 }
+variable "vpc_flow_log_group_arn" {
+  type = string
+}
 variable "tags" {
   type = map(string)
 }

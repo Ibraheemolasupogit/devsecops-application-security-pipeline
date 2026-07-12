@@ -16,7 +16,7 @@ resource "aws_lb" "this" {
   security_groups            = [var.alb_security_group_id]
   subnets                    = var.public_subnet_ids
   drop_invalid_header_fields = true
-  enable_deletion_protection = var.environment == "prod"
+  enable_deletion_protection = true
 
   dynamic "access_logs" {
     for_each = var.alb_access_logs_bucket == "" ? [] : [var.alb_access_logs_bucket]
@@ -30,7 +30,93 @@ resource "aws_lb" "this" {
   tags = merge(var.tags, { Name = "${var.name_prefix}-alb" })
 }
 
+resource "aws_wafv2_web_acl" "alb" {
+  name        = "${var.name_prefix}-alb-waf"
+  description = "Managed baseline WAF for the public application load balancer."
+  scope       = "REGIONAL"
+
+  default_action {
+    allow {}
+  }
+
+  rule {
+    name     = "AWSManagedRulesCommonRuleSet"
+    priority = 1
+
+    override_action {
+      none {}
+    }
+
+    statement {
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesCommonRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "${var.name_prefix}-common"
+      sampled_requests_enabled   = true
+    }
+  }
+
+  rule {
+    name     = "AWSManagedRulesKnownBadInputsRuleSet"
+    priority = 2
+
+    override_action {
+      none {}
+    }
+
+    statement {
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesKnownBadInputsRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "${var.name_prefix}-known-bad-inputs"
+      sampled_requests_enabled   = true
+    }
+  }
+
+  visibility_config {
+    cloudwatch_metrics_enabled = true
+    metric_name                = "${var.name_prefix}-alb-waf"
+    sampled_requests_enabled   = true
+  }
+
+  tags = merge(var.tags, { Name = "${var.name_prefix}-alb-waf" })
+}
+
+resource "aws_wafv2_web_acl_association" "alb" {
+  resource_arn = aws_lb.this.arn
+  web_acl_arn  = aws_wafv2_web_acl.alb.arn
+}
+
+resource "aws_cloudwatch_log_group" "waf" {
+  name              = "aws-waf-logs-${var.name_prefix}-alb"
+  retention_in_days = 365
+  kms_key_id        = var.kms_key_arn
+  tags              = merge(var.tags, { Name = "${var.name_prefix}-waf-logs" })
+}
+
+resource "aws_wafv2_web_acl_logging_configuration" "alb" {
+  log_destination_configs = [aws_cloudwatch_log_group.waf.arn]
+  resource_arn            = aws_wafv2_web_acl.alb.arn
+
+  redacted_fields {
+    single_header {
+      name = "authorization"
+    }
+  }
+}
+
 resource "aws_lb_target_group" "app" {
+  #checkov:skip=CKV_AWS_378:TLS terminates at the ALB; backend traffic is restricted to the private ECS task security group on the application port.
   name        = "${var.name_prefix}-tg"
   port        = var.application_port
   protocol    = "HTTP"
@@ -53,6 +139,7 @@ resource "aws_lb_target_group" "app" {
 }
 
 resource "aws_lb_listener" "http" {
+  #checkov:skip=CKV_AWS_2:Port 80 listener exists only to redirect to HTTPS when enabled; production has a Terraform precondition requiring HTTPS.
   count             = var.enable_http_listener ? 1 : 0
   load_balancer_arn = aws_lb.this.arn
   port              = 80

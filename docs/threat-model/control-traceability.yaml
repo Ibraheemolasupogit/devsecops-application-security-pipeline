@@ -193,11 +193,11 @@
     "traceability_id": "TRACE-020",
     "threat_id": "THR-CONTAINER-001",
     "requirement_ids": ["SR-CONTAINER-001"],
-    "implementation_references": ["future container scanning"],
-    "verification_methods": ["future image scan"],
-    "evidence_references": ["future scanner evidence"],
+    "implementation_references": ["scripts/appsec_tools.py", "security/trivy/trivy.yaml", "security/config/tools.yaml"],
+    "verification_methods": ["make container-build-security", "make container-scan"],
+    "evidence_references": ["outputs/security/appsec/container-scan-summary.json"],
     "residual_risk_id": "RR-007",
-    "notes": "Container scanning is explicitly future work."
+    "notes": "Pinned Trivy scanning is wired; local execution requires a running Docker daemon."
   },
   {
     "traceability_id": "TRACE-021",
@@ -213,9 +213,9 @@
     "traceability_id": "TRACE-022",
     "threat_id": "THR-IAC-001",
     "requirement_ids": ["SR-IAC-001", "SR-IAC-002"],
-    "implementation_references": ["infrastructure/", "docs/infrastructure/terraform-state-security.md"],
-    "verification_methods": ["local infrastructure policy tests", "infrastructure evidence verification"],
-    "evidence_references": ["outputs/security/infrastructure/terraform-validation-summary.json"],
+    "implementation_references": ["infrastructure/", "security/checkov/config.yaml", "docs/infrastructure/terraform-state-security.md"],
+    "verification_methods": ["local infrastructure policy tests", "infrastructure evidence verification", "Checkov scan"],
+    "evidence_references": ["outputs/security/appsec/iac-scan-summary.json", "outputs/security/infrastructure/terraform-validation-summary.json"],
     "residual_risk_id": "RR-006",
     "notes": "Terraform is implemented as a non-deployed reference architecture with secure state design examples."
   },
@@ -263,31 +263,31 @@
     "traceability_id": "TRACE-027",
     "threat_id": "THR-SECRETS-001",
     "requirement_ids": ["SR-SECRETS-001", "SR-SUPPLY-004"],
-    "implementation_references": [".gitignore", "infrastructure/modules/secrets/main.tf"],
-    "verification_methods": ["manual inspection", "local secret metadata tests"],
-    "evidence_references": ["outputs/security/infrastructure/encryption-control-summary.json"],
+    "implementation_references": [".gitignore", ".gitleaks.toml", "infrastructure/modules/secrets/main.tf", "security/config/suppressions.yaml"],
+    "verification_methods": ["local secret metadata tests", "Gitleaks scanner configuration and evidence"],
+    "evidence_references": ["outputs/security/appsec/secret-scan-summary.json", "outputs/security/infrastructure/encryption-control-summary.json"],
     "residual_risk_id": "RR-005",
-    "notes": "Secret values remain outside Terraform; secret scanning is still future work."
+    "notes": "Secret values remain outside Terraform; Gitleaks execution is wired with a narrowly governed fixture suppression."
   },
   {
     "traceability_id": "TRACE-028",
     "threat_id": "THR-SUPPLY-001",
     "requirement_ids": ["SR-SUPPLY-001", "SR-SUPPLY-002"],
-    "implementation_references": ["pyproject.toml", "future SCA and SBOM"],
-    "verification_methods": ["future dependency scanning"],
-    "evidence_references": ["future scanner evidence"],
+    "implementation_references": ["pyproject.toml", "scripts/appsec_tools.py", "src/genomic_research_access_api/security/appsec/evidence.py"],
+    "verification_methods": ["pip-audit dependency scanning", "CycloneDX SBOM validation"],
+    "evidence_references": ["outputs/security/appsec/dependency-scan-summary.json", "outputs/security/appsec/sbom.cdx.json"],
     "residual_risk_id": "RR-005",
-    "notes": "Dependencies are pinned; automated scanning is deferred."
+    "notes": "Runtime dependency scanning and deterministic SBOM generation are implemented."
   },
   {
     "traceability_id": "TRACE-029",
     "threat_id": "THR-SUPPLY-002",
     "requirement_ids": ["SR-CI-001", "SR-SUPPLY-001"],
-    "implementation_references": [".github/workflows/ci.yml", "future dependency review"],
-    "verification_methods": ["CI tests", "future SCA"],
-    "evidence_references": ["outputs/security/threat-model/evidence-manifest.json"],
+    "implementation_references": [".github/workflows/ci.yml", ".github/workflows/appsec.yml", "scripts/appsec_tools.py"],
+    "verification_methods": ["CI tests", "SAST and SCA scanner targets"],
+    "evidence_references": ["outputs/security/appsec/appsec-pipeline-summary.json", "outputs/security/threat-model/evidence-manifest.json"],
     "residual_risk_id": "RR-005",
-    "notes": "Quality checks reduce accidental update risk but not malicious dependency risk."
+    "notes": "Quality checks are extended with AppSec scanner evidence for dependency and code risks."
   },
   {
     "traceability_id": "TRACE-030",

@@ -10,6 +10,9 @@ locals {
 }
 
 data "aws_iam_policy_document" "application_data" {
+  #checkov:skip=CKV_AWS_109:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
+  #checkov:skip=CKV_AWS_111:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
+  #checkov:skip=CKV_AWS_356:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
   statement {
     sid       = "EnableAccountRootMetadataAccess"
     actions   = ["kms:DescribeKey", "kms:GetKeyPolicy"]
@@ -44,6 +47,8 @@ data "aws_iam_policy_document" "application_data" {
 }
 
 data "aws_iam_policy_document" "secrets" {
+  #checkov:skip=CKV_AWS_111:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
+  #checkov:skip=CKV_AWS_356:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
   source_policy_documents = [data.aws_iam_policy_document.application_data.json]
 
   statement {
@@ -60,6 +65,8 @@ data "aws_iam_policy_document" "secrets" {
 }
 
 data "aws_iam_policy_document" "audit" {
+  #checkov:skip=CKV_AWS_111:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
+  #checkov:skip=CKV_AWS_356:KMS key policies must use Resource "*" because the policy is attached directly to the key; principals and actions are explicitly scoped.
   source_policy_documents = [data.aws_iam_policy_document.application_data.json]
 
   statement {

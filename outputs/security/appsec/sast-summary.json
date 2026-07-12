@@ -1,0 +1,29 @@
+{
+  "blocking_count": 0,
+  "children": [
+    {
+      "blocking_count": 0,
+      "execution_status": "completed",
+      "finding_count": 0,
+      "limitations": "",
+      "policy_decision": "pass",
+      "suppressed_count": 0,
+      "tool": "semgrep"
+    },
+    {
+      "blocking_count": 0,
+      "execution_status": "completed",
+      "finding_count": 0,
+      "limitations": "",
+      "policy_decision": "pass",
+      "suppressed_count": 0,
+      "tool": "bandit"
+    }
+  ],
+  "execution_status": "completed",
+  "finding_count": 0,
+  "limitations": "",
+  "policy_decision": "pass",
+  "suppressed_count": 0,
+  "tool": "semgrep+bandit"
+}

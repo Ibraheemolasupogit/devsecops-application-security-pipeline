@@ -98,14 +98,18 @@
   },
   {
     "control_limitations": [
-      "no SCA, secret scanning, SBOM or provenance enforcement yet"
+      "artifact provenance is deferred",
+      "local Gitleaks and Trivy container execution require a running Docker daemon when native binaries are unavailable"
     ],
     "current_controls": [
       "pinned dependencies",
-      "manual secret inspection",
-      "quality checks"
+      "project-scoped pip-audit",
+      "CycloneDX SBOM",
+      "Semgrep and Bandit SAST",
+      "Gitleaks configuration",
+      "Checkov reporting"
     ],
-    "description": "Automated AppSec and supply-chain scanners are deferred.",
+    "description": "Core AppSec scanners are configured; release provenance and some local Docker-backed scans remain future or environment-dependent.",
     "planned_milestone": "Milestone 5",
     "related_threat_ids": [
       "THR-SECRETS-001",
@@ -152,13 +156,14 @@
   },
   {
     "control_limitations": [
-      "no container vulnerability scan yet"
+      "container vulnerability results are unavailable when Docker daemon is not running"
     ],
     "current_controls": [
       "non-root Docker runtime user",
-      "pinned base image"
+      "pinned base image",
+      "Trivy wrapper and policy configuration"
     ],
-    "description": "Container hardening is partial: non-root runtime exists, scanning is deferred.",
+    "description": "Container hardening includes non-root runtime and pinned Trivy scan wiring, but local image scans depend on Docker availability.",
     "planned_milestone": "Milestone 5",
     "related_threat_ids": [
       "THR-CONTAINER-001",

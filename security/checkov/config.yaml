@@ -1,0 +1,6 @@
+framework:
+  - terraform
+directory:
+  - infrastructure
+quiet: true
+skip-check: []

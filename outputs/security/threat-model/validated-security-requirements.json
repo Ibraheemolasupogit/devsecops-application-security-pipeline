@@ -295,9 +295,9 @@
   {
     "category": "container_security",
     "description": "Future container images must be scanned before release.",
-    "evidence_reference": "future scanner evidence",
-    "implementation_reference": "Not implemented; container scanning is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/appsec/container-scan-summary.json",
+    "implementation_reference": "scripts/appsec_tools.py; security/trivy/trivy.yaml; security/config/tools.yaml",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 5",
     "policy_source": null,
@@ -309,8 +309,8 @@
     ],
     "status": "active",
     "title": "Container vulnerability scanning",
-    "verification_method": "future container scan",
-    "verification_reference": "future scanner evidence"
+    "verification_method": "make container-scan with pinned Trivy container when Docker is available",
+    "verification_reference": "Makefile"
   },
   {
     "category": "container_security",
@@ -396,8 +396,8 @@
   {
     "category": "infrastructure_security",
     "description": "Future infrastructure definitions must be reviewed and scanned before deployment.",
-    "evidence_reference": "outputs/security/infrastructure/terraform-validation-summary.json",
-    "implementation_reference": "infrastructure/; .checkov.yml",
+    "evidence_reference": "outputs/security/appsec/iac-scan-summary.json",
+    "implementation_reference": "infrastructure/; security/checkov/config.yaml; scripts/appsec_tools.py",
     "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
@@ -411,8 +411,8 @@
     ],
     "status": "active",
     "title": "IaC scanning and review",
-    "verification_method": "local infrastructure policy tests and Terraform validation targets; scanner execution deferred",
-    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
+    "verification_method": "local infrastructure policy tests, Terraform validation targets and Checkov scan evidence",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py; Makefile"
   },
   {
     "category": "infrastructure_security",
@@ -579,8 +579,8 @@
   {
     "category": "secrets",
     "description": "Secrets must not be committed and future runtime secrets must be externalised.",
-    "evidence_reference": "outputs/security/infrastructure/encryption-control-summary.json",
-    "implementation_reference": "infrastructure/modules/secrets/main.tf",
+    "evidence_reference": "outputs/security/appsec/secret-scan-summary.json",
+    "implementation_reference": "infrastructure/modules/secrets/main.tf; .gitleaks.toml; security/config/suppressions.yaml",
     "implementation_status": "implemented",
     "owner": "application_admin",
     "planned_milestone": "Milestone 5",
@@ -593,15 +593,15 @@
     ],
     "status": "active",
     "title": "Secret externalisation",
-    "verification_method": "local infrastructure policy tests confirm no Terraform-managed secret payloads",
-    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
+    "verification_method": "local infrastructure policy tests and pinned Gitleaks scanner configuration",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py; Makefile"
   },
   {
     "category": "supply_chain",
-    "description": "Dependencies must be scanned for known vulnerabilities in later scanner milestones.",
-    "evidence_reference": "future scanner evidence",
-    "implementation_reference": "Not implemented; SCA is explicitly deferred.",
-    "implementation_status": "planned",
+    "description": "Dependencies must be scanned for known vulnerabilities before release promotion.",
+    "evidence_reference": "outputs/security/appsec/dependency-scan-summary.json",
+    "implementation_reference": "pyproject.toml; scripts/appsec_tools.py; security/config/tools.yaml",
+    "implementation_status": "implemented",
     "owner": "product_security_engineer",
     "planned_milestone": "Milestone 5",
     "policy_source": null,
@@ -614,15 +614,15 @@
     ],
     "status": "active",
     "title": "Dependency scanning",
-    "verification_method": "future dependency scan",
-    "verification_reference": "future Milestone 5 evidence"
+    "verification_method": "project-scoped pip-audit dependency scan",
+    "verification_reference": "Makefile"
   },
   {
     "category": "supply_chain",
-    "description": "Future builds should produce a software bill of materials for dependency visibility.",
-    "evidence_reference": "future SBOM evidence",
-    "implementation_reference": "Not implemented; SBOM generation is deferred.",
-    "implementation_status": "planned",
+    "description": "Builds should produce a software bill of materials for dependency visibility.",
+    "evidence_reference": "outputs/security/appsec/sbom.cdx.json",
+    "implementation_reference": "src/genomic_research_access_api/security/appsec/evidence.py; scripts/appsec_tools.py",
+    "implementation_status": "implemented",
     "owner": "product_security_engineer",
     "planned_milestone": "Milestone 5",
     "policy_source": null,
@@ -634,8 +634,8 @@
     ],
     "status": "active",
     "title": "SBOM generation",
-    "verification_method": "future SBOM generation check",
-    "verification_reference": "future Milestone 5 evidence"
+    "verification_method": "CycloneDX SBOM generation and validation",
+    "verification_reference": "Makefile"
   },
   {
     "category": "supply_chain",
@@ -659,10 +659,10 @@
   },
   {
     "category": "supply_chain",
-    "description": "Repository changes must be scanned for committed secrets in a later scanner milestone.",
-    "evidence_reference": "future scanner evidence",
-    "implementation_reference": "Not implemented; secret scanning is explicitly deferred.",
-    "implementation_status": "planned",
+    "description": "Repository changes must be scanned for committed secrets.",
+    "evidence_reference": "outputs/security/appsec/secret-scan-summary.json",
+    "implementation_reference": ".gitleaks.toml; scripts/appsec_tools.py; security/gitleaks/README.md",
+    "implementation_status": "implemented",
     "owner": "product_security_engineer",
     "planned_milestone": "Milestone 5",
     "policy_source": null,
@@ -674,8 +674,8 @@
     ],
     "status": "active",
     "title": "Secret scanning",
-    "verification_method": "future secret scanning",
-    "verification_reference": "future Milestone 5 evidence"
+    "verification_method": "Gitleaks local binary or pinned container scan",
+    "verification_reference": "Makefile"
   },
   {
     "category": "secure_design",

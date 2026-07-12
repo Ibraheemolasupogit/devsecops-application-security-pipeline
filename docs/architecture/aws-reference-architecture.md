@@ -29,3 +29,7 @@ flowchart LR
 ## Deployment Boundary
 
 Terraform files are a deployment blueprint. This milestone does not run `terraform apply`, publish images, create certificates, configure DNS, create WAF rules, or configure live AWS credentials.
+
+## Security Scanning
+
+Milestone 5 adds Checkov scanning for the Terraform reference architecture. Findings are captured in `outputs/security/appsec/iac-scan-summary.json` and are intentionally not hidden behind broad suppressions.

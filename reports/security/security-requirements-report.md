@@ -16,7 +16,7 @@
 | SR-CI-001 | ci_cd | implemented | Milestone 2 |
 | SR-CI-002 | ci_cd | implemented | Milestone 4 |
 | SR-CI-003 | ci_cd | planned | Milestone 7 |
-| SR-CONTAINER-001 | container_security | planned | Milestone 5 |
+| SR-CONTAINER-001 | container_security | implemented | Milestone 5 |
 | SR-CONTAINER-002 | container_security | implemented | Milestone 1 |
 | SR-DATA-001 | data_protection | implemented | Milestone 1 |
 | SR-DATA-002 | data_protection | implemented | Milestone 6 |
@@ -31,8 +31,8 @@
 | SR-LOG-004 | audit_logging | implemented | Milestone 3 |
 | SR-REVIEW-001 | governance | implemented | Milestone 2 |
 | SR-SECRETS-001 | secrets | implemented | Milestone 5 |
-| SR-SUPPLY-001 | supply_chain | planned | Milestone 5 |
-| SR-SUPPLY-002 | supply_chain | planned | Milestone 5 |
+| SR-SUPPLY-001 | supply_chain | implemented | Milestone 5 |
+| SR-SUPPLY-002 | supply_chain | implemented | Milestone 5 |
 | SR-SUPPLY-003 | supply_chain | planned | Milestone 7 |
-| SR-SUPPLY-004 | supply_chain | planned | Milestone 5 |
+| SR-SUPPLY-004 | supply_chain | implemented | Milestone 5 |
 | SR-TM-001 | secure_design | implemented | Milestone 2 |

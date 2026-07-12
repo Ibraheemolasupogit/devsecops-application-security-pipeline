@@ -1,0 +1,17 @@
+{
+  "Results": [
+    {
+      "Target": "devsecops-application-security-pipeline:milestone5",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2099-0002",
+          "PkgName": "example",
+          "FixedVersion": "1.2.4",
+          "Severity": "HIGH"
+        }
+      ],
+      "Secrets": [],
+      "Misconfigurations": []
+    }
+  ]
+}

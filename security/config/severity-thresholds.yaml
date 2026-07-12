@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "thresholds": {
+    "bandit": {"severity": "medium", "confidence": "medium"},
+    "pip-audit": {"block_severities": ["critical", "high"]},
+    "checkov": {"block_severities": ["HIGH", "CRITICAL"]},
+    "trivy": {"vulnerability_severities": ["HIGH", "CRITICAL"], "secret_severity": "CRITICAL"}
+  }
+}

@@ -19,8 +19,9 @@ def test_ecs_tasks_have_no_public_ip_and_narrow_ingress() -> None:
     network = read("modules/networking/main.tf")
     assert "assign_public_ip = false" in compute
     assert "security_groups  = [var.ecs_tasks_security_group_id]" in compute
-    assert 'description     = "Application port from ALB only"' in network
-    assert "security_groups = [aws_security_group.alb.id]" in network
+    assert 'resource "aws_security_group_rule" "ecs_from_alb"' in network
+    assert 'description              = "Application port from ALB only"' in network
+    assert "source_security_group_id = aws_security_group.alb.id" in network
     assert "from_port   = 22" not in all_tf()
 
 

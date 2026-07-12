@@ -1,4 +1,4 @@
-FROM python:3.11.13-slim-bookworm AS builder
+FROM python:3.11.13-slim-trixie AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
@@ -6,10 +6,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src ./src
-RUN python -m pip install --upgrade pip==25.1.1 \
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip install --upgrade pip==25.1.1 setuptools==80.9.0 wheel==0.46.2 \
     && python -m pip wheel --no-cache-dir --wheel-dir /wheels .
 
-FROM python:3.11.13-slim-bookworm AS runtime
+FROM python:3.11.13-slim-trixie AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -20,8 +23,12 @@ RUN addgroup --system appuser \
 
 WORKDIR /app
 COPY --from=builder /wheels /wheels
-RUN python -m pip install --no-cache-dir --no-index --find-links=/wheels genomic-research-access-api==0.1.0 \
-    && rm -rf /wheels
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip install --no-cache-dir --no-index --find-links=/wheels genomic-research-access-api==0.1.0 \
+    && python -m pip uninstall -y pip setuptools wheel \
+    && rm -rf /wheels /root/.cache/pip
 
 USER appuser
 EXPOSE 8000

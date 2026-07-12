@@ -24,6 +24,14 @@ This runs formatting checks, linting, mypy, and coverage-enforced tests.
 
 It also runs authentication/API-security tests and verifies committed threat-model and API-security evidence.
 
+## AppSec Checks
+
+```bash
+make appsec-fast
+```
+
+This runs Semgrep rule tests, SAST, project-scoped dependency audit, SBOM validation, Checkov reporting and AppSec evidence verification. Docker-backed secret and container scans are available through `make secrets-scan` and `make container-scan` when Docker is running.
+
 ## Local API Tokens
 
 Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:

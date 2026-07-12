@@ -1,0 +1,16 @@
+{
+  "blocking_count": 0,
+  "not_run": [],
+  "policy_decision": "pass",
+  "scanner_count": 5,
+  "suppression_count": 15,
+  "tool_versions": {
+    "bandit": "1.7.10",
+    "checkov": "3.2.281",
+    "cyclonedx": "4.0.0",
+    "gitleaks": "8.24.3",
+    "pip-audit": "2.7.3",
+    "semgrep": "1.78.0",
+    "trivy": "0.54.1"
+  }
+}

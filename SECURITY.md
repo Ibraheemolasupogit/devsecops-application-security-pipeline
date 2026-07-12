@@ -6,4 +6,13 @@ If you identify a vulnerability or unsafe pattern in this demonstration code, op
 
 Do not submit real patient data, NHS data, genomic data, credentials, cloud account identifiers, or sensitive operational details in reports.
 
-Milestone 1 intentionally does not implement production authentication, authorisation, cloud infrastructure, or automated AppSec scanning. Those controls are deferred to later milestones and should not be represented as active protections here.
+Current implemented security controls include local JWT authentication, role-based and object-level authorisation, threat-model validation, non-deployed Terraform reference controls, and a Milestone 5 AppSec pipeline.
+
+Run local security checks with:
+
+```bash
+make quality
+make appsec-fast
+```
+
+Docker-backed Gitleaks and Trivy scans require a running Docker daemon when native binaries are not installed. Do not treat local scanner evidence as a production vulnerability-management programme or release approval gate.

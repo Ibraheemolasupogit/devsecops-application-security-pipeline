@@ -38,6 +38,7 @@ def init() -> None:
 
 def validate() -> None:
     for environment in ENVIRONMENTS:
+        _run(["init", "-backend=false"], cwd=environment)
         _run(["validate"], cwd=environment)
 
 

@@ -1,0 +1,9 @@
+{
+  "results": [
+    {
+      "check_id": "no-subprocess-shell-true",
+      "path": "security/semgrep/tests/insecure.py",
+      "extra": {"severity": "ERROR", "message": "Avoid subprocess execution with shell=True."}
+    }
+  ]
+}

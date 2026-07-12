@@ -378,12 +378,14 @@
   },
   {
     "evidence_references": [
-      "future scanner evidence"
+      "outputs/security/appsec/container-scan-summary.json"
     ],
     "implementation_references": [
-      "future container scanning"
+      "scripts/appsec_tools.py",
+      "security/trivy/trivy.yaml",
+      "security/config/tools.yaml"
     ],
-    "notes": "Container scanning is explicitly future work.",
+    "notes": "Pinned Trivy scanning is wired; local execution requires a running Docker daemon.",
     "requirement_ids": [
       "SR-CONTAINER-001"
     ],
@@ -391,7 +393,8 @@
     "threat_id": "THR-CONTAINER-001",
     "traceability_id": "TRACE-020",
     "verification_methods": [
-      "future image scan"
+      "make container-build-security",
+      "make container-scan"
     ]
   },
   {
@@ -416,10 +419,12 @@
   },
   {
     "evidence_references": [
+      "outputs/security/appsec/iac-scan-summary.json",
       "outputs/security/infrastructure/terraform-validation-summary.json"
     ],
     "implementation_references": [
       "infrastructure/",
+      "security/checkov/config.yaml",
       "docs/infrastructure/terraform-state-security.md"
     ],
     "notes": "Terraform is implemented as a non-deployed reference architecture with secure state design examples.",
@@ -432,7 +437,8 @@
     "traceability_id": "TRACE-022",
     "verification_methods": [
       "local infrastructure policy tests",
-      "infrastructure evidence verification"
+      "infrastructure evidence verification",
+      "Checkov scan"
     ]
   },
   {
@@ -517,13 +523,16 @@
   },
   {
     "evidence_references": [
+      "outputs/security/appsec/secret-scan-summary.json",
       "outputs/security/infrastructure/encryption-control-summary.json"
     ],
     "implementation_references": [
       ".gitignore",
-      "infrastructure/modules/secrets/main.tf"
+      ".gitleaks.toml",
+      "infrastructure/modules/secrets/main.tf",
+      "security/config/suppressions.yaml"
     ],
-    "notes": "Secret values remain outside Terraform; secret scanning is still future work.",
+    "notes": "Secret values remain outside Terraform; Gitleaks execution is wired with a narrowly governed fixture suppression.",
     "requirement_ids": [
       "SR-SECRETS-001",
       "SR-SUPPLY-004"
@@ -532,19 +541,21 @@
     "threat_id": "THR-SECRETS-001",
     "traceability_id": "TRACE-027",
     "verification_methods": [
-      "manual inspection",
-      "local secret metadata tests"
+      "local secret metadata tests",
+      "Gitleaks scanner configuration and evidence"
     ]
   },
   {
     "evidence_references": [
-      "future scanner evidence"
+      "outputs/security/appsec/dependency-scan-summary.json",
+      "outputs/security/appsec/sbom.cdx.json"
     ],
     "implementation_references": [
       "pyproject.toml",
-      "future SCA and SBOM"
+      "scripts/appsec_tools.py",
+      "src/genomic_research_access_api/security/appsec/evidence.py"
     ],
-    "notes": "Dependencies are pinned; automated scanning is deferred.",
+    "notes": "Runtime dependency scanning and deterministic SBOM generation are implemented.",
     "requirement_ids": [
       "SR-SUPPLY-001",
       "SR-SUPPLY-002"
@@ -553,18 +564,21 @@
     "threat_id": "THR-SUPPLY-001",
     "traceability_id": "TRACE-028",
     "verification_methods": [
-      "future dependency scanning"
+      "pip-audit dependency scanning",
+      "CycloneDX SBOM validation"
     ]
   },
   {
     "evidence_references": [
+      "outputs/security/appsec/appsec-pipeline-summary.json",
       "outputs/security/threat-model/evidence-manifest.json"
     ],
     "implementation_references": [
       ".github/workflows/ci.yml",
-      "future dependency review"
+      ".github/workflows/appsec.yml",
+      "scripts/appsec_tools.py"
     ],
-    "notes": "Quality checks reduce accidental update risk but not malicious dependency risk.",
+    "notes": "Quality checks are extended with AppSec scanner evidence for dependency and code risks.",
     "requirement_ids": [
       "SR-CI-001",
       "SR-SUPPLY-001"
@@ -574,7 +588,7 @@
     "traceability_id": "TRACE-029",
     "verification_methods": [
       "CI tests",
-      "future SCA"
+      "SAST and SCA scanner targets"
     ]
   },
   {

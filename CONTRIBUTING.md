@@ -1,6 +1,6 @@
 # Contributing
 
-This portfolio repository is a local demonstration of a secure product foundation. Contributions should keep Milestone 1 focused on the FastAPI reference application and avoid adding later roadmap capabilities prematurely.
+This portfolio repository is a local demonstration of a secure product foundation. Contributions should preserve the delivered milestone boundaries and avoid adding cloud deployment, release gates or vulnerability-management operations before their roadmap milestone.
 
 ## Local Checks
 
@@ -8,6 +8,7 @@ Run:
 
 ```bash
 make quality
+make appsec-fast
 ```
 
 Use deterministic synthetic data only. Do not add real patient, NHS, genomic, credential, or cloud account data.
@@ -18,4 +19,5 @@ Use deterministic synthetic data only. Do not add real patient, NHS, genomic, cr
 - Preserve stable JSON error structures.
 - Do not introduce wildcard CORS defaults.
 - Do not commit generated caches, local databases, logs, or environment files.
-- Keep future security tooling, AWS, Terraform, and production authentication out of Milestone 1 unless the roadmap milestone changes.
+- Run scanner targets after changing dependencies, Dockerfile, Terraform, authentication or request-handling code.
+- Do not add broad scanner suppressions. Use `security/config/suppressions.yaml` with an owner, expiry and exact path or rule scope.

@@ -1,0 +1,85 @@
+{
+  "generation_metadata": {
+    "generated_at": "2026-01-01T00:00:00Z",
+    "generator": "genomic_research_access_api.security.appsec.evidence"
+  },
+  "input_files": {
+    "outputs/security/appsec/raw/bandit.json": {
+      "path": "outputs/security/appsec/raw/bandit.json",
+      "sha256": "e567d7ce17a7c9a8d4e1a06570376ccf025529ec46434f1481f9ba7e56e9dabf"
+    },
+    "outputs/security/appsec/raw/checkov.json": {
+      "path": "outputs/security/appsec/raw/checkov.json",
+      "sha256": "81127f69d8453e5ce3e50c7b16d29407cd8be679051f112544dfe6ec60ed4f15"
+    },
+    "outputs/security/appsec/raw/gitleaks.json": {
+      "path": "outputs/security/appsec/raw/gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "outputs/security/appsec/raw/pip-audit.json": {
+      "path": "outputs/security/appsec/raw/pip-audit.json",
+      "sha256": "f11b091a5980720daa4643a2806328b3f1e005784313182e61b50e6fe7b77600"
+    },
+    "outputs/security/appsec/raw/semgrep.json": {
+      "path": "outputs/security/appsec/raw/semgrep.json",
+      "sha256": "dc3bc643acdc2e69b616a9bde1dfadc187430af16b1d18262d76f86d8519fb14"
+    },
+    "outputs/security/appsec/raw/trivy.json": {
+      "path": "outputs/security/appsec/raw/trivy.json",
+      "sha256": "05b97d5e2453208e7e2d1d8624f131042d97f7c6b94c320be299de4973fce27c"
+    },
+    "outputs/security/appsec/sbom.cdx.json": {
+      "path": "outputs/security/appsec/sbom.cdx.json",
+      "sha256": "18505ba64202b39adabfa80776f4b1afecc08216b0bef2470117e2f58aff5fca"
+    },
+    "security/config/policy.yaml": {
+      "path": "security/config/policy.yaml",
+      "sha256": "a6ed93e62222f80f173b0a7679d9b83eee52083d5fe7aaf3fe507d23d7836632"
+    },
+    "security/config/suppressions.yaml": {
+      "path": "security/config/suppressions.yaml",
+      "sha256": "87fa320b2bd536905d383d627fda1d2983b7d41bbc5c63ed8a90d23d30ee56e6"
+    },
+    "security/config/tools.yaml": {
+      "path": "security/config/tools.yaml",
+      "sha256": "931430905d724867ddb87e08d93189e39cef707c9576b4d8f7d92c6523f6f7a4"
+    }
+  },
+  "output_files": {
+    "appsec-pipeline-summary.json": {
+      "path": "appsec-pipeline-summary.json",
+      "sha256": "0263be61003c0e0caca7ceec35a811728d9df3c20e85e281960db19d22855600"
+    },
+    "container-scan-summary.json": {
+      "path": "container-scan-summary.json",
+      "sha256": "80868523b8bcd145ff056ddce6f54a4dbc915caacb69df8ea2068aff7835faf0"
+    },
+    "dependency-scan-summary.json": {
+      "path": "dependency-scan-summary.json",
+      "sha256": "5e6521b1958fb117f8c908d31cf4aa639ebb8f6edb078de41063e116fe1c7bc2"
+    },
+    "iac-scan-summary.json": {
+      "path": "iac-scan-summary.json",
+      "sha256": "fe21b06df6411803e950ca0fa8a77c00f04eb44bc2a1424a25dd673c18eb1530"
+    },
+    "sast-summary.json": {
+      "path": "sast-summary.json",
+      "sha256": "17e5839b105275e116b826dd043102616fb39cc4a41754e3d2f2d64fae8f5263"
+    },
+    "secret-scan-summary.json": {
+      "path": "secret-scan-summary.json",
+      "sha256": "09639c89dafa7bf3d9bb03795e37db27553f4b6651f6088eb13eeccb5b03901c"
+    }
+  },
+  "project_version": "0.1.0",
+  "schema_version": "1.0",
+  "tool_versions": {
+    "bandit": "1.7.10",
+    "checkov": "3.2.281",
+    "cyclonedx": "4.0.0",
+    "gitleaks": "8.24.3",
+    "pip-audit": "2.7.3",
+    "semgrep": "1.78.0",
+    "trivy": "0.54.1"
+  }
+}

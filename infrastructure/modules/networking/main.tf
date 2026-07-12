@@ -6,6 +6,11 @@ resource "aws_vpc" "this" {
   tags = merge(var.tags, { Name = "${var.name_prefix}-vpc" })
 }
 
+resource "aws_default_security_group" "this" {
+  vpc_id = aws_vpc.this.id
+  tags   = merge(var.tags, { Name = "${var.name_prefix}-default-deny" })
+}
+
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
   tags   = merge(var.tags, { Name = "${var.name_prefix}-igw" })
@@ -89,11 +94,13 @@ resource "aws_route_table_association" "private_app" {
 }
 
 resource "aws_security_group" "alb" {
+  #checkov:skip=CKV2_AWS_5:Security group is attached to the ALB through the compute module input; Checkov does not resolve this cross-module output-to-input graph.
   name        = "${var.name_prefix}-alb-sg"
   description = "Internet-facing ALB ingress only"
   vpc_id      = aws_vpc.this.id
 
   ingress {
+    #checkov:skip=CKV_AWS_260:Port 80 is allowed only for public HTTP-to-HTTPS redirect; production compute configuration requires HTTPS.
     description = "Public HTTP for development or redirect"
     from_port   = 80
     to_port     = 80
@@ -109,29 +116,14 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress {
-    description     = "ALB to ECS application port"
-    from_port       = var.application_port
-    to_port         = var.application_port
-    protocol        = "tcp"
-    security_groups = [aws_security_group.ecs_tasks.id]
-  }
-
   tags = merge(var.tags, { Name = "${var.name_prefix}-alb-sg" })
 }
 
 resource "aws_security_group" "ecs_tasks" {
+  #checkov:skip=CKV2_AWS_5:Security group is attached to the ECS service through the compute module input; Checkov does not resolve this cross-module output-to-input graph.
   name        = "${var.name_prefix}-ecs-tasks-sg"
   description = "Private ECS task ingress from ALB only"
   vpc_id      = aws_vpc.this.id
-
-  ingress {
-    description     = "Application port from ALB only"
-    from_port       = var.application_port
-    to_port         = var.application_port
-    protocol        = "tcp"
-    security_groups = [aws_security_group.alb.id]
-  }
 
   egress {
     description = "HTTPS egress to AWS APIs and VPC endpoints"
@@ -142,6 +134,26 @@ resource "aws_security_group" "ecs_tasks" {
   }
 
   tags = merge(var.tags, { Name = "${var.name_prefix}-ecs-tasks-sg" })
+}
+
+resource "aws_security_group_rule" "alb_to_ecs" {
+  type                     = "egress"
+  description              = "ALB to ECS application port"
+  from_port                = var.application_port
+  to_port                  = var.application_port
+  protocol                 = "tcp"
+  security_group_id        = aws_security_group.alb.id
+  source_security_group_id = aws_security_group.ecs_tasks.id
+}
+
+resource "aws_security_group_rule" "ecs_from_alb" {
+  type                     = "ingress"
+  description              = "Application port from ALB only"
+  from_port                = var.application_port
+  to_port                  = var.application_port
+  protocol                 = "tcp"
+  security_group_id        = aws_security_group.ecs_tasks.id
+  source_security_group_id = aws_security_group.alb.id
 }
 
 resource "aws_security_group" "vpc_endpoints" {

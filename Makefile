@@ -1,4 +1,4 @@
-.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
+.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -68,7 +68,66 @@ verify-infrastructure-evidence:
 infrastructure-report:
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.infrastructure.report
 
-quality: format-check lint type-check test-coverage auth-test api-security-test threat-model-validate verify-threat-model-evidence verify-api-security-evidence terraform-fmt-check infrastructure-test verify-infrastructure-evidence
+security-tools:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py security-tools
+
+secrets-scan:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py gitleaks
+
+sast-semgrep:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py semgrep
+
+semgrep-test:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py semgrep-test
+
+sast-bandit:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py bandit
+
+sast: sast-semgrep sast-bandit
+
+dependency-audit:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py dependency-audit
+
+sca: dependency-audit
+
+sbom:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py sbom
+
+verify-sbom:
+	PYTHONPATH=src $(PYTHON) -c "from genomic_research_access_api.security.appsec.parsers import validate_cyclonedx; from genomic_research_access_api.security.appsec.evidence import SBOM_PATH; validate_cyclonedx(SBOM_PATH)"
+
+checkov-scan:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py checkov
+
+iac-scan: checkov-scan
+
+container-build-security:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py container-build
+
+container-scan:
+	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py trivy
+
+appsec-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.appsec.evidence --timestamp 2026-01-01T00:00:00Z
+
+verify-appsec-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.appsec.evidence --verify
+
+appsec-report:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.appsec.report
+
+appsec-fast: secrets-scan sast dependency-audit
+
+appsec-full: appsec-fast sbom verify-sbom checkov-scan container-build-security container-scan appsec-evidence verify-appsec-evidence appsec-report
+
+pre-commit-install:
+	$(PYTHON) -m pip install pre-commit==3.8.0
+	$(VENV)/bin/pre-commit install
+
+pre-commit-run:
+	$(VENV)/bin/pre-commit run --all-files
+
+quality: format-check lint type-check test-coverage auth-test api-security-test threat-model-validate verify-threat-model-evidence verify-api-security-evidence terraform-fmt-check infrastructure-test verify-infrastructure-evidence verify-appsec-evidence
 
 run:
 	PYTHONPATH=src $(UVICORN) genomic_research_access_api.main:app --host 127.0.0.1 --port 8000

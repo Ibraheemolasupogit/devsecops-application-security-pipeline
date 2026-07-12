@@ -1,0 +1,43 @@
+rules:
+  - id: no-client-controlled-requester-id
+    message: Do not derive requester identity from client-controlled request bodies.
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern: $MODEL(..., requester_id=$PAYLOAD.requester_id, ...)
+    metadata:
+      category: security
+      cwe: "CWE-639"
+
+  - id: no-raw-authorization-header-logging
+    message: Do not log raw Authorization headers or bearer tokens.
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern-either:
+          - pattern: $LOGGER.$METHOD(..., $REQ.headers["Authorization"], ...)
+          - pattern: $LOGGER.$METHOD(..., $REQ.headers.get("Authorization"), ...)
+    metadata:
+      category: security
+      cwe: "CWE-532"
+
+  - id: jwt-decode-must-pin-algorithms
+    message: jwt.decode must use a fixed allowed algorithms list.
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern: jwt.decode(...)
+      - pattern-not: jwt.decode(..., algorithms=[...], ...)
+    metadata:
+      category: security
+      cwe: "CWE-347"
+
+  - id: no-subprocess-shell-true
+    message: Avoid subprocess execution with shell=True.
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern: subprocess.$FUNC(..., shell=True, ...)
+    metadata:
+      category: security
+      cwe: "CWE-78"

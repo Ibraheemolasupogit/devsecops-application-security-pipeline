@@ -70,6 +70,7 @@ module "iam" {
   application_data_key_arn = module.kms.application_data_key_arn
   secrets_key_arn          = module.kms.secrets_key_arn
   audit_key_arn            = module.kms.audit_key_arn
+  vpc_flow_log_group_arn   = module.observability.vpc_flow_log_group_arn
   tags                     = local.common_tags
 }
 
@@ -86,7 +87,7 @@ module "observability" {
   name_prefix             = local.name_prefix
   environment             = var.environment
   kms_key_arn             = module.kms.audit_key_arn
-  log_retention_days      = 30
+  log_retention_days      = 365
   alarm_sns_topic_arn     = var.alarm_sns_topic_arn
   alb_arn_suffix          = local.name_prefix
   target_group_arn_suffix = local.name_prefix
@@ -118,6 +119,7 @@ module "compute" {
   private_subnet_ids          = module.networking.private_app_subnet_ids
   alb_security_group_id       = module.networking.alb_security_group_id
   ecs_tasks_security_group_id = module.networking.ecs_tasks_security_group_id
+  kms_key_arn                 = module.kms.audit_key_arn
   task_execution_role_arn     = module.iam.task_execution_role_arn
   runtime_role_arn            = module.iam.runtime_role_arn
   application_port            = local.application_port
@@ -135,9 +137,10 @@ module "compute" {
 }
 
 module "audit" {
-  source         = "../../modules/audit"
-  name_prefix    = local.name_prefix
-  kms_key_arn    = module.kms.audit_key_arn
-  retention_days = 365
-  tags           = local.common_tags
+  source             = "../../modules/audit"
+  name_prefix        = local.name_prefix
+  kms_key_arn        = module.kms.audit_key_arn
+  retention_days     = 365
+  log_retention_days = 365
+  tags               = local.common_tags
 }

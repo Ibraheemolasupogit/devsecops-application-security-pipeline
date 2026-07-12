@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "blocking_policy": {
+    "gitleaks": {"verified_secret": "block"},
+    "semgrep": {"ERROR": "block", "WARNING": "report"},
+    "bandit": {"HIGH_HIGH": "block", "MEDIUM": "report"},
+    "pip-audit": {"critical_or_high_with_fix": "block", "lower": "report"},
+    "checkov": {"HIGH": "block", "CRITICAL": "block"},
+    "trivy": {"CRITICAL": "block", "HIGH_WITH_FIX": "block", "SECRET": "block", "CRITICAL_MISCONFIGURATION": "block"}
+  },
+  "states": ["scanner_execution_failure", "policy_blocking_finding", "non_blocking_finding", "tool_unavailable", "suppressed_finding"]
+}

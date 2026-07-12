@@ -90,3 +90,21 @@ flowchart LR
 ```
 
 The Terraform implementation separates deployment, execution and runtime roles, keeps ECS tasks private, avoids Terraform-managed secret values and generates deterministic infrastructure evidence under `outputs/security/infrastructure/`.
+
+## Milestone 5 AppSec Pipeline Architecture
+
+```mermaid
+flowchart LR
+    Source["Repository source"] --> Wrappers["scripts/appsec_tools.py"]
+    Wrappers --> SAST["Semgrep and Bandit"]
+    Wrappers --> SCA["pip-audit and SBOM"]
+    Wrappers --> IaC["Checkov"]
+    Wrappers --> Image["Gitleaks and Trivy when available"]
+    SAST --> Evidence["outputs/security/appsec"]
+    SCA --> Evidence
+    IaC --> Evidence
+    Image --> Evidence
+    Evidence --> Reports["reports/security"]
+```
+
+The scanner pipeline is local and CI-oriented. It does not publish images, create cloud resources or implement vulnerability-management workflow states.

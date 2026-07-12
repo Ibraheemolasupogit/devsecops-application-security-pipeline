@@ -1,0 +1,8 @@
+exclude_dirs:
+  - tests
+  - tests/fixtures
+  - outputs
+  - security/fixtures
+skips: []
+severity: medium
+confidence: medium

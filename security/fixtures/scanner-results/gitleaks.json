@@ -1,0 +1,7 @@
+[
+  {
+    "RuleID": "generic-api-token",
+    "Description": "Generic API token assignment",
+    "File": "security/fixtures/insecure/hardcoded_secret.txt"
+  }
+]

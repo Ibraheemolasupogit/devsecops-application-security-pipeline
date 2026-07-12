@@ -34,4 +34,4 @@ The dataset catalogue is synthetic and non-identifiable. Access requests and aud
 
 ## Exclusions
 
-External IdP integration, durable policy storage, AWS resources, Terraform, AppSec scanners, release gates and vulnerability lifecycle features are excluded from Milestone 3.
+External IdP integration, durable policy storage, AWS resource creation, release gates and vulnerability lifecycle features are excluded from Milestone 5.
