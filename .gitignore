@@ -15,3 +15,11 @@ build/
 *.log
 *.sqlite
 *.db
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+terraform.tfvars
+*.auto.tfvars
+override.tf
+override.tf.json

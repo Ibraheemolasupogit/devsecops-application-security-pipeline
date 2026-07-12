@@ -1,0 +1,11 @@
+{
+  "alarms": [
+    "alb_5xx",
+    "unhealthy_targets"
+  ],
+  "audit_bucket_public_access_block": true,
+  "audit_bucket_tls_policy": true,
+  "cloudtrail_log_validation": true,
+  "cloudtrail_multi_region": true,
+  "cloudwatch_log_retention": "configured"
+}

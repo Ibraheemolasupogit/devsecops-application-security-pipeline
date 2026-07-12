@@ -1,0 +1,15 @@
+{
+  "alb_public_ingress": "configured",
+  "ecs_assign_public_ip": "false",
+  "ecs_ingress": "ALB security group only",
+  "flow_logs": "configured",
+  "ssh_ingress": "not configured",
+  "vpc_endpoints": [
+    "ecr.api",
+    "ecr.dkr",
+    "logs",
+    "secretsmanager",
+    "s3",
+    "dynamodb"
+  ]
+}

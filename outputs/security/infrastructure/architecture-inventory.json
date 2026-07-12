@@ -1,0 +1,24 @@
+{
+  "compute": "AWS ECS Fargate",
+  "datastore": "DynamoDB",
+  "deployment_status": "not deployed",
+  "edge": "Application Load Balancer",
+  "environments": [
+    "dev",
+    "prod"
+  ],
+  "network": [
+    "VPC",
+    "public ALB subnets",
+    "private ECS subnets",
+    "VPC endpoints"
+  ],
+  "supporting_services": [
+    "ECR",
+    "Secrets Manager",
+    "KMS",
+    "CloudWatch",
+    "CloudTrail",
+    "S3 audit bucket"
+  ]
+}

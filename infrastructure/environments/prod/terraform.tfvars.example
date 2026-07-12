@@ -1,0 +1,7 @@
+aws_region               = "eu-west-2"
+github_repository        = "example-org/example-repo"
+certificate_arn          = "arn:aws:acm:eu-west-2:111122223333:certificate/example-certificate-id"
+container_image          = "111122223333.dkr.ecr.eu-west-2.amazonaws.com/genomic-research-access-api-prod@sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+availability_zones       = ["eu-west-2a", "eu-west-2b"]
+public_subnet_cidrs      = ["10.50.0.0/24", "10.50.1.0/24"]
+private_app_subnet_cidrs = ["10.50.10.0/24", "10.50.11.0/24"]

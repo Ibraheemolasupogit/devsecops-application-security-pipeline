@@ -1,0 +1,6 @@
+bucket         = "example-prod-terraform-state"
+key            = "genomic-research-access-api/prod/terraform.tfstate"
+region         = "eu-west-2"
+encrypt        = true
+kms_key_id     = "alias/example-prod-terraform-state"
+dynamodb_table = "example-prod-terraform-locks"

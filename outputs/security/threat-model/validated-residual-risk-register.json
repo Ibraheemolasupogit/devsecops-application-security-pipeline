@@ -124,13 +124,16 @@
   },
   {
     "control_limitations": [
-      "future deployment will require new controls"
+      "controls are not operationally effective until deployed through an approved process"
     ],
     "current_controls": [
       "no AWS resources",
-      "no Terraform state"
+      "no Terraform state",
+      "Terraform IAM separation",
+      "KMS encryption configuration",
+      "private ECS networking configuration"
     ],
-    "description": "Cloud IAM, encrypted storage and Terraform controls are not implemented because no cloud deployment exists.",
+    "description": "Cloud IAM, encrypted storage and Terraform controls are configured as code, but no cloud deployment exists.",
     "planned_milestone": "Milestone 6",
     "related_threat_ids": [
       "THR-IAM-001",
@@ -208,13 +211,14 @@
   },
   {
     "control_limitations": [
-      "future deployment permissions are not yet defined"
+      "OIDC role is not used by CI yet and requires deployment governance before activation"
     ],
     "current_controls": [
       "current CI has read-only repository permissions",
-      "no deployment steps"
+      "no deployment steps",
+      "GitHub OIDC deployment role configured as code"
     ],
-    "description": "Future deployment identity risks remain until deployment workflows are designed.",
+    "description": "Future deployment identity risks remain until deployment workflows are activated.",
     "planned_milestone": "Milestone 4",
     "related_threat_ids": [
       "THR-CI-001"

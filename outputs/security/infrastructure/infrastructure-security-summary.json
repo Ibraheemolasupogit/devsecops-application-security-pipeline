@@ -1,0 +1,9 @@
+{
+  "architecture_status": "configured",
+  "aws_resources_created": false,
+  "deployment_status": "not deployed",
+  "local_policy_validation": "configured",
+  "milestone": "4",
+  "terraform_state_created": false,
+  "validation_status": "passed"
+}

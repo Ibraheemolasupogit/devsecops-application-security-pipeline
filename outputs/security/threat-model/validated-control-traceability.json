@@ -356,13 +356,13 @@
   },
   {
     "evidence_references": [
-      "future CI/CD evidence"
+      "outputs/security/infrastructure/iam-role-inventory.json"
     ],
     "implementation_references": [
       ".github/workflows/ci.yml",
-      "future deployment IAM"
+      "infrastructure/modules/iam/main.tf"
     ],
-    "notes": "Current CI has no deployment permissions; future identity must remain scoped.",
+    "notes": "Current CI has no AWS credentials; reference OIDC deployment role is configured as code only.",
     "requirement_ids": [
       "SR-CI-002",
       "SR-CI-003",
@@ -373,7 +373,7 @@
     "traceability_id": "TRACE-019",
     "verification_methods": [
       "workflow review",
-      "future IAM validation"
+      "local OIDC trust policy tests"
     ]
   },
   {
@@ -396,12 +396,13 @@
   },
   {
     "evidence_references": [
-      "outputs/security/threat-model/validated-security-requirements.json"
+      "outputs/security/infrastructure/architecture-inventory.json"
     ],
     "implementation_references": [
-      "Dockerfile"
+      "Dockerfile",
+      "infrastructure/modules/compute/main.tf"
     ],
-    "notes": "Non-root runtime user is implemented.",
+    "notes": "Non-root runtime user is implemented in the Dockerfile and ECS task definition.",
     "requirement_ids": [
       "SR-CONTAINER-002"
     ],
@@ -409,17 +410,19 @@
     "threat_id": "THR-CONTAINER-002",
     "traceability_id": "TRACE-021",
     "verification_methods": [
-      "Dockerfile review"
+      "Dockerfile review",
+      "local ECS task-definition hardening tests"
     ]
   },
   {
     "evidence_references": [
-      "future IaC evidence"
+      "outputs/security/infrastructure/terraform-validation-summary.json"
     ],
     "implementation_references": [
-      "future IaC validation"
+      "infrastructure/",
+      "docs/infrastructure/terraform-state-security.md"
     ],
-    "notes": "Terraform is not implemented in Milestone 2.",
+    "notes": "Terraform is implemented as a non-deployed reference architecture with secure state design examples.",
     "requirement_ids": [
       "SR-IAC-001",
       "SR-IAC-002"
@@ -428,17 +431,20 @@
     "threat_id": "THR-IAC-001",
     "traceability_id": "TRACE-022",
     "verification_methods": [
-      "future Terraform state review"
+      "local infrastructure policy tests",
+      "infrastructure evidence verification"
     ]
   },
   {
     "evidence_references": [
-      "future cloud evidence"
+      "outputs/security/infrastructure/network-security-summary.json",
+      "outputs/security/infrastructure/encryption-control-summary.json"
     ],
     "implementation_references": [
-      "future private datastore configuration"
+      "infrastructure/modules/networking/main.tf",
+      "infrastructure/modules/datastore/main.tf"
     ],
-    "notes": "No cloud datastore exists today.",
+    "notes": "Cloud datastore and private networking are configured as code but not deployed.",
     "requirement_ids": [
       "SR-DATA-003",
       "SR-IAC-001"
@@ -447,17 +453,17 @@
     "threat_id": "THR-IAC-002",
     "traceability_id": "TRACE-023",
     "verification_methods": [
-      "future IaC network tests"
+      "local network and datastore infrastructure tests"
     ]
   },
   {
     "evidence_references": [
-      "future IAM evidence"
+      "outputs/security/infrastructure/iam-policy-summary.json"
     ],
     "implementation_references": [
-      "future workload IAM"
+      "infrastructure/modules/iam/main.tf"
     ],
-    "notes": "Workload identity is future work.",
+    "notes": "Workload identity is configured as code with a separate ECS runtime role.",
     "requirement_ids": [
       "SR-IAM-001"
     ],
@@ -465,17 +471,19 @@
     "threat_id": "THR-IAM-001",
     "traceability_id": "TRACE-024",
     "verification_methods": [
-      "future IAM least-privilege review"
+      "local runtime role least-privilege tests"
     ]
   },
   {
     "evidence_references": [
-      "future cloud evidence"
+      "outputs/security/infrastructure/encryption-control-summary.json"
     ],
     "implementation_references": [
-      "future encrypted transport and storage"
+      "infrastructure/modules/compute/main.tf",
+      "infrastructure/modules/kms/main.tf",
+      "infrastructure/modules/datastore/main.tf"
     ],
-    "notes": "No production storage currently exists.",
+    "notes": "Encrypted transport and storage are configured as Terraform controls but not deployed.",
     "requirement_ids": [
       "SR-DATA-002",
       "SR-DATA-003"
@@ -484,7 +492,7 @@
     "threat_id": "THR-IAM-002",
     "traceability_id": "TRACE-025",
     "verification_methods": [
-      "future cloud configuration tests"
+      "local HTTPS, KMS and encrypted-storage tests"
     ]
   },
   {
@@ -509,13 +517,13 @@
   },
   {
     "evidence_references": [
-      "future scanner evidence"
+      "outputs/security/infrastructure/encryption-control-summary.json"
     ],
     "implementation_references": [
       ".gitignore",
-      "future secret scanning"
+      "infrastructure/modules/secrets/main.tf"
     ],
-    "notes": "Secret scanning is future work; no real secrets are required now.",
+    "notes": "Secret values remain outside Terraform; secret scanning is still future work.",
     "requirement_ids": [
       "SR-SECRETS-001",
       "SR-SUPPLY-004"
@@ -525,7 +533,7 @@
     "traceability_id": "TRACE-027",
     "verification_methods": [
       "manual inspection",
-      "future scanner"
+      "local secret metadata tests"
     ]
   },
   {

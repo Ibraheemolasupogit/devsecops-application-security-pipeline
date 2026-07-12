@@ -22,6 +22,8 @@ Milestone 2 delivered security architecture and threat modelling for the current
 
 Milestone 3 delivered local signed JWT authentication, role-based authorisation, object-level access controls, separation of requester and approver duties, API security headers, and deterministic API-security evidence.
 
+Milestone 4 delivered a secure AWS ECS Fargate Terraform reference architecture, local infrastructure policy tests, deterministic infrastructure evidence and cloud-security documentation. It did not deploy resources.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -66,6 +68,23 @@ Implemented:
 - API-security evidence under `outputs/security/api-security/` and reports under `reports/security/`.
 
 Not implemented in Milestone 3: external OIDC/JWKS integration, durable policy storage, production rate limiting, immutable audit logging, AWS resources, Terraform, AppSec scanners, release gates, vulnerability lifecycle, cloud deployment or Security Champions programme.
+
+## Milestone 4 Scope
+
+Implemented as code and local validation:
+
+- AWS ECS Fargate behind an Application Load Balancer.
+- VPC with public ALB subnets, private ECS subnets, VPC endpoints and flow logs.
+- ECR with KMS encryption, immutable tags and scan-on-push.
+- DynamoDB with KMS encryption, point-in-time recovery and production deletion protection.
+- Secrets Manager metadata without Terraform-managed secret values.
+- KMS keys for application data, secrets and audit/logging.
+- CloudWatch logs, infrastructure alarms, CloudTrail and private S3 audit storage.
+- Separate deployment, GitHub OIDC, task execution, runtime and flow-log roles.
+- Terraform dev/prod environment separation.
+- Infrastructure policy tests and deterministic evidence.
+
+Not implemented in Milestone 4: Terraform apply, AWS deployment, Cognito, external OIDC discovery, live DNS, Route 53, ACM issuance, WAF rules, scanner pipelines, release gates, vulnerability lifecycle or Security Champions programme.
 
 ## API Capabilities
 
@@ -132,7 +151,12 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make test-coverage`: run pytest with coverage threshold.
 - `make auth-test`: run focused authentication security tests.
 - `make api-security-test`: run API authentication and authorisation security tests.
-- `make quality`: run format, lint, type, coverage, auth, API-security and evidence checks.
+- `make terraform-fmt-check`: verify Terraform formatting if Terraform is installed.
+- `make terraform-init`: run `terraform init -backend=false` for dev/prod if Terraform is installed.
+- `make terraform-validate`: validate dev/prod Terraform if Terraform is installed.
+- `make infrastructure-test`: run local infrastructure policy tests without AWS credentials.
+- `make verify-infrastructure-evidence`: verify deterministic infrastructure evidence.
+- `make quality`: run format, lint, type, coverage, auth, API-security, infrastructure and evidence checks.
 - `make run`: start the local API on `127.0.0.1:8000`.
 - `make docker-build`: build the local Docker image.
 - `make docker-run`: run the local Docker image.
@@ -225,6 +249,27 @@ Generated reports:
 - `reports/security/authorisation-report.md`
 - `reports/security/negative-security-testing-report.md`
 
+## Infrastructure Evidence
+
+Generated outputs:
+
+- `outputs/security/infrastructure/architecture-inventory.json`
+- `outputs/security/infrastructure/iam-role-inventory.json`
+- `outputs/security/infrastructure/iam-policy-summary.json`
+- `outputs/security/infrastructure/network-security-summary.json`
+- `outputs/security/infrastructure/encryption-control-summary.json`
+- `outputs/security/infrastructure/logging-and-audit-summary.json`
+- `outputs/security/infrastructure/terraform-validation-summary.json`
+- `outputs/security/infrastructure/infrastructure-security-summary.json`
+- `outputs/security/infrastructure/evidence-manifest.json`
+
+Generated reports:
+
+- `reports/security/aws-architecture-report.md`
+- `reports/security/terraform-security-report.md`
+- `reports/security/iam-security-report.md`
+- `reports/security/infrastructure-validation-report.md`
+
 ## Repository Structure
 
 ```text
@@ -253,14 +298,16 @@ Current implemented controls include schema validation, field length limits, sta
 
 Milestone 3 also implements local signed JWT authentication, RBAC, object-level authorisation, separation of requester and approver duties, audit-event access restrictions, security headers and API-security evidence verification.
 
-Planned future controls include external IdP integration, rate limiting, immutable audit logging, secret scanning, dependency scanning, SBOM generation, container scanning, IaC scanning, least-privilege cloud IAM, encrypted future storage and protected release workflows.
+Milestone 4 adds secure AWS Terraform configuration for private ECS, least-privilege role separation, encrypted DynamoDB/Secrets/CloudTrail storage, CloudWatch/CloudTrail observability and secure remote-state design. These controls are configured and locally validated, not deployed.
+
+Planned future controls include external IdP integration, production rate limiting, scanner execution, findings ingestion, SBOM generation, risk gates, vulnerability lifecycle and Security Champions enablement.
 
 This repository does not claim production-grade identity, authorisation, monitoring, cloud or scanner coverage.
 
 ## Limitations
 
-State is in memory and resets when the app restarts. JWT keys under `tests/fixtures/keys/` are synthetic local development material only. Audit retrieval is a local demonstration endpoint restricted by role. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances.
+State is in memory and resets when the app restarts. JWT keys under `tests/fixtures/keys/` are synthetic local development material only. Audit retrieval is a local demonstration endpoint restricted by role. Terraform is a non-deployed reference architecture; no AWS resource is created by the repository state. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances.
 
 ## Future Milestones
 
-Later milestones may add external identity-provider integration, CI/CD security controls, AWS/Terraform security, vulnerability management, risk-based release gates, and Security Champions enablement.
+Later milestones may add external identity-provider integration, scanner execution, vulnerability management, risk-based release gates, and Security Champions enablement.

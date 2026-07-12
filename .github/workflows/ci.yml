@@ -26,6 +26,11 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
+      # hashicorp/setup-terraform v3.1.2
+      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd
+        with:
+          terraform_version: "1.8.5"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip==25.1.1
@@ -57,6 +62,24 @@ jobs:
 
       - name: API security evidence verification
         run: python -m genomic_research_access_api.security.api_security.evidence --verify
+
+      - name: Terraform format check
+        run: python scripts/terraform_local.py fmt-check
+
+      - name: Terraform init without backend
+        run: python scripts/terraform_local.py init
+
+      - name: Terraform validate
+        run: python scripts/terraform_local.py validate
+
+      - name: Terraform tests
+        run: python scripts/terraform_local.py test
+
+      - name: Infrastructure policy tests
+        run: pytest infrastructure/tests -q
+
+      - name: Infrastructure evidence verification
+        run: python -m genomic_research_access_api.security.infrastructure.evidence --verify
 
       - name: Application import and OpenAPI validation
         run: python -c "from genomic_research_access_api.main import app; assert app.openapi()['info']['title'] == 'Genomic Research Access API'"

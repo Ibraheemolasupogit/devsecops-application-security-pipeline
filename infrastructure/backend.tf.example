@@ -1,0 +1,12 @@
+# Copy this file to backend.tf only after the remote-state bootstrap has been
+# completed by a separate, approved process. Do not use real names in examples.
+terraform {
+  backend "s3" {
+    bucket         = "example-secure-terraform-state-bucket"
+    key            = "genomic-research-access-api/example/terraform.tfstate"
+    region         = "eu-west-2"
+    encrypt        = true
+    kms_key_id     = "alias/example-terraform-state"
+    dynamodb_table = "example-terraform-state-locks"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "cloudtrail_s3_kms": "configured",
+  "cloudwatch_logs_kms": "configured",
+  "dynamodb_sse_kms": "configured",
+  "ecr_kms": "configured",
+  "kms_rotation": "enabled",
+  "secret_values_in_terraform": "not configured",
+  "secrets_manager_kms": "configured"
+}

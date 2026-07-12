@@ -1,0 +1,6 @@
+bucket         = "example-dev-terraform-state"
+key            = "genomic-research-access-api/dev/terraform.tfstate"
+region         = "eu-west-2"
+encrypt        = true
+kms_key_id     = "alias/example-dev-terraform-state"
+dynamodb_table = "example-dev-terraform-locks"

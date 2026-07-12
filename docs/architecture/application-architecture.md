@@ -70,3 +70,23 @@ flowchart LR
 ```
 
 All `/api/v1/*` routes require authentication and explicit permissions. `/health` and local OpenAPI documentation remain public for local development. Restricted dataset detail and access-request resources are checked per object; unauthorised object access returns a not-found style response to avoid confirming resource existence.
+
+## Milestone 4 AWS Reference Architecture
+
+Milestone 4 adds Terraform configuration for a future AWS deployment blueprint. It is not deployed.
+
+```mermaid
+flowchart LR
+    Client["Internet client"] --> ALB["Application Load Balancer"]
+    ALB --> ECS["ECS Fargate service in private subnets"]
+    ECS --> DynamoDB["DynamoDB access-governance table"]
+    ECS --> Secrets["Secrets Manager metadata"]
+    ECS --> Logs["CloudWatch Logs"]
+    Trail["CloudTrail"] --> S3["Private encrypted S3 audit bucket"]
+    DynamoDB --> KMS["KMS keys"]
+    Secrets --> KMS
+    Logs --> KMS
+    S3 --> KMS
+```
+
+The Terraform implementation separates deployment, execution and runtime roles, keeps ECS tasks private, avoids Terraform-managed secret values and generates deterministic infrastructure evidence under `outputs/security/infrastructure/`.

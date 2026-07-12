@@ -1,4 +1,4 @@
-.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
+.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -41,7 +41,34 @@ auth-test:
 api-security-test:
 	PYTHONPATH=src $(PYTEST) tests/security/test_api_security_controls.py -q
 
-quality: format-check lint type-check test-coverage auth-test api-security-test threat-model-validate verify-threat-model-evidence verify-api-security-evidence
+terraform-fmt:
+	PYTHONPATH=src $(PYTHON) scripts/terraform_local.py fmt
+
+terraform-fmt-check:
+	PYTHONPATH=src $(PYTHON) scripts/terraform_local.py fmt-check
+
+terraform-init:
+	PYTHONPATH=src $(PYTHON) scripts/terraform_local.py init
+
+terraform-validate:
+	PYTHONPATH=src $(PYTHON) scripts/terraform_local.py validate
+
+terraform-test:
+	PYTHONPATH=src $(PYTHON) scripts/terraform_local.py test
+
+infrastructure-test:
+	PYTHONPATH=src $(PYTEST) infrastructure/tests -q
+
+infrastructure-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.infrastructure.evidence --timestamp 2026-01-01T00:00:00Z
+
+verify-infrastructure-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.infrastructure.evidence --verify
+
+infrastructure-report:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.infrastructure.report
+
+quality: format-check lint type-check test-coverage auth-test api-security-test threat-model-validate verify-threat-model-evidence verify-api-security-evidence terraform-fmt-check infrastructure-test verify-infrastructure-evidence
 
 run:
 	PYTHONPATH=src $(UVICORN) genomic_research_access_api.main:app --host 127.0.0.1 --port 8000

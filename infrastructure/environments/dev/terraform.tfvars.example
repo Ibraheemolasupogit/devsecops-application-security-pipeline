@@ -1,0 +1,6 @@
+aws_region               = "eu-west-2"
+github_repository        = "example-org/example-repo"
+container_image          = "111122223333.dkr.ecr.eu-west-2.amazonaws.com/genomic-research-access-api-dev@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+availability_zones       = ["eu-west-2a", "eu-west-2b"]
+public_subnet_cidrs      = ["10.40.0.0/24", "10.40.1.0/24"]
+private_app_subnet_cidrs = ["10.40.10.0/24", "10.40.11.0/24"]

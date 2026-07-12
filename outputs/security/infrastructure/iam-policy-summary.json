@@ -1,0 +1,8 @@
+{
+  "administrator_policy": false,
+  "deployment_policy_scope": "service constrained with region condition; bootstrap limitations documented",
+  "github_oidc_restricted_by_audience": true,
+  "github_oidc_restricted_by_subject": true,
+  "runtime_policy_contains_iam": false,
+  "wildcard_actions": false
+}

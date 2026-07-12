@@ -8,3 +8,4 @@
 | Object checks | `services/access_requests.py`, `services/datasets.py` | `tests/security/test_api_security_controls.py` | `outputs/security/api-security/endpoint-security-inventory.json` |
 | Negative security tests | `tests/security/test_api_security_controls.py` | `make api-security-test` | `outputs/security/api-security/negative-test-summary.json` |
 | Audit controls | `audit/service.py`, route and service callers | `tests/security/test_api_security_controls.py` | `outputs/security/api-security/audit-control-summary.json` |
+| Cloud infrastructure controls | `infrastructure/` | `infrastructure/tests/test_infrastructure_policy.py` | `outputs/security/infrastructure/infrastructure-security-summary.json` |

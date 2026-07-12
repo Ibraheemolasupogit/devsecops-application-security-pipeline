@@ -1,0 +1,9 @@
+directory:
+  - infrastructure
+framework:
+  - terraform
+quiet: true
+skip-check:
+  # Milestone 4 prepares configuration for later Checkov execution; scanner
+  # enforcement is intentionally deferred to Milestone 5.
+  - CKV_AWS_999

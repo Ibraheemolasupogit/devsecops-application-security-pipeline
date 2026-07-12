@@ -1,0 +1,211 @@
+{
+  "deployment_status": "not deployed",
+  "generation_metadata": {
+    "generated_at": "2026-01-01T00:00:00Z",
+    "generator": "genomic_research_access_api.security.infrastructure.evidence"
+  },
+  "input_files": {
+    "infrastructure/environments/dev/main.tf": {
+      "path": "infrastructure/environments/dev/main.tf",
+      "sha256": "1398dc85311d6a9a4899abe625eec496050c25950049f9449a74abe7bbf99958"
+    },
+    "infrastructure/environments/dev/outputs.tf": {
+      "path": "infrastructure/environments/dev/outputs.tf",
+      "sha256": "d7251145ea11ae431725702bdc7f24f99a91d17af9f6669cef1b293c706e99f2"
+    },
+    "infrastructure/environments/dev/variables.tf": {
+      "path": "infrastructure/environments/dev/variables.tf",
+      "sha256": "e15590aa69c2736ad8a08c407fd854d2dbb8df4e791f6620680d96fa0dd188a4"
+    },
+    "infrastructure/environments/dev/versions.tf": {
+      "path": "infrastructure/environments/dev/versions.tf",
+      "sha256": "f4125c47d7773164de57e1053119474ae65bb93f7d4736b075a0bd8c9549678f"
+    },
+    "infrastructure/environments/prod/main.tf": {
+      "path": "infrastructure/environments/prod/main.tf",
+      "sha256": "afeb1e1a3d527cd91280f9153437253d32db568ee8598a2136cf4760d089ed15"
+    },
+    "infrastructure/environments/prod/outputs.tf": {
+      "path": "infrastructure/environments/prod/outputs.tf",
+      "sha256": "d7251145ea11ae431725702bdc7f24f99a91d17af9f6669cef1b293c706e99f2"
+    },
+    "infrastructure/environments/prod/variables.tf": {
+      "path": "infrastructure/environments/prod/variables.tf",
+      "sha256": "e0a2104e5cefbd79f720b8c771f371a2743140eb6abfdbddfcf54a37b0d84bf1"
+    },
+    "infrastructure/environments/prod/versions.tf": {
+      "path": "infrastructure/environments/prod/versions.tf",
+      "sha256": "f4125c47d7773164de57e1053119474ae65bb93f7d4736b075a0bd8c9549678f"
+    },
+    "infrastructure/locals.tf": {
+      "path": "infrastructure/locals.tf",
+      "sha256": "d1d2c5cb2fe5402cce677be171bddcb055536c46b372a4be3b43c4291ea0d0d3"
+    },
+    "infrastructure/modules/audit/main.tf": {
+      "path": "infrastructure/modules/audit/main.tf",
+      "sha256": "e89f17ef90c41303e9c6413fe85df1a5afc33ea0cd415b584be86cbc62657c60"
+    },
+    "infrastructure/modules/audit/outputs.tf": {
+      "path": "infrastructure/modules/audit/outputs.tf",
+      "sha256": "bb114e97ebff31e866645dda4623d082549d20c8ddafd35da4cbe68b40f2515f"
+    },
+    "infrastructure/modules/audit/variables.tf": {
+      "path": "infrastructure/modules/audit/variables.tf",
+      "sha256": "5a401aed9842e280952ec78c54446f4ea91eb51a29b8bfd09b1ccd80963cb45c"
+    },
+    "infrastructure/modules/compute/main.tf": {
+      "path": "infrastructure/modules/compute/main.tf",
+      "sha256": "11250025327bd75b22605b23d98d903ec965448133a3b308589d8d482241c7c8"
+    },
+    "infrastructure/modules/compute/outputs.tf": {
+      "path": "infrastructure/modules/compute/outputs.tf",
+      "sha256": "9b85967ed96fc1e6c662d852527d8551facf59e025bd89d2112fb25e917cbb4f"
+    },
+    "infrastructure/modules/compute/variables.tf": {
+      "path": "infrastructure/modules/compute/variables.tf",
+      "sha256": "f0a69ef5f0c72853ee5480143f960e34cfdace1d5b2d0d97dabf40f17698574c"
+    },
+    "infrastructure/modules/datastore/main.tf": {
+      "path": "infrastructure/modules/datastore/main.tf",
+      "sha256": "4e20e2416354a3eb07c67d5089530e29459111ca41ac008e993d99b481e1756f"
+    },
+    "infrastructure/modules/datastore/outputs.tf": {
+      "path": "infrastructure/modules/datastore/outputs.tf",
+      "sha256": "5a17cd279e10dae99c4244c392685eaec7041bb2fe28640fb3f4e82125ad0042"
+    },
+    "infrastructure/modules/datastore/variables.tf": {
+      "path": "infrastructure/modules/datastore/variables.tf",
+      "sha256": "2ca48848839041ec9a9d3dc75a1aaa66600d1d41b00169174afd72a671f5dfed"
+    },
+    "infrastructure/modules/ecr/main.tf": {
+      "path": "infrastructure/modules/ecr/main.tf",
+      "sha256": "e89aa88e4835e47cf8c6ff100bd0dc6a7aec8b8ced8ce444e72a794ab84f1d49"
+    },
+    "infrastructure/modules/ecr/outputs.tf": {
+      "path": "infrastructure/modules/ecr/outputs.tf",
+      "sha256": "bbb2a6727deee2479c08a5f3399313f06113cd0497dffcbf7444214496496f67"
+    },
+    "infrastructure/modules/ecr/variables.tf": {
+      "path": "infrastructure/modules/ecr/variables.tf",
+      "sha256": "f6ba5687075383c5ea975009b941210bdd7578eebefebf4c30d4f2143d945a1c"
+    },
+    "infrastructure/modules/iam/main.tf": {
+      "path": "infrastructure/modules/iam/main.tf",
+      "sha256": "80c34cbe67ac45c261721e68bdd70dbe88dc9b1c8ffd266038b8ecaf45f8adbc"
+    },
+    "infrastructure/modules/iam/outputs.tf": {
+      "path": "infrastructure/modules/iam/outputs.tf",
+      "sha256": "e63278c1de082c117f48cfde5ab3a3c2c9ced591f237b82ee9bd6c995ad0012a"
+    },
+    "infrastructure/modules/iam/variables.tf": {
+      "path": "infrastructure/modules/iam/variables.tf",
+      "sha256": "b5872716804bd748c40363d6f4fc0379bfe114154ccb82f1d9c8aecee9391af0"
+    },
+    "infrastructure/modules/kms/main.tf": {
+      "path": "infrastructure/modules/kms/main.tf",
+      "sha256": "96e47f2ffa420050576c3a09373b2894a4659f51b0b8d67e371d62a7310fc5aa"
+    },
+    "infrastructure/modules/kms/outputs.tf": {
+      "path": "infrastructure/modules/kms/outputs.tf",
+      "sha256": "b00600b38ad372828e7cccbae550c334986c851a3761d7eec91df9a8a86eddaa"
+    },
+    "infrastructure/modules/kms/variables.tf": {
+      "path": "infrastructure/modules/kms/variables.tf",
+      "sha256": "0f3e608d7f5faa0f7f34574aa0bfb844839296b6f5932bc84778f6eb88979f72"
+    },
+    "infrastructure/modules/networking/main.tf": {
+      "path": "infrastructure/modules/networking/main.tf",
+      "sha256": "5de8be9b2317ca2a0e7549da3e5b8e98c80547d36c307f0b8d0b2b9b5748cc05"
+    },
+    "infrastructure/modules/networking/outputs.tf": {
+      "path": "infrastructure/modules/networking/outputs.tf",
+      "sha256": "e1ee97812d3354326144e47afce543231391937b17e5c91e287afee12e5a20b2"
+    },
+    "infrastructure/modules/networking/variables.tf": {
+      "path": "infrastructure/modules/networking/variables.tf",
+      "sha256": "bbb7352aef8bd15e43746c2852794ea452d468665d58def9a3e8369303ff65ac"
+    },
+    "infrastructure/modules/observability/main.tf": {
+      "path": "infrastructure/modules/observability/main.tf",
+      "sha256": "9b5a68723e4c1c9c652a87e5313ffc91121dba18b892f4332b3b5959d776ab62"
+    },
+    "infrastructure/modules/observability/outputs.tf": {
+      "path": "infrastructure/modules/observability/outputs.tf",
+      "sha256": "cf8f445e831463b9e92b33a9dd7f8c4dab6433db34fb7fc64aa7e1f401ab60bb"
+    },
+    "infrastructure/modules/observability/variables.tf": {
+      "path": "infrastructure/modules/observability/variables.tf",
+      "sha256": "b8df9ac0e71a724d3c9f6ccdf017724667d52cfa2bb9fabde20e9b332e2585fe"
+    },
+    "infrastructure/modules/secrets/main.tf": {
+      "path": "infrastructure/modules/secrets/main.tf",
+      "sha256": "01667e98a99e00c3bda475370f5d564b684d005b44de372c74e211f5c1bcfe8b"
+    },
+    "infrastructure/modules/secrets/outputs.tf": {
+      "path": "infrastructure/modules/secrets/outputs.tf",
+      "sha256": "5c746cb3c1f28c8bff3cba409ae4ac642a1f288672543e4222abe566e0fecdcd"
+    },
+    "infrastructure/modules/secrets/variables.tf": {
+      "path": "infrastructure/modules/secrets/variables.tf",
+      "sha256": "723f2923daf0ef8057539d3302380fd2ad03b27f3e8d27939827eac8e671a078"
+    },
+    "infrastructure/outputs.tf": {
+      "path": "infrastructure/outputs.tf",
+      "sha256": "a4741e9f19a475c8d24977b2909844f6f0ac9be37196123c8035068c773cfd8e"
+    },
+    "infrastructure/providers.tf": {
+      "path": "infrastructure/providers.tf",
+      "sha256": "f92dc2c2cac15aa6d895faec98c401388f6647e8dcd26ee1d9bd39543976d76c"
+    },
+    "infrastructure/variables.tf": {
+      "path": "infrastructure/variables.tf",
+      "sha256": "3a44ba1352680e68f3d5ee0f76dd57f6507ba9874765766d7bfb98120da8ca86"
+    },
+    "infrastructure/versions.tf": {
+      "path": "infrastructure/versions.tf",
+      "sha256": "f4125c47d7773164de57e1053119474ae65bb93f7d4736b075a0bd8c9549678f"
+    }
+  },
+  "output_files": {
+    "architecture-inventory.json": {
+      "path": "architecture-inventory.json",
+      "sha256": "462893d75092163f148868a8cd0f168cb623c9cfdfa2bb9f84aacc4677c2f504"
+    },
+    "encryption-control-summary.json": {
+      "path": "encryption-control-summary.json",
+      "sha256": "0b70750f24e29b01a9fc174de81e3adb5cff26c343ce36c40ba5c3423a6c2d23"
+    },
+    "iam-policy-summary.json": {
+      "path": "iam-policy-summary.json",
+      "sha256": "089ea329c04624e8c6e89cf46f635f49b6baa25d32b9d599f2977899cb619703"
+    },
+    "iam-role-inventory.json": {
+      "path": "iam-role-inventory.json",
+      "sha256": "038a9f624919955ce9dedc4af8d1defba4d724919f23ec057d45aa6f5f3af3be"
+    },
+    "infrastructure-security-summary.json": {
+      "path": "infrastructure-security-summary.json",
+      "sha256": "77eb0fbf22e33f2981b74ec2869a4d382f0a3659161fb0b2575bb870f86876fc"
+    },
+    "logging-and-audit-summary.json": {
+      "path": "logging-and-audit-summary.json",
+      "sha256": "9c79a8150645e9372fdd5d9b6228d6c15e8d5c7df17ce95e9b646690b4d7d6b8"
+    },
+    "network-security-summary.json": {
+      "path": "network-security-summary.json",
+      "sha256": "926aeb0a5bc4aba7937eb2d91207e852ef7cac9d19b626ec9364e6775cb62def"
+    },
+    "terraform-validation-summary.json": {
+      "path": "terraform-validation-summary.json",
+      "sha256": "10ba281e5d8f25ac50a1ea82771dd1f11156dcb5ba3d545ee0c0953a8a6131fe"
+    }
+  },
+  "project_version": "0.1.0",
+  "provider_constraints": {
+    "aws": "~> 5.70",
+    "terraform": ">= 1.8.0, < 2.0.0"
+  },
+  "run_id": "infrastructure-2026-01-01T00:00:00Z",
+  "schema_version": "1.0",
+  "terraform_version": "not captured in deterministic evidence"
+}

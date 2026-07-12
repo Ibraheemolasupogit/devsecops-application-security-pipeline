@@ -1,0 +1,9 @@
+{
+  "deployment_commands_run": false,
+  "local_validation_mode": "backend disabled; no AWS credentials required",
+  "policy_tests": "configured",
+  "terraform_available_locally": "reported by terraform command targets",
+  "terraform_init": "skipped locally if terraform unavailable",
+  "terraform_test": "skipped locally if terraform unavailable",
+  "terraform_validate": "skipped locally if terraform unavailable"
+}

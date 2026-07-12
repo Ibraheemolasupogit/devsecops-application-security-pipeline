@@ -1,0 +1,8 @@
+{
+  "deployment_role": "GitHub Actions OIDC deployment role",
+  "flow_log_role": "VPC Flow Logs delivery role",
+  "runtime_role": "Application DynamoDB, secret read and KMS use only",
+  "separation": "configured",
+  "static_aws_keys": "not configured",
+  "task_execution_role": "ECS task start permissions only"
+}

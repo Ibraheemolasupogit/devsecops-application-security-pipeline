@@ -252,9 +252,9 @@
   {
     "category": "ci_cd",
     "description": "Future deployment workflows must use short-lived credentials rather than static secrets.",
-    "evidence_reference": "future CI/CD evidence",
-    "implementation_reference": "Not implemented; deployment is out of scope.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/iam-role-inventory.json",
+    "implementation_reference": "infrastructure/modules/iam/main.tf",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 4",
     "policy_source": null,
@@ -266,8 +266,8 @@
     ],
     "status": "active",
     "title": "Short-lived CI/CD credentials",
-    "verification_method": "future CI identity review",
-    "verification_reference": "future Milestone 4 or 6 evidence"
+    "verification_method": "local infrastructure policy tests for GitHub OIDC trust",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "ci_cd",
@@ -315,8 +315,8 @@
   {
     "category": "container_security",
     "description": "Container runtime must not execute the application as root.",
-    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
-    "implementation_reference": "Dockerfile",
+    "evidence_reference": "outputs/security/infrastructure/architecture-inventory.json",
+    "implementation_reference": "Dockerfile; infrastructure/modules/compute/main.tf",
     "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 1",
@@ -329,8 +329,8 @@
     ],
     "status": "active",
     "title": "Non-root container execution",
-    "verification_method": "Dockerfile review and future image tests",
-    "verification_reference": "Dockerfile"
+    "verification_method": "Dockerfile review and ECS task-definition policy tests",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "data_protection",
@@ -355,9 +355,9 @@
   {
     "category": "data_protection",
     "description": "Future production traffic must use encrypted transport between clients and service components.",
-    "evidence_reference": "future cloud evidence",
-    "implementation_reference": "Not implemented; cloud deployment is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/network-security-summary.json",
+    "implementation_reference": "infrastructure/modules/compute/main.tf",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -369,15 +369,15 @@
     ],
     "status": "active",
     "title": "Encrypted transport",
-    "verification_method": "future infrastructure validation",
-    "verification_reference": "future cloud evidence"
+    "verification_method": "Terraform production HTTPS validation and local policy tests",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "data_protection",
     "description": "Future durable datastores, logs and infrastructure state must be encrypted at rest.",
-    "evidence_reference": "future cloud evidence",
-    "implementation_reference": "Not implemented; durable cloud storage is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/encryption-control-summary.json",
+    "implementation_reference": "infrastructure/modules/datastore/main.tf; infrastructure/modules/kms/main.tf; infrastructure/modules/audit/main.tf",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -390,15 +390,15 @@
     ],
     "status": "active",
     "title": "Encrypted storage",
-    "verification_method": "future IaC and cloud configuration validation",
-    "verification_reference": "future cloud evidence"
+    "verification_method": "local infrastructure policy tests for KMS, DynamoDB and S3 encryption",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "infrastructure_security",
     "description": "Future infrastructure definitions must be reviewed and scanned before deployment.",
-    "evidence_reference": "future IaC evidence",
-    "implementation_reference": "Not implemented; Terraform and IaC scanning are deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/terraform-validation-summary.json",
+    "implementation_reference": "infrastructure/; .checkov.yml",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -411,15 +411,15 @@
     ],
     "status": "active",
     "title": "IaC scanning and review",
-    "verification_method": "future IaC scanner and review evidence",
-    "verification_reference": "future Milestone 6 evidence"
+    "verification_method": "local infrastructure policy tests and Terraform validation targets; scanner execution deferred",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "infrastructure_security",
     "description": "Future Terraform state must use an encrypted backend with restricted access.",
-    "evidence_reference": "future IaC evidence",
-    "implementation_reference": "Not implemented; Terraform is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/terraform-validation-summary.json",
+    "implementation_reference": "infrastructure/backend.tf.example; infrastructure/environments/dev/backend.hcl.example; infrastructure/environments/prod/backend.hcl.example; docs/infrastructure/terraform-state-security.md",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -431,15 +431,15 @@
     ],
     "status": "active",
     "title": "Secure Terraform state",
-    "verification_method": "future backend configuration review",
-    "verification_reference": "future Milestone 6 evidence"
+    "verification_method": "documentation review and infrastructure evidence generation",
+    "verification_reference": "docs/infrastructure/terraform-state-security.md"
   },
   {
     "category": "iam",
     "description": "Future runtime identity must have only permissions required by the service.",
-    "evidence_reference": "future IAM evidence",
-    "implementation_reference": "Not implemented; workload IAM is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/iam-policy-summary.json",
+    "implementation_reference": "infrastructure/modules/iam/main.tf",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -451,15 +451,15 @@
     ],
     "status": "active",
     "title": "Least-privilege workload IAM",
-    "verification_method": "future IAM policy tests and review",
-    "verification_reference": "future Milestone 6 evidence"
+    "verification_method": "local infrastructure policy tests for runtime role permissions",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "iam",
     "description": "Future deployment identity must have scoped and time-bound permissions.",
-    "evidence_reference": "future IAM evidence",
-    "implementation_reference": "Not implemented; deployment IAM is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/iam-role-inventory.json",
+    "implementation_reference": "infrastructure/modules/iam/main.tf",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -471,8 +471,8 @@
     ],
     "status": "active",
     "title": "Least-privilege deployment IAM",
-    "verification_method": "future IAM policy review",
-    "verification_reference": "future Milestone 6 evidence"
+    "verification_method": "local infrastructure policy tests for deployment role and OIDC trust",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "audit_logging",
@@ -498,9 +498,9 @@
   {
     "category": "audit_logging",
     "description": "Future audit events must be protected against unauthorised alteration or deletion.",
-    "evidence_reference": "future logging evidence",
-    "implementation_reference": "Not implemented; immutable audit storage is deferred.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/logging-and-audit-summary.json",
+    "implementation_reference": "infrastructure/modules/audit/main.tf",
+    "implementation_status": "implemented",
     "owner": "security_auditor",
     "planned_milestone": "Milestone 6",
     "policy_source": null,
@@ -512,8 +512,8 @@
     ],
     "status": "active",
     "title": "Audit-event integrity",
-    "verification_method": "future log integrity validation",
-    "verification_reference": "future monitoring evidence"
+    "verification_method": "local infrastructure policy tests for CloudTrail validation and S3 audit bucket controls",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "audit_logging",
@@ -579,9 +579,9 @@
   {
     "category": "secrets",
     "description": "Secrets must not be committed and future runtime secrets must be externalised.",
-    "evidence_reference": "future secrets evidence",
-    "implementation_reference": "Not implemented; no real secrets are required in Milestone 2.",
-    "implementation_status": "planned",
+    "evidence_reference": "outputs/security/infrastructure/encryption-control-summary.json",
+    "implementation_reference": "infrastructure/modules/secrets/main.tf",
+    "implementation_status": "implemented",
     "owner": "application_admin",
     "planned_milestone": "Milestone 5",
     "policy_source": null,
@@ -593,8 +593,8 @@
     ],
     "status": "active",
     "title": "Secret externalisation",
-    "verification_method": "future secret scanning and configuration review",
-    "verification_reference": "future Milestone 5 evidence"
+    "verification_method": "local infrastructure policy tests confirm no Terraform-managed secret payloads",
+    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
     "category": "supply_chain",
