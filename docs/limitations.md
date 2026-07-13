@@ -15,3 +15,4 @@
 - Dynamic API security evidence is local synthetic validation and is not penetration-test coverage.
 - Findings normalisation uses demonstration risk, ownership and SLA values. Milestone 8 release gates consume those findings for deterministic local release-assurance evidence.
 - Milestone 9 lifecycle evidence demonstrates vulnerability lifecycle and exception governance locally. It is not a production ticketing system, live deployment approval system or Security Champions programme.
+- Milestone 10 consolidated evidence and reports are local portfolio evidence. They are not regulatory certification, production assurance, external reporting, dashboards or monitoring.

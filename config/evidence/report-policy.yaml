@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "1.0",
+  "audiences": {
+    "executive": ["summary", "release", "risk", "exceptions", "limitations"],
+    "product_security": ["controls", "findings", "lifecycle", "integrity"],
+    "application_engineering": ["application_security", "findings", "remediation"],
+    "platform_engineering": ["infrastructure", "appsec", "release"],
+    "cloud_security": ["infrastructure", "release", "exceptions"],
+    "risk_owner": ["release", "exceptions", "residual_risk"],
+    "auditor": ["lineage", "integrity", "control_coverage"]
+  },
+  "report_order": [
+    "executive-security-summary.md",
+    "product-security-report.md",
+    "security-evidence-report.md",
+    "control-coverage-report.md",
+    "threat-and-requirements-report.md",
+    "application-security-report.md",
+    "cloud-infrastructure-security-report.md",
+    "dynamic-security-report.md",
+    "findings-and-risk-report.md",
+    "release-assurance-report.md",
+    "vulnerability-remediation-report.md",
+    "security-exception-report.md",
+    "evidence-integrity-report.md",
+    "portfolio-assurance-report.md"
+  ]
+}

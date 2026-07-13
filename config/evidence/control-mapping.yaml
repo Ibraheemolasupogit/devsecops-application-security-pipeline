@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "control_mapping_version": "1.0",
+  "domains": {
+    "api_security": ["api_security", "authentication", "authorisation"],
+    "appsec": ["supply_chain", "secrets", "container_security", "infrastructure_security"],
+    "dynamic_security": ["api_security", "authentication", "authorisation", "configuration"],
+    "findings": ["governance", "supply_chain"],
+    "infrastructure": ["infrastructure_security", "iam", "data_protection", "audit_logging"],
+    "lifecycle": ["vulnerability_management", "governance", "audit"],
+    "release_assurance": ["release_assurance"],
+    "threat_model": ["secure_design"]
+  }
+}

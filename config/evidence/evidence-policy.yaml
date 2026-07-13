@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "1.0",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "as_of_date": "2026-01-01",
+  "deployment_status": "not_deployed",
+  "required_domain_policy": "all_required_domains_must_verify",
+  "integrity_rules": [
+    "source_manifest_exists",
+    "source_manifest_schema_supported",
+    "required_outputs_exist",
+    "output_checksums_match",
+    "input_checksums_match",
+    "controlled_timestamp_consistent",
+    "deployment_status_consistent",
+    "no_absolute_local_paths_in_consolidated_outputs",
+    "no_secret_bearing_content"
+  ],
+  "limitations": [
+    "Local portfolio evidence, not regulatory certification.",
+    "Deployment status is not_deployed.",
+    "Milestone 10 does not implement dashboards, external reporting, ticketing or Security Champions."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "blocking_findings": 0,
+  "conditional_findings": 0,
+  "decision": "conditional_pass",
+  "decision_id": "REL-3ed97024c93b7ad8",
+  "required_approvals": [
+    "Cloud Security",
+    "Product Security",
+    "Risk Owner",
+    "Technical Owner"
+  ],
+  "schema_version": "1.0",
+  "warning_findings": 0
+}

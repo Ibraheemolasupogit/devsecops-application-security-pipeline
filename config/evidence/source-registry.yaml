@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "source_id": "SRC-THREAT-MODEL",
+      "domain": "threat_model",
+      "name": "Threat Model",
+      "manifest_path": "outputs/security/threat-model/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "threat-model-summary.json",
+        "validated-control-traceability.json",
+        "validated-security-requirements.json",
+        "validated-threat-register.json"
+      ],
+      "verification_command": "make verify-threat-model-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-API-SECURITY",
+      "domain": "api_security",
+      "name": "API Security Controls",
+      "manifest_path": "outputs/security/api-security/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "api-security-summary.json",
+        "authentication-control-summary.json",
+        "authorisation-matrix.json",
+        "endpoint-security-inventory.json"
+      ],
+      "verification_command": "make verify-api-security-evidence",
+      "owner": "application_admin",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-INFRASTRUCTURE",
+      "domain": "infrastructure",
+      "name": "AWS Terraform Architecture",
+      "manifest_path": "outputs/security/infrastructure/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "infrastructure-security-summary.json",
+        "iam-policy-summary.json",
+        "terraform-validation-summary.json"
+      ],
+      "verification_command": "make verify-infrastructure-evidence",
+      "owner": "platform_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-APPSEC",
+      "domain": "appsec",
+      "name": "AppSec Pipeline",
+      "manifest_path": "outputs/security/appsec/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "appsec-pipeline-summary.json",
+        "sast-summary.json",
+        "dependency-scan-summary.json",
+        "container-scan-summary.json"
+      ],
+      "verification_command": "make verify-appsec-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-DYNAMIC",
+      "domain": "dynamic_security",
+      "name": "Dynamic API Security",
+      "manifest_path": "outputs/security/dynamic/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "dynamic-security-summary.json",
+        "schemathesis-summary.json",
+        "zap-summary.json"
+      ],
+      "verification_command": "make verify-dynamic-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-FINDINGS",
+      "domain": "findings",
+      "name": "Canonical Findings",
+      "manifest_path": "outputs/security/findings/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "findings-summary.json",
+        "deduplicated-findings.json",
+        "normalised-findings.json"
+      ],
+      "verification_command": "make verify-findings-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-RELEASE",
+      "domain": "release_assurance",
+      "name": "Release Assurance",
+      "manifest_path": "outputs/security/release/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "release-gate-decision.json",
+        "release-risk-summary.json",
+        "required-approvals.json"
+      ],
+      "verification_command": "make verify-release-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
+      "source_id": "SRC-LIFECYCLE",
+      "domain": "lifecycle",
+      "name": "Vulnerability Lifecycle",
+      "manifest_path": "outputs/security/lifecycle/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "vulnerability-register.json",
+        "security-exceptions.json",
+        "lifecycle-summary.json",
+        "verification-register.json"
+      ],
+      "verification_command": "make verify-lifecycle-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    }
+  ]
+}

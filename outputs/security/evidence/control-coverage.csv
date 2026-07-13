@@ -1,0 +1,49 @@
+control_id,security_requirement_ids,threat_ids,domain,implementation_status,verification_status,evidence_references,owner,deployment_dependency,residual_risk
+SR-API-001,SR-API-001,THR-API-001;THR-API-002;THR-AUDIT-003,api_security,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,software_engineer,none,low
+SR-API-002,SR-API-002,THR-API-002,api_security,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,software_engineer,none,low
+SR-API-003,SR-API-003,THR-API-004,api_security,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,software_engineer,none,low
+SR-API-004,SR-API-004,THR-API-007;THR-API-008,dynamic_security,validated_locally,verified,outputs/security/api-security/endpoint-security-inventory.json,application_admin,none,low
+SR-API-005,SR-API-005,THR-API-005;THR-API-006,api_security,validated_locally,verified,outputs/security/dynamic/resource-consumption-summary.json,platform_engineer,future_deployment,medium
+SR-AUTH-001,SR-AUTH-001,THR-AUTH-001;THR-AUTH-002,api_security,validated_locally,verified,outputs/security/api-security/authentication-control-summary.json; outputs/security/dynamic/authentication-boundary-summary.json,application_admin,none,medium
+SR-AUTHZ-001,SR-AUTHZ-001,THR-AUTHZ-002,api_security,validated_locally,verified,outputs/security/api-security/authorisation-matrix.json; outputs/security/dynamic/authorisation-boundary-summary.json,product_security_engineer,none,low
+SR-AUTHZ-002,SR-AUTHZ-002,THR-API-003;THR-AUDIT-002;THR-AUTHZ-001,api_security,validated_locally,verified,outputs/security/api-security/endpoint-security-inventory.json; outputs/security/dynamic/object-access-summary.json,product_security_engineer,none,low
+SR-AUTHZ-003,SR-AUTHZ-003,THR-API-001;THR-AUTHZ-003,api_security,validated_locally,verified,outputs/security/api-security/negative-test-summary.json; outputs/security/dynamic/authentication-boundary-summary.json; outputs/security/dynamic/authorisation-boundary-summary.json,application_admin,none,low
+SR-AUTHZ-004,SR-AUTHZ-004,THR-AUTHZ-003;THR-AUTHZ-004,threat_model,validated_locally,verified,outputs/security/api-security/negative-test-summary.json,data_custodian,none,low
+SR-AUTHZ-005,SR-AUTHZ-005,THR-AUTHZ-001;THR-AUTHZ-002,api_security,validated_locally,verified,outputs/security/api-security/endpoint-security-inventory.json,application_admin,none,low
+SR-CI-001,SR-CI-001,THR-SUPPLY-002,threat_model,validated_locally,verified,outputs/security/threat-model/evidence-manifest.json,software_engineer,none,medium
+SR-CI-002,SR-CI-002,THR-CI-001,threat_model,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-role-inventory.json,platform_engineer,future_deployment,medium
+SR-CI-003,SR-CI-003,THR-API-008;THR-AUTH-002;THR-CI-001;THR-SUPPLY-003,threat_model,planned,planned,future release evidence,product_security_engineer,future_deployment,medium
+SR-CONTAINER-001,SR-CONTAINER-001,THR-CONTAINER-001,appsec,validated_locally,verified,outputs/security/appsec/container-scan-summary.json,platform_engineer,future_deployment,medium
+SR-CONTAINER-002,SR-CONTAINER-002,THR-CONTAINER-002,appsec,implemented_as_code,validated_locally,outputs/security/infrastructure/architecture-inventory.json,platform_engineer,none,low
+SR-DATA-001,SR-DATA-001,THR-API-003,infrastructure,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,data_custodian,none,low
+SR-DATA-002,SR-DATA-002,THR-IAM-002,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/network-security-summary.json,platform_engineer,future_deployment,medium
+SR-DATA-003,SR-DATA-003,THR-IAC-002;THR-IAM-002,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/encryption-control-summary.json,platform_engineer,future_deployment,medium
+SR-EVIDENCE-001,SR-EVIDENCE-001,THR-AUDIT-003;THR-REVIEW-001;THR-SUPPLY-001,lifecycle,validated_locally,verified,outputs/security/evidence/evidence-manifest.json,product_security_engineer,none,low
+SR-EVIDENCE-002,SR-EVIDENCE-002,THR-REVIEW-001,findings,validated_locally,verified,outputs/security/evidence/portfolio-security-summary.json,product_security_engineer,none,low
+SR-FINDINGS-001,SR-FINDINGS-001,THR-REVIEW-001;THR-SUPPLY-001;THR-SUPPLY-002,threat_model,validated_locally,verified,outputs/security/findings/normalised-findings.json,product_security_engineer,none,medium
+SR-FINDINGS-002,SR-FINDINGS-002,THR-REVIEW-001;THR-SUPPLY-001,threat_model,validated_locally,verified,outputs/security/findings/finding-source-map.json,product_security_engineer,none,low
+SR-FINDINGS-003,SR-FINDINGS-003,THR-REVIEW-001,findings,validated_locally,verified,outputs/security/findings/risk-summary.json; outputs/security/findings/ownership-summary.json; outputs/security/findings/sla-summary.json,product_security_engineer,none,medium
+SR-FINDINGS-004,SR-FINDINGS-004,THR-SECRETS-001;THR-SUPPLY-001;THR-REVIEW-001,findings,validated_locally,verified,outputs/security/findings/suppressed-findings.csv,product_security_engineer,none,medium
+SR-IAC-001,SR-IAC-001,THR-IAC-001;THR-IAC-002,appsec,implemented_as_code,validated_locally,outputs/security/appsec/iac-scan-summary.json,platform_engineer,future_deployment,medium
+SR-IAC-002,SR-IAC-002,THR-IAC-001,appsec,implemented_as_code,validated_locally,outputs/security/infrastructure/terraform-validation-summary.json,platform_engineer,future_deployment,medium
+SR-IAM-001,SR-IAM-001,THR-IAM-001,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-policy-summary.json,platform_engineer,future_deployment,medium
+SR-IAM-002,SR-IAM-002,THR-CI-001,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-role-inventory.json,platform_engineer,future_deployment,medium
+SR-LIFECYCLE-001,SR-LIFECYCLE-001,THR-REVIEW-001;THR-SUPPLY-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/vulnerability-register.json,product_security_engineer,none,medium
+SR-LIFECYCLE-002,SR-LIFECYCLE-002,THR-REVIEW-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/verification-register.json,product_security_engineer,none,low
+SR-LIFECYCLE-003,SR-LIFECYCLE-003,THR-REVIEW-001;THR-SUPPLY-001,findings,validated_locally,verified,outputs/security/lifecycle/security-exceptions.json,risk_owner,none,medium
+SR-LIFECYCLE-004,SR-LIFECYCLE-004,THR-AUDIT-003;THR-REVIEW-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/evidence-manifest.json,product_security_engineer,none,low
+SR-LOG-001,SR-LOG-001,THR-AUDIT-001;THR-AUTHZ-004,infrastructure,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,security_auditor,none,medium
+SR-LOG-002,SR-LOG-002,THR-AUDIT-001,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/logging-and-audit-summary.json,security_auditor,future_deployment,medium
+SR-LOG-003,SR-LOG-003,THR-AUDIT-003;THR-AUDIT-004,infrastructure,validated_locally,verified,outputs/security/api-security/negative-test-summary.json,software_engineer,none,low
+SR-LOG-004,SR-LOG-004,THR-AUDIT-002,infrastructure,validated_locally,verified,outputs/security/api-security/audit-control-summary.json,security_auditor,none,low
+SR-RELEASE-001,SR-RELEASE-001,THR-REVIEW-001;THR-SUPPLY-001,release_assurance,validated_locally,verified,outputs/security/release/release-gate-decision.json,product_security_engineer,none,medium
+SR-RELEASE-002,SR-RELEASE-002,THR-REVIEW-001,release_assurance,validated_locally,verified,outputs/security/release/evidence-manifest.json,product_security_engineer,none,low
+SR-RELEASE-003,SR-RELEASE-003,THR-REVIEW-001,release_assurance,validated_locally,verified,outputs/security/release/required-approvals.json,product_security_engineer,none,medium
+SR-RELEASE-004,SR-RELEASE-004,THR-REVIEW-001;THR-SUPPLY-001,release_assurance,validated_locally,verified,outputs/security/release/finding-evaluations.json,product_security_engineer,none,medium
+SR-REVIEW-001,SR-REVIEW-001,THR-REVIEW-001,findings,validated_locally,verified,outputs/security/threat-model/threat-model-summary.json,product_security_engineer,none,low
+SR-SECRETS-001,SR-SECRETS-001,THR-SECRETS-001,appsec,implemented_as_code,validated_locally,outputs/security/appsec/secret-scan-summary.json,application_admin,future_deployment,medium
+SR-SUPPLY-001,SR-SUPPLY-001,THR-SUPPLY-001;THR-SUPPLY-002,appsec,validated_locally,verified,outputs/security/appsec/dependency-scan-summary.json,product_security_engineer,none,medium
+SR-SUPPLY-002,SR-SUPPLY-002,THR-SUPPLY-001,appsec,validated_locally,verified,outputs/security/appsec/sbom.cdx.json,product_security_engineer,none,medium
+SR-SUPPLY-003,SR-SUPPLY-003,THR-SUPPLY-003,appsec,planned,planned,future artefact evidence,platform_engineer,future_deployment,medium
+SR-SUPPLY-004,SR-SUPPLY-004,THR-SECRETS-001,appsec,validated_locally,verified,outputs/security/appsec/secret-scan-summary.json,product_security_engineer,none,medium
+SR-TM-001,SR-TM-001,THR-REVIEW-001,threat_model,validated_locally,verified,outputs/security/threat-model/evidence-manifest.json,product_security_engineer,none,low

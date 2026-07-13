@@ -106,7 +106,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|bsdutils",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -158,13 +158,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "874efa1fca0ebcee751d9d08a2921809ac4bebb94d54c1c573ad1493f3ccf27b",
+          "record_hash": "c71bf688d215324d8b37ff0ff94cf20a7fca5f5e3b35c51da51e57a617879d6a",
           "record_pointer": "/Results/0/Vulnerabilities/0",
           "summary": "bsdutils CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "874efa1fca0ebcee751d9d08a2921809ac4bebb94d54c1c573ad1493f3ccf27b",
+      "source_record_hash": "c71bf688d215324d8b37ff0ff94cf20a7fca5f5e3b35c51da51e57a617879d6a",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -196,7 +196,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|libblkid1",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -248,13 +248,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "039fdbc56faf90d926b9d16f0a85080a3c4aad62ed326b3f2a5abdabd6698761",
+          "record_hash": "b8bf848b2d1631bbe3176d9a1e1c8f4f9bc89d94f24f488aa52e4f0a585be8bd",
           "record_pointer": "/Results/0/Vulnerabilities/3",
           "summary": "libblkid1 CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "039fdbc56faf90d926b9d16f0a85080a3c4aad62ed326b3f2a5abdabd6698761",
+      "source_record_hash": "b8bf848b2d1631bbe3176d9a1e1c8f4f9bc89d94f24f488aa52e4f0a585be8bd",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -286,7 +286,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|libmount1",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -338,13 +338,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "1a2d12ab3c402b49f746de01df3ec10d56576fc261b272f566cbf31467bc9f55",
+          "record_hash": "6cdc5d372d0bfa9fb74d1f170837019b4ccda08cba704eeb047ebe015ad85c70",
           "record_pointer": "/Results/0/Vulnerabilities/5",
           "summary": "libmount1 CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "1a2d12ab3c402b49f746de01df3ec10d56576fc261b272f566cbf31467bc9f55",
+      "source_record_hash": "6cdc5d372d0bfa9fb74d1f170837019b4ccda08cba704eeb047ebe015ad85c70",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -518,13 +518,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "3471ffdb07f9295cc4d06bf5fc9ec69f6adecedf37c3740f4103f6a88f0e61f0",
+          "record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
           "record_pointer": "/Results/0/Vulnerabilities/17",
           "summary": "perl-base CVE-2026-48962"
         }
       ],
       "source_finding_id": "CVE-2026-48962",
-      "source_record_hash": "3471ffdb07f9295cc4d06bf5fc9ec69f6adecedf37c3740f4103f6a88f0e61f0",
+      "source_record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -700,13 +700,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "7bfffaf19a24e86f2c1a064f3596aa542a3a6e229b82aac6e7e5fb30271af383",
+          "record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
           "record_pointer": "/Results/0/Vulnerabilities/14",
           "summary": "perl-base CVE-2026-42496"
         }
       ],
       "source_finding_id": "CVE-2026-42496",
-      "source_record_hash": "7bfffaf19a24e86f2c1a064f3596aa542a3a6e229b82aac6e7e5fb30271af383",
+      "source_record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1008,7 +1008,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|libuuid1",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -1060,13 +1060,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "b605bb2b562a4cda39ec127c81cd761dca4632e130697e36ec8110fef0d5ff7d",
+          "record_hash": "ed89248825b8988c24bcb1f273a16e309397226f8d5aa7092dd41e84dd3bb749",
           "record_pointer": "/Results/0/Vulnerabilities/9",
           "summary": "libuuid1 CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "b605bb2b562a4cda39ec127c81cd761dca4632e130697e36ec8110fef0d5ff7d",
+      "source_record_hash": "ed89248825b8988c24bcb1f273a16e309397226f8d5aa7092dd41e84dd3bb749",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1190,7 +1190,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|liblastlog2-2",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -1242,13 +1242,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "eeae2a2c396feef81cf074687ce4b964c69ce0bd028715f8eae01a114692f610",
+          "record_hash": "9adeef98729a64f59d05c91588eba760ce948447be9a7f0aa49d86815f32ca41",
           "record_pointer": "/Results/0/Vulnerabilities/4",
           "summary": "liblastlog2-2 CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "eeae2a2c396feef81cf074687ce4b964c69ce0bd028715f8eae01a114692f610",
+      "source_record_hash": "9adeef98729a64f59d05c91588eba760ce948447be9a7f0aa49d86815f32ca41",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1280,7 +1280,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|util-linux",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -1332,13 +1332,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "ef1896c71de560a6cdaa601b40f2568f6cf5f085e33017091f18ecac65cdc4aa",
+          "record_hash": "626385e63ddc2c999f9c43fd859bfee141a1575e4de93e7de36c9723fb59eaed",
           "record_pointer": "/Results/0/Vulnerabilities/19",
           "summary": "util-linux CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "ef1896c71de560a6cdaa601b40f2568f6cf5f085e33017091f18ecac65cdc4aa",
+      "source_record_hash": "626385e63ddc2c999f9c43fd859bfee141a1575e4de93e7de36c9723fb59eaed",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1370,7 +1370,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|libsmartcols1",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -1422,13 +1422,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "982a0db2fdebfe9e65caba0b76e2f1414c7eb08539cb1fc13eec6c8c8c9881e3",
+          "record_hash": "17e283afb9f4765fa52222b7d79c3287457f9b0fa1c1bd5e388efa79ff70e905",
           "record_pointer": "/Results/0/Vulnerabilities/7",
           "summary": "libsmartcols1 CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "982a0db2fdebfe9e65caba0b76e2f1414c7eb08539cb1fc13eec6c8c8c9881e3",
+      "source_record_hash": "17e283afb9f4765fa52222b7d79c3287457f9b0fa1c1bd5e388efa79ff70e905",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1640,7 +1640,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|login",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -1692,13 +1692,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "1c73d11cab331a9c26208cdf0d7281374f4d3c8a6e91f53f148483cb548a2f91",
+          "record_hash": "d626c5c7169b96509f9fa24734f1c94b621b7c521f788bd986cf2581ff9ab9bc",
           "record_pointer": "/Results/0/Vulnerabilities/10",
           "summary": "login CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "1c73d11cab331a9c26208cdf0d7281374f4d3c8a6e91f53f148483cb548a2f91",
+      "source_record_hash": "d626c5c7169b96509f9fa24734f1c94b621b7c521f788bd986cf2581ff9ab9bc",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1730,7 +1730,7 @@
       "cwe": null,
       "data_sensitivity": "medium",
       "deduplication_key": "cve|CVE-2026-53615|mount",
-      "description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exploitability": "unknown",
@@ -1782,13 +1782,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "870631a3aab0739ebc9b3dc0123bf57db0c1a18696fd061e9003ae7158cdfe74",
+          "record_hash": "a4953d8ab310a0e7afc866456c7d90ed1841224bb1d3a23eb9289efe81e5aa20",
           "record_pointer": "/Results/0/Vulnerabilities/11",
           "summary": "mount CVE-2026-53615"
         }
       ],
       "source_finding_id": "CVE-2026-53615",
-      "source_record_hash": "870631a3aab0739ebc9b3dc0123bf57db0c1a18696fd061e9003ae7158cdfe74",
+      "source_record_hash": "a4953d8ab310a0e7afc866456c7d90ed1841224bb1d3a23eb9289efe81e5aa20",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1873,13 +1873,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/dynamic/raw/zap-report.json",
-          "record_hash": "d5e7be250f7dfc32c503a4b2af67d9b124c003d5d84c0bb9810b85c9794b7967",
+          "record_hash": "10316e05fa27c0c4054af2b1e7fb94aed1d2512b7e050a32c24a590ddd8594ab",
           "record_pointer": "/site/0/alerts/0",
           "summary": "ZAP is Out of Date"
         }
       ],
       "source_finding_id": "10116",
-      "source_record_hash": "d5e7be250f7dfc32c503a4b2af67d9b124c003d5d84c0bb9810b85c9794b7967",
+      "source_record_hash": "10316e05fa27c0c4054af2b1e7fb94aed1d2512b7e050a32c24a590ddd8594ab",
       "source_tool": "zap",
       "source_type": "dynamic_scan",
       "squad": "Application Engineering",
@@ -1965,13 +1965,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/dynamic/raw/zap-report.json",
-          "record_hash": "f3c1536fbf405320807003ff2976947f8527f0a1e278a006204ab3e18f9b85b4",
+          "record_hash": "a8efd2422640807d9bd457ec422fe4eb56e69975da9436d063e676bc9fafbf65",
           "record_pointer": "/site/0/alerts/1",
           "summary": "Storable and Cacheable Content"
         }
       ],
       "source_finding_id": "10049",
-      "source_record_hash": "f3c1536fbf405320807003ff2976947f8527f0a1e278a006204ab3e18f9b85b4",
+      "source_record_hash": "a8efd2422640807d9bd457ec422fe4eb56e69975da9436d063e676bc9fafbf65",
       "source_tool": "zap",
       "source_type": "dynamic_scan",
       "squad": "Application Engineering",

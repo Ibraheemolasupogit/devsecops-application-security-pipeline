@@ -1,0 +1,141 @@
+{
+  "edges": [
+    {
+      "control_ids": [
+        "SR-API-001",
+        "SR-AUTHZ-003"
+      ],
+      "relationship": "defines",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-AUTHZ-003"
+      ],
+      "source_id": "threat_model",
+      "source_reference": "outputs/security/threat-model/validated-threat-register.json",
+      "target_id": "security_requirements",
+      "target_reference": "outputs/security/threat-model/validated-security-requirements.json",
+      "threat_ids": [
+        "THR-API-001"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-API-001",
+        "SR-API-002"
+      ],
+      "relationship": "maps_to",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-002"
+      ],
+      "source_id": "security_requirements",
+      "source_reference": "outputs/security/threat-model/validated-security-requirements.json",
+      "target_id": "implementation_references",
+      "target_reference": "docs/threat-model/control-traceability.yaml",
+      "threat_ids": [
+        "THR-API-002"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-AUTHZ-002",
+        "SR-DATA-001"
+      ],
+      "relationship": "verified_by",
+      "security_requirement_ids": [
+        "SR-AUTHZ-002",
+        "SR-DATA-001"
+      ],
+      "source_id": "implementation_references",
+      "source_reference": "docs/threat-model/control-traceability.yaml",
+      "target_id": "tests",
+      "target_reference": "tests/",
+      "threat_ids": [
+        "THR-API-003"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-API-003"
+      ],
+      "relationship": "augmented_by",
+      "security_requirement_ids": [
+        "SR-API-003"
+      ],
+      "source_id": "tests",
+      "source_reference": "tests/",
+      "target_id": "scanner_outputs",
+      "target_reference": "outputs/security/appsec/raw/",
+      "threat_ids": [
+        "THR-API-004"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-API-005"
+      ],
+      "relationship": "normalised_into",
+      "security_requirement_ids": [
+        "SR-API-005"
+      ],
+      "source_id": "scanner_outputs",
+      "source_reference": "outputs/security/appsec/raw/",
+      "target_id": "canonical_findings",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json",
+      "threat_ids": [
+        "THR-API-005"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-API-005"
+      ],
+      "relationship": "evaluated_by",
+      "security_requirement_ids": [
+        "SR-API-005"
+      ],
+      "source_id": "canonical_findings",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_id": "release_decision",
+      "target_reference": "outputs/security/release/release-gate-decision.json",
+      "threat_ids": [
+        "THR-API-006"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-API-004"
+      ],
+      "relationship": "feeds",
+      "security_requirement_ids": [
+        "SR-API-004"
+      ],
+      "source_id": "release_decision",
+      "source_reference": "outputs/security/release/release-gate-decision.json",
+      "target_id": "lifecycle_records",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json",
+      "threat_ids": [
+        "THR-API-007"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-API-004",
+        "SR-CI-003"
+      ],
+      "relationship": "summarised_by",
+      "security_requirement_ids": [
+        "SR-API-004",
+        "SR-CI-003"
+      ],
+      "source_id": "lifecycle_records",
+      "source_reference": "outputs/security/lifecycle/vulnerability-register.json",
+      "target_id": "consolidated_report",
+      "target_reference": "reports/security/security-evidence-report.md",
+      "threat_ids": [
+        "THR-API-008"
+      ]
+    }
+  ],
+  "schema_version": "1.0"
+}

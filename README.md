@@ -34,6 +34,8 @@ Milestone 8 adds risk-based release gates over the Milestone 7 canonical finding
 
 Milestone 9 adds deterministic vulnerability lifecycle and exception governance over canonical findings and release outputs. It produces a vulnerability register, lifecycle history, security exception register, expiry reports, verification evidence, audit reports and a pinned lifecycle workflow. It does not start Security Champions, deploy, push containers, create AWS resources, commit or push.
 
+Milestone 10 adds consolidated security evidence and reporting across Milestones 1-9. It produces a deterministic evidence bundle, source lineage, control coverage, security metrics, integrity summaries and audience-oriented reports. It does not start Milestone 11 developer enablement, Security Champions, dashboards, ticketing, external reporting, deployment or AWS resource creation.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -143,6 +145,19 @@ Implemented as local governance, evidence and reports:
 
 Not implemented in Milestone 9: Security Champions, production ticketing integration, deployment approvals, artefact signing/provenance, AWS deployment, container push or production vulnerability-management operations.
 
+## Milestone 10 Scope
+
+Implemented as local evidence aggregation and reports:
+
+- Explicit source registry for threat model, API security, infrastructure, AppSec, dynamic security, findings, release assurance and lifecycle evidence.
+- Deterministic consolidated evidence bundle and manifest.
+- Evidence lineage, control coverage, metrics and integrity summaries.
+- Executive, product-security, engineering and audit reports.
+- Sensitive-content validation for consolidated outputs.
+- A security-evidence CI workflow with minimal permissions and no AWS credentials.
+
+Not implemented in Milestone 10: Milestone 11 developer enablement, Security Champions, dashboards, ticketing, external reporting systems, regulatory certification, AWS deployment or production monitoring.
+
 ## API Capabilities
 
 - `GET /health`
@@ -230,6 +245,13 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make verify-lifecycle-evidence`: verify lifecycle evidence checksums and determinism.
 - `make lifecycle-report`: generate lifecycle governance reports.
 - `make lifecycle-full`: verify findings and release evidence, then run the full lifecycle workflow.
+- `make evidence-source-validate`: validate all consolidated evidence source manifests.
+- `make evidence-aggregate`: aggregate source evidence into a deterministic bundle preview.
+- `make evidence-generate`: write consolidated evidence outputs.
+- `make verify-consolidated-evidence`: verify consolidated evidence checksums and content safety.
+- `make evidence-report`: generate consolidated reports.
+- `make evidence-full`: verify source evidence, generate consolidated evidence, verify it and write reports.
+- `make security-assurance-full`: run quality, source evidence, findings, release, lifecycle and consolidated evidence workflows.
 - `make secrets-scan`: run Gitleaks via local binary or pinned container.
 - `make semgrep-test`: run Semgrep custom rule tests.
 - `make sast`: run Semgrep and Bandit.

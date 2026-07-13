@@ -13,6 +13,7 @@ make dynamic-fast
 make findings-full
 make release-full
 make lifecycle-full
+make evidence-full
 ```
 
 Use deterministic synthetic data only. Do not add real patient, NHS, genomic, credential, or cloud account data.
@@ -29,3 +30,4 @@ Use deterministic synthetic data only. Do not add real patient, NHS, genomic, cr
 - Keep findings IDs deterministic and avoid absolute local paths, raw JWTs, private keys or real data in canonical findings outputs.
 - Keep release-gate evidence deterministic. Use `make release-gate-enforce` only when you intentionally want enforcement exit codes; evidence-mode release targets must still run for block and conditional decisions.
 - Keep lifecycle evidence deterministic. Scanner suppressions may inform lifecycle records, but only security exceptions under `config/lifecycle/` and `outputs/security/lifecycle/` may support risk acceptance or deferral.
+- Keep consolidated evidence deterministic. Update `config/evidence/source-registry.yaml` when adding a source domain, and do not add reports with manually maintained counts.

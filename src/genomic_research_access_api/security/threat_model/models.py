@@ -127,7 +127,7 @@ class SecurityRequirement(SecurityModel):
     @classmethod
     def milestone_must_be_valid(cls, value: str) -> str:
         allowed = {"Milestone 1", "Milestone 2", "Milestone 3", "Milestone 4", "Milestone 5"}
-        allowed.update({"Milestone 6", "Milestone 7", "Milestone 8", "Milestone 9"})
+        allowed.update({"Milestone 6", "Milestone 7", "Milestone 8", "Milestone 9", "Milestone 10"})
         if value not in allowed:
             raise ValueError("planned_milestone must reference a known portfolio milestone")
         return value

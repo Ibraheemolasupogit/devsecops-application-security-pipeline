@@ -12,6 +12,7 @@ make release-full
 make verify-release-evidence
 make lifecycle-full
 make verify-lifecycle-evidence
+make evidence-full
 ```
 
 `findings-full` consumes existing scanner outputs and does not require Docker by itself. `release-full` consumes canonical findings and runs in evidence mode, so it succeeds even when the resulting decision is `block` or `conditional_pass`.
@@ -31,3 +32,11 @@ make lifecycle-full
 ```
 
 This verifies findings and release evidence, validates lifecycle policy, initialises the vulnerability and exception registers, evaluates exception expiry, writes deterministic evidence, verifies checksums and generates lifecycle reports. It does not require Docker.
+
+## Consolidated Evidence
+
+```bash
+make evidence-full
+```
+
+This verifies source evidence manifests, writes consolidated evidence, verifies checksums and content safety, and generates audience-oriented reports. It does not refresh Docker-backed scanner evidence.

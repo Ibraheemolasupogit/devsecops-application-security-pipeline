@@ -6,7 +6,7 @@ If you identify a vulnerability or unsafe pattern in this demonstration code, op
 
 Do not submit real patient data, NHS data, genomic data, credentials, cloud account identifiers, or sensitive operational details in reports.
 
-Current implemented security controls include local JWT authentication, role-based and object-level authorisation, threat-model validation, non-deployed Terraform reference controls, a Milestone 5 AppSec pipeline, Milestone 6 local dynamic API security validation, Milestone 7 canonical findings normalisation, Milestone 8 local release-assurance gates, and Milestone 9 vulnerability lifecycle and exception governance.
+Current implemented security controls include local JWT authentication, role-based and object-level authorisation, threat-model validation, non-deployed Terraform reference controls, a Milestone 5 AppSec pipeline, Milestone 6 local dynamic API security validation, Milestone 7 canonical findings normalisation, Milestone 8 local release-assurance gates, Milestone 9 vulnerability lifecycle and exception governance, and Milestone 10 consolidated security evidence reporting.
 
 Run local security checks with:
 
@@ -17,6 +17,7 @@ make dynamic-fast
 make findings-full
 make release-full
 make lifecycle-full
+make evidence-full
 ```
 
-Docker-backed Gitleaks, Trivy, Schemathesis and ZAP scans require a running Docker daemon when native binaries or scanner containers are used. Dynamic scan targets must remain local-only. Do not treat local scanner, findings, release or lifecycle evidence as a production vulnerability-management programme, penetration test, deployment approval system or Security Champions programme.
+Docker-backed Gitleaks, Trivy, Schemathesis and ZAP scans require a running Docker daemon when native binaries or scanner containers are used. Dynamic scan targets must remain local-only. Do not treat local scanner, findings, release, lifecycle or consolidated evidence as a production vulnerability-management programme, penetration test, deployment approval system, regulatory certification or Security Champions programme.

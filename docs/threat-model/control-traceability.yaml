@@ -358,5 +358,25 @@
     "evidence_references": ["outputs/security/lifecycle/security-exceptions.json", "outputs/security/lifecycle/expired-exceptions.csv"],
     "residual_risk_id": "RR-005",
     "notes": "Lifecycle records retain scanner findings and suppressions while keeping scanner suppressions separate from formal exceptions."
+  },
+  {
+    "traceability_id": "TRACE-037",
+    "threat_id": "THR-REVIEW-001",
+    "requirement_ids": ["SR-EVIDENCE-001", "SR-EVIDENCE-002"],
+    "implementation_references": ["src/genomic_research_access_api/security/evidence", "config/evidence", ".github/workflows/security-evidence.yml"],
+    "verification_methods": ["make evidence-full", "consolidated evidence tests"],
+    "evidence_references": ["outputs/security/evidence/consolidated-evidence.json", "outputs/security/evidence/evidence-manifest.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Milestone 10 aggregates evidence, lineage, metrics and reports without implementing Milestone 11 developer enablement."
+  },
+  {
+    "traceability_id": "TRACE-038",
+    "threat_id": "THR-SUPPLY-001",
+    "requirement_ids": ["SR-EVIDENCE-001"],
+    "implementation_references": ["config/evidence/source-registry.yaml", "src/genomic_research_access_api/security/evidence/verification.py"],
+    "verification_methods": ["source manifest checksum verification", "sensitive-content validation"],
+    "evidence_references": ["outputs/security/evidence/evidence-integrity-summary.json"],
+    "residual_risk_id": "RR-005",
+    "notes": "Consolidated evidence records source checksums and validates required domain manifests before reporting."
   }
 ]

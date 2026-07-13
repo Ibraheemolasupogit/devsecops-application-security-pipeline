@@ -1,0 +1,13 @@
+{
+  "checksum_failures": 0,
+  "deployment_status_consistency": "passed",
+  "local_path_findings": 0,
+  "missing_outputs": 0,
+  "overall_integrity_decision": "pass",
+  "schema_mismatches": 0,
+  "schema_version": "1.0",
+  "secret_pattern_findings": 0,
+  "timestamp_consistency": "passed",
+  "validation_errors": [],
+  "verified_manifests": 8
+}

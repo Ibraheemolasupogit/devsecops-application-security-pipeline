@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "output_files": {
+    "demo.json": {
+      "path": "demo.json",
+      "sha256": "fixture"
+    }
+  }
+}

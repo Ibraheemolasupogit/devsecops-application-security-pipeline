@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "metric_definition_version": "1.0",
+  "metrics": [
+    {"metric_id": "MET-001", "name": "Total threats", "description": "Threats in validated threat register.", "source_domain": "threat_model", "calculation": "count(validated-threat-register)", "unit": "count", "interpretation": "Threat-model scope size.", "limitations": "Local threat model only.", "owner": "product_security_engineer"},
+    {"metric_id": "MET-002", "name": "Security requirements", "description": "Requirements in validated requirements register.", "source_domain": "threat_model", "calculation": "count(validated-security-requirements)", "unit": "count", "interpretation": "Control requirement coverage base.", "limitations": "Portfolio requirements only.", "owner": "product_security_engineer"},
+    {"metric_id": "MET-003", "name": "Canonical findings", "description": "Deduplicated canonical findings.", "source_domain": "findings", "calculation": "findings-summary.total_canonical_findings", "unit": "count", "interpretation": "Current local finding volume.", "limitations": "Depends on local scanner evidence freshness.", "owner": "product_security_engineer"},
+    {"metric_id": "MET-004", "name": "Release decision", "description": "Release gate decision.", "source_domain": "release_assurance", "calculation": "release-gate-decision.decision", "unit": "enum", "interpretation": "Local release assurance status.", "limitations": "Not deployment approval.", "owner": "product_security_engineer"},
+    {"metric_id": "MET-005", "name": "Vulnerability records", "description": "Lifecycle vulnerability register size.", "source_domain": "lifecycle", "calculation": "lifecycle-summary.total_vulnerabilities", "unit": "count", "interpretation": "Managed vulnerability population.", "limitations": "Local register only.", "owner": "product_security_engineer"},
+    {"metric_id": "MET-006", "name": "Control coverage percentage", "description": "Verified or locally validated controls divided by all controls.", "source_domain": "evidence", "calculation": "verified_or_validated_controls / total_controls * 100", "unit": "percent", "interpretation": "Portfolio control evidence completeness.", "limitations": "Local validation is not operational certification.", "owner": "product_security_engineer"}
+  ]
+}

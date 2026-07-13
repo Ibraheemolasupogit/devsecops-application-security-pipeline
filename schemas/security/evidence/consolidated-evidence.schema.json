@@ -1,0 +1,255 @@
+{
+  "$defs": {
+    "DomainEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "checksum_failures": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Checksum Failures",
+          "type": "array"
+        },
+        "deployment_status": {
+          "title": "Deployment Status",
+          "type": "string"
+        },
+        "domain_id": {
+          "title": "Domain Id",
+          "type": "string"
+        },
+        "evidence_timestamp": {
+          "title": "Evidence Timestamp",
+          "type": "string"
+        },
+        "expected_outputs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Expected Outputs",
+          "type": "array"
+        },
+        "generated_at": {
+          "title": "Generated At",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "missing_outputs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Outputs",
+          "type": "array"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "schema_version": {
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "source_checksum": {
+          "title": "Source Checksum",
+          "type": "string"
+        },
+        "source_manifest": {
+          "title": "Source Manifest",
+          "type": "string"
+        },
+        "verification_status": {
+          "title": "Verification Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain_id",
+        "name",
+        "source_manifest",
+        "schema_version",
+        "expected_outputs",
+        "required",
+        "verification_status",
+        "source_checksum",
+        "generated_at",
+        "evidence_timestamp",
+        "deployment_status"
+      ],
+      "title": "DomainEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "as_of_date": {
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "branch": {
+      "title": "Branch",
+      "type": "string"
+    },
+    "commit": {
+      "title": "Commit",
+      "type": "string"
+    },
+    "control_coverage": {
+      "additionalProperties": true,
+      "title": "Control Coverage",
+      "type": "object"
+    },
+    "controlled_timestamp": {
+      "title": "Controlled Timestamp",
+      "type": "string"
+    },
+    "deployment_status": {
+      "title": "Deployment Status",
+      "type": "string"
+    },
+    "dirty_worktree": {
+      "title": "Dirty Worktree",
+      "type": "boolean"
+    },
+    "domain_count": {
+      "title": "Domain Count",
+      "type": "integer"
+    },
+    "domains": {
+      "items": {
+        "$ref": "#/$defs/DomainEvidence"
+      },
+      "title": "Domains",
+      "type": "array"
+    },
+    "evidence_bundle_id": {
+      "title": "Evidence Bundle Id",
+      "type": "string"
+    },
+    "exception_summary": {
+      "additionalProperties": true,
+      "title": "Exception Summary",
+      "type": "object"
+    },
+    "failed_domain_count": {
+      "title": "Failed Domain Count",
+      "type": "integer"
+    },
+    "finding_summary": {
+      "additionalProperties": true,
+      "title": "Finding Summary",
+      "type": "object"
+    },
+    "input_checksums": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Input Checksums",
+      "type": "object"
+    },
+    "input_manifests": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Input Manifests",
+      "type": "object"
+    },
+    "lifecycle_summary": {
+      "additionalProperties": true,
+      "title": "Lifecycle Summary",
+      "type": "object"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "metrics": {
+      "additionalProperties": true,
+      "title": "Metrics",
+      "type": "object"
+    },
+    "output_checksums": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Output Checksums",
+      "type": "object"
+    },
+    "project_name": {
+      "title": "Project Name",
+      "type": "string"
+    },
+    "project_version": {
+      "title": "Project Version",
+      "type": "string"
+    },
+    "release_decision": {
+      "additionalProperties": true,
+      "title": "Release Decision",
+      "type": "object"
+    },
+    "repository": {
+      "title": "Repository",
+      "type": "string"
+    },
+    "required_domain_count": {
+      "title": "Required Domain Count",
+      "type": "integer"
+    },
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "verification_summary": {
+      "additionalProperties": true,
+      "title": "Verification Summary",
+      "type": "object"
+    },
+    "verified_domain_count": {
+      "title": "Verified Domain Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "evidence_bundle_id",
+    "project_name",
+    "project_version",
+    "repository",
+    "branch",
+    "commit",
+    "dirty_worktree",
+    "controlled_timestamp",
+    "as_of_date",
+    "deployment_status",
+    "domain_count",
+    "verified_domain_count",
+    "failed_domain_count",
+    "required_domain_count",
+    "domains",
+    "input_manifests",
+    "input_checksums",
+    "control_coverage",
+    "metrics",
+    "release_decision",
+    "finding_summary",
+    "lifecycle_summary",
+    "exception_summary",
+    "verification_summary",
+    "limitations"
+  ],
+  "title": "ConsolidatedEvidence",
+  "type": "object"
+}

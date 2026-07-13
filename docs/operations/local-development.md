@@ -71,6 +71,14 @@ make lifecycle-full
 
 This consumes canonical findings and release outputs, then writes the local vulnerability register, exception register, lifecycle history, CSV queues, evidence manifest and reports. It is evidence-mode only and does not create tickets or deployment approvals.
 
+## Consolidated Security Evidence
+
+```bash
+make evidence-full
+```
+
+This aggregates Milestone 1-9 source evidence into a deterministic evidence bundle and report set. Use `make security-assurance-full` when you intentionally want the longer local assurance chain.
+
 ## Local API Tokens
 
 Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:

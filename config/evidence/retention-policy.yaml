@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "retention_policy_version": "1.0",
+  "classes": {
+    "portfolio_evidence": {
+      "description": "Local deterministic evidence committed for portfolio review.",
+      "minimum_retention_days": 365,
+      "contains_sensitive_data": false
+    }
+  }
+}

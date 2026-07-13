@@ -11,6 +11,7 @@ The broader portfolio roadmap may include:
 7. Findings normalisation and risk enrichment. Delivered as deterministic local evidence.
 8. Risk-based release gates. Delivered as deterministic local release-assurance evidence and opt-in enforcement.
 9. Vulnerability lifecycle and exception governance. Delivered as deterministic local governance evidence.
-10. Security Champions.
+10. Security evidence and reporting. Delivered as deterministic local portfolio evidence.
+11. Developer enablement and Security Champions.
 
-Milestones 1 through 9 are implemented in this repository state. Future milestones should update this document when they are actually delivered.
+Milestones 1 through 10 are implemented in this repository state. Future milestones should update this document when they are actually delivered.

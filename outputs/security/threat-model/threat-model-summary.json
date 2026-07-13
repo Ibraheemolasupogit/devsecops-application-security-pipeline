@@ -3,7 +3,7 @@
   "orphaned_threats": [],
   "requirements_by_category": {
     "api_security": 4,
-    "audit": 1,
+    "audit": 2,
     "audit_logging": 4,
     "authentication": 1,
     "authorisation": 4,
@@ -11,7 +11,7 @@
     "configuration": 1,
     "container_security": 2,
     "data_protection": 3,
-    "governance": 4,
+    "governance": 5,
     "iam": 2,
     "infrastructure_security": 2,
     "release_assurance": 4,
@@ -22,7 +22,7 @@
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 44,
+    "implemented": 46,
     "planned": 2
   },
   "residual_risks_by_rating": {

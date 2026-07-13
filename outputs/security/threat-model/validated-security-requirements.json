@@ -394,6 +394,48 @@
     "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
+    "category": "audit",
+    "description": "Security evidence from all required local domains must be aggregated with source manifests, lineage, checksums and deterministic verification.",
+    "evidence_reference": "outputs/security/evidence/evidence-manifest.json",
+    "implementation_reference": "src/genomic_research_access_api/security/evidence; config/evidence/source-registry.yaml",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 10",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-EVIDENCE-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-AUDIT-003",
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Consolidated evidence integrity",
+    "verification_method": "consolidated evidence source validation and checksum verification",
+    "verification_reference": "tests/security/test_consolidated_evidence.py; Makefile"
+  },
+  {
+    "category": "governance",
+    "description": "Executive, engineering and audit reports must derive from machine-readable evidence and preserve count, metric and release-decision consistency.",
+    "evidence_reference": "outputs/security/evidence/portfolio-security-summary.json",
+    "implementation_reference": "src/genomic_research_access_api/security/evidence/reporting.py; config/evidence/report-policy.yaml",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 10",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-EVIDENCE-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Portfolio security reporting consistency",
+    "verification_method": "report generation and metric consistency tests",
+    "verification_reference": "tests/security/test_consolidated_evidence.py"
+  },
+  {
     "category": "secure_design",
     "description": "Security evidence from threat modelling, AppSec scanners, infrastructure scans and dynamic API testing must be mapped into one validated findings schema with stable identifiers.",
     "evidence_reference": "outputs/security/findings/normalised-findings.json",
