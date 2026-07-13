@@ -1,0 +1,6 @@
+# rule_id	classification	reason	scope	owner	review_date	expiry_date	compensating_control
+10020	block	Missing anti-clickjacking header is blocking for local API responses.	local-api	security	2026-08-13		security header middleware
+10021	block	Missing X-Content-Type-Options is blocking for local API responses.	local-api	security	2026-08-13		security header middleware
+10035	block	Missing Strict-Transport-Security is blocking only when HTTPS mode is configured.	local-api-https	security	2026-08-13		local HTTP mode documented; HTTPS mode enables HSTS
+10038	warn	Content-Security-Policy observations are warnings unless the header is absent.	local-api	security	2026-08-13		CSP middleware
+10054	warn	Cookie flags are warning-only because the API is bearer-token based and does not issue cookies.	local-api	security	2026-08-13		no session cookies

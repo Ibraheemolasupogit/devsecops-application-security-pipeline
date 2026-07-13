@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "test_security_headers_on_representative_responses",
+      "outcome": "passed"
+    }
+  ],
+  "category": "security_headers",
+  "execution_status": "completed",
+  "failed_count": 0,
+  "policy_decision": "pass",
+  "test_count": 1
+}

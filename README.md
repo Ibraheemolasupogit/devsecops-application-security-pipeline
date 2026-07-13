@@ -26,6 +26,8 @@ Milestone 4 delivered a secure AWS ECS Fargate Terraform reference architecture,
 
 Milestone 5 delivered the core AppSec pipeline: pinned scanner configuration, Semgrep and Bandit SAST, project-scoped pip-audit SCA, deterministic CycloneDX SBOM evidence, Checkov IaC reporting, Gitleaks and Trivy wrapper targets, AppSec reports and SHA-pinned security workflows.
 
+Milestone 6 adds local-only dynamic API security validation: dynamic pytest boundary tests, pinned Schemathesis OpenAPI testing, pinned OWASP ZAP baseline scanning, bounded resource-consumption checks, deterministic dynamic evidence and dynamic-security reports. Dynamic scans are restricted to localhost, loopback and approved local Docker targets.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -183,6 +185,8 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make checkov-scan`: run Checkov and record Terraform findings.
 - `make container-build-security`: build the local image for scanning.
 - `make container-scan`: run Trivy against the local image.
+- `make dynamic-fast`: run local dynamic pytest security tests.
+- `make dynamic-full`: run dynamic pytest, Schemathesis, ZAP, evidence verification and reports.
 - `make appsec-evidence`: generate deterministic AppSec evidence.
 - `make verify-appsec-evidence`: verify AppSec evidence checksums and SBOM shape.
 - `make quality`: run format, lint, type, coverage, auth, API-security, infrastructure and evidence checks.

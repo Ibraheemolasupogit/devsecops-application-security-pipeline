@@ -84,12 +84,12 @@
   },
   {
     "category": "api_security",
-    "description": "Production deployment must apply rate limiting, quotas or platform controls for abusive request volume.",
-    "evidence_reference": "future operational evidence",
-    "implementation_reference": "Not implemented; planned for future production controls.",
-    "implementation_status": "planned",
+    "description": "Production deployment must apply rate limiting, quotas or platform controls for abusive request volume; local dynamic tests must verify predictable resource-consumption behaviour.",
+    "evidence_reference": "outputs/security/dynamic/resource-consumption-summary.json",
+    "implementation_reference": "src/genomic_research_access_api/security/rate_limit.py; src/genomic_research_access_api/main.py",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
-    "planned_milestone": "Milestone 4",
+    "planned_milestone": "Milestone 6",
     "policy_source": null,
     "priority": "high",
     "requirement_id": "SR-API-005",
@@ -100,13 +100,13 @@
     ],
     "status": "active",
     "title": "Rate limiting or compensating resource controls",
-    "verification_method": "future rate-limit and quota tests",
-    "verification_reference": "future test suite"
+    "verification_method": "local dynamic rate-limit tests; future production quota tests",
+    "verification_reference": "tests/dynamic/test_dynamic_api_security.py"
   },
   {
     "category": "authentication",
     "description": "Production APIs must validate authenticated identities using a trusted provider before protected actions.",
-    "evidence_reference": "outputs/security/api-security/authentication-control-summary.json",
+    "evidence_reference": "outputs/security/api-security/authentication-control-summary.json; outputs/security/dynamic/authentication-boundary-summary.json",
     "implementation_reference": "src/genomic_research_access_api/security/authentication/jwt_validator.py",
     "implementation_status": "implemented",
     "owner": "application_admin",
@@ -121,13 +121,13 @@
     ],
     "status": "active",
     "title": "Production authentication",
-    "verification_method": "JWT validation and negative authentication tests",
-    "verification_reference": "tests/security/test_api_security_controls.py"
+    "verification_method": "JWT validation, negative authentication tests and dynamic authentication-boundary tests",
+    "verification_reference": "tests/security/test_api_security_controls.py; tests/dynamic/test_dynamic_api_security.py"
   },
   {
     "category": "authorisation",
     "description": "Only actors with approved roles may perform privileged workflow functions.",
-    "evidence_reference": "outputs/security/api-security/authorisation-matrix.json",
+    "evidence_reference": "outputs/security/api-security/authorisation-matrix.json; outputs/security/dynamic/authorisation-boundary-summary.json",
     "implementation_reference": "src/genomic_research_access_api/security/authorisation.py",
     "implementation_status": "implemented",
     "owner": "product_security_engineer",
@@ -141,13 +141,13 @@
     ],
     "status": "active",
     "title": "Role-based authorisation",
-    "verification_method": "role matrix and negative authorisation tests",
-    "verification_reference": "tests/security/test_api_security_controls.py"
+    "verification_method": "role matrix, negative authorisation tests and dynamic authorisation-boundary tests",
+    "verification_reference": "tests/security/test_api_security_controls.py; tests/dynamic/test_dynamic_api_security.py"
   },
   {
     "category": "authorisation",
     "description": "Access to datasets, access requests and audit records must be authorised per object and actor.",
-    "evidence_reference": "outputs/security/api-security/endpoint-security-inventory.json",
+    "evidence_reference": "outputs/security/api-security/endpoint-security-inventory.json; outputs/security/dynamic/object-access-summary.json",
     "implementation_reference": "src/genomic_research_access_api/services/access_requests.py",
     "implementation_status": "implemented",
     "owner": "product_security_engineer",
@@ -163,13 +163,13 @@
     ],
     "status": "active",
     "title": "Object-level authorisation",
-    "verification_method": "object-level dataset, access-request and audit access tests",
-    "verification_reference": "tests/security/test_api_security_controls.py"
+    "verification_method": "object-level dataset, access-request and audit access tests plus dynamic object-access tests",
+    "verification_reference": "tests/security/test_api_security_controls.py; tests/dynamic/test_dynamic_api_security.py"
   },
   {
     "category": "authorisation",
     "description": "Unknown or unauthorised actors must receive no access unless explicitly granted.",
-    "evidence_reference": "outputs/security/api-security/negative-test-summary.json",
+    "evidence_reference": "outputs/security/api-security/negative-test-summary.json; outputs/security/dynamic/authentication-boundary-summary.json; outputs/security/dynamic/authorisation-boundary-summary.json",
     "implementation_reference": "src/genomic_research_access_api/security/authentication/dependencies.py",
     "implementation_status": "implemented",
     "owner": "application_admin",
@@ -184,8 +184,8 @@
     ],
     "status": "active",
     "title": "Deny-by-default access",
-    "verification_method": "missing token, unknown role and missing permission tests",
-    "verification_reference": "tests/security/test_api_security_controls.py"
+    "verification_method": "missing token, unknown role, missing permission and dynamic boundary tests",
+    "verification_reference": "tests/security/test_api_security_controls.py; tests/dynamic/test_dynamic_api_security.py"
   },
   {
     "category": "workflow_integrity",

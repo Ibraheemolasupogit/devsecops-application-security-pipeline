@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "test_input_mutation_and_malformed_payloads",
+      "outcome": "passed"
+    }
+  ],
+  "category": "input_mutation",
+  "execution_status": "completed",
+  "failed_count": 0,
+  "policy_decision": "pass",
+  "test_count": 1
+}

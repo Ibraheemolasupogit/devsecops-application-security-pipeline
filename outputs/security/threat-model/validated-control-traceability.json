@@ -80,12 +80,14 @@
   },
   {
     "evidence_references": [
-      "future operational evidence"
+      "outputs/security/dynamic/resource-consumption-summary.json"
     ],
     "implementation_references": [
-      "future platform or API rate limiting"
+      "src/genomic_research_access_api/security/rate_limit.py",
+      "src/genomic_research_access_api/main.py",
+      "future platform rate limiting"
     ],
-    "notes": "Resource controls are planned, not implemented.",
+    "notes": "A bounded local application rate limiter is implemented for dynamic validation; production quota architecture remains future work.",
     "requirement_ids": [
       "SR-API-005"
     ],
@@ -93,7 +95,8 @@
     "threat_id": "THR-API-005",
     "traceability_id": "TRACE-005",
     "verification_methods": [
-      "future rate-limit tests"
+      "local dynamic rate-limit tests",
+      "future production quota tests"
     ]
   },
   {
@@ -238,7 +241,8 @@
   },
   {
     "evidence_references": [
-      "outputs/security/api-security/authentication-control-summary.json"
+      "outputs/security/api-security/authentication-control-summary.json",
+      "outputs/security/dynamic/authentication-boundary-summary.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/security/authentication/jwt_validator.py"
@@ -251,7 +255,8 @@
     "threat_id": "THR-AUTH-001",
     "traceability_id": "TRACE-013",
     "verification_methods": [
-      "JWT authentication tests"
+      "JWT authentication tests",
+      "dynamic authentication-boundary tests"
     ]
   },
   {
@@ -278,7 +283,8 @@
   },
   {
     "evidence_references": [
-      "outputs/security/api-security/endpoint-security-inventory.json"
+      "outputs/security/api-security/endpoint-security-inventory.json",
+      "outputs/security/dynamic/object-access-summary.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/services/access_requests.py",
@@ -293,12 +299,14 @@
     "threat_id": "THR-AUTHZ-001",
     "traceability_id": "TRACE-015",
     "verification_methods": [
-      "object-level authorisation tests"
+      "object-level authorisation tests",
+      "dynamic object-access tests"
     ]
   },
   {
     "evidence_references": [
-      "outputs/security/api-security/authorisation-matrix.json"
+      "outputs/security/api-security/authorisation-matrix.json",
+      "outputs/security/dynamic/authorisation-boundary-summary.json"
     ],
     "implementation_references": [
       "src/genomic_research_access_api/security/authorisation.py"
@@ -312,7 +320,8 @@
     "threat_id": "THR-AUTHZ-002",
     "traceability_id": "TRACE-016",
     "verification_methods": [
-      "role matrix tests"
+      "role matrix tests",
+      "dynamic authorisation-boundary tests"
     ]
   },
   {

@@ -1,0 +1,26 @@
+{
+  "base_url": "local-docker-gateway",
+  "case_count": 64,
+  "checks": [
+    {
+      "name": "not_a_server_error",
+      "outcome": "passed"
+    },
+    {
+      "name": "content_type_conformance",
+      "outcome": "passed"
+    },
+    {
+      "name": "response_schema_conformance",
+      "outcome": "passed"
+    }
+  ],
+  "execution_status": "completed",
+  "failed_count": 0,
+  "max_examples": 12,
+  "operation_count": 9,
+  "policy_decision": "pass",
+  "request_timeout_seconds": 5,
+  "tool": "schemathesis",
+  "version": "4.0.26"
+}

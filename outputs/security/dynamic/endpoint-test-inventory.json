@@ -1,0 +1,22 @@
+{
+  "categories": [
+    "audit",
+    "authentication",
+    "authorisation",
+    "cors",
+    "input_mutation",
+    "object_access",
+    "resource_consumption",
+    "security_headers"
+  ],
+  "execution_status": "completed",
+  "local_only": true,
+  "target_boundary": [
+    "127.0.0.1",
+    "localhost",
+    "::1",
+    "host.docker.internal",
+    "api"
+  ],
+  "test_count": 8
+}

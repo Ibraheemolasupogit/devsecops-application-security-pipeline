@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "test_rate_limit_behaviour",
+      "outcome": "passed"
+    }
+  ],
+  "category": "resource_consumption",
+  "execution_status": "completed",
+  "failed_count": 0,
+  "policy_decision": "pass",
+  "test_count": 1
+}

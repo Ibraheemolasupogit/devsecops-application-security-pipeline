@@ -1,0 +1,28 @@
+{
+  "local_targets": {
+    "allowed_hosts": ["127.0.0.1", "localhost", "::1", "host.docker.internal", "api"],
+    "allowed_schemes": ["http"],
+    "default_base_url": "http://127.0.0.1:8000",
+    "docker_base_url": "http://host.docker.internal:8000"
+  },
+  "schemathesis": {
+    "version": "4.0.26",
+    "container_image": "schemathesis/schemathesis:4.0.26",
+    "max_examples": 12,
+    "request_timeout_seconds": 5,
+    "max_response_time_ms": 1000,
+    "phases": ["examples", "fuzzing"],
+    "checks": ["not_a_server_error", "status_code_conformance", "content_type_conformance", "response_schema_conformance"]
+  },
+  "zap": {
+    "version": "2.16.1",
+    "container_image": "ghcr.io/zaproxy/zaproxy:2.16.1",
+    "max_scan_minutes": 8,
+    "active_scan": false,
+    "rules_file": "security/dynamic/zap/rules.tsv"
+  },
+  "pytest": {
+    "json_report": "outputs/security/dynamic/raw/pytest-dynamic.json",
+    "categories": ["authentication", "authorisation", "object_access", "input_mutation", "security_headers", "cors", "resource_consumption", "audit"]
+  }
+}

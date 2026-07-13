@@ -32,6 +32,15 @@ make appsec-fast
 
 This runs Semgrep rule tests, SAST, project-scoped dependency audit, SBOM validation, Checkov reporting and AppSec evidence verification. Docker-backed secret and container scans are available through `make secrets-scan` and `make container-scan` when Docker is running.
 
+## Dynamic API Security Checks
+
+```bash
+make dynamic-fast
+make dynamic-full
+```
+
+`dynamic-fast` runs local in-process API security tests. `dynamic-full` adds local API startup, pinned Schemathesis OpenAPI testing, pinned OWASP ZAP baseline scanning, deterministic evidence verification and report generation. Do not override scan targets to external hosts.
+
 ## Local API Tokens
 
 Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:

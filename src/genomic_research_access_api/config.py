@@ -25,6 +25,10 @@ class Settings(BaseSettings):
     jwt_maximum_lifetime_seconds: int = 900
     expose_api_docs: bool = True
     enable_hsts: bool = False
+    rate_limit_enabled: bool = False
+    rate_limit_requests: int = 60
+    rate_limit_window_seconds: int = 60
+    rate_limit_max_subjects: int = 256
     cors_allowed_origins: tuple[str, ...] = Field(
         default=("http://localhost:8000", "http://127.0.0.1:8000")
     )
@@ -39,6 +43,12 @@ class Settings(BaseSettings):
             raise ValueError("API documentation exposure must be disabled outside local mode.")
         if self.environment != "local" and not self.jwt_public_key_path:
             raise ValueError("A JWT public key source is required outside local mode.")
+        if self.rate_limit_requests < 1:
+            raise ValueError("Rate limit request count must be positive.")
+        if self.rate_limit_window_seconds < 1:
+            raise ValueError("Rate limit window must be positive.")
+        if self.rate_limit_max_subjects < 1:
+            raise ValueError("Rate limit subject capacity must be positive.")
         return self
 
     def load_jwt_public_key(self) -> str:

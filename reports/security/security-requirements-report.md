@@ -6,7 +6,7 @@
 | SR-API-002 | api_security | implemented | Milestone 1 |
 | SR-API-003 | api_security | implemented | Milestone 1 |
 | SR-API-004 | configuration | implemented | Milestone 1 |
-| SR-API-005 | api_security | planned | Milestone 4 |
+| SR-API-005 | api_security | implemented | Milestone 6 |
 | SR-AUTH-001 | authentication | implemented | Milestone 3 |
 | SR-AUTHZ-001 | authorisation | implemented | Milestone 3 |
 | SR-AUTHZ-002 | authorisation | implemented | Milestone 3 |

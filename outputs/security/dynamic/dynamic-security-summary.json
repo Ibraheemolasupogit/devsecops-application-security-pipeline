@@ -1,0 +1,28 @@
+{
+  "blocking_count": 0,
+  "execution_status": "completed",
+  "local_only": true,
+  "policy": {
+    "authentication_bypass": "block",
+    "authorisation_bypass": "block",
+    "cors_wildcard": "block",
+    "mass_assignment_success": "block",
+    "missing_required_security_header": "block",
+    "object_access_bypass": "block",
+    "resource_limit_bypass": "block",
+    "schema_mismatch": "block",
+    "tool_unavailable": "block",
+    "unexpected_5xx": "block",
+    "zap_high_risk_alert": "block",
+    "zap_medium_risk_alert": "warn"
+  },
+  "policy_decision": "pass",
+  "scanner_count": 3,
+  "tool_versions": {
+    "httpx": "0.28.1",
+    "pytest": "8.4.1",
+    "pytest-json-report": "1.5.0",
+    "schemathesis": "4.0.26",
+    "zap": "2.16.1"
+  }
+}

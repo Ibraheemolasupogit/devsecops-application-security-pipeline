@@ -10,6 +10,7 @@
     "authorisation_denied",
     "dataset_viewed",
     "invalid_workflow_transition_attempted",
+    "rate_limit_exceeded",
     "self_approval_denied"
   ],
   "security_event_types": [

@@ -36,7 +36,7 @@
     },
     "audit-control-summary.json": {
       "path": "audit-control-summary.json",
-      "sha256": "03586655c6cd3306b2befd9f0f2e4aa6ff1bf1bb71986eca1d3fca25dd16fe33"
+      "sha256": "290f45885061c9aa84608e87ec3d135bed811147b559ccca0495602fcec5738b"
     },
     "authentication-control-summary.json": {
       "path": "authentication-control-summary.json",

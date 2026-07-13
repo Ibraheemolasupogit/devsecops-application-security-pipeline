@@ -32,17 +32,17 @@
   {
     "risk_id": "RR-003",
     "related_threat_ids": ["THR-API-005", "THR-API-006"],
-    "description": "No production rate limiting or quota control exists yet.",
-    "current_controls": ["input field length limits"],
-    "control_limitations": ["request volume is not bounded"],
+    "description": "A local application rate limiter is implemented for deterministic dynamic validation; production quota controls are not yet deployed.",
+    "current_controls": ["input field length limits", "bounded local in-memory rate limiter", "dynamic rate-limit tests"],
+    "control_limitations": ["rate-limit state is local process memory", "production quota and distributed enforcement remain future controls"],
     "residual_likelihood": "medium",
     "residual_impact": "medium",
     "residual_rating": "medium",
     "risk_owner": "platform_engineer",
     "treatment": "mitigate",
-    "planned_milestone": "Milestone 4",
+    "planned_milestone": "Milestone 6",
     "review_date": "2026-07-11",
-    "status": "mitigation_planned"
+    "status": "accepted"
   },
   {
     "risk_id": "RR-004",

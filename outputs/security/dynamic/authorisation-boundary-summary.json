@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "test_authorisation_role_matrix",
+      "outcome": "passed"
+    }
+  ],
+  "category": "authorisation",
+  "execution_status": "completed",
+  "failed_count": 0,
+  "policy_decision": "pass",
+  "test_count": 1
+}

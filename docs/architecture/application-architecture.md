@@ -108,3 +108,19 @@ flowchart LR
 ```
 
 The scanner pipeline is local and CI-oriented. It does not publish images, create cloud resources or implement vulnerability-management workflow states.
+
+## Milestone 6 Dynamic Security Architecture
+
+```mermaid
+flowchart LR
+    LocalAPI["FastAPI on 127.0.0.1"] --> Pytest["Dynamic pytest boundary tests"]
+    LocalAPI --> Schema["Schemathesis OpenAPI tests"]
+    LocalAPI --> Zap["OWASP ZAP baseline"]
+    Pytest --> Raw["outputs/security/dynamic/raw"]
+    Schema --> Raw
+    Zap --> Raw
+    Raw --> Evidence["Deterministic dynamic evidence"]
+    Evidence --> Reports["Dynamic security reports"]
+```
+
+Dynamic validation starts and stops a local API instance, rejects non-local scan targets, runs bounded generated traffic and records deterministic evidence. It does not scan external hosts, deploy cloud resources or add release-gate logic.

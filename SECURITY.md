@@ -6,13 +6,14 @@ If you identify a vulnerability or unsafe pattern in this demonstration code, op
 
 Do not submit real patient data, NHS data, genomic data, credentials, cloud account identifiers, or sensitive operational details in reports.
 
-Current implemented security controls include local JWT authentication, role-based and object-level authorisation, threat-model validation, non-deployed Terraform reference controls, and a Milestone 5 AppSec pipeline.
+Current implemented security controls include local JWT authentication, role-based and object-level authorisation, threat-model validation, non-deployed Terraform reference controls, a Milestone 5 AppSec pipeline, and Milestone 6 local dynamic API security validation.
 
 Run local security checks with:
 
 ```bash
 make quality
 make appsec-fast
+make dynamic-fast
 ```
 
-Docker-backed Gitleaks and Trivy scans require a running Docker daemon when native binaries are not installed. Do not treat local scanner evidence as a production vulnerability-management programme or release approval gate.
+Docker-backed Gitleaks, Trivy, Schemathesis and ZAP scans require a running Docker daemon when native binaries or scanner containers are used. Dynamic scan targets must remain local-only. Do not treat local scanner evidence as a production vulnerability-management programme, penetration test or release approval gate.

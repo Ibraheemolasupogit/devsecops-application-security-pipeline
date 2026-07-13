@@ -6,11 +6,15 @@
   "input_files": {
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "e567d7ce17a7c9a8d4e1a06570376ccf025529ec46434f1481f9ba7e56e9dabf"
+      "sha256": "59bb6b246da7ecfc0e796eee650649561f909d5fe0d222a5c7b12807595d825b"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
       "sha256": "81127f69d8453e5ce3e50c7b16d29407cd8be679051f112544dfe6ec60ed4f15"
+    },
+    "outputs/security/appsec/raw/gitleaks 2.json": {
+      "path": "outputs/security/appsec/raw/gitleaks 2.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
     },
     "outputs/security/appsec/raw/gitleaks.json": {
       "path": "outputs/security/appsec/raw/gitleaks.json",
@@ -22,11 +26,11 @@
     },
     "outputs/security/appsec/raw/semgrep.json": {
       "path": "outputs/security/appsec/raw/semgrep.json",
-      "sha256": "dc3bc643acdc2e69b616a9bde1dfadc187430af16b1d18262d76f86d8519fb14"
+      "sha256": "000583fc4d7e26e6fba332cabe94dc660ef4ab0b71ae89541ba20b7fae37e780"
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "05b97d5e2453208e7e2d1d8624f131042d97f7c6b94c320be299de4973fce27c"
+      "sha256": "ac67a0c5395c10e7d9efd538aa6d6353db6d182ac8773fcff98356f41571f295"
     },
     "outputs/security/appsec/sbom.cdx.json": {
       "path": "outputs/security/appsec/sbom.cdx.json",

@@ -46,6 +46,7 @@ class AuditEventType(StrEnum):
     SELF_APPROVAL_DENIED = "self_approval_denied"
     INVALID_WORKFLOW_TRANSITION_ATTEMPTED = "invalid_workflow_transition_attempted"
     AUDIT_EVENTS_VIEWED = "audit_events_viewed"
+    RATE_LIMIT_EXCEEDED = "rate_limit_exceeded"
 
 
 class AuditOutcome(StrEnum):

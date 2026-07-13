@@ -1,0 +1,16 @@
+{
+  "policy": {
+    "unexpected_5xx": "block",
+    "authentication_bypass": "block",
+    "authorisation_bypass": "block",
+    "object_access_bypass": "block",
+    "mass_assignment_success": "block",
+    "schema_mismatch": "block",
+    "missing_required_security_header": "block",
+    "cors_wildcard": "block",
+    "resource_limit_bypass": "block",
+    "zap_high_risk_alert": "block",
+    "zap_medium_risk_alert": "warn",
+    "tool_unavailable": "block"
+  }
+}

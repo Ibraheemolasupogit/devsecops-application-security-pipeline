@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "test_cors_controls",
+      "outcome": "passed"
+    }
+  ],
+  "category": "cors",
+  "execution_status": "completed",
+  "failed_count": 0,
+  "policy_decision": "pass",
+  "test_count": 1
+}

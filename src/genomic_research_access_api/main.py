@@ -8,6 +8,7 @@ from uuid import uuid4
 from fastapi import FastAPI, Request, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from starlette.middleware.base import RequestResponseEndpoint
 
 from genomic_research_access_api.api.router import api_router
@@ -15,6 +16,7 @@ from genomic_research_access_api.audit.service import AuditService
 from genomic_research_access_api.config import get_settings
 from genomic_research_access_api.data.seed import synthetic_datasets
 from genomic_research_access_api.domain.clock import Clock, system_clock
+from genomic_research_access_api.domain.enums import ActorRole, AuditEventType, AuditOutcome
 from genomic_research_access_api.exceptions.app import ApplicationError
 from genomic_research_access_api.exceptions.handlers import (
     application_error_handler,
@@ -25,6 +27,10 @@ from genomic_research_access_api.logging.config import configure_logging
 from genomic_research_access_api.repositories.access_requests import AccessRequestRepository
 from genomic_research_access_api.repositories.audit_events import AuditEventRepository
 from genomic_research_access_api.repositories.datasets import DatasetRepository
+from genomic_research_access_api.security.rate_limit import (
+    InMemoryRateLimiter,
+    rate_limit_key_from_request,
+)
 from genomic_research_access_api.services.access_requests import AccessRequestService
 from genomic_research_access_api.services.datasets import DatasetService
 from genomic_research_access_api.version import __version__
@@ -92,11 +98,49 @@ def create_app(
             response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
         return response
 
+    @app.middleware("http")
+    async def rate_limit_middleware(
+        request: Request, call_next: RequestResponseEndpoint
+    ) -> Response:
+        if not settings.rate_limit_enabled or not request.url.path.startswith("/api/"):
+            return await call_next(request)
+        if not hasattr(request.state, "correlation_id"):
+            request.state.correlation_id = str(uuid4())
+        retry_after = app.state.rate_limiter.check(rate_limit_key_from_request(request))
+        if retry_after is None:
+            return await call_next(request)
+        app.state.audit_service.record(
+            event_type=AuditEventType.RATE_LIMIT_EXCEEDED,
+            actor_id="rate-limited-principal",
+            actor_role=ActorRole.RESEARCHER,
+            resource_type="request",
+            resource_id=request.url.path,
+            outcome=AuditOutcome.FAILURE,
+            correlation_id=str(request.state.correlation_id),
+            details={"reason_code": "rate_limit_exceeded"},
+        )
+        return JSONResponse(
+            status_code=429,
+            headers={"Retry-After": str(retry_after)},
+            content={
+                "error": {
+                    "code": "RATE_LIMIT_EXCEEDED",
+                    "message": "The request rate limit was exceeded.",
+                    "correlation_id": str(request.state.correlation_id),
+                }
+            },
+        )
+
     dataset_repository = DatasetRepository(synthetic_datasets())
     access_request_repository = AccessRequestRepository()
     audit_event_repository = AuditEventRepository()
     audit_service = AuditService(audit_event_repository, clock, make_id)
     app.state.audit_service = audit_service
+    app.state.rate_limiter = InMemoryRateLimiter(
+        max_requests=settings.rate_limit_requests,
+        window_seconds=settings.rate_limit_window_seconds,
+        max_subjects=settings.rate_limit_max_subjects,
+    )
     app.state.dataset_service = DatasetService(
         dataset_repository, access_request_repository, audit_service
     )

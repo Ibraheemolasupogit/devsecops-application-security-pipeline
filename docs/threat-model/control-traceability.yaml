@@ -43,11 +43,11 @@
     "traceability_id": "TRACE-005",
     "threat_id": "THR-API-005",
     "requirement_ids": ["SR-API-005"],
-    "implementation_references": ["future platform or API rate limiting"],
-    "verification_methods": ["future rate-limit tests"],
-    "evidence_references": ["future operational evidence"],
+    "implementation_references": ["src/genomic_research_access_api/security/rate_limit.py", "src/genomic_research_access_api/main.py", "future platform rate limiting"],
+    "verification_methods": ["local dynamic rate-limit tests", "future production quota tests"],
+    "evidence_references": ["outputs/security/dynamic/resource-consumption-summary.json"],
     "residual_risk_id": "RR-003",
-    "notes": "Resource controls are planned, not implemented."
+    "notes": "A bounded local application rate limiter is implemented for dynamic validation; production quota architecture remains future work."
   },
   {
     "traceability_id": "TRACE-006",
@@ -124,8 +124,8 @@
     "threat_id": "THR-AUTH-001",
     "requirement_ids": ["SR-AUTH-001"],
     "implementation_references": ["src/genomic_research_access_api/security/authentication/jwt_validator.py"],
-    "verification_methods": ["JWT authentication tests"],
-    "evidence_references": ["outputs/security/api-security/authentication-control-summary.json"],
+    "verification_methods": ["JWT authentication tests", "dynamic authentication-boundary tests"],
+    "evidence_references": ["outputs/security/api-security/authentication-control-summary.json", "outputs/security/dynamic/authentication-boundary-summary.json"],
     "residual_risk_id": "RR-001",
     "notes": "Local RS256 JWT validation is implemented with a future external identity provider still required."
   },
@@ -144,8 +144,8 @@
     "threat_id": "THR-AUTHZ-001",
     "requirement_ids": ["SR-AUTHZ-002", "SR-AUTHZ-005"],
     "implementation_references": ["src/genomic_research_access_api/services/access_requests.py", "src/genomic_research_access_api/services/datasets.py"],
-    "verification_methods": ["object-level authorisation tests"],
-    "evidence_references": ["outputs/security/api-security/endpoint-security-inventory.json"],
+    "verification_methods": ["object-level authorisation tests", "dynamic object-access tests"],
+    "evidence_references": ["outputs/security/api-security/endpoint-security-inventory.json", "outputs/security/dynamic/object-access-summary.json"],
     "residual_risk_id": "RR-002",
     "notes": "BOLA checks are implemented for access requests and restricted datasets."
   },
@@ -154,8 +154,8 @@
     "threat_id": "THR-AUTHZ-002",
     "requirement_ids": ["SR-AUTHZ-001", "SR-AUTHZ-005"],
     "implementation_references": ["src/genomic_research_access_api/security/authorisation.py"],
-    "verification_methods": ["role matrix tests"],
-    "evidence_references": ["outputs/security/api-security/authorisation-matrix.json"],
+    "verification_methods": ["role matrix tests", "dynamic authorisation-boundary tests"],
+    "evidence_references": ["outputs/security/api-security/authorisation-matrix.json", "outputs/security/dynamic/authorisation-boundary-summary.json"],
     "residual_risk_id": "RR-002",
     "notes": "Function-level authorisation is enforced through route dependencies."
   },

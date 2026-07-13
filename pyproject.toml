@@ -25,6 +25,7 @@ dev = [
   "mypy==1.16.1",
   "pytest==8.4.1",
   "pytest-cov==6.2.1",
+  "pytest-json-report==1.5.0",
   "ruff==0.12.2",
 ]
 security = [
@@ -58,6 +59,9 @@ plugins = ["pydantic.mypy"]
 [tool.pytest.ini_options]
 addopts = "--strict-markers --strict-config"
 testpaths = ["tests"]
+markers = [
+  "dynamic_category(name): categorise Milestone 6 dynamic security tests for evidence generation",
+]
 
 [tool.coverage.run]
 branch = true

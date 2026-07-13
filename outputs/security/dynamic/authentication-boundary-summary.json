@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "test_authentication_boundary_failures",
+      "outcome": "passed"
+    }
+  ],
+  "category": "authentication",
+  "execution_status": "completed",
+  "failed_count": 0,
+  "policy_decision": "pass",
+  "test_count": 1
+}

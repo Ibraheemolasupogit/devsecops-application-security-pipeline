@@ -1,0 +1,71 @@
+Schemathesis v4.0.26
+━━━━━━━━━━━━━━━━━━━━
+
+
+ ✅  Loaded specification from /work/openapi.json (in 0.27s)                    
+
+     Base URL:         http://host.docker.internal:8000                         
+     Specification:    Open API 3.1.0                                           
+     Operations:       9 selected / 9 total                                     
+
+
+ ✅  API capabilities:                                                          
+
+     Supports NULL byte in headers:    ✘                                        
+
+ ⏭   Examples (in 0.13s)                                                        
+                                                                                
+     ⏭  9 skipped                                                               
+
+ ✅  Fuzzing (in 1.57s)                                                         
+                                                                                
+     ✅ 9 passed                                                                
+
+=================================== WARNINGS ===================================
+
+Authentication failed: 3 operations returned authentication errors
+
+403 Forbidden (3 operations):
+  - GET /api/v1/audit-events
+  - POST /api/v1/access-requests/{request_id}/approve
+  - POST /api/v1/access-requests/{request_id}/reject
+
+💡 Ensure valid authentication credentials are set via --auth or -H
+
+Missing test data: 3 operations repeatedly returned 404 Not Found, preventing tests from reaching your API's core logic
+
+  - GET /api/v1/access-requests/{request_id}
+  - GET /api/v1/datasets/{dataset_id}
+  - POST /api/v1/access-requests
+
+💡 Provide realistic parameter values in your config file so tests can access existing resources
+
+Schema validation mismatch: 1 operation mostly rejected generated data due to validation errors, indicating schema constraints don't match API validation
+
+  - POST /api/v1/access-requests
+
+💡 Check your schema constraints - API validation may be stricter than documented
+
+=================================== SUMMARY ====================================
+
+API Operations:
+  Selected: 9/9
+  Tested: 9
+
+Test Phases:
+  ⏭  Examples
+  ⏭  Coverage (disabled)
+  ✅ Fuzzing
+  ⏭  Stateful (disabled)
+
+Warnings:
+  ⚠️ Missing authentication: 3 operations returned only 401/403 responses
+  ⚠️ Missing valid test data: 3 operations repeatedly returned 404 responses
+  ⚠️ Schema validation mismatch: 1 operation mostly rejected generated data
+
+Test cases:
+  64 generated, 64 passed
+
+Seed: not used in the deterministic mode
+
+============================= 3 warnings in 1.72s ==============================

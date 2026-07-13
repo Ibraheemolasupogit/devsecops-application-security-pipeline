@@ -1,0 +1,54 @@
+{
+  "evidence_type": "dynamic-security",
+  "files": [
+    {
+      "path": "outputs/security/dynamic/audit-validation-summary.json",
+      "sha256": "9c37b9446a1f83a15bc5efaa9dbac3533f22d8e41a8b53174dc3f4d562db9fea"
+    },
+    {
+      "path": "outputs/security/dynamic/authentication-boundary-summary.json",
+      "sha256": "be16bb7660c1c645ac02e3be33e428950044ad6a0fd91bdd15e3d67b81a5ed9d"
+    },
+    {
+      "path": "outputs/security/dynamic/authorisation-boundary-summary.json",
+      "sha256": "406de96cf39082b0119ab1e88554d6c6958b2affef2dfcb6df469919f6e679d7"
+    },
+    {
+      "path": "outputs/security/dynamic/cors-summary.json",
+      "sha256": "2640f7a557771f36536aed69f2a322d6c7af3a854f4176f999d5e185e8cd3029"
+    },
+    {
+      "path": "outputs/security/dynamic/dynamic-security-summary.json",
+      "sha256": "00656375984b8ef9388acd743edadd87ebb014dc7ff4ca381c2c20f27b59b884"
+    },
+    {
+      "path": "outputs/security/dynamic/endpoint-test-inventory.json",
+      "sha256": "2a54655a7fe98267700d2d142550f8fa8e7deea23644e40bd6584fb5a899da49"
+    },
+    {
+      "path": "outputs/security/dynamic/object-access-summary.json",
+      "sha256": "98d862e921a84f71841c147c3c8a17838b7c63852ddd87d5e65cc08382998fe5"
+    },
+    {
+      "path": "outputs/security/dynamic/resource-consumption-summary.json",
+      "sha256": "b5d0236727bd630d5e19f08f8653ca6004f164c68dce44474dfbe628ef6f0a63"
+    },
+    {
+      "path": "outputs/security/dynamic/schema-mutation-summary.json",
+      "sha256": "67d77ca418cc5abca66cc9c5582efbd33b882204ab1af461b9e8948bcead54e5"
+    },
+    {
+      "path": "outputs/security/dynamic/schemathesis-summary.json",
+      "sha256": "e29a2e1c214b5df334dcb81d63b45d57d105e16c8bd7522ffb9a02efb0a1f155"
+    },
+    {
+      "path": "outputs/security/dynamic/security-header-summary.json",
+      "sha256": "a191f1daf90f6202ec717b2755d0cd83f36a3e7c612fc3929bfb968bb0d10d73"
+    },
+    {
+      "path": "outputs/security/dynamic/zap-summary.json",
+      "sha256": "6dabed4bc06116e6ff1e343ee932363ffae2afa9edc36ead9bdc35fcb95bcce9"
+    }
+  ],
+  "generated_at": "2026-01-01T00:00:00Z"
+}
