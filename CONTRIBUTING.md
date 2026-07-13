@@ -1,6 +1,6 @@
 # Contributing
 
-This portfolio repository is a local demonstration of a secure product foundation. Contributions should preserve the delivered milestone boundaries and avoid adding cloud deployment, formal exception workflow or vulnerability-management operations before their roadmap milestone.
+This portfolio repository is a local demonstration of a secure product foundation. Contributions should preserve the delivered milestone boundaries and avoid adding cloud deployment, production vulnerability-management operations or Security Champions workflow before their roadmap milestone.
 
 ## Local Checks
 
@@ -12,6 +12,7 @@ make appsec-fast
 make dynamic-fast
 make findings-full
 make release-full
+make lifecycle-full
 ```
 
 Use deterministic synthetic data only. Do not add real patient, NHS, genomic, credential, or cloud account data.
@@ -27,3 +28,4 @@ Use deterministic synthetic data only. Do not add real patient, NHS, genomic, cr
 - Do not add broad scanner suppressions. Use `security/config/suppressions.yaml` with an owner, expiry and exact path or rule scope.
 - Keep findings IDs deterministic and avoid absolute local paths, raw JWTs, private keys or real data in canonical findings outputs.
 - Keep release-gate evidence deterministic. Use `make release-gate-enforce` only when you intentionally want enforcement exit codes; evidence-mode release targets must still run for block and conditional decisions.
+- Keep lifecycle evidence deterministic. Scanner suppressions may inform lifecycle records, but only security exceptions under `config/lifecycle/` and `outputs/security/lifecycle/` may support risk acceptance or deferral.

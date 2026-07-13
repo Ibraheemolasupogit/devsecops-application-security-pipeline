@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "maximum_duration_days": {
+    "critical": 14,
+    "high": 30,
+    "medium": 90,
+    "low": 180,
+    "informational": 180,
+    "unknown": 90
+  },
+  "approval_roles": {
+    "critical": ["Product Security", "Risk Owner", "Technical Owner"],
+    "high": ["Product Security", "Risk Owner"],
+    "medium": ["Product Security"],
+    "low": ["Technical Owner"],
+    "informational": ["Technical Owner"],
+    "unknown": ["Product Security"]
+  },
+  "allowed_statuses": ["requested", "under_review", "approved", "rejected", "active", "expired", "revoked", "closed"],
+  "allowed_decisions": ["approve", "reject", "revoke", "extend", "close"],
+  "scope_required": true,
+  "permanent_exceptions_allowed": false
+}

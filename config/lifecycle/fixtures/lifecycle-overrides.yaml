@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "false_positive_selectors": [
+    {
+      "name": "local zap version notice",
+      "source_tool": "zap",
+      "normalised_severity": "low",
+      "false_positive_reason": "Local scanner version notice is retained as source evidence but does not represent an application vulnerability.",
+      "reviewer_role": "Product Security",
+      "supporting_evidence": "outputs/security/dynamic/zap-summary.json"
+    }
+  ],
+  "risk_acceptance_selectors": [
+    {
+      "name": "no-fix runtime base dependency",
+      "source_tool": "trivy",
+      "normalised_severity": "high",
+      "exception_kind": "active"
+    },
+    {
+      "name": "reference infrastructure reviewed exception",
+      "source_tool": "checkov",
+      "normalised_severity": "high",
+      "exception_kind": "expiring"
+    },
+    {
+      "name": "expired reference infrastructure exception",
+      "source_tool": "checkov",
+      "normalised_severity": "high",
+      "exception_kind": "expired"
+    }
+  ]
+}

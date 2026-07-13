@@ -22,7 +22,7 @@
     },
     "requirements": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/security-requirements.yaml",
-      "sha256": "131294794ed3548be310da73584c904327d4218ddd723d232444a5e891c8096e"
+      "sha256": "8d8e50459092909a8fc294173fbd83b1d56f8ae4d25a32844f08274c3af400aa"
     },
     "residual_risks": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/residual-risk-register.yaml",
@@ -34,7 +34,7 @@
     },
     "traceability": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/control-traceability.yaml",
-      "sha256": "c1b546827ccb56edc7e57b8c23d4f19ce2975fe21d4a30078e97b81bdddbeea5"
+      "sha256": "136766c98ce3de0caaa9e0b8757491c89fae9ceb692ee603159a579ee3cb4a6e"
     },
     "trust_boundaries": {
       "path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/docs/threat-model/trust-boundaries.yaml",
@@ -44,11 +44,11 @@
   "output_files": {
     "threat-model-summary.json": {
       "path": "threat-model-summary.json",
-      "sha256": "ca7078769435e83aa8d02c18e21cd385ba74b11836dd7320dc28634c323b10ef"
+      "sha256": "f2122d8060b345760ffbecd58adbb60819d0d0f208fa9f7a4ab5fae77c0609b0"
     },
     "validated-control-traceability.json": {
       "path": "validated-control-traceability.json",
-      "sha256": "682c73b38a619e0b53d68f4c2d9bf73c6edadfc6189a963bf2c80a9e0af9c780"
+      "sha256": "d56aecd8729ff253514b2c35e6638b4ac829bb2b0696406419f8d59abc68fdcf"
     },
     "validated-residual-risk-register.json": {
       "path": "validated-residual-risk-register.json",
@@ -56,7 +56,7 @@
     },
     "validated-security-requirements.json": {
       "path": "validated-security-requirements.json",
-      "sha256": "351d69514288a6fac8836eb53af0a27d0469d31907e5bf11f7423399609d5d2c"
+      "sha256": "cce1659d4e9cb07325a4f771ed67bcdf07aae082e371c4e7d75672e219f6d2a5"
     },
     "validated-threat-register.json": {
       "path": "validated-threat-register.json",

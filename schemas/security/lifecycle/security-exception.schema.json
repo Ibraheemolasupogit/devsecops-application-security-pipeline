@@ -1,0 +1,319 @@
+{
+  "$defs": {
+    "ExceptionDecision": {
+      "enum": [
+        "approve",
+        "reject",
+        "revoke",
+        "extend",
+        "close"
+      ],
+      "title": "ExceptionDecision",
+      "type": "string"
+    },
+    "ExceptionStatus": {
+      "enum": [
+        "requested",
+        "under_review",
+        "approved",
+        "rejected",
+        "active",
+        "expired",
+        "revoked",
+        "closed"
+      ],
+      "title": "ExceptionStatus",
+      "type": "string"
+    },
+    "HistoryEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "actor_role": {
+          "title": "Actor Role",
+          "type": "string"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "title": "Event Type",
+          "type": "string"
+        },
+        "evidence_reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Reference"
+        },
+        "from_status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VulnerabilityStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "metadata": {
+          "additionalProperties": true,
+          "title": "Metadata",
+          "type": "object"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "to_status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VulnerabilityStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "vulnerability_id": {
+          "title": "Vulnerability Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "vulnerability_id",
+        "event_type",
+        "actor_role",
+        "reason",
+        "timestamp"
+      ],
+      "title": "HistoryEntry",
+      "type": "object"
+    },
+    "VulnerabilityStatus": {
+      "enum": [
+        "detected",
+        "validated",
+        "triaged",
+        "assigned",
+        "in_remediation",
+        "resolved",
+        "verified",
+        "closed",
+        "false_positive",
+        "risk_accepted",
+        "deferred"
+      ],
+      "title": "VulnerabilityStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "approved_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Approved At"
+    },
+    "approver_roles": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Approver Roles",
+      "type": "array"
+    },
+    "business_justification": {
+      "title": "Business Justification",
+      "type": "string"
+    },
+    "closed_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Closed At"
+    },
+    "compensating_controls": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Compensating Controls",
+      "type": "array"
+    },
+    "decision": {
+      "$ref": "#/$defs/ExceptionDecision"
+    },
+    "decision_reason": {
+      "title": "Decision Reason",
+      "type": "string"
+    },
+    "effective_from": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Effective From"
+    },
+    "environment": {
+      "title": "Environment",
+      "type": "string"
+    },
+    "evidence_references": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence References",
+      "type": "array"
+    },
+    "exception_id": {
+      "title": "Exception Id",
+      "type": "string"
+    },
+    "expiry_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expiry Date"
+    },
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "history": {
+      "items": {
+        "$ref": "#/$defs/HistoryEntry"
+      },
+      "title": "History",
+      "type": "array"
+    },
+    "maximum_duration_days": {
+      "title": "Maximum Duration Days",
+      "type": "integer"
+    },
+    "requested_at": {
+      "title": "Requested At",
+      "type": "string"
+    },
+    "requested_by_role": {
+      "title": "Requested By Role",
+      "type": "string"
+    },
+    "residual_risk": {
+      "title": "Residual Risk",
+      "type": "string"
+    },
+    "review_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Review Date"
+    },
+    "revoked_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Revoked At"
+    },
+    "risk_owner": {
+      "title": "Risk Owner",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scope": {
+      "title": "Scope",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/ExceptionStatus"
+    },
+    "technical_owner": {
+      "title": "Technical Owner",
+      "type": "string"
+    },
+    "technical_rationale": {
+      "title": "Technical Rationale",
+      "type": "string"
+    },
+    "vulnerability_id": {
+      "title": "Vulnerability Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "exception_id",
+    "vulnerability_id",
+    "finding_id",
+    "status",
+    "requested_by_role",
+    "technical_owner",
+    "risk_owner",
+    "approver_roles",
+    "business_justification",
+    "technical_rationale",
+    "compensating_controls",
+    "residual_risk",
+    "requested_at",
+    "approved_at",
+    "effective_from",
+    "expiry_date",
+    "review_date",
+    "maximum_duration_days",
+    "environment",
+    "scope",
+    "decision",
+    "decision_reason",
+    "evidence_references",
+    "history"
+  ],
+  "title": "SecurityException",
+  "type": "object"
+}

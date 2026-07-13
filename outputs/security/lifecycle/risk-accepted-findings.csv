@@ -1,0 +1,3 @@
+vulnerability_id,finding_id,title,severity,priority,risk_score,status,technical_owner,risk_owner,remediation_owner,squad,due_date,overdue,verification_status,exception_id,review_date
+VUL-676f647f505f,FND-SUPPRESSIO-1065083a8d4b,Suppressed checkov finding CKV2_AWS_5,high,P2,67.25,risk_accepted,Cloud Security,Risk Owner,Cloud Security,Cloud Platform Security,2027-01-12,False,not_verified,EXC-2a432868284d,2026-01-10
+VUL-a8e391de2abc,FND-CONTAINER-026cbd40a3d8,perl-base CVE-2026-9538,high,P3,56.25,risk_accepted,Platform Engineering,Risk Owner,Platform Engineering,Platform Engineering,2026-01-15,False,not_verified,EXC-b94c077fed02,2026-01-20

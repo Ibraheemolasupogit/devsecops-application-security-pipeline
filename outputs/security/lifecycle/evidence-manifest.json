@@ -1,0 +1,125 @@
+{
+  "as_of_date": "2026-01-01",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "deployment_status": "not_deployed",
+  "exception_count": 3,
+  "input_files": {
+    "config/lifecycle/actor-roles.yaml": {
+      "path": "config/lifecycle/actor-roles.yaml",
+      "sha256": "f5ec9ba73bf971274e873ea36e77e12e0506dd4c22571def3417eca0f3ba050d"
+    },
+    "config/lifecycle/exception-policy.yaml": {
+      "path": "config/lifecycle/exception-policy.yaml",
+      "sha256": "6a812f56f4d0ef70f307a353ea327fa907a5c9cb3f8b3d3cdf42f12485077787"
+    },
+    "config/lifecycle/fixtures/lifecycle-overrides.yaml": {
+      "path": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
+      "sha256": "abd2dcaa70b11c7d2c27a171b59ec5fbb62bd4d47d1d1897d3140f919cb2e917"
+    },
+    "config/lifecycle/lifecycle-policy.yaml": {
+      "path": "config/lifecycle/lifecycle-policy.yaml",
+      "sha256": "ee4f8d0078688c212268706502bf45aacd3c3d80d9cc7120bb53cbee67e5eb75"
+    },
+    "config/lifecycle/ownership-policy.yaml": {
+      "path": "config/lifecycle/ownership-policy.yaml",
+      "sha256": "127f17cfacdc879def63daba87013b0e3ae6b157c3a72b91c37a80e8b7c25a56"
+    },
+    "config/lifecycle/transition-rules.yaml": {
+      "path": "config/lifecycle/transition-rules.yaml",
+      "sha256": "a01df3f3f1171640687f8123222aa7d7791c84e1b94bde799305748dcf271cd0"
+    },
+    "config/lifecycle/verification-policy.yaml": {
+      "path": "config/lifecycle/verification-policy.yaml",
+      "sha256": "f5556f34bdd541db9be8f3ce39118dc31bb391c2e47424d3c9dfb7a978979d6e"
+    },
+    "outputs/security/findings/deduplicated-findings.json": {
+      "path": "outputs/security/findings/deduplicated-findings.json",
+      "sha256": "ee31795b31bf2aba3414a06db9d03e73bb7acee3fd52fabb9c6f98c35490259f"
+    },
+    "outputs/security/findings/finding-source-map.json": {
+      "path": "outputs/security/findings/finding-source-map.json",
+      "sha256": "0b54ed816975ab79589ba25c837c6e73ca41d6aa98bdebd1691fb052bae62c53"
+    },
+    "outputs/security/release/release-gate-decision.json": {
+      "path": "outputs/security/release/release-gate-decision.json",
+      "sha256": "c28f96325fdca770b104671dd92ae3b62e3221ce42f86377ba7b8932552a26a0"
+    }
+  },
+  "input_findings_checksum": "ee31795b31bf2aba3414a06db9d03e73bb7acee3fd52fabb9c6f98c35490259f",
+  "output_files": {
+    "due-soon-findings.csv": {
+      "path": "outputs/security/lifecycle/due-soon-findings.csv",
+      "sha256": "8aab619ab409d573054466734ff112cf7740aa7e970b2215ec1fd088e2150494"
+    },
+    "exception-history.json": {
+      "path": "outputs/security/lifecycle/exception-history.json",
+      "sha256": "68505e196a9aa3b2e3c0db681d5aae96a30ccefdb972cf9deae597a0931f1c87"
+    },
+    "expired-exceptions.csv": {
+      "path": "outputs/security/lifecycle/expired-exceptions.csv",
+      "sha256": "0297a948c4e7425c11d0abc0e51a5e9743d501d15c2584577011324429e0fd62"
+    },
+    "expiring-exceptions.csv": {
+      "path": "outputs/security/lifecycle/expiring-exceptions.csv",
+      "sha256": "afe2dd8ef53a59746ecf9f02ecb3480d403faa792801a811e751636d325c521f"
+    },
+    "false-positive-register.csv": {
+      "path": "outputs/security/lifecycle/false-positive-register.csv",
+      "sha256": "c6deedf1f62bc3e4fa6074722fc1c1935548f9d7c0e2f9ec5b0e383af78d5718"
+    },
+    "lifecycle-history.json": {
+      "path": "outputs/security/lifecycle/lifecycle-history.json",
+      "sha256": "f60e26abe63d90b8939d78e8c6367595da2bb4302d102c7aae8b604a0c397418"
+    },
+    "lifecycle-summary.json": {
+      "path": "outputs/security/lifecycle/lifecycle-summary.json",
+      "sha256": "092ba52f0808351e0c3baa63f72c565721257dc2ff7cc4c3a5e0f49835be2c6f"
+    },
+    "overdue-findings.csv": {
+      "path": "outputs/security/lifecycle/overdue-findings.csv",
+      "sha256": "f61f6df186ccce574a7f88affbb8f28c4cd7abe34c1e5280bcd9d03c1fc0e1fe"
+    },
+    "risk-accepted-findings.csv": {
+      "path": "outputs/security/lifecycle/risk-accepted-findings.csv",
+      "sha256": "5010b39fe2e0b0ddc95cb5818825b24651dbabb88ae5b1aeac0fe477de15453b"
+    },
+    "security-exceptions.json": {
+      "path": "outputs/security/lifecycle/security-exceptions.json",
+      "sha256": "2db211d3ca6b1aa3b270fade2695ea79c09bdb76fea31b85bfecc31dce081601"
+    },
+    "unowned-findings.csv": {
+      "path": "outputs/security/lifecycle/unowned-findings.csv",
+      "sha256": "f61f6df186ccce574a7f88affbb8f28c4cd7abe34c1e5280bcd9d03c1fc0e1fe"
+    },
+    "unverified-resolutions.csv": {
+      "path": "outputs/security/lifecycle/unverified-resolutions.csv",
+      "sha256": "f61f6df186ccce574a7f88affbb8f28c4cd7abe34c1e5280bcd9d03c1fc0e1fe"
+    },
+    "verification-register.json": {
+      "path": "outputs/security/lifecycle/verification-register.json",
+      "sha256": "fc71cef80f522038c9ac9d686eb1d7cd87f5d50052af01912f72a44a8b1a61be"
+    },
+    "vulnerability-register.csv": {
+      "path": "outputs/security/lifecycle/vulnerability-register.csv",
+      "sha256": "1765a6535b539c605fda7099f81ef5e887561be93a6cf28ddd11412db20e8438"
+    },
+    "vulnerability-register.json": {
+      "path": "outputs/security/lifecycle/vulnerability-register.json",
+      "sha256": "575dca83641f0440e2304b9a9d8a4eb43dd31def51d829421352b8e3ed26118e"
+    }
+  },
+  "policy_versions": {
+    "config/lifecycle/actor-roles.yaml": "1.0",
+    "config/lifecycle/exception-policy.yaml": "1.0",
+    "config/lifecycle/fixtures/lifecycle-overrides.yaml": "1.0",
+    "config/lifecycle/lifecycle-policy.yaml": "1.0",
+    "config/lifecycle/ownership-policy.yaml": "1.0",
+    "config/lifecycle/transition-rules.yaml": "1.0",
+    "config/lifecycle/verification-policy.yaml": "1.0"
+  },
+  "project_version": "0.1.0",
+  "release_decision_checksum": "c28f96325fdca770b104671dd92ae3b62e3221ce42f86377ba7b8932552a26a0",
+  "schema_version": "1.0",
+  "verification_count": 0,
+  "vulnerability_count": 41
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "methods": [
+    "scanner_rescan",
+    "unit_test",
+    "security_test",
+    "manual_code_review",
+    "configuration_review",
+    "infrastructure_validation",
+    "dependency_version_check",
+    "container_rescan"
+  ],
+  "independent_verifier_required_for": ["critical", "high"],
+  "verifier_roles": ["Verifier", "Product Security", "Cloud Security", "Application Engineering", "Platform Engineering"],
+  "closure_evidence_required": true
+}

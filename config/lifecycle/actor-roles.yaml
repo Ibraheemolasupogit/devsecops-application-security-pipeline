@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "roles": [
+    "Product Security",
+    "Application Engineering",
+    "Platform Engineering",
+    "Cloud Security",
+    "Technical Owner",
+    "Risk Owner",
+    "Verifier"
+  ]
+}

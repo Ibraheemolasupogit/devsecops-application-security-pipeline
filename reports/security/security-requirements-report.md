@@ -29,6 +29,10 @@
 | SR-IAC-002 | infrastructure_security | implemented | Milestone 6 |
 | SR-IAM-001 | iam | implemented | Milestone 6 |
 | SR-IAM-002 | iam | implemented | Milestone 6 |
+| SR-LIFECYCLE-001 | vulnerability_management | implemented | Milestone 9 |
+| SR-LIFECYCLE-002 | vulnerability_management | implemented | Milestone 9 |
+| SR-LIFECYCLE-003 | governance | implemented | Milestone 9 |
+| SR-LIFECYCLE-004 | audit | implemented | Milestone 9 |
 | SR-LOG-001 | audit_logging | implemented | Milestone 1 |
 | SR-LOG-002 | audit_logging | implemented | Milestone 6 |
 | SR-LOG-003 | audit_logging | implemented | Milestone 1 |

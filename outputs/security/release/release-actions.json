@@ -3,7 +3,7 @@
     {
       "action": "Review during normal maintenance.",
       "finding_ids": [
-        "FND-DAST-7938d4335d4a",
+        "FND-DAST-7f68e8fb688f",
         "FND-DAST-e607d905531a"
       ]
     },
@@ -79,6 +79,6 @@
       ]
     }
   ],
-  "decision_id": "REL-3815ed0e210b5dcc",
+  "decision_id": "REL-346b14b878f84939",
   "schema_version": "1.0"
 }

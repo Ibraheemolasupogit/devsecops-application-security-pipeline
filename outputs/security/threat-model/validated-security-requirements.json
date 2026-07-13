@@ -560,6 +560,89 @@
     "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
+    "category": "vulnerability_management",
+    "description": "Canonical findings must be represented in a deterministic vulnerability register with explicit lifecycle states and validated transitions.",
+    "evidence_reference": "outputs/security/lifecycle/vulnerability-register.json",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/state_machine.py; config/lifecycle/transition-rules.yaml",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 9",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-LIFECYCLE-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Vulnerability lifecycle state control",
+    "verification_method": "lifecycle governance tests and lifecycle evidence verification",
+    "verification_reference": "tests/security/test_lifecycle_governance.py; Makefile"
+  },
+  {
+    "category": "vulnerability_management",
+    "description": "A vulnerability must not be closed until independent verification evidence confirms remediation.",
+    "evidence_reference": "outputs/security/lifecycle/verification-register.json",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/verification.py; src/genomic_research_access_api/security/lifecycle/state_machine.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 9",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-LIFECYCLE-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Verification before closure",
+    "verification_method": "lifecycle state-machine tests",
+    "verification_reference": "tests/security/test_lifecycle_governance.py"
+  },
+  {
+    "category": "governance",
+    "description": "Risk acceptance and deferral must be governed by role-based, time-bound security exceptions with expiry evaluation.",
+    "evidence_reference": "outputs/security/lifecycle/security-exceptions.json",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/exceptions.py; config/lifecycle/exception-policy.yaml",
+    "implementation_status": "implemented",
+    "owner": "risk_owner",
+    "planned_milestone": "Milestone 9",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-LIFECYCLE-003",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Security exception governance",
+    "verification_method": "exception governance tests and expiry evidence verification",
+    "verification_reference": "tests/security/test_lifecycle_governance.py; Makefile"
+  },
+  {
+    "category": "audit",
+    "description": "Lifecycle decisions, exception decisions and report outputs must be deterministic, auditable and free of personal data.",
+    "evidence_reference": "outputs/security/lifecycle/evidence-manifest.json",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/evidence.py; src/genomic_research_access_api/security/lifecycle/audit.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 9",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-LIFECYCLE-004",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-AUDIT-003",
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Lifecycle audit evidence",
+    "verification_method": "deterministic lifecycle evidence verification",
+    "verification_reference": "tests/security/test_lifecycle_governance.py; Makefile"
+  },
+  {
     "category": "audit_logging",
     "description": "Dataset views, request submissions, decisions and invalid transitions must generate structured audit events.",
     "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",

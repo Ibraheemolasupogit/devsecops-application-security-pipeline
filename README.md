@@ -8,7 +8,7 @@ It is not a production genomics platform.
 
 It is not affiliated with or endorsed by Genomics England.
 
-AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration, cloud deployment, formal exception workflow and vulnerability-management operations are deferred to later milestones.
+AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration, cloud deployment and Security Champions operations are deferred to later milestones.
 
 ## Problem Statement
 
@@ -31,6 +31,8 @@ Milestone 6 adds local-only dynamic API security validation: dynamic pytest boun
 Milestone 7 adds canonical findings normalisation and risk enrichment across threat-model, AppSec, infrastructure and dynamic-security outputs. It preserves native evidence and governed suppressions, assigns deterministic owners and SLAs, and does not implement release gates or lifecycle workflow.
 
 Milestone 8 adds risk-based release gates over the Milestone 7 canonical findings. It produces deterministic release decisions, rule evaluations, approval requirements, action lists, risk summaries and reports. Evidence generation succeeds for blocked and conditional decisions; enforcement is a separate command. It does not deploy, push containers, create AWS resources, or implement a formal exception workflow.
+
+Milestone 9 adds deterministic vulnerability lifecycle and exception governance over canonical findings and release outputs. It produces a vulnerability register, lifecycle history, security exception register, expiry reports, verification evidence, audit reports and a pinned lifecycle workflow. It does not start Security Champions, deploy, push containers, create AWS resources, commit or push.
 
 ## Milestone 1 Scope
 
@@ -125,6 +127,22 @@ Implemented as local release-assurance policy and evidence:
 
 Not implemented in Milestone 8: formal exception workflow, deployment approval system, vulnerability lifecycle ownership process, artefact signing/provenance, AWS deployment, container push or production release automation.
 
+## Milestone 9 Scope
+
+Implemented as local governance, evidence and reports:
+
+- Controlled vulnerability lifecycle states and transition policy.
+- Deterministic vulnerability register generated from canonical findings.
+- Role-based history entries without personal actor identifiers.
+- Verification-before-closure enforcement.
+- False-positive governance with rationale and evidence.
+- Formal time-bound security exceptions for risk acceptance and deferral.
+- Exception expiry, expiring-soon and expired-exception outputs.
+- Lifecycle evidence manifest with deterministic checksums.
+- Lifecycle Markdown reports and a pinned CI workflow.
+
+Not implemented in Milestone 9: Security Champions, production ticketing integration, deployment approvals, artefact signing/provenance, AWS deployment, container push or production vulnerability-management operations.
+
 ## API Capabilities
 
 - `GET /health`
@@ -204,6 +222,14 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make release-report`: generate release-assurance Markdown reports.
 - `make release-full`: generate, verify and report release-assurance evidence.
 - `make release-gate-enforce`: enforce the current release decision and return nonzero for block or missing conditional approvals.
+- `make lifecycle-policy-validate`: validate lifecycle, transition, verification, exception, ownership and role policy.
+- `make lifecycle-initialise`: initialise the vulnerability register from canonical findings.
+- `make lifecycle-validate`: validate lifecycle records and exception references.
+- `make lifecycle-expiry`: evaluate exception expiry and lifecycle reactivation state.
+- `make lifecycle-evidence`: generate deterministic lifecycle evidence.
+- `make verify-lifecycle-evidence`: verify lifecycle evidence checksums and determinism.
+- `make lifecycle-report`: generate lifecycle governance reports.
+- `make lifecycle-full`: verify findings and release evidence, then run the full lifecycle workflow.
 - `make secrets-scan`: run Gitleaks via local binary or pinned container.
 - `make semgrep-test`: run Semgrep custom rule tests.
 - `make sast`: run Semgrep and Bandit.

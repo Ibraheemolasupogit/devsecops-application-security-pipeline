@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "1.0",
+  "default_initial_status": "triaged",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "as_of_date": "2026-01-01",
+  "deployment_status": "not_deployed",
+  "due_soon_days": 7,
+  "exception_expiring_soon_days": 14,
+  "limitations": [
+    "Portfolio demonstration policy, not Genomics England policy.",
+    "Lifecycle records are local deterministic evidence, not a production ticketing system.",
+    "Milestone 9 does not implement Security Champions, dashboards, external ticketing or deployment."
+  ]
+}

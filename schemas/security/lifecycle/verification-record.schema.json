@@ -1,0 +1,80 @@
+{
+  "$defs": {
+    "VerificationMethod": {
+      "enum": [
+        "scanner_rescan",
+        "unit_test",
+        "security_test",
+        "manual_code_review",
+        "configuration_review",
+        "infrastructure_validation",
+        "dependency_version_check",
+        "container_rescan"
+      ],
+      "title": "VerificationMethod",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "actual_result": {
+      "title": "Actual Result",
+      "type": "string"
+    },
+    "expected_result": {
+      "title": "Expected Result",
+      "type": "string"
+    },
+    "notes": {
+      "title": "Notes",
+      "type": "string"
+    },
+    "passed": {
+      "title": "Passed",
+      "type": "boolean"
+    },
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "verification_id": {
+      "title": "Verification Id",
+      "type": "string"
+    },
+    "verification_method": {
+      "$ref": "#/$defs/VerificationMethod"
+    },
+    "verification_reference": {
+      "title": "Verification Reference",
+      "type": "string"
+    },
+    "verified_at": {
+      "title": "Verified At",
+      "type": "string"
+    },
+    "verifier_role": {
+      "title": "Verifier Role",
+      "type": "string"
+    },
+    "vulnerability_id": {
+      "title": "Vulnerability Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "verification_id",
+    "vulnerability_id",
+    "verifier_role",
+    "verification_method",
+    "verification_reference",
+    "expected_result",
+    "actual_result",
+    "passed",
+    "verified_at",
+    "notes"
+  ],
+  "title": "VerificationRecord",
+  "type": "object"
+}

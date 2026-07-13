@@ -1,0 +1,2 @@
+exception_id,vulnerability_id,finding_id,status,approver_roles,expiry_date,review_date,scope,decision
+EXC-2a432868284d,VUL-676f647f505f,FND-SUPPRESSIO-1065083a8d4b,active,Product Security;Risk Owner,2026-01-10,2026-01-10,vulnerability:VUL-676f647f505f;finding:FND-SUPPRESSIO-1065083a8d4b,approve

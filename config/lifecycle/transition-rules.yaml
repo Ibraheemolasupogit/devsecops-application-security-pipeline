@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "valid_transitions": [
+    ["detected", "validated"],
+    ["validated", "triaged"],
+    ["triaged", "assigned"],
+    ["assigned", "in_remediation"],
+    ["in_remediation", "resolved"],
+    ["resolved", "verified"],
+    ["verified", "closed"],
+    ["validated", "false_positive"],
+    ["triaged", "risk_accepted"],
+    ["assigned", "deferred"],
+    ["in_remediation", "deferred"],
+    ["risk_accepted", "assigned"],
+    ["deferred", "assigned"],
+    ["resolved", "in_remediation"],
+    ["closed", "assigned"],
+    ["false_positive", "triaged"]
+  ],
+  "closed_reopen_reasons": ["source_evidence_changed", "closure_revoked"],
+  "forbidden_direct_transitions": [["detected", "closed"], ["resolved", "closed"]]
+}

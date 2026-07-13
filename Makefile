@@ -1,4 +1,4 @@
-.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full release-policy-validate release-gate-evaluate release-gate-enforce release-evidence verify-release-evidence release-report release-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
+.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full release-policy-validate release-gate-evaluate release-gate-enforce release-evidence verify-release-evidence release-report release-full lifecycle-policy-validate lifecycle-initialise lifecycle-validate lifecycle-expiry lifecycle-evidence verify-lifecycle-evidence lifecycle-report lifecycle-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -227,6 +227,29 @@ release-report:
 
 release-full:
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.release full --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01 --environment dev
+
+lifecycle-policy-validate:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle validate
+
+lifecycle-initialise:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle initialise --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
+
+lifecycle-validate:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle initialise --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
+
+lifecycle-expiry:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle evaluate-expiry --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
+
+lifecycle-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle generate-evidence --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
+
+verify-lifecycle-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle verify-evidence
+
+lifecycle-report:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.lifecycle generate-reports
+
+lifecycle-full: verify-findings-evidence verify-release-evidence lifecycle-policy-validate lifecycle-initialise lifecycle-expiry lifecycle-validate lifecycle-evidence verify-lifecycle-evidence lifecycle-report
 
 pre-commit-install:
 	$(PYTHON) -m pip install pre-commit==3.8.0

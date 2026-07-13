@@ -63,6 +63,14 @@ make release-gate-enforce
 
 The enforcement target returns nonzero for `block` and for missing approvals on `conditional_pass`.
 
+## Vulnerability Lifecycle
+
+```bash
+make lifecycle-full
+```
+
+This consumes canonical findings and release outputs, then writes the local vulnerability register, exception register, lifecycle history, CSV queues, evidence manifest and reports. It is evidence-mode only and does not create tickets or deployment approvals.
+
 ## Local API Tokens
 
 Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:

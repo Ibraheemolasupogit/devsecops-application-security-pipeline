@@ -338,5 +338,25 @@
     "evidence_references": ["outputs/security/release/finding-evaluations.json", "outputs/security/release/release-risk-summary.json"],
     "residual_risk_id": "RR-005",
     "notes": "Release rules distinguish fix availability, non-deployed image risk and suppression governance."
+  },
+  {
+    "traceability_id": "TRACE-035",
+    "threat_id": "THR-REVIEW-001",
+    "requirement_ids": ["SR-LIFECYCLE-001", "SR-LIFECYCLE-002", "SR-LIFECYCLE-003", "SR-LIFECYCLE-004"],
+    "implementation_references": ["src/genomic_research_access_api/security/lifecycle", "config/lifecycle", ".github/workflows/vulnerability-management.yml"],
+    "verification_methods": ["make lifecycle-full", "make verify-lifecycle-evidence", "lifecycle governance tests"],
+    "evidence_references": ["outputs/security/lifecycle/vulnerability-register.json", "outputs/security/lifecycle/evidence-manifest.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Milestone 9 adds deterministic vulnerability lifecycle, verification-before-closure, exception governance and audit evidence without starting Security Champions."
+  },
+  {
+    "traceability_id": "TRACE-036",
+    "threat_id": "THR-SUPPLY-001",
+    "requirement_ids": ["SR-LIFECYCLE-001", "SR-LIFECYCLE-003"],
+    "implementation_references": ["outputs/security/findings/deduplicated-findings.json", "src/genomic_research_access_api/security/lifecycle/repository.py"],
+    "verification_methods": ["canonical findings to lifecycle register tests", "exception expiry evaluation"],
+    "evidence_references": ["outputs/security/lifecycle/security-exceptions.json", "outputs/security/lifecycle/expired-exceptions.csv"],
+    "residual_risk_id": "RR-005",
+    "notes": "Lifecycle records retain scanner findings and suppressions while keeping scanner suppressions separate from formal exceptions."
   }
 ]

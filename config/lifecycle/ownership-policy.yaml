@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "required_owner_fields": ["technical_owner", "risk_owner", "remediation_owner", "squad"],
+  "critical_high_require_owner_before": ["assigned", "in_remediation"],
+  "allowed_owners_source": "config/findings/ownership.yaml",
+  "unowned_value": "unowned"
+}

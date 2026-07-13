@@ -535,6 +535,85 @@
     "planned_milestone": "Milestone 6"
   },
   {
+    "requirement_id": "SR-LIFECYCLE-001",
+    "title": "Vulnerability lifecycle state control",
+    "description": "Canonical findings must be represented in a deterministic vulnerability register with explicit lifecycle states and validated transitions.",
+    "category": "vulnerability_management",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/state_machine.py; config/lifecycle/transition-rules.yaml",
+    "verification_method": "lifecycle governance tests and lifecycle evidence verification",
+    "verification_reference": "tests/security/test_lifecycle_governance.py; Makefile",
+    "evidence_reference": "outputs/security/lifecycle/vulnerability-register.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 9"
+  },
+  {
+    "requirement_id": "SR-LIFECYCLE-002",
+    "title": "Verification before closure",
+    "description": "A vulnerability must not be closed until independent verification evidence confirms remediation.",
+    "category": "vulnerability_management",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/verification.py; src/genomic_research_access_api/security/lifecycle/state_machine.py",
+    "verification_method": "lifecycle state-machine tests",
+    "verification_reference": "tests/security/test_lifecycle_governance.py",
+    "evidence_reference": "outputs/security/lifecycle/verification-register.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 9"
+  },
+  {
+    "requirement_id": "SR-LIFECYCLE-003",
+    "title": "Security exception governance",
+    "description": "Risk acceptance and deferral must be governed by role-based, time-bound security exceptions with expiry evaluation.",
+    "category": "governance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/exceptions.py; config/lifecycle/exception-policy.yaml",
+    "verification_method": "exception governance tests and expiry evidence verification",
+    "verification_reference": "tests/security/test_lifecycle_governance.py; Makefile",
+    "evidence_reference": "outputs/security/lifecycle/security-exceptions.json",
+    "owner": "risk_owner",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 9"
+  },
+  {
+    "requirement_id": "SR-LIFECYCLE-004",
+    "title": "Lifecycle audit evidence",
+    "description": "Lifecycle decisions, exception decisions and report outputs must be deterministic, auditable and free of personal data.",
+    "category": "audit",
+    "priority": "medium",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-AUDIT-003",
+      "THR-REVIEW-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/lifecycle/evidence.py; src/genomic_research_access_api/security/lifecycle/audit.py",
+    "verification_method": "deterministic lifecycle evidence verification",
+    "verification_reference": "tests/security/test_lifecycle_governance.py; Makefile",
+    "evidence_reference": "outputs/security/lifecycle/evidence-manifest.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 9"
+  },
+  {
     "requirement_id": "SR-LOG-001",
     "title": "Security-relevant event logging",
     "description": "Dataset views, request submissions, decisions and invalid transitions must generate structured audit events.",
