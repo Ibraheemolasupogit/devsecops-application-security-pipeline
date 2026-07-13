@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "weights": {
+    "technical_severity": 30,
+    "exploitability": 20,
+    "internet_exposure": 15,
+    "asset_criticality": 15,
+    "data_sensitivity": 10,
+    "privilege_required": 5,
+    "age_or_recurrence": 5
+  },
+  "factor_scores": {
+    "technical_severity": {"critical": 1.0, "high": 0.8, "medium": 0.55, "low": 0.3, "informational": 0.1, "unknown": 0.2},
+    "exploitability": {"known": 1.0, "probable": 0.75, "possible": 0.5, "unlikely": 0.2, "unknown": 0.35},
+    "internet_exposure": {"internet_facing": 1.0, "planned": 0.65, "configured": 0.45, "locally_validated": 0.25, "not_deployed": 0.15, "unknown": 0.3},
+    "asset_criticality": {"critical": 1.0, "high": 0.8, "medium": 0.55, "low": 0.3, "unknown": 0.35},
+    "data_sensitivity": {"high": 1.0, "medium": 0.65, "low": 0.3, "unknown": 0.4},
+    "privilege_required": {"none": 1.0, "low": 0.7, "high": 0.35, "unknown": 0.5},
+    "age_or_recurrence": {"recurring": 1.0, "first_seen": 0.4, "unknown": 0.3}
+  },
+  "priority_thresholds": {"P1": 80, "P2": 60, "P3": 40, "P4": 20, "P5": 0}
+}

@@ -1,28 +1,13 @@
 # Local Security Workflow
 
-Recommended local sequence:
+For Milestone 7 findings work:
 
 ```bash
-make format
-make test
-make semgrep-test
-make sast
-make sca
-make checkov-scan
-make appsec-evidence
-make verify-appsec-evidence
+make appsec-full
+make dynamic-full
+make findings-full
+make verify-findings-evidence
+make findings-report
 ```
 
-Run Docker-backed checks when Docker is available:
-
-```bash
-make secrets-scan
-make container-build-security
-make container-scan
-```
-
-Regenerate reports with:
-
-```bash
-make appsec-report
-```
+`findings-full` consumes existing scanner outputs and does not require Docker by itself.

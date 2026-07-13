@@ -6,7 +6,11 @@
     "category": "api_security",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-API-001", "THR-API-002", "THR-AUDIT-003"],
+    "source_threat_ids": [
+      "THR-API-001",
+      "THR-API-002",
+      "THR-AUDIT-003"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/schemas/access_requests.py",
     "verification_method": "pytest API validation tests",
@@ -23,7 +27,9 @@
     "category": "api_security",
     "priority": "medium",
     "status": "active",
-    "source_threat_ids": ["THR-API-002"],
+    "source_threat_ids": [
+      "THR-API-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/schemas/access_requests.py",
     "verification_method": "pytest validation tests",
@@ -40,7 +46,9 @@
     "category": "api_security",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-API-004"],
+    "source_threat_ids": [
+      "THR-API-004"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/exceptions/handlers.py",
     "verification_method": "structured error response tests",
@@ -57,7 +65,10 @@
     "category": "configuration",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-API-007", "THR-API-008"],
+    "source_threat_ids": [
+      "THR-API-007",
+      "THR-API-008"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/main.py",
     "verification_method": "CORS and security header tests",
@@ -74,7 +85,10 @@
     "category": "api_security",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-API-005", "THR-API-006"],
+    "source_threat_ids": [
+      "THR-API-005",
+      "THR-API-006"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/security/rate_limit.py; src/genomic_research_access_api/main.py",
     "verification_method": "local dynamic rate-limit tests; future production quota tests",
@@ -91,7 +105,10 @@
     "category": "authentication",
     "priority": "critical",
     "status": "active",
-    "source_threat_ids": ["THR-AUTH-001", "THR-AUTH-002"],
+    "source_threat_ids": [
+      "THR-AUTH-001",
+      "THR-AUTH-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/security/authentication/jwt_validator.py",
     "verification_method": "JWT validation, negative authentication tests and dynamic authentication-boundary tests",
@@ -108,7 +125,9 @@
     "category": "authorisation",
     "priority": "critical",
     "status": "active",
-    "source_threat_ids": ["THR-AUTHZ-002"],
+    "source_threat_ids": [
+      "THR-AUTHZ-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/security/authorisation.py",
     "verification_method": "role matrix, negative authorisation tests and dynamic authorisation-boundary tests",
@@ -125,7 +144,11 @@
     "category": "authorisation",
     "priority": "critical",
     "status": "active",
-    "source_threat_ids": ["THR-API-003", "THR-AUDIT-002", "THR-AUTHZ-001"],
+    "source_threat_ids": [
+      "THR-API-003",
+      "THR-AUDIT-002",
+      "THR-AUTHZ-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/services/access_requests.py",
     "verification_method": "object-level dataset, access-request and audit access tests plus dynamic object-access tests",
@@ -142,7 +165,10 @@
     "category": "authorisation",
     "priority": "critical",
     "status": "active",
-    "source_threat_ids": ["THR-API-001", "THR-AUTHZ-003"],
+    "source_threat_ids": [
+      "THR-API-001",
+      "THR-AUTHZ-003"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/security/authentication/dependencies.py",
     "verification_method": "missing token, unknown role, missing permission and dynamic boundary tests",
@@ -159,7 +185,10 @@
     "category": "workflow_integrity",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-AUTHZ-003", "THR-AUTHZ-004"],
+    "source_threat_ids": [
+      "THR-AUTHZ-003",
+      "THR-AUTHZ-004"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/services/access_requests.py",
     "verification_method": "self-approval denial tests",
@@ -176,7 +205,10 @@
     "category": "authorisation",
     "priority": "critical",
     "status": "active",
-    "source_threat_ids": ["THR-AUTHZ-001", "THR-AUTHZ-002"],
+    "source_threat_ids": [
+      "THR-AUTHZ-001",
+      "THR-AUTHZ-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/api/routes/access_requests.py",
     "verification_method": "protected approval and rejection endpoint tests",
@@ -193,7 +225,9 @@
     "category": "ci_cd",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-SUPPLY-002"],
+    "source_threat_ids": [
+      "THR-SUPPLY-002"
+    ],
     "policy_source": "repository governance",
     "implementation_status": "implemented",
     "implementation_reference": ".github/workflows/ci.yml",
@@ -211,7 +245,9 @@
     "category": "ci_cd",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-CI-001"],
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/iam/main.tf",
     "verification_method": "local infrastructure policy tests for GitHub OIDC trust",
@@ -228,7 +264,12 @@
     "category": "ci_cd",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-API-008", "THR-AUTH-002", "THR-CI-001", "THR-SUPPLY-003"],
+    "source_threat_ids": [
+      "THR-API-008",
+      "THR-AUTH-002",
+      "THR-CI-001",
+      "THR-SUPPLY-003"
+    ],
     "implementation_status": "planned",
     "implementation_reference": "Not implemented; release gates are deferred.",
     "verification_method": "future release gate tests",
@@ -245,7 +286,9 @@
     "category": "container_security",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-CONTAINER-001"],
+    "source_threat_ids": [
+      "THR-CONTAINER-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "scripts/appsec_tools.py; security/trivy/trivy.yaml; security/config/tools.yaml",
     "verification_method": "make container-scan with pinned Trivy container when Docker is available",
@@ -262,7 +305,9 @@
     "category": "container_security",
     "priority": "medium",
     "status": "active",
-    "source_threat_ids": ["THR-CONTAINER-002"],
+    "source_threat_ids": [
+      "THR-CONTAINER-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "Dockerfile; infrastructure/modules/compute/main.tf",
     "verification_method": "Dockerfile review and ECS task-definition policy tests",
@@ -279,7 +324,9 @@
     "category": "data_protection",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-API-003"],
+    "source_threat_ids": [
+      "THR-API-003"
+    ],
     "policy_source": "portfolio data-safety requirement",
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/data/seed.py",
@@ -297,7 +344,9 @@
     "category": "data_protection",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-IAM-002"],
+    "source_threat_ids": [
+      "THR-IAM-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/compute/main.tf",
     "verification_method": "Terraform production HTTPS validation and local policy tests",
@@ -314,7 +363,10 @@
     "category": "data_protection",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-IAC-002", "THR-IAM-002"],
+    "source_threat_ids": [
+      "THR-IAC-002",
+      "THR-IAM-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/datastore/main.tf; infrastructure/modules/kms/main.tf; infrastructure/modules/audit/main.tf",
     "verification_method": "local infrastructure policy tests for KMS, DynamoDB and S3 encryption",
@@ -325,13 +377,97 @@
     "planned_milestone": "Milestone 6"
   },
   {
+    "requirement_id": "SR-FINDINGS-001",
+    "title": "Canonical findings normalisation",
+    "description": "Security evidence from threat modelling, AppSec scanners, infrastructure scans and dynamic API testing must be mapped into one validated findings schema with stable identifiers.",
+    "category": "secure_design",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001",
+      "THR-SUPPLY-002"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/models.py; src/genomic_research_access_api/security/findings/adapters",
+    "verification_method": "findings validation and deterministic evidence verification",
+    "verification_reference": "tests/security/test_findings_pipeline.py; Makefile",
+    "evidence_reference": "outputs/security/findings/normalised-findings.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 7"
+  },
+  {
+    "requirement_id": "SR-FINDINGS-002",
+    "title": "Cross-tool duplicate preservation",
+    "description": "Duplicate scanner observations must be linked using deterministic exact keys while retaining all native source evidence.",
+    "category": "secure_design",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/deduplicator.py",
+    "verification_method": "deduplication unit tests and source-map evidence verification",
+    "verification_reference": "tests/security/test_findings_pipeline.py",
+    "evidence_reference": "outputs/security/findings/finding-source-map.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 7"
+  },
+  {
+    "requirement_id": "SR-FINDINGS-003",
+    "title": "Risk enrichment and ownership assignment",
+    "description": "Findings must include transparent risk factors, portfolio owners and deterministic remediation SLA dates derived from controlled configuration.",
+    "category": "governance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/enrichment.py; src/genomic_research_access_api/security/findings/risk.py; src/genomic_research_access_api/security/findings/sla.py; src/genomic_research_access_api/security/findings/ownership.py",
+    "verification_method": "findings enrichment tests and evidence summaries",
+    "verification_reference": "tests/security/test_findings_pipeline.py",
+    "evidence_reference": "outputs/security/findings/risk-summary.json; outputs/security/findings/ownership-summary.json; outputs/security/findings/sla-summary.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 7"
+  },
+  {
+    "requirement_id": "SR-FINDINGS-004",
+    "title": "Suppression visibility",
+    "description": "Governed suppressions must remain visible in canonical findings with reason, expiry and compensating control metadata.",
+    "category": "governance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-SECRETS-001",
+      "THR-SUPPLY-001",
+      "THR-REVIEW-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/adapters/__init__.py",
+    "verification_method": "suppression ingestion tests and suppressed findings evidence",
+    "verification_reference": "tests/security/test_findings_pipeline.py",
+    "evidence_reference": "outputs/security/findings/suppressed-findings.csv",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 7"
+  },
+  {
     "requirement_id": "SR-IAC-001",
     "title": "IaC scanning and review",
     "description": "Future infrastructure definitions must be reviewed and scanned before deployment.",
     "category": "infrastructure_security",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-IAC-001", "THR-IAC-002"],
+    "source_threat_ids": [
+      "THR-IAC-001",
+      "THR-IAC-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/; security/checkov/config.yaml; scripts/appsec_tools.py",
     "verification_method": "local infrastructure policy tests, Terraform validation targets and Checkov scan evidence",
@@ -348,7 +484,9 @@
     "category": "infrastructure_security",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-IAC-001"],
+    "source_threat_ids": [
+      "THR-IAC-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/backend.tf.example; infrastructure/environments/dev/backend.hcl.example; infrastructure/environments/prod/backend.hcl.example; docs/infrastructure/terraform-state-security.md",
     "verification_method": "documentation review and infrastructure evidence generation",
@@ -365,7 +503,9 @@
     "category": "iam",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-IAM-001"],
+    "source_threat_ids": [
+      "THR-IAM-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/iam/main.tf",
     "verification_method": "local infrastructure policy tests for runtime role permissions",
@@ -382,7 +522,9 @@
     "category": "iam",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-CI-001"],
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/iam/main.tf",
     "verification_method": "local infrastructure policy tests for deployment role and OIDC trust",
@@ -399,7 +541,10 @@
     "category": "audit_logging",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-AUDIT-001", "THR-AUTHZ-004"],
+    "source_threat_ids": [
+      "THR-AUDIT-001",
+      "THR-AUTHZ-004"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/audit/service.py",
     "verification_method": "audit event tests",
@@ -416,7 +561,9 @@
     "category": "audit_logging",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-AUDIT-001"],
+    "source_threat_ids": [
+      "THR-AUDIT-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/audit/main.tf",
     "verification_method": "local infrastructure policy tests for CloudTrail validation and S3 audit bucket controls",
@@ -433,7 +580,10 @@
     "category": "audit_logging",
     "priority": "medium",
     "status": "active",
-    "source_threat_ids": ["THR-AUDIT-003", "THR-AUDIT-004"],
+    "source_threat_ids": [
+      "THR-AUDIT-003",
+      "THR-AUDIT-004"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/main.py",
     "verification_method": "correlation ID propagation, format and length validation tests",
@@ -450,7 +600,9 @@
     "category": "audit_logging",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-AUDIT-002"],
+    "source_threat_ids": [
+      "THR-AUDIT-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/api/routes/audit_events.py",
     "verification_method": "audit endpoint RBAC tests",
@@ -467,7 +619,9 @@
     "category": "governance",
     "priority": "medium",
     "status": "active",
-    "source_threat_ids": ["THR-REVIEW-001"],
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "docs/threat-model/review-process.md",
     "verification_method": "threat-model validation and review process",
@@ -484,7 +638,9 @@
     "category": "secrets",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-SECRETS-001"],
+    "source_threat_ids": [
+      "THR-SECRETS-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "infrastructure/modules/secrets/main.tf; .gitleaks.toml; security/config/suppressions.yaml",
     "verification_method": "local infrastructure policy tests and pinned Gitleaks scanner configuration",
@@ -501,7 +657,10 @@
     "category": "supply_chain",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-SUPPLY-001", "THR-SUPPLY-002"],
+    "source_threat_ids": [
+      "THR-SUPPLY-001",
+      "THR-SUPPLY-002"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "pyproject.toml; scripts/appsec_tools.py; security/config/tools.yaml",
     "verification_method": "project-scoped pip-audit dependency scan",
@@ -518,7 +677,9 @@
     "category": "supply_chain",
     "priority": "medium",
     "status": "active",
-    "source_threat_ids": ["THR-SUPPLY-001"],
+    "source_threat_ids": [
+      "THR-SUPPLY-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/security/appsec/evidence.py; scripts/appsec_tools.py",
     "verification_method": "CycloneDX SBOM generation and validation",
@@ -535,7 +696,9 @@
     "category": "supply_chain",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-SUPPLY-003"],
+    "source_threat_ids": [
+      "THR-SUPPLY-003"
+    ],
     "implementation_status": "planned",
     "implementation_reference": "Not implemented; release provenance is deferred.",
     "verification_method": "future provenance verification",
@@ -552,7 +715,9 @@
     "category": "supply_chain",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-SECRETS-001"],
+    "source_threat_ids": [
+      "THR-SECRETS-001"
+    ],
     "implementation_status": "implemented",
     "implementation_reference": ".gitleaks.toml; scripts/appsec_tools.py; security/gitleaks/README.md",
     "verification_method": "Gitleaks local binary or pinned container scan",
@@ -569,7 +734,9 @@
     "category": "secure_design",
     "priority": "high",
     "status": "active",
-    "source_threat_ids": ["THR-REVIEW-001"],
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
     "policy_source": "Milestone 2 secure-design requirement",
     "implementation_status": "implemented",
     "implementation_reference": "src/genomic_research_access_api/security/threat_model/validation.py",

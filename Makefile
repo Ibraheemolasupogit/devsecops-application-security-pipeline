@@ -1,4 +1,4 @@
-.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-fast dynamic-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
+.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -182,6 +182,30 @@ dynamic-fast:
 
 dynamic-full:
 	PYTHONPATH=src $(PYTHON) scripts/dynamic_security_tools.py full
+
+findings-normalise:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings normalise
+
+findings-deduplicate:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings deduplicate
+
+findings-enrich:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings enrich
+
+findings-validate:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings validate
+
+findings-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings evidence --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
+
+verify-findings-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings verify
+
+findings-report:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings report
+
+findings-full:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.findings full --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
 
 pre-commit-install:
 	$(PYTHON) -m pip install pre-commit==3.8.0

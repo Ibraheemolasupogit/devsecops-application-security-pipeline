@@ -2,24 +2,24 @@ Schemathesis v4.0.26
 ━━━━━━━━━━━━━━━━━━━━
 
 
- ✅  Loaded specification from /work/openapi.json (in 0.27s)                    
+ ✅  Loaded specification from /work/openapi.json (in 0.28s)
 
-     Base URL:         http://host.docker.internal:8000                         
-     Specification:    Open API 3.1.0                                           
-     Operations:       9 selected / 9 total                                     
+     Base URL:         http://host.docker.internal:8000
+     Specification:    Open API 3.1.0
+     Operations:       9 selected / 9 total
 
 
- ✅  API capabilities:                                                          
+ ✅  API capabilities:
 
-     Supports NULL byte in headers:    ✘                                        
+     Supports NULL byte in headers:    ✘
 
- ⏭   Examples (in 0.13s)                                                        
-                                                                                
-     ⏭  9 skipped                                                               
+ ⏭   Examples (in 0.13s)
 
- ✅  Fuzzing (in 1.57s)                                                         
-                                                                                
-     ✅ 9 passed                                                                
+     ⏭  9 skipped
+
+ ✅  Fuzzing (in 1.54s)
+
+     ✅ 9 passed
 
 =================================== WARNINGS ===================================
 
@@ -68,4 +68,4 @@ Test cases:
 
 Seed: not used in the deterministic mode
 
-============================= 3 warnings in 1.72s ==============================
+============================= 3 warnings in 1.69s ==============================

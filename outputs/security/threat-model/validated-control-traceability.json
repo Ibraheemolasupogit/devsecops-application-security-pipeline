@@ -618,5 +618,51 @@
     "verification_methods": [
       "future provenance checks"
     ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/findings/findings-summary.json",
+      "outputs/security/findings/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/findings",
+      "config/findings"
+    ],
+    "notes": "Milestone 7 normalises source security outputs into one evidence-backed findings model without adding release gating or lifecycle workflow.",
+    "requirement_ids": [
+      "SR-FINDINGS-001",
+      "SR-FINDINGS-002",
+      "SR-FINDINGS-003",
+      "SR-FINDINGS-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
+    "traceability_id": "TRACE-031",
+    "verification_methods": [
+      "make findings-full",
+      "make verify-findings-evidence"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/findings/normalised-findings.json",
+      "outputs/security/findings/finding-source-map.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/findings/adapters",
+      "src/genomic_research_access_api/security/findings/deduplicator.py"
+    ],
+    "notes": "Scanner observations and governed suppressions are retained as canonical source findings.",
+    "requirement_ids": [
+      "SR-FINDINGS-001",
+      "SR-FINDINGS-002",
+      "SR-FINDINGS-004"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
+    "traceability_id": "TRACE-032",
+    "verification_methods": [
+      "findings adapter and deduplication tests"
+    ]
   }
 ]

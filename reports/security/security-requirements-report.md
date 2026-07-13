@@ -21,6 +21,10 @@
 | SR-DATA-001 | data_protection | implemented | Milestone 1 |
 | SR-DATA-002 | data_protection | implemented | Milestone 6 |
 | SR-DATA-003 | data_protection | implemented | Milestone 6 |
+| SR-FINDINGS-001 | secure_design | implemented | Milestone 7 |
+| SR-FINDINGS-002 | secure_design | implemented | Milestone 7 |
+| SR-FINDINGS-003 | governance | implemented | Milestone 7 |
+| SR-FINDINGS-004 | governance | implemented | Milestone 7 |
 | SR-IAC-001 | infrastructure_security | implemented | Milestone 6 |
 | SR-IAC-002 | infrastructure_security | implemented | Milestone 6 |
 | SR-IAM-001 | iam | implemented | Milestone 6 |

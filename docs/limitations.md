@@ -13,3 +13,4 @@
 - Schemathesis and ZAP dynamic scans require Docker for pinned scanner containers and are restricted to local targets.
 - Checkov findings are captured as reporting evidence in Milestone 5; full Terraform remediation is not claimed.
 - Dynamic API security evidence is local synthetic validation and is not penetration-test coverage.
+- Findings normalisation uses demonstration risk, ownership and SLA values. It is not an enterprise vulnerability-management lifecycle, exception workflow or release gate.

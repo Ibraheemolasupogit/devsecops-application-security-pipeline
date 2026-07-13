@@ -10,16 +10,16 @@
     "configuration": 1,
     "container_security": 2,
     "data_protection": 3,
-    "governance": 1,
+    "governance": 3,
     "iam": 2,
     "infrastructure_security": 2,
     "secrets": 1,
-    "secure_design": 1,
+    "secure_design": 3,
     "supply_chain": 4,
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 32,
+    "implemented": 36,
     "planned": 2
   },
   "residual_risks_by_rating": {

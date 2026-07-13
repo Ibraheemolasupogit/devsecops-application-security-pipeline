@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "portfolio_notice": "Demonstration values for this repository; not Genomics England policy.",
+  "sla_days": {"critical": 3, "high": 14, "medium": 30, "low": 60, "informational": 90, "unknown": 90},
+  "context_adjustments": [
+    {"name": "internet-facing critical secret", "finding_type": "Secret", "severity": "critical", "internet_exposure": "internet_facing", "sla_days": 0},
+    {"name": "suppression review governs follow-up", "suppression_status": "active", "use_suppression_expiry": true}
+  ]
+}

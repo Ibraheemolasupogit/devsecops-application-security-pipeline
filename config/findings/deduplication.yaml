@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "exact_keys": ["cve", "cwe", "source_rule_resource", "endpoint_condition", "threat_requirement_control"],
+  "cross_tool_examples": [
+    {"tools": ["pip-audit", "trivy"], "key": "cve+package_name"},
+    {"tools": ["semgrep", "bandit"], "key": "cwe+file+line"},
+    {"tools": ["zap", "dynamic-pytest"], "key": "security_requirement_ids+asset_id"}
+  ],
+  "fuzzy_matching": false
+}

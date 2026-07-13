@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "allowed_owners": ["Application Engineering", "Platform Engineering", "Product Security", "Cloud Security", "DevSecOps Engineering", "Risk Owner", "unowned"],
+  "rules": [
+    {"match": "src/genomic_research_access_api/security/authentication/**", "squad": "Identity and Application Security", "technical_owner": "Product Security", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    {"match": "src/genomic_research_access_api/security/authorisation.py", "squad": "Identity and Application Security", "technical_owner": "Product Security", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    {"match": "src/genomic_research_access_api/**", "squad": "Application Engineering", "technical_owner": "Application Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    {"match": "infrastructure/modules/iam/**", "squad": "Cloud Platform Security", "technical_owner": "Cloud Security", "risk_owner": "Risk Owner", "remediation_owner": "Cloud Security"},
+    {"match": "infrastructure/**", "squad": "Cloud Platform Security", "technical_owner": "Cloud Security", "risk_owner": "Risk Owner", "remediation_owner": "Cloud Security"},
+    {"match": "Dockerfile", "squad": "Platform Engineering", "technical_owner": "Platform Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Platform Engineering"},
+    {"match": ".github/workflows/**", "squad": "DevSecOps Engineering", "technical_owner": "DevSecOps Engineering", "risk_owner": "Risk Owner", "remediation_owner": "DevSecOps Engineering"},
+    {"match": "pyproject.toml", "squad": "Application Engineering", "technical_owner": "Application Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"}
+  ],
+  "source_tool_defaults": {
+    "checkov": {"squad": "Cloud Platform Security", "technical_owner": "Cloud Security", "risk_owner": "Risk Owner", "remediation_owner": "Cloud Security"},
+    "dynamic-pytest": {"squad": "Application Engineering", "technical_owner": "Application Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    "gitleaks": {"squad": "Application Engineering", "technical_owner": "Application Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    "pip-audit": {"squad": "Application Engineering", "technical_owner": "Application Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    "zap": {"squad": "Application Engineering", "technical_owner": "Application Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Application Engineering"},
+    "trivy": {"squad": "Platform Engineering", "technical_owner": "Platform Engineering", "risk_owner": "Risk Owner", "remediation_owner": "Platform Engineering"},
+    "threat-model": {"squad": "Product Security", "technical_owner": "Product Security", "risk_owner": "Risk Owner", "remediation_owner": "Product Security"}
+  },
+  "unowned": {"squad": "unowned", "technical_owner": "unowned", "risk_owner": "Risk Owner", "remediation_owner": "unowned"}
+}

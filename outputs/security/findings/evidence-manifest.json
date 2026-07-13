@@ -1,0 +1,163 @@
+{
+  "adapter_versions": {
+    "bandit": "1.0",
+    "checkov": "1.0",
+    "dynamic-pytest": "1.0",
+    "gitleaks": "1.0",
+    "pip-audit": "1.0",
+    "schemathesis": "1.0",
+    "semgrep": "1.0",
+    "suppressions": "1.0",
+    "threat-model": "1.0",
+    "trivy": "1.0",
+    "zap": "1.0"
+  },
+  "as_of_date": "2026-01-01",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "deduplication_count": 2,
+  "deployment_status": "not deployed",
+  "input_files": {
+    "config/findings/asset-context.yaml": {
+      "path": "config/findings/asset-context.yaml",
+      "sha256": "0ade6db8f92af8850e96f1adebc4085583e1d3ae3d2195182f050a38501096a5"
+    },
+    "config/findings/deduplication.yaml": {
+      "path": "config/findings/deduplication.yaml",
+      "sha256": "73b392d6f1e028b97410cadf4f08eceee1fee83c015bf9ca3036284b0cc722ce"
+    },
+    "config/findings/ownership.yaml": {
+      "path": "config/findings/ownership.yaml",
+      "sha256": "fa7596d29880ea040710af06fac78fd2f853799277e267f7430bf5b0e3c815b6"
+    },
+    "config/findings/remediation-sla.yaml": {
+      "path": "config/findings/remediation-sla.yaml",
+      "sha256": "9d1b9a9bf737312f30ec784712ddbba2b328a6aa7e8a89c1e15e451dd768286d"
+    },
+    "config/findings/risk-scoring.yaml": {
+      "path": "config/findings/risk-scoring.yaml",
+      "sha256": "5cb2350f3173a1ee27a8c95d4aa8646b68a85f674d160ba1804002c759f5dc26"
+    },
+    "config/findings/severity-mapping.yaml": {
+      "path": "config/findings/severity-mapping.yaml",
+      "sha256": "6f82a768d67a7ba60744e90699ad2dd882ec71af4344ec31a0d39f75dbffeb0f"
+    },
+    "config/findings/tool-mapping.yaml": {
+      "path": "config/findings/tool-mapping.yaml",
+      "sha256": "08c9506db2b18a786e34ae56868b891309ca62cee1ab0c975cf1950a4a7c1520"
+    },
+    "docs/threat-model/residual-risk-register.yaml": {
+      "path": "docs/threat-model/residual-risk-register.yaml",
+      "sha256": "ddf57a3856d7f8ff76e848fb65c64679c7af1230638174ef39c62156118d9242"
+    },
+    "outputs/security/appsec/raw/bandit.json": {
+      "path": "outputs/security/appsec/raw/bandit.json",
+      "sha256": "704a9d43e4110866384045c623f68005b2fea5ef5db6fa6907a1c677d85a8a43"
+    },
+    "outputs/security/appsec/raw/checkov.json": {
+      "path": "outputs/security/appsec/raw/checkov.json",
+      "sha256": "81127f69d8453e5ce3e50c7b16d29407cd8be679051f112544dfe6ec60ed4f15"
+    },
+    "outputs/security/appsec/raw/gitleaks.json": {
+      "path": "outputs/security/appsec/raw/gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "outputs/security/appsec/raw/pip-audit.json": {
+      "path": "outputs/security/appsec/raw/pip-audit.json",
+      "sha256": "f11b091a5980720daa4643a2806328b3f1e005784313182e61b50e6fe7b77600"
+    },
+    "outputs/security/appsec/raw/semgrep.json": {
+      "path": "outputs/security/appsec/raw/semgrep.json",
+      "sha256": "1b30ad9b0a105751e4e4dca257dadfb0a636ee33f65360d9dc286f0dc1e8f6fa"
+    },
+    "outputs/security/appsec/raw/trivy.json": {
+      "path": "outputs/security/appsec/raw/trivy.json",
+      "sha256": "a8bc4fa1f14dbc7f1ed9639d792960eb70cf0ec845165315273410ba81d0f845"
+    },
+    "outputs/security/dynamic/raw/pytest-dynamic.json": {
+      "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
+      "sha256": "35189ad0198ed7b4141e134721c27ee63e95df44d9601040017a75d044a5c495"
+    },
+    "outputs/security/dynamic/raw/zap-report.json": {
+      "path": "outputs/security/dynamic/raw/zap-report.json",
+      "sha256": "c88ba2382674d6ba82cdec1b532fff52c0ffdee15181c55ea18473d7049b9263"
+    },
+    "outputs/security/dynamic/schemathesis-summary.json": {
+      "path": "outputs/security/dynamic/schemathesis-summary.json",
+      "sha256": "e29a2e1c214b5df334dcb81d63b45d57d105e16c8bd7522ffb9a02efb0a1f155"
+    },
+    "security/config/suppressions.yaml": {
+      "path": "security/config/suppressions.yaml",
+      "sha256": "87fa320b2bd536905d383d627fda1d2983b7d41bbc5c63ed8a90d23d30ee56e6"
+    },
+    "security/dynamic/suppressions.yaml": {
+      "path": "security/dynamic/suppressions.yaml",
+      "sha256": "4f56188bea83765d6ba11cf83557e7be3f1500dc3b11c8ab3d7c5f2f9fc8b6d1"
+    }
+  },
+  "normalisation_count": 43,
+  "output_files": {
+    "asset-inventory.json": {
+      "path": "outputs/security/findings/asset-inventory.json",
+      "sha256": "7b6653caf4359de5861f5d023d0a7bdc72622142291f8589263930daca3fbddf"
+    },
+    "deduplicated-findings.json": {
+      "path": "outputs/security/findings/deduplicated-findings.json",
+      "sha256": "c6e89f82a458b7b9c50317be1384595a8777707e1c3131a6cc734668363b9983"
+    },
+    "deduplication-summary.json": {
+      "path": "outputs/security/findings/deduplication-summary.json",
+      "sha256": "220318f0f6f1b08be17eea7fdd1d4dbebc062458bc2e90e5f7609c9f9d4dcda9"
+    },
+    "expired-suppressions.csv": {
+      "path": "outputs/security/findings/expired-suppressions.csv",
+      "sha256": "8e5af6e4d0e97d27d3e1217cb17d64679dffff117efac773ec2d6e3afe7dde4c"
+    },
+    "finding-source-map.json": {
+      "path": "outputs/security/findings/finding-source-map.json",
+      "sha256": "6bdf891a333a527cdbe9ed187f08da774a98bd269578a8d85cc5d672d49b4564"
+    },
+    "findings-summary.json": {
+      "path": "outputs/security/findings/findings-summary.json",
+      "sha256": "d36897b812f2155cd3397b87a96a3e4f92fd9b670ea9a59f0aa6f1228956120e"
+    },
+    "normalised-findings.csv": {
+      "path": "outputs/security/findings/normalised-findings.csv",
+      "sha256": "8311c61aab0619061030004264baf6422850a866434e1dd78473f582b6fda9ab"
+    },
+    "normalised-findings.json": {
+      "path": "outputs/security/findings/normalised-findings.json",
+      "sha256": "11a23deb92cb785e24d1c2661e858afb2f930e571c3daab5b05cac4941e9fec2"
+    },
+    "ownership-summary.json": {
+      "path": "outputs/security/findings/ownership-summary.json",
+      "sha256": "020390f4a72ea8db15d100f4f5e5922a21f96c3c1884f5008da91981a4f567ee"
+    },
+    "risk-summary.json": {
+      "path": "outputs/security/findings/risk-summary.json",
+      "sha256": "c459b898e63bf582da0d75a9ddc320dfc958347edb1a1474194b54f2f2ead129"
+    },
+    "sla-summary.json": {
+      "path": "outputs/security/findings/sla-summary.json",
+      "sha256": "503b040dd3d7a30a98745c0460a9a848b31594683403059a5629d886353ab03b"
+    },
+    "suppressed-findings.csv": {
+      "path": "outputs/security/findings/suppressed-findings.csv",
+      "sha256": "ae9d2a5f34dd989d85e448b0ab7dd287b299cc7dee4b685d62fa9c5784b669e5"
+    },
+    "unowned-findings.csv": {
+      "path": "outputs/security/findings/unowned-findings.csv",
+      "sha256": "8e5af6e4d0e97d27d3e1217cb17d64679dffff117efac773ec2d6e3afe7dde4c"
+    }
+  },
+  "policy_config_versions": {
+    "config/findings/asset-context.yaml": "1.0",
+    "config/findings/deduplication.yaml": "1.0",
+    "config/findings/ownership.yaml": "1.0",
+    "config/findings/remediation-sla.yaml": "1.0",
+    "config/findings/risk-scoring.yaml": "1.0",
+    "config/findings/severity-mapping.yaml": "1.0",
+    "config/findings/tool-mapping.yaml": "1.0"
+  },
+  "project_version": "0.1.0",
+  "schema_version": "1.0"
+}

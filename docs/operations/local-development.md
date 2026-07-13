@@ -41,6 +41,14 @@ make dynamic-full
 
 `dynamic-fast` runs local in-process API security tests. `dynamic-full` adds local API startup, pinned Schemathesis OpenAPI testing, pinned OWASP ZAP baseline scanning, deterministic evidence verification and report generation. Do not override scan targets to external hosts.
 
+## Findings Normalisation
+
+```bash
+make findings-full
+```
+
+This consumes existing source evidence and writes canonical findings, CSV exports, risk/ownership/SLA summaries and reports. It does not refresh Docker-backed scanner output by itself.
+
 ## Local API Tokens
 
 Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:

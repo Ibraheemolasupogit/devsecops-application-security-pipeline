@@ -1,0 +1,455 @@
+{
+  "FND-CONTAINER-026cbd40a3d8": {
+    "deduplication_key": "cve|CVE-2026-9538|perl-base",
+    "primary_finding_id": "FND-CONTAINER-026cbd40a3d8",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-026cbd40a3d8"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-033201244a2b": {
+    "deduplication_key": "cve|CVE-2026-53615|bsdutils",
+    "primary_finding_id": "FND-CONTAINER-033201244a2b",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-033201244a2b"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-35a70101ee98": {
+    "deduplication_key": "cve|CVE-2026-53615|libblkid1",
+    "primary_finding_id": "FND-CONTAINER-35a70101ee98",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-35a70101ee98"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-35a7a61eb9e3": {
+    "deduplication_key": "cve|CVE-2026-53615|libmount1",
+    "primary_finding_id": "FND-CONTAINER-35a7a61eb9e3",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-35a7a61eb9e3"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-3686ad447a1f": {
+    "deduplication_key": "cve|CVE-2026-42497|perl-base",
+    "primary_finding_id": "FND-CONTAINER-3686ad447a1f",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-3686ad447a1f"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-4a39d4c85743": {
+    "deduplication_key": "cve|CVE-2026-48962|perl-base",
+    "primary_finding_id": "FND-CONTAINER-4a39d4c85743",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-4a39d4c85743"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-57b96cf12bee": {
+    "deduplication_key": "cve|CVE-2025-69720|libtinfo6",
+    "primary_finding_id": "FND-CONTAINER-57b96cf12bee",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-57b96cf12bee"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-5ee1761422cc": {
+    "deduplication_key": "cve|CVE-2026-42496|perl-base",
+    "primary_finding_id": "FND-CONTAINER-5ee1761422cc",
+    "rationale": "merged by exact key cve|CVE-2026-42496|perl-base across trivy; all source records retained",
+    "source_finding_ids": [
+      "FND-CONTAINER-5ee1761422cc",
+      "FND-SUPPRESSIO-ef559061de8d"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-6017bcc173f8": {
+    "deduplication_key": "cve|CVE-2026-54369|libacl1",
+    "primary_finding_id": "FND-CONTAINER-6017bcc173f8",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-6017bcc173f8"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-6884a6a2aeb3": {
+    "deduplication_key": "cve|CVE-2025-69720|libncursesw6",
+    "primary_finding_id": "FND-CONTAINER-6884a6a2aeb3",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-6884a6a2aeb3"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-77763b149b4f": {
+    "deduplication_key": "cve|CVE-2025-69720|ncurses-base",
+    "primary_finding_id": "FND-CONTAINER-77763b149b4f",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-77763b149b4f"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-9360fa554791": {
+    "deduplication_key": "cve|CVE-2026-53615|libuuid1",
+    "primary_finding_id": "FND-CONTAINER-9360fa554791",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-9360fa554791"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-95a38a1f2a20": {
+    "deduplication_key": "cve|CVE-2026-8376|perl-base",
+    "primary_finding_id": "FND-CONTAINER-95a38a1f2a20",
+    "rationale": "merged by exact key cve|CVE-2026-8376|perl-base across trivy; all source records retained",
+    "source_finding_ids": [
+      "FND-CONTAINER-95a38a1f2a20",
+      "FND-SUPPRESSIO-5313851a0158"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-96b263718199": {
+    "deduplication_key": "cve|CVE-2026-53615|liblastlog2-2",
+    "primary_finding_id": "FND-CONTAINER-96b263718199",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-96b263718199"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-9bac41a1b5ac": {
+    "deduplication_key": "cve|CVE-2026-53615|util-linux",
+    "primary_finding_id": "FND-CONTAINER-9bac41a1b5ac",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-9bac41a1b5ac"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-ba223b9333c9": {
+    "deduplication_key": "cve|CVE-2026-53615|libsmartcols1",
+    "primary_finding_id": "FND-CONTAINER-ba223b9333c9",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-ba223b9333c9"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-c1e6ced9904f": {
+    "deduplication_key": "cve|CVE-2025-69720|ncurses-bin",
+    "primary_finding_id": "FND-CONTAINER-c1e6ced9904f",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-c1e6ced9904f"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-c7563eb73df0": {
+    "deduplication_key": "cve|CVE-2026-41992|gzip",
+    "primary_finding_id": "FND-CONTAINER-c7563eb73df0",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-c7563eb73df0"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-d0df15bb32ed": {
+    "deduplication_key": "cve|CVE-2026-53615|login",
+    "primary_finding_id": "FND-CONTAINER-d0df15bb32ed",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-d0df15bb32ed"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-CONTAINER-ef0f3e5e6558": {
+    "deduplication_key": "cve|CVE-2026-53615|mount",
+    "primary_finding_id": "FND-CONTAINER-ef0f3e5e6558",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-CONTAINER-ef0f3e5e6558"
+    ],
+    "source_tools": [
+      "trivy"
+    ]
+  },
+  "FND-DAST-8c69fdea3ac6": {
+    "deduplication_key": "dast|10116|http://host.docker.internal:8000/robots.txt",
+    "primary_finding_id": "FND-DAST-8c69fdea3ac6",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-DAST-8c69fdea3ac6"
+    ],
+    "source_tools": [
+      "zap"
+    ]
+  },
+  "FND-DAST-e607d905531a": {
+    "deduplication_key": "dast|10049|http://host.docker.internal:8000",
+    "primary_finding_id": "FND-DAST-e607d905531a",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-DAST-e607d905531a"
+    ],
+    "source_tools": [
+      "zap"
+    ]
+  },
+  "FND-SECUREDESI-0e84d1c52550": {
+    "deduplication_key": "threat-model|RR-009",
+    "primary_finding_id": "FND-SECUREDESI-0e84d1c52550",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-0e84d1c52550"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
+  "FND-SECUREDESI-17c88481ce5d": {
+    "deduplication_key": "threat-model|RR-003",
+    "primary_finding_id": "FND-SECUREDESI-17c88481ce5d",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-17c88481ce5d"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
+  "FND-SECUREDESI-667c88d66538": {
+    "deduplication_key": "threat-model|RR-005",
+    "primary_finding_id": "FND-SECUREDESI-667c88d66538",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-667c88d66538"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
+  "FND-SECUREDESI-77c7990be9b8": {
+    "deduplication_key": "threat-model|RR-007",
+    "primary_finding_id": "FND-SECUREDESI-77c7990be9b8",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-77c7990be9b8"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
+  "FND-SECUREDESI-ac50e3235345": {
+    "deduplication_key": "threat-model|RR-001",
+    "primary_finding_id": "FND-SECUREDESI-ac50e3235345",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-ac50e3235345"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
+  "FND-SECUREDESI-e7cd910bd1f6": {
+    "deduplication_key": "threat-model|RR-006",
+    "primary_finding_id": "FND-SECUREDESI-e7cd910bd1f6",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-e7cd910bd1f6"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
+  "FND-SUPPRESSIO-1065083a8d4b": {
+    "deduplication_key": "suppression|checkov|CKV2_AWS_5|aws_security_group.ecs_tasks",
+    "primary_finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-1065083a8d4b"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-47693ff859ed": {
+    "deduplication_key": "suppression|checkov|CKV2_AWS_57|aws_secretsmanager_secret.application_config",
+    "primary_finding_id": "FND-SUPPRESSIO-47693ff859ed",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-47693ff859ed"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-65201925e5c5": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_260|aws_security_group.alb",
+    "primary_finding_id": "FND-SUPPRESSIO-65201925e5c5",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-65201925e5c5"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-68e51d21b290": {
+    "deduplication_key": "suppression|checkov|CKV2_AWS_57|aws_secretsmanager_secret.jwt_public_key",
+    "primary_finding_id": "FND-SUPPRESSIO-68e51d21b290",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-68e51d21b290"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-6dce772b98c3": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_109,CKV_AWS_111,CKV_AWS_356|aws_iam_policy_document.application_data",
+    "primary_finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-6dce772b98c3"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-713bb8f041d7": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_358|aws_iam_policy_document.github_oidc_assume",
+    "primary_finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-713bb8f041d7"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-7b3ddcaa6af8": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_2|aws_lb_listener.http",
+    "primary_finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-7b3ddcaa6af8"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-8632c434b354": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_144|aws_s3_bucket.cloudtrail",
+    "primary_finding_id": "FND-SUPPRESSIO-8632c434b354",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-8632c434b354"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-974e196f7185": {
+    "deduplication_key": "suppression|gitleaks|private-key|tests/fixtures/keys/dev_private_key.pem",
+    "primary_finding_id": "FND-SUPPRESSIO-974e196f7185",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-974e196f7185"
+    ],
+    "source_tools": [
+      "gitleaks"
+    ]
+  },
+  "FND-SUPPRESSIO-b5c9f1d0aae2": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_111,CKV_AWS_356|aws_iam_policy_document.secrets",
+    "primary_finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-b5c9f1d0aae2"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-d403fca790bf": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_111,CKV_AWS_356|aws_iam_policy_document.audit",
+    "primary_finding_id": "FND-SUPPRESSIO-d403fca790bf",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-d403fca790bf"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-e0d3613118cd": {
+    "deduplication_key": "suppression|checkov|CKV2_AWS_5|aws_security_group.alb",
+    "primary_finding_id": "FND-SUPPRESSIO-e0d3613118cd",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-e0d3613118cd"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  },
+  "FND-SUPPRESSIO-f1fb6d611749": {
+    "deduplication_key": "suppression|checkov|CKV_AWS_378|aws_lb_target_group.app",
+    "primary_finding_id": "FND-SUPPRESSIO-f1fb6d611749",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SUPPRESSIO-f1fb6d611749"
+    ],
+    "source_tools": [
+      "checkov"
+    ]
+  }
+}

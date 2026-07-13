@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "default": "unknown",
+  "mappings": {
+    "CRITICAL": "critical",
+    "Critical": "critical",
+    "critical": "critical",
+    "HIGH": "high",
+    "High": "high",
+    "high": "high",
+    "MEDIUM": "medium",
+    "Medium": "medium",
+    "medium": "medium",
+    "LOW": "low",
+    "Low": "low",
+    "low": "low",
+    "INFORMATIONAL": "informational",
+    "Informational": "informational",
+    "INFO": "informational",
+    "UNKNOWN": "unknown"
+  },
+  "zap_riskcode": {"0": "informational", "1": "low", "2": "medium", "3": "high", "4": "critical"}
+}

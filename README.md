@@ -28,6 +28,8 @@ Milestone 5 delivered the core AppSec pipeline: pinned scanner configuration, Se
 
 Milestone 6 adds local-only dynamic API security validation: dynamic pytest boundary tests, pinned Schemathesis OpenAPI testing, pinned OWASP ZAP baseline scanning, bounded resource-consumption checks, deterministic dynamic evidence and dynamic-security reports. Dynamic scans are restricted to localhost, loopback and approved local Docker targets.
 
+Milestone 7 adds canonical findings normalisation and risk enrichment across threat-model, AppSec, infrastructure and dynamic-security outputs. It preserves native evidence and governed suppressions, assigns deterministic owners and SLAs, and does not implement release gates or lifecycle workflow.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -178,6 +180,7 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make infrastructure-test`: run local infrastructure policy tests without AWS credentials.
 - `make verify-infrastructure-evidence`: verify deterministic infrastructure evidence.
 - `make security-tools`: print pinned AppSec scanner inventory.
+- `make findings-full`: normalise existing security evidence into canonical findings, validate deterministic evidence and generate findings reports.
 - `make secrets-scan`: run Gitleaks via local binary or pinned container.
 - `make semgrep-test`: run Semgrep custom rule tests.
 - `make sast`: run Semgrep and Bandit.

@@ -1,0 +1,265 @@
+{
+  "assets": [
+    {
+      "asset_id": "AST-APP-FASTAPI",
+      "criticality": "high",
+      "data_sensitivity": "high",
+      "environment": "locally_validated",
+      "internet_exposure": "planned",
+      "name": "FastAPI application",
+      "owner": "Application Engineering",
+      "repository_path": "src/genomic_research_access_api",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "squad": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "type": "application"
+    },
+    {
+      "asset_id": "AST-AUTHN",
+      "criticality": "critical",
+      "data_sensitivity": "high",
+      "environment": "locally_validated",
+      "internet_exposure": "planned",
+      "name": "authentication subsystem",
+      "owner": "Product Security",
+      "repository_path": "src/genomic_research_access_api/security/authentication",
+      "security_requirement_ids": [
+        "SR-AUTH-001"
+      ],
+      "squad": "Identity and Application Security",
+      "threat_ids": [
+        "THR-AUTH-001",
+        "THR-AUTH-002"
+      ],
+      "type": "service"
+    },
+    {
+      "asset_id": "AST-AUTHZ",
+      "criticality": "critical",
+      "data_sensitivity": "high",
+      "environment": "locally_validated",
+      "internet_exposure": "planned",
+      "name": "authorisation subsystem",
+      "owner": "Product Security",
+      "repository_path": "src/genomic_research_access_api/security/authorisation.py",
+      "security_requirement_ids": [
+        "SR-AUTHZ-001",
+        "SR-AUTHZ-002"
+      ],
+      "squad": "Identity and Application Security",
+      "threat_ids": [
+        "THR-AUTHZ-001",
+        "THR-AUTHZ-002"
+      ],
+      "type": "service"
+    },
+    {
+      "asset_id": "AST-WORKFLOW-ACCESS",
+      "criticality": "high",
+      "data_sensitivity": "high",
+      "environment": "locally_validated",
+      "internet_exposure": "planned",
+      "name": "access-request workflow",
+      "owner": "Application Engineering",
+      "repository_path": "src/genomic_research_access_api/services/access_requests.py",
+      "security_requirement_ids": [
+        "SR-AUTHZ-004",
+        "SR-AUTHZ-005"
+      ],
+      "squad": "Application Engineering",
+      "threat_ids": [
+        "THR-AUTHZ-003",
+        "THR-AUTHZ-004"
+      ],
+      "type": "workflow"
+    },
+    {
+      "asset_id": "AST-AUDIT",
+      "criticality": "high",
+      "data_sensitivity": "medium",
+      "environment": "locally_validated",
+      "internet_exposure": "not_deployed",
+      "name": "audit subsystem",
+      "owner": "Product Security",
+      "repository_path": "src/genomic_research_access_api/audit",
+      "security_requirement_ids": [
+        "SR-AUDIT-001"
+      ],
+      "squad": "Application Engineering",
+      "threat_ids": [
+        "THR-AUDIT-001",
+        "THR-AUDIT-002"
+      ],
+      "type": "service"
+    },
+    {
+      "asset_id": "AST-CONTAINER",
+      "criticality": "high",
+      "data_sensitivity": "medium",
+      "environment": "not_deployed",
+      "internet_exposure": "not_deployed",
+      "name": "Docker image",
+      "owner": "Platform Engineering",
+      "repository_path": "Dockerfile",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "squad": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "type": "container_image"
+    },
+    {
+      "asset_id": "AST-DEPS-PYTHON",
+      "criticality": "high",
+      "data_sensitivity": "medium",
+      "environment": "configured",
+      "internet_exposure": "not_deployed",
+      "name": "Python dependency set",
+      "owner": "Application Engineering",
+      "repository_path": "pyproject.toml",
+      "security_requirement_ids": [
+        "SR-SUPPLY-001"
+      ],
+      "squad": "Application Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "type": "dependency_set"
+    },
+    {
+      "asset_id": "AST-TERRAFORM",
+      "criticality": "high",
+      "data_sensitivity": "high",
+      "environment": "not_deployed",
+      "internet_exposure": "planned",
+      "name": "Terraform codebase",
+      "owner": "Cloud Security",
+      "repository_path": "infrastructure",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "squad": "Cloud Platform Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "type": "infrastructure_code"
+    },
+    {
+      "asset_id": "AST-ECS-TASK",
+      "criticality": "high",
+      "data_sensitivity": "high",
+      "environment": "not_deployed",
+      "internet_exposure": "planned",
+      "name": "ECS task definition",
+      "owner": "Cloud Security",
+      "repository_path": "infrastructure/modules/compute",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "squad": "Cloud Platform Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "type": "compute"
+    },
+    {
+      "asset_id": "AST-IAM",
+      "criticality": "critical",
+      "data_sensitivity": "high",
+      "environment": "not_deployed",
+      "internet_exposure": "not_deployed",
+      "name": "IAM roles",
+      "owner": "Cloud Security",
+      "repository_path": "infrastructure/modules/iam",
+      "security_requirement_ids": [
+        "SR-CI-002"
+      ],
+      "squad": "Cloud Platform Security",
+      "threat_ids": [
+        "THR-CI-001"
+      ],
+      "type": "identity"
+    },
+    {
+      "asset_id": "AST-DYNAMODB",
+      "criticality": "critical",
+      "data_sensitivity": "high",
+      "environment": "not_deployed",
+      "internet_exposure": "not_deployed",
+      "name": "DynamoDB configuration",
+      "owner": "Cloud Security",
+      "repository_path": "infrastructure/modules/datastore",
+      "security_requirement_ids": [
+        "SR-DATA-001"
+      ],
+      "squad": "Cloud Platform Security",
+      "threat_ids": [
+        "THR-DATA-001"
+      ],
+      "type": "datastore"
+    },
+    {
+      "asset_id": "AST-CLOUDTRAIL",
+      "criticality": "high",
+      "data_sensitivity": "medium",
+      "environment": "not_deployed",
+      "internet_exposure": "not_deployed",
+      "name": "CloudTrail configuration",
+      "owner": "Cloud Security",
+      "repository_path": "infrastructure/modules/audit",
+      "security_requirement_ids": [
+        "SR-AUDIT-001"
+      ],
+      "squad": "Cloud Platform Security",
+      "threat_ids": [
+        "THR-AUDIT-001"
+      ],
+      "type": "audit_logging"
+    },
+    {
+      "asset_id": "AST-CI",
+      "criticality": "high",
+      "data_sensitivity": "medium",
+      "environment": "configured",
+      "internet_exposure": "configured",
+      "name": "CI workflows",
+      "owner": "DevSecOps Engineering",
+      "repository_path": ".github/workflows",
+      "security_requirement_ids": [
+        "SR-CI-001"
+      ],
+      "squad": "DevSecOps Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-002"
+      ],
+      "type": "ci_cd"
+    },
+    {
+      "asset_id": "AST-OPENAPI",
+      "criticality": "high",
+      "data_sensitivity": "medium",
+      "environment": "locally_validated",
+      "internet_exposure": "planned",
+      "name": "OpenAPI contract",
+      "owner": "Application Engineering",
+      "repository_path": "outputs/security/dynamic/raw/openapi.json",
+      "security_requirement_ids": [
+        "SR-API-001"
+      ],
+      "squad": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001"
+      ],
+      "type": "api_contract"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2026-07-13T00:24:08.635740589Z",
+  "CreatedAt": "2026-07-13T05:07:59.019702125Z",
   "ArtifactName": "devsecops-application-security-pipeline:milestone5",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,7 +8,7 @@
       "Family": "debian",
       "Name": "13.6"
     },
-    "ImageID": "sha256:00887fa4fddbe57be92c63d97c97edb9fc0460fe6ca1707dd5d31f01d3c997b5",
+    "ImageID": "sha256:13d5fe588657a92d36c1fc4ca39b08ea252001c34a46707df702dd8aa4c47281",
     "DiffIDs": [
       "sha256:090e9c58f4748dd51573ae6f05678fa97237bbe946047a0433b0092ef6c4a704",
       "sha256:1e09695463df90596c8384bf3b8818aaf6775dc6f87a1abe68eabd730ff744c2",
@@ -16,18 +16,18 @@
       "sha256:5c1c2aa63cc672fb3b2819dd16432493ead0d3af26c732ffd82c10d667001c58",
       "sha256:c056a12af6178032a370550c94c8f099e988d5a9c2ab65016534a2b200a32217",
       "sha256:e58391a994176acb89d4fe81ea4ed58b2adb50e32e63f985d16e93fb0a290c41",
-      "sha256:9935c877f018d1ce582883b409e6e85d234e1fdde531dd6047512f04abc8954d",
-      "sha256:b74f67f3fb5c6b433b79c1e907ed0b94016ae2370fc8e459f6d448a682855f96"
+      "sha256:d05350849da833c90f3826fdd00f32c7f601a6a3e3b09a13cf9420a069c7ab2a",
+      "sha256:9afbfe3f2ec8c4b018d8e00116149ffe3ef4763c57fe60622f846a1c21247366"
     ],
     "RepoTags": [
       "devsecops-application-security-pipeline:milestone5"
     ],
     "RepoDigests": [
-      "devsecops-application-security-pipeline@sha256:00887fa4fddbe57be92c63d97c97edb9fc0460fe6ca1707dd5d31f01d3c997b5"
+      "devsecops-application-security-pipeline@sha256:13d5fe588657a92d36c1fc4ca39b08ea252001c34a46707df702dd8aa4c47281"
     ],
     "ImageConfig": {
       "architecture": "arm64",
-      "created": "2026-07-12T23:52:59.581813295Z",
+      "created": "2026-07-13T05:07:36.93002142Z",
       "history": [
         {
           "created": "2025-08-08T18:20:34Z",
@@ -102,35 +102,35 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-12T23:52:50Z",
+          "created": "2026-07-13T05:07:27Z",
           "created_by": "COPY /wheels /wheels # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-12T23:52:59Z",
+          "created": "2026-07-13T05:07:36Z",
           "created_by": "RUN /bin/sh -c apt-get update     \u0026\u0026 apt-get -y upgrade     \u0026\u0026 rm -rf /var/lib/apt/lists/*     \u0026\u0026 python -m pip install --no-cache-dir --no-index --find-links=/wheels genomic-research-access-api==0.1.0     \u0026\u0026 python -m pip uninstall -y pip setuptools wheel     \u0026\u0026 rm -rf /wheels /root/.cache/pip # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-12T23:52:59Z",
+          "created": "2026-07-13T05:07:36Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-12T23:52:59Z",
+          "created": "2026-07-13T05:07:36Z",
           "created_by": "EXPOSE map[8000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-12T23:52:59Z",
+          "created": "2026-07-13T05:07:36Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"python -c \\\"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).read()\\\"\"] \"30s\" \"5s\" \"10s\" \"0s\" '\\x03'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-12T23:52:59Z",
+          "created": "2026-07-13T05:07:36Z",
           "created_by": "CMD [\"uvicorn\" \"genomic_research_access_api.main:app\" \"--host\" \"0.0.0.0\" \"--port\" \"8000\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -146,8 +146,8 @@
           "sha256:5c1c2aa63cc672fb3b2819dd16432493ead0d3af26c732ffd82c10d667001c58",
           "sha256:c056a12af6178032a370550c94c8f099e988d5a9c2ab65016534a2b200a32217",
           "sha256:e58391a994176acb89d4fe81ea4ed58b2adb50e32e63f985d16e93fb0a290c41",
-          "sha256:9935c877f018d1ce582883b409e6e85d234e1fdde531dd6047512f04abc8954d",
-          "sha256:b74f67f3fb5c6b433b79c1e907ed0b94016ae2370fc8e459f6d448a682855f96"
+          "sha256:d05350849da833c90f3826fdd00f32c7f601a6a3e3b09a13cf9420a069c7ab2a",
+          "sha256:9afbfe3f2ec8c4b018d8e00116149ffe3ef4763c57fe60622f846a1c21247366"
         ]
       },
       "config": {
@@ -211,7 +211,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -336,7 +336,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -363,7 +363,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -390,7 +390,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -490,7 +490,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -590,7 +590,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -617,7 +617,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -644,7 +644,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3
@@ -1127,7 +1127,7 @@
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
           "Title": "[Integer Overflow or Wraparound in libblkid/src/partitions/dos.c]",
-          "Description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+          "Description": "Package updates are available for Amazon Linux 2 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
           "Severity": "HIGH",
           "VendorSeverity": {
             "amazon": 3

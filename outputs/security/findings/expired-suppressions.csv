@@ -1,0 +1,1 @@
+finding_id,source_finding_id,source_tool,finding_type,security_domain,title,normalised_severity,priority,risk_score,asset_id,technical_owner,remediation_owner,due_date,suppression_id,suppression_status,cve,cwe,file,package_name,fixed_version

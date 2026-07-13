@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "tools": {
+    "threat-model": {"adapter_version": "1.0", "source_type": "threat_model"},
+    "gitleaks": {"adapter_version": "1.0", "source_type": "secret_scan"},
+    "semgrep": {"adapter_version": "1.0", "source_type": "static_analysis"},
+    "bandit": {"adapter_version": "1.0", "source_type": "static_analysis"},
+    "pip-audit": {"adapter_version": "1.0", "source_type": "dependency_scan"},
+    "checkov": {"adapter_version": "1.0", "source_type": "iac_scan"},
+    "trivy": {"adapter_version": "1.0", "source_type": "container_scan"},
+    "schemathesis": {"adapter_version": "1.0", "source_type": "dynamic_scan"},
+    "zap": {"adapter_version": "1.0", "source_type": "dynamic_scan"},
+    "dynamic-pytest": {"adapter_version": "1.0", "source_type": "test_result"}
+  }
+}

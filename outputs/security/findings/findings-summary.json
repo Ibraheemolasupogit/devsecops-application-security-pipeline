@@ -1,0 +1,56 @@
+{
+  "deduplicated_count": 2,
+  "expired_suppressions": 0,
+  "findings_by_asset": {
+    "AST-APP-FASTAPI": 9,
+    "AST-CONTAINER": 20,
+    "AST-TERRAFORM": 12
+  },
+  "findings_by_environment": {
+    "locally_validated": 9,
+    "not_deployed": 32
+  },
+  "findings_by_owner": {
+    "Application Engineering": 3,
+    "Cloud Security": 12,
+    "Platform Engineering": 20,
+    "Product Security": 6
+  },
+  "findings_by_priority": {
+    "P2": 15,
+    "P3": 26
+  },
+  "findings_by_severity": {
+    "critical": 3,
+    "high": 30,
+    "informational": 1,
+    "low": 1,
+    "medium": 6
+  },
+  "findings_by_source_tool": {
+    "bandit": 0,
+    "checkov": 12,
+    "dynamic-pytest": 0,
+    "gitleaks": 1,
+    "pip-audit": 0,
+    "schemathesis": 0,
+    "semgrep": 0,
+    "threat-model": 6,
+    "trivy": 22,
+    "zap": 2
+  },
+  "findings_by_type": {
+    "Container": 22,
+    "DAST": 2,
+    "IaC": 12,
+    "Secret": 1,
+    "Threat Model": 6
+  },
+  "findings_with_fixes_available": 0,
+  "findings_without_fixes": 43,
+  "schema_version": "1.0",
+  "suppressed_findings": 15,
+  "total_canonical_findings": 41,
+  "total_source_findings": 43,
+  "unowned_findings": 0
+}

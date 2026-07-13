@@ -394,6 +394,91 @@
     "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
+    "category": "secure_design",
+    "description": "Security evidence from threat modelling, AppSec scanners, infrastructure scans and dynamic API testing must be mapped into one validated findings schema with stable identifiers.",
+    "evidence_reference": "outputs/security/findings/normalised-findings.json",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/models.py; src/genomic_research_access_api/security/findings/adapters",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 7",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-FINDINGS-001",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001",
+      "THR-SUPPLY-002"
+    ],
+    "status": "active",
+    "title": "Canonical findings normalisation",
+    "verification_method": "findings validation and deterministic evidence verification",
+    "verification_reference": "tests/security/test_findings_pipeline.py; Makefile"
+  },
+  {
+    "category": "secure_design",
+    "description": "Duplicate scanner observations must be linked using deterministic exact keys while retaining all native source evidence.",
+    "evidence_reference": "outputs/security/findings/finding-source-map.json",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/deduplicator.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 7",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-FINDINGS-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Cross-tool duplicate preservation",
+    "verification_method": "deduplication unit tests and source-map evidence verification",
+    "verification_reference": "tests/security/test_findings_pipeline.py"
+  },
+  {
+    "category": "governance",
+    "description": "Findings must include transparent risk factors, portfolio owners and deterministic remediation SLA dates derived from controlled configuration.",
+    "evidence_reference": "outputs/security/findings/risk-summary.json; outputs/security/findings/ownership-summary.json; outputs/security/findings/sla-summary.json",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/enrichment.py; src/genomic_research_access_api/security/findings/risk.py; src/genomic_research_access_api/security/findings/sla.py; src/genomic_research_access_api/security/findings/ownership.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 7",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-FINDINGS-003",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Risk enrichment and ownership assignment",
+    "verification_method": "findings enrichment tests and evidence summaries",
+    "verification_reference": "tests/security/test_findings_pipeline.py"
+  },
+  {
+    "category": "governance",
+    "description": "Governed suppressions must remain visible in canonical findings with reason, expiry and compensating control metadata.",
+    "evidence_reference": "outputs/security/findings/suppressed-findings.csv",
+    "implementation_reference": "src/genomic_research_access_api/security/findings/adapters/__init__.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 7",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-FINDINGS-004",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-SECRETS-001",
+      "THR-SUPPLY-001",
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Suppression visibility",
+    "verification_method": "suppression ingestion tests and suppressed findings evidence",
+    "verification_reference": "tests/security/test_findings_pipeline.py"
+  },
+  {
     "category": "infrastructure_security",
     "description": "Future infrastructure definitions must be reviewed and scanned before deployment.",
     "evidence_reference": "outputs/security/appsec/iac-scan-summary.json",

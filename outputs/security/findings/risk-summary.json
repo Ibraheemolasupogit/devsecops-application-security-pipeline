@@ -1,0 +1,69 @@
+{
+  "by_priority": {
+    "P2": 15,
+    "P3": 26
+  },
+  "formula": "30% severity + 20% exploitability + 15% internet exposure + 15% asset criticality + 10% data sensitivity + 5% privilege required + 5% age/recurrence",
+  "highest_risk": [
+    {
+      "finding_id": "FND-SUPPRESSIO-974e196f7185",
+      "priority": "P2",
+      "risk_score": 73.25,
+      "title": "Suppressed gitleaks finding private-key"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV2_AWS_5"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV2_AWS_57"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-65201925e5c5",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV_AWS_260"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-68e51d21b290",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV2_AWS_57"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV_AWS_109,CKV_AWS_111,CKV_AWS_356"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV_AWS_358"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV_AWS_2"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-8632c434b354",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV_AWS_144"
+    },
+    {
+      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+      "priority": "P2",
+      "risk_score": 67.25,
+      "title": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356"
+    }
+  ]
+}
