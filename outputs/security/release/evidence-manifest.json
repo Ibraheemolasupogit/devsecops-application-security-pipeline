@@ -1,0 +1,75 @@
+{
+  "as_of_date": "2026-01-01",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "decision": "conditional_pass",
+  "decision_id": "REL-3815ed0e210b5dcc",
+  "environment": "dev",
+  "generator": "genomic_research_access_api.security.release.evidence",
+  "input_files": {
+    "config/release/approval-policy.yaml": {
+      "path": "config/release/approval-policy.yaml",
+      "sha256": "42ebf7a1f347a794731d5fb40aed4e1a412880d1dae13995356ab0362e19f878"
+    },
+    "config/release/approved-roles.example.yaml": {
+      "path": "config/release/approved-roles.example.yaml",
+      "sha256": "f90a706c452438547780b9ed81b0146fd2445341acfdae5108591e5334b0b933"
+    },
+    "config/release/environment-policy.yaml": {
+      "path": "config/release/environment-policy.yaml",
+      "sha256": "99bded9a8dee5a3aa639567797ce910895e0ab5d24868b760f659d479f346d6f"
+    },
+    "config/release/gate-rules.yaml": {
+      "path": "config/release/gate-rules.yaml",
+      "sha256": "475e5a4e538998ea7ead1fc87ab5a59431d347595125a3f82d140876ea7f170d"
+    },
+    "config/release/release-policy.yaml": {
+      "path": "config/release/release-policy.yaml",
+      "sha256": "7b1721942b025254270a8f75769dea9c5fdd1cbbaab9a8013a7e10f69b3dd565"
+    },
+    "config/release/severity-overrides.yaml": {
+      "path": "config/release/severity-overrides.yaml",
+      "sha256": "4a141e37ef5d4815782440a2b83306ad05c158988b155b46ffc8d09ef8f8a03e"
+    },
+    "outputs/security/findings/deduplicated-findings.json": {
+      "path": "outputs/security/findings/deduplicated-findings.json",
+      "sha256": "b4360b93b36555ccdb7f5443f3a77cf505ba8af4e42012d80ea2488bac7a465b"
+    },
+    "outputs/security/findings/evidence-manifest.json": {
+      "path": "outputs/security/findings/evidence-manifest.json",
+      "sha256": "c742acc626ea42e05d514137d85b011f9468aded2711f224688d6fe5de6d2bd4"
+    }
+  },
+  "output_files": {
+    "finding-evaluations.json": {
+      "path": "outputs/security/release/finding-evaluations.json",
+      "sha256": "bc904820d5953004c69700df389918509e410ee4c9b3e5351dcab044d53941ca"
+    },
+    "matched-rules.json": {
+      "path": "outputs/security/release/matched-rules.json",
+      "sha256": "894bd166fd1cef25c432e4d96b8412f948c4089fecbe0d89c3a4a55c0825a62a"
+    },
+    "policy-validation-summary.json": {
+      "path": "outputs/security/release/policy-validation-summary.json",
+      "sha256": "7e88d711bd3c34580a2f36674f74dc33cef09a21db3c2deb987d026502ab2e53"
+    },
+    "release-actions.json": {
+      "path": "outputs/security/release/release-actions.json",
+      "sha256": "a01ef8c3e494c946df9b99ac2bcb72bb18221edd0edb618400ca727ff19ad67a"
+    },
+    "release-gate-decision.json": {
+      "path": "outputs/security/release/release-gate-decision.json",
+      "sha256": "ec675a44899cc93077ca8ed7965e1a9d92fe7e142b9401123c0b215497125b68"
+    },
+    "release-risk-summary.json": {
+      "path": "outputs/security/release/release-risk-summary.json",
+      "sha256": "93543a3a0664ead03be88d408de66a0c223373c36db6eb083c691b2aff5a1d63"
+    },
+    "required-approvals.json": {
+      "path": "outputs/security/release/required-approvals.json",
+      "sha256": "dd1d02e5e19b481c38b3c320af952e959cdb57b7daf7af74804e81c4b126bd9c"
+    }
+  },
+  "policy_version": "1.0",
+  "project_version": "0.1.0",
+  "schema_version": "1.0"
+}

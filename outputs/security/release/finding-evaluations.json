@@ -1,0 +1,959 @@
+{
+  "evaluations": [
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-026cbd40a3d8",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-026cbd40a3d8 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-033201244a2b",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-033201244a2b contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-35a70101ee98",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-35a70101ee98 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-35a7a61eb9e3",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-35a7a61eb9e3 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-3686ad447a1f",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-3686ad447a1f contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-4a39d4c85743",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-4a39d4c85743 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-57b96cf12bee",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-57b96cf12bee contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "due_soon",
+      "effective_severity": "critical",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-5ee1761422cc",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-CONTAINER-5ee1761422cc contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 62.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-6017bcc173f8",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-6017bcc173f8 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-6884a6a2aeb3",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-6884a6a2aeb3 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-77763b149b4f",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-77763b149b4f contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-9360fa554791",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-9360fa554791 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "due_soon",
+      "effective_severity": "critical",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-95a38a1f2a20",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-CONTAINER-95a38a1f2a20 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 62.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-96b263718199",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-96b263718199 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-9bac41a1b5ac",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-9bac41a1b5ac contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-ba223b9333c9",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-ba223b9333c9 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-c1e6ced9904f",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-c1e6ced9904f contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-c7563eb73df0",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-c7563eb73df0 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-d0df15bb32ed",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-d0df15bb32ed contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-ef0f3e5e6558",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-ef0f3e5e6558 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "low",
+      "environment": "locally_validated",
+      "finding_id": "FND-DAST-7938d4335d4a",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-002"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-DAST-7938d4335d4a contributes warn through RG-WARN-002.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "risk_score": 52.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "informational",
+      "environment": "locally_validated",
+      "finding_id": "FND-DAST-e607d905531a",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-002"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-DAST-e607d905531a contributes warn through RG-WARN-002.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "risk_score": 46.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-0e84d1c52550",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-0e84d1c52550 contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-17c88481ce5d",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-17c88481ce5d contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-667c88d66538",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-667c88d66538 contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-77c7990be9b8",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-77c7990be9b8 contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-ac50e3235345",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-ac50e3235345 contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-e7cd910bd1f6",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-e7cd910bd1f6 contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-1065083a8d4b contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-47693ff859ed contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-65201925e5c5",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-65201925e5c5 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-68e51d21b290",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-68e51d21b290 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-6dce772b98c3 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-713bb8f041d7 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-7b3ddcaa6af8 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-8632c434b354",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-8632c434b354 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "critical",
+      "environment": "locally_validated",
+      "finding_id": "FND-SUPPRESSIO-974e196f7185",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-974e196f7185 contributes conditional_pass through RG-COND-002.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "risk_score": 73.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-b5c9f1d0aae2 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-d403fca790bf",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-d403fca790bf contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-e0d3613118cd",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-e0d3613118cd contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-SUPPRESSIO-f1fb6d611749",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002",
+        "RG-COND-003"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-f1fb6d611749 contributes conditional_pass through RG-COND-002, RG-COND-003.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "risk_score": 67.25,
+      "suppression_status": "active"
+    }
+  ],
+  "schema_version": "1.0"
+}

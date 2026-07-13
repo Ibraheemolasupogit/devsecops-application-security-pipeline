@@ -8,7 +8,7 @@ It is not a production genomics platform.
 
 It is not affiliated with or endorsed by Genomics England.
 
-AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration, cloud deployment, release gates and vulnerability-management operations are deferred to later milestones.
+AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration, cloud deployment, formal exception workflow and vulnerability-management operations are deferred to later milestones.
 
 ## Problem Statement
 
@@ -29,6 +29,8 @@ Milestone 5 delivered the core AppSec pipeline: pinned scanner configuration, Se
 Milestone 6 adds local-only dynamic API security validation: dynamic pytest boundary tests, pinned Schemathesis OpenAPI testing, pinned OWASP ZAP baseline scanning, bounded resource-consumption checks, deterministic dynamic evidence and dynamic-security reports. Dynamic scans are restricted to localhost, loopback and approved local Docker targets.
 
 Milestone 7 adds canonical findings normalisation and risk enrichment across threat-model, AppSec, infrastructure and dynamic-security outputs. It preserves native evidence and governed suppressions, assigns deterministic owners and SLAs, and does not implement release gates or lifecycle workflow.
+
+Milestone 8 adds risk-based release gates over the Milestone 7 canonical findings. It produces deterministic release decisions, rule evaluations, approval requirements, action lists, risk summaries and reports. Evidence generation succeeds for blocked and conditional decisions; enforcement is a separate command. It does not deploy, push containers, create AWS resources, or implement a formal exception workflow.
 
 ## Milestone 1 Scope
 
@@ -109,6 +111,20 @@ Implemented as local pipeline configuration and evidence:
 
 Not implemented in Milestone 5: vulnerability triage workflow, release approval gates, artifact signing/provenance, cloud deployment, scanner dashboards, Security Champions programme or AWS resource creation.
 
+## Milestone 8 Scope
+
+Implemented as local release-assurance policy and evidence:
+
+- Versioned release policy, gate rules, environment policy, approval policy and severity override configuration under `config/release/`.
+- Deterministic release gate evaluation over canonical findings.
+- Decision values: `pass`, `conditional_pass`, `warn` and `block`.
+- Rule outcomes: `matched`, `not_matched`, `not_applicable`, `suppressed` and `deferred`.
+- Release evidence under `outputs/security/release/` and Markdown reports under `reports/security/`.
+- Approval fixtures for enforcement validation.
+- A release-assurance CI workflow that runs evidence mode only.
+
+Not implemented in Milestone 8: formal exception workflow, deployment approval system, vulnerability lifecycle ownership process, artefact signing/provenance, AWS deployment, container push or production release automation.
+
 ## API Capabilities
 
 - `GET /health`
@@ -181,6 +197,13 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make verify-infrastructure-evidence`: verify deterministic infrastructure evidence.
 - `make security-tools`: print pinned AppSec scanner inventory.
 - `make findings-full`: normalise existing security evidence into canonical findings, validate deterministic evidence and generate findings reports.
+- `make release-policy-validate`: validate release policy, approval roles, environments and gate-rule syntax.
+- `make release-gate-evaluate`: evaluate the release gate in evidence mode.
+- `make release-evidence`: generate deterministic release-assurance evidence.
+- `make verify-release-evidence`: verify release evidence checksums and determinism.
+- `make release-report`: generate release-assurance Markdown reports.
+- `make release-full`: generate, verify and report release-assurance evidence.
+- `make release-gate-enforce`: enforce the current release decision and return nonzero for block or missing conditional approvals.
 - `make secrets-scan`: run Gitleaks via local binary or pinned container.
 - `make semgrep-test`: run Semgrep custom rule tests.
 - `make sast`: run Semgrep and Bandit.

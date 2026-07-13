@@ -1,0 +1,195 @@
+{
+  "$defs": {
+    "ReleaseDecision": {
+      "enum": [
+        "pass",
+        "conditional_pass",
+        "warn",
+        "block"
+      ],
+      "title": "ReleaseDecision",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "application": {
+      "title": "Application",
+      "type": "string"
+    },
+    "as_of_date": {
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "blocking_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Blocking Finding Ids",
+      "type": "array"
+    },
+    "conditional_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Conditional Finding Ids",
+      "type": "array"
+    },
+    "decision": {
+      "$ref": "#/$defs/ReleaseDecision"
+    },
+    "decision_id": {
+      "title": "Decision Id",
+      "type": "string"
+    },
+    "decision_timestamp": {
+      "title": "Decision Timestamp",
+      "type": "string"
+    },
+    "deployment_status": {
+      "title": "Deployment Status",
+      "type": "string"
+    },
+    "environment": {
+      "title": "Environment",
+      "type": "string"
+    },
+    "evaluated_finding_count": {
+      "title": "Evaluated Finding Count",
+      "type": "integer"
+    },
+    "evidence_references": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence References",
+      "type": "array"
+    },
+    "expired_suppression_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expired Suppression Finding Ids",
+      "type": "array"
+    },
+    "findings_input_checksum": {
+      "title": "Findings Input Checksum",
+      "type": "string"
+    },
+    "informational_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Informational Finding Ids",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "overdue_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Overdue Finding Ids",
+      "type": "array"
+    },
+    "policy_version": {
+      "title": "Policy Version",
+      "type": "string"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "repository": {
+      "title": "Repository",
+      "type": "string"
+    },
+    "required_actions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Actions",
+      "type": "array"
+    },
+    "required_approvals": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Approvals",
+      "type": "array"
+    },
+    "rules_evaluated": {
+      "title": "Rules Evaluated",
+      "type": "integer"
+    },
+    "rules_matched": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Rules Matched",
+      "type": "array"
+    },
+    "rules_not_matched": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Rules Not Matched",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "unowned_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unowned Finding Ids",
+      "type": "array"
+    },
+    "warning_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warning Finding Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "decision_id",
+    "decision",
+    "decision_timestamp",
+    "as_of_date",
+    "environment",
+    "application",
+    "repository",
+    "policy_version",
+    "findings_input_checksum",
+    "evaluated_finding_count",
+    "blocking_finding_ids",
+    "conditional_finding_ids",
+    "warning_finding_ids",
+    "informational_finding_ids",
+    "unowned_finding_ids",
+    "expired_suppression_finding_ids",
+    "overdue_finding_ids",
+    "rules_evaluated",
+    "rules_matched",
+    "rules_not_matched",
+    "required_approvals",
+    "required_actions",
+    "rationale",
+    "limitations",
+    "deployment_status",
+    "evidence_references"
+  ],
+  "title": "ReleaseDecisionRecord",
+  "type": "object"
+}

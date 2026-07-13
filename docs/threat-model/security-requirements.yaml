@@ -613,6 +613,84 @@
     "planned_milestone": "Milestone 3"
   },
   {
+    "requirement_id": "SR-RELEASE-001",
+    "title": "Risk-based release gate policy",
+    "description": "Canonical findings must be evaluated against deterministic release rules with explicit pass, conditional pass, warn and block decisions.",
+    "category": "release_assurance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/release; config/release/gate-rules.yaml",
+    "verification_method": "release gate unit tests and make release-full",
+    "verification_reference": "tests/security/test_release_gates.py; Makefile",
+    "evidence_reference": "outputs/security/release/release-gate-decision.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 8"
+  },
+  {
+    "requirement_id": "SR-RELEASE-002",
+    "title": "Release decision traceability",
+    "description": "Release gate outputs must retain finding, rule, rationale, action, approval and evidence-manifest traceability.",
+    "category": "release_assurance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/release/evidence.py; src/genomic_research_access_api/security/release/report.py",
+    "verification_method": "deterministic release evidence tests and manifest verification",
+    "verification_reference": "tests/security/test_release_gates.py",
+    "evidence_reference": "outputs/security/release/evidence-manifest.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 8"
+  },
+  {
+    "requirement_id": "SR-RELEASE-003",
+    "title": "Approval-aware conditional release enforcement",
+    "description": "Conditional release decisions must identify required approval roles and fail enforcement when approvals are missing.",
+    "category": "release_assurance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "src/genomic_research_access_api/security/release/__main__.py; config/release/approval-policy.yaml",
+    "verification_method": "approval fixture enforcement tests",
+    "verification_reference": "tests/security/test_release_gates.py",
+    "evidence_reference": "outputs/security/release/required-approvals.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 8"
+  },
+  {
+    "requirement_id": "SR-RELEASE-004",
+    "title": "Expired suppression, ownership and overdue risk blocking",
+    "description": "Release rules must block expired critical or high suppressions, unowned critical or high findings and overdue P1 findings.",
+    "category": "release_assurance",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "config/release/gate-rules.yaml",
+    "verification_method": "release gate edge-case tests",
+    "verification_reference": "tests/security/test_release_gates.py",
+    "evidence_reference": "outputs/security/release/finding-evaluations.json",
+    "owner": "product_security_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 8"
+  },
+  {
     "requirement_id": "SR-REVIEW-001",
     "title": "Security review cadence",
     "description": "Security reviews must be refreshed when architecture, data flows or deployment assumptions change.",

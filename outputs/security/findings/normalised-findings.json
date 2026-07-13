@@ -1819,13 +1819,13 @@
       "cve": null,
       "cwe": "CWE-1104",
       "data_sensitivity": "high",
-      "deduplication_key": "dast|10116|http://host.docker.internal:8000/robots.txt",
+      "deduplication_key": "dast|10116|http://host.docker.internal:8000/sitemap.xml",
       "description": "<p>The version of ZAP you are using to test your app is out of date and is no longer being updated.</p><p>The risk level is set based on how out of date your ZAP version is.</p>",
       "due_date": "2026-03-02",
       "environment": "locally_validated",
       "exploitability": "unknown",
       "file": null,
-      "finding_id": "FND-DAST-8c69fdea3ac6",
+      "finding_id": "FND-DAST-7938d4335d4a",
       "finding_type": "DAST",
       "first_detected": "2026-01-01",
       "fixed_version": null,
@@ -1859,7 +1859,7 @@
       "remediation_owner": "Application Engineering",
       "remediation_sla_days": 60,
       "repository": "devsecops-application-security-pipeline",
-      "resource": "http://host.docker.internal:8000/robots.txt",
+      "resource": "http://host.docker.internal:8000/sitemap.xml",
       "risk_owner": "Risk Owner",
       "risk_score": 52.25,
       "schema_version": "1.0",
@@ -1873,13 +1873,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/dynamic/raw/zap-report.json",
-          "record_hash": "ba6406e793ae8e04ea0a2ebe746f7666b5bb92de85f0d84e2767b29e58bf1135",
+          "record_hash": "3b354f9ddff46d3f0a2e6193189cdebd3653bad14622bc8f7cae6be7571c5b5f",
           "record_pointer": "/site/0/alerts/0",
           "summary": "ZAP is Out of Date"
         }
       ],
       "source_finding_id": "10116",
-      "source_record_hash": "ba6406e793ae8e04ea0a2ebe746f7666b5bb92de85f0d84e2767b29e58bf1135",
+      "source_record_hash": "3b354f9ddff46d3f0a2e6193189cdebd3653bad14622bc8f7cae6be7571c5b5f",
       "source_tool": "zap",
       "source_type": "dynamic_scan",
       "squad": "Application Engineering",
@@ -1965,13 +1965,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/dynamic/raw/zap-report.json",
-          "record_hash": "a5adf2f6e02cbc25ed0ebcb81c4e82a7c9d069c618cdda63a9e5ddf59fb16430",
+          "record_hash": "0811d06f646967846de3af21b48d92c7a664d697972237fab671d3bca3e499d3",
           "record_pointer": "/site/0/alerts/1",
           "summary": "Storable and Cacheable Content"
         }
       ],
       "source_finding_id": "10049",
-      "source_record_hash": "a5adf2f6e02cbc25ed0ebcb81c4e82a7c9d069c618cdda63a9e5ddf59fb16430",
+      "source_record_hash": "0811d06f646967846de3af21b48d92c7a664d697972237fab671d3bca3e499d3",
       "source_tool": "zap",
       "source_type": "dynamic_scan",
       "squad": "Application Engineering",

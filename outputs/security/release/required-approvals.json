@@ -1,0 +1,115 @@
+{
+  "decision_id": "REL-3815ed0e210b5dcc",
+  "enforcement_exit_code": 1,
+  "missing_approvals": [
+    "Cloud Security",
+    "Product Security",
+    "Risk Owner",
+    "Technical Owner"
+  ],
+  "provided_approvals": [],
+  "required_approvals": [
+    {
+      "finding_ids": [
+        "FND-SUPPRESSIO-1065083a8d4b",
+        "FND-SUPPRESSIO-47693ff859ed",
+        "FND-SUPPRESSIO-65201925e5c5",
+        "FND-SUPPRESSIO-68e51d21b290",
+        "FND-SUPPRESSIO-6dce772b98c3",
+        "FND-SUPPRESSIO-713bb8f041d7",
+        "FND-SUPPRESSIO-7b3ddcaa6af8",
+        "FND-SUPPRESSIO-8632c434b354",
+        "FND-SUPPRESSIO-b5c9f1d0aae2",
+        "FND-SUPPRESSIO-d403fca790bf",
+        "FND-SUPPRESSIO-e0d3613118cd",
+        "FND-SUPPRESSIO-f1fb6d611749"
+      ],
+      "role": "Cloud Security",
+      "status": "missing"
+    },
+    {
+      "finding_ids": [
+        "FND-CONTAINER-026cbd40a3d8",
+        "FND-CONTAINER-033201244a2b",
+        "FND-CONTAINER-35a70101ee98",
+        "FND-CONTAINER-35a7a61eb9e3",
+        "FND-CONTAINER-3686ad447a1f",
+        "FND-CONTAINER-4a39d4c85743",
+        "FND-CONTAINER-57b96cf12bee",
+        "FND-CONTAINER-5ee1761422cc",
+        "FND-CONTAINER-6017bcc173f8",
+        "FND-CONTAINER-6884a6a2aeb3",
+        "FND-CONTAINER-77763b149b4f",
+        "FND-CONTAINER-9360fa554791",
+        "FND-CONTAINER-95a38a1f2a20",
+        "FND-CONTAINER-96b263718199",
+        "FND-CONTAINER-9bac41a1b5ac",
+        "FND-CONTAINER-ba223b9333c9",
+        "FND-CONTAINER-c1e6ced9904f",
+        "FND-CONTAINER-c7563eb73df0",
+        "FND-CONTAINER-d0df15bb32ed",
+        "FND-CONTAINER-ef0f3e5e6558",
+        "FND-SUPPRESSIO-1065083a8d4b",
+        "FND-SUPPRESSIO-47693ff859ed",
+        "FND-SUPPRESSIO-65201925e5c5",
+        "FND-SUPPRESSIO-68e51d21b290",
+        "FND-SUPPRESSIO-6dce772b98c3",
+        "FND-SUPPRESSIO-713bb8f041d7",
+        "FND-SUPPRESSIO-7b3ddcaa6af8",
+        "FND-SUPPRESSIO-8632c434b354",
+        "FND-SUPPRESSIO-974e196f7185",
+        "FND-SUPPRESSIO-b5c9f1d0aae2",
+        "FND-SUPPRESSIO-d403fca790bf",
+        "FND-SUPPRESSIO-e0d3613118cd",
+        "FND-SUPPRESSIO-f1fb6d611749"
+      ],
+      "role": "Product Security",
+      "status": "missing"
+    },
+    {
+      "finding_ids": [
+        "FND-SUPPRESSIO-1065083a8d4b",
+        "FND-SUPPRESSIO-47693ff859ed",
+        "FND-SUPPRESSIO-65201925e5c5",
+        "FND-SUPPRESSIO-68e51d21b290",
+        "FND-SUPPRESSIO-6dce772b98c3",
+        "FND-SUPPRESSIO-713bb8f041d7",
+        "FND-SUPPRESSIO-7b3ddcaa6af8",
+        "FND-SUPPRESSIO-8632c434b354",
+        "FND-SUPPRESSIO-b5c9f1d0aae2",
+        "FND-SUPPRESSIO-d403fca790bf",
+        "FND-SUPPRESSIO-e0d3613118cd",
+        "FND-SUPPRESSIO-f1fb6d611749"
+      ],
+      "role": "Risk Owner",
+      "status": "missing"
+    },
+    {
+      "finding_ids": [
+        "FND-CONTAINER-026cbd40a3d8",
+        "FND-CONTAINER-033201244a2b",
+        "FND-CONTAINER-35a70101ee98",
+        "FND-CONTAINER-35a7a61eb9e3",
+        "FND-CONTAINER-3686ad447a1f",
+        "FND-CONTAINER-4a39d4c85743",
+        "FND-CONTAINER-57b96cf12bee",
+        "FND-CONTAINER-5ee1761422cc",
+        "FND-CONTAINER-6017bcc173f8",
+        "FND-CONTAINER-6884a6a2aeb3",
+        "FND-CONTAINER-77763b149b4f",
+        "FND-CONTAINER-9360fa554791",
+        "FND-CONTAINER-95a38a1f2a20",
+        "FND-CONTAINER-96b263718199",
+        "FND-CONTAINER-9bac41a1b5ac",
+        "FND-CONTAINER-ba223b9333c9",
+        "FND-CONTAINER-c1e6ced9904f",
+        "FND-CONTAINER-c7563eb73df0",
+        "FND-CONTAINER-d0df15bb32ed",
+        "FND-CONTAINER-ef0f3e5e6558"
+      ],
+      "role": "Technical Owner",
+      "status": "missing"
+    }
+  ],
+  "schema_version": "1.0"
+}

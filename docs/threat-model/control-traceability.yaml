@@ -318,5 +318,25 @@
     "evidence_references": ["outputs/security/findings/normalised-findings.json", "outputs/security/findings/finding-source-map.json"],
     "residual_risk_id": "RR-005",
     "notes": "Scanner observations and governed suppressions are retained as canonical source findings."
+  },
+  {
+    "traceability_id": "TRACE-033",
+    "threat_id": "THR-REVIEW-001",
+    "requirement_ids": ["SR-RELEASE-001", "SR-RELEASE-002", "SR-RELEASE-003", "SR-RELEASE-004"],
+    "implementation_references": ["src/genomic_research_access_api/security/release", "config/release", ".github/workflows/release-assurance.yml"],
+    "verification_methods": ["make release-full", "make verify-release-evidence", "release approval fixture tests"],
+    "evidence_references": ["outputs/security/release/release-gate-decision.json", "outputs/security/release/evidence-manifest.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Milestone 8 adds evidence-backed release assurance over canonical findings without implementing a formal exception workflow."
+  },
+  {
+    "traceability_id": "TRACE-034",
+    "threat_id": "THR-SUPPLY-001",
+    "requirement_ids": ["SR-RELEASE-001", "SR-RELEASE-004"],
+    "implementation_references": ["config/release/gate-rules.yaml", "outputs/security/findings/deduplicated-findings.json"],
+    "verification_methods": ["release rules for fix availability and no-fix container findings"],
+    "evidence_references": ["outputs/security/release/finding-evaluations.json", "outputs/security/release/release-risk-summary.json"],
+    "residual_risk_id": "RR-005",
+    "notes": "Release rules distinguish fix availability, non-deployed image risk and suppression governance."
   }
 ]

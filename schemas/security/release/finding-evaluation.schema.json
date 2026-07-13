@@ -1,0 +1,120 @@
+{
+  "$defs": {
+    "ReleaseDecision": {
+      "enum": [
+        "pass",
+        "conditional_pass",
+        "warn",
+        "block"
+      ],
+      "title": "ReleaseDecision",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "decision_contribution": {
+      "$ref": "#/$defs/ReleaseDecision"
+    },
+    "due_status": {
+      "title": "Due Status",
+      "type": "string"
+    },
+    "effective_severity": {
+      "title": "Effective Severity",
+      "type": "string"
+    },
+    "environment": {
+      "title": "Environment",
+      "type": "string"
+    },
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "fix_status": {
+      "title": "Fix Status",
+      "type": "string"
+    },
+    "matched_rule_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Matched Rule Ids",
+      "type": "array"
+    },
+    "owner_status": {
+      "title": "Owner Status",
+      "type": "string"
+    },
+    "priority": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Priority"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "required_actions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Actions",
+      "type": "array"
+    },
+    "required_approvals": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Approvals",
+      "type": "array"
+    },
+    "risk_score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Risk Score"
+    },
+    "suppression_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Suppression Status"
+    }
+  },
+  "required": [
+    "finding_id",
+    "matched_rule_ids",
+    "decision_contribution",
+    "effective_severity",
+    "risk_score",
+    "priority",
+    "owner_status",
+    "suppression_status",
+    "due_status",
+    "fix_status",
+    "environment",
+    "rationale",
+    "required_actions",
+    "required_approvals"
+  ],
+  "title": "FindingEvaluation",
+  "type": "object"
+}

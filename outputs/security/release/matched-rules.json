@@ -1,0 +1,763 @@
+{
+  "matched_rules": [
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-026cbd40a3d8",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-026cbd40a3d8 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-033201244a2b",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-033201244a2b is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-35a70101ee98",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-35a70101ee98 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-35a7a61eb9e3",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-35a7a61eb9e3 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-3686ad447a1f",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-3686ad447a1f is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-4a39d4c85743",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-4a39d4c85743 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-57b96cf12bee",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-57b96cf12bee is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-5ee1761422cc",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-5ee1761422cc is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-6017bcc173f8",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-6017bcc173f8 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-6884a6a2aeb3",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-6884a6a2aeb3 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-77763b149b4f",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-77763b149b4f is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-9360fa554791",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-9360fa554791 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-95a38a1f2a20",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-95a38a1f2a20 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-96b263718199",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-96b263718199 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-9bac41a1b5ac",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-9bac41a1b5ac is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-ba223b9333c9",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-ba223b9333c9 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-c1e6ced9904f",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-c1e6ced9904f is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-c7563eb73df0",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-c7563eb73df0 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-d0df15bb32ed",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-d0df15bb32ed is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-ef0f3e5e6558",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-ef0f3e5e6558 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-1065083a8d4b has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-47693ff859ed has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-65201925e5c5",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-65201925e5c5 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-68e51d21b290",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-68e51d21b290 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-6dce772b98c3 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-713bb8f041d7 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-7b3ddcaa6af8 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-8632c434b354",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-8632c434b354 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-974e196f7185",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-974e196f7185 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-b5c9f1d0aae2 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-d403fca790bf",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-d403fca790bf has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-e0d3613118cd",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-e0d3613118cd has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-f1fb6d611749",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-f1fb6d611749 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-1065083a8d4b requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-47693ff859ed requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-65201925e5c5",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-65201925e5c5 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-68e51d21b290",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-68e51d21b290 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-6dce772b98c3 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-713bb8f041d7 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-7b3ddcaa6af8 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-8632c434b354",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-8632c434b354 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-b5c9f1d0aae2 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-d403fca790bf",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-d403fca790bf requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-e0d3613118cd",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-e0d3613118cd requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-f1fb6d611749",
+      "outcome": "suppressed",
+      "priority": 120,
+      "rationale": "Non-deployed infrastructure finding FND-SUPPRESSIO-f1fb6d611749 requires Cloud Security review.",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Risk Owner"
+      ],
+      "rule_id": "RG-COND-003"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SECUREDESI-0e84d1c52550",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-0e84d1c52550 remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SECUREDESI-17c88481ce5d",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-17c88481ce5d remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SECUREDESI-667c88d66538",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-667c88d66538 remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SECUREDESI-77c7990be9b8",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-77c7990be9b8 remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SECUREDESI-ac50e3235345",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-ac50e3235345 remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SECUREDESI-e7cd910bd1f6",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-e7cd910bd1f6 remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-DAST-7938d4335d4a",
+      "outcome": "matched",
+      "priority": 210,
+      "rationale": "Finding FND-DAST-7938d4335d4a is low or informational.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-002"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-DAST-e607d905531a",
+      "outcome": "matched",
+      "priority": 210,
+      "rationale": "Finding FND-DAST-e607d905531a is low or informational.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-002"
+    }
+  ],
+  "schema_version": "1.0"
+}

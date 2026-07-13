@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "allowed_roles": [
+    "Product Security",
+    "Technical Owner",
+    "Risk Owner",
+    "Cloud Security",
+    "Application Engineering",
+    "Platform Engineering"
+  ],
+  "approval_sets": {
+    "governed_suppression": ["Product Security"],
+    "runtime_no_fix": ["Product Security", "Technical Owner"],
+    "iac_reference": ["Cloud Security", "Risk Owner"],
+    "application_warning": ["Application Engineering"]
+  }
+}

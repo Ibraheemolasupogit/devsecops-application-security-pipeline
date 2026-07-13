@@ -13,13 +13,14 @@
     "governance": 3,
     "iam": 2,
     "infrastructure_security": 2,
+    "release_assurance": 4,
     "secrets": 1,
     "secure_design": 3,
     "supply_chain": 4,
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 36,
+    "implemented": 40,
     "planned": 2
   },
   "residual_risks_by_rating": {

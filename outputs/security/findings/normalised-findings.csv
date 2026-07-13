@@ -19,7 +19,7 @@ FND-CONTAINER-c1e6ced9904f,CVE-2025-69720,trivy,Container,Container,ncurses-bin 
 FND-CONTAINER-c7563eb73df0,CVE-2026-41992,trivy,Container,Container,gzip CVE-2026-41992,high,P3,56.25,AST-CONTAINER,Platform Engineering,Platform Engineering,2026-01-15,,,CVE-2026-41992,,,gzip,
 FND-CONTAINER-d0df15bb32ed,CVE-2026-53615,trivy,Container,Container,login CVE-2026-53615,high,P3,56.25,AST-CONTAINER,Platform Engineering,Platform Engineering,2026-01-15,,,CVE-2026-53615,,,login,
 FND-CONTAINER-ef0f3e5e6558,CVE-2026-53615,trivy,Container,Container,mount CVE-2026-53615,high,P3,56.25,AST-CONTAINER,Platform Engineering,Platform Engineering,2026-01-15,,,CVE-2026-53615,,,mount,
-FND-DAST-8c69fdea3ac6,10116,zap,DAST,DAST,ZAP is Out of Date,low,P3,52.25,AST-APP-FASTAPI,Application Engineering,Application Engineering,2026-03-02,,,,CWE-1104,,,
+FND-DAST-7938d4335d4a,10116,zap,DAST,DAST,ZAP is Out of Date,low,P3,52.25,AST-APP-FASTAPI,Application Engineering,Application Engineering,2026-03-02,,,,CWE-1104,,,
 FND-DAST-e607d905531a,10049,zap,DAST,DAST,Storable and Cacheable Content,informational,P3,46.25,AST-APP-FASTAPI,Application Engineering,Application Engineering,2026-04-01,,,,CWE-524,,,
 FND-SECUREDESI-0e84d1c52550,RR-009,threat-model,Threat Model,Secure Design,Residual design risk RR-009,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
 FND-SECUREDESI-17c88481ce5d,RR-003,threat-model,Threat Model,Secure Design,Residual design risk RR-003,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,

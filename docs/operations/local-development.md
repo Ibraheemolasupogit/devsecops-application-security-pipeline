@@ -49,6 +49,20 @@ make findings-full
 
 This consumes existing source evidence and writes canonical findings, CSV exports, risk/ownership/SLA summaries and reports. It does not refresh Docker-backed scanner output by itself.
 
+## Release Assurance
+
+```bash
+make release-full
+```
+
+This validates release policy, evaluates canonical findings, writes release evidence, verifies deterministic checksums and generates reports. Evidence mode is intentionally separate from enforcement.
+
+```bash
+make release-gate-enforce
+```
+
+The enforcement target returns nonzero for `block` and for missing approvals on `conditional_pass`.
+
 ## Local API Tokens
 
 Protected `/api/v1/*` routes require a bearer token. Generate synthetic local tokens with:

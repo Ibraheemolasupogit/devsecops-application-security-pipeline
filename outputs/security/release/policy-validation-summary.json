@@ -1,0 +1,12 @@
+{
+  "approval_role_count": 6,
+  "environment_count": 2,
+  "errors": [],
+  "policy_version": "1.0",
+  "rule_count": 12,
+  "schema_version": "1.0",
+  "valid": true,
+  "warnings": [
+    "No policy validation warnings."
+  ]
+}

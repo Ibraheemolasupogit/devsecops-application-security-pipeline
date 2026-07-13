@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "policy_version": "1.0",
+  "default_environment": "dev",
+  "deployment_status": "not_deployed",
+  "precedence": ["block", "conditional_pass", "warn", "pass"],
+  "due_soon_days": 7,
+  "suppression_approaching_expiry_days": 14,
+  "enforcement_defaults": {
+    "pass": 0,
+    "warn": 0,
+    "conditional_pass": 1,
+    "block": 2
+  },
+  "limitations": [
+    "Portfolio demonstration policy, not Genomics England policy.",
+    "Repository is not deployed; decisions are release-assurance evidence only.",
+    "Milestone 8 does not implement formal exception workflow or lifecycle closure."
+  ]
+}

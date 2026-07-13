@@ -33,6 +33,10 @@
 | SR-LOG-002 | audit_logging | implemented | Milestone 6 |
 | SR-LOG-003 | audit_logging | implemented | Milestone 1 |
 | SR-LOG-004 | audit_logging | implemented | Milestone 3 |
+| SR-RELEASE-001 | release_assurance | implemented | Milestone 8 |
+| SR-RELEASE-002 | release_assurance | implemented | Milestone 8 |
+| SR-RELEASE-003 | release_assurance | implemented | Milestone 8 |
+| SR-RELEASE-004 | release_assurance | implemented | Milestone 8 |
 | SR-REVIEW-001 | governance | implemented | Milestone 2 |
 | SR-SECRETS-001 | secrets | implemented | Milestone 5 |
 | SR-SUPPLY-001 | supply_chain | implemented | Milestone 5 |

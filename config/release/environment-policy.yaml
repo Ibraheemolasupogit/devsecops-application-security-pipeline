@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "environments": {
+    "dev": {
+      "description": "Local portfolio validation environment.",
+      "allow_conditional_for_not_deployed_high": true,
+      "deployment_status": "not_deployed"
+    },
+    "prod": {
+      "description": "Example stricter production policy; no production deployment exists.",
+      "allow_conditional_for_not_deployed_high": false,
+      "deployment_status": "not_deployed"
+    }
+  }
+}

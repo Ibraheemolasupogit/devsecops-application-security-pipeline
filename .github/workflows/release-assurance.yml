@@ -1,0 +1,41 @@
+name: Release Assurance
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  release-assurance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip==25.1.1
+          python -m pip install -e ".[dev]"
+
+      - name: Validate release policy
+        run: make release-policy-validate
+
+      - name: Evaluate release gate
+        run: make release-gate-evaluate
+
+      - name: Generate release evidence
+        run: make release-evidence
+
+      - name: Verify release evidence
+        run: make verify-release-evidence
+
+      - name: Generate release reports
+        run: make release-report

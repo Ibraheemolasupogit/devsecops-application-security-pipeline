@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "rules": [
+    {
+      "rule_id": "RG-BLOCK-001",
+      "title": "Critical unsuppressed secret",
+      "description": "Critical secret findings without active governed suppression block release.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "finding_type", "operator": "equals", "value": "Secret"},
+        {"field": "normalised_severity", "operator": "equals", "value": "critical"},
+        {"field": "suppression_status", "operator": "not_equals", "value": "active"}
+      ],
+      "decision": "block",
+      "priority": 10,
+      "required_approvals": ["Product Security", "Technical Owner"],
+      "required_actions": ["Remove the secret, rotate affected credentials and regenerate findings evidence."],
+      "threat_ids": ["THR-SECRETS-001"],
+      "security_requirement_ids": ["SR-SUPPLY-004"],
+      "control_ids": [],
+      "rationale_template": "Critical unsuppressed secret finding {finding_id} blocks release."
+    },
+    {
+      "rule_id": "RG-BLOCK-002",
+      "title": "Internet-exposed high finding with fix",
+      "description": "High or critical findings with a known fix on internet-exposed assets block release.",
+      "enabled": true,
+      "environments": ["prod"],
+      "conditions": [
+        {"field": "normalised_severity", "operator": "in", "value": ["critical", "high"]},
+        {"field": "internet_exposure", "operator": "equals", "value": "internet_facing"},
+        {"field": "fix_status", "operator": "equals", "value": "fix_available"}
+      ],
+      "decision": "block",
+      "priority": 20,
+      "required_approvals": ["Product Security", "Technical Owner"],
+      "required_actions": ["Apply the available fix before release."],
+      "threat_ids": ["THR-SUPPLY-001"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "Internet-exposed high-risk finding {finding_id} has an available fix."
+    },
+    {
+      "rule_id": "RG-BLOCK-003",
+      "title": "Expired critical or high suppression",
+      "description": "Critical or high findings with expired suppressions block release.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "normalised_severity", "operator": "in", "value": ["critical", "high"]},
+        {"field": "suppression_status", "operator": "equals", "value": "active"},
+        {"field": "suppression_expiry", "operator": "days_overdue_greater_than", "value": 0}
+      ],
+      "decision": "block",
+      "priority": 30,
+      "required_approvals": ["Product Security", "Risk Owner"],
+      "required_actions": ["Renew or remove the expired suppression and remediate the finding."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-004"],
+      "control_ids": [],
+      "rationale_template": "Suppression for {finding_id} is expired."
+    },
+    {
+      "rule_id": "RG-BLOCK-004",
+      "title": "Critical or high unowned finding",
+      "description": "Critical or high findings without a technical owner block release.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "normalised_severity", "operator": "in", "value": ["critical", "high"]},
+        {"field": "owner_status", "operator": "equals", "value": "unowned"}
+      ],
+      "decision": "block",
+      "priority": 40,
+      "required_approvals": ["Product Security", "Risk Owner"],
+      "required_actions": ["Assign technical, remediation and risk owners."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "Critical or high finding {finding_id} is unowned."
+    },
+    {
+      "rule_id": "RG-BLOCK-005",
+      "title": "Overdue P1 finding",
+      "description": "Overdue P1 findings block release.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "priority", "operator": "equals", "value": "P1"},
+        {"field": "due_status", "operator": "equals", "value": "overdue"}
+      ],
+      "decision": "block",
+      "priority": 50,
+      "required_approvals": ["Product Security", "Risk Owner"],
+      "required_actions": ["Remediate or defer through the future exception workflow before release."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "P1 finding {finding_id} is overdue."
+    },
+    {
+      "rule_id": "RG-BLOCK-006",
+      "title": "Unresolved dynamic-security bypass",
+      "description": "High-risk authentication, authorisation or object-access bypasses block release.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "finding_type", "operator": "in", "value": ["Authentication", "Authorisation", "Object-Level Authorisation", "API Security"]},
+        {"field": "normalised_severity", "operator": "in", "value": ["critical", "high"]},
+        {"field": "verification_status", "operator": "not_equals", "value": "passed-control"}
+      ],
+      "decision": "block",
+      "priority": 60,
+      "required_approvals": ["Product Security", "Technical Owner"],
+      "required_actions": ["Resolve the dynamic-security bypass and regenerate evidence."],
+      "threat_ids": ["THR-AUTH-001", "THR-AUTHZ-001"],
+      "security_requirement_ids": ["SR-AUTH-001", "SR-AUTHZ-002"],
+      "control_ids": [],
+      "rationale_template": "Dynamic security bypass {finding_id} blocks release."
+    },
+    {
+      "rule_id": "RG-COND-001",
+      "title": "No-fix runtime vulnerability in non-deployed image",
+      "description": "Critical or high container findings without an upstream fix can conditionally pass when the image is not deployed and ownership is assigned.",
+      "enabled": true,
+      "environments": ["dev"],
+      "conditions": [
+        {"field": "finding_type", "operator": "equals", "value": "Container"},
+        {"field": "normalised_severity", "operator": "in", "value": ["critical", "high"]},
+        {"field": "fix_status", "operator": "equals", "value": "no_fix_available"},
+        {"field": "environment", "operator": "equals", "value": "not_deployed"},
+        {"field": "owner_status", "operator": "not_equals", "value": "unowned"}
+      ],
+      "decision": "conditional_pass",
+      "priority": 100,
+      "required_approvals": ["Product Security", "Technical Owner"],
+      "required_actions": ["Track upstream fix availability and rebuild the image when a fix is published."],
+      "threat_ids": ["THR-SUPPLY-001", "THR-CONTAINER-001"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "No-fix runtime finding {finding_id} is conditionally accepted for the non-deployed image."
+    },
+    {
+      "rule_id": "RG-COND-002",
+      "title": "Active governed suppression",
+      "description": "Active governed suppressions conditionally pass when compensating controls and owners are present.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "suppression_status", "operator": "equals", "value": "active"},
+        {"field": "compensating_control", "operator": "is_not_null"}
+      ],
+      "decision": "conditional_pass",
+      "priority": 110,
+      "required_approvals": ["Product Security"],
+      "required_actions": ["Review the suppression before expiry and keep compensating controls current."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-004"],
+      "control_ids": [],
+      "rationale_template": "Finding {finding_id} has an active governed suppression with compensating control."
+    },
+    {
+      "rule_id": "RG-COND-003",
+      "title": "High non-deployed reference infrastructure finding",
+      "description": "High IaC findings in non-deployed reference infrastructure conditionally pass with Cloud Security ownership.",
+      "enabled": true,
+      "environments": ["dev"],
+      "conditions": [
+        {"field": "finding_type", "operator": "equals", "value": "IaC"},
+        {"field": "normalised_severity", "operator": "equals", "value": "high"},
+        {"field": "environment", "operator": "equals", "value": "not_deployed"}
+      ],
+      "decision": "conditional_pass",
+      "priority": 120,
+      "required_approvals": ["Cloud Security", "Risk Owner"],
+      "required_actions": ["Review reference infrastructure control before production deployment."],
+      "threat_ids": ["THR-IAC-001", "THR-IAC-002"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "Non-deployed infrastructure finding {finding_id} requires Cloud Security review."
+    },
+    {
+      "rule_id": "RG-WARN-001",
+      "title": "Medium finding within SLA",
+      "description": "Medium findings within SLA are warnings.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "normalised_severity", "operator": "equals", "value": "medium"},
+        {"field": "due_status", "operator": "in", "value": ["within_sla", "due_soon"]}
+      ],
+      "decision": "warn",
+      "priority": 200,
+      "required_approvals": [],
+      "required_actions": ["Track remediation within SLA."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "Medium finding {finding_id} remains within SLA."
+    },
+    {
+      "rule_id": "RG-WARN-002",
+      "title": "Low or informational finding",
+      "description": "Low and informational findings are warnings or record-only observations.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "normalised_severity", "operator": "in", "value": ["low", "informational"]}
+      ],
+      "decision": "warn",
+      "priority": 210,
+      "required_approvals": [],
+      "required_actions": ["Review during normal maintenance."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-003"],
+      "control_ids": [],
+      "rationale_template": "Finding {finding_id} is low or informational."
+    },
+    {
+      "rule_id": "RG-WARN-003",
+      "title": "Suppression approaching expiry",
+      "description": "Suppressions approaching expiry produce warnings.",
+      "enabled": true,
+      "environments": ["dev", "prod"],
+      "conditions": [
+        {"field": "suppression_status", "operator": "equals", "value": "active"},
+        {"field": "suppression_expiry", "operator": "days_until_less_than_or_equal", "value": 14}
+      ],
+      "decision": "warn",
+      "priority": 220,
+      "required_approvals": ["Product Security"],
+      "required_actions": ["Review suppression before expiry."],
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-FINDINGS-004"],
+      "control_ids": [],
+      "rationale_template": "Suppression for {finding_id} is approaching expiry."
+    }
+  ]
+}
