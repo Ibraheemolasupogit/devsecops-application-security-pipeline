@@ -3,6 +3,6 @@
 | Field | Value |
 | --- | --- |
 | Scanner count | 5 |
-| Blocking count | 0 |
+| Blocking count | 1 |
 | Not run | None |
-| Policy decision | pass |
+| Policy decision | block |

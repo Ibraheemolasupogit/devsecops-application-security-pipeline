@@ -1,12 +1,14 @@
 # Findings and Risk Report
 
-Canonical findings: 39
+Canonical findings: 44
 
-Suppressed findings: 15
+Suppressed findings: 16
 
 Unowned findings: 0
 
 By severity:
-- critical: 3
-- high: 30
+- critical: 5
+- high: 31
+- informational: 1
+- low: 1
 - medium: 6

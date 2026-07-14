@@ -347,6 +347,29 @@
     },
     {
       "decision_contribution": "conditional_pass",
+      "due_status": "due_soon",
+      "effective_severity": "critical",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-b26883cf2982",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-CONTAINER-b26883cf2982 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 62.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
       "due_status": "within_sla",
       "effective_severity": "high",
       "environment": "not_deployed",
@@ -358,6 +381,29 @@
       "owner_status": "owned",
       "priority": "P3",
       "rationale": "FND-CONTAINER-ba223b9333c9 contributes conditional_pass through RG-COND-001.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "high",
+      "environment": "not_deployed",
+      "finding_id": "FND-CONTAINER-c118af042a95",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-CONTAINER-c118af042a95 contributes conditional_pass through RG-COND-001.",
       "required_actions": [
         "Track upstream fix availability and rebuild the image when a fix is published."
       ],
@@ -458,6 +504,46 @@
         "Technical Owner"
       ],
       "risk_score": 56.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "low",
+      "environment": "locally_validated",
+      "finding_id": "FND-DAST-7f68e8fb688f",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-002"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-DAST-7f68e8fb688f contributes warn through RG-WARN-002.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "risk_score": 52.25,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "informational",
+      "environment": "locally_validated",
+      "finding_id": "FND-DAST-e607d905531a",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-002"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-DAST-e607d905531a contributes warn through RG-WARN-002.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "risk_score": 46.25,
       "suppression_status": null
     },
     {
@@ -760,6 +846,28 @@
         "Risk Owner"
       ],
       "risk_score": 67.25,
+      "suppression_status": "active"
+    },
+    {
+      "decision_contribution": "conditional_pass",
+      "due_status": "within_sla",
+      "effective_severity": "critical",
+      "environment": "locally_validated",
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-COND-002"
+      ],
+      "owner_status": "owned",
+      "priority": "P2",
+      "rationale": "FND-SUPPRESSIO-836cb2a2770d contributes conditional_pass through RG-COND-002.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "risk_score": 73.25,
       "suppression_status": "active"
     },
     {

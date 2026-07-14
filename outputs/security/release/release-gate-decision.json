@@ -18,7 +18,9 @@
     "FND-CONTAINER-95a38a1f2a20",
     "FND-CONTAINER-96b263718199",
     "FND-CONTAINER-9bac41a1b5ac",
+    "FND-CONTAINER-b26883cf2982",
     "FND-CONTAINER-ba223b9333c9",
+    "FND-CONTAINER-c118af042a95",
     "FND-CONTAINER-c1e6ced9904f",
     "FND-CONTAINER-c7563eb73df0",
     "FND-CONTAINER-d0df15bb32ed",
@@ -30,6 +32,7 @@
     "FND-SUPPRESSIO-6dce772b98c3",
     "FND-SUPPRESSIO-713bb8f041d7",
     "FND-SUPPRESSIO-7b3ddcaa6af8",
+    "FND-SUPPRESSIO-836cb2a2770d",
     "FND-SUPPRESSIO-8632c434b354",
     "FND-SUPPRESSIO-974e196f7185",
     "FND-SUPPRESSIO-b5c9f1d0aae2",
@@ -38,18 +41,18 @@
     "FND-SUPPRESSIO-f1fb6d611749"
   ],
   "decision": "conditional_pass",
-  "decision_id": "REL-57cfa7baad1bb799",
+  "decision_id": "REL-53b297bb7b0a9e6a",
   "decision_timestamp": "2026-01-01T00:00:00Z",
   "deployment_status": "not_deployed",
   "environment": "dev",
-  "evaluated_finding_count": 39,
+  "evaluated_finding_count": 44,
   "evidence_references": [
     "outputs/security/findings/deduplicated-findings.json",
     "outputs/security/release/finding-evaluations.json",
     "outputs/security/release/matched-rules.json"
   ],
   "expired_suppression_finding_ids": [],
-  "findings_input_checksum": "a6e3f1f96f968cad29c034c9c51644a6f7499934e8855d5240944d4373cd01ff",
+  "findings_input_checksum": "7008248e7440ec5b4340e1eac011eda2d854c788e938f8d652607b10956fdade",
   "informational_finding_ids": [],
   "limitations": [
     "Portfolio demonstration policy, not Genomics England policy.",
@@ -58,9 +61,10 @@
   ],
   "overdue_finding_ids": [],
   "policy_version": "1.0",
-  "rationale": "Release is conditionally passable with required approvals for 33 finding(s).",
+  "rationale": "Release is conditionally passable with required approvals for 36 finding(s).",
   "repository": "devsecops-application-security-pipeline",
   "required_actions": [
+    "Review during normal maintenance.",
     "Review reference infrastructure control before production deployment.",
     "Review the suppression before expiry and keep compensating controls current.",
     "Track remediation within SLA.",
@@ -72,12 +76,13 @@
     "Risk Owner",
     "Technical Owner"
   ],
-  "rules_evaluated": 468,
+  "rules_evaluated": 528,
   "rules_matched": [
     "RG-COND-001",
     "RG-COND-002",
     "RG-COND-003",
-    "RG-WARN-001"
+    "RG-WARN-001",
+    "RG-WARN-002"
   ],
   "rules_not_matched": [
     "RG-BLOCK-001",
@@ -86,12 +91,13 @@
     "RG-BLOCK-004",
     "RG-BLOCK-005",
     "RG-BLOCK-006",
-    "RG-WARN-002",
     "RG-WARN-003"
   ],
   "schema_version": "1.0",
   "unowned_finding_ids": [],
   "warning_finding_ids": [
+    "FND-DAST-7f68e8fb688f",
+    "FND-DAST-e607d905531a",
     "FND-SECUREDESI-0e84d1c52550",
     "FND-SECUREDESI-17c88481ce5d",
     "FND-SECUREDESI-667c88d66538",

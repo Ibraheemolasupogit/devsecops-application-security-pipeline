@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portfolio Summary",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "portfolio_id",
+    "project_name",
+    "readiness_status",
+    "milestones_completed",
+    "capability_count"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "portfolio_id": {"type": "string"},
+    "project_name": {"type": "string"},
+    "readiness_status": {"enum": ["ready_with_limitations", "not_ready"]},
+    "milestones_completed": {"type": "integer"},
+    "capability_count": {"type": "integer"}
+  }
+}

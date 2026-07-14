@@ -4,8 +4,8 @@
 | --- | --- |
 | Tool | trivy |
 | Execution status | completed |
-| Finding count | 20 |
-| Blocking count | 0 |
+| Finding count | 22 |
+| Blocking count | 1 |
 | Suppressed count | 2 |
-| Policy decision | pass |
+| Policy decision | block |
 | Limitations | None |

@@ -1,0 +1,78 @@
+{
+  "completed_count": 14,
+  "milestones": [
+    {
+      "evidence": "docs/milestones/milestone-1.md",
+      "milestone": 1,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-2.md",
+      "milestone": 2,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-3.md",
+      "milestone": 3,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-4.md",
+      "milestone": 4,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-5.md",
+      "milestone": 5,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-6.md",
+      "milestone": 6,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-7.md",
+      "milestone": 7,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-8.md",
+      "milestone": 8,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-9.md",
+      "milestone": 9,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-10.md",
+      "milestone": 10,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-11.md",
+      "milestone": 11,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-12.md",
+      "milestone": 12,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-13.md",
+      "milestone": 13,
+      "status": "completed"
+    },
+    {
+      "evidence": "docs/milestones/milestone-14.md",
+      "milestone": 14,
+      "status": "completed"
+    }
+  ],
+  "missing_milestones": [],
+  "required_count": 14,
+  "schema_version": "1.0"
+}

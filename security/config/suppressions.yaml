@@ -16,6 +16,20 @@
       "status": "active"
     },
     {
+      "suppression_id": "SUP-GITLEAKS-MS13-HISTORY-MARKER-001",
+      "tool": "gitleaks",
+      "rule_or_advisory_id": "jwt-signing-material-outside-fixtures",
+      "resource_or_path": "commit:d09a9b93c14176b23908de97be3c3907e5d29ec2;tests/security/test_integration_contract.py:164",
+      "reason": "Milestone 13 committed a private-key-shaped string as a validator test marker. Milestone 14 replaces the current test marker with a non-secret synthetic marker, while Gitleaks still scans Git history.",
+      "owner": "product_security_engineer",
+      "approved_by": "product_security_engineer",
+      "created_date": "2026-07-14",
+      "review_date": "2026-08-14",
+      "expiry_date": "2026-10-14",
+      "compensating_control": "Current working tree no longer contains private-key-shaped test marker text; the allow-list is scoped to the exact historical Milestone 13 commit.",
+      "status": "active"
+    },
+    {
       "suppression_id": "SUP-CHECKOV-AUDIT-REPLICATION-001",
       "tool": "checkov",
       "rule_or_advisory_id": "CKV_AWS_144",

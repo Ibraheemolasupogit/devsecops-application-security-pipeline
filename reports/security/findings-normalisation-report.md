@@ -2,9 +2,9 @@
 
 Canonical schema version: 1.0
 
-Total source findings: 41
+Total source findings: 46
 
-Total canonical findings: 39
+Total canonical findings: 44
 
 Deduplicated count: 2
 
@@ -15,18 +15,20 @@ Deduplicated count: 2
 | bandit | 0 |
 | checkov | 12 |
 | dynamic-pytest | 0 |
-| gitleaks | 1 |
+| gitleaks | 2 |
 | pip-audit | 0 |
 | schemathesis | 0 |
 | semgrep | 0 |
 | threat-model | 6 |
-| trivy | 22 |
-| zap | 0 |
+| trivy | 24 |
+| zap | 2 |
 
 ## Severity
 
 | Name | Count |
 | --- | ---: |
-| critical | 3 |
-| high | 30 |
+| critical | 5 |
+| high | 31 |
+| informational | 1 |
+| low | 1 |
 | medium | 6 |

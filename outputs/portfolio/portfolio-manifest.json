@@ -1,0 +1,77 @@
+{
+  "archive_limitation": "No archive is created to avoid platform-specific tar metadata drift.",
+  "as_of_date": "2026-01-01",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "deterministic_archive_created": false,
+  "generated_artifacts": [
+    "evidence-index.json",
+    "milestone-completion.json",
+    "portfolio-metrics.json",
+    "portfolio-readiness.json",
+    "portfolio-summary.json",
+    "report-index.json",
+    "security-capability-matrix.json"
+  ],
+  "git": {
+    "branch": "main",
+    "commit": "d09a9b93c141",
+    "dirty": "true"
+  },
+  "input_files": {
+    "config/portfolio/capability-mapping.yaml": {
+      "path": "config/portfolio/capability-mapping.yaml",
+      "sha256": "ebe0adc53faea7b0d502824e33651ef08529f7804df36b3b1b984fb4ab5f6e1c"
+    },
+    "config/portfolio/portfolio-policy.yaml": {
+      "path": "config/portfolio/portfolio-policy.yaml",
+      "sha256": "aaa8b4f2c9ab6202af5d926f172f97922dff8dc345fc8ef0879768c38c1ce585"
+    },
+    "config/portfolio/readiness-criteria.yaml": {
+      "path": "config/portfolio/readiness-criteria.yaml",
+      "sha256": "4454afb483124032818e4bb669fca918bae5773d2b0fb39c214de84f4b954feb"
+    },
+    "config/portfolio/report-policy.yaml": {
+      "path": "config/portfolio/report-policy.yaml",
+      "sha256": "b1964f92add7c453bc7611e8a4372412a568a6b3442a7a4a8c08291cb171828a"
+    }
+  },
+  "output_files": {
+    "evidence-index.json": {
+      "path": "outputs/security/portfolio/evidence-index.json",
+      "sha256": "1c599b31216c28f83a6117ac57020a75279a26de98aeaf3594e72be7bb651b4d",
+      "size_bytes": 2487
+    },
+    "milestone-completion.json": {
+      "path": "outputs/security/portfolio/milestone-completion.json",
+      "sha256": "86db7066859f0415e3d70aed56edfd788f0e16a54de1e956d5bc7db2d0a5de52",
+      "size_bytes": 1749
+    },
+    "portfolio-metrics.json": {
+      "path": "outputs/security/portfolio/portfolio-metrics.json",
+      "sha256": "65b76ddc01fc6bb0942fbc6cb2aaaf9eecb15cd63ad46ee66198fbcbb70df0ff",
+      "size_bytes": 664
+    },
+    "portfolio-readiness.json": {
+      "path": "outputs/security/portfolio/portfolio-readiness.json",
+      "sha256": "26a4208670a19af674d180190ba820b4e2c9198c483cdc9ecd24384bc938f946",
+      "size_bytes": 490
+    },
+    "portfolio-summary.json": {
+      "path": "outputs/security/portfolio/portfolio-summary.json",
+      "sha256": "267d243af2b14826dc76226609c25ffa0a590a73fe4b9597ce9a6cb166e9fa7a",
+      "size_bytes": 930
+    },
+    "report-index.json": {
+      "path": "outputs/security/portfolio/report-index.json",
+      "sha256": "37d5e6c30615140877e1f3e3fd43181f74157a910cbbb23b65f41f9bffdd1968",
+      "size_bytes": 3239
+    },
+    "security-capability-matrix.json": {
+      "path": "outputs/security/portfolio/security-capability-matrix.json",
+      "sha256": "8f0519fca1710abfd3a234eaedcb9ab8844f67f59f5f2b7cffb96cb21ff66a0a",
+      "size_bytes": 7933
+    }
+  },
+  "portfolio_id": "PF-02a1692e741ed597",
+  "schema_version": "1.0"
+}

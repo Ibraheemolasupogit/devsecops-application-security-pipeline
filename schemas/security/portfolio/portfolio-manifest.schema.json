@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portfolio Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "portfolio_id",
+    "controlled_timestamp",
+    "as_of_date",
+    "git",
+    "input_files",
+    "output_files",
+    "deterministic_archive_created"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "portfolio_id": {"type": "string", "pattern": "^PF-[a-f0-9]{16}$"},
+    "controlled_timestamp": {"type": "string"},
+    "as_of_date": {"type": "string"},
+    "git": {"type": "object"},
+    "input_files": {"type": "object"},
+    "output_files": {"type": "object"},
+    "deterministic_archive_created": {"type": "boolean"}
+  }
+}

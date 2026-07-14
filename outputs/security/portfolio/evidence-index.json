@@ -1,0 +1,74 @@
+{
+  "index_type": "evidence",
+  "items": [
+    {
+      "path": "outputs/security/threat-model/evidence-manifest.json",
+      "sha256": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082",
+      "size_bytes": 3465,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/api-security/evidence-manifest.json",
+      "sha256": "9220e28a605114c19f2838e8a503815ca13a68992446125f35b2287278171474",
+      "size_bytes": 2510,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/infrastructure/evidence-manifest.json",
+      "sha256": "8eea5e1dd1bc011c8c3d6e7f65b43c24c67b53d602f671427bbc06f947e03846",
+      "size_bytes": 9754,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/appsec/evidence-manifest.json",
+      "sha256": "4cb06649a8f7be11ca1ccfffe0d5c3eeb6e06bbe5ee8e94f5bde40f6bfd8cba0",
+      "size_bytes": 3564,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/dynamic/evidence-manifest.json",
+      "sha256": "4847dee6f017483d0433c201de76df68123e74c124c8d9a94ba8785e55630e54",
+      "size_bytes": 2099,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/findings/evidence-manifest.json",
+      "sha256": "61118ca2d0e26e8e53f45505fc49a7b1f9b527694046c359e3d73db9bbc3f0d4",
+      "size_bytes": 7093,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/release/evidence-manifest.json",
+      "sha256": "d919f4f1b20a7efc3992107e51ee89755ee671d5e4aead77d99eb819630b3492",
+      "size_bytes": 3296,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/lifecycle/evidence-manifest.json",
+      "sha256": "b3d1c5dfbe875b3ac53848099cc3ac9c7e671d7d51f8db448688206669eb36cf",
+      "size_bytes": 5829,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/evidence/evidence-manifest.json",
+      "sha256": "38cd14bac8fc0eb9b6837d6790783e552dd30bcc70dd6a39647aa8e24a1c125c",
+      "size_bytes": 6303,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/champions/evidence-manifest.json",
+      "sha256": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
+      "size_bytes": 1762,
+      "type": "evidence"
+    },
+    {
+      "path": "outputs/security/integration/integration-manifest.json",
+      "sha256": "f39dcdfd768e1d5d0df7d3c9a1aa3ffcff483605bc7c91cc01857752b3e416ed",
+      "size_bytes": 4620,
+      "type": "evidence"
+    }
+  ],
+  "missing_paths": [],
+  "schema_version": "1.0",
+  "valid": true
+}

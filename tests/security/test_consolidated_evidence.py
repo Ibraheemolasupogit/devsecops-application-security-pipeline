@@ -45,9 +45,9 @@ def test_aggregate_bundle_metrics_and_domain_counts() -> None:
     assert evidence.deployment_status == "not_deployed"
     assert metrics["total_threats"] == 30
     assert metrics["security_requirements"] == 60
-    assert metrics["canonical_findings"] == 39
+    assert metrics["canonical_findings"] == 44
     assert metrics["release_decision"] == evidence.release_decision["decision"]
-    assert metrics["vulnerability_records"] == 39
+    assert metrics["vulnerability_records"] == 44
     assert metrics["active_exceptions"] == 1
     assert metrics["expired_exceptions"] == 1
     assert metrics["verification_records"] == 0

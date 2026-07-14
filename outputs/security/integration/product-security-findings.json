@@ -1364,6 +1364,96 @@
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
+      "cve": "CVE-2026-13221",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
+      "due_date": "2026-01-04",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-7D2AEEEFA44A",
+      "file": null,
+      "finding_id": "FND-CONTAINER-b26883cf2982",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "critical",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 3,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 62.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-b26883cf2982"
+      ],
+      "source_record_hash": "339d7f5eeb571bdb9b51e1685e50e353d4783f32caff0a2045bc5feff3e8dbe8",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-13221",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
       "cve": "CVE-2026-53615",
       "cwe": null,
       "data_sensitivity": "medium",
@@ -1442,6 +1532,96 @@
         "THR-SUPPLY-001"
       ],
       "title": "libsmartcols1 CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-57432",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Perl versions through 5.43.10 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-683CAE9975BE",
+      "file": null,
+      "finding_id": "FND-CONTAINER-c118af042a95",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-c118af042a95"
+      ],
+      "source_record_hash": "d1f873b913c1f62e05f1ed7db3d519743d31c1470b57c5968c5669f94908f66c",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-57432",
       "verification_status": "not_verified"
     },
     {
@@ -1802,6 +1982,184 @@
         "THR-SUPPLY-001"
       ],
       "title": "mount CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "false_positive",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": "CWE-1104",
+      "data_sensitivity": "high",
+      "description": "<p>The version of ZAP you are using to test your app is out of date and is no longer being updated.</p><p>The risk level is set based on how out of date your ZAP version is.</p>",
+      "due_date": "2026-03-02",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-6166F5BB25A6",
+      "file": null,
+      "finding_id": "FND-DAST-7f68e8fb688f",
+      "finding_type": "DAST",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "false_positive",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "low",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "false_positive",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": "<p>Download the latest version of ZAP from https://www.zaproxy.org/download/ and install it.</p>",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 60,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "resource": "http://host.docker.internal:8000",
+      "risk_owner": "Risk Owner",
+      "risk_score": 52.25,
+      "security_domain": "DAST",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/dynamic/raw/zap-report.json"
+      ],
+      "source_finding_ids": [
+        "FND-DAST-7f68e8fb688f"
+      ],
+      "source_record_hash": "10316e05fa27c0c4054af2b1e7fb94aed1d2512b7e050a32c24a590ddd8594ab",
+      "source_tools": [
+        "zap"
+      ],
+      "squad": "Application Engineering",
+      "status": "false_positive",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "ZAP is Out of Date",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": "CWE-524",
+      "data_sensitivity": "high",
+      "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+      "due_date": "2026-04-01",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-173B8CE6BF87",
+      "file": null,
+      "finding_id": "FND-DAST-e607d905531a",
+      "finding_type": "DAST",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "informational",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 90,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "resource": "http://host.docker.internal:8000",
+      "risk_owner": "Risk Owner",
+      "risk_score": 46.25,
+      "security_domain": "DAST",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/dynamic/raw/zap-report.json"
+      ],
+      "source_finding_ids": [
+        "FND-DAST-e607d905531a"
+      ],
+      "source_record_hash": "f91b936dd3dcff7e6bc40413cb5a39de6059fe6722dfbf88c01ccd1fe462c3c5",
+      "source_tools": [
+        "zap"
+      ],
+      "squad": "Application Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "Storable and Cacheable Content",
       "verification_status": "not_verified"
     },
     {
@@ -2983,6 +3341,97 @@
         "THR-CLOUD-001"
       ],
       "title": "Suppressed checkov finding CKV_AWS_2",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Milestone 13 committed a private-key-shaped string as a validator test marker. Milestone 14 replaces the current test marker with a non-secret synthetic marker, while Gitleaks still scans Git history.",
+      "due_date": "2026-10-14",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-7E3448B2A958",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "finding_type": "Secret",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "critical",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 286,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "resource": "commit:d09a9b93c14176b23908de97be3c3907e5d29ec2;tests/security/test_integration_contract.py:164",
+      "risk_owner": "Risk Owner",
+      "risk_score": 73.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-836cb2a2770d"
+      ],
+      "source_record_hash": "f70d1e7f2182bbde62a8f2cff710d336b48c0655c4b318a0c3d503d242679272",
+      "source_tools": [
+        "gitleaks"
+      ],
+      "squad": "Application Engineering",
+      "status": "triaged",
+      "suppression_id": "SUP-GITLEAKS-MS13-HISTORY-MARKER-001",
+      "suppression_status": "active",
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "Suppressed gitleaks finding jwt-signing-material-outside-fixtures",
       "verification_status": "not_verified"
     },
     {

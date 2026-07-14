@@ -1,10 +1,16 @@
 {
   "by_priority": {
-    "P2": 15,
-    "P3": 24
+    "P2": 17,
+    "P3": 27
   },
   "formula": "30% severity + 20% exploitability + 15% internet exposure + 15% asset criticality + 10% data sensitivity + 5% privilege required + 5% age/recurrence",
   "highest_risk": [
+    {
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "priority": "P2",
+      "risk_score": 73.25,
+      "title": "Suppressed gitleaks finding jwt-signing-material-outside-fixtures"
+    },
     {
       "finding_id": "FND-SUPPRESSIO-974e196f7185",
       "priority": "P2",
@@ -58,12 +64,6 @@
       "priority": "P2",
       "risk_score": 67.25,
       "title": "Suppressed checkov finding CKV_AWS_144"
-    },
-    {
-      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
-      "priority": "P2",
-      "risk_score": 67.25,
-      "title": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356"
     }
   ]
 }

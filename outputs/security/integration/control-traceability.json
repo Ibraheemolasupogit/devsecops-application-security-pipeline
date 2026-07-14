@@ -304,7 +304,47 @@
       "complete": false,
       "control_ids": [],
       "evidence_references": [],
+      "finding_id": "FND-CONTAINER-b26883cf2982",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
       "finding_id": "FND-CONTAINER-ba223b9333c9",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-c118af042a95",
       "implementation_references": [],
       "lifecycle_status": "triaged",
       "missing_links": [
@@ -398,6 +438,50 @@
       "test_references": [],
       "threat_ids": [
         "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-DAST-7f68e8fb688f",
+      "implementation_references": [],
+      "lifecycle_status": "false_positive",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-DAST-e607d905531a",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
       ]
     },
     {
@@ -673,6 +757,28 @@
       "test_references": [],
       "threat_ids": [
         "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
       ]
     },
     {

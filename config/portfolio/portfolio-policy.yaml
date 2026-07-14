@@ -1,0 +1,9 @@
+{
+  "policy_version": "1.0",
+  "project_name": "DevSecOps Application Security Pipeline",
+  "portfolio_owner_role": "Product Security",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "as_of_date": "2026-01-01",
+  "evidence_boundary": "local deterministic evidence only; no deployed AWS resources or live external integrations",
+  "required_sections": 26
+}

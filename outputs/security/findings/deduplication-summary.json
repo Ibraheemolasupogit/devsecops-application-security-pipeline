@@ -46,6 +46,17 @@
       ]
     },
     {
+      "deduplication_key": "cve|CVE-2026-13221|perl-base",
+      "primary_finding_id": "FND-CONTAINER-b26883cf2982",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-b26883cf2982"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
       "deduplication_key": "cve|CVE-2026-41992|gzip",
       "primary_finding_id": "FND-CONTAINER-c7563eb73df0",
       "rationale": "unique exact key",
@@ -201,6 +212,17 @@
       ]
     },
     {
+      "deduplication_key": "cve|CVE-2026-57432|perl-base",
+      "primary_finding_id": "FND-CONTAINER-c118af042a95",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-c118af042a95"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
       "deduplication_key": "cve|CVE-2026-8376|perl-base",
       "primary_finding_id": "FND-CONTAINER-95a38a1f2a20",
       "rationale": "merged by exact key cve|CVE-2026-8376|perl-base across trivy; all source records retained",
@@ -221,6 +243,28 @@
       ],
       "source_tools": [
         "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "dast|10049|http://host.docker.internal:8000",
+      "primary_finding_id": "FND-DAST-e607d905531a",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-DAST-e607d905531a"
+      ],
+      "source_tools": [
+        "zap"
+      ]
+    },
+    {
+      "deduplication_key": "dast|10116|http://host.docker.internal:8000",
+      "primary_finding_id": "FND-DAST-7f68e8fb688f",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-DAST-7f68e8fb688f"
+      ],
+      "source_tools": [
+        "zap"
       ]
     },
     {
@@ -353,6 +397,17 @@
       ],
       "source_tools": [
         "checkov"
+      ]
+    },
+    {
+      "deduplication_key": "suppression|gitleaks|jwt-signing-material-outside-fixtures|commit:d09a9b93c14176b23908de97be3c3907e5d29ec2;tests/security/test_integration_contract.py:164",
+      "primary_finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-836cb2a2770d"
+      ],
+      "source_tools": [
+        "gitleaks"
       ]
     },
     {

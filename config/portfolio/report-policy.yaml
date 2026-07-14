@@ -1,0 +1,13 @@
+{
+  "policy_version": "1.0",
+  "required_reports": [
+    "final-project-report.md",
+    "final-security-assurance-report.md",
+    "final-architecture-report.md",
+    "final-testing-report.md",
+    "final-evidence-report.md",
+    "final-limitations-report.md",
+    "final-portfolio-readiness-report.md"
+  ],
+  "audiences": ["recruiter", "engineering_manager", "security_reviewer", "developer"]
+}

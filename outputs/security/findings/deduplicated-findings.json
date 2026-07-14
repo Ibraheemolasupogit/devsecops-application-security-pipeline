@@ -69,7 +69,7 @@
         {
           "path": "outputs/security/appsec/raw/trivy.json",
           "record_hash": "645d5a23522565a31c372ecba40f38143da73f7524a37babe5e2721ebbb98721",
-          "record_pointer": "/Results/0/Vulnerabilities/18",
+          "record_pointer": "/Results/0/Vulnerabilities/20",
           "summary": "perl-base CVE-2026-9538"
         }
       ],
@@ -429,7 +429,7 @@
         {
           "path": "outputs/security/appsec/raw/trivy.json",
           "record_hash": "3a21476df38ed1ff11405b26cfed89e2555d1c84d97ebb56254e81d91f94d4b6",
-          "record_pointer": "/Results/0/Vulnerabilities/16",
+          "record_pointer": "/Results/0/Vulnerabilities/17",
           "summary": "perl-base CVE-2026-42497"
         }
       ],
@@ -519,7 +519,7 @@
         {
           "path": "outputs/security/appsec/raw/trivy.json",
           "record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
-          "record_pointer": "/Results/0/Vulnerabilities/17",
+          "record_pointer": "/Results/0/Vulnerabilities/18",
           "summary": "perl-base CVE-2026-48962"
         }
       ],
@@ -701,7 +701,7 @@
         {
           "path": "outputs/security/appsec/raw/trivy.json",
           "record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
-          "record_pointer": "/Results/0/Vulnerabilities/14",
+          "record_pointer": "/Results/0/Vulnerabilities/15",
           "summary": "perl-base CVE-2026-42496"
         }
       ],
@@ -1153,7 +1153,7 @@
         {
           "path": "outputs/security/appsec/raw/trivy.json",
           "record_hash": "bdfbd16f82bf62a362d2c5243e25e41b53e0ca06afec097827e94f2a6ef75a1c",
-          "record_pointer": "/Results/0/Vulnerabilities/15",
+          "record_pointer": "/Results/0/Vulnerabilities/16",
           "summary": "perl-base CVE-2026-8376"
         }
       ],
@@ -1333,7 +1333,7 @@
         {
           "path": "outputs/security/appsec/raw/trivy.json",
           "record_hash": "626385e63ddc2c999f9c43fd859bfee141a1575e4de93e7de36c9723fb59eaed",
-          "record_pointer": "/Results/0/Vulnerabilities/19",
+          "record_pointer": "/Results/0/Vulnerabilities/21",
           "summary": "util-linux CVE-2026-53615"
         }
       ],
@@ -1352,6 +1352,96 @@
         "THR-SUPPLY-001"
       ],
       "title": "util-linux CVE-2026-53615",
+      "verification_status": "source-observed"
+    },
+    {
+      "account": null,
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "authentication_required": "unknown",
+      "cloud_provider": null,
+      "compensating_control": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "confidence": "medium",
+      "control_ids": [],
+      "cve": "CVE-2026-13221",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "deduplication_key": "cve|CVE-2026-13221|perl-base",
+      "description": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
+      "due_date": "2026-01-04",
+      "environment": "not_deployed",
+      "exploitability": "unknown",
+      "file": null,
+      "finding_id": "FND-CONTAINER-b26883cf2982",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "line": null,
+      "metadata": {
+        "asset_name": "Docker image",
+        "data_source": "Debian Security Tracker",
+        "deduplication_rationale": "unique exact key",
+        "fix_available": false,
+        "risk_factors": {
+          "age_or_recurrence": 0.4,
+          "asset_criticality": 0.8,
+          "data_sensitivity": 0.65,
+          "exploitability": 0.35,
+          "internet_exposure": 0.15,
+          "privilege_required": 0.5,
+          "technical_severity": 1.0
+        }
+      },
+      "normalised_severity": "critical",
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P2",
+      "privilege_required": "unknown",
+      "region": null,
+      "related_finding_ids": [],
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 3,
+      "repository": "devsecops-application-security-pipeline",
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 62.25,
+      "schema_version": "1.0",
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "severity": "CRITICAL",
+      "source_evidence": [
+        {
+          "path": "outputs/security/appsec/raw/trivy.json",
+          "record_hash": "339d7f5eeb571bdb9b51e1685e50e353d4783f32caff0a2045bc5feff3e8dbe8",
+          "record_pointer": "/Results/0/Vulnerabilities/14",
+          "summary": "perl-base CVE-2026-13221"
+        }
+      ],
+      "source_finding_id": "CVE-2026-13221",
+      "source_record_hash": "339d7f5eeb571bdb9b51e1685e50e353d4783f32caff0a2045bc5feff3e8dbe8",
+      "source_tool": "trivy",
+      "source_type": "container_scan",
+      "squad": "Platform Engineering",
+      "status": "active",
+      "suppression_expiry": null,
+      "suppression_id": null,
+      "suppression_reason": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-13221",
       "verification_status": "source-observed"
     },
     {
@@ -1442,6 +1532,96 @@
         "THR-SUPPLY-001"
       ],
       "title": "libsmartcols1 CVE-2026-53615",
+      "verification_status": "source-observed"
+    },
+    {
+      "account": null,
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "authentication_required": "unknown",
+      "cloud_provider": null,
+      "compensating_control": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "confidence": "medium",
+      "control_ids": [],
+      "cve": "CVE-2026-57432",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "deduplication_key": "cve|CVE-2026-57432|perl-base",
+      "description": "Perl versions through 5.43.10 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exploitability": "unknown",
+      "file": null,
+      "finding_id": "FND-CONTAINER-c118af042a95",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "line": null,
+      "metadata": {
+        "asset_name": "Docker image",
+        "data_source": "Debian Security Tracker",
+        "deduplication_rationale": "unique exact key",
+        "fix_available": false,
+        "risk_factors": {
+          "age_or_recurrence": 0.4,
+          "asset_criticality": 0.8,
+          "data_sensitivity": 0.65,
+          "exploitability": 0.35,
+          "internet_exposure": 0.15,
+          "privilege_required": 0.5,
+          "technical_severity": 0.8
+        }
+      },
+      "normalised_severity": "high",
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "privilege_required": "unknown",
+      "region": null,
+      "related_finding_ids": [],
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "schema_version": "1.0",
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "severity": "HIGH",
+      "source_evidence": [
+        {
+          "path": "outputs/security/appsec/raw/trivy.json",
+          "record_hash": "d1f873b913c1f62e05f1ed7db3d519743d31c1470b57c5968c5669f94908f66c",
+          "record_pointer": "/Results/0/Vulnerabilities/19",
+          "summary": "perl-base CVE-2026-57432"
+        }
+      ],
+      "source_finding_id": "CVE-2026-57432",
+      "source_record_hash": "d1f873b913c1f62e05f1ed7db3d519743d31c1470b57c5968c5669f94908f66c",
+      "source_tool": "trivy",
+      "source_type": "container_scan",
+      "squad": "Platform Engineering",
+      "status": "active",
+      "suppression_expiry": null,
+      "suppression_id": null,
+      "suppression_reason": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-57432",
       "verification_status": "source-observed"
     },
     {
@@ -1802,6 +1982,190 @@
         "THR-SUPPLY-001"
       ],
       "title": "mount CVE-2026-53615",
+      "verification_status": "source-observed"
+    },
+    {
+      "account": null,
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "authentication_required": "unknown",
+      "cloud_provider": null,
+      "compensating_control": null,
+      "component": null,
+      "confidence": "medium",
+      "control_ids": [],
+      "cve": null,
+      "cwe": "CWE-1104",
+      "data_sensitivity": "high",
+      "deduplication_key": "dast|10116|http://host.docker.internal:8000",
+      "description": "<p>The version of ZAP you are using to test your app is out of date and is no longer being updated.</p><p>The risk level is set based on how out of date your ZAP version is.</p>",
+      "due_date": "2026-03-02",
+      "environment": "locally_validated",
+      "exploitability": "unknown",
+      "file": null,
+      "finding_id": "FND-DAST-7f68e8fb688f",
+      "finding_type": "DAST",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "line": null,
+      "metadata": {
+        "asset_name": "FastAPI application",
+        "confidence": "3",
+        "deduplication_rationale": "unique exact key",
+        "risk_factors": {
+          "age_or_recurrence": 0.4,
+          "asset_criticality": 0.8,
+          "data_sensitivity": 1.0,
+          "exploitability": 0.35,
+          "internet_exposure": 0.65,
+          "privilege_required": 0.5,
+          "technical_severity": 0.3
+        },
+        "riskcode": "1"
+      },
+      "normalised_severity": "low",
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "privilege_required": "unknown",
+      "region": null,
+      "related_finding_ids": [],
+      "remediation_guidance": "<p>Download the latest version of ZAP from https://www.zaproxy.org/download/ and install it.</p>",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 60,
+      "repository": "devsecops-application-security-pipeline",
+      "resource": "http://host.docker.internal:8000",
+      "risk_owner": "Risk Owner",
+      "risk_score": 52.25,
+      "schema_version": "1.0",
+      "security_domain": "DAST",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "severity": "Low",
+      "source_evidence": [
+        {
+          "path": "outputs/security/dynamic/raw/zap-report.json",
+          "record_hash": "10316e05fa27c0c4054af2b1e7fb94aed1d2512b7e050a32c24a590ddd8594ab",
+          "record_pointer": "/site/0/alerts/0",
+          "summary": "ZAP is Out of Date"
+        }
+      ],
+      "source_finding_id": "10116",
+      "source_record_hash": "10316e05fa27c0c4054af2b1e7fb94aed1d2512b7e050a32c24a590ddd8594ab",
+      "source_tool": "zap",
+      "source_type": "dynamic_scan",
+      "squad": "Application Engineering",
+      "status": "active",
+      "suppression_expiry": null,
+      "suppression_id": null,
+      "suppression_reason": null,
+      "suppression_status": null,
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "ZAP is Out of Date",
+      "verification_status": "source-observed"
+    },
+    {
+      "account": null,
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "authentication_required": "unknown",
+      "cloud_provider": null,
+      "compensating_control": null,
+      "component": null,
+      "confidence": "medium",
+      "control_ids": [],
+      "cve": null,
+      "cwe": "CWE-524",
+      "data_sensitivity": "high",
+      "deduplication_key": "dast|10049|http://host.docker.internal:8000",
+      "description": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+      "due_date": "2026-04-01",
+      "environment": "locally_validated",
+      "exploitability": "unknown",
+      "file": null,
+      "finding_id": "FND-DAST-e607d905531a",
+      "finding_type": "DAST",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "line": null,
+      "metadata": {
+        "asset_name": "FastAPI application",
+        "confidence": "2",
+        "deduplication_rationale": "unique exact key",
+        "risk_factors": {
+          "age_or_recurrence": 0.4,
+          "asset_criticality": 0.8,
+          "data_sensitivity": 1.0,
+          "exploitability": 0.35,
+          "internet_exposure": 0.65,
+          "privilege_required": 0.5,
+          "technical_severity": 0.1
+        },
+        "riskcode": "0"
+      },
+      "normalised_severity": "informational",
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "privilege_required": "unknown",
+      "region": null,
+      "related_finding_ids": [],
+      "remediation_guidance": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 90,
+      "repository": "devsecops-application-security-pipeline",
+      "resource": "http://host.docker.internal:8000",
+      "risk_owner": "Risk Owner",
+      "risk_score": 46.25,
+      "schema_version": "1.0",
+      "security_domain": "DAST",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "severity": "Informational",
+      "source_evidence": [
+        {
+          "path": "outputs/security/dynamic/raw/zap-report.json",
+          "record_hash": "f91b936dd3dcff7e6bc40413cb5a39de6059fe6722dfbf88c01ccd1fe462c3c5",
+          "record_pointer": "/site/0/alerts/1",
+          "summary": "Storable and Cacheable Content"
+        }
+      ],
+      "source_finding_id": "10049",
+      "source_record_hash": "f91b936dd3dcff7e6bc40413cb5a39de6059fe6722dfbf88c01ccd1fe462c3c5",
+      "source_tool": "zap",
+      "source_type": "dynamic_scan",
+      "squad": "Application Engineering",
+      "status": "active",
+      "suppression_expiry": null,
+      "suppression_id": null,
+      "suppression_reason": null,
+      "suppression_status": null,
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "Storable and Cacheable Content",
       "verification_status": "source-observed"
     },
     {
@@ -2454,7 +2818,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "668876439fba65825a37f42ccec2dfe42a993aa7434aa9a7e3563284fe4bed19",
-          "record_pointer": "/suppressions/6",
+          "record_pointer": "/suppressions/7",
           "summary": "Suppressed checkov finding CKV2_AWS_5"
         }
       ],
@@ -2544,7 +2908,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "988923802bd6a9dc2468f1a9d5d5bc1d7685b5c3d70696327ec063201e99ad99",
-          "record_pointer": "/suppressions/11",
+          "record_pointer": "/suppressions/12",
           "summary": "Suppressed checkov finding CKV2_AWS_57"
         }
       ],
@@ -2634,7 +2998,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "a75acb1213420f66706220438f3cb82855c1739e4431ee9e4c7075fa43d3d2d0",
-          "record_pointer": "/suppressions/4",
+          "record_pointer": "/suppressions/5",
           "summary": "Suppressed checkov finding CKV_AWS_260"
         }
       ],
@@ -2724,7 +3088,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "ce61bc17686324738aef1c4ad94fc7072a144c13e7be44c8b1c958c34ee6f285",
-          "record_pointer": "/suppressions/12",
+          "record_pointer": "/suppressions/13",
           "summary": "Suppressed checkov finding CKV2_AWS_57"
         }
       ],
@@ -2814,7 +3178,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "ab159a55d34124ca29c51c06f36ec6bb92a78a4d31be53da10a26cc806466904",
-          "record_pointer": "/suppressions/8",
+          "record_pointer": "/suppressions/9",
           "summary": "Suppressed checkov finding CKV_AWS_109,CKV_AWS_111,CKV_AWS_356"
         }
       ],
@@ -2904,7 +3268,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "05e22502a038b2e81f65903fc791b4c106105f0fc80109f4eb2502940471e1eb",
-          "record_pointer": "/suppressions/7",
+          "record_pointer": "/suppressions/8",
           "summary": "Suppressed checkov finding CKV_AWS_358"
         }
       ],
@@ -2994,7 +3358,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "35c48118274e8ddcc6ac946cd52f6710889396a0c862a14fbaef8566bf30e2ca",
-          "record_pointer": "/suppressions/2",
+          "record_pointer": "/suppressions/3",
           "summary": "Suppressed checkov finding CKV_AWS_2"
         }
       ],
@@ -3013,6 +3377,98 @@
         "THR-CLOUD-001"
       ],
       "title": "Suppressed checkov finding CKV_AWS_2",
+      "verification_status": "source-observed"
+    },
+    {
+      "account": null,
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "authentication_required": "unknown",
+      "cloud_provider": null,
+      "compensating_control": "Current working tree no longer contains private-key-shaped test marker text; the allow-list is scoped to the exact historical Milestone 13 commit.",
+      "component": null,
+      "confidence": "medium",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "deduplication_key": "suppression|gitleaks|jwt-signing-material-outside-fixtures|commit:d09a9b93c14176b23908de97be3c3907e5d29ec2;tests/security/test_integration_contract.py:164",
+      "description": "Milestone 13 committed a private-key-shaped string as a validator test marker. Milestone 14 replaces the current test marker with a non-secret synthetic marker, while Gitleaks still scans Git history.",
+      "due_date": "2026-10-14",
+      "environment": "locally_validated",
+      "exploitability": "unknown",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "finding_type": "Secret",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "line": null,
+      "metadata": {
+        "approved_by": "product_security_engineer",
+        "asset_name": "FastAPI application",
+        "deduplication_rationale": "unique exact key",
+        "review_date": "2026-08-14",
+        "risk_factors": {
+          "age_or_recurrence": 0.4,
+          "asset_criticality": 0.8,
+          "data_sensitivity": 1.0,
+          "exploitability": 0.35,
+          "internet_exposure": 0.65,
+          "privilege_required": 0.5,
+          "technical_severity": 1.0
+        }
+      },
+      "normalised_severity": "critical",
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "privilege_required": "unknown",
+      "region": null,
+      "related_finding_ids": [],
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 286,
+      "repository": "devsecops-application-security-pipeline",
+      "resource": "commit:d09a9b93c14176b23908de97be3c3907e5d29ec2;tests/security/test_integration_contract.py:164",
+      "risk_owner": "Risk Owner",
+      "risk_score": 73.25,
+      "schema_version": "1.0",
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "severity": "critical",
+      "source_evidence": [
+        {
+          "path": "security/config/suppressions.yaml",
+          "record_hash": "f70d1e7f2182bbde62a8f2cff710d336b48c0655c4b318a0c3d503d242679272",
+          "record_pointer": "/suppressions/1",
+          "summary": "Suppressed gitleaks finding jwt-signing-material-outside-fixtures"
+        }
+      ],
+      "source_finding_id": "SUP-GITLEAKS-MS13-HISTORY-MARKER-001",
+      "source_record_hash": "f70d1e7f2182bbde62a8f2cff710d336b48c0655c4b318a0c3d503d242679272",
+      "source_tool": "gitleaks",
+      "source_type": "manual_fixture",
+      "squad": "Application Engineering",
+      "status": "suppressed",
+      "suppression_expiry": "2026-10-14",
+      "suppression_id": "SUP-GITLEAKS-MS13-HISTORY-MARKER-001",
+      "suppression_reason": "Milestone 13 committed a private-key-shaped string as a validator test marker. Milestone 14 replaces the current test marker with a non-secret synthetic marker, while Gitleaks still scans Git history.",
+      "suppression_status": "active",
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "Suppressed gitleaks finding jwt-signing-material-outside-fixtures",
       "verification_status": "source-observed"
     },
     {
@@ -3084,7 +3540,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "b9e317b7d230a0ef62b39af8590c5ebed5ecf906ad2b2d02e3f0585b514a1930",
-          "record_pointer": "/suppressions/1",
+          "record_pointer": "/suppressions/2",
           "summary": "Suppressed checkov finding CKV_AWS_144"
         }
       ],
@@ -3266,7 +3722,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "f10764c5d015fdb580dcc060e5eb09da7b736dd949683ddb36bc4313c7d9e97a",
-          "record_pointer": "/suppressions/9",
+          "record_pointer": "/suppressions/10",
           "summary": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356"
         }
       ],
@@ -3356,7 +3812,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "6b99530eff3c28e3cbf26070e1fd9dd5f6d04ab1856a3115d5177645709ebee1",
-          "record_pointer": "/suppressions/10",
+          "record_pointer": "/suppressions/11",
           "summary": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356"
         }
       ],
@@ -3446,7 +3902,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "47438e238ec63b28d5e5e3fafb6aea158b880f2df13f86f337d23680fbb8c68c",
-          "record_pointer": "/suppressions/5",
+          "record_pointer": "/suppressions/6",
           "summary": "Suppressed checkov finding CKV2_AWS_5"
         }
       ],
@@ -3536,7 +3992,7 @@
         {
           "path": "security/config/suppressions.yaml",
           "record_hash": "386a5c518508ea5827d26bc647a50d928a9900beb040175b301d80f2f1ee6881",
-          "record_pointer": "/suppressions/3",
+          "record_pointer": "/suppressions/4",
           "summary": "Suppressed checkov finding CKV_AWS_378"
         }
       ],

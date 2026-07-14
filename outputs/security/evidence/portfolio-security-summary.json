@@ -1,8 +1,8 @@
 {
-  "bundle_id": "EVB-51743a7b28a9aa98",
-  "canonical_findings": 39,
+  "bundle_id": "EVB-2ad307649bc443e6",
+  "canonical_findings": 44,
   "control_coverage_percentage": 96.67,
-  "critical_high_findings": 33,
+  "critical_high_findings": 36,
   "deployment_status": "not_deployed",
   "integrity_decision": "pass",
   "next_milestone_boundary": "Milestone 13 integration contract is implemented locally; live Repository 5 ingestion and Milestone 14 are not implemented.",

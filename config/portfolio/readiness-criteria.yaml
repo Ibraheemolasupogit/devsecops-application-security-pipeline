@@ -1,0 +1,13 @@
+{
+  "criteria_version": "1.0",
+  "required_milestones": 14,
+  "required_capabilities": 25,
+  "required_evidence_indexes": ["evidence-index.json", "report-index.json"],
+  "allowed_statuses": ["ready_with_limitations", "not_ready"],
+  "known_limitations": [
+    "Application security evidence is locally validated and the platform is not deployed.",
+    "AWS architecture is a Terraform reference implementation only.",
+    "Repository 5 integration is contract-only and does not write to another repository.",
+    "Release decision remains conditional_pass because known non-blocking findings are governed."
+  ]
+}

@@ -47,7 +47,7 @@
     },
     {
       "path": "outputs/security/dynamic/zap-summary.json",
-      "sha256": "dbc9c5f6a8d49475c9bd38dad71d6f574ac396613edfdd36cabcd3a3a7cea237"
+      "sha256": "6dabed4bc06116e6ff1e343ee932363ffae2afa9edc36ead9bdc35fcb95bcce9"
     }
   ],
   "generated_at": "2026-01-01T00:00:00Z"

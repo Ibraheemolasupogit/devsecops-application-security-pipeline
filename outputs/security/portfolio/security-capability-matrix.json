@@ -1,0 +1,337 @@
+{
+  "capabilities": [
+    {
+      "evidence": [
+        "docs/threat-model/README.md",
+        "reports/security/threat-model-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-01",
+      "milestones": [
+        1,
+        2
+      ],
+      "name": "Secure design",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/threat-model/threat-register.yaml",
+        "outputs/security/threat-model/evidence-manifest.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-02",
+      "milestones": [
+        2
+      ],
+      "name": "Threat modelling",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "outputs/security/appsec/evidence-manifest.json",
+        "reports/security/appsec-pipeline-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-03",
+      "milestones": [
+        5
+      ],
+      "name": "Application security scanning",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/developer-security/authentication-guide.md",
+        "outputs/security/api-security/evidence-manifest.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-04",
+      "milestones": [
+        3
+      ],
+      "name": "Authentication controls",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/developer-security/authorisation-guide.md",
+        "docs/security/object-level-authorisation.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-05",
+      "milestones": [
+        3
+      ],
+      "name": "Authorisation controls",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "reports/security/dynamic-security-report.md",
+        "tests/security/test_api_security_controls.py"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-06",
+      "milestones": [
+        3,
+        6
+      ],
+      "name": "API security testing",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "infrastructure/README.md",
+        "outputs/security/infrastructure/evidence-manifest.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-07",
+      "milestones": [
+        4
+      ],
+      "name": "Infrastructure security",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/security/secret-scanning.md",
+        ".gitleaks.toml"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-08",
+      "milestones": [
+        5
+      ],
+      "name": "Secrets governance",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/security/dependency-security.md",
+        "outputs/security/appsec/raw/pip-audit.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-09",
+      "milestones": [
+        5
+      ],
+      "name": "Dependency security",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/security/container-scanning.md",
+        "reports/security/container-security-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-10",
+      "milestones": [
+        5
+      ],
+      "name": "Container security",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "outputs/security/dynamic/evidence-manifest.json",
+        "reports/security/zap-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-11",
+      "milestones": [
+        6
+      ],
+      "name": "Dynamic security testing",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "outputs/security/findings/evidence-manifest.json",
+        "reports/security/findings-normalisation-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-12",
+      "milestones": [
+        7
+      ],
+      "name": "Finding normalisation",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "reports/security/risk-enrichment-report.md",
+        "outputs/security/findings/risk-summary.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-13",
+      "milestones": [
+        7
+      ],
+      "name": "Risk enrichment",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "outputs/security/release/evidence-manifest.json",
+        "reports/security/release-gate-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-14",
+      "milestones": [
+        8
+      ],
+      "name": "Release assurance",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/security/security-exceptions.md",
+        "outputs/security/lifecycle/evidence-manifest.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-15",
+      "milestones": [
+        9
+      ],
+      "name": "Exception governance",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "reports/security/vulnerability-lifecycle-report.md",
+        "outputs/security/lifecycle/vulnerability-register.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-16",
+      "milestones": [
+        9
+      ],
+      "name": "Vulnerability lifecycle",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "outputs/security/evidence/evidence-manifest.json",
+        "reports/security/security-evidence-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-17",
+      "milestones": [
+        10
+      ],
+      "name": "Evidence consolidation",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "reports/security/executive-security-summary.md",
+        "reports/security/product-security-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-18",
+      "milestones": [
+        10
+      ],
+      "name": "Security reporting",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/developer-security/README.md",
+        "reports/security/developer-enablement-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-19",
+      "milestones": [
+        11
+      ],
+      "name": "Developer enablement",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "security-champions/README.md",
+        "outputs/security/champions/evidence-manifest.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-20",
+      "milestones": [
+        12
+      ],
+      "name": "Security champions",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/integration/repository-5-integration-contract.md",
+        "outputs/security/integration/integration-manifest.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-21",
+      "milestones": [
+        13
+      ],
+      "name": "Repository integration contract",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/security/evidence-lineage.md",
+        "reports/security/integration-lineage-report.md"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-22",
+      "milestones": [
+        10,
+        13
+      ],
+      "name": "Traceability and lineage",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        ".github/workflows/appsec.yml",
+        ".github/workflows/security-evidence.yml"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-23",
+      "milestones": [
+        5,
+        10,
+        14
+      ],
+      "name": "CI security automation",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/portfolio/portfolio-evidence-index.md",
+        "outputs/security/portfolio/portfolio-summary.json"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-24",
+      "milestones": [
+        14
+      ],
+      "name": "Portfolio evidence readiness",
+      "status": "implemented"
+    },
+    {
+      "evidence": [
+        "docs/portfolio/limitations-and-residual-risk.md",
+        "config/portfolio/readiness-criteria.yaml"
+      ],
+      "evidence_present": 2,
+      "id": "CAP-25",
+      "milestones": [
+        14
+      ],
+      "name": "Residual risk communication",
+      "status": "implemented"
+    }
+  ],
+  "capability_count": 25,
+  "implemented_count": 25,
+  "schema_version": "1.0"
+}

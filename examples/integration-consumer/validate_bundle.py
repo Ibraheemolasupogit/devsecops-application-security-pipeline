@@ -12,7 +12,8 @@ from typing import Any
 SUPPORTED_CONTRACTS = {"1.0"}
 LOCAL_PATH_RE = re.compile(r"(/Users/|/private/|[A-Za-z]:\\\\)")
 SECRET_RE = re.compile(
-    r"(-----BEGIN [A-Z ]*PRIVATE KEY-----|eyJ[A-Za-z0-9_-]+\.|AKIA[0-9A-Z]{16}|secret\s*=)",
+    r"(-----BEGIN [A-Z ]*PRIVATE KEY-----|eyJ[A-Za-z0-9_-]+\.|AKIA[0-9A-Z]{16}|"
+    r"secret\s*=|blocked-sensitive-marker)",
     re.IGNORECASE,
 )
 

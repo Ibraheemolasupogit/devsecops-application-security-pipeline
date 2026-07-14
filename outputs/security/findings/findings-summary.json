@@ -2,52 +2,55 @@
   "deduplicated_count": 2,
   "expired_suppressions": 0,
   "findings_by_asset": {
-    "AST-APP-FASTAPI": 7,
-    "AST-CONTAINER": 20,
+    "AST-APP-FASTAPI": 10,
+    "AST-CONTAINER": 22,
     "AST-TERRAFORM": 12
   },
   "findings_by_environment": {
-    "locally_validated": 7,
-    "not_deployed": 32
+    "locally_validated": 10,
+    "not_deployed": 34
   },
   "findings_by_owner": {
-    "Application Engineering": 1,
+    "Application Engineering": 4,
     "Cloud Security": 12,
-    "Platform Engineering": 20,
+    "Platform Engineering": 22,
     "Product Security": 6
   },
   "findings_by_priority": {
-    "P2": 15,
-    "P3": 24
+    "P2": 17,
+    "P3": 27
   },
   "findings_by_severity": {
-    "critical": 3,
-    "high": 30,
+    "critical": 5,
+    "high": 31,
+    "informational": 1,
+    "low": 1,
     "medium": 6
   },
   "findings_by_source_tool": {
     "bandit": 0,
     "checkov": 12,
     "dynamic-pytest": 0,
-    "gitleaks": 1,
+    "gitleaks": 2,
     "pip-audit": 0,
     "schemathesis": 0,
     "semgrep": 0,
     "threat-model": 6,
-    "trivy": 22,
-    "zap": 0
+    "trivy": 24,
+    "zap": 2
   },
   "findings_by_type": {
-    "Container": 22,
+    "Container": 24,
+    "DAST": 2,
     "IaC": 12,
-    "Secret": 1,
+    "Secret": 2,
     "Threat Model": 6
   },
   "findings_with_fixes_available": 0,
-  "findings_without_fixes": 41,
+  "findings_without_fixes": 46,
   "schema_version": "1.0",
-  "suppressed_findings": 15,
-  "total_canonical_findings": 39,
-  "total_source_findings": 41,
+  "suppressed_findings": 16,
+  "total_canonical_findings": 44,
+  "total_source_findings": 46,
   "unowned_findings": 0
 }

@@ -1,9 +1,9 @@
 {
-  "blocking_count": 0,
+  "blocking_count": 1,
   "not_run": [],
-  "policy_decision": "pass",
+  "policy_decision": "block",
   "scanner_count": 5,
-  "suppression_count": 15,
+  "suppression_count": 16,
   "tool_versions": {
     "bandit": "1.7.10",
     "checkov": "3.2.281",

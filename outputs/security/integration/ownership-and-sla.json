@@ -151,8 +151,28 @@
       "technical_owner": "Platform Engineering"
     },
     {
+      "due_date": "2026-01-04",
+      "finding_id": "FND-CONTAINER-b26883cf2982",
+      "overdue": false,
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 3,
+      "risk_owner": "Risk Owner",
+      "squad": "Platform Engineering",
+      "technical_owner": "Platform Engineering"
+    },
+    {
       "due_date": "2026-01-15",
       "finding_id": "FND-CONTAINER-ba223b9333c9",
+      "overdue": false,
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "risk_owner": "Risk Owner",
+      "squad": "Platform Engineering",
+      "technical_owner": "Platform Engineering"
+    },
+    {
+      "due_date": "2026-01-15",
+      "finding_id": "FND-CONTAINER-c118af042a95",
       "overdue": false,
       "remediation_owner": "Platform Engineering",
       "remediation_sla_days": 14,
@@ -199,6 +219,26 @@
       "risk_owner": "Risk Owner",
       "squad": "Platform Engineering",
       "technical_owner": "Platform Engineering"
+    },
+    {
+      "due_date": "2026-03-02",
+      "finding_id": "FND-DAST-7f68e8fb688f",
+      "overdue": false,
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 60,
+      "risk_owner": "Risk Owner",
+      "squad": "Application Engineering",
+      "technical_owner": "Application Engineering"
+    },
+    {
+      "due_date": "2026-04-01",
+      "finding_id": "FND-DAST-e607d905531a",
+      "overdue": false,
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 90,
+      "risk_owner": "Risk Owner",
+      "squad": "Application Engineering",
+      "technical_owner": "Application Engineering"
     },
     {
       "due_date": "2026-01-31",
@@ -329,6 +369,16 @@
       "risk_owner": "Risk Owner",
       "squad": "Cloud Platform Security",
       "technical_owner": "Cloud Security"
+    },
+    {
+      "due_date": "2026-10-14",
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "overdue": false,
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 286,
+      "risk_owner": "Risk Owner",
+      "squad": "Application Engineering",
+      "technical_owner": "Application Engineering"
     },
     {
       "due_date": "2027-01-12",

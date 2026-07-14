@@ -26,7 +26,7 @@ LOCAL_PATH_RE = re.compile(r"(/Users/|/private/|[A-Za-z]:\\\\)")
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 SECRET_RE = re.compile(
     r"(-----BEGIN [A-Z ]*PRIVATE KEY-----|eyJ[A-Za-z0-9_-]+\.|AKIA[0-9A-Z]{16}|"
-    r"aws_secret_access_key|password\s*=|secret\s*=)",
+    r"aws_secret_access_key|password\s*=|secret\s*=|blocked-sensitive-marker)",
     re.IGNORECASE,
 )
 FORMULA_RE = re.compile(r"(^|,)[=+@-]")

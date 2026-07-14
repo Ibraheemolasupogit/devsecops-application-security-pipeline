@@ -1,9 +1,9 @@
 {
-  "blocking_count": 0,
+  "blocking_count": 1,
   "execution_status": "completed",
-  "finding_count": 20,
+  "finding_count": 22,
   "limitations": "",
-  "policy_decision": "pass",
+  "policy_decision": "block",
   "suppressed_count": 2,
   "tool": "trivy"
 }

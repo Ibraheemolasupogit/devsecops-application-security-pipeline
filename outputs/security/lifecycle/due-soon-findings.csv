@@ -1,3 +1,4 @@
 vulnerability_id,finding_id,title,severity,priority,risk_score,status,technical_owner,risk_owner,remediation_owner,squad,due_date,overdue,verification_status,exception_id,review_date
 VUL-3c36ead265b5,FND-CONTAINER-95a38a1f2a20,perl-base CVE-2026-8376,critical,P2,62.25,triaged,Platform Engineering,Risk Owner,Platform Engineering,Platform Engineering,2026-01-04,False,not_verified,,
 VUL-722413c096a8,FND-CONTAINER-5ee1761422cc,perl-base CVE-2026-42496,critical,P2,62.25,triaged,Platform Engineering,Risk Owner,Platform Engineering,Platform Engineering,2026-01-04,False,not_verified,,
+VUL-f0424a7c155e,FND-CONTAINER-b26883cf2982,perl-base CVE-2026-13221,critical,P2,62.25,triaged,Platform Engineering,Risk Owner,Platform Engineering,Platform Engineering,2026-01-04,False,not_verified,,

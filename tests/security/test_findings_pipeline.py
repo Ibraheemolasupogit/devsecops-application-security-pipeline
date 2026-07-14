@@ -135,10 +135,10 @@ def test_report_generation(tmp_path: Path) -> None:
 @pytest.mark.parametrize(
     "command, expected",
     [
-        ("normalise", "normalised 41 source findings"),
+        ("normalise", "normalised 46 source findings"),
         ("deduplicate", "deduplicated 2 findings"),
-        ("enrich", "enriched 41 source findings"),
-        ("validate", "validated 39 canonical findings"),
+        ("enrich", "enriched 46 source findings"),
+        ("validate", "validated 44 canonical findings"),
         ("evidence", "generated findings evidence"),
         ("verify", "verified findings evidence"),
         ("report", "generated findings reports"),

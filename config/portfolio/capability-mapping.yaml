@@ -1,0 +1,30 @@
+{
+  "mapping_version": "1.0",
+  "capabilities": [
+    {"id": "CAP-01", "name": "Secure design", "milestones": [1, 2], "evidence": ["docs/threat-model/README.md", "reports/security/threat-model-report.md"]},
+    {"id": "CAP-02", "name": "Threat modelling", "milestones": [2], "evidence": ["docs/threat-model/threat-register.yaml", "outputs/security/threat-model/evidence-manifest.json"]},
+    {"id": "CAP-03", "name": "Application security scanning", "milestones": [5], "evidence": ["outputs/security/appsec/evidence-manifest.json", "reports/security/appsec-pipeline-report.md"]},
+    {"id": "CAP-04", "name": "Authentication controls", "milestones": [3], "evidence": ["docs/developer-security/authentication-guide.md", "outputs/security/api-security/evidence-manifest.json"]},
+    {"id": "CAP-05", "name": "Authorisation controls", "milestones": [3], "evidence": ["docs/developer-security/authorisation-guide.md", "docs/security/object-level-authorisation.md"]},
+    {"id": "CAP-06", "name": "API security testing", "milestones": [3, 6], "evidence": ["reports/security/dynamic-security-report.md", "tests/security/test_api_security_controls.py"]},
+    {"id": "CAP-07", "name": "Infrastructure security", "milestones": [4], "evidence": ["infrastructure/README.md", "outputs/security/infrastructure/evidence-manifest.json"]},
+    {"id": "CAP-08", "name": "Secrets governance", "milestones": [5], "evidence": ["docs/security/secret-scanning.md", ".gitleaks.toml"]},
+    {"id": "CAP-09", "name": "Dependency security", "milestones": [5], "evidence": ["docs/security/dependency-security.md", "outputs/security/appsec/raw/pip-audit.json"]},
+    {"id": "CAP-10", "name": "Container security", "milestones": [5], "evidence": ["docs/security/container-scanning.md", "reports/security/container-security-report.md"]},
+    {"id": "CAP-11", "name": "Dynamic security testing", "milestones": [6], "evidence": ["outputs/security/dynamic/evidence-manifest.json", "reports/security/zap-report.md"]},
+    {"id": "CAP-12", "name": "Finding normalisation", "milestones": [7], "evidence": ["outputs/security/findings/evidence-manifest.json", "reports/security/findings-normalisation-report.md"]},
+    {"id": "CAP-13", "name": "Risk enrichment", "milestones": [7], "evidence": ["reports/security/risk-enrichment-report.md", "outputs/security/findings/risk-summary.json"]},
+    {"id": "CAP-14", "name": "Release assurance", "milestones": [8], "evidence": ["outputs/security/release/evidence-manifest.json", "reports/security/release-gate-report.md"]},
+    {"id": "CAP-15", "name": "Exception governance", "milestones": [9], "evidence": ["docs/security/security-exceptions.md", "outputs/security/lifecycle/evidence-manifest.json"]},
+    {"id": "CAP-16", "name": "Vulnerability lifecycle", "milestones": [9], "evidence": ["reports/security/vulnerability-lifecycle-report.md", "outputs/security/lifecycle/vulnerability-register.json"]},
+    {"id": "CAP-17", "name": "Evidence consolidation", "milestones": [10], "evidence": ["outputs/security/evidence/evidence-manifest.json", "reports/security/security-evidence-report.md"]},
+    {"id": "CAP-18", "name": "Security reporting", "milestones": [10], "evidence": ["reports/security/executive-security-summary.md", "reports/security/product-security-report.md"]},
+    {"id": "CAP-19", "name": "Developer enablement", "milestones": [11], "evidence": ["docs/developer-security/README.md", "reports/security/developer-enablement-report.md"]},
+    {"id": "CAP-20", "name": "Security champions", "milestones": [12], "evidence": ["security-champions/README.md", "outputs/security/champions/evidence-manifest.json"]},
+    {"id": "CAP-21", "name": "Repository integration contract", "milestones": [13], "evidence": ["docs/integration/repository-5-integration-contract.md", "outputs/security/integration/integration-manifest.json"]},
+    {"id": "CAP-22", "name": "Traceability and lineage", "milestones": [10, 13], "evidence": ["docs/security/evidence-lineage.md", "reports/security/integration-lineage-report.md"]},
+    {"id": "CAP-23", "name": "CI security automation", "milestones": [5, 10, 14], "evidence": [".github/workflows/appsec.yml", ".github/workflows/security-evidence.yml"]},
+    {"id": "CAP-24", "name": "Portfolio evidence readiness", "milestones": [14], "evidence": ["docs/portfolio/portfolio-evidence-index.md", "outputs/security/portfolio/portfolio-summary.json"]},
+    {"id": "CAP-25", "name": "Residual risk communication", "milestones": [14], "evidence": ["docs/portfolio/limitations-and-residual-risk.md", "config/portfolio/readiness-criteria.yaml"]}
+  ]
+}

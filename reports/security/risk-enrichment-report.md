@@ -6,11 +6,12 @@ Formula: 30% severity + 20% exploitability + 15% internet exposure + 15% asset c
 
 | Name | Count |
 | --- | ---: |
-| P2 | 15 |
-| P3 | 24 |
+| P2 | 17 |
+| P3 | 27 |
 
 ## Highest Risk
 
+- FND-SUPPRESSIO-836cb2a2770d: P2 score 73.25 - Suppressed gitleaks finding jwt-signing-material-outside-fixtures
 - FND-SUPPRESSIO-974e196f7185: P2 score 73.25 - Suppressed gitleaks finding private-key
 - FND-SUPPRESSIO-1065083a8d4b: P2 score 67.25 - Suppressed checkov finding CKV2_AWS_5
 - FND-SUPPRESSIO-47693ff859ed: P2 score 67.25 - Suppressed checkov finding CKV2_AWS_57
@@ -20,4 +21,3 @@ Formula: 30% severity + 20% exploitability + 15% internet exposure + 15% asset c
 - FND-SUPPRESSIO-713bb8f041d7: P2 score 67.25 - Suppressed checkov finding CKV_AWS_358
 - FND-SUPPRESSIO-7b3ddcaa6af8: P2 score 67.25 - Suppressed checkov finding CKV_AWS_2
 - FND-SUPPRESSIO-8632c434b354: P2 score 67.25 - Suppressed checkov finding CKV_AWS_144
-- FND-SUPPRESSIO-b5c9f1d0aae2: P2 score 67.25 - Suppressed checkov finding CKV_AWS_111,CKV_AWS_356

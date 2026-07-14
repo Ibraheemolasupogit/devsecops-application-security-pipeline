@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "145f088eab4e2ffb448eddeea0e356ea11f8c1e175169e26656c1fdfafdac9b7"
+      "sha256": "da07d40a8678eac548b4cf05300630331e1d25dcf9afb9b86791cab5e6260f09"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -67,19 +67,19 @@
     },
     "outputs/security/appsec/raw/semgrep.json": {
       "path": "outputs/security/appsec/raw/semgrep.json",
-      "sha256": "e175c1d6bca2e0d4499892290370d074471256851d4481834dc4e66d1f01e5f9"
+      "sha256": "bee3e2a8e9211b274ae51a14f7af651b79a02fa82baa67ee1a57e1843b6773b3"
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "6005064128e17fa2bf178ab0ab54ab43a480a6e0b22814961d42ed5f3350393d"
+      "sha256": "a011d64dfcb577453c5e23322c5452ac6e389f3d9ab3a46b45f3d9e984793039"
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
-      "sha256": "24269dd5e404d365181fea4b4c38d689c86119c3a5c704283b3bcd072dc6adcc"
+      "sha256": "88a1cb4bafad3825aa89c4ee6dfb9d190ec9cee9244fe9d41ee02520f28edc6a"
     },
     "outputs/security/dynamic/raw/zap-report.json": {
       "path": "outputs/security/dynamic/raw/zap-report.json",
-      "sha256": "0a18cf65ba22748929c39975a4a5d7dbfe3145b98bc1d438f2fd484bd7b87607"
+      "sha256": "6cf5d00b2670e537b616a70196372ff88a55b7471efbf47a8636652aec6a9dfb"
     },
     "outputs/security/dynamic/schemathesis-summary.json": {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
@@ -87,14 +87,14 @@
     },
     "security/config/suppressions.yaml": {
       "path": "security/config/suppressions.yaml",
-      "sha256": "87fa320b2bd536905d383d627fda1d2983b7d41bbc5c63ed8a90d23d30ee56e6"
+      "sha256": "276d2859a5bf48bff37d9322b8ef3277f97641fb50333a2026eaa088db88b0f8"
     },
     "security/dynamic/suppressions.yaml": {
       "path": "security/dynamic/suppressions.yaml",
       "sha256": "4f56188bea83765d6ba11cf83557e7be3f1500dc3b11c8ab3d7c5f2f9fc8b6d1"
     }
   },
-  "normalisation_count": 41,
+  "normalisation_count": 46,
   "output_files": {
     "asset-inventory.json": {
       "path": "outputs/security/findings/asset-inventory.json",
@@ -102,11 +102,11 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "a6e3f1f96f968cad29c034c9c51644a6f7499934e8855d5240944d4373cd01ff"
+      "sha256": "7008248e7440ec5b4340e1eac011eda2d854c788e938f8d652607b10956fdade"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
-      "sha256": "46be1e056804f248efe6bdcb62e6a926e7553b1d54f659406a8340873a10b51c"
+      "sha256": "2ccf0e5f843c9a64e2ff73ec0e62040bb24126fe2cd353cb0b69859b65d514e4"
     },
     "expired-suppressions.csv": {
       "path": "outputs/security/findings/expired-suppressions.csv",
@@ -114,35 +114,35 @@
     },
     "finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "fc11670454e6612e7f253d64506564096578dc11505edc2768db19ca18751db5"
+      "sha256": "238dba54d1b524f5f938e5841cfcdf2062c9d07e094d58d104c310fc8498f573"
     },
     "findings-summary.json": {
       "path": "outputs/security/findings/findings-summary.json",
-      "sha256": "9c3aa572ee1c7add56ebc3ce66eaf477ce7b1adef4e73fcaeeee5ed69747af4e"
+      "sha256": "df4180c90d089d284a8771db1599e690a3fc2062e2e75a176c161626f956750b"
     },
     "normalised-findings.csv": {
       "path": "outputs/security/findings/normalised-findings.csv",
-      "sha256": "0248d7da8287740bc5994faf8b0036caf25fd94cd758a92126e8043654e08aa9"
+      "sha256": "703a1d497bb2816e40b3646f6f9a0b4aaba470578f699b401545f3a6df175819"
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "f94a1ce5650c7630eeb81ef0813273dbc5ddd55f0231069a476a3579ed191036"
+      "sha256": "26a862c9f55f8f298932165427f711e71a3588d5da302a3f0281fbb2e0620103"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",
-      "sha256": "07e1ee7bf010190a400d213f7365a6ea13bd231fa73ab9b7517531ff23037bfb"
+      "sha256": "d793b22326d790f564784e34caf527ebc0525ee42bce0a185b57d0ed720970e0"
     },
     "risk-summary.json": {
       "path": "outputs/security/findings/risk-summary.json",
-      "sha256": "57015e0a276631d1d513c884858084abc37a0c86c861a572b60d26d2d79a005c"
+      "sha256": "5a4ffe655d691028c56a1de40e371ca1b68bc7312c8da0fbe625c9e28b663d85"
     },
     "sla-summary.json": {
       "path": "outputs/security/findings/sla-summary.json",
-      "sha256": "11a19b97f71629b7c1e3b03a72431e2e1b9e306f68f7bdddc701e43f803c462e"
+      "sha256": "8fa532a9ba85b26b8210c0cec4ab52eecd7d0e1665fdab29fdaf2246ca2effd3"
     },
     "suppressed-findings.csv": {
       "path": "outputs/security/findings/suppressed-findings.csv",
-      "sha256": "776bc4cb0596953442658708b6e7339db1856f73e3c7dbaec776f95305a26588"
+      "sha256": "9c97313d799b9128ff3cf012a2df9dddf11865a5a7e6ee3b3c228c66148d5e5b"
     },
     "unowned-findings.csv": {
       "path": "outputs/security/findings/unowned-findings.csv",

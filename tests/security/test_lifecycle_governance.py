@@ -260,7 +260,7 @@ def test_risk_acceptance_requires_active_exception() -> None:
 
 def test_current_canonical_findings_initialise_successfully() -> None:
     records, exceptions, validations = build_register()
-    assert len(records) == 39
+    assert len(records) == 44
     assert len(exceptions) == 3
     assert validations[0]["status"] == "valid"
     assert any(record.status == "risk_accepted" for record in records)
@@ -326,8 +326,8 @@ def test_report_generation(tmp_path: Path) -> None:
     "command, expected",
     [
         ("validate", "validated lifecycle policy"),
-        ("initialise", "initialised 39 vulnerabilities"),
-        ("evaluate-expiry", "initialised 39 vulnerabilities"),
+        ("initialise", "initialised 44 vulnerabilities"),
+        ("evaluate-expiry", "initialised 44 vulnerabilities"),
         ("generate-evidence", "generated lifecycle evidence"),
         ("verify-evidence", "verified lifecycle evidence"),
         ("generate-reports", "generated lifecycle reports"),

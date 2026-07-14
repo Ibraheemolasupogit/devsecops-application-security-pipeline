@@ -227,10 +227,40 @@
     },
     {
       "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-b26883cf2982",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-b26883cf2982 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
       "finding_id": "FND-CONTAINER-ba223b9333c9",
       "outcome": "deferred",
       "priority": 100,
       "rationale": "No-fix runtime finding FND-CONTAINER-ba223b9333c9 is conditionally accepted for the non-deployed image.",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "rule_id": "RG-COND-001"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-CONTAINER-c118af042a95",
+      "outcome": "deferred",
+      "priority": 100,
+      "rationale": "No-fix runtime finding FND-CONTAINER-c118af042a95 is conditionally accepted for the non-deployed image.",
       "required_actions": [
         "Track upstream fix availability and rebuild the image when a fix is published."
       ],
@@ -390,6 +420,20 @@
       "outcome": "suppressed",
       "priority": 110,
       "rationale": "Finding FND-SUPPRESSIO-7b3ddcaa6af8 has an active governed suppression with compensating control.",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-COND-002"
+    },
+    {
+      "decision": "conditional_pass",
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "outcome": "suppressed",
+      "priority": 110,
+      "rationale": "Finding FND-SUPPRESSIO-836cb2a2770d has an active governed suppression with compensating control.",
       "required_actions": [
         "Review the suppression before expiry and keep compensating controls current."
       ],
@@ -733,6 +777,30 @@
       ],
       "required_approvals": [],
       "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-DAST-7f68e8fb688f",
+      "outcome": "matched",
+      "priority": 210,
+      "rationale": "Finding FND-DAST-7f68e8fb688f is low or informational.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-002"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-DAST-e607d905531a",
+      "outcome": "matched",
+      "priority": 210,
+      "rationale": "Finding FND-DAST-e607d905531a is low or informational.",
+      "required_actions": [
+        "Review during normal maintenance."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-002"
     }
   ],
   "schema_version": "1.0"

@@ -1,7 +1,10 @@
 title = "Genomic Research Access API Gitleaks Configuration"
 
 [allowlist]
-description = "Narrow allow-list for approved synthetic local JWT test key fixture only."
+description = "Narrow allow-list for approved synthetic local JWT test key fixture and one historical Milestone 13 test-marker false positive."
+commits = [
+  "d09a9b93c14176b23908de97be3c3907e5d29ec2",
+]
 paths = [
   '''^tests/fixtures/keys/dev_private_key\.pem$''',
 ]

@@ -2,7 +2,7 @@
   "as_of_date": "2026-01-01",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
   "decision": "conditional_pass",
-  "decision_id": "REL-57cfa7baad1bb799",
+  "decision_id": "REL-53b297bb7b0a9e6a",
   "environment": "dev",
   "generator": "genomic_research_access_api.security.release.evidence",
   "input_files": {
@@ -32,21 +32,21 @@
     },
     "outputs/security/findings/deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "a6e3f1f96f968cad29c034c9c51644a6f7499934e8855d5240944d4373cd01ff"
+      "sha256": "7008248e7440ec5b4340e1eac011eda2d854c788e938f8d652607b10956fdade"
     },
     "outputs/security/findings/evidence-manifest.json": {
       "path": "outputs/security/findings/evidence-manifest.json",
-      "sha256": "3b4a1ceaaa5aeb45876657c1424b4e68da3abcb262911e49a2d46d9680841bc7"
+      "sha256": "61118ca2d0e26e8e53f45505fc49a7b1f9b527694046c359e3d73db9bbc3f0d4"
     }
   },
   "output_files": {
     "finding-evaluations.json": {
       "path": "outputs/security/release/finding-evaluations.json",
-      "sha256": "d0654d9b9eb39893d729a632da9c1e84472d00762c303275634cacab117dc5f1"
+      "sha256": "078ce43b4edc094db21b4fb941ba47649e2280aa57e659965e743e90156f262a"
     },
     "matched-rules.json": {
       "path": "outputs/security/release/matched-rules.json",
-      "sha256": "0017e04c833b04fb08469cf69e0786e5065e9b19143f59b372060aa4834a8aca"
+      "sha256": "fc3df3f37da5daa8e513f5228a089c54d7d8df1c44341dadba6062975eb9ecbc"
     },
     "policy-validation-summary.json": {
       "path": "outputs/security/release/policy-validation-summary.json",
@@ -54,19 +54,19 @@
     },
     "release-actions.json": {
       "path": "outputs/security/release/release-actions.json",
-      "sha256": "9b7fc188c416172d96c51ce923f64d78e12d659f84c58b4a2b00d4b067bd45ca"
+      "sha256": "5f3a7382991ec9f808eccfe216a538913d5ae76005e5e227f5d054d769cd6d72"
     },
     "release-gate-decision.json": {
       "path": "outputs/security/release/release-gate-decision.json",
-      "sha256": "3377becc92bfc2c43797d42c528e8ded4fcaf483850b0274987d14a9c2c562f1"
+      "sha256": "c53700857cb85a6cc1e81c32a01ae2b49fb98cec3ba87fda6a7c8fa7e61c28c0"
     },
     "release-risk-summary.json": {
       "path": "outputs/security/release/release-risk-summary.json",
-      "sha256": "5ed3e71bc180ebb2a444b58ac903b533e28067b978fcb66f8f5a34eb51a4b5be"
+      "sha256": "117a40d69b6fa7298b4660864c7f673e4e62b84d6e44619bf5cba0d534d0cec2"
     },
     "required-approvals.json": {
       "path": "outputs/security/release/required-approvals.json",
-      "sha256": "b0b8cde235840619fbb23e250d30cd8ea74232999a6ac85becc7a94f2516bcb7"
+      "sha256": "470dbb48a61b3307a574a03f5834f0cd96aceb27647a0ef83e663fead608594d"
     }
   },
   "policy_version": "1.0",

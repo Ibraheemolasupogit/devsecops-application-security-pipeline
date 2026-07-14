@@ -3,24 +3,25 @@
   "as_of_date": "2026-01-01",
   "champion_coverage_percentage": 100.0,
   "critical_high_findings_by_squad": {
-    "Application Engineering": 1,
+    "Application Engineering": 2,
     "Cloud Platform Security": 12,
-    "Platform Engineering": 20
+    "Platform Engineering": 22
   },
   "demonstration_data": true,
   "exception_review_completion_rate": 100.0,
   "findings_by_squad": {
-    "Application Engineering": 1,
+    "Application Engineering": 4,
     "Cloud Platform Security": 12,
-    "Platform Engineering": 20,
+    "Platform Engineering": 22,
     "Product Security": 6
   },
   "overdue_findings_by_squad": {},
   "owner_assignment_rate": 100.0,
   "repeated_vulnerability_categories": {
-    "Container": 20,
+    "Container": 22,
+    "DAST": 2,
     "Secure Design": 6,
-    "Suppression Governance": 13
+    "Suppression Governance": 14
   },
   "schema_version": "1.0",
   "squads_with_active_champion": 4,

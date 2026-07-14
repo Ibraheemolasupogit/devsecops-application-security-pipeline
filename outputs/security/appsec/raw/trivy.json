@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2026-07-14T02:38:52.709744051Z",
+  "CreatedAt": "2026-07-14T21:16:55.58085705Z",
   "ArtifactName": "devsecops-application-security-pipeline:milestone5",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,7 +8,7 @@
       "Family": "debian",
       "Name": "13.6"
     },
-    "ImageID": "sha256:bee2c3ebce0443c988b27853daf578eb36829b69d5ddaccbf4704607cafae03f",
+    "ImageID": "sha256:6fc6115583253cd89c0cb05408b89acbeb083f0b209421841b027906ef9a8c06",
     "DiffIDs": [
       "sha256:090e9c58f4748dd51573ae6f05678fa97237bbe946047a0433b0092ef6c4a704",
       "sha256:1e09695463df90596c8384bf3b8818aaf6775dc6f87a1abe68eabd730ff744c2",
@@ -16,18 +16,18 @@
       "sha256:5c1c2aa63cc672fb3b2819dd16432493ead0d3af26c732ffd82c10d667001c58",
       "sha256:c056a12af6178032a370550c94c8f099e988d5a9c2ab65016534a2b200a32217",
       "sha256:e58391a994176acb89d4fe81ea4ed58b2adb50e32e63f985d16e93fb0a290c41",
-      "sha256:259b7d0251ea63da0170c3beca46ca8b635d9e06858101554341adeecd94e787",
-      "sha256:fd0e8bc6d1eae9547fd7bb8f6726464b5963d6ab1a29c9bcf24e18cac0c8c223"
+      "sha256:30b1a7284d93d16c9ef6a03fdac97f4dd00ed76ba097d27b470403b82664059a",
+      "sha256:9c8aa972e03baf02c8f1d9326e7adab8f5937bd2281ccb09ce38003e4f2300e4"
     ],
     "RepoTags": [
       "devsecops-application-security-pipeline:milestone5"
     ],
     "RepoDigests": [
-      "devsecops-application-security-pipeline@sha256:bee2c3ebce0443c988b27853daf578eb36829b69d5ddaccbf4704607cafae03f"
+      "devsecops-application-security-pipeline@sha256:6fc6115583253cd89c0cb05408b89acbeb083f0b209421841b027906ef9a8c06"
     ],
     "ImageConfig": {
       "architecture": "arm64",
-      "created": "2026-07-14T02:38:24.22726251Z",
+      "created": "2026-07-14T21:16:27.492168801Z",
       "history": [
         {
           "created": "2025-08-08T18:20:34Z",
@@ -102,35 +102,35 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-14T02:38:12Z",
+          "created": "2026-07-14T21:16:14Z",
           "created_by": "COPY /wheels /wheels # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-14T02:38:24Z",
+          "created": "2026-07-14T21:16:27Z",
           "created_by": "RUN /bin/sh -c apt-get update     \u0026\u0026 apt-get -y upgrade     \u0026\u0026 rm -rf /var/lib/apt/lists/*     \u0026\u0026 python -m pip install --no-cache-dir --no-index --find-links=/wheels genomic-research-access-api==0.1.0     \u0026\u0026 python -m pip uninstall -y pip setuptools wheel     \u0026\u0026 rm -rf /wheels /root/.cache/pip # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-14T02:38:24Z",
+          "created": "2026-07-14T21:16:27Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-14T02:38:24Z",
+          "created": "2026-07-14T21:16:27Z",
           "created_by": "EXPOSE map[8000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-14T02:38:24Z",
+          "created": "2026-07-14T21:16:27Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"python -c \\\"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).read()\\\"\"] \"30s\" \"5s\" \"10s\" \"0s\" '\\x03'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-14T02:38:24Z",
+          "created": "2026-07-14T21:16:27Z",
           "created_by": "CMD [\"uvicorn\" \"genomic_research_access_api.main:app\" \"--host\" \"0.0.0.0\" \"--port\" \"8000\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -146,8 +146,8 @@
           "sha256:5c1c2aa63cc672fb3b2819dd16432493ead0d3af26c732ffd82c10d667001c58",
           "sha256:c056a12af6178032a370550c94c8f099e988d5a9c2ab65016534a2b200a32217",
           "sha256:e58391a994176acb89d4fe81ea4ed58b2adb50e32e63f985d16e93fb0a290c41",
-          "sha256:259b7d0251ea63da0170c3beca46ca8b635d9e06858101554341adeecd94e787",
-          "sha256:fd0e8bc6d1eae9547fd7bb8f6726464b5963d6ab1a29c9bcf24e18cac0c8c223"
+          "sha256:30b1a7284d93d16c9ef6a03fdac97f4dd00ed76ba097d27b470403b82664059a",
+          "sha256:9c8aa972e03baf02c8f1d9326e7adab8f5937bd2281ccb09ce38003e4f2300e4"
         ]
       },
       "config": {
@@ -797,6 +797,50 @@
           "LastModifiedDate": "2026-06-17T10:00:50.423Z"
         },
         {
+          "VulnerabilityID": "CVE-2026-13221",
+          "PkgID": "perl-base@5.40.1-6",
+          "PkgName": "perl-base",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/perl-base@5.40.1-6?arch=arm64\u0026distro=debian-13.6",
+            "UID": "c27dbff5ae8e0632"
+          },
+          "InstalledVersion": "5.40.1-6",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:e363695fcb930d5f18449254c0052117582c3de4263c91575b0a9040c986e412",
+            "DiffID": "sha256:090e9c58f4748dd51573ae6f05678fa97237bbe946047a0433b0092ef6c4a704"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13221",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "Perl versions through 5.43.9 produce silently incorrect regular expres ...",
+          "Description": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "nvd": 4
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/07/13/5",
+            "https://github.com/Perl/perl5/commit/03f74bbbd3a68350d926ee93d56ee4808c28c4c7.patch",
+            "https://github.com/Perl/perl5/issues/23388"
+          ],
+          "PublishedDate": "2026-07-13T17:16:48.923Z",
+          "LastModifiedDate": "2026-07-14T18:15:18.85Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-42496",
           "PkgID": "perl-base@5.40.1-6",
           "PkgName": "perl-base",
@@ -1052,6 +1096,51 @@
           ],
           "PublishedDate": "2026-05-27T04:16:31.333Z",
           "LastModifiedDate": "2026-06-30T03:20:27.927Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-57432",
+          "PkgID": "perl-base@5.40.1-6",
+          "PkgName": "perl-base",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/perl-base@5.40.1-6?arch=arm64\u0026distro=debian-13.6",
+            "UID": "c27dbff5ae8e0632"
+          },
+          "InstalledVersion": "5.40.1-6",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:e363695fcb930d5f18449254c0052117582c3de4263c91575b0a9040c986e412",
+            "DiffID": "sha256:090e9c58f4748dd51573ae6f05678fa97237bbe946047a0433b0092ef6c4a704"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-57432",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "Perl versions through 5.43.10 have an integer overflow in S_measure_st ...",
+          "Description": "Perl versions through 5.43.10 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "nvd": 3
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/07/13/6",
+            "https://github.com/Perl/perl5/commit/40754edc72dd3e513d758153c0e2f0215897740e.patch",
+            "https://github.com/Perl/perl5/commit/5f7eb6bbbe0510964e3fb1d6bb691e5445913e55.patch"
+          ],
+          "PublishedDate": "2026-07-13T17:17:55.67Z",
+          "LastModifiedDate": "2026-07-14T18:04:48.367Z"
         },
         {
           "VulnerabilityID": "CVE-2026-9538",

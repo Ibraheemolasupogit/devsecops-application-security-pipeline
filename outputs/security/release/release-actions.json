@@ -1,6 +1,13 @@
 {
   "actions": [
     {
+      "action": "Review during normal maintenance.",
+      "finding_ids": [
+        "FND-DAST-7f68e8fb688f",
+        "FND-DAST-e607d905531a"
+      ]
+    },
+    {
       "action": "Review reference infrastructure control before production deployment.",
       "finding_ids": [
         "FND-SUPPRESSIO-1065083a8d4b",
@@ -27,6 +34,7 @@
         "FND-SUPPRESSIO-6dce772b98c3",
         "FND-SUPPRESSIO-713bb8f041d7",
         "FND-SUPPRESSIO-7b3ddcaa6af8",
+        "FND-SUPPRESSIO-836cb2a2770d",
         "FND-SUPPRESSIO-8632c434b354",
         "FND-SUPPRESSIO-974e196f7185",
         "FND-SUPPRESSIO-b5c9f1d0aae2",
@@ -64,7 +72,9 @@
         "FND-CONTAINER-95a38a1f2a20",
         "FND-CONTAINER-96b263718199",
         "FND-CONTAINER-9bac41a1b5ac",
+        "FND-CONTAINER-b26883cf2982",
         "FND-CONTAINER-ba223b9333c9",
+        "FND-CONTAINER-c118af042a95",
         "FND-CONTAINER-c1e6ced9904f",
         "FND-CONTAINER-c7563eb73df0",
         "FND-CONTAINER-d0df15bb32ed",
@@ -72,6 +82,6 @@
       ]
     }
   ],
-  "decision_id": "REL-57cfa7baad1bb799",
+  "decision_id": "REL-53b297bb7b0a9e6a",
   "schema_version": "1.0"
 }

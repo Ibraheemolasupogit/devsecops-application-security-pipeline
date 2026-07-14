@@ -1,21 +1,30 @@
 {
   "by_decision": {
-    "conditional_pass": 33,
-    "warn": 6
+    "conditional_pass": 36,
+    "warn": 8
   },
   "by_priority": {
-    "P2": 15,
-    "P3": 24
+    "P2": 17,
+    "P3": 27
   },
   "by_severity": {
-    "critical": 3,
-    "high": 30,
+    "critical": 5,
+    "high": 31,
+    "informational": 1,
+    "low": 1,
     "medium": 6
   },
-  "decision_id": "REL-57cfa7baad1bb799",
-  "finding_count": 39,
+  "decision_id": "REL-53b297bb7b0a9e6a",
+  "finding_count": 44,
   "schema_version": "1.0",
   "top_risk_findings": [
+    {
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "normalised_severity": "critical",
+      "priority": "P2",
+      "risk_score": 73.25,
+      "title": "Suppressed gitleaks finding jwt-signing-material-outside-fixtures"
+    },
     {
       "finding_id": "FND-SUPPRESSIO-974e196f7185",
       "normalised_severity": "critical",
@@ -78,13 +87,6 @@
       "priority": "P2",
       "risk_score": 67.25,
       "title": "Suppressed checkov finding CKV_AWS_144"
-    },
-    {
-      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
-      "normalised_severity": "high",
-      "priority": "P2",
-      "risk_score": 67.25,
-      "title": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356"
     }
   ]
 }

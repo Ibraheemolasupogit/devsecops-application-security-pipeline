@@ -2,23 +2,25 @@
   "metrics": {
     "active_exceptions": 1,
     "blocking_findings": 0,
-    "canonical_findings": 39,
+    "canonical_findings": 44,
     "closed_findings": 0,
     "conditional_findings": 0,
     "control_coverage_percentage": 96.67,
-    "due_soon_findings": 2,
+    "due_soon_findings": 3,
     "expired_exceptions": 1,
     "expired_suppressions": 0,
     "expiring_exceptions": 1,
     "failed_evidence_domains": 0,
-    "false_positives": 0,
+    "false_positives": 1,
     "findings_by_priority": {
-      "P2": 15,
-      "P3": 24
+      "P2": 17,
+      "P3": 27
     },
     "findings_by_severity": {
-      "critical": 3,
-      "high": 30,
+      "critical": 5,
+      "high": 31,
+      "informational": 1,
+      "low": 1,
       "medium": 6
     },
     "high_critical_threats": 18,
@@ -33,27 +35,28 @@
       "bandit": 0,
       "checkov": 12,
       "dynamic-pytest": 0,
-      "gitleaks": 1,
+      "gitleaks": 2,
       "pip-audit": 0,
       "schemathesis": 0,
       "semgrep": 0,
       "threat-model": 6,
-      "trivy": 22,
-      "zap": 0
+      "trivy": 24,
+      "zap": 2
     },
     "scanner_tools_executed": 5,
     "security_requirements": 60,
-    "suppressed_findings": 15,
+    "suppressed_findings": 16,
     "total_threats": 30,
     "unowned_findings": 0,
     "verification_records": 0,
     "verified_evidence_domains": 9,
     "vulnerabilities_by_lifecycle_status": {
       "assigned": 1,
+      "false_positive": 1,
       "risk_accepted": 2,
-      "triaged": 36
+      "triaged": 40
     },
-    "vulnerability_records": 39,
+    "vulnerability_records": 44,
     "warning_findings": 0
   },
   "schema_version": "1.0"

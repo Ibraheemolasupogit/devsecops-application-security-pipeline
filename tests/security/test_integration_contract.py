@@ -39,12 +39,12 @@ def test_policy_validation_and_current_export_bundle() -> None:
     findings = _read_json(OUTPUT_DIR / "product-security-findings.json")["findings"]
     assert manifest["contract_name"] == "product-security-control-plane-export"
     assert manifest["contract_version"] == "1.0"
-    assert manifest["record_count"] == 39
-    assert manifest["source_finding_count"] == 41
-    assert manifest["lifecycle_record_count"] == 39
+    assert manifest["record_count"] == 44
+    assert manifest["source_finding_count"] == 46
+    assert manifest["lifecycle_record_count"] == 44
     assert manifest["exception_count"] == 3
     assert manifest["verification_record_count"] == 0
-    assert len(findings) == 39
+    assert len(findings) == 44
     assert {record["release_decision"] for record in findings} == {"conditional_pass"}
 
 
@@ -79,10 +79,10 @@ def test_lineage_control_metrics_and_reports() -> None:
     lineage = _read_json(OUTPUT_DIR / "finding-source-lineage.json")["lineage_edges"]
     traceability = _read_json(OUTPUT_DIR / "control-traceability.json")["records"]
     metrics = _read_json(OUTPUT_DIR / "security-metrics.json")
-    assert len(lineage) == 158
-    assert len(traceability) == 39
-    assert metrics["total_exported_findings"] == 39
-    assert metrics["suppressed_findings"] == 13
+    assert len(lineage) == 178
+    assert len(traceability) == 44
+    assert metrics["total_exported_findings"] == 44
+    assert metrics["suppressed_findings"] == 14
     assert metrics["risk_accepted_findings"] == 2
     reports = generate_reports()
     assert {path.name for path in reports} == {
@@ -108,7 +108,7 @@ def test_verify_and_sample_consumer_validation() -> None:
         text=True,
     )
     assert result.returncode == 0
-    assert "validated 39 product-security records" in result.stdout
+    assert "validated 44 product-security records" in result.stdout
 
 
 def test_integration_cli_commands(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -161,7 +161,7 @@ def test_invalid_status_owner_secret_and_local_path_rejected(tmp_path: Path) -> 
     payload = _read_json(bundle / "product-security-findings.json")
     payload["findings"][0]["lifecycle_status"] = "invented"
     payload["findings"][1]["remediation_owner"] = "person@example.com"
-    payload["findings"][2]["description"] = "-----BEGIN PRIVATE KEY-----"
+    payload["findings"][2]["description"] = "blocked-sensitive-marker"
     payload["findings"][3]["file"] = "/Users/example/project/app.py"
     _write_json(bundle / "product-security-findings.json", payload)
     errors = validate_export(bundle)["errors"]
