@@ -733,30 +733,6 @@
       ],
       "required_approvals": [],
       "rule_id": "RG-WARN-001"
-    },
-    {
-      "decision": "warn",
-      "finding_id": "FND-DAST-31a4a55d744a",
-      "outcome": "matched",
-      "priority": 210,
-      "rationale": "Finding FND-DAST-31a4a55d744a is low or informational.",
-      "required_actions": [
-        "Review during normal maintenance."
-      ],
-      "required_approvals": [],
-      "rule_id": "RG-WARN-002"
-    },
-    {
-      "decision": "warn",
-      "finding_id": "FND-DAST-7938d4335d4a",
-      "outcome": "matched",
-      "priority": 210,
-      "rationale": "Finding FND-DAST-7938d4335d4a is low or informational.",
-      "required_actions": [
-        "Review during normal maintenance."
-      ],
-      "required_approvals": [],
-      "rule_id": "RG-WARN-002"
     }
   ],
   "schema_version": "1.0"

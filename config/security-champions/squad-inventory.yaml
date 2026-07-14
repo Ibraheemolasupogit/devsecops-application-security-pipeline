@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "squads": [
+    {
+      "squad_id": "SQUAD-APP",
+      "name": "Application Engineering",
+      "engineering_area": "application",
+      "champion_required": true,
+      "threat_ids": ["THR-AUTH-001", "THR-AUTHZ-001", "THR-API-001"],
+      "security_requirement_ids": ["SR-CHAMP-001", "SR-CHAMP-002", "SR-DEV-003"]
+    },
+    {
+      "squad_id": "SQUAD-CLOUD",
+      "name": "Cloud Security",
+      "engineering_area": "cloud_security",
+      "champion_required": true,
+      "threat_ids": ["THR-IAM-001", "THR-AUDIT-001"],
+      "security_requirement_ids": ["SR-CHAMP-004", "SR-IAM-001"]
+    },
+    {
+      "squad_id": "SQUAD-DEVSECOPS",
+      "name": "DevSecOps Engineering",
+      "engineering_area": "security_automation",
+      "champion_required": true,
+      "threat_ids": ["THR-SUPPLY-001", "THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-CHAMP-003", "SR-DEV-004"]
+    },
+    {
+      "squad_id": "SQUAD-PLATFORM",
+      "name": "Platform Engineering",
+      "engineering_area": "platform",
+      "champion_required": true,
+      "threat_ids": ["THR-SUPPLY-001", "THR-SUPPLY-002"],
+      "security_requirement_ids": ["SR-CHAMP-003", "SR-CONTAINER-001"]
+    },
+    {
+      "squad_id": "SQUAD-PRODSEC",
+      "name": "Product Security",
+      "engineering_area": "product_security",
+      "champion_required": false,
+      "threat_ids": ["THR-REVIEW-001"],
+      "security_requirement_ids": ["SR-CHAMP-001", "SR-CHAMP-004"]
+    }
+  ]
+}

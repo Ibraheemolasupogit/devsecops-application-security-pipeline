@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "criteria": [
+    {
+      "criterion_id": "ESC-001",
+      "trigger": "critical secret",
+      "default_level": "product_security_escalation",
+      "required_evidence": ["secret scan finding", "affected path", "rotation status"]
+    },
+    {
+      "criterion_id": "ESC-002",
+      "trigger": "authentication bypass",
+      "default_level": "product_security_escalation",
+      "required_evidence": ["failing auth test", "endpoint", "affected role"]
+    },
+    {
+      "criterion_id": "ESC-003",
+      "trigger": "authorisation or object-level bypass",
+      "default_level": "engineering_lead_escalation",
+      "required_evidence": ["negative test", "object boundary", "affected role"]
+    },
+    {
+      "criterion_id": "ESC-004",
+      "trigger": "unowned critical or high finding",
+      "default_level": "champion_escalation",
+      "required_evidence": ["canonical finding", "squad mapping", "due date"]
+    },
+    {
+      "criterion_id": "ESC-005",
+      "trigger": "overdue P1 or expired exception",
+      "default_level": "risk_owner_escalation",
+      "required_evidence": ["lifecycle record", "exception record", "release impact"]
+    },
+    {
+      "criterion_id": "ESC-006",
+      "trigger": "release block or failed verification",
+      "default_level": "product_security_escalation",
+      "required_evidence": ["release decision", "verification record", "required action"]
+    },
+    {
+      "criterion_id": "ESC-007",
+      "trigger": "repeated vulnerability category",
+      "default_level": "squad_handling",
+      "required_evidence": ["findings by category", "learning action", "owner"]
+    },
+    {
+      "criterion_id": "ESC-008",
+      "trigger": "tooling failure affecting assurance",
+      "default_level": "engineering_lead_escalation",
+      "required_evidence": ["failed command", "tool version", "affected evidence domain"]
+    }
+  ]
+}

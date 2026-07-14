@@ -221,28 +221,6 @@
       "trivy"
     ]
   },
-  "FND-DAST-31a4a55d744a": {
-    "deduplication_key": "dast|10049|http://host.docker.internal:8000/robots.txt",
-    "primary_finding_id": "FND-DAST-31a4a55d744a",
-    "rationale": "unique exact key",
-    "source_finding_ids": [
-      "FND-DAST-31a4a55d744a"
-    ],
-    "source_tools": [
-      "zap"
-    ]
-  },
-  "FND-DAST-7938d4335d4a": {
-    "deduplication_key": "dast|10116|http://host.docker.internal:8000/sitemap.xml",
-    "primary_finding_id": "FND-DAST-7938d4335d4a",
-    "rationale": "unique exact key",
-    "source_finding_ids": [
-      "FND-DAST-7938d4335d4a"
-    ],
-    "source_tools": [
-      "zap"
-    ]
-  },
   "FND-SECUREDESI-0e84d1c52550": {
     "deduplication_key": "threat-model|RR-009",
     "primary_finding_id": "FND-SECUREDESI-0e84d1c52550",

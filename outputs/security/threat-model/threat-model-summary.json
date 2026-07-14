@@ -18,12 +18,13 @@
     "release_assurance": 4,
     "secrets": 1,
     "secure_design": 3,
+    "security_champions": 4,
     "supply_chain": 4,
     "vulnerability_management": 2,
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 50,
+    "implemented": 54,
     "planned": 2
   },
   "residual_risks_by_rating": {

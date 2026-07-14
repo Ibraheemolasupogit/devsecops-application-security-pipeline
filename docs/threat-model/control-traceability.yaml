@@ -1,402 +1,922 @@
 [
   {
-    "traceability_id": "TRACE-001",
+    "evidence_references": [
+      "outputs/security/api-security/negative-test-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/schemas/access_requests.py",
+      "src/genomic_research_access_api/security/authentication/dependencies.py"
+    ],
+    "notes": "Schema validation and deny-by-default authorisation reduce tampering risk.",
+    "requirement_ids": [
+      "SR-API-001",
+      "SR-AUTHZ-003"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-API-001",
-    "requirement_ids": ["SR-API-001", "SR-AUTHZ-003"],
-    "implementation_references": ["src/genomic_research_access_api/schemas/access_requests.py", "src/genomic_research_access_api/security/authentication/dependencies.py"],
-    "verification_methods": ["pytest validation tests", "negative authorisation tests"],
-    "evidence_references": ["outputs/security/api-security/negative-test-summary.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Schema validation and deny-by-default authorisation reduce tampering risk."
+    "traceability_id": "TRACE-001",
+    "verification_methods": [
+      "pytest validation tests",
+      "negative authorisation tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-002",
+    "evidence_references": [
+      "outputs/security/threat-model/validated-security-requirements.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/schemas/access_requests.py"
+    ],
+    "notes": "Explicit schemas and length limits are implemented.",
+    "requirement_ids": [
+      "SR-API-001",
+      "SR-API-002"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-API-002",
-    "requirement_ids": ["SR-API-001", "SR-API-002"],
-    "implementation_references": ["src/genomic_research_access_api/schemas/access_requests.py"],
-    "verification_methods": ["pytest validation tests"],
-    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Explicit schemas and length limits are implemented."
+    "traceability_id": "TRACE-002",
+    "verification_methods": [
+      "pytest validation tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-003",
+    "evidence_references": [
+      "outputs/security/api-security/endpoint-security-inventory.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/data/seed.py",
+      "src/genomic_research_access_api/services/datasets.py"
+    ],
+    "notes": "Current data is synthetic and restricted dataset detail now requires entitlement.",
+    "requirement_ids": [
+      "SR-AUTHZ-002",
+      "SR-DATA-001"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-API-003",
-    "requirement_ids": ["SR-AUTHZ-002", "SR-DATA-001"],
-    "implementation_references": ["src/genomic_research_access_api/data/seed.py", "src/genomic_research_access_api/services/datasets.py"],
-    "verification_methods": ["seed data tests", "object-level authorisation tests"],
-    "evidence_references": ["outputs/security/api-security/endpoint-security-inventory.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Current data is synthetic and restricted dataset detail now requires entitlement."
+    "traceability_id": "TRACE-003",
+    "verification_methods": [
+      "seed data tests",
+      "object-level authorisation tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-004",
+    "evidence_references": [
+      "outputs/security/threat-model/validated-security-requirements.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/exceptions/handlers.py"
+    ],
+    "notes": "Safe error responses are implemented.",
+    "requirement_ids": [
+      "SR-API-003"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-API-004",
-    "requirement_ids": ["SR-API-003"],
-    "implementation_references": ["src/genomic_research_access_api/exceptions/handlers.py"],
-    "verification_methods": ["structured error tests"],
-    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Safe error responses are implemented."
+    "traceability_id": "TRACE-004",
+    "verification_methods": [
+      "structured error tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-005",
+    "evidence_references": [
+      "outputs/security/dynamic/resource-consumption-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/rate_limit.py",
+      "src/genomic_research_access_api/main.py",
+      "future platform rate limiting"
+    ],
+    "notes": "A bounded local application rate limiter is implemented for dynamic validation; production quota architecture remains future work.",
+    "requirement_ids": [
+      "SR-API-005"
+    ],
+    "residual_risk_id": "RR-003",
     "threat_id": "THR-API-005",
-    "requirement_ids": ["SR-API-005"],
-    "implementation_references": ["src/genomic_research_access_api/security/rate_limit.py", "src/genomic_research_access_api/main.py", "future platform rate limiting"],
-    "verification_methods": ["local dynamic rate-limit tests", "future production quota tests"],
-    "evidence_references": ["outputs/security/dynamic/resource-consumption-summary.json"],
-    "residual_risk_id": "RR-003",
-    "notes": "A bounded local application rate limiter is implemented for dynamic validation; production quota architecture remains future work."
+    "traceability_id": "TRACE-005",
+    "verification_methods": [
+      "local dynamic rate-limit tests",
+      "future production quota tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-006",
+    "evidence_references": [
+      "future operational evidence"
+    ],
+    "implementation_references": [
+      "future quota or persistence limits"
+    ],
+    "notes": "Current in-memory state is for local demonstration only.",
+    "requirement_ids": [
+      "SR-API-005"
+    ],
+    "residual_risk_id": "RR-003",
     "threat_id": "THR-API-006",
-    "requirement_ids": ["SR-API-005"],
-    "implementation_references": ["future quota or persistence limits"],
-    "verification_methods": ["future quota tests"],
-    "evidence_references": ["future operational evidence"],
-    "residual_risk_id": "RR-003",
-    "notes": "Current in-memory state is for local demonstration only."
+    "traceability_id": "TRACE-006",
+    "verification_methods": [
+      "future quota tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-007",
+    "evidence_references": [
+      "outputs/security/api-security/endpoint-security-inventory.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/main.py"
+    ],
+    "notes": "CORS is explicitly allow-listed.",
+    "requirement_ids": [
+      "SR-API-004"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-API-007",
-    "requirement_ids": ["SR-API-004"],
-    "implementation_references": ["src/genomic_research_access_api/main.py"],
-    "verification_methods": ["CORS and security header tests"],
-    "evidence_references": ["outputs/security/api-security/endpoint-security-inventory.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "CORS is explicitly allow-listed."
+    "traceability_id": "TRACE-007",
+    "verification_methods": [
+      "CORS and security header tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-008",
+    "evidence_references": [
+      "outputs/security/api-security/authentication-control-summary.json"
+    ],
+    "implementation_references": [
+      "README.md",
+      "src/genomic_research_access_api/config.py",
+      "future release workflow"
+    ],
+    "notes": "Local defaults are documented as non-production.",
+    "requirement_ids": [
+      "SR-API-004",
+      "SR-CI-003"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-API-008",
-    "requirement_ids": ["SR-API-004", "SR-CI-003"],
-    "implementation_references": ["README.md", "src/genomic_research_access_api/config.py", "future release workflow"],
-    "verification_methods": ["documentation review", "configuration validation", "future deployment gates"],
-    "evidence_references": ["outputs/security/api-security/authentication-control-summary.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Local defaults are documented as non-production."
+    "traceability_id": "TRACE-008",
+    "verification_methods": [
+      "documentation review",
+      "configuration validation",
+      "future deployment gates"
+    ]
   },
   {
-    "traceability_id": "TRACE-009",
+    "evidence_references": [
+      "outputs/security/threat-model/validated-control-traceability.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/audit/service.py",
+      "future immutable logging"
+    ],
+    "notes": "Audit generation exists; immutable production logging is future work.",
+    "requirement_ids": [
+      "SR-LOG-001",
+      "SR-LOG-002"
+    ],
+    "residual_risk_id": "RR-004",
     "threat_id": "THR-AUDIT-001",
-    "requirement_ids": ["SR-LOG-001", "SR-LOG-002"],
-    "implementation_references": ["src/genomic_research_access_api/audit/service.py", "future immutable logging"],
-    "verification_methods": ["audit tests", "future integrity validation"],
-    "evidence_references": ["outputs/security/threat-model/validated-control-traceability.json"],
-    "residual_risk_id": "RR-004",
-    "notes": "Audit generation exists; immutable production logging is future work."
+    "traceability_id": "TRACE-009",
+    "verification_methods": [
+      "audit tests",
+      "future integrity validation"
+    ]
   },
   {
-    "traceability_id": "TRACE-010",
+    "evidence_references": [
+      "outputs/security/api-security/audit-control-summary.json"
+    ],
+    "implementation_references": [
+      "docs/limitations.md",
+      "src/genomic_research_access_api/api/routes/audit_events.py"
+    ],
+    "notes": "Audit retrieval is local in-memory only and now restricted by role.",
+    "requirement_ids": [
+      "SR-AUTHZ-002",
+      "SR-LOG-004"
+    ],
+    "residual_risk_id": "RR-004",
     "threat_id": "THR-AUDIT-002",
-    "requirement_ids": ["SR-AUTHZ-002", "SR-LOG-004"],
-    "implementation_references": ["docs/limitations.md", "src/genomic_research_access_api/api/routes/audit_events.py"],
-    "verification_methods": ["documentation review", "audit RBAC tests"],
-    "evidence_references": ["outputs/security/api-security/audit-control-summary.json"],
-    "residual_risk_id": "RR-004",
-    "notes": "Audit retrieval is local in-memory only and now restricted by role."
+    "traceability_id": "TRACE-010",
+    "verification_methods": [
+      "documentation review",
+      "audit RBAC tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-011",
+    "evidence_references": [
+      "outputs/security/api-security/negative-test-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/schemas/access_requests.py",
+      "src/genomic_research_access_api/main.py"
+    ],
+    "notes": "Structured logging and bounded identifiers reduce log injection risk.",
+    "requirement_ids": [
+      "SR-API-001",
+      "SR-LOG-003"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-AUDIT-003",
-    "requirement_ids": ["SR-API-001", "SR-LOG-003"],
-    "implementation_references": ["src/genomic_research_access_api/schemas/access_requests.py", "src/genomic_research_access_api/main.py"],
-    "verification_methods": ["schema tests", "correlation validation tests"],
-    "evidence_references": ["outputs/security/api-security/negative-test-summary.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Structured logging and bounded identifiers reduce log injection risk."
+    "traceability_id": "TRACE-011",
+    "verification_methods": [
+      "schema tests",
+      "correlation validation tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-012",
-    "threat_id": "THR-AUDIT-004",
-    "requirement_ids": ["SR-LOG-003"],
-    "implementation_references": ["src/genomic_research_access_api/main.py"],
-    "verification_methods": ["correlation propagation and format validation tests"],
-    "evidence_references": ["outputs/security/api-security/negative-test-summary.json"],
+    "evidence_references": [
+      "outputs/security/api-security/negative-test-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/main.py"
+    ],
+    "notes": "Correlation IDs propagate and malformed or oversized values are replaced.",
+    "requirement_ids": [
+      "SR-LOG-003"
+    ],
     "residual_risk_id": "RR-004",
-    "notes": "Correlation IDs propagate and malformed or oversized values are replaced."
+    "threat_id": "THR-AUDIT-004",
+    "traceability_id": "TRACE-012",
+    "verification_methods": [
+      "correlation propagation and format validation tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-013",
+    "evidence_references": [
+      "outputs/security/api-security/authentication-control-summary.json",
+      "outputs/security/dynamic/authentication-boundary-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/authentication/jwt_validator.py"
+    ],
+    "notes": "Local RS256 JWT validation is implemented with a future external identity provider still required.",
+    "requirement_ids": [
+      "SR-AUTH-001"
+    ],
+    "residual_risk_id": "RR-001",
     "threat_id": "THR-AUTH-001",
-    "requirement_ids": ["SR-AUTH-001"],
-    "implementation_references": ["src/genomic_research_access_api/security/authentication/jwt_validator.py"],
-    "verification_methods": ["JWT authentication tests", "dynamic authentication-boundary tests"],
-    "evidence_references": ["outputs/security/api-security/authentication-control-summary.json", "outputs/security/dynamic/authentication-boundary-summary.json"],
-    "residual_risk_id": "RR-001",
-    "notes": "Local RS256 JWT validation is implemented with a future external identity provider still required."
+    "traceability_id": "TRACE-013",
+    "verification_methods": [
+      "JWT authentication tests",
+      "dynamic authentication-boundary tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-014",
+    "evidence_references": [
+      "outputs/security/api-security/authentication-control-summary.json"
+    ],
+    "implementation_references": [
+      "README.md",
+      "src/genomic_research_access_api/security/authentication/jwt_validator.py",
+      "future deployment readiness gates"
+    ],
+    "notes": "The service validates local RS256 JWTs; production deployment still requires trusted IdP configuration.",
+    "requirement_ids": [
+      "SR-AUTH-001",
+      "SR-CI-003"
+    ],
+    "residual_risk_id": "RR-001",
     "threat_id": "THR-AUTH-002",
-    "requirement_ids": ["SR-AUTH-001", "SR-CI-003"],
-    "implementation_references": ["README.md", "src/genomic_research_access_api/security/authentication/jwt_validator.py", "future deployment readiness gates"],
-    "verification_methods": ["JWT authentication tests", "future release review"],
-    "evidence_references": ["outputs/security/api-security/authentication-control-summary.json"],
-    "residual_risk_id": "RR-001",
-    "notes": "The service validates local RS256 JWTs; production deployment still requires trusted IdP configuration."
+    "traceability_id": "TRACE-014",
+    "verification_methods": [
+      "JWT authentication tests",
+      "future release review"
+    ]
   },
   {
-    "traceability_id": "TRACE-015",
+    "evidence_references": [
+      "outputs/security/api-security/endpoint-security-inventory.json",
+      "outputs/security/dynamic/object-access-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/services/access_requests.py",
+      "src/genomic_research_access_api/services/datasets.py"
+    ],
+    "notes": "BOLA checks are implemented for access requests and restricted datasets.",
+    "requirement_ids": [
+      "SR-AUTHZ-002",
+      "SR-AUTHZ-005"
+    ],
+    "residual_risk_id": "RR-002",
     "threat_id": "THR-AUTHZ-001",
-    "requirement_ids": ["SR-AUTHZ-002", "SR-AUTHZ-005"],
-    "implementation_references": ["src/genomic_research_access_api/services/access_requests.py", "src/genomic_research_access_api/services/datasets.py"],
-    "verification_methods": ["object-level authorisation tests", "dynamic object-access tests"],
-    "evidence_references": ["outputs/security/api-security/endpoint-security-inventory.json", "outputs/security/dynamic/object-access-summary.json"],
-    "residual_risk_id": "RR-002",
-    "notes": "BOLA checks are implemented for access requests and restricted datasets."
+    "traceability_id": "TRACE-015",
+    "verification_methods": [
+      "object-level authorisation tests",
+      "dynamic object-access tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-016",
+    "evidence_references": [
+      "outputs/security/api-security/authorisation-matrix.json",
+      "outputs/security/dynamic/authorisation-boundary-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/authorisation.py"
+    ],
+    "notes": "Function-level authorisation is enforced through route dependencies.",
+    "requirement_ids": [
+      "SR-AUTHZ-001",
+      "SR-AUTHZ-005"
+    ],
+    "residual_risk_id": "RR-002",
     "threat_id": "THR-AUTHZ-002",
-    "requirement_ids": ["SR-AUTHZ-001", "SR-AUTHZ-005"],
-    "implementation_references": ["src/genomic_research_access_api/security/authorisation.py"],
-    "verification_methods": ["role matrix tests", "dynamic authorisation-boundary tests"],
-    "evidence_references": ["outputs/security/api-security/authorisation-matrix.json", "outputs/security/dynamic/authorisation-boundary-summary.json"],
-    "residual_risk_id": "RR-002",
-    "notes": "Function-level authorisation is enforced through route dependencies."
+    "traceability_id": "TRACE-016",
+    "verification_methods": [
+      "role matrix tests",
+      "dynamic authorisation-boundary tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-017",
+    "evidence_references": [
+      "outputs/security/api-security/negative-test-summary.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/services/access_requests.py"
+    ],
+    "notes": "Requester and approver separation is enforced for approval and rejection.",
+    "requirement_ids": [
+      "SR-AUTHZ-003",
+      "SR-AUTHZ-004"
+    ],
+    "residual_risk_id": "RR-002",
     "threat_id": "THR-AUTHZ-003",
-    "requirement_ids": ["SR-AUTHZ-003", "SR-AUTHZ-004"],
-    "implementation_references": ["src/genomic_research_access_api/services/access_requests.py"],
-    "verification_methods": ["separation-of-duties workflow tests"],
-    "evidence_references": ["outputs/security/api-security/negative-test-summary.json"],
-    "residual_risk_id": "RR-002",
-    "notes": "Requester and approver separation is enforced for approval and rejection."
+    "traceability_id": "TRACE-017",
+    "verification_methods": [
+      "separation-of-duties workflow tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-018",
+    "evidence_references": [
+      "outputs/security/threat-model/validated-security-requirements.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/services/access_requests.py",
+      "src/genomic_research_access_api/audit/service.py"
+    ],
+    "notes": "State transitions are enforced for current workflow.",
+    "requirement_ids": [
+      "SR-AUTHZ-004",
+      "SR-LOG-001"
+    ],
+    "residual_risk_id": "RR-008",
     "threat_id": "THR-AUTHZ-004",
-    "requirement_ids": ["SR-AUTHZ-004", "SR-LOG-001"],
-    "implementation_references": ["src/genomic_research_access_api/services/access_requests.py", "src/genomic_research_access_api/audit/service.py"],
-    "verification_methods": ["invalid transition tests"],
-    "evidence_references": ["outputs/security/threat-model/validated-security-requirements.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "State transitions are enforced for current workflow."
+    "traceability_id": "TRACE-018",
+    "verification_methods": [
+      "invalid transition tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-019",
-    "threat_id": "THR-CI-001",
-    "requirement_ids": ["SR-CI-002", "SR-CI-003", "SR-IAM-002"],
-    "implementation_references": [".github/workflows/ci.yml", "infrastructure/modules/iam/main.tf"],
-    "verification_methods": ["workflow review", "local OIDC trust policy tests"],
-    "evidence_references": ["outputs/security/infrastructure/iam-role-inventory.json"],
+    "evidence_references": [
+      "outputs/security/infrastructure/iam-role-inventory.json"
+    ],
+    "implementation_references": [
+      ".github/workflows/ci.yml",
+      "infrastructure/modules/iam/main.tf"
+    ],
+    "notes": "Current CI has no AWS credentials; reference OIDC deployment role is configured as code only.",
+    "requirement_ids": [
+      "SR-CI-002",
+      "SR-CI-003",
+      "SR-IAM-002"
+    ],
     "residual_risk_id": "RR-009",
-    "notes": "Current CI has no AWS credentials; reference OIDC deployment role is configured as code only."
+    "threat_id": "THR-CI-001",
+    "traceability_id": "TRACE-019",
+    "verification_methods": [
+      "workflow review",
+      "local OIDC trust policy tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-020",
+    "evidence_references": [
+      "outputs/security/appsec/container-scan-summary.json"
+    ],
+    "implementation_references": [
+      "scripts/appsec_tools.py",
+      "security/trivy/trivy.yaml",
+      "security/config/tools.yaml"
+    ],
+    "notes": "Pinned Trivy scanning is wired; local execution requires a running Docker daemon.",
+    "requirement_ids": [
+      "SR-CONTAINER-001"
+    ],
+    "residual_risk_id": "RR-007",
     "threat_id": "THR-CONTAINER-001",
-    "requirement_ids": ["SR-CONTAINER-001"],
-    "implementation_references": ["scripts/appsec_tools.py", "security/trivy/trivy.yaml", "security/config/tools.yaml"],
-    "verification_methods": ["make container-build-security", "make container-scan"],
-    "evidence_references": ["outputs/security/appsec/container-scan-summary.json"],
-    "residual_risk_id": "RR-007",
-    "notes": "Pinned Trivy scanning is wired; local execution requires a running Docker daemon."
+    "traceability_id": "TRACE-020",
+    "verification_methods": [
+      "make container-build-security",
+      "make container-scan"
+    ]
   },
   {
-    "traceability_id": "TRACE-021",
+    "evidence_references": [
+      "outputs/security/infrastructure/architecture-inventory.json"
+    ],
+    "implementation_references": [
+      "Dockerfile",
+      "infrastructure/modules/compute/main.tf"
+    ],
+    "notes": "Non-root runtime user is implemented in the Dockerfile and ECS task definition.",
+    "requirement_ids": [
+      "SR-CONTAINER-002"
+    ],
+    "residual_risk_id": "RR-007",
     "threat_id": "THR-CONTAINER-002",
-    "requirement_ids": ["SR-CONTAINER-002"],
-    "implementation_references": ["Dockerfile", "infrastructure/modules/compute/main.tf"],
-    "verification_methods": ["Dockerfile review", "local ECS task-definition hardening tests"],
-    "evidence_references": ["outputs/security/infrastructure/architecture-inventory.json"],
-    "residual_risk_id": "RR-007",
-    "notes": "Non-root runtime user is implemented in the Dockerfile and ECS task definition."
+    "traceability_id": "TRACE-021",
+    "verification_methods": [
+      "Dockerfile review",
+      "local ECS task-definition hardening tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-022",
+    "evidence_references": [
+      "outputs/security/appsec/iac-scan-summary.json",
+      "outputs/security/infrastructure/terraform-validation-summary.json"
+    ],
+    "implementation_references": [
+      "infrastructure/",
+      "security/checkov/config.yaml",
+      "docs/infrastructure/terraform-state-security.md"
+    ],
+    "notes": "Terraform is implemented as a non-deployed reference architecture with secure state design examples.",
+    "requirement_ids": [
+      "SR-IAC-001",
+      "SR-IAC-002"
+    ],
+    "residual_risk_id": "RR-006",
     "threat_id": "THR-IAC-001",
-    "requirement_ids": ["SR-IAC-001", "SR-IAC-002"],
-    "implementation_references": ["infrastructure/", "security/checkov/config.yaml", "docs/infrastructure/terraform-state-security.md"],
-    "verification_methods": ["local infrastructure policy tests", "infrastructure evidence verification", "Checkov scan"],
-    "evidence_references": ["outputs/security/appsec/iac-scan-summary.json", "outputs/security/infrastructure/terraform-validation-summary.json"],
-    "residual_risk_id": "RR-006",
-    "notes": "Terraform is implemented as a non-deployed reference architecture with secure state design examples."
+    "traceability_id": "TRACE-022",
+    "verification_methods": [
+      "local infrastructure policy tests",
+      "infrastructure evidence verification",
+      "Checkov scan"
+    ]
   },
   {
-    "traceability_id": "TRACE-023",
+    "evidence_references": [
+      "outputs/security/infrastructure/network-security-summary.json",
+      "outputs/security/infrastructure/encryption-control-summary.json"
+    ],
+    "implementation_references": [
+      "infrastructure/modules/networking/main.tf",
+      "infrastructure/modules/datastore/main.tf"
+    ],
+    "notes": "Cloud datastore and private networking are configured as code but not deployed.",
+    "requirement_ids": [
+      "SR-DATA-003",
+      "SR-IAC-001"
+    ],
+    "residual_risk_id": "RR-006",
     "threat_id": "THR-IAC-002",
-    "requirement_ids": ["SR-DATA-003", "SR-IAC-001"],
-    "implementation_references": ["infrastructure/modules/networking/main.tf", "infrastructure/modules/datastore/main.tf"],
-    "verification_methods": ["local network and datastore infrastructure tests"],
-    "evidence_references": ["outputs/security/infrastructure/network-security-summary.json", "outputs/security/infrastructure/encryption-control-summary.json"],
-    "residual_risk_id": "RR-006",
-    "notes": "Cloud datastore and private networking are configured as code but not deployed."
+    "traceability_id": "TRACE-023",
+    "verification_methods": [
+      "local network and datastore infrastructure tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-024",
+    "evidence_references": [
+      "outputs/security/infrastructure/iam-policy-summary.json"
+    ],
+    "implementation_references": [
+      "infrastructure/modules/iam/main.tf"
+    ],
+    "notes": "Workload identity is configured as code with a separate ECS runtime role.",
+    "requirement_ids": [
+      "SR-IAM-001"
+    ],
+    "residual_risk_id": "RR-006",
     "threat_id": "THR-IAM-001",
-    "requirement_ids": ["SR-IAM-001"],
-    "implementation_references": ["infrastructure/modules/iam/main.tf"],
-    "verification_methods": ["local runtime role least-privilege tests"],
-    "evidence_references": ["outputs/security/infrastructure/iam-policy-summary.json"],
-    "residual_risk_id": "RR-006",
-    "notes": "Workload identity is configured as code with a separate ECS runtime role."
+    "traceability_id": "TRACE-024",
+    "verification_methods": [
+      "local runtime role least-privilege tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-025",
+    "evidence_references": [
+      "outputs/security/infrastructure/encryption-control-summary.json"
+    ],
+    "implementation_references": [
+      "infrastructure/modules/compute/main.tf",
+      "infrastructure/modules/kms/main.tf",
+      "infrastructure/modules/datastore/main.tf"
+    ],
+    "notes": "Encrypted transport and storage are configured as Terraform controls but not deployed.",
+    "requirement_ids": [
+      "SR-DATA-002",
+      "SR-DATA-003"
+    ],
+    "residual_risk_id": "RR-006",
     "threat_id": "THR-IAM-002",
-    "requirement_ids": ["SR-DATA-002", "SR-DATA-003"],
-    "implementation_references": ["infrastructure/modules/compute/main.tf", "infrastructure/modules/kms/main.tf", "infrastructure/modules/datastore/main.tf"],
-    "verification_methods": ["local HTTPS, KMS and encrypted-storage tests"],
-    "evidence_references": ["outputs/security/infrastructure/encryption-control-summary.json"],
-    "residual_risk_id": "RR-006",
-    "notes": "Encrypted transport and storage are configured as Terraform controls but not deployed."
+    "traceability_id": "TRACE-025",
+    "verification_methods": [
+      "local HTTPS, KMS and encrypted-storage tests"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/threat-model/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      "docs/threat-model/review-process.md",
+      "src/genomic_research_access_api/security/threat_model/validation.py"
+    ],
+    "notes": "Milestone 2 adds deterministic traceability validation.",
+    "requirement_ids": [
+      "SR-REVIEW-001",
+      "SR-TM-001"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
     "traceability_id": "TRACE-026",
-    "threat_id": "THR-REVIEW-001",
-    "requirement_ids": ["SR-REVIEW-001", "SR-TM-001"],
-    "implementation_references": ["docs/threat-model/review-process.md", "src/genomic_research_access_api/security/threat_model/validation.py"],
-    "verification_methods": ["make threat-model-validate"],
-    "evidence_references": ["outputs/security/threat-model/evidence-manifest.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Milestone 2 adds deterministic traceability validation."
+    "verification_methods": [
+      "make threat-model-validate"
+    ]
   },
   {
-    "traceability_id": "TRACE-027",
+    "evidence_references": [
+      "outputs/security/appsec/secret-scan-summary.json",
+      "outputs/security/infrastructure/encryption-control-summary.json"
+    ],
+    "implementation_references": [
+      ".gitignore",
+      ".gitleaks.toml",
+      "infrastructure/modules/secrets/main.tf",
+      "security/config/suppressions.yaml"
+    ],
+    "notes": "Secret values remain outside Terraform; Gitleaks execution is wired with a narrowly governed fixture suppression.",
+    "requirement_ids": [
+      "SR-SECRETS-001",
+      "SR-SUPPLY-004"
+    ],
+    "residual_risk_id": "RR-005",
     "threat_id": "THR-SECRETS-001",
-    "requirement_ids": ["SR-SECRETS-001", "SR-SUPPLY-004"],
-    "implementation_references": [".gitignore", ".gitleaks.toml", "infrastructure/modules/secrets/main.tf", "security/config/suppressions.yaml"],
-    "verification_methods": ["local secret metadata tests", "Gitleaks scanner configuration and evidence"],
-    "evidence_references": ["outputs/security/appsec/secret-scan-summary.json", "outputs/security/infrastructure/encryption-control-summary.json"],
-    "residual_risk_id": "RR-005",
-    "notes": "Secret values remain outside Terraform; Gitleaks execution is wired with a narrowly governed fixture suppression."
+    "traceability_id": "TRACE-027",
+    "verification_methods": [
+      "local secret metadata tests",
+      "Gitleaks scanner configuration and evidence"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/appsec/dependency-scan-summary.json",
+      "outputs/security/appsec/sbom.cdx.json"
+    ],
+    "implementation_references": [
+      "pyproject.toml",
+      "scripts/appsec_tools.py",
+      "src/genomic_research_access_api/security/appsec/evidence.py"
+    ],
+    "notes": "Runtime dependency scanning and deterministic SBOM generation are implemented.",
+    "requirement_ids": [
+      "SR-SUPPLY-001",
+      "SR-SUPPLY-002"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
     "traceability_id": "TRACE-028",
-    "threat_id": "THR-SUPPLY-001",
-    "requirement_ids": ["SR-SUPPLY-001", "SR-SUPPLY-002"],
-    "implementation_references": ["pyproject.toml", "scripts/appsec_tools.py", "src/genomic_research_access_api/security/appsec/evidence.py"],
-    "verification_methods": ["pip-audit dependency scanning", "CycloneDX SBOM validation"],
-    "evidence_references": ["outputs/security/appsec/dependency-scan-summary.json", "outputs/security/appsec/sbom.cdx.json"],
-    "residual_risk_id": "RR-005",
-    "notes": "Runtime dependency scanning and deterministic SBOM generation are implemented."
+    "verification_methods": [
+      "pip-audit dependency scanning",
+      "CycloneDX SBOM validation"
+    ]
   },
   {
-    "traceability_id": "TRACE-029",
+    "evidence_references": [
+      "outputs/security/appsec/appsec-pipeline-summary.json",
+      "outputs/security/threat-model/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/appsec.yml",
+      "scripts/appsec_tools.py"
+    ],
+    "notes": "Quality checks are extended with AppSec scanner evidence for dependency and code risks.",
+    "requirement_ids": [
+      "SR-CI-001",
+      "SR-SUPPLY-001"
+    ],
+    "residual_risk_id": "RR-005",
     "threat_id": "THR-SUPPLY-002",
-    "requirement_ids": ["SR-CI-001", "SR-SUPPLY-001"],
-    "implementation_references": [".github/workflows/ci.yml", ".github/workflows/appsec.yml", "scripts/appsec_tools.py"],
-    "verification_methods": ["CI tests", "SAST and SCA scanner targets"],
-    "evidence_references": ["outputs/security/appsec/appsec-pipeline-summary.json", "outputs/security/threat-model/evidence-manifest.json"],
-    "residual_risk_id": "RR-005",
-    "notes": "Quality checks are extended with AppSec scanner evidence for dependency and code risks."
+    "traceability_id": "TRACE-029",
+    "verification_methods": [
+      "CI tests",
+      "SAST and SCA scanner targets"
+    ]
   },
   {
-    "traceability_id": "TRACE-030",
+    "evidence_references": [
+      "future release evidence"
+    ],
+    "implementation_references": [
+      "future release workflow"
+    ],
+    "notes": "Release provenance is planned for later milestones.",
+    "requirement_ids": [
+      "SR-CI-003",
+      "SR-SUPPLY-003"
+    ],
+    "residual_risk_id": "RR-005",
     "threat_id": "THR-SUPPLY-003",
-    "requirement_ids": ["SR-CI-003", "SR-SUPPLY-003"],
-    "implementation_references": ["future release workflow"],
-    "verification_methods": ["future provenance checks"],
-    "evidence_references": ["future release evidence"],
-    "residual_risk_id": "RR-005",
-    "notes": "Release provenance is planned for later milestones."
+    "traceability_id": "TRACE-030",
+    "verification_methods": [
+      "future provenance checks"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/findings/findings-summary.json",
+      "outputs/security/findings/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/findings",
+      "config/findings"
+    ],
+    "notes": "Milestone 7 normalises source security outputs into one evidence-backed findings model without adding release gating or lifecycle workflow.",
+    "requirement_ids": [
+      "SR-FINDINGS-001",
+      "SR-FINDINGS-002",
+      "SR-FINDINGS-003",
+      "SR-FINDINGS-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
     "traceability_id": "TRACE-031",
-    "threat_id": "THR-REVIEW-001",
-    "requirement_ids": ["SR-FINDINGS-001", "SR-FINDINGS-002", "SR-FINDINGS-003", "SR-FINDINGS-004"],
-    "implementation_references": ["src/genomic_research_access_api/security/findings", "config/findings"],
-    "verification_methods": ["make findings-full", "make verify-findings-evidence"],
-    "evidence_references": ["outputs/security/findings/findings-summary.json", "outputs/security/findings/evidence-manifest.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Milestone 7 normalises source security outputs into one evidence-backed findings model without adding release gating or lifecycle workflow."
+    "verification_methods": [
+      "make findings-full",
+      "make verify-findings-evidence"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/findings/normalised-findings.json",
+      "outputs/security/findings/finding-source-map.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/findings/adapters",
+      "src/genomic_research_access_api/security/findings/deduplicator.py"
+    ],
+    "notes": "Scanner observations and governed suppressions are retained as canonical source findings.",
+    "requirement_ids": [
+      "SR-FINDINGS-001",
+      "SR-FINDINGS-002",
+      "SR-FINDINGS-004"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
     "traceability_id": "TRACE-032",
-    "threat_id": "THR-SUPPLY-001",
-    "requirement_ids": ["SR-FINDINGS-001", "SR-FINDINGS-002", "SR-FINDINGS-004"],
-    "implementation_references": ["src/genomic_research_access_api/security/findings/adapters", "src/genomic_research_access_api/security/findings/deduplicator.py"],
-    "verification_methods": ["findings adapter and deduplication tests"],
-    "evidence_references": ["outputs/security/findings/normalised-findings.json", "outputs/security/findings/finding-source-map.json"],
-    "residual_risk_id": "RR-005",
-    "notes": "Scanner observations and governed suppressions are retained as canonical source findings."
+    "verification_methods": [
+      "findings adapter and deduplication tests"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/release/release-gate-decision.json",
+      "outputs/security/release/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/release",
+      "config/release",
+      ".github/workflows/release-assurance.yml"
+    ],
+    "notes": "Milestone 8 adds evidence-backed release assurance over canonical findings without implementing a formal exception workflow.",
+    "requirement_ids": [
+      "SR-RELEASE-001",
+      "SR-RELEASE-002",
+      "SR-RELEASE-003",
+      "SR-RELEASE-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
     "traceability_id": "TRACE-033",
-    "threat_id": "THR-REVIEW-001",
-    "requirement_ids": ["SR-RELEASE-001", "SR-RELEASE-002", "SR-RELEASE-003", "SR-RELEASE-004"],
-    "implementation_references": ["src/genomic_research_access_api/security/release", "config/release", ".github/workflows/release-assurance.yml"],
-    "verification_methods": ["make release-full", "make verify-release-evidence", "release approval fixture tests"],
-    "evidence_references": ["outputs/security/release/release-gate-decision.json", "outputs/security/release/evidence-manifest.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Milestone 8 adds evidence-backed release assurance over canonical findings without implementing a formal exception workflow."
+    "verification_methods": [
+      "make release-full",
+      "make verify-release-evidence",
+      "release approval fixture tests"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/release/finding-evaluations.json",
+      "outputs/security/release/release-risk-summary.json"
+    ],
+    "implementation_references": [
+      "config/release/gate-rules.yaml",
+      "outputs/security/findings/deduplicated-findings.json"
+    ],
+    "notes": "Release rules distinguish fix availability, non-deployed image risk and suppression governance.",
+    "requirement_ids": [
+      "SR-RELEASE-001",
+      "SR-RELEASE-004"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
     "traceability_id": "TRACE-034",
-    "threat_id": "THR-SUPPLY-001",
-    "requirement_ids": ["SR-RELEASE-001", "SR-RELEASE-004"],
-    "implementation_references": ["config/release/gate-rules.yaml", "outputs/security/findings/deduplicated-findings.json"],
-    "verification_methods": ["release rules for fix availability and no-fix container findings"],
-    "evidence_references": ["outputs/security/release/finding-evaluations.json", "outputs/security/release/release-risk-summary.json"],
-    "residual_risk_id": "RR-005",
-    "notes": "Release rules distinguish fix availability, non-deployed image risk and suppression governance."
+    "verification_methods": [
+      "release rules for fix availability and no-fix container findings"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/lifecycle/vulnerability-register.json",
+      "outputs/security/lifecycle/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/lifecycle",
+      "config/lifecycle",
+      ".github/workflows/vulnerability-management.yml"
+    ],
+    "notes": "Milestone 9 adds deterministic vulnerability lifecycle, verification-before-closure, exception governance and audit evidence without starting Security Champions.",
+    "requirement_ids": [
+      "SR-LIFECYCLE-001",
+      "SR-LIFECYCLE-002",
+      "SR-LIFECYCLE-003",
+      "SR-LIFECYCLE-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
     "traceability_id": "TRACE-035",
-    "threat_id": "THR-REVIEW-001",
-    "requirement_ids": ["SR-LIFECYCLE-001", "SR-LIFECYCLE-002", "SR-LIFECYCLE-003", "SR-LIFECYCLE-004"],
-    "implementation_references": ["src/genomic_research_access_api/security/lifecycle", "config/lifecycle", ".github/workflows/vulnerability-management.yml"],
-    "verification_methods": ["make lifecycle-full", "make verify-lifecycle-evidence", "lifecycle governance tests"],
-    "evidence_references": ["outputs/security/lifecycle/vulnerability-register.json", "outputs/security/lifecycle/evidence-manifest.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Milestone 9 adds deterministic vulnerability lifecycle, verification-before-closure, exception governance and audit evidence without starting Security Champions."
+    "verification_methods": [
+      "make lifecycle-full",
+      "make verify-lifecycle-evidence",
+      "lifecycle governance tests"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/lifecycle/security-exceptions.json",
+      "outputs/security/lifecycle/expired-exceptions.csv"
+    ],
+    "implementation_references": [
+      "outputs/security/findings/deduplicated-findings.json",
+      "src/genomic_research_access_api/security/lifecycle/repository.py"
+    ],
+    "notes": "Lifecycle records retain scanner findings and suppressions while keeping scanner suppressions separate from formal exceptions.",
+    "requirement_ids": [
+      "SR-LIFECYCLE-001",
+      "SR-LIFECYCLE-003"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
     "traceability_id": "TRACE-036",
-    "threat_id": "THR-SUPPLY-001",
-    "requirement_ids": ["SR-LIFECYCLE-001", "SR-LIFECYCLE-003"],
-    "implementation_references": ["outputs/security/findings/deduplicated-findings.json", "src/genomic_research_access_api/security/lifecycle/repository.py"],
-    "verification_methods": ["canonical findings to lifecycle register tests", "exception expiry evaluation"],
-    "evidence_references": ["outputs/security/lifecycle/security-exceptions.json", "outputs/security/lifecycle/expired-exceptions.csv"],
-    "residual_risk_id": "RR-005",
-    "notes": "Lifecycle records retain scanner findings and suppressions while keeping scanner suppressions separate from formal exceptions."
+    "verification_methods": [
+      "canonical findings to lifecycle register tests",
+      "exception expiry evaluation"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/evidence/consolidated-evidence.json",
+      "outputs/security/evidence/evidence-manifest.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/evidence",
+      "config/evidence",
+      ".github/workflows/security-evidence.yml"
+    ],
+    "notes": "Milestone 10 aggregates evidence, lineage, metrics and reports without implementing Milestone 11 developer enablement.",
+    "requirement_ids": [
+      "SR-EVIDENCE-001",
+      "SR-EVIDENCE-002"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
     "traceability_id": "TRACE-037",
-    "threat_id": "THR-REVIEW-001",
-    "requirement_ids": ["SR-EVIDENCE-001", "SR-EVIDENCE-002"],
-    "implementation_references": ["src/genomic_research_access_api/security/evidence", "config/evidence", ".github/workflows/security-evidence.yml"],
-    "verification_methods": ["make evidence-full", "consolidated evidence tests"],
-    "evidence_references": ["outputs/security/evidence/consolidated-evidence.json", "outputs/security/evidence/evidence-manifest.json"],
-    "residual_risk_id": "RR-008",
-    "notes": "Milestone 10 aggregates evidence, lineage, metrics and reports without implementing Milestone 11 developer enablement."
+    "verification_methods": [
+      "make evidence-full",
+      "consolidated evidence tests"
+    ]
   },
   {
+    "evidence_references": [
+      "outputs/security/evidence/evidence-integrity-summary.json"
+    ],
+    "implementation_references": [
+      "config/evidence/source-registry.yaml",
+      "src/genomic_research_access_api/security/evidence/verification.py"
+    ],
+    "notes": "Consolidated evidence records source checksums and validates required domain manifests before reporting.",
+    "requirement_ids": [
+      "SR-EVIDENCE-001"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
     "traceability_id": "TRACE-038",
-    "threat_id": "THR-SUPPLY-001",
-    "requirement_ids": ["SR-EVIDENCE-001"],
-    "implementation_references": ["config/evidence/source-registry.yaml", "src/genomic_research_access_api/security/evidence/verification.py"],
-    "verification_methods": ["source manifest checksum verification", "sensitive-content validation"],
-    "evidence_references": ["outputs/security/evidence/evidence-integrity-summary.json"],
-    "residual_risk_id": "RR-005",
-    "notes": "Consolidated evidence records source checksums and validates required domain manifests before reporting."
+    "verification_methods": [
+      "source manifest checksum verification",
+      "sensitive-content validation"
+    ]
   },
   {
-    "traceability_id": "TRACE-039",
-    "threat_id": "THR-REVIEW-001",
-    "requirement_ids": ["SR-DEV-001", "SR-DEV-002", "SR-DEV-003", "SR-DEV-004"],
-    "implementation_references": ["docs/developer-security", ".github/pull_request_template.md", "src/genomic_research_access_api/security/enablement"],
-    "verification_methods": ["make developer-enablement-full", "developer enablement tests"],
-    "evidence_references": ["outputs/security/developer-enablement/enablement-summary.json", "outputs/security/developer-enablement/developer-control-mapping.json"],
+    "evidence_references": [
+      "outputs/security/developer-enablement/enablement-summary.json",
+      "outputs/security/developer-enablement/developer-control-mapping.json"
+    ],
+    "implementation_references": [
+      "docs/developer-security",
+      ".github/pull_request_template.md",
+      "src/genomic_research_access_api/security/enablement"
+    ],
+    "notes": "Milestone 11 makes the secure development workflow usable for contributors without adding Security Champions or deployment.",
+    "requirement_ids": [
+      "SR-DEV-001",
+      "SR-DEV-002",
+      "SR-DEV-003",
+      "SR-DEV-004"
+    ],
     "residual_risk_id": "RR-008",
-    "notes": "Milestone 11 makes the secure development workflow usable for contributors without adding Security Champions or deployment."
+    "threat_id": "THR-REVIEW-001",
+    "traceability_id": "TRACE-039",
+    "verification_methods": [
+      "make developer-enablement-full",
+      "developer enablement tests"
+    ]
   },
   {
-    "traceability_id": "TRACE-040",
-    "threat_id": "THR-SUPPLY-001",
-    "requirement_ids": ["SR-DEV-001", "SR-DEV-004", "SR-SUPPLY-001", "SR-SUPPLY-002"],
-    "implementation_references": ["docs/developer-security/dependency-management-guide.md", "docs/developer-security/container-security-guide.md", "docs/developer-security/security-exception-guide.md"],
-    "verification_methods": ["make developer-docs-validate", "make appsec-full", "make findings-full"],
-    "evidence_references": ["outputs/security/developer-enablement/command-inventory.json", "outputs/security/developer-enablement/prerequisite-check-summary.json"],
+    "evidence_references": [
+      "outputs/security/developer-enablement/command-inventory.json",
+      "outputs/security/developer-enablement/prerequisite-check-summary.json"
+    ],
+    "implementation_references": [
+      "docs/developer-security/dependency-management-guide.md",
+      "docs/developer-security/container-security-guide.md",
+      "docs/developer-security/security-exception-guide.md"
+    ],
+    "notes": "Developer guidance ties supply-chain scanner output to triage, release gates, lifecycle governance and evidence.",
+    "requirement_ids": [
+      "SR-DEV-001",
+      "SR-DEV-004",
+      "SR-SUPPLY-001",
+      "SR-SUPPLY-002"
+    ],
     "residual_risk_id": "RR-005",
-    "notes": "Developer guidance ties supply-chain scanner output to triage, release gates, lifecycle governance and evidence."
+    "threat_id": "THR-SUPPLY-001",
+    "traceability_id": "TRACE-040",
+    "verification_methods": [
+      "make developer-docs-validate",
+      "make appsec-full",
+      "make findings-full"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/champions/programme-summary.json",
+      "outputs/security/champions/champion-metrics.json"
+    ],
+    "implementation_references": [
+      "security-champions",
+      "config/security-champions",
+      "src/genomic_research_access_api/security/champions"
+    ],
+    "notes": "Milestone 12 adds a local, synthetic, role-based Security Champions operating model without Repository 5 integration.",
+    "requirement_ids": [
+      "SR-CHAMP-001",
+      "SR-CHAMP-002",
+      "SR-CHAMP-003",
+      "SR-CHAMP-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
+    "traceability_id": "TRACE-041",
+    "verification_methods": [
+      "make champions-full",
+      "Security Champions tests"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/champions/champion-metrics.json",
+      "outputs/security/findings/deduplicated-findings.json"
+    ],
+    "implementation_references": [
+      "security-champions/workshops/vulnerability-triage-workshop.md",
+      "src/genomic_research_access_api/security/champions/metrics.py"
+    ],
+    "notes": "Champions support finding ownership and recurring weakness identification using existing canonical findings evidence.",
+    "requirement_ids": [
+      "SR-CHAMP-003"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
+    "traceability_id": "TRACE-042",
+    "verification_methods": [
+      "make champions-metrics",
+      "make findings-full"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/champions/escalation-summary.json"
+    ],
+    "implementation_references": [
+      "security-champions/escalation-guide.md",
+      "config/security-champions/escalation-policy.yaml"
+    ],
+    "notes": "Champion escalation distinguishes facilitation from Product Security and Risk Owner decision rights.",
+    "requirement_ids": [
+      "SR-CHAMP-004"
+    ],
+    "residual_risk_id": "RR-002",
+    "threat_id": "THR-AUTHZ-001",
+    "traceability_id": "TRACE-043",
+    "verification_methods": [
+      "make champions-policy-validate"
+    ]
   }
 ]

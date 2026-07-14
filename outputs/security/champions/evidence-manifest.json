@@ -1,0 +1,46 @@
+{
+  "as_of_date": "2026-01-01",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "deployment_status": "not_deployed",
+  "output_files": {
+    "champion-metrics.json": {
+      "path": "champion-metrics.json",
+      "sha256": "4e65f40c32e1342447bf524eeba3bd05b84f3fc3452ce9a24c1c16360fe6f040"
+    },
+    "champion-roster.json": {
+      "path": "champion-roster.json",
+      "sha256": "337976eddc22b490d73039ba49894455701bb5f025eadc3b5e74ed89b7a0ede0"
+    },
+    "developer-control-alignment.json": {
+      "path": "developer-control-alignment.json",
+      "sha256": "500f74d62fc8a80417a6dad65a4eba70ff7bec21a23566f2d95ad4f9f98f487f"
+    },
+    "escalation-summary.json": {
+      "path": "escalation-summary.json",
+      "sha256": "2dba0a0b3e5660c5d58702740a778e4888d50792cef28b31fdba5fbd77495b86"
+    },
+    "maturity-assessment.json": {
+      "path": "maturity-assessment.json",
+      "sha256": "d19391546af1ef18f64de959b0edb368457bd2c3e48bf6277b36d6146f56f76d"
+    },
+    "programme-summary.json": {
+      "path": "programme-summary.json",
+      "sha256": "6d896c65347bebfe143bec195c0c7c3476fcf6d71efdc25bc7d7cf3074ba3f1a"
+    },
+    "squad-coverage.json": {
+      "path": "squad-coverage.json",
+      "sha256": "945d64302552ebfbe4c16c48b0b935849af62cadb47165e29bce242f9349a394"
+    },
+    "workshop-completion-summary.json": {
+      "path": "workshop-completion-summary.json",
+      "sha256": "462917b6076782b080f3f9d333f6640381ec994ec22fbc56ce7ede3df6249094"
+    },
+    "workshop-inventory.json": {
+      "path": "workshop-inventory.json",
+      "sha256": "fc88d0408f2fb706969a00b471f3eaa0a2c93e2e7e3b44db1b7bd0e345a63dd4"
+    }
+  },
+  "repository": "devsecops-application-security-pipeline",
+  "schema_version": "1.0",
+  "synthetic_programme_data": true
+}

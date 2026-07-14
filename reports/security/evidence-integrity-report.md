@@ -1,6 +1,6 @@
 # Evidence Integrity Report
 
-Verified manifests: 8
+Verified manifests: 9
 
 Checksum failures: 0
 

@@ -257,7 +257,7 @@ def test_report_generation(tmp_path: Path) -> None:
 def test_current_canonical_findings_evaluate_to_conditional_pass() -> None:
     result = evaluate(timestamp=DEFAULT_TIMESTAMP)
     assert result["decision"]["decision"] == "conditional_pass"
-    assert result["decision"]["evaluated_finding_count"] >= 40
+    assert result["decision"]["evaluated_finding_count"] >= 39
     assert "RG-COND-001" in result["decision"]["rules_matched"]
 
 

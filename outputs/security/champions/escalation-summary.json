@@ -1,0 +1,86 @@
+{
+  "criteria": [
+    {
+      "criterion_id": "ESC-001",
+      "default_level": "product_security_escalation",
+      "required_evidence": [
+        "secret scan finding",
+        "affected path",
+        "rotation status"
+      ],
+      "trigger": "critical secret"
+    },
+    {
+      "criterion_id": "ESC-002",
+      "default_level": "product_security_escalation",
+      "required_evidence": [
+        "failing auth test",
+        "endpoint",
+        "affected role"
+      ],
+      "trigger": "authentication bypass"
+    },
+    {
+      "criterion_id": "ESC-003",
+      "default_level": "engineering_lead_escalation",
+      "required_evidence": [
+        "negative test",
+        "object boundary",
+        "affected role"
+      ],
+      "trigger": "authorisation or object-level bypass"
+    },
+    {
+      "criterion_id": "ESC-004",
+      "default_level": "champion_escalation",
+      "required_evidence": [
+        "canonical finding",
+        "squad mapping",
+        "due date"
+      ],
+      "trigger": "unowned critical or high finding"
+    },
+    {
+      "criterion_id": "ESC-005",
+      "default_level": "risk_owner_escalation",
+      "required_evidence": [
+        "lifecycle record",
+        "exception record",
+        "release impact"
+      ],
+      "trigger": "overdue P1 or expired exception"
+    },
+    {
+      "criterion_id": "ESC-006",
+      "default_level": "product_security_escalation",
+      "required_evidence": [
+        "release decision",
+        "verification record",
+        "required action"
+      ],
+      "trigger": "release block or failed verification"
+    },
+    {
+      "criterion_id": "ESC-007",
+      "default_level": "squad_handling",
+      "required_evidence": [
+        "findings by category",
+        "learning action",
+        "owner"
+      ],
+      "trigger": "repeated vulnerability category"
+    },
+    {
+      "criterion_id": "ESC-008",
+      "default_level": "engineering_lead_escalation",
+      "required_evidence": [
+        "failed command",
+        "tool version",
+        "affected evidence domain"
+      ],
+      "trigger": "tooling failure affecting assurance"
+    }
+  ],
+  "criterion_count": 8,
+  "schema_version": "1.0"
+}

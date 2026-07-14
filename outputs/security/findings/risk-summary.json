@@ -1,7 +1,7 @@
 {
   "by_priority": {
     "P2": 15,
-    "P3": 26
+    "P3": 24
   },
   "formula": "30% severity + 20% exploitability + 15% internet exposure + 15% asset criticality + 10% data sensitivity + 5% privilege required + 5% age/recurrence",
   "highest_risk": [

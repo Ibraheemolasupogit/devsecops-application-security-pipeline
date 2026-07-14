@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "programme": {
+    "name": "Security Champions Programme",
+    "purpose": "Distribute practical security ownership through engineering squads while Product Security remains accountable for policy, assurance and formal risk decisions.",
+    "scope": ["secure design", "threat modelling", "secure code review", "finding triage", "remediation support", "evidence review"],
+    "non_goals": ["deployment", "external messaging", "ticketing automation", "Repository 5 integration", "formal risk acceptance by champions"],
+    "principles": ["collaboration over gatekeeping", "early security involvement", "evidence-backed improvement", "risk-based escalation"],
+    "decision_rights": {
+      "security_champion": ["facilitate review", "support triage", "recommend escalation"],
+      "product_security": ["define policy", "review high risk decisions", "own assurance"],
+      "risk_owner": ["accept residual risk"]
+    }
+  }
+}

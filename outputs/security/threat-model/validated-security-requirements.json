@@ -230,6 +230,89 @@
     "verification_reference": "tests/security/test_api_security_controls.py"
   },
   {
+    "category": "security_champions",
+    "description": "Engineering squads must have a role-based Security Champions operating model that supports secure delivery without replacing Product Security accountability.",
+    "evidence_reference": "outputs/security/champions/programme-summary.json",
+    "implementation_reference": "security-champions/programme-charter.md; config/security-champions/programme-policy.yaml",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 12",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-CHAMP-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Distributed security ownership",
+    "verification_method": "make champions-full",
+    "verification_reference": "tests/security/test_security_champions.py"
+  },
+  {
+    "category": "security_champions",
+    "description": "Security Champions must have onboarding, workshops, exercises and learning cadence for threat modelling, secure code review, authentication, authorisation, finding triage and exception review.",
+    "evidence_reference": "outputs/security/champions/workshop-inventory.json",
+    "implementation_reference": "security-champions/onboarding-guide.md; security-champions/workshops",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 12",
+    "policy_source": null,
+    "priority": "medium",
+    "requirement_id": "SR-CHAMP-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Champion security education",
+    "verification_method": "make champions-policy-validate; make champions-report",
+    "verification_reference": "tests/security/test_security_champions.py"
+  },
+  {
+    "category": "security_champions",
+    "description": "Champion metrics must expose findings by squad, overdue findings, owner assignment, verification completion and repeated vulnerability categories without hiding findings.",
+    "evidence_reference": "outputs/security/champions/champion-metrics.json",
+    "implementation_reference": "src/genomic_research_access_api/security/champions/metrics.py; config/security-champions/metric-definitions.yaml",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 12",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-CHAMP-003",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-SUPPLY-001",
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Finding triage support by squad",
+    "verification_method": "make champions-metrics; make champions-evidence",
+    "verification_reference": "tests/security/test_security_champions.py"
+  },
+  {
+    "category": "security_champions",
+    "description": "The programme must define escalation criteria for critical secrets, auth bypass, unowned high risk findings, overdue P1, expired exceptions, failed verification, release blocks and assurance tooling failures.",
+    "evidence_reference": "outputs/security/champions/escalation-summary.json",
+    "implementation_reference": "security-champions/escalation-guide.md; config/security-champions/escalation-policy.yaml",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 12",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-CHAMP-004",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-AUTH-001",
+      "THR-AUTHZ-001"
+    ],
+    "status": "active",
+    "title": "Champion escalation governance",
+    "verification_method": "make champions-policy-validate; make verify-champions-evidence",
+    "verification_reference": "tests/security/test_security_champions.py"
+  },
+  {
     "category": "ci_cd",
     "description": "Source changes must pass format, lint, type, test and threat-model validation checks.",
     "evidence_reference": "outputs/security/threat-model/evidence-manifest.json",

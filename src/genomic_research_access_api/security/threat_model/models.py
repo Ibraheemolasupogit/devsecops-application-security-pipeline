@@ -135,6 +135,7 @@ class SecurityRequirement(SecurityModel):
                 "Milestone 9",
                 "Milestone 10",
                 "Milestone 11",
+                "Milestone 12",
             }
         )
         if value not in allowed:

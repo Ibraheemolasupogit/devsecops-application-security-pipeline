@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "levels": [
+    {"level": "level_0", "label": "Level 0 - Ad hoc"},
+    {"level": "level_1", "label": "Level 1 - Aware"},
+    {"level": "level_2", "label": "Level 2 - Repeatable"},
+    {"level": "level_3", "label": "Level 3 - Measured"},
+    {"level": "level_4", "label": "Level 4 - Embedded"}
+  ],
+  "areas": [
+    {
+      "area_id": "AREA-001",
+      "name": "threat_modelling",
+      "evidence": ["docs/threat-model/threat-register.yaml", "security-champions/workshops/threat-modelling-workshop.md"],
+      "next_step": "Run lightweight threat review for endpoint and data-flow changes.",
+      "levels": [{"level": "level_0"}, {"level": "level_1"}, {"level": "level_2"}, {"level": "level_3"}, {"level": "level_4"}]
+    },
+    {
+      "area_id": "AREA-002",
+      "name": "secure_code_review",
+      "evidence": ["security-champions/workshops/secure-code-review-workshop.md", ".github/pull_request_template.md"],
+      "next_step": "Use the champion checklist in pull request review.",
+      "levels": [{"level": "level_0"}, {"level": "level_1"}, {"level": "level_2"}, {"level": "level_3"}, {"level": "level_4"}]
+    },
+    {
+      "area_id": "AREA-003",
+      "name": "finding_ownership",
+      "evidence": ["outputs/security/findings/deduplicated-findings.json"],
+      "next_step": "Review unowned or recurring findings monthly.",
+      "levels": [{"level": "level_0"}, {"level": "level_1"}, {"level": "level_2"}, {"level": "level_3"}, {"level": "level_4"}]
+    },
+    {
+      "area_id": "AREA-004",
+      "name": "exception_governance",
+      "evidence": ["outputs/security/lifecycle/security-exceptions.json"],
+      "next_step": "Escalate expired or unsupported exceptions with release impact.",
+      "levels": [{"level": "level_0"}, {"level": "level_1"}, {"level": "level_2"}, {"level": "level_3"}, {"level": "level_4"}]
+    },
+    {
+      "area_id": "AREA-005",
+      "name": "evidence",
+      "evidence": ["outputs/security/evidence/consolidated-evidence.json"],
+      "next_step": "Link champion activities to generated evidence and reports.",
+      "levels": [{"level": "level_0"}, {"level": "level_1"}, {"level": "level_2"}, {"level": "level_3"}, {"level": "level_4"}]
+    },
+    {
+      "area_id": "AREA-006",
+      "name": "learning",
+      "evidence": ["config/security-champions/workshop-catalogue.yaml"],
+      "next_step": "Use repeated categories to choose monthly learning topics.",
+      "levels": [{"level": "level_0"}, {"level": "level_1"}, {"level": "level_2"}, {"level": "level_3"}, {"level": "level_4"}]
+    }
+  ]
+}

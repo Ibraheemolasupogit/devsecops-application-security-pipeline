@@ -1,13 +1,6 @@
 {
   "actions": [
     {
-      "action": "Review during normal maintenance.",
-      "finding_ids": [
-        "FND-DAST-31a4a55d744a",
-        "FND-DAST-7938d4335d4a"
-      ]
-    },
-    {
       "action": "Review reference infrastructure control before production deployment.",
       "finding_ids": [
         "FND-SUPPRESSIO-1065083a8d4b",
@@ -79,6 +72,6 @@
       ]
     }
   ],
-  "decision_id": "REL-64a40e351af97a1f",
+  "decision_id": "REL-57cfa7baad1bb799",
   "schema_version": "1.0"
 }

@@ -1,5 +1,5 @@
 {
-  "control_count": 52,
+  "control_count": 56,
   "controls": [
     {
       "control_id": "SR-API-001",
@@ -206,6 +206,81 @@
       "threat_ids": [
         "THR-AUTHZ-001",
         "THR-AUTHZ-002"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-CHAMP-001",
+      "deployment_dependency": "none",
+      "domain": "champions",
+      "evidence_references": [
+        "outputs/security/champions/programme-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-CHAMP-001"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-CHAMP-002",
+      "deployment_dependency": "none",
+      "domain": "champions",
+      "evidence_references": [
+        "outputs/security/champions/workshop-inventory.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-CHAMP-002"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-CHAMP-003",
+      "deployment_dependency": "none",
+      "domain": "champions",
+      "evidence_references": [
+        "outputs/security/champions/champion-metrics.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-CHAMP-003"
+      ],
+      "threat_ids": [
+        "THR-SUPPLY-001",
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-CHAMP-004",
+      "deployment_dependency": "none",
+      "domain": "champions",
+      "evidence_references": [
+        "outputs/security/champions/escalation-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-CHAMP-004"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001",
+        "THR-AUTH-001",
+        "THR-AUTHZ-001"
       ],
       "verification_status": "verified"
     },
@@ -976,8 +1051,8 @@
   "coverage_by_status": {
     "implemented_as_code": 10,
     "planned": 2,
-    "validated_locally": 40
+    "validated_locally": 44
   },
-  "coverage_percentage": 96.15,
+  "coverage_percentage": 96.43,
   "schema_version": "1.0"
 }

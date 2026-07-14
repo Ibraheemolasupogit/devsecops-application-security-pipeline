@@ -24,14 +24,12 @@
 - EVT-8647640971ed: initialise None -> triaged
 - EVT-9000db8cd675: initialise None -> triaged
 - EVT-9ad65d6d4313: initialise None -> triaged
-- EVT-9af2de1e4d13: false_positive_review triaged -> false_positive
 - EVT-a39e57b417dc: initialise None -> triaged
 - EVT-a3bd7b973ca4: initialise None -> risk_accepted
 - EVT-a5bfe9cf648d: initialise None -> triaged
 - EVT-a744924a710e: initialise None -> triaged
 - EVT-ab0906d82fcb: initialise None -> triaged
 - EVT-ac48e0d26546: initialise None -> triaged
-- EVT-b0adc4c34ff7: initialise None -> triaged
 - EVT-b3725f6adea8: initialise None -> triaged
 - EVT-b75312cc5923: initialise None -> triaged
 - EVT-b8e21052ba5f: initialise None -> triaged
@@ -40,3 +38,5 @@
 - EVT-c103eb68d68b: initialise None -> triaged
 - EVT-c1bedc964198: initialise None -> triaged
 - EVT-cf94731a6bab: initialise None -> triaged
+- EVT-e38abb192475: initialise None -> triaged
+- EVT-fd5320a6a574: exception_expired risk_accepted -> assigned

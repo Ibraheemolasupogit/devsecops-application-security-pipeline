@@ -77,7 +77,15 @@ This consumes canonical findings and release outputs, then writes the local vuln
 make evidence-full
 ```
 
-This aggregates Milestone 1-9 source evidence into a deterministic evidence bundle and report set. Use `make security-assurance-full` when you intentionally want the longer local assurance chain.
+This aggregates local source evidence into a deterministic evidence bundle and report set. Use `make security-assurance-full` when you intentionally want the longer local assurance chain.
+
+## Security Champions
+
+```bash
+make champions-full
+```
+
+This validates the synthetic role-based champion roster, programme policy, metrics, maturity model, escalation model and reports. It is local only and does not implement messaging, ticketing, dashboards, Repository 5 integration or deployment.
 
 ## Local API Tokens
 

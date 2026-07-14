@@ -1,0 +1,69 @@
+{
+  "areas": [
+    {
+      "area_id": "AREA-001",
+      "assessed_level": "level_1",
+      "evidence": [
+        "docs/threat-model/threat-register.yaml",
+        "security-champions/workshops/threat-modelling-workshop.md"
+      ],
+      "level_label": "Level 1 - Aware",
+      "name": "threat_modelling",
+      "next_step": "Run lightweight threat review for endpoint and data-flow changes."
+    },
+    {
+      "area_id": "AREA-002",
+      "assessed_level": "level_1",
+      "evidence": [
+        "security-champions/workshops/secure-code-review-workshop.md",
+        ".github/pull_request_template.md"
+      ],
+      "level_label": "Level 1 - Aware",
+      "name": "secure_code_review",
+      "next_step": "Use the champion checklist in pull request review."
+    },
+    {
+      "area_id": "AREA-003",
+      "assessed_level": "level_1",
+      "evidence": [
+        "outputs/security/findings/deduplicated-findings.json"
+      ],
+      "level_label": "Level 1 - Aware",
+      "name": "finding_ownership",
+      "next_step": "Review unowned or recurring findings monthly."
+    },
+    {
+      "area_id": "AREA-004",
+      "assessed_level": "level_1",
+      "evidence": [
+        "outputs/security/lifecycle/security-exceptions.json"
+      ],
+      "level_label": "Level 1 - Aware",
+      "name": "exception_governance",
+      "next_step": "Escalate expired or unsupported exceptions with release impact."
+    },
+    {
+      "area_id": "AREA-005",
+      "assessed_level": "level_1",
+      "evidence": [
+        "outputs/security/evidence/consolidated-evidence.json"
+      ],
+      "level_label": "Level 1 - Aware",
+      "name": "evidence",
+      "next_step": "Link champion activities to generated evidence and reports."
+    },
+    {
+      "area_id": "AREA-006",
+      "assessed_level": "level_1",
+      "evidence": [
+        "config/security-champions/workshop-catalogue.yaml"
+      ],
+      "level_label": "Level 1 - Aware",
+      "name": "learning",
+      "next_step": "Use repeated categories to choose monthly learning topics."
+    }
+  ],
+  "as_of_date": "2026-01-01",
+  "assessment_mode": "area-based; no opaque aggregate score",
+  "schema_version": "1.0"
+}

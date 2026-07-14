@@ -4,6 +4,7 @@
   "domains": {
     "api_security": ["api_security", "authentication", "authorisation"],
     "appsec": ["supply_chain", "secrets", "container_security", "infrastructure_security"],
+    "champions": ["security_champions"],
     "dynamic_security": ["api_security", "authentication", "authorisation", "configuration"],
     "developer_enablement": ["developer_enablement"],
     "findings": ["governance", "supply_chain"],

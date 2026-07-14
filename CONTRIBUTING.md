@@ -1,6 +1,6 @@
 # Contributing
 
-This portfolio repository is a local demonstration of a secure product foundation. Contributions should preserve the delivered milestone boundaries and avoid adding cloud deployment, production vulnerability-management operations or Security Champions workflow before their roadmap milestone.
+This portfolio repository is a local demonstration of a secure product foundation. Contributions should preserve the delivered milestone boundaries and avoid adding cloud deployment, production vulnerability-management operations beyond the local evidence model, or Repository 5 integration before their roadmap milestone.
 
 ## Local Checks
 
@@ -15,6 +15,7 @@ make release-full
 make lifecycle-full
 make evidence-full
 make developer-enablement-full
+make champions-full
 ```
 
 Use deterministic synthetic data only. Do not add real patient, NHS, genomic, credential, or cloud account data.
@@ -37,4 +38,6 @@ Use deterministic synthetic data only. Do not add real patient, NHS, genomic, cr
 - Run `make security-doctor` when Docker, Terraform, Gitleaks, Trivy, ZAP or local dynamic checks fail locally.
 - Keep scanner suppressions narrow, owned and expiring. Use formal lifecycle exceptions only for time-bound accepted risk or deferral with rationale and approval.
 - Regenerate findings, release, lifecycle, consolidated evidence and developer enablement evidence when the corresponding source material changes.
-- Commits should preserve milestone boundaries. Do not add deployment, AWS execution, dashboards, external ticketing or Security Champions workflow before their roadmap milestone.
+- Commits should preserve milestone boundaries. Do not add deployment, AWS execution, dashboards, external ticketing or Repository 5 integration before their roadmap milestone.
+
+Run `make champions-full` when changing the Security Champions programme, roster, metrics, maturity model, escalation policy, workshops, exercises or reports. Champion records must remain synthetic and role-based.

@@ -1,2 +1,1 @@
 vulnerability_id,finding_id,title,severity,priority,risk_score,status,technical_owner,risk_owner,remediation_owner,squad,due_date,overdue,verification_status,exception_id,review_date
-VUL-ff18a534d9fe,FND-DAST-7938d4335d4a,ZAP is Out of Date,low,P3,52.25,false_positive,Application Engineering,Risk Owner,Application Engineering,Application Engineering,2026-03-02,False,not_verified,,2026-01-01

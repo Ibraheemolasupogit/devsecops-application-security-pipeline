@@ -1,0 +1,47 @@
+{
+  "champion_count": 4,
+  "fully_completed_count": 0,
+  "limitations": [
+    "Workshop completion is synthetic demonstration data, not attendance history.",
+    "No real training attendance system is implemented."
+  ],
+  "records": [
+    {
+      "champion_id": "CHAMP-APP-001",
+      "completed_workshop_count": 3,
+      "completion_percentage": 50.0,
+      "demonstration_data": true,
+      "squad_id": "SQUAD-APP",
+      "status": "active",
+      "total_workshop_count": 6
+    },
+    {
+      "champion_id": "CHAMP-CLOUD-001",
+      "completed_workshop_count": 2,
+      "completion_percentage": 33.33,
+      "demonstration_data": true,
+      "squad_id": "SQUAD-CLOUD",
+      "status": "onboarding",
+      "total_workshop_count": 6
+    },
+    {
+      "champion_id": "CHAMP-DEVSECOPS-001",
+      "completed_workshop_count": 3,
+      "completion_percentage": 50.0,
+      "demonstration_data": true,
+      "squad_id": "SQUAD-DEVSECOPS",
+      "status": "active",
+      "total_workshop_count": 6
+    },
+    {
+      "champion_id": "CHAMP-PLATFORM-001",
+      "completed_workshop_count": 2,
+      "completion_percentage": 33.33,
+      "demonstration_data": true,
+      "squad_id": "SQUAD-PLATFORM",
+      "status": "active",
+      "total_workshop_count": 6
+    }
+  ],
+  "schema_version": "1.0"
+}

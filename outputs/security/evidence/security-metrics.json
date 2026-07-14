@@ -2,29 +2,27 @@
   "metrics": {
     "active_exceptions": 1,
     "blocking_findings": 0,
-    "canonical_findings": 41,
+    "canonical_findings": 39,
     "closed_findings": 0,
     "conditional_findings": 0,
-    "control_coverage_percentage": 96.15,
+    "control_coverage_percentage": 96.43,
     "due_soon_findings": 2,
     "expired_exceptions": 1,
     "expired_suppressions": 0,
     "expiring_exceptions": 1,
     "failed_evidence_domains": 0,
-    "false_positives": 1,
+    "false_positives": 0,
     "findings_by_priority": {
       "P2": 15,
-      "P3": 26
+      "P3": 24
     },
     "findings_by_severity": {
       "critical": 3,
       "high": 30,
-      "informational": 1,
-      "low": 1,
       "medium": 6
     },
     "high_critical_threats": 18,
-    "implemented_requirements": 50,
+    "implemented_requirements": 54,
     "overdue_findings": 0,
     "partially_implemented_requirements": 0,
     "planned_requirements": 2,
@@ -41,22 +39,21 @@
       "semgrep": 0,
       "threat-model": 6,
       "trivy": 22,
-      "zap": 2
+      "zap": 0
     },
     "scanner_tools_executed": 5,
-    "security_requirements": 52,
+    "security_requirements": 56,
     "suppressed_findings": 15,
     "total_threats": 30,
     "unowned_findings": 0,
     "verification_records": 0,
-    "verified_evidence_domains": 8,
+    "verified_evidence_domains": 9,
     "vulnerabilities_by_lifecycle_status": {
       "assigned": 1,
-      "false_positive": 1,
       "risk_accepted": 2,
-      "triaged": 37
+      "triaged": 36
     },
-    "vulnerability_records": 41,
+    "vulnerability_records": 39,
     "warning_findings": 0
   },
   "schema_version": "1.0"

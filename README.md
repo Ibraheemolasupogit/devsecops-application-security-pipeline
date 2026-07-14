@@ -8,7 +8,7 @@ It is not a production genomics platform.
 
 It is not affiliated with or endorsed by Genomics England.
 
-AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration, cloud deployment and Security Champions operations are deferred to later milestones.
+AWS infrastructure is provided as non-deployed Terraform. External identity-provider integration and cloud deployment are deferred to later milestones.
 
 ## Problem Statement
 
@@ -37,6 +37,8 @@ Milestone 9 adds deterministic vulnerability lifecycle and exception governance 
 Milestone 10 adds consolidated security evidence and reporting across Milestones 1-9. It produces a deterministic evidence bundle, source lineage, control coverage, security metrics, integrity summaries and audience-oriented reports. It does not start Milestone 11 developer enablement, Security Champions, dashboards, ticketing, external reporting, deployment or AWS resource creation.
 
 Milestone 11 adds developer security enablement: repository-specific secure development guidance, pull-request security workflow, local command tiers, pre-commit integration, reusable CI examples, prerequisite checks, developer enablement evidence and reports. It does not start Security Champions, dashboards, Repository 5 integration, external ticketing, deployment or AWS resource creation.
+
+Milestone 12 adds a local Security Champions programme: charter, role definition, onboarding, 90-day plan, monthly learning cadence, workshops, exercises, checklists, escalation model, metrics, maturity model, evidence and reports. It uses synthetic role-based records only and does not implement Repository 5 integration, dashboards, ticketing, messaging, deployment or AWS resource creation.
 
 ## Milestone 1 Scope
 
@@ -228,7 +230,7 @@ make lifecycle-full
 make evidence-full
 ```
 
-Use `make dynamic-full` for API boundary changes and `make appsec-full` for dependency, Docker, Terraform or scanner-policy changes. Use `make security-assurance-full` before high-risk review. Developer enablement evidence is generated with `make developer-enablement-full` under `outputs/security/developer-enablement/`.
+Use `make dynamic-full` for API boundary changes and `make appsec-full` for dependency, Docker, Terraform or scanner-policy changes. Use `make security-assurance-full` before high-risk review. Developer enablement evidence is generated with `make developer-enablement-full` under `outputs/security/developer-enablement/`. Security Champions evidence is generated with `make champions-full` under `outputs/security/champions/`.
 
 Pull requests should use `.github/pull_request_template.md`, identify security impact, list local commands run, explain finding changes, distinguish scanner suppressions from formal exceptions and state the current release-gate outcome.
 
@@ -276,6 +278,7 @@ Pull requests should use `.github/pull_request_template.md`, identify security i
 - `make security-doctor`: report local developer-security prerequisite readiness without installing software.
 - `make developer-docs-validate`: validate developer guides, local links and referenced commands.
 - `make developer-enablement-full`: validate developer security guidance, generate enablement evidence and generate developer reports.
+- `make champions-full`: validate the Security Champions programme, derive metrics from local evidence, verify the manifest and generate champion reports.
 - `make secrets-scan`: run Gitleaks via local binary or pinned container.
 - `make semgrep-test`: run Semgrep custom rule tests.
 - `make sast`: run Semgrep and Bandit.
@@ -446,7 +449,7 @@ Milestone 3 also implements local signed JWT authentication, RBAC, object-level 
 
 Milestone 4 adds secure AWS Terraform configuration for private ECS, least-privilege role separation, encrypted DynamoDB/Secrets/CloudTrail storage, CloudWatch/CloudTrail observability and secure remote-state design. These controls are configured and locally validated, not deployed.
 
-Planned future controls include external IdP integration, production rate limiting, findings ingestion, release risk gates, vulnerability lifecycle and Security Champions enablement.
+Planned future controls include external IdP integration, production rate limiting, Repository 5 integration and enterprise reporting.
 
 This repository does not claim production-grade identity, monitoring, cloud deployment, vulnerability-management workflow or release-gate coverage.
 
@@ -456,4 +459,4 @@ State is in memory and resets when the app restarts. JWT keys under `tests/fixtu
 
 ## Future Milestones
 
-Later milestones may add external identity-provider integration, vulnerability management, risk-based release gates, and Security Champions enablement.
+Later milestones may add external identity-provider integration, Repository 5 integration and enterprise reporting.

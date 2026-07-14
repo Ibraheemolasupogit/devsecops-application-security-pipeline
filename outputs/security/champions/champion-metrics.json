@@ -1,0 +1,76 @@
+{
+  "anti_gaming_note": "Metrics are used to reveal risk and support learning, not to hide findings.",
+  "as_of_date": "2026-01-01",
+  "champion_coverage_percentage": 100.0,
+  "critical_high_findings_by_squad": {
+    "Application Engineering": 1,
+    "Cloud Platform Security": 12,
+    "Platform Engineering": 20
+  },
+  "demonstration_data": true,
+  "exception_review_completion_rate": 100.0,
+  "findings_by_squad": {
+    "Application Engineering": 1,
+    "Cloud Platform Security": 12,
+    "Platform Engineering": 20,
+    "Product Security": 6
+  },
+  "overdue_findings_by_squad": {},
+  "owner_assignment_rate": 100.0,
+  "repeated_vulnerability_categories": {
+    "Container": 20,
+    "Secure Design": 6,
+    "Suppression Governance": 13
+  },
+  "schema_version": "1.0",
+  "squads_with_active_champion": 4,
+  "squads_without_champion": [],
+  "verification_completion_rate": 0.0,
+  "workshop_completion": {
+    "champion_count": 4,
+    "fully_completed_count": 0,
+    "limitations": [
+      "Workshop completion is synthetic demonstration data, not attendance history.",
+      "No real training attendance system is implemented."
+    ],
+    "records": [
+      {
+        "champion_id": "CHAMP-APP-001",
+        "completed_workshop_count": 3,
+        "completion_percentage": 50.0,
+        "demonstration_data": true,
+        "squad_id": "SQUAD-APP",
+        "status": "active",
+        "total_workshop_count": 6
+      },
+      {
+        "champion_id": "CHAMP-CLOUD-001",
+        "completed_workshop_count": 2,
+        "completion_percentage": 33.33,
+        "demonstration_data": true,
+        "squad_id": "SQUAD-CLOUD",
+        "status": "onboarding",
+        "total_workshop_count": 6
+      },
+      {
+        "champion_id": "CHAMP-DEVSECOPS-001",
+        "completed_workshop_count": 3,
+        "completion_percentage": 50.0,
+        "demonstration_data": true,
+        "squad_id": "SQUAD-DEVSECOPS",
+        "status": "active",
+        "total_workshop_count": 6
+      },
+      {
+        "champion_id": "CHAMP-PLATFORM-001",
+        "completed_workshop_count": 2,
+        "completion_percentage": 33.33,
+        "demonstration_data": true,
+        "squad_id": "SQUAD-PLATFORM",
+        "status": "active",
+        "total_workshop_count": 6
+      }
+    ],
+    "schema_version": "1.0"
+  }
+}

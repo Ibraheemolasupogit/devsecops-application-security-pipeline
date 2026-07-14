@@ -123,17 +123,35 @@
         "SR-API-004",
         "SR-CI-003"
       ],
-      "relationship": "summarised_by",
+      "relationship": "informs",
       "security_requirement_ids": [
         "SR-API-004",
         "SR-CI-003"
       ],
       "source_id": "lifecycle_records",
       "source_reference": "outputs/security/lifecycle/vulnerability-register.json",
+      "target_id": "champion_metrics",
+      "target_reference": "outputs/security/champions/champion-metrics.json",
+      "threat_ids": [
+        "THR-API-008"
+      ]
+    },
+    {
+      "control_ids": [
+        "SR-LOG-001",
+        "SR-LOG-002"
+      ],
+      "relationship": "summarised_by",
+      "security_requirement_ids": [
+        "SR-LOG-001",
+        "SR-LOG-002"
+      ],
+      "source_id": "champion_metrics",
+      "source_reference": "outputs/security/champions/champion-metrics.json",
       "target_id": "consolidated_report",
       "target_reference": "reports/security/security-evidence-report.md",
       "threat_ids": [
-        "THR-API-008"
+        "THR-AUDIT-001"
       ]
     }
   ],

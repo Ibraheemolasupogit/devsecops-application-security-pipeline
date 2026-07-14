@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "29ce643538fe8505973fa1f4973569a6646b506646442e39ccc1ca35870eef3f"
+      "sha256": "145f088eab4e2ffb448eddeea0e356ea11f8c1e175169e26656c1fdfafdac9b7"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -67,19 +67,19 @@
     },
     "outputs/security/appsec/raw/semgrep.json": {
       "path": "outputs/security/appsec/raw/semgrep.json",
-      "sha256": "237fb7320c41fffb3cdf86bbe9e2eae02f219d1c22c0e5578622d0d6532c6f83"
+      "sha256": "e175c1d6bca2e0d4499892290370d074471256851d4481834dc4e66d1f01e5f9"
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "d1007d65f48bfef2ea2d216beedba22573753e14142da9eecb5b7531df592b2f"
+      "sha256": "6005064128e17fa2bf178ab0ab54ab43a480a6e0b22814961d42ed5f3350393d"
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
-      "sha256": "545756e9fedf1a7bef64a6603fa1a41d30d173dd22f96a98143f12eab326fa6a"
+      "sha256": "24269dd5e404d365181fea4b4c38d689c86119c3a5c704283b3bcd072dc6adcc"
     },
     "outputs/security/dynamic/raw/zap-report.json": {
       "path": "outputs/security/dynamic/raw/zap-report.json",
-      "sha256": "e8b9434a46508678c47d58900287696e32f5a845b25da0b251744a857ac9faa0"
+      "sha256": "0a18cf65ba22748929c39975a4a5d7dbfe3145b98bc1d438f2fd484bd7b87607"
     },
     "outputs/security/dynamic/schemathesis-summary.json": {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
@@ -94,7 +94,7 @@
       "sha256": "4f56188bea83765d6ba11cf83557e7be3f1500dc3b11c8ab3d7c5f2f9fc8b6d1"
     }
   },
-  "normalisation_count": 43,
+  "normalisation_count": 41,
   "output_files": {
     "asset-inventory.json": {
       "path": "outputs/security/findings/asset-inventory.json",
@@ -102,11 +102,11 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "58ab9d09e1ee2b001f2df610ea1abb40bdc04a03ffe1368e0fc12900bc73ed0b"
+      "sha256": "a6e3f1f96f968cad29c034c9c51644a6f7499934e8855d5240944d4373cd01ff"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
-      "sha256": "5838475c39acf320ede50c2f0cfa881e64630dd91e0be3f19d5fe65130b50312"
+      "sha256": "46be1e056804f248efe6bdcb62e6a926e7553b1d54f659406a8340873a10b51c"
     },
     "expired-suppressions.csv": {
       "path": "outputs/security/findings/expired-suppressions.csv",
@@ -114,31 +114,31 @@
     },
     "finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "ffd6773481b84423fa5c0dde8bd2d9c1f96f5c91022b918ee24fe147d4942d10"
+      "sha256": "fc11670454e6612e7f253d64506564096578dc11505edc2768db19ca18751db5"
     },
     "findings-summary.json": {
       "path": "outputs/security/findings/findings-summary.json",
-      "sha256": "d36897b812f2155cd3397b87a96a3e4f92fd9b670ea9a59f0aa6f1228956120e"
+      "sha256": "9c3aa572ee1c7add56ebc3ce66eaf477ce7b1adef4e73fcaeeee5ed69747af4e"
     },
     "normalised-findings.csv": {
       "path": "outputs/security/findings/normalised-findings.csv",
-      "sha256": "c69e21b79ec924c084f4115f713821d7daac48159c1f11bce49b73db44eb1391"
+      "sha256": "0248d7da8287740bc5994faf8b0036caf25fd94cd758a92126e8043654e08aa9"
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "737ad2edfa6b445743180313ae89870db424d034e4d11c70173c7f7dadf2d8ef"
+      "sha256": "f94a1ce5650c7630eeb81ef0813273dbc5ddd55f0231069a476a3579ed191036"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",
-      "sha256": "020390f4a72ea8db15d100f4f5e5922a21f96c3c1884f5008da91981a4f567ee"
+      "sha256": "07e1ee7bf010190a400d213f7365a6ea13bd231fa73ab9b7517531ff23037bfb"
     },
     "risk-summary.json": {
       "path": "outputs/security/findings/risk-summary.json",
-      "sha256": "c459b898e63bf582da0d75a9ddc320dfc958347edb1a1474194b54f2f2ead129"
+      "sha256": "57015e0a276631d1d513c884858084abc37a0c86c861a572b60d26d2d79a005c"
     },
     "sla-summary.json": {
       "path": "outputs/security/findings/sla-summary.json",
-      "sha256": "503b040dd3d7a30a98745c0460a9a848b31594683403059a5629d886353ab03b"
+      "sha256": "11a19b97f71629b7c1e3b03a72431e2e1b9e306f68f7bdddc701e43f803c462e"
     },
     "suppressed-findings.csv": {
       "path": "outputs/security/findings/suppressed-findings.csv",

@@ -2,7 +2,7 @@ Schemathesis v4.0.26
 ━━━━━━━━━━━━━━━━━━━━
 
 
- ✅  Loaded specification from /work/openapi.json (in 0.35s)
+ ✅  Loaded specification from /work/openapi.json (in 0.36s)
 
      Base URL:         http://host.docker.internal:8000
      Specification:    Open API 3.1.0
@@ -17,7 +17,7 @@ Schemathesis v4.0.26
 
      ⏭  9 skipped
 
- ✅  Fuzzing (in 1.85s)
+ ✅  Fuzzing (in 1.72s)
 
      ✅ 9 passed
 
@@ -68,4 +68,4 @@ Test cases:
 
 Seed: not used in the deterministic mode
 
-============================= 3 warnings in 2.00s ==============================
+============================= 3 warnings in 1.87s ==============================

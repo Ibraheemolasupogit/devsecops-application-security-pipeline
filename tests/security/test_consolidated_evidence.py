@@ -21,10 +21,11 @@ def test_source_registry_validation_and_current_sources() -> None:
     summary = validate_source_registry()
     sources = source_registry()
     assert summary["valid"] is True
-    assert summary["source_count"] == 8
+    assert summary["source_count"] == 9
     assert {source.domain for source in sources} == {
         "api_security",
         "appsec",
+        "champions",
         "dynamic_security",
         "findings",
         "infrastructure",
@@ -38,15 +39,15 @@ def test_aggregate_bundle_metrics_and_domain_counts() -> None:
     evidence, validation = aggregate()
     metrics = evidence.metrics["metrics"]
     assert validation["valid"] is True
-    assert evidence.domain_count == 8
-    assert evidence.verified_domain_count == 8
+    assert evidence.domain_count == 9
+    assert evidence.verified_domain_count == 9
     assert evidence.failed_domain_count == 0
     assert evidence.deployment_status == "not_deployed"
     assert metrics["total_threats"] == 30
-    assert metrics["security_requirements"] == 52
-    assert metrics["canonical_findings"] == 41
+    assert metrics["security_requirements"] == 56
+    assert metrics["canonical_findings"] == 39
     assert metrics["release_decision"] == evidence.release_decision["decision"]
-    assert metrics["vulnerability_records"] == 41
+    assert metrics["vulnerability_records"] == 39
     assert metrics["active_exceptions"] == 1
     assert metrics["expired_exceptions"] == 1
     assert metrics["verification_records"] == 0
@@ -71,7 +72,7 @@ def test_generate_verify_and_tamper_detection(tmp_path: Path) -> None:
 
 def test_lineage_references_are_supported_by_repository_artefacts() -> None:
     lineage = generate_lineage()
-    assert len(lineage["edges"]) == 8
+    assert len(lineage["edges"]) == 9
     assert all(edge["source_reference"] for edge in lineage["edges"])
     assert all(edge["target_reference"] for edge in lineage["edges"])
     assert all(edge["relationship"] for edge in lineage["edges"])
@@ -79,7 +80,7 @@ def test_lineage_references_are_supported_by_repository_artefacts() -> None:
 
 def test_control_coverage_aggregation_and_percentage() -> None:
     coverage = aggregate_control_coverage()
-    assert coverage["control_count"] == 52
+    assert coverage["control_count"] == 56
     assert 0 <= coverage["coverage_percentage"] <= 100
     assert coverage["coverage_by_status"]["validated_locally"] >= 1
     assert coverage["coverage_by_status"]["planned"] == 2

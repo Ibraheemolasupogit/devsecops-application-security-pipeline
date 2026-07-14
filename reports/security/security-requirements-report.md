@@ -13,6 +13,10 @@
 | SR-AUTHZ-003 | authorisation | implemented | Milestone 3 |
 | SR-AUTHZ-004 | workflow_integrity | implemented | Milestone 3 |
 | SR-AUTHZ-005 | authorisation | implemented | Milestone 3 |
+| SR-CHAMP-001 | security_champions | implemented | Milestone 12 |
+| SR-CHAMP-002 | security_champions | implemented | Milestone 12 |
+| SR-CHAMP-003 | security_champions | implemented | Milestone 12 |
+| SR-CHAMP-004 | security_champions | implemented | Milestone 12 |
 | SR-CI-001 | ci_cd | implemented | Milestone 2 |
 | SR-CI-002 | ci_cd | implemented | Milestone 4 |
 | SR-CI-003 | ci_cd | planned | Milestone 7 |

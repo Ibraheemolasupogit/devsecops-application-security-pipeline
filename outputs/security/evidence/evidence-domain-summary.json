@@ -1,5 +1,5 @@
 {
-  "domain_count": 8,
+  "domain_count": 9,
   "domains": [
     {
       "checksum_failures": [],
@@ -20,7 +20,7 @@
       "name": "Threat Model",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "34a9e142276b065f8c9d011ee41e9c45b64906fadc69b28fca33c2f46eadba89",
+      "source_checksum": "a2dd4204aa4e1d3c1ab65cd2110c1cbd8c64b913749b8f4608de2586b34422df",
       "source_manifest": "outputs/security/threat-model/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -89,8 +89,31 @@
       "name": "AppSec Pipeline",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "d3ad54c1d7b015025b068432a3951815e1d79a8aca0ff0b93ae9aabc094f4950",
+      "source_checksum": "41ada5af4d052332124c9c717b86ba242ff3dfc5d59e032a28035bcf7fc560d9",
       "source_manifest": "outputs/security/appsec/evidence-manifest.json",
+      "verification_status": "passed"
+    },
+    {
+      "checksum_failures": [],
+      "deployment_status": "not_deployed",
+      "domain_id": "champions",
+      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "expected_outputs": [
+        "programme-summary.json",
+        "champion-roster.json",
+        "squad-coverage.json",
+        "champion-metrics.json"
+      ],
+      "generated_at": "2026-01-01T00:00:00Z",
+      "limitations": [
+        "Local deterministic portfolio evidence only."
+      ],
+      "missing_outputs": [],
+      "name": "Security Champions",
+      "required": true,
+      "schema_version": "1.0",
+      "source_checksum": "d3c8e2efd153ab5d85ba72075fe3987aa9d1f054e0270ad68b2320a8b088a356",
+      "source_manifest": "outputs/security/champions/evidence-manifest.json",
       "verification_status": "passed"
     },
     {
@@ -111,7 +134,7 @@
       "name": "Dynamic API Security",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "4847dee6f017483d0433c201de76df68123e74c124c8d9a94ba8785e55630e54",
+      "source_checksum": "f69c09e7b53ae9e989da1d37cf5e13fcb27feec04fda2ba1c412ca09a242d968",
       "source_manifest": "outputs/security/dynamic/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -133,7 +156,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "d5750e333fe892d0696674de1fd3a64aa4cee5eaacb26e95505d0ada2e95a4b8",
+      "source_checksum": "3b4a1ceaaa5aeb45876657c1424b4e68da3abcb262911e49a2d46d9680841bc7",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -155,7 +178,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "7ff78159720686e8fdd3fc7f570f1df0f8cedc8a4fae8108f7a15f0845caf738",
+      "source_checksum": "f3f035abcca478af13055f4705141bebe92e5e5231bc49531fbb13caa052b8f6",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -179,12 +202,12 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "5f22040f961230aa96b0326170c7db066531ddd57aff2f67b922dd9e3003ce5c",
+      "source_checksum": "47cb445987a7cbddc94a47bdc80492d31affab4f1598d85b7e1ab3600ff022e5",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }
   ],
   "failed_domain_count": 0,
   "schema_version": "1.0",
-  "verified_domain_count": 8
+  "verified_domain_count": 9
 }

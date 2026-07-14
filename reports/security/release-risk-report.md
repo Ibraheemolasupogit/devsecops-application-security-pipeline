@@ -1,21 +1,19 @@
 # Release Risk Report
 
-Decision ID: REL-64a40e351af97a1f
+Decision ID: REL-57cfa7baad1bb799
 
 Findings by severity:
 - critical: 3
 - high: 30
-- informational: 1
-- low: 1
 - medium: 6
 
 Findings by priority:
 - P2: 15
-- P3: 26
+- P3: 24
 
 Findings by decision contribution:
 - conditional_pass: 33
-- warn: 8
+- warn: 6
 
 Highest risk findings:
 - FND-SUPPRESSIO-974e196f7185: P2 score 73.25 - Suppressed gitleaks finding private-key

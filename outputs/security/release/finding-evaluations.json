@@ -463,46 +463,6 @@
     {
       "decision_contribution": "warn",
       "due_status": "within_sla",
-      "effective_severity": "informational",
-      "environment": "locally_validated",
-      "finding_id": "FND-DAST-31a4a55d744a",
-      "fix_status": "no_fix_available",
-      "matched_rule_ids": [
-        "RG-WARN-002"
-      ],
-      "owner_status": "owned",
-      "priority": "P3",
-      "rationale": "FND-DAST-31a4a55d744a contributes warn through RG-WARN-002.",
-      "required_actions": [
-        "Review during normal maintenance."
-      ],
-      "required_approvals": [],
-      "risk_score": 46.25,
-      "suppression_status": null
-    },
-    {
-      "decision_contribution": "warn",
-      "due_status": "within_sla",
-      "effective_severity": "low",
-      "environment": "locally_validated",
-      "finding_id": "FND-DAST-7938d4335d4a",
-      "fix_status": "no_fix_available",
-      "matched_rule_ids": [
-        "RG-WARN-002"
-      ],
-      "owner_status": "owned",
-      "priority": "P3",
-      "rationale": "FND-DAST-7938d4335d4a contributes warn through RG-WARN-002.",
-      "required_actions": [
-        "Review during normal maintenance."
-      ],
-      "required_approvals": [],
-      "risk_score": 52.25,
-      "suppression_status": null
-    },
-    {
-      "decision_contribution": "warn",
-      "due_status": "within_sla",
       "effective_severity": "medium",
       "environment": "locally_validated",
       "finding_id": "FND-SECUREDESI-0e84d1c52550",

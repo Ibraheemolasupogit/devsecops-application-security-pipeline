@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "metrics": [
+    {
+      "metric_id": "MET-CHAMP-001",
+      "name": "Champion coverage percentage",
+      "description": "Required squads with an active or onboarding champion.",
+      "calculation": "covered_required_squads / required_squads * 100",
+      "evidence_sources": ["config/security-champions/champion-roster.yaml", "config/security-champions/squad-inventory.yaml"],
+      "anti_gaming_guardrail": "Vacant squads remain visible and do not reduce required squad denominator."
+    },
+    {
+      "metric_id": "MET-CHAMP-002",
+      "name": "Findings by squad",
+      "description": "Canonical findings grouped by squad.",
+      "calculation": "count findings by squad",
+      "evidence_sources": ["outputs/security/findings/deduplicated-findings.json"],
+      "anti_gaming_guardrail": "Rising findings may indicate better detection and must not be penalised."
+    },
+    {
+      "metric_id": "MET-CHAMP-003",
+      "name": "Overdue findings by squad",
+      "description": "Lifecycle vulnerabilities with overdue=true grouped by squad.",
+      "calculation": "count overdue vulnerabilities by squad",
+      "evidence_sources": ["outputs/security/lifecycle/vulnerability-register.json"],
+      "anti_gaming_guardrail": "Overdue counts are paired with owner assignment and exception review data."
+    },
+    {
+      "metric_id": "MET-CHAMP-004",
+      "name": "Owner assignment rate",
+      "description": "Canonical findings with technical or remediation owner.",
+      "calculation": "owned_findings / total_findings * 100",
+      "evidence_sources": ["outputs/security/findings/deduplicated-findings.json"],
+      "anti_gaming_guardrail": "Ownership must not change severity, due date or release impact."
+    },
+    {
+      "metric_id": "MET-CHAMP-005",
+      "name": "Verification completion rate",
+      "description": "Lifecycle vulnerabilities with verified status.",
+      "calculation": "verified_vulnerabilities / total_vulnerabilities * 100",
+      "evidence_sources": ["outputs/security/lifecycle/vulnerability-register.json"],
+      "anti_gaming_guardrail": "Verification requires evidence, not a manual completion claim."
+    },
+    {
+      "metric_id": "MET-CHAMP-006",
+      "name": "Exception review completion",
+      "description": "Active, expiring and expired exceptions with review dates.",
+      "calculation": "reviewed_exceptions / tracked_exceptions * 100",
+      "evidence_sources": ["outputs/security/lifecycle/security-exceptions.json"],
+      "anti_gaming_guardrail": "Exceptions remain visible even when reviewed."
+    },
+    {
+      "metric_id": "MET-CHAMP-007",
+      "name": "Repeated vulnerability categories",
+      "description": "Finding security domains with repeated occurrence.",
+      "calculation": "count findings by security_domain where count > 1",
+      "evidence_sources": ["outputs/security/findings/deduplicated-findings.json"],
+      "anti_gaming_guardrail": "Repeated categories drive learning topics, not suppression."
+    },
+    {
+      "metric_id": "MET-CHAMP-008",
+      "name": "Workshop completion",
+      "description": "Synthetic champion workshop completion for demonstration planning.",
+      "calculation": "completed_workshops / catalogue_workshops * 100",
+      "evidence_sources": ["config/security-champions/champion-roster.yaml", "config/security-champions/workshop-catalogue.yaml"],
+      "anti_gaming_guardrail": "Records are labelled demonstration data and do not claim real attendance."
+    }
+  ]
+}

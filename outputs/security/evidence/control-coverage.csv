@@ -10,6 +10,10 @@ SR-AUTHZ-002,SR-AUTHZ-002,THR-API-003;THR-AUDIT-002;THR-AUTHZ-001,api_security,v
 SR-AUTHZ-003,SR-AUTHZ-003,THR-API-001;THR-AUTHZ-003,api_security,validated_locally,verified,outputs/security/api-security/negative-test-summary.json; outputs/security/dynamic/authentication-boundary-summary.json; outputs/security/dynamic/authorisation-boundary-summary.json,application_admin,none,low
 SR-AUTHZ-004,SR-AUTHZ-004,THR-AUTHZ-003;THR-AUTHZ-004,threat_model,validated_locally,verified,outputs/security/api-security/negative-test-summary.json,data_custodian,none,low
 SR-AUTHZ-005,SR-AUTHZ-005,THR-AUTHZ-001;THR-AUTHZ-002,api_security,validated_locally,verified,outputs/security/api-security/endpoint-security-inventory.json,application_admin,none,low
+SR-CHAMP-001,SR-CHAMP-001,THR-REVIEW-001,champions,validated_locally,verified,outputs/security/champions/programme-summary.json,product_security_engineer,none,low
+SR-CHAMP-002,SR-CHAMP-002,THR-REVIEW-001,champions,validated_locally,verified,outputs/security/champions/workshop-inventory.json,product_security_engineer,none,low
+SR-CHAMP-003,SR-CHAMP-003,THR-SUPPLY-001;THR-REVIEW-001,champions,validated_locally,verified,outputs/security/champions/champion-metrics.json,product_security_engineer,none,low
+SR-CHAMP-004,SR-CHAMP-004,THR-REVIEW-001;THR-AUTH-001;THR-AUTHZ-001,champions,validated_locally,verified,outputs/security/champions/escalation-summary.json,product_security_engineer,none,low
 SR-CI-001,SR-CI-001,THR-SUPPLY-002,threat_model,validated_locally,verified,outputs/security/threat-model/evidence-manifest.json,software_engineer,none,medium
 SR-CI-002,SR-CI-002,THR-CI-001,threat_model,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-role-inventory.json,platform_engineer,future_deployment,medium
 SR-CI-003,SR-CI-003,THR-API-008;THR-AUTH-002;THR-CI-001;THR-SUPPLY-003,threat_model,planned,planned,future release evidence,product_security_engineer,future_deployment,medium

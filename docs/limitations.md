@@ -6,7 +6,7 @@
 - Runtime state is stored in memory and resets on restart.
 - Local JWT keys under `tests/fixtures/keys/` are synthetic development material and are not production secrets.
 - The audit event API is for local demonstration only and is restricted by role.
-- External identity-provider integration, AWS deployment, distributed production rate limiting, immutable audit-log operations and Security Champions operations are intentionally deferred.
+- External identity-provider integration, AWS deployment, distributed production rate limiting and immutable audit-log operations are intentionally deferred.
 - AWS Terraform is present as a reference architecture only; no resources are deployed.
 - Terraform validation is skipped locally when Terraform is unavailable and is configured for CI through a pinned setup action.
 - Gitleaks and Trivy local execution require native binaries or a running Docker daemon for pinned container fallbacks.
@@ -16,3 +16,4 @@
 - Findings normalisation uses demonstration risk, ownership and SLA values. Milestone 8 release gates consume those findings for deterministic local release-assurance evidence.
 - Milestone 9 lifecycle evidence demonstrates vulnerability lifecycle and exception governance locally. It is not a production ticketing system, live deployment approval system or Security Champions programme.
 - Milestone 10 consolidated evidence and reports are local portfolio evidence. They are not regulatory certification, production assurance, external reporting, dashboards or monitoring.
+- Milestone 12 Security Champions evidence uses synthetic role-based programme data. It is not a real attendance system, external messaging workflow, ticketing integration, Repository 5 integration, dashboard or deployment.

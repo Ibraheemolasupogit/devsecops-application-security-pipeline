@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "workshops": [
+    {
+      "workshop_id": "WS-AUTHZ",
+      "title": "Authentication and Authorisation Workshop",
+      "duration": "90 minutes",
+      "facilitator_role": "Product Security",
+      "primary_evidence": "outputs/security/api-security/authorisation-matrix.json"
+    },
+    {
+      "workshop_id": "WS-CLOUD-TERRAFORM",
+      "title": "Cloud and Terraform Security Workshop",
+      "duration": "90 minutes",
+      "facilitator_role": "Cloud Security",
+      "primary_evidence": "outputs/security/infrastructure/infrastructure-security-summary.json"
+    },
+    {
+      "workshop_id": "WS-CODE-REVIEW",
+      "title": "Secure Code Review Workshop",
+      "duration": "90 minutes",
+      "facilitator_role": "Security Champion",
+      "primary_evidence": "docs/developer-security/secure-code-review-guide.md"
+    },
+    {
+      "workshop_id": "WS-FINDING-TRIAGE",
+      "title": "Vulnerability Triage Workshop",
+      "duration": "90 minutes",
+      "facilitator_role": "Product Security",
+      "primary_evidence": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "workshop_id": "WS-INCIDENT-LEARNING",
+      "title": "Incident Learning Workshop",
+      "duration": "60 minutes",
+      "facilitator_role": "Engineering Lead",
+      "primary_evidence": "reports/security/security-evidence-report.md"
+    },
+    {
+      "workshop_id": "WS-THREAT-MODEL",
+      "title": "Threat Modelling Workshop",
+      "duration": "90 minutes",
+      "facilitator_role": "Product Security",
+      "primary_evidence": "docs/threat-model/threat-register.yaml"
+    }
+  ]
+}

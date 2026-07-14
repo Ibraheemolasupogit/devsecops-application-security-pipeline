@@ -367,5 +367,8 @@ def _portfolio_summary(evidence: ConsolidatedEvidence, integrity: dict[str, Any]
         ),
         "control_coverage_percentage": metrics["control_coverage_percentage"],
         "integrity_decision": integrity["overall_integrity_decision"],
-        "next_milestone_boundary": "Milestone 11 developer enablement is not implemented.",
+        "next_milestone_boundary": (
+            "Milestone 12 Security Champions is implemented locally; "
+            "Milestone 13 and Repository 5 integration are not implemented."
+        ),
     }

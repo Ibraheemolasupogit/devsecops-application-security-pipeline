@@ -1,0 +1,51 @@
+{
+  "as_of_date": "2026-01-01",
+  "champion_coverage_percentage": 100.0,
+  "covered_squad_count": 4,
+  "required_squad_count": 4,
+  "schema_version": "1.0",
+  "squad_count": 5,
+  "squads": [
+    {
+      "active_champion_count": 1,
+      "champion_count": 1,
+      "coverage_status": "covered",
+      "required": true,
+      "squad": "Application Engineering",
+      "squad_id": "SQUAD-APP"
+    },
+    {
+      "active_champion_count": 1,
+      "champion_count": 1,
+      "coverage_status": "covered",
+      "required": true,
+      "squad": "Cloud Security",
+      "squad_id": "SQUAD-CLOUD"
+    },
+    {
+      "active_champion_count": 1,
+      "champion_count": 1,
+      "coverage_status": "covered",
+      "required": true,
+      "squad": "DevSecOps Engineering",
+      "squad_id": "SQUAD-DEVSECOPS"
+    },
+    {
+      "active_champion_count": 1,
+      "champion_count": 1,
+      "coverage_status": "covered",
+      "required": true,
+      "squad": "Platform Engineering",
+      "squad_id": "SQUAD-PLATFORM"
+    },
+    {
+      "active_champion_count": 0,
+      "champion_count": 0,
+      "coverage_status": "not_required",
+      "required": false,
+      "squad": "Product Security",
+      "squad_id": "SQUAD-PRODSEC"
+    }
+  ],
+  "squads_without_champion": []
+}

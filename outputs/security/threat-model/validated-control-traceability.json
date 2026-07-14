@@ -853,5 +853,70 @@
       "make appsec-full",
       "make findings-full"
     ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/champions/programme-summary.json",
+      "outputs/security/champions/champion-metrics.json"
+    ],
+    "implementation_references": [
+      "security-champions",
+      "config/security-champions",
+      "src/genomic_research_access_api/security/champions"
+    ],
+    "notes": "Milestone 12 adds a local, synthetic, role-based Security Champions operating model without Repository 5 integration.",
+    "requirement_ids": [
+      "SR-CHAMP-001",
+      "SR-CHAMP-002",
+      "SR-CHAMP-003",
+      "SR-CHAMP-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
+    "traceability_id": "TRACE-041",
+    "verification_methods": [
+      "make champions-full",
+      "Security Champions tests"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/champions/champion-metrics.json",
+      "outputs/security/findings/deduplicated-findings.json"
+    ],
+    "implementation_references": [
+      "security-champions/workshops/vulnerability-triage-workshop.md",
+      "src/genomic_research_access_api/security/champions/metrics.py"
+    ],
+    "notes": "Champions support finding ownership and recurring weakness identification using existing canonical findings evidence.",
+    "requirement_ids": [
+      "SR-CHAMP-003"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
+    "traceability_id": "TRACE-042",
+    "verification_methods": [
+      "make champions-metrics",
+      "make findings-full"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/champions/escalation-summary.json"
+    ],
+    "implementation_references": [
+      "security-champions/escalation-guide.md",
+      "config/security-champions/escalation-policy.yaml"
+    ],
+    "notes": "Champion escalation distinguishes facilitation from Product Security and Risk Owner decision rights.",
+    "requirement_ids": [
+      "SR-CHAMP-004"
+    ],
+    "residual_risk_id": "RR-002",
+    "threat_id": "THR-AUTHZ-001",
+    "traceability_id": "TRACE-043",
+    "verification_methods": [
+      "make champions-policy-validate"
+    ]
   }
 ]

@@ -1,0 +1,36 @@
+{
+  "alignment_count": 2,
+  "mappings": [
+    {
+      "alignment_id": "SCA-001",
+      "champions_requirement_ids": [
+        "SR-CHAMP-001",
+        "SR-CHAMP-002"
+      ],
+      "developer_enablement_requirement_ids": [
+        "SR-DEV-001",
+        "SR-DEV-002"
+      ],
+      "evidence": [
+        "outputs/security/developer-enablement/enablement-summary.json",
+        "outputs/security/champions/programme-summary.json"
+      ]
+    },
+    {
+      "alignment_id": "SCA-002",
+      "champions_requirement_ids": [
+        "SR-CHAMP-003",
+        "SR-CHAMP-004"
+      ],
+      "developer_enablement_requirement_ids": [
+        "SR-DEV-003",
+        "SR-DEV-004"
+      ],
+      "evidence": [
+        "outputs/security/champions/champion-metrics.json",
+        "outputs/security/findings/deduplicated-findings.json"
+      ]
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,69 @@
+{
+  "champion_count": 4,
+  "champions": [
+    {
+      "backup_champion": "CHAMP-DEVSECOPS-001",
+      "champion_id": "CHAMP-APP-001",
+      "onboarding_status": "complete",
+      "review_date": "2026-04-01",
+      "role": "Software Engineer",
+      "squad_id": "SQUAD-APP",
+      "start_date": "2026-01-01",
+      "status": "active",
+      "synthetic_record": true,
+      "workshops_completed": [
+        "WS-AUTHZ",
+        "WS-CODE-REVIEW",
+        "WS-THREAT-MODEL"
+      ]
+    },
+    {
+      "backup_champion": "CHAMP-PLATFORM-001",
+      "champion_id": "CHAMP-CLOUD-001",
+      "onboarding_status": "in_progress",
+      "review_date": "2026-04-01",
+      "role": "Cloud Security Engineer",
+      "squad_id": "SQUAD-CLOUD",
+      "start_date": "2026-01-01",
+      "status": "onboarding",
+      "synthetic_record": true,
+      "workshops_completed": [
+        "WS-CLOUD-TERRAFORM",
+        "WS-INCIDENT-LEARNING"
+      ]
+    },
+    {
+      "backup_champion": "CHAMP-APP-001",
+      "champion_id": "CHAMP-DEVSECOPS-001",
+      "onboarding_status": "complete",
+      "review_date": "2026-04-01",
+      "role": "DevSecOps Engineer",
+      "squad_id": "SQUAD-DEVSECOPS",
+      "start_date": "2026-01-01",
+      "status": "active",
+      "synthetic_record": true,
+      "workshops_completed": [
+        "WS-CODE-REVIEW",
+        "WS-FINDING-TRIAGE",
+        "WS-THREAT-MODEL"
+      ]
+    },
+    {
+      "backup_champion": "CHAMP-CLOUD-001",
+      "champion_id": "CHAMP-PLATFORM-001",
+      "onboarding_status": "complete",
+      "review_date": "2026-04-01",
+      "role": "Platform Engineer",
+      "squad_id": "SQUAD-PLATFORM",
+      "start_date": "2026-01-01",
+      "status": "active",
+      "synthetic_record": true,
+      "workshops_completed": [
+        "WS-CLOUD-TERRAFORM",
+        "WS-FINDING-TRIAGE"
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "synthetic_records": true
+}

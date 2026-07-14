@@ -21,7 +21,8 @@ def generate_lineage() -> dict[str, Any]:
         ("scanner_outputs", "canonical_findings", "normalised_into"),
         ("canonical_findings", "release_decision", "evaluated_by"),
         ("release_decision", "lifecycle_records", "feeds"),
-        ("lifecycle_records", "consolidated_report", "summarised_by"),
+        ("lifecycle_records", "champion_metrics", "informs"),
+        ("champion_metrics", "consolidated_report", "summarised_by"),
     ]
     for index, (source, target, relationship) in enumerate(relationships, start=1):
         linked = traceability[(index - 1) % len(traceability)] if traceability else {}
@@ -52,6 +53,7 @@ def _reference(node: str) -> str:
         "canonical_findings": "outputs/security/findings/deduplicated-findings.json",
         "release_decision": "outputs/security/release/release-gate-decision.json",
         "lifecycle_records": "outputs/security/lifecycle/vulnerability-register.json",
+        "champion_metrics": "outputs/security/champions/champion-metrics.json",
         "consolidated_report": "reports/security/security-evidence-report.md",
     }
     return references[node]

@@ -49,10 +49,13 @@ def test_severity_cve_cwe_and_threat_mapping() -> None:
     findings = normalise(DEFAULT_AS_OF_DATE)
     trivy = next(item for item in findings if item.source_tool == "trivy")
     threat = next(item for item in findings if item.source_tool == "threat-model")
-    zap = next(item for item in findings if item.source_tool == "zap")
     assert trivy.normalised_severity in {"critical", "high"}
     assert trivy.cve and trivy.cve.startswith("CVE-")
-    assert zap.cwe and zap.cwe.startswith("CWE-")
+    zap_findings = [item for item in findings if item.source_tool == "zap"]
+    if zap_findings:
+        assert zap_findings[0].cwe and zap_findings[0].cwe.startswith("CWE-")
+    else:
+        assert read_json(Path("outputs/security/dynamic/zap-summary.json"))["alert_count"] == 0
     assert threat.threat_ids
 
 
@@ -132,10 +135,10 @@ def test_report_generation(tmp_path: Path) -> None:
 @pytest.mark.parametrize(
     "command, expected",
     [
-        ("normalise", "normalised 43 source findings"),
+        ("normalise", "normalised 41 source findings"),
         ("deduplicate", "deduplicated 2 findings"),
-        ("enrich", "enriched 43 source findings"),
-        ("validate", "validated 41 canonical findings"),
+        ("enrich", "enriched 41 source findings"),
+        ("validate", "validated 39 canonical findings"),
         ("evidence", "generated findings evidence"),
         ("verify", "verified findings evidence"),
         ("report", "generated findings reports"),

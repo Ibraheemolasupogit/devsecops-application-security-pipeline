@@ -4,7 +4,7 @@
   "due_soon_findings": 2,
   "expired_exceptions": 1,
   "expiring_exceptions": 1,
-  "false_positives": 1,
+  "false_positives": 0,
   "invalid_transitions": 0,
   "overdue_findings": 0,
   "reopened_findings": 0,
@@ -12,13 +12,13 @@
   "risk_accepted": 2,
   "schema_version": "1.0",
   "security_exception_count": 3,
-  "total_vulnerabilities": 41,
+  "total_vulnerabilities": 39,
   "unowned_findings": 0,
   "valid_transition_count": 16,
   "validations": [
     {
       "checked_exceptions": 3,
-      "checked_records": 41,
+      "checked_records": 39,
       "status": "valid"
     }
   ],
@@ -26,19 +26,16 @@
   "verified_but_not_closed": 0,
   "vulnerabilities_by_priority": {
     "P2": 15,
-    "P3": 26
+    "P3": 24
   },
   "vulnerabilities_by_severity": {
     "critical": 3,
     "high": 30,
-    "informational": 1,
-    "low": 1,
     "medium": 6
   },
   "vulnerabilities_by_status": {
     "assigned": 1,
-    "false_positive": 1,
     "risk_accepted": 2,
-    "triaged": 37
+    "triaged": 36
   }
 }

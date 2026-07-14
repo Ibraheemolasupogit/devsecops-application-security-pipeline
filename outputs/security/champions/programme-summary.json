@@ -1,0 +1,13 @@
+{
+  "as_of_date": "2026-01-01",
+  "champion_count": 4,
+  "demonstration_data": true,
+  "deployment_status": "not_deployed",
+  "generated_at": "2026-01-01T00:00:00Z",
+  "local_only": true,
+  "milestone_boundary": "Milestone 12 only; Repository 5 integration, dashboards and Milestone 13 are not implemented.",
+  "programme_name": "Security Champions Programme",
+  "schema_version": "1.0",
+  "squad_count": 5,
+  "workshop_count": 6
+}

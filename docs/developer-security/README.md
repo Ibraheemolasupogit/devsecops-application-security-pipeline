@@ -47,6 +47,7 @@ Use this index when you are unsure which check to run. The short path for most c
 | Lifecycle | `make lifecycle-full` | Evaluate vulnerability lifecycle and exceptions. | Refreshes lifecycle evidence. |
 | Evidence | `make evidence-full` | Build consolidated evidence across domains. | Refreshes consolidated evidence. |
 | Enablement | `make developer-enablement-full` | Validate guides and generate enablement evidence. | Refreshes developer enablement evidence. |
+| Champions | `make champions-full` | Validate the local Security Champions operating model. | Refreshes champion evidence and reports. |
 | Cleanup | `make clean` | Remove local caches and build artifacts. | No tracked evidence. |
 
 Success means commands exit with code 0 and the relevant manifest verifies. Failures should be fixed in the code, configuration, scanner policy or evidence generator. Do not bypass scanners or broaden suppressions to make a pull request pass.

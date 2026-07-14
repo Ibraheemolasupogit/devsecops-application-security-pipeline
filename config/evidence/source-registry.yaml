@@ -77,6 +77,25 @@
       "deployment_status": "not_deployed"
     },
     {
+      "source_id": "SRC-CHAMPIONS",
+      "domain": "champions",
+      "name": "Security Champions",
+      "manifest_path": "outputs/security/champions/evidence-manifest.json",
+      "required": true,
+      "expected_schema_version": "1.0",
+      "expected_outputs": [
+        "programme-summary.json",
+        "champion-roster.json",
+        "squad-coverage.json",
+        "champion-metrics.json"
+      ],
+      "verification_command": "make verify-champions-evidence",
+      "owner": "product_security_engineer",
+      "retention_class": "portfolio_evidence",
+      "contains_sensitive_data": false,
+      "deployment_status": "not_deployed"
+    },
+    {
       "source_id": "SRC-DYNAMIC",
       "domain": "dynamic_security",
       "name": "Dynamic API Security",
