@@ -1,0 +1,33 @@
+{
+  "as_of_date": "2026-01-01",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "deployment_status": "not_deployed",
+  "output_files": {
+    "command-inventory.json": {
+      "path": "command-inventory.json",
+      "sha256": "516227cd481be55c16de2b1227c8deb8ea47e6a669b3f0c3b5b9da8e2da8d2e1"
+    },
+    "developer-control-mapping.json": {
+      "path": "developer-control-mapping.json",
+      "sha256": "daf1b50aba41de1b4cd6f70ad242fc30aa7d10cf820ded52608475627217cd6c"
+    },
+    "documentation-inventory.json": {
+      "path": "documentation-inventory.json",
+      "sha256": "4dba8ab4ba5590c47fc638ae1d18401154a605684b0e57f2f31cbfd3f553b0bd"
+    },
+    "enablement-summary.json": {
+      "path": "enablement-summary.json",
+      "sha256": "1bfd1aa0f081692bf035bf32452a16fdb591a6b6e718f9db1f7c703b651be5d7"
+    },
+    "prerequisite-check-summary.json": {
+      "path": "prerequisite-check-summary.json",
+      "sha256": "480d2c999ee5ce66b71a7856662e3e6f27ea90089b5ed5e257756c0acfcb2b69"
+    },
+    "pull-request-checklist-summary.json": {
+      "path": "pull-request-checklist-summary.json",
+      "sha256": "a8a8a56281354f975b0d104ffdbdef7386339c2066613eb07eb70cb33fbc6b61"
+    }
+  },
+  "repository": "devsecops-application-security-pipeline",
+  "schema_version": "1.0"
+}

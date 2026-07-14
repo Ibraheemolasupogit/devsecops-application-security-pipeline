@@ -394,6 +394,91 @@
     "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
+    "category": "developer_enablement",
+    "description": "Developers must have repository-specific secure development guidance covering planning, local checks, findings, release assurance, lifecycle governance and evidence verification.",
+    "evidence_reference": "outputs/security/developer-enablement/enablement-summary.json",
+    "implementation_reference": "docs/developer-security/secure-development-guide.md; src/genomic_research_access_api/security/enablement",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 11",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-DEV-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Developer secure workflow guidance",
+    "verification_method": "make developer-enablement-full",
+    "verification_reference": "tests/security/test_developer_enablement.py"
+  },
+  {
+    "category": "developer_enablement",
+    "description": "Pull requests must prompt authors and reviewers to assess security impact, scanner changes, evidence regeneration, release-gate impact, suppressions and exceptions.",
+    "evidence_reference": "outputs/security/developer-enablement/pull-request-checklist-summary.json",
+    "implementation_reference": ".github/pull_request_template.md; docs/developer-security/pull-request-security-checklist.md",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 11",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-DEV-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Pull-request security workflow",
+    "verification_method": "developer checklist coverage validation",
+    "verification_reference": "tests/security/test_developer_enablement.py"
+  },
+  {
+    "category": "developer_enablement",
+    "description": "Developers changing identity, role, permission or object-access behaviour must have actionable guidance tied to local tests and evidence.",
+    "evidence_reference": "outputs/security/developer-enablement/developer-control-mapping.json",
+    "implementation_reference": "docs/developer-security/authentication-guide.md; docs/developer-security/authorisation-guide.md; docs/developer-security/object-level-authorisation-guide.md",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 11",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-DEV-003",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-AUTH-001",
+      "THR-AUTHZ-001",
+      "THR-AUTHZ-002",
+      "THR-AUTHZ-003"
+    ],
+    "status": "active",
+    "title": "Authentication and authorisation contribution guidance",
+    "verification_method": "developer documentation validation and API security tests",
+    "verification_reference": "tests/security/test_developer_enablement.py; tests/security/test_api_security_controls.py"
+  },
+  {
+    "category": "developer_enablement",
+    "description": "Developers must have local command references, troubleshooting, prerequisite checks and evidence-backed examples for scanner, remediation, exception and release workflows.",
+    "evidence_reference": "outputs/security/developer-enablement/prerequisite-check-summary.json",
+    "implementation_reference": "docs/developer-security/local-security-workflow.md; docs/developer-security/troubleshooting-security-tools.md; scripts/security_doctor.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 11",
+    "policy_source": null,
+    "priority": "high",
+    "requirement_id": "SR-DEV-004",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Security tooling usability and evidence guidance",
+    "verification_method": "make security-doctor; make developer-docs-validate; make developer-enablement-full",
+    "verification_reference": "tests/security/test_developer_enablement.py"
+  },
+  {
     "category": "audit",
     "description": "Security evidence from all required local domains must be aggregated with source manifests, lineage, checksums and deterministic verification.",
     "evidence_reference": "outputs/security/evidence/evidence-manifest.json",

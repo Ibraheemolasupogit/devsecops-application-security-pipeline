@@ -1,0 +1,214 @@
+{
+  "guide_count": 26,
+  "guides": [
+    {
+      "exists": true,
+      "path": "docs/developer-security/README.md",
+      "purpose": "Guide index.",
+      "sha256": "6b95176ba501df1de837587b27c7401e571a1af6a38cf78ccc8836e191621afa",
+      "title": "Developer Security",
+      "word_count": 435
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/secure-development-guide.md",
+      "purpose": "End-to-end lifecycle.",
+      "sha256": "21811086fc082117f3628c32b6674ae1489ec9734c1595b4d95d5359682303d5",
+      "title": "Secure Development Guide",
+      "word_count": 300
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/getting-started-securely.md",
+      "purpose": "Local setup path.",
+      "sha256": "3882fe320bd46adf4060590093c1d1d6dc17710c4d217424726b8a7e5a44ff93",
+      "title": "Getting Started Securely",
+      "word_count": 218
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/local-security-workflow.md",
+      "purpose": "Decision-oriented checks.",
+      "sha256": "a5d1a647c2a5989087d712123e922666881075d10cc425dd7ed66411a9d95420",
+      "title": "Local Security Workflow",
+      "word_count": 233
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/pull-request-security-checklist.md",
+      "purpose": "PR checklist.",
+      "sha256": "0c7ad76a1170391235b77cfe4741fe04e70079da46719459c7070bc019ae40aa",
+      "title": "Pull Request Security Checklist",
+      "word_count": 240
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/authentication-guide.md",
+      "purpose": "JWT and roles.",
+      "sha256": "430d25af37a0e58a3545ef16bf1997a415e85b585c1a925b85c82a3cdcddbcfe",
+      "title": "Authentication Guide",
+      "word_count": 169
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/authorisation-guide.md",
+      "purpose": "Permissions and roles.",
+      "sha256": "84e2581697b389f461e65e9417ac8e48b925069c6b4a535268697e93d9f591a3",
+      "title": "Authorisation Guide",
+      "word_count": 139
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/object-level-authorisation-guide.md",
+      "purpose": "BOLA checks.",
+      "sha256": "9648584683d438528d3ad943b778f4df481f2a10585fe6e76267cc9baa24e5e8",
+      "title": "Object-Level Authorisation Guide",
+      "word_count": 161
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/secure-api-checklist.md",
+      "purpose": "Endpoint review.",
+      "sha256": "efbc7f773a806af267679540a70460b600903894ded96582527b8c83fe4153a3",
+      "title": "Secure API Checklist",
+      "word_count": 175
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/input-validation-guide.md",
+      "purpose": "Schema validation.",
+      "sha256": "9a6bea3cfe759296ab9b07e1928d381d91e4452edaffc26071c9571af5331653",
+      "title": "Input Validation Guide",
+      "word_count": 154
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/logging-and-audit-guide.md",
+      "purpose": "Audit controls.",
+      "sha256": "617cb7173b611591b97d78ad5085712904d5ba4d65ef814ba1e1877ea73bf654",
+      "title": "Logging and Audit Guide",
+      "word_count": 155
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/secrets-management-guide.md",
+      "purpose": "Secret handling.",
+      "sha256": "53c57ca2517622036dc87182a7d6aaab6f1868eea949734eed9b85cce4f80fd4",
+      "title": "Secrets Management Guide",
+      "word_count": 149
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/dependency-management-guide.md",
+      "purpose": "Dependency changes.",
+      "sha256": "5401c3ca1a46da9c76633d63b23742729eba308dc01dbe68f60123e606a5f774",
+      "title": "Dependency Management Guide",
+      "word_count": 138
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/sbom-guide.md",
+      "purpose": "CycloneDX evidence.",
+      "sha256": "3df71a46674365918fb7a4699cee12e20d9d239b19acaeb15ceef84d3814dc99",
+      "title": "SBOM Guide",
+      "word_count": 135
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/terraform-security-guide.md",
+      "purpose": "IaC workflow.",
+      "sha256": "4b198e761caa3db930bca1121d28ab06e3c0a0ad1c770875918a2a98bcc9bc94",
+      "title": "Terraform Security Guide",
+      "word_count": 141
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/container-security-guide.md",
+      "purpose": "Image hardening.",
+      "sha256": "15eaef1c7d101671395c1b676fdd368b76f4d8fbe3053b2a3454db54e7b841b3",
+      "title": "Container Security Guide",
+      "word_count": 147
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/ci-cd-security-guide.md",
+      "purpose": "Workflow controls.",
+      "sha256": "05a847308b8a22d1ae542393af9b3cdbbd76fae9e494ff276c013c3e8b2cccda",
+      "title": "CI/CD Security Guide",
+      "word_count": 152
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/dynamic-testing-guide.md",
+      "purpose": "Local DAST workflow.",
+      "sha256": "decbe6262124dc5753e576200fe0ca27483cf5848a772f82ac128db053e25c5f",
+      "title": "Dynamic Testing Guide",
+      "word_count": 139
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/vulnerability-triage-guide.md",
+      "purpose": "Finding triage.",
+      "sha256": "8e08eb4d127b03029163488d0afba7a577ad55ce142aee18f6c179054c841a66",
+      "title": "Vulnerability Triage Guide",
+      "word_count": 160
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/remediation-verification-guide.md",
+      "purpose": "Closure workflow.",
+      "sha256": "279960595efee0444bbd69fda78b17177f660efbe8b9335a8fcd15511f1bf1cd",
+      "title": "Remediation Verification Guide",
+      "word_count": 167
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/security-exception-guide.md",
+      "purpose": "Exception governance.",
+      "sha256": "67c751468af9c4c464d65d37453b9cfe265dfbb2320bdf861b42e53dc0b77692",
+      "title": "Security Exception Guide",
+      "word_count": 174
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/release-gate-guide.md",
+      "purpose": "Release decisions.",
+      "sha256": "7f152ba82b9020864ed30fbabf4b0c7be6a9c6c1a0f89882a519f7dccc152060",
+      "title": "Release Gate Guide",
+      "word_count": 133
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/secure-code-review-guide.md",
+      "purpose": "Reviewer prompts.",
+      "sha256": "ab1fc86f0beb75b96ff493dd5d3bc5adca8d512a7e62cdc74b637d31946176b9",
+      "title": "Secure Code Review Guide",
+      "word_count": 147
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/troubleshooting-security-tools.md",
+      "purpose": "Tool failures.",
+      "sha256": "2ee8c9b201cac0ac86d44574734ce07821d52449699f91f5534e0d1a2e7b4730",
+      "title": "Troubleshooting Security Tools",
+      "word_count": 366
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/glossary.md",
+      "purpose": "Developer terms.",
+      "sha256": "1a78004d8890ddb49ceba5282a6a38c8d43670c587f40905947191b4bfd033f9",
+      "title": "Glossary",
+      "word_count": 162
+    },
+    {
+      "exists": true,
+      "path": "docs/developer-security/onboarding-checklist.md",
+      "purpose": "First contribution.",
+      "sha256": "8ae3eedf995719b90d8aa40115be82b05814e8f8ed98a69f9512ecead63d976c",
+      "title": "Onboarding Checklist",
+      "word_count": 177
+    }
+  ],
+  "schema_version": "1.0"
+}

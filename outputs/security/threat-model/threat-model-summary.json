@@ -11,6 +11,7 @@
     "configuration": 1,
     "container_security": 2,
     "data_protection": 3,
+    "developer_enablement": 4,
     "governance": 5,
     "iam": 2,
     "infrastructure_security": 2,
@@ -22,7 +23,7 @@
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 46,
+    "implemented": 50,
     "planned": 2
   },
   "residual_risks_by_rating": {

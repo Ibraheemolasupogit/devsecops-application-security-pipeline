@@ -18,6 +18,10 @@ SR-CONTAINER-002,SR-CONTAINER-002,THR-CONTAINER-002,appsec,implemented_as_code,v
 SR-DATA-001,SR-DATA-001,THR-API-003,infrastructure,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,data_custodian,none,low
 SR-DATA-002,SR-DATA-002,THR-IAM-002,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/network-security-summary.json,platform_engineer,future_deployment,medium
 SR-DATA-003,SR-DATA-003,THR-IAC-002;THR-IAM-002,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/encryption-control-summary.json,platform_engineer,future_deployment,medium
+SR-DEV-001,SR-DEV-001,THR-REVIEW-001;THR-SUPPLY-001,developer_enablement,validated_locally,verified,outputs/security/developer-enablement/enablement-summary.json,product_security_engineer,none,low
+SR-DEV-002,SR-DEV-002,THR-REVIEW-001,developer_enablement,validated_locally,verified,outputs/security/developer-enablement/pull-request-checklist-summary.json,product_security_engineer,none,low
+SR-DEV-003,SR-DEV-003,THR-AUTH-001;THR-AUTHZ-001;THR-AUTHZ-002;THR-AUTHZ-003,developer_enablement,validated_locally,verified,outputs/security/developer-enablement/developer-control-mapping.json,product_security_engineer,none,low
+SR-DEV-004,SR-DEV-004,THR-REVIEW-001;THR-SUPPLY-001,developer_enablement,validated_locally,verified,outputs/security/developer-enablement/prerequisite-check-summary.json,product_security_engineer,none,low
 SR-EVIDENCE-001,SR-EVIDENCE-001,THR-AUDIT-003;THR-REVIEW-001;THR-SUPPLY-001,lifecycle,validated_locally,verified,outputs/security/evidence/evidence-manifest.json,product_security_engineer,none,low
 SR-EVIDENCE-002,SR-EVIDENCE-002,THR-REVIEW-001,findings,validated_locally,verified,outputs/security/evidence/portfolio-security-summary.json,product_security_engineer,none,low
 SR-FINDINGS-001,SR-FINDINGS-001,THR-REVIEW-001;THR-SUPPLY-001;THR-SUPPLY-002,threat_model,validated_locally,verified,outputs/security/findings/normalised-findings.json,product_security_engineer,none,medium

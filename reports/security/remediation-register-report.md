@@ -10,6 +10,7 @@
 - VUL-3e4410d0f925: assigned - Review suppression before expiry; remediate if compensating control is no longer valid.
 - VUL-409a5ea1d699: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
 - VUL-488f220bd590: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-4fe4e8487523: triaged - <p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>
 - VUL-535385b100fe: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
 - VUL-574b561e6517: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.
 - VUL-5a09ed00559e: triaged - Track and remediate according to policy.
@@ -19,4 +20,3 @@
 - VUL-6645322fa337: triaged - Track and remediate according to policy.
 - VUL-676f647f505f: risk_accepted - Review suppression before expiry; remediate if compensating control is no longer valid.
 - VUL-680d816e1f2e: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-69c178de79f4: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.

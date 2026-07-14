@@ -736,10 +736,10 @@
     },
     {
       "decision": "warn",
-      "finding_id": "FND-DAST-7f68e8fb688f",
+      "finding_id": "FND-DAST-31a4a55d744a",
       "outcome": "matched",
       "priority": 210,
-      "rationale": "Finding FND-DAST-7f68e8fb688f is low or informational.",
+      "rationale": "Finding FND-DAST-31a4a55d744a is low or informational.",
       "required_actions": [
         "Review during normal maintenance."
       ],
@@ -748,10 +748,10 @@
     },
     {
       "decision": "warn",
-      "finding_id": "FND-DAST-e607d905531a",
+      "finding_id": "FND-DAST-7938d4335d4a",
       "outcome": "matched",
       "priority": 210,
-      "rationale": "Finding FND-DAST-e607d905531a is low or informational.",
+      "rationale": "Finding FND-DAST-7938d4335d4a is low or informational.",
       "required_actions": [
         "Review during normal maintenance."
       ],

@@ -1,7 +1,7 @@
 {
-  "bundle_id": "EVB-9e11464ef5bb45d2",
+  "bundle_id": "EVB-60d815238fd5fa98",
   "canonical_findings": 41,
-  "control_coverage_percentage": 95.83,
+  "control_coverage_percentage": 96.15,
   "critical_high_findings": 33,
   "deployment_status": "not_deployed",
   "integrity_decision": "pass",

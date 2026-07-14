@@ -1,5 +1,5 @@
 {
-  "control_count": 48,
+  "control_count": 52,
   "controls": [
     {
       "control_id": "SR-API-001",
@@ -356,6 +356,83 @@
         "THR-IAM-002"
       ],
       "verification_status": "validated_locally"
+    },
+    {
+      "control_id": "SR-DEV-001",
+      "deployment_dependency": "none",
+      "domain": "developer_enablement",
+      "evidence_references": [
+        "outputs/security/developer-enablement/enablement-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-DEV-001"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001",
+        "THR-SUPPLY-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-DEV-002",
+      "deployment_dependency": "none",
+      "domain": "developer_enablement",
+      "evidence_references": [
+        "outputs/security/developer-enablement/pull-request-checklist-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-DEV-002"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-DEV-003",
+      "deployment_dependency": "none",
+      "domain": "developer_enablement",
+      "evidence_references": [
+        "outputs/security/developer-enablement/developer-control-mapping.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-DEV-003"
+      ],
+      "threat_ids": [
+        "THR-AUTH-001",
+        "THR-AUTHZ-001",
+        "THR-AUTHZ-002",
+        "THR-AUTHZ-003"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-DEV-004",
+      "deployment_dependency": "none",
+      "domain": "developer_enablement",
+      "evidence_references": [
+        "outputs/security/developer-enablement/prerequisite-check-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-DEV-004"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001",
+        "THR-SUPPLY-001"
+      ],
+      "verification_status": "verified"
     },
     {
       "control_id": "SR-EVIDENCE-001",
@@ -899,8 +976,8 @@
   "coverage_by_status": {
     "implemented_as_code": 10,
     "planned": 2,
-    "validated_locally": 36
+    "validated_locally": 40
   },
-  "coverage_percentage": 95.83,
+  "coverage_percentage": 96.15,
   "schema_version": "1.0"
 }

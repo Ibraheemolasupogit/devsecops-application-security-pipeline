@@ -21,6 +21,10 @@
 | SR-DATA-001 | data_protection | implemented | Milestone 1 |
 | SR-DATA-002 | data_protection | implemented | Milestone 6 |
 | SR-DATA-003 | data_protection | implemented | Milestone 6 |
+| SR-DEV-001 | developer_enablement | implemented | Milestone 11 |
+| SR-DEV-002 | developer_enablement | implemented | Milestone 11 |
+| SR-DEV-003 | developer_enablement | implemented | Milestone 11 |
+| SR-DEV-004 | developer_enablement | implemented | Milestone 11 |
 | SR-EVIDENCE-001 | audit | implemented | Milestone 10 |
 | SR-EVIDENCE-002 | governance | implemented | Milestone 10 |
 | SR-FINDINGS-001 | secure_design | implemented | Milestone 7 |

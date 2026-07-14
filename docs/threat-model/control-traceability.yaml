@@ -378,5 +378,25 @@
     "evidence_references": ["outputs/security/evidence/evidence-integrity-summary.json"],
     "residual_risk_id": "RR-005",
     "notes": "Consolidated evidence records source checksums and validates required domain manifests before reporting."
+  },
+  {
+    "traceability_id": "TRACE-039",
+    "threat_id": "THR-REVIEW-001",
+    "requirement_ids": ["SR-DEV-001", "SR-DEV-002", "SR-DEV-003", "SR-DEV-004"],
+    "implementation_references": ["docs/developer-security", ".github/pull_request_template.md", "src/genomic_research_access_api/security/enablement"],
+    "verification_methods": ["make developer-enablement-full", "developer enablement tests"],
+    "evidence_references": ["outputs/security/developer-enablement/enablement-summary.json", "outputs/security/developer-enablement/developer-control-mapping.json"],
+    "residual_risk_id": "RR-008",
+    "notes": "Milestone 11 makes the secure development workflow usable for contributors without adding Security Champions or deployment."
+  },
+  {
+    "traceability_id": "TRACE-040",
+    "threat_id": "THR-SUPPLY-001",
+    "requirement_ids": ["SR-DEV-001", "SR-DEV-004", "SR-SUPPLY-001", "SR-SUPPLY-002"],
+    "implementation_references": ["docs/developer-security/dependency-management-guide.md", "docs/developer-security/container-security-guide.md", "docs/developer-security/security-exception-guide.md"],
+    "verification_methods": ["make developer-docs-validate", "make appsec-full", "make findings-full"],
+    "evidence_references": ["outputs/security/developer-enablement/command-inventory.json", "outputs/security/developer-enablement/prerequisite-check-summary.json"],
+    "residual_risk_id": "RR-005",
+    "notes": "Developer guidance ties supply-chain scanner output to triage, release gates, lifecycle governance and evidence."
   }
 ]

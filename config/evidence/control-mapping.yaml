@@ -5,6 +5,7 @@
     "api_security": ["api_security", "authentication", "authorisation"],
     "appsec": ["supply_chain", "secrets", "container_security", "infrastructure_security"],
     "dynamic_security": ["api_security", "authentication", "authorisation", "configuration"],
+    "developer_enablement": ["developer_enablement"],
     "findings": ["governance", "supply_chain"],
     "infrastructure": ["infrastructure_security", "iam", "data_protection", "audit_logging"],
     "lifecycle": ["vulnerability_management", "governance", "audit"],

@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-01-01T00:00:00Z",
+  "checks": [
+    {
+      "name": "python",
+      "native_path": "",
+      "notes": "Required for all workflows.",
+      "status": "available"
+    },
+    {
+      "name": "git",
+      "native_path": "/Users/privilege/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git",
+      "notes": "Required for source control.",
+      "status": "available"
+    },
+    {
+      "name": "docker_cli",
+      "native_path": "/usr/local/bin/docker",
+      "notes": "Required for container-backed scanners.",
+      "status": "available"
+    },
+    {
+      "name": "docker_daemon",
+      "native_path": "",
+      "notes": "Required for Trivy, ZAP and Docker fallback execution.",
+      "status": "unavailable"
+    },
+    {
+      "name": "terraform",
+      "native_path": "/opt/homebrew/bin/terraform",
+      "notes": "Required for Terraform init/validate/test.",
+      "status": "available"
+    },
+    {
+      "name": "gitleaks",
+      "native_path": "",
+      "notes": "Native binary optional; pinned Docker image is supported.",
+      "status": "unavailable"
+    },
+    {
+      "name": "trivy",
+      "native_path": "",
+      "notes": "Native binary optional; pinned Docker image is supported.",
+      "status": "unavailable"
+    },
+    {
+      "name": "aws_credentials",
+      "native_path": "",
+      "notes": "Milestone 11 does not deploy or access AWS.",
+      "status": "not_required"
+    }
+  ],
+  "overall_status": "attention_required",
+  "schema_version": "1.0",
+  "status_counts": {
+    "available": 4,
+    "not_required": 1,
+    "unavailable": 3
+  }
+}

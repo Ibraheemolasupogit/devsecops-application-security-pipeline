@@ -1,0 +1,26 @@
+name: Security improvement
+description: Suggest an improvement to local controls, guidance or evidence.
+title: "[Security Improvement]: "
+labels: ["security", "improvement"]
+body:
+  - type: markdown
+    attributes:
+      value: "This template is for local repository improvements only. It does not create external tickets or deployment work."
+  - type: textarea
+    id: improvement
+    attributes:
+      label: Improvement
+      description: Describe the control, workflow or documentation improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Related controls
+      description: List threat IDs, requirement IDs, Make targets or reports if known.
+  - type: textarea
+    id: validation
+    attributes:
+      label: Suggested validation
+      description: Mention local commands such as make quality or make developer-enablement-full.
+

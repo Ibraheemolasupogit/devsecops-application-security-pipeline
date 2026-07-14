@@ -4,4 +4,4 @@ Threats: 30
 
 High/critical threats: 18
 
-Security requirements: 48
+Security requirements: 52

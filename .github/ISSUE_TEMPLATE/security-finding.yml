@@ -1,0 +1,42 @@
+name: Security finding
+description: Record a local repository security finding without external ticketing automation.
+title: "[Security Finding]: "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not paste real secrets, raw tokens, private keys, patient data, cloud account identifiers or exploit payloads."
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Scanner, test, review or evidence source.
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Concise description without sensitive values.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence references
+      description: Link to local paths such as reports or finding IDs, not raw scanner logs.
+    validations:
+      required: true
+  - type: dropdown
+    id: lifecycle
+    attributes:
+      label: Expected lifecycle action
+      options:
+        - triage
+        - remediate
+        - verify
+        - time-bound exception review
+        - false-positive review
+    validations:
+      required: true
+

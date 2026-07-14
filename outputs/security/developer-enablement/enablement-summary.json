@@ -1,0 +1,20 @@
+{
+  "as_of_date": "2026-01-01",
+  "command_count": 51,
+  "deployment_status": "not_deployed",
+  "developer_control_mapping_count": 10,
+  "generated_at": "2026-01-01T00:00:00Z",
+  "guide_count": 26,
+  "local_only": true,
+  "milestone_boundary": "Milestone 11 only; Milestone 12 Security Champions is not implemented.",
+  "prerequisite_status_counts": {
+    "available": 4,
+    "not_required": 1,
+    "unavailable": 3
+  },
+  "pull_request_checklist_coverage": {
+    "covered": 17,
+    "total": 17
+  },
+  "schema_version": "1.0"
+}

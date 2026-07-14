@@ -1,0 +1,465 @@
+{
+  "command_count": 51,
+  "commands": [
+    {
+      "category": "setup",
+      "command": "make setup",
+      "expected_output": "Editable install succeeds.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Python 3.11+.",
+      "purpose": "Create the virtual environment and install dependencies."
+    },
+    {
+      "category": "setup",
+      "command": "make install",
+      "expected_output": "Editable install succeeds.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Existing .venv.",
+      "purpose": "Install dependencies into an existing virtual environment."
+    },
+    {
+      "category": "setup",
+      "command": "make run",
+      "expected_output": "Uvicorn starts locally.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Installed app.",
+      "purpose": "Start the local API on 127.0.0.1:8000."
+    },
+    {
+      "category": "quality",
+      "command": "make format",
+      "expected_output": "Ruff completes.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Format code and apply safe Ruff fixes."
+    },
+    {
+      "category": "quality",
+      "command": "make format-check",
+      "expected_output": "143 files already formatted.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Verify formatting."
+    },
+    {
+      "category": "quality",
+      "command": "make lint",
+      "expected_output": "All checks passed.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run Ruff linting."
+    },
+    {
+      "category": "quality",
+      "command": "make type-check",
+      "expected_output": "Success: no issues found.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run mypy on src and tests."
+    },
+    {
+      "category": "quality",
+      "command": "make test",
+      "expected_output": "All tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run the full pytest suite."
+    },
+    {
+      "category": "quality",
+      "command": "make test-coverage",
+      "expected_output": "Coverage is at least 85%.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run tests with coverage threshold."
+    },
+    {
+      "category": "quality",
+      "command": "make quality",
+      "expected_output": "Quality chain passes.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies; Terraform wrapper.",
+      "purpose": "Run the main quality and evidence verifier chain."
+    },
+    {
+      "category": "authentication",
+      "command": "make dev-token-researcher",
+      "expected_output": "A token is printed to stdout.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Local synthetic keys.",
+      "purpose": "Generate a local researcher token."
+    },
+    {
+      "category": "authentication",
+      "command": "make dev-token-approver",
+      "expected_output": "A token is printed to stdout.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Local synthetic keys.",
+      "purpose": "Generate a local approver token."
+    },
+    {
+      "category": "authentication",
+      "command": "make dev-token-auditor",
+      "expected_output": "A token is printed to stdout.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Local synthetic keys.",
+      "purpose": "Generate a local auditor token."
+    },
+    {
+      "category": "API security",
+      "command": "make auth-test",
+      "expected_output": "Selected auth tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run targeted authentication tests."
+    },
+    {
+      "category": "API security",
+      "command": "make api-security-test",
+      "expected_output": "API security tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run API security tests."
+    },
+    {
+      "category": "API security",
+      "command": "make api-security-evidence",
+      "expected_output": "API evidence files are written.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Existing tests/evidence inputs.",
+      "purpose": "Generate API-security evidence."
+    },
+    {
+      "category": "API security",
+      "command": "make verify-api-security-evidence",
+      "expected_output": "Verifier exits 0.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Generated API evidence.",
+      "purpose": "Verify API-security evidence."
+    },
+    {
+      "category": "Terraform",
+      "command": "make terraform-fmt-check",
+      "expected_output": "No formatting drift.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Terraform wrapper.",
+      "purpose": "Check Terraform formatting."
+    },
+    {
+      "category": "Terraform",
+      "command": "make terraform-init",
+      "expected_output": "Init completes.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Terraform CLI.",
+      "purpose": "Initialise Terraform locally without deployment."
+    },
+    {
+      "category": "Terraform",
+      "command": "make terraform-validate",
+      "expected_output": "Validation succeeds.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Terraform CLI.",
+      "purpose": "Validate Terraform configuration."
+    },
+    {
+      "category": "Terraform",
+      "command": "make terraform-test",
+      "expected_output": "Terraform tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Terraform CLI.",
+      "purpose": "Run Terraform tests."
+    },
+    {
+      "category": "Terraform",
+      "command": "make infrastructure-test",
+      "expected_output": "Infrastructure tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run local infrastructure policy tests."
+    },
+    {
+      "category": "AppSec",
+      "command": "make checkov-scan",
+      "expected_output": "Scan summary has no failed checks.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Run Checkov IaC scan."
+    },
+    {
+      "category": "AppSec",
+      "command": "make security-tools",
+      "expected_output": "Pinned versions are listed.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Print pinned scanner inventory."
+    },
+    {
+      "category": "AppSec",
+      "command": "make secrets-scan",
+      "expected_output": "No leaks found.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Gitleaks or Docker.",
+      "purpose": "Run Gitleaks via native binary or Docker fallback."
+    },
+    {
+      "category": "AppSec",
+      "command": "make sast-semgrep",
+      "expected_output": "0 findings for current baseline.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Run Semgrep rules."
+    },
+    {
+      "category": "AppSec",
+      "command": "make semgrep-test",
+      "expected_output": "Rule tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Run Semgrep rule tests."
+    },
+    {
+      "category": "AppSec",
+      "command": "make sast-bandit",
+      "expected_output": "No blocking findings.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Run Bandit."
+    },
+    {
+      "category": "AppSec",
+      "command": "make dependency-audit",
+      "expected_output": "No known vulnerabilities for current baseline.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Run pip-audit."
+    },
+    {
+      "category": "AppSec",
+      "command": "make sbom",
+      "expected_output": "SBOM JSON is written.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Security dependencies.",
+      "purpose": "Generate CycloneDX SBOM."
+    },
+    {
+      "category": "AppSec",
+      "command": "make verify-sbom",
+      "expected_output": "Validation exits 0.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Generated SBOM.",
+      "purpose": "Validate SBOM structure."
+    },
+    {
+      "category": "container",
+      "command": "make container-build-security",
+      "expected_output": "Image builds locally.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Docker daemon.",
+      "purpose": "Build the local security image."
+    },
+    {
+      "category": "container",
+      "command": "make container-scan",
+      "expected_output": "No blocking findings.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Trivy or Docker fallback.",
+      "purpose": "Run Trivy image scan."
+    },
+    {
+      "category": "AppSec",
+      "command": "make appsec-fast",
+      "expected_output": "Fast scans pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Gitleaks/Docker and security deps.",
+      "purpose": "Run fast AppSec checks."
+    },
+    {
+      "category": "AppSec",
+      "command": "make appsec-full",
+      "expected_output": "AppSec evidence verifies.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Docker daemon and security deps.",
+      "purpose": "Run full AppSec aggregate."
+    },
+    {
+      "category": "dynamic security",
+      "command": "make dynamic-fast",
+      "expected_output": "8 dynamic tests pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Dev dependencies.",
+      "purpose": "Run local dynamic pytest checks."
+    },
+    {
+      "category": "dynamic security",
+      "command": "make dynamic-full",
+      "expected_output": "Dynamic evidence is refreshed.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Docker daemon and local bind.",
+      "purpose": "Run local-only dynamic aggregate."
+    },
+    {
+      "category": "findings",
+      "command": "make findings-full",
+      "expected_output": "Findings workflow completes.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Source scanner outputs.",
+      "purpose": "Normalise, enrich and verify findings."
+    },
+    {
+      "category": "release assurance",
+      "command": "make release-full",
+      "expected_output": "Release workflow completes.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Findings evidence.",
+      "purpose": "Evaluate and report release gate."
+    },
+    {
+      "category": "lifecycle",
+      "command": "make lifecycle-full",
+      "expected_output": "Lifecycle evidence verifies.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Findings and release evidence.",
+      "purpose": "Run vulnerability lifecycle workflow."
+    },
+    {
+      "category": "evidence",
+      "command": "make evidence-full",
+      "expected_output": "8 domains validate.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "All source evidence manifests.",
+      "purpose": "Generate consolidated security evidence."
+    },
+    {
+      "category": "full assurance",
+      "command": "make security-assurance-full",
+      "expected_output": "Assurance chain passes.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Dev dependencies and source evidence.",
+      "purpose": "Run full local assurance chain."
+    },
+    {
+      "category": "setup",
+      "command": "make pre-commit-install",
+      "expected_output": "Hooks installed.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "pre-commit package.",
+      "purpose": "Install pre-commit hooks."
+    },
+    {
+      "category": "quality",
+      "command": "make pre-commit-run",
+      "expected_output": "Fast hooks pass.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "pre-commit package.",
+      "purpose": "Run pre-commit hooks over the repo."
+    },
+    {
+      "category": "developer enablement",
+      "command": "make security-doctor",
+      "expected_output": "Readiness JSON is written.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Python only.",
+      "purpose": "Check local prerequisite readiness."
+    },
+    {
+      "category": "developer enablement",
+      "command": "make developer-docs-validate",
+      "expected_output": "Documentation validates.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Generated reports/evidence.",
+      "purpose": "Validate developer-security docs and references."
+    },
+    {
+      "category": "developer enablement",
+      "command": "make developer-enablement-evidence",
+      "expected_output": "Enablement evidence manifest is written.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Python only.",
+      "purpose": "Generate developer enablement evidence."
+    },
+    {
+      "category": "developer enablement",
+      "command": "make verify-developer-enablement-evidence",
+      "expected_output": "Verifier exits 0.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "Generated enablement evidence.",
+      "purpose": "Verify developer enablement evidence."
+    },
+    {
+      "category": "developer enablement",
+      "command": "make developer-enablement-report",
+      "expected_output": "Reports are written.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Generated enablement evidence.",
+      "purpose": "Generate developer enablement reports."
+    },
+    {
+      "category": "developer enablement",
+      "command": "make developer-enablement-full",
+      "expected_output": "Evidence, reports and docs validate.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": true,
+      "prerequisites": "Python only.",
+      "purpose": "Run the full developer enablement workflow."
+    },
+    {
+      "category": "cleanup",
+      "command": "make clean",
+      "expected_output": "Local caches are removed.",
+      "make_target_exists": true,
+      "modifies_tracked_evidence": false,
+      "prerequisites": "None.",
+      "purpose": "Remove local caches and build artifacts."
+    }
+  ],
+  "schema_version": "1.0"
+}

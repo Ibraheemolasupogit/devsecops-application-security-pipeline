@@ -802,5 +802,56 @@
       "source manifest checksum verification",
       "sensitive-content validation"
     ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/developer-enablement/enablement-summary.json",
+      "outputs/security/developer-enablement/developer-control-mapping.json"
+    ],
+    "implementation_references": [
+      "docs/developer-security",
+      ".github/pull_request_template.md",
+      "src/genomic_research_access_api/security/enablement"
+    ],
+    "notes": "Milestone 11 makes the secure development workflow usable for contributors without adding Security Champions or deployment.",
+    "requirement_ids": [
+      "SR-DEV-001",
+      "SR-DEV-002",
+      "SR-DEV-003",
+      "SR-DEV-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
+    "traceability_id": "TRACE-039",
+    "verification_methods": [
+      "make developer-enablement-full",
+      "developer enablement tests"
+    ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/developer-enablement/command-inventory.json",
+      "outputs/security/developer-enablement/prerequisite-check-summary.json"
+    ],
+    "implementation_references": [
+      "docs/developer-security/dependency-management-guide.md",
+      "docs/developer-security/container-security-guide.md",
+      "docs/developer-security/security-exception-guide.md"
+    ],
+    "notes": "Developer guidance ties supply-chain scanner output to triage, release gates, lifecycle governance and evidence.",
+    "requirement_ids": [
+      "SR-DEV-001",
+      "SR-DEV-004",
+      "SR-SUPPLY-001",
+      "SR-SUPPLY-002"
+    ],
+    "residual_risk_id": "RR-005",
+    "threat_id": "THR-SUPPLY-001",
+    "traceability_id": "TRACE-040",
+    "verification_methods": [
+      "make developer-docs-validate",
+      "make appsec-full",
+      "make findings-full"
+    ]
   }
 ]

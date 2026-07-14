@@ -36,6 +36,8 @@ Milestone 9 adds deterministic vulnerability lifecycle and exception governance 
 
 Milestone 10 adds consolidated security evidence and reporting across Milestones 1-9. It produces a deterministic evidence bundle, source lineage, control coverage, security metrics, integrity summaries and audience-oriented reports. It does not start Milestone 11 developer enablement, Security Champions, dashboards, ticketing, external reporting, deployment or AWS resource creation.
 
+Milestone 11 adds developer security enablement: repository-specific secure development guidance, pull-request security workflow, local command tiers, pre-commit integration, reusable CI examples, prerequisite checks, developer enablement evidence and reports. It does not start Security Champions, dashboards, Repository 5 integration, external ticketing, deployment or AWS resource creation.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -211,6 +213,25 @@ make run
 
 Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 
+## Developer Security Quick Start
+
+Start with `docs/developer-security/README.md`.
+
+```bash
+make setup
+make security-doctor
+make quality
+make appsec-fast
+make findings-full
+make release-full
+make lifecycle-full
+make evidence-full
+```
+
+Use `make dynamic-full` for API boundary changes and `make appsec-full` for dependency, Docker, Terraform or scanner-policy changes. Use `make security-assurance-full` before high-risk review. Developer enablement evidence is generated with `make developer-enablement-full` under `outputs/security/developer-enablement/`.
+
+Pull requests should use `.github/pull_request_template.md`, identify security impact, list local commands run, explain finding changes, distinguish scanner suppressions from formal exceptions and state the current release-gate outcome.
+
 ## Makefile Commands
 
 - `make setup`: create `.venv` and install runtime plus dev dependencies.
@@ -252,6 +273,9 @@ Open `http://127.0.0.1:8000/docs` for FastAPI's local OpenAPI UI.
 - `make evidence-report`: generate consolidated reports.
 - `make evidence-full`: verify source evidence, generate consolidated evidence, verify it and write reports.
 - `make security-assurance-full`: run quality, source evidence, findings, release, lifecycle and consolidated evidence workflows.
+- `make security-doctor`: report local developer-security prerequisite readiness without installing software.
+- `make developer-docs-validate`: validate developer guides, local links and referenced commands.
+- `make developer-enablement-full`: validate developer security guidance, generate enablement evidence and generate developer reports.
 - `make secrets-scan`: run Gitleaks via local binary or pinned container.
 - `make semgrep-test`: run Semgrep custom rule tests.
 - `make sast`: run Semgrep and Bandit.

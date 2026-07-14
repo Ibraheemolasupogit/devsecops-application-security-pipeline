@@ -1,0 +1,75 @@
+{
+  "checklist_item_count": 17,
+  "covered_count": 17,
+  "items": [
+    {
+      "covered": true,
+      "item": "threat-model impact"
+    },
+    {
+      "covered": true,
+      "item": "authentication changes"
+    },
+    {
+      "covered": true,
+      "item": "authorisation changes"
+    },
+    {
+      "covered": true,
+      "item": "object-level access"
+    },
+    {
+      "covered": true,
+      "item": "input validation"
+    },
+    {
+      "covered": true,
+      "item": "logging"
+    },
+    {
+      "covered": true,
+      "item": "secret handling"
+    },
+    {
+      "covered": true,
+      "item": "dependency changes"
+    },
+    {
+      "covered": true,
+      "item": "Terraform changes"
+    },
+    {
+      "covered": true,
+      "item": "Docker changes"
+    },
+    {
+      "covered": true,
+      "item": "new endpoints"
+    },
+    {
+      "covered": true,
+      "item": "new data flows"
+    },
+    {
+      "covered": true,
+      "item": "new external dependencies"
+    },
+    {
+      "covered": true,
+      "item": "new suppressions"
+    },
+    {
+      "covered": true,
+      "item": "new exceptions"
+    },
+    {
+      "covered": true,
+      "item": "evidence regeneration"
+    },
+    {
+      "covered": true,
+      "item": "release-gate impact"
+    }
+  ],
+  "schema_version": "1.0"
+}

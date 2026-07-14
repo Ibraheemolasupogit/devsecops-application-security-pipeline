@@ -18,6 +18,9 @@ make findings-full
 make release-full
 make lifecycle-full
 make evidence-full
+make developer-enablement-full
 ```
 
 Docker-backed Gitleaks, Trivy, Schemathesis and ZAP scans require a running Docker daemon when native binaries or scanner containers are used. Dynamic scan targets must remain local-only. Do not treat local scanner, findings, release, lifecycle or consolidated evidence as a production vulnerability-management programme, penetration test, deployment approval system, regulatory certification or Security Champions programme.
+
+Developer guidance is under `docs/developer-security/`. It explains safe reproduction, local-only DAST boundaries, scanner suppressions, formal security exceptions, release gates and evidence expectations. Do not submit real secrets, raw JWTs, private keys, exploit payloads, cloud identifiers or personal contact details in issues, pull requests or evidence.
