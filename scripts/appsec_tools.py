@@ -152,22 +152,46 @@ def dependency_audit() -> None:
 
 
 def sbom() -> None:
-    cyclonedx = shutil.which("cyclonedx-py")
-    if cyclonedx is None:
+    output_path = ROOT / "outputs/security/appsec/sbom.cdx.json"
+    try:
+        cyclonedx = require("cyclonedx-py")
+    except SystemExit:
         run(
             [sys.executable, "-m", "genomic_research_access_api.security.appsec.evidence", "--sbom"]
         )
-    else:
-        run(
-            [
-                cyclonedx,
-                "environment",
-                "--of",
-                "JSON",
-                "--output-file",
-                "outputs/security/appsec/sbom.cdx.json",
+        return
+    run(
+        [
+            cyclonedx,
+            "environment",
+            "--of",
+            "JSON",
+            "--outfile",
+            str(output_path),
+            "--output-reproducible",
+        ]
+    )
+    normalize_sbom(output_path)
+
+
+def normalize_sbom(path: Path) -> None:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    for component in payload.get("components", []):
+        if not isinstance(component, dict):
+            continue
+        references = component.get("externalReferences", [])
+        if isinstance(references, list):
+            component["externalReferences"] = [
+                reference
+                for reference in references
+                if not (
+                    isinstance(reference, dict)
+                    and str(reference.get("url", "")).startswith("file://")
+                )
             ]
-        )
+            if not component["externalReferences"]:
+                component.pop("externalReferences")
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
 def checkov() -> None:

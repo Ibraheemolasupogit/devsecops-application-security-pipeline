@@ -34,7 +34,7 @@
     },
     "outputs/security/appsec/sbom.cdx.json": {
       "path": "outputs/security/appsec/sbom.cdx.json",
-      "sha256": "18505ba64202b39adabfa80776f4b1afecc08216b0bef2470117e2f58aff5fca"
+      "sha256": "62b05d047db73391eebc8a526b4a01926a1be90ee0348f2d928035a877bb5815"
     },
     "security/config/policy.yaml": {
       "path": "security/config/policy.yaml",

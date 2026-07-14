@@ -38,7 +38,7 @@
   "output_files": {
     "evidence-index.json": {
       "path": "outputs/security/portfolio/evidence-index.json",
-      "sha256": "17deecd831176afd0c9675b9d84e53ae71068fffccbac2aa390f1f1c1d729475",
+      "sha256": "79b292b7e0c7d7f0d665ee5697024d8b3da29bed1a93368876da9fefa34c11f2",
       "size_bytes": 2487
     },
     "milestone-completion.json": {
@@ -58,12 +58,12 @@
     },
     "portfolio-summary.json": {
       "path": "outputs/security/portfolio/portfolio-summary.json",
-      "sha256": "3453aad6d094b39eca21c7030519cc54858f2c5713f50bd549b20b9d38c4728b",
+      "sha256": "5f0c854aa984f6c7496695a0efacdc82e6b3102713fa3cd4fef146996a051419",
       "size_bytes": 930
     },
     "report-index.json": {
       "path": "outputs/security/portfolio/report-index.json",
-      "sha256": "bda451e234978052dd5087032bdb07f908d9805f1ac62db8e38c1b487800e9b5",
+      "sha256": "5045376dd2a1656866bb5473489c64148c849f19086c269abe7c534b85963573",
       "size_bytes": 3239
     },
     "security-capability-matrix.json": {
@@ -72,6 +72,6 @@
       "size_bytes": 7933
     }
   },
-  "portfolio_id": "PF-3e95bc47860adfe7",
+  "portfolio_id": "PF-7b4a8af64ceebed6",
   "schema_version": "1.0"
 }

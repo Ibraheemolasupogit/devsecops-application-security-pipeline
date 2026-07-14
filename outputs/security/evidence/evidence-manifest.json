@@ -1,8 +1,8 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "bundle_id": "EVB-2ad307649bc443e6",
-  "commit": "d09a9b93c14176b23908de97be3c3907e5d29ec2",
+  "bundle_id": "EVB-436dc5443c0ba915",
+  "commit": "b737069e8f885bf1402e15a122319cd3dc228efb",
   "control_mapping_version": "1.0",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
   "deployment_status": "not_deployed",
@@ -45,7 +45,7 @@
   "output_files": {
     "consolidated-evidence.json": {
       "path": "consolidated-evidence.json",
-      "sha256": "b3cf64d802a2c558b8b69baa1f4a5920fb5d888e46db71543d52980d32143c43"
+      "sha256": "82c34421af4979c97c2987f659819eb95e492f91136ec83810a3ef3a029b7628"
     },
     "control-coverage.csv": {
       "path": "control-coverage.csv",
@@ -57,7 +57,7 @@
     },
     "evidence-domain-summary.json": {
       "path": "evidence-domain-summary.json",
-      "sha256": "2f43e82ce5bb7df3349a861f59c6c22667a00706fb49c8b5dd915000b23f92f5"
+      "sha256": "c490948cb57c34d4851e631144fba4d30e13ad937613c70ce54a2fba6cffe3f3"
     },
     "evidence-integrity-summary.json": {
       "path": "evidence-integrity-summary.json",
@@ -69,7 +69,7 @@
     },
     "portfolio-security-summary.json": {
       "path": "portfolio-security-summary.json",
-      "sha256": "bfeb2bf60c318816c33d1c39aba01e71dcb05b6eff5ce6b02475fc44c1f05674"
+      "sha256": "82a04b1addb23e5d220b9ce85a4edaec7ed8caf3f623ae6e070226d0223dfc4a"
     },
     "release-assurance-summary.json": {
       "path": "release-assurance-summary.json",
@@ -106,7 +106,7 @@
   "schema_version": "1.0",
   "source_manifest_checksums": {
     "api_security": "9220e28a605114c19f2838e8a503815ca13a68992446125f35b2287278171474",
-    "appsec": "4cb06649a8f7be11ca1ccfffe0d5c3eeb6e06bbe5ee8e94f5bde40f6bfd8cba0",
+    "appsec": "a927456454ee8bf27437d82e367fc3f7afdaa24d5655bc94eadb3097c5569947",
     "champions": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
     "dynamic_security": "4847dee6f017483d0433c201de76df68123e74c124c8d9a94ba8785e55630e54",
     "findings": "61118ca2d0e26e8e53f45505fc49a7b1f9b527694046c359e3d73db9bbc3f0d4",

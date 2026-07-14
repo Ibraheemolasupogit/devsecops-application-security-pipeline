@@ -1,5 +1,7 @@
 import json
+from importlib import util
 from pathlib import Path
+from types import ModuleType
 
 import pytest
 
@@ -24,6 +26,15 @@ from genomic_research_access_api.security.appsec.parsers import (
 )
 from genomic_research_access_api.security.appsec.report import generate_reports
 from genomic_research_access_api.security.threat_model.validation import ThreatModelValidationError
+
+
+def appsec_tools_module() -> ModuleType:
+    spec = util.spec_from_file_location("appsec_tools", "scripts/appsec_tools.py")
+    assert spec is not None
+    assert spec.loader is not None
+    module = util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def copy_fixture_results(tmp_path: Path) -> Path:
@@ -136,6 +147,38 @@ def test_sbom_generation_and_validation(tmp_path: Path) -> None:
 
     assert payload["bomFormat"] == "CycloneDX"
     assert details["component_count"] >= 4
+
+
+def test_cyclonedx_sbom_normalisation_removes_local_file_references(tmp_path: Path) -> None:
+    sbom = tmp_path / "sbom.cdx.json"
+    sbom.write_text(
+        json.dumps(
+            {
+                "bomFormat": "CycloneDX",
+                "components": [
+                    {
+                        "type": "application",
+                        "name": "genomic-research-access-api",
+                        "externalReferences": [
+                            {
+                                "type": "website",
+                                "url": "file:///Users/example/project",
+                            }
+                        ],
+                    },
+                    {"type": "library", "name": "fastapi"},
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    appsec_tools_module().normalize_sbom(sbom)
+    details = validate_cyclonedx(sbom)
+    payload = json.loads(sbom.read_text(encoding="utf-8"))
+
+    assert "externalReferences" not in payload["components"][0]
+    assert details["component_count"] == 2
 
 
 def test_appsec_evidence_is_deterministic(tmp_path: Path) -> None:

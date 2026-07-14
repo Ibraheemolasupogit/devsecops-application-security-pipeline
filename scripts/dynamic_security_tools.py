@@ -79,7 +79,29 @@ def dynamic_server_wait() -> None:
                 return
         except httpx.HTTPError:
             time.sleep(0.5)
-    raise SystemExit("Dynamic security local server did not become healthy.")
+    raise SystemExit(
+        "Dynamic security local server did not become healthy.\n" + server_diagnostics()
+    )
+
+
+def server_diagnostics() -> str:
+    details = []
+    if PID_FILE.exists():
+        pid = int(PID_FILE.read_text(encoding="utf-8"))
+        with suppress(OSError):
+            os.kill(pid, 0)
+            details.append(f"server pid {pid} is still running")
+        if not details:
+            details.append(f"server pid {pid} is not running")
+    else:
+        details.append("server pid file is not present")
+    if SERVER_LOG.exists():
+        log_lines = SERVER_LOG.read_text(encoding="utf-8", errors="replace").splitlines()
+        details.append("server log tail:")
+        details.extend(log_lines[-40:])
+    else:
+        details.append("server log is not present")
+    return "\n".join(details)
 
 
 def dynamic_server_stop() -> None:

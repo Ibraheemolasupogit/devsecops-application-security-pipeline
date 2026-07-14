@@ -306,7 +306,7 @@ portfolio-full: verify-consolidated-evidence verify-integration-evidence verify-
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.portfolio verify
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.portfolio report
 
-final-validation: quality verify-findings-evidence verify-release-evidence verify-lifecycle-evidence verify-consolidated-evidence verify-champions-evidence verify-developer-enablement-evidence verify-integration-evidence portfolio-full
+final-validation: quality evidence-full integration-full portfolio-full
 
 security-assurance-full: quality verify-threat-model-evidence verify-api-security-evidence verify-infrastructure-evidence verify-appsec-evidence verify-dynamic-evidence findings-full release-full lifecycle-full developer-enablement-full champions-full evidence-full integration-full
 
