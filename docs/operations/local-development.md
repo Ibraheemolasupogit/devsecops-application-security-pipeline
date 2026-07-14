@@ -85,7 +85,18 @@ This aggregates local source evidence into a deterministic evidence bundle and r
 make champions-full
 ```
 
-This validates the synthetic role-based champion roster, programme policy, metrics, maturity model, escalation model and reports. It is local only and does not implement messaging, ticketing, dashboards, Repository 5 integration or deployment.
+This validates the synthetic role-based champion roster, programme policy, metrics, maturity model, escalation model and reports. It is local only and does not implement messaging, ticketing, dashboards or deployment.
+
+## Integration Contract
+
+```bash
+make integration-full
+```
+
+This validates the local Repository 5 integration contract, generates
+`outputs/security/integration/`, verifies the manifest and checksums, and writes reports.
+It does not modify Repository 5, transfer data externally, deploy, or create AWS
+resources.
 
 ## Local API Tokens
 

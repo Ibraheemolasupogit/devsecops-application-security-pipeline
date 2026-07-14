@@ -739,6 +739,84 @@
     "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
   },
   {
+    "category": "integration_contract",
+    "description": "Product-security findings exported for a consumer control plane must use a versioned schema, stable export identifiers and deterministic checksums.",
+    "evidence_reference": "outputs/security/integration/integration-manifest.json",
+    "implementation_reference": "src/genomic_research_access_api/security/integration",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 13",
+    "priority": "high",
+    "requirement_id": "SR-INTEGRATION-001",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001",
+      "THR-SUPPLY-001"
+    ],
+    "status": "active",
+    "title": "Versioned deterministic findings export",
+    "verification_method": "make integration-full",
+    "verification_reference": "tests/security/test_integration_contract.py"
+  },
+  {
+    "category": "integration_contract",
+    "description": "Exported records must preserve lineage from source evidence through canonical findings, lifecycle records, release evaluations and export records.",
+    "evidence_reference": "outputs/security/integration/finding-source-lineage.json",
+    "implementation_reference": "src/genomic_research_access_api/security/integration/lineage.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 13",
+    "priority": "high",
+    "requirement_id": "SR-INTEGRATION-002",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Integration lineage preservation",
+    "verification_method": "integration lineage tests",
+    "verification_reference": "tests/security/test_integration_contract.py"
+  },
+  {
+    "category": "integration_contract",
+    "description": "The export must preserve role-based ownership, exception visibility, release impact and lifecycle state while rejecting local paths, secrets and personal emails.",
+    "evidence_reference": "outputs/security/integration/data-quality-summary.json",
+    "implementation_reference": "src/genomic_research_access_api/security/integration/validator.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 13",
+    "priority": "high",
+    "requirement_id": "SR-INTEGRATION-003",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-SECRETS-001",
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Safe data minimised integration export",
+    "verification_method": "sensitive-content and ownership validation tests",
+    "verification_reference": "tests/security/test_integration_contract.py"
+  },
+  {
+    "category": "integration_contract",
+    "description": "A consumer control plane must be able to validate compatibility, required fields, checksums and record counts without live Repository 5 access.",
+    "evidence_reference": "outputs/security/integration/compatibility-summary.json",
+    "implementation_reference": "examples/integration-consumer/validate_bundle.py",
+    "implementation_status": "implemented",
+    "owner": "product_security_engineer",
+    "planned_milestone": "Milestone 13",
+    "priority": "medium",
+    "requirement_id": "SR-INTEGRATION-004",
+    "residual_risk": "low",
+    "source_threat_ids": [
+      "THR-REVIEW-001"
+    ],
+    "status": "active",
+    "title": "Consumer-side bundle validation example",
+    "verification_method": "sample consumer validation",
+    "verification_reference": "examples/integration-consumer/validate_bundle.py"
+  },
+  {
     "category": "vulnerability_management",
     "description": "Canonical findings must be represented in a deterministic vulnerability register with explicit lifecycle states and validated transitions.",
     "evidence_reference": "outputs/security/lifecycle/vulnerability-register.json",

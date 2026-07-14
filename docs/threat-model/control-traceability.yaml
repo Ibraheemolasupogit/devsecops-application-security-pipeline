@@ -918,5 +918,32 @@
     "verification_methods": [
       "make champions-policy-validate"
     ]
+  },
+  {
+    "evidence_references": [
+      "outputs/security/integration/integration-manifest.json",
+      "outputs/security/integration/product-security-findings.json",
+      "outputs/security/integration/finding-source-lineage.json"
+    ],
+    "implementation_references": [
+      "src/genomic_research_access_api/security/integration",
+      "config/integration",
+      "examples/integration-consumer/validate_bundle.py"
+    ],
+    "notes": "Milestone 13 adds a local Repository 5 integration contract and export bundle without modifying Repository 5, deploying, or performing live ingestion.",
+    "requirement_ids": [
+      "SR-INTEGRATION-001",
+      "SR-INTEGRATION-002",
+      "SR-INTEGRATION-003",
+      "SR-INTEGRATION-004"
+    ],
+    "residual_risk_id": "RR-008",
+    "threat_id": "THR-REVIEW-001",
+    "traceability_id": "TRACE-044",
+    "verification_methods": [
+      "make integration-full",
+      "sample consumer validation",
+      "integration contract tests"
+    ]
   }
 ]

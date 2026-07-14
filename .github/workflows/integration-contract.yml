@@ -1,0 +1,64 @@
+name: integration-contract
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: integration-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  integration-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip==25.1.1
+          python -m pip install -e ".[dev]"
+
+      - name: Verify source evidence
+        run: |
+          make verify-findings-evidence
+          make verify-release-evidence
+          make verify-lifecycle-evidence
+          make verify-consolidated-evidence
+          make verify-champions-evidence
+
+      - name: Validate integration contract
+        run: |
+          make integration-policy-validate
+          make integration-export
+          make integration-validate
+          make verify-integration-evidence
+
+      - name: Run integration tests
+        run: |
+          PYTHONPATH=src pytest tests/security/test_integration_contract.py -q
+
+      - name: Sample consumer validation
+        run: |
+          python examples/integration-consumer/validate_bundle.py outputs/security/integration
+
+      - name: Generate reports
+        run: make integration-report
+
+      - name: Upload export bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-security-export-bundle
+          path: outputs/security/integration/
+          retention-days: 14

@@ -36,6 +36,10 @@ SR-IAC-001,SR-IAC-001,THR-IAC-001;THR-IAC-002,appsec,implemented_as_code,validat
 SR-IAC-002,SR-IAC-002,THR-IAC-001,appsec,implemented_as_code,validated_locally,outputs/security/infrastructure/terraform-validation-summary.json,platform_engineer,future_deployment,medium
 SR-IAM-001,SR-IAM-001,THR-IAM-001,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-policy-summary.json,platform_engineer,future_deployment,medium
 SR-IAM-002,SR-IAM-002,THR-CI-001,infrastructure,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-role-inventory.json,platform_engineer,future_deployment,medium
+SR-INTEGRATION-001,SR-INTEGRATION-001,THR-REVIEW-001;THR-SUPPLY-001,integration,validated_locally,verified,outputs/security/integration/integration-manifest.json,product_security_engineer,none,low
+SR-INTEGRATION-002,SR-INTEGRATION-002,THR-REVIEW-001,integration,validated_locally,verified,outputs/security/integration/finding-source-lineage.json,product_security_engineer,none,low
+SR-INTEGRATION-003,SR-INTEGRATION-003,THR-SECRETS-001;THR-REVIEW-001,integration,validated_locally,verified,outputs/security/integration/data-quality-summary.json,product_security_engineer,none,low
+SR-INTEGRATION-004,SR-INTEGRATION-004,THR-REVIEW-001,integration,validated_locally,verified,outputs/security/integration/compatibility-summary.json,product_security_engineer,none,low
 SR-LIFECYCLE-001,SR-LIFECYCLE-001,THR-REVIEW-001;THR-SUPPLY-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/vulnerability-register.json,product_security_engineer,none,medium
 SR-LIFECYCLE-002,SR-LIFECYCLE-002,THR-REVIEW-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/verification-register.json,product_security_engineer,none,low
 SR-LIFECYCLE-003,SR-LIFECYCLE-003,THR-REVIEW-001;THR-SUPPLY-001,findings,validated_locally,verified,outputs/security/lifecycle/security-exceptions.json,risk_owner,none,medium

@@ -1,0 +1,19 @@
+{
+  "mapping_version": "1.0",
+  "mappings": {
+    "asset_id": "asset_id",
+    "asset_type": "asset_type",
+    "control_ids": "control_ids",
+    "due_date": "due_date",
+    "exception_id": "exception_id",
+    "export_record_id": "derived from contract version, finding_id and producer repository",
+    "finding_id": "canonical finding_id",
+    "lifecycle_status": "lifecycle vulnerability status",
+    "normalised_severity": "normalised_severity",
+    "producer_status": "local lifecycle or finding status",
+    "consumer_status": "neutral status mapping",
+    "release_impact": "release finding decision contribution",
+    "source_finding_ids": "finding-source-map source_finding_ids",
+    "source_record_hash": "canonical source_record_hash"
+  }
+}

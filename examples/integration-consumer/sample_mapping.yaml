@@ -1,0 +1,7 @@
+{
+  "consumer_status_field": "consumer_status",
+  "contract_name": "product-security-control-plane-export",
+  "supported_contract_versions": [
+    "1.0"
+  ]
+}

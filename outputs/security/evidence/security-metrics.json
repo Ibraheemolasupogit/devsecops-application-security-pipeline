@@ -5,7 +5,7 @@
     "canonical_findings": 39,
     "closed_findings": 0,
     "conditional_findings": 0,
-    "control_coverage_percentage": 96.43,
+    "control_coverage_percentage": 96.67,
     "due_soon_findings": 2,
     "expired_exceptions": 1,
     "expired_suppressions": 0,
@@ -22,7 +22,7 @@
       "medium": 6
     },
     "high_critical_threats": 18,
-    "implemented_requirements": 54,
+    "implemented_requirements": 58,
     "overdue_findings": 0,
     "partially_implemented_requirements": 0,
     "planned_requirements": 2,
@@ -42,7 +42,7 @@
       "zap": 0
     },
     "scanner_tools_executed": 5,
-    "security_requirements": 56,
+    "security_requirements": 60,
     "suppressed_findings": 15,
     "total_threats": 30,
     "unowned_findings": 0,

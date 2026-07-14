@@ -1,11 +1,11 @@
 {
-  "bundle_id": "EVB-2b91719ce0bcd124",
+  "bundle_id": "EVB-51743a7b28a9aa98",
   "canonical_findings": 39,
-  "control_coverage_percentage": 96.43,
+  "control_coverage_percentage": 96.67,
   "critical_high_findings": 33,
   "deployment_status": "not_deployed",
   "integrity_decision": "pass",
-  "next_milestone_boundary": "Milestone 12 Security Champions is implemented locally; Milestone 13 and Repository 5 integration are not implemented.",
+  "next_milestone_boundary": "Milestone 13 integration contract is implemented locally; live Repository 5 ingestion and Milestone 14 are not implemented.",
   "release_decision": "conditional_pass",
   "schema_version": "1.0"
 }

@@ -39,6 +39,10 @@
 | SR-IAC-002 | infrastructure_security | implemented | Milestone 6 |
 | SR-IAM-001 | iam | implemented | Milestone 6 |
 | SR-IAM-002 | iam | implemented | Milestone 6 |
+| SR-INTEGRATION-001 | integration_contract | implemented | Milestone 13 |
+| SR-INTEGRATION-002 | integration_contract | implemented | Milestone 13 |
+| SR-INTEGRATION-003 | integration_contract | implemented | Milestone 13 |
+| SR-INTEGRATION-004 | integration_contract | implemented | Milestone 13 |
 | SR-LIFECYCLE-001 | vulnerability_management | implemented | Milestone 9 |
 | SR-LIFECYCLE-002 | vulnerability_management | implemented | Milestone 9 |
 | SR-LIFECYCLE-003 | governance | implemented | Milestone 9 |

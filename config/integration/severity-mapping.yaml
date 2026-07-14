@@ -1,0 +1,10 @@
+{
+  "severities": {
+    "critical": "critical",
+    "high": "high",
+    "informational": "informational",
+    "low": "low",
+    "medium": "medium",
+    "unknown": "unknown"
+  }
+}

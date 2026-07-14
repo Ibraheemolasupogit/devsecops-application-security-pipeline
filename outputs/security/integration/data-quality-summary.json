@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "all_records_have_export_ids": true,
+    "lineage_edges_present": true,
+    "metrics_reconcile": true,
+    "unique_export_ids": true,
+    "unique_finding_ids": true
+  },
+  "record_count": 39,
+  "schema_version": "1.0",
+  "valid": true
+}

@@ -10,7 +10,7 @@ Overall assurance posture: pass
 
 Release decision: conditional_pass
 
-Control coverage: 96.43%
+Control coverage: 96.67%
 
 Critical/high findings: 33
 
@@ -22,5 +22,5 @@ Evidence integrity: 9 verified domains, 0 failed domains.
 
 Known limitations: local portfolio evidence only; not regulatory certification.
 
-Next milestone boundary: Milestone 12 Security Champions is implemented locally; Milestone 13
-and Repository 5 integration are not implemented.
+Next milestone boundary: Milestone 13 integration contract is implemented locally; live
+Repository 5 ingestion and Milestone 14 are not implemented.

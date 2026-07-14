@@ -1,0 +1,17 @@
+{
+  "approved_role_values": [
+    "Application Engineering",
+    "Application Security Champions",
+    "Application Security Guild",
+    "Cloud Platform Security",
+    "Cloud Security",
+    "DevSecOps Engineering",
+    "Platform Engineering",
+    "Product Engineering",
+    "Product Security",
+    "Risk Owner",
+    "Technical Owner"
+  ],
+  "mapping_version": "1.0",
+  "personal_data_policy": "role-based values only; names and email addresses are prohibited"
+}

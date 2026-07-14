@@ -1,4 +1,4 @@
-.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full release-policy-validate release-gate-evaluate release-gate-enforce release-evidence verify-release-evidence release-report release-full lifecycle-policy-validate lifecycle-initialise lifecycle-validate lifecycle-expiry lifecycle-evidence verify-lifecycle-evidence lifecycle-report lifecycle-full evidence-source-validate evidence-aggregate evidence-generate verify-consolidated-evidence evidence-report evidence-full security-assurance-full security-doctor developer-docs-validate developer-enablement-evidence verify-developer-enablement-evidence developer-enablement-report developer-enablement-full champions-policy-validate champions-metrics champions-evidence verify-champions-evidence champions-report champions-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
+.PHONY: setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full release-policy-validate release-gate-evaluate release-gate-enforce release-evidence verify-release-evidence release-report release-full lifecycle-policy-validate lifecycle-initialise lifecycle-validate lifecycle-expiry lifecycle-evidence verify-lifecycle-evidence lifecycle-report lifecycle-full evidence-source-validate evidence-aggregate evidence-generate verify-consolidated-evidence evidence-report evidence-full integration-policy-validate integration-export integration-validate verify-integration-evidence integration-report integration-full security-assurance-full security-doctor developer-docs-validate developer-enablement-evidence verify-developer-enablement-evidence developer-enablement-report developer-enablement-full champions-policy-validate champions-metrics champions-evidence verify-champions-evidence champions-report champions-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -268,7 +268,24 @@ evidence-report:
 
 evidence-full: verify-threat-model-evidence verify-api-security-evidence verify-infrastructure-evidence verify-appsec-evidence verify-dynamic-evidence verify-findings-evidence verify-release-evidence verify-lifecycle-evidence evidence-source-validate evidence-generate verify-consolidated-evidence evidence-report
 
-security-assurance-full: quality verify-threat-model-evidence verify-api-security-evidence verify-infrastructure-evidence verify-appsec-evidence verify-dynamic-evidence findings-full release-full lifecycle-full developer-enablement-full champions-full evidence-full
+integration-policy-validate:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.integration validate-policy
+
+integration-export:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.integration export --timestamp 2026-01-01T00:00:00Z --as-of-date 2026-01-01
+
+integration-validate:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.integration validate-export
+
+verify-integration-evidence:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.integration verify
+
+integration-report:
+	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.integration report
+
+integration-full: verify-findings-evidence verify-release-evidence verify-lifecycle-evidence verify-consolidated-evidence integration-policy-validate integration-export integration-validate verify-integration-evidence integration-report
+
+security-assurance-full: quality verify-threat-model-evidence verify-api-security-evidence verify-infrastructure-evidence verify-appsec-evidence verify-dynamic-evidence findings-full release-full lifecycle-full developer-enablement-full champions-full evidence-full integration-full
 
 security-doctor:
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.enablement doctor

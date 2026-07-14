@@ -1,0 +1,16 @@
+{
+  "statuses": {
+    "assigned": "assigned",
+    "closed": "closed",
+    "deferred": "deferred",
+    "false_positive": "false_positive",
+    "in_progress": "in_remediation",
+    "open": "open",
+    "remediation_in_progress": "in_remediation",
+    "resolved": "resolved",
+    "risk_accepted": "risk_accepted",
+    "suppressed": "deferred",
+    "triaged": "triaged",
+    "verified": "verified"
+  }
+}

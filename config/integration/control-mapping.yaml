@@ -1,0 +1,11 @@
+{
+  "control_domains": {
+    "integration_contract": [
+      "SR-INTEGRATION-001",
+      "SR-INTEGRATION-002",
+      "SR-INTEGRATION-003",
+      "SR-INTEGRATION-004"
+    ]
+  },
+  "mapping_version": "1.0"
+}

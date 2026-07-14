@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "required": [
+    "contract_name",
+    "contract_version",
+    "producer",
+    "producer_repository",
+    "record_count",
+    "lineage_edge_count",
+    "output_checksums",
+    "compatibility_status",
+    "validation_status"
+  ],
+  "type": "object"
+}

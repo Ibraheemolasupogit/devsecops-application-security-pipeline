@@ -9,6 +9,7 @@
     "developer_enablement": ["developer_enablement"],
     "findings": ["governance", "supply_chain"],
     "infrastructure": ["infrastructure_security", "iam", "data_protection", "audit_logging"],
+    "integration": ["integration_contract"],
     "lifecycle": ["vulnerability_management", "governance", "audit"],
     "release_assurance": ["release_assurance"],
     "threat_model": ["secure_design"]

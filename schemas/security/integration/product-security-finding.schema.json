@@ -1,0 +1,678 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "application": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Application"
+    },
+    "asset_criticality": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Asset Criticality"
+    },
+    "asset_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Asset Id"
+    },
+    "asset_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Asset Type"
+    },
+    "cloud_provider": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cloud Provider"
+    },
+    "component": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Component"
+    },
+    "consumer_status": {
+      "title": "Consumer Status",
+      "type": "string"
+    },
+    "contract_version": {
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "control_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Control Ids",
+      "type": "array"
+    },
+    "cve": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cve"
+    },
+    "cwe": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Cwe"
+    },
+    "data_sensitivity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Data Sensitivity"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "due_date": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Due Date"
+    },
+    "environment": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Environment"
+    },
+    "exception_expiry": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Exception Expiry"
+    },
+    "exception_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Exception Id"
+    },
+    "exception_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Exception Status"
+    },
+    "export_record_id": {
+      "title": "Export Record Id",
+      "type": "string"
+    },
+    "file": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "File"
+    },
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "finding_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Finding Type"
+    },
+    "first_detected": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "First Detected"
+    },
+    "fixed_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Fixed Version"
+    },
+    "installed_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Installed Version"
+    },
+    "internet_exposure": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Internet Exposure"
+    },
+    "last_detected": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Last Detected"
+    },
+    "lifecycle_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Lifecycle Status"
+    },
+    "line": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Line"
+    },
+    "lineage_references": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Lineage References",
+      "type": "array"
+    },
+    "normalised_severity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Normalised Severity"
+    },
+    "overdue": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Overdue"
+    },
+    "owasp_category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Owasp Category"
+    },
+    "package_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Package Name"
+    },
+    "priority": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Priority"
+    },
+    "producer_metadata": {
+      "additionalProperties": true,
+      "title": "Producer Metadata",
+      "type": "object"
+    },
+    "producer_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Producer Status"
+    },
+    "region": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Region"
+    },
+    "release_decision": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Release Decision"
+    },
+    "release_impact": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Release Impact"
+    },
+    "remediation_guidance": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Remediation Guidance"
+    },
+    "remediation_owner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Remediation Owner"
+    },
+    "remediation_sla_days": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Remediation Sla Days"
+    },
+    "repository": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Repository"
+    },
+    "required_actions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Actions",
+      "type": "array"
+    },
+    "required_approvals": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Approvals",
+      "type": "array"
+    },
+    "resource": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Resource"
+    },
+    "risk_owner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Risk Owner"
+    },
+    "risk_score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Risk Score"
+    },
+    "security_domain": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Security Domain"
+    },
+    "security_requirement_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Security Requirement Ids",
+      "type": "array"
+    },
+    "service": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Service"
+    },
+    "source_evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Evidence",
+      "type": "array"
+    },
+    "source_finding_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Finding Ids",
+      "type": "array"
+    },
+    "source_record_hash": {
+      "title": "Source Record Hash",
+      "type": "string"
+    },
+    "source_tools": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Tools",
+      "type": "array"
+    },
+    "squad": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Squad"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "suppression_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Suppression Id"
+    },
+    "suppression_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Suppression Status"
+    },
+    "technical_owner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Technical Owner"
+    },
+    "threat_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Threat Ids",
+      "type": "array"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "verification_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Verification Status"
+    }
+  },
+  "required": [
+    "contract_version",
+    "export_record_id",
+    "finding_id",
+    "source_finding_ids",
+    "source_tools",
+    "finding_type",
+    "security_domain",
+    "title",
+    "description",
+    "normalised_severity",
+    "risk_score",
+    "priority",
+    "status",
+    "producer_status",
+    "consumer_status",
+    "lifecycle_status",
+    "asset_id",
+    "asset_type",
+    "asset_criticality",
+    "data_sensitivity",
+    "internet_exposure",
+    "environment",
+    "application",
+    "service",
+    "repository",
+    "component",
+    "resource",
+    "file",
+    "line",
+    "package_name",
+    "installed_version",
+    "fixed_version",
+    "cve",
+    "cwe",
+    "owasp_category",
+    "cloud_provider",
+    "region",
+    "threat_ids",
+    "security_requirement_ids",
+    "control_ids",
+    "squad",
+    "technical_owner",
+    "risk_owner",
+    "remediation_owner",
+    "first_detected",
+    "last_detected",
+    "due_date",
+    "overdue",
+    "remediation_sla_days",
+    "suppression_id",
+    "suppression_status",
+    "exception_id",
+    "exception_status",
+    "exception_expiry",
+    "verification_status",
+    "release_decision",
+    "release_impact",
+    "required_actions",
+    "required_approvals",
+    "remediation_guidance",
+    "source_evidence",
+    "source_record_hash",
+    "lineage_references"
+  ],
+  "title": "ExportFindingRecord",
+  "type": "object"
+}

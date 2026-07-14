@@ -14,11 +14,17 @@ make lifecycle-full
 make verify-lifecycle-evidence
 make evidence-full
 make champions-full
+make integration-full
 ```
 
 `findings-full` consumes existing scanner outputs and does not require Docker by itself. `release-full` consumes canonical findings and runs in evidence mode, so it succeeds even when the resulting decision is `block` or `conditional_pass`.
 
 `champions-full` validates the local Security Champions programme configuration, derives metrics from findings and lifecycle evidence, verifies the champion evidence manifest and generates reports. It does not require Docker and does not contact external services.
+
+`integration-full` validates the local Repository 5 integration contract, exports
+product-security findings and evidence, validates checksums and sensitive-content
+controls, and generates integration reports. It does not contact Repository 5 or
+transfer data externally.
 
 Use enforcement explicitly when a release decision should become a shell exit code:
 
@@ -51,3 +57,13 @@ make champions-full
 ```
 
 This validates synthetic role-based champion configuration, metrics, maturity, escalation, evidence and reports. It does not create tickets, send messages, track real attendance, integrate Repository 5 or deploy anything.
+
+## Integration Contract
+
+```bash
+make integration-full
+python3 examples/integration-consumer/validate_bundle.py outputs/security/integration
+```
+
+A consumer control plane can use the manifest and checksums to validate the bundle
+before ingestion. This repository does not implement live ingestion.

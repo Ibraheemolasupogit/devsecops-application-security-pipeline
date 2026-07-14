@@ -1,0 +1,802 @@
+{
+  "records": [
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-026cbd40a3d8",
+      "implementation_references": [],
+      "lifecycle_status": "risk_accepted",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-033201244a2b",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-35a70101ee98",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-35a7a61eb9e3",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-3686ad447a1f",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-4a39d4c85743",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-57b96cf12bee",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-5ee1761422cc",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-6017bcc173f8",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-6884a6a2aeb3",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-77763b149b4f",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-9360fa554791",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-95a38a1f2a20",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-96b263718199",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-9bac41a1b5ac",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-ba223b9333c9",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-c1e6ced9904f",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-c7563eb73df0",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-d0df15bb32ed",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-CONTAINER-ef0f3e5e6558",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-0e84d1c52550",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CI-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-17c88481ce5d",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-API-005",
+        "THR-API-006"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-667c88d66538",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-SECRETS-001",
+        "THR-SUPPLY-001",
+        "THR-SUPPLY-002",
+        "THR-SUPPLY-003"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-77c7990be9b8",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CONTAINER-001",
+        "THR-CONTAINER-002"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-ac50e3235345",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-AUTH-001",
+        "THR-AUTH-002"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-e7cd910bd1f6",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-IAM-001",
+        "THR-IAM-002",
+        "THR-IAC-001",
+        "THR-IAC-002"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "implementation_references": [],
+      "lifecycle_status": "risk_accepted",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "implementation_references": [],
+      "lifecycle_status": "assigned",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-65201925e5c5",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-68e51d21b290",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-8632c434b354",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-974e196f7185",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-d403fca790bf",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-e0d3613118cd",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
+      "finding_id": "FND-SUPPRESSIO-f1fb6d611749",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "conditional_pass",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ]
+    }
+  ],
+  "schema_version": "1.0"
+}

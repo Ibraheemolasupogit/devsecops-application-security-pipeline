@@ -1,0 +1,10 @@
+{
+  "compatibility_status": "compatible",
+  "contract_name": "product-security-control-plane-export",
+  "contract_version": "1.0",
+  "minimum_consumer_version": "1.0",
+  "warnings": [
+    "No live consumer compatibility check is performed by this repository.",
+    "Consumer-side identifiers are intentionally not generated."
+  ]
+}

@@ -15,6 +15,7 @@
     "governance": 5,
     "iam": 2,
     "infrastructure_security": 2,
+    "integration_contract": 4,
     "release_assurance": 4,
     "secrets": 1,
     "secure_design": 3,
@@ -24,7 +25,7 @@
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 54,
+    "implemented": 58,
     "planned": 2
   },
   "residual_risks_by_rating": {

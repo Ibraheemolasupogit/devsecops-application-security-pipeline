@@ -1,0 +1,22 @@
+{
+  "compatibility_statuses": [
+    "compatible",
+    "compatible_with_warnings",
+    "incompatible"
+  ],
+  "minimum_consumer_version": "1.0",
+  "required_manifest_fields": [
+    "contract_name",
+    "contract_version",
+    "producer",
+    "producer_repository",
+    "record_count",
+    "lineage_edge_count",
+    "output_checksums",
+    "compatibility_status",
+    "validation_status"
+  ],
+  "supported_contract_versions": [
+    "1.0"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "as_of_date": "2026-01-01",
+  "branch": "main",
+  "commit": "df654e3ac16249258cb8146ee18b0a95fd1a5281",
+  "compatibility_status": "compatible",
+  "consumer": "enterprise-data-saas-security-control-plane",
+  "contract_name": "product-security-control-plane-export",
+  "contract_version": "1.0",
+  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "deployment_status": "not_deployed",
+  "dirty_worktree": true,
+  "exception_count": 3,
+  "export_schema_version": "1.0",
+  "export_schemas": [
+    "schemas/security/integration/product-security-finding.schema.json",
+    "schemas/security/integration/integration-manifest.schema.json"
+  ],
+  "input_checksums": {
+    "appsec": "41ada5af4d052332124c9c717b86ba242ff3dfc5d59e032a28035bcf7fc560d9",
+    "champions": "eafd7fe54b65afbeeb6efa3668e8049c8c639019f480d879008bd3275d8a31fd",
+    "consolidated": "fe526ab7e33c5d3a54d6599b9ca4a45c5136e3122869ee75a2aba238f778c864",
+    "findings": "3b4a1ceaaa5aeb45876657c1424b4e68da3abcb262911e49a2d46d9680841bc7",
+    "lifecycle": "47cb445987a7cbddc94a47bdc80492d31affab4f1598d85b7e1ab3600ff022e5",
+    "release": "f3f035abcca478af13055f4705141bebe92e5e5231bc49531fbb13caa052b8f6"
+  },
+  "input_manifests": {
+    "appsec": "outputs/security/appsec/evidence-manifest.json",
+    "champions": "outputs/security/champions/evidence-manifest.json",
+    "consolidated": "outputs/security/evidence/evidence-manifest.json",
+    "findings": "outputs/security/findings/evidence-manifest.json",
+    "lifecycle": "outputs/security/lifecycle/evidence-manifest.json",
+    "release": "outputs/security/release/evidence-manifest.json"
+  },
+  "lifecycle_record_count": 39,
+  "limitations": [
+    "This is a local export bundle only; no Repository 5 files are modified.",
+    "No deployment, external upload, API integration or AWS resource creation occurs.",
+    "Consumer-side identifiers and ingestion status are intentionally absent."
+  ],
+  "lineage_edge_count": 158,
+  "minimum_consumer_version": "1.0",
+  "output_checksums": {
+    "compatibility-summary.json": "380c887441e647607ff675340edc1a023400043ce8257ff0d79c42af5120fb89",
+    "control-traceability.json": "8994dc6737b9166d3236380bc9d604e337cb3b0da09233a019956efb97b94db0",
+    "data-quality-summary.json": "5df54e1604434536dab0ce038167fe244cc4580650d861c96bcc30ba648a1d33",
+    "field-mapping-summary.json": "9547fdb3ef578a5f17287097b860898e4d8fc5dfb9b0e604881b74c472e44480",
+    "finding-lifecycle-status.json": "380a7f4d6712535fa03caea55f3a8e7eb76c7b82c9d472a4d5026ee546f08915",
+    "finding-release-impact.json": "2fdf302f55ae63e5d44f3ef5fe4c584fa6b9abe995b052268b0869288327d1a6",
+    "finding-source-lineage.json": "81ef63496a39f59751cbbb62b5f5ebedd7150d4dc06c49d303e28e4911307c7c",
+    "integration-summary.json": "b55e37f441580802bff54dc678743f0ece92726bad766810e5903701439fded1",
+    "integration-validation-summary.json": "5df54e1604434536dab0ce038167fe244cc4580650d861c96bcc30ba648a1d33",
+    "ownership-and-sla.json": "4202ee18ffaf131eb56d34a5251adbc77dbbe3dbb2a2eab78296b98ec81e273d",
+    "product-security-findings.csv": "04fcace4ec1326dc8d86eb9b87a4bf42650aabca86ebbd6c5e0dcc18365c1540",
+    "product-security-findings.json": "de19e6b59cec99d78aac6f291836bebe3792eedc7f568a16758c6cb60077eebb",
+    "security-exceptions.json": "2db211d3ca6b1aa3b270fade2695ea79c09bdb76fea31b85bfecc31dce081601",
+    "security-metrics.json": "b9d783ec8e86f01d24846008a96478759da1e1110f6dcc49df220dfd3ce1360f",
+    "verification-status.json": "fc71cef80f522038c9ac9d686eb1d7cd87f5d50052af01912f72a44a8b1a61be"
+  },
+  "output_files": [
+    "compatibility-summary.json",
+    "control-traceability.json",
+    "data-quality-summary.json",
+    "field-mapping-summary.json",
+    "finding-lifecycle-status.json",
+    "finding-release-impact.json",
+    "finding-source-lineage.json",
+    "integration-summary.json",
+    "integration-validation-summary.json",
+    "ownership-and-sla.json",
+    "product-security-findings.csv",
+    "product-security-findings.json",
+    "security-exceptions.json",
+    "security-metrics.json",
+    "verification-status.json"
+  ],
+  "producer": "devsecops-application-security-pipeline",
+  "producer_project_version": "0.1.0",
+  "producer_repository": "devsecops-application-security-pipeline",
+  "producer_schema_version": "1.0",
+  "record_count": 39,
+  "source_finding_count": 41,
+  "source_schemas": [
+    "schemas/security/findings/canonical-finding.schema.json",
+    "schemas/security/release/release-gate-decision.schema.json",
+    "schemas/security/lifecycle/vulnerability-record.schema.json"
+  ],
+  "validation_status": "passed",
+  "verification_record_count": 0
+}

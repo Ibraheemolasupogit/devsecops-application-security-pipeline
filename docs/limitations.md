@@ -16,4 +16,5 @@
 - Findings normalisation uses demonstration risk, ownership and SLA values. Milestone 8 release gates consume those findings for deterministic local release-assurance evidence.
 - Milestone 9 lifecycle evidence demonstrates vulnerability lifecycle and exception governance locally. It is not a production ticketing system, live deployment approval system or Security Champions programme.
 - Milestone 10 consolidated evidence and reports are local portfolio evidence. They are not regulatory certification, production assurance, external reporting, dashboards or monitoring.
-- Milestone 12 Security Champions evidence uses synthetic role-based programme data. It is not a real attendance system, external messaging workflow, ticketing integration, Repository 5 integration, dashboard or deployment.
+- Milestone 12 Security Champions evidence uses synthetic role-based programme data. It is not a real attendance system, external messaging workflow, ticketing integration, dashboard or deployment.
+- Milestone 13 Repository 5 integration evidence is a local export contract and sample validation bundle only. It does not modify Repository 5, access a live consumer, create APIs, queues, dashboards, external transfers, AWS resources or deployment.

@@ -1,0 +1,3541 @@
+{
+  "contract_name": "product-security-control-plane-export",
+  "contract_version": "1.0",
+  "findings": [
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "risk_accepted",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-9538",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header.\n\n_read_tar() reads each entry's payload with $handle->read($$data, $block), where $block is derived from the entry's 12-byte size field in the tar header with no upper bound on that value.\n\nA crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar of that size.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": "2026-01-20",
+      "exception_id": "EXC-b94c077fed02",
+      "exception_status": "active",
+      "export_record_id": "EXP-0DAA161DF369",
+      "file": null,
+      "finding_id": "FND-CONTAINER-026cbd40a3d8",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "risk_accepted",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "risk_accepted",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-026cbd40a3d8"
+      ],
+      "source_record_hash": "645d5a23522565a31c372ecba40f38143da73f7524a37babe5e2721ebbb98721",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "risk_accepted",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-9538",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-BFB6E8BF1D59",
+      "file": null,
+      "finding_id": "FND-CONTAINER-033201244a2b",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "bsdutils",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-033201244a2b"
+      ],
+      "source_record_hash": "c71bf688d215324d8b37ff0ff94cf20a7fca5f5e3b35c51da51e57a617879d6a",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "bsdutils CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-CCA138759A8B",
+      "file": null,
+      "finding_id": "FND-CONTAINER-35a70101ee98",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libblkid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-35a70101ee98"
+      ],
+      "source_record_hash": "b8bf848b2d1631bbe3176d9a1e1c8f4f9bc89d94f24f488aa52e4f0a585be8bd",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libblkid1 CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-E5078D61EA75",
+      "file": null,
+      "finding_id": "FND-CONTAINER-35a7a61eb9e3",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libmount1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-35a7a61eb9e3"
+      ],
+      "source_record_hash": "6cdc5d372d0bfa9fb74d1f170837019b4ccda08cba704eeb047ebe015ad85c70",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libmount1 CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-42497",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-172E0B920741",
+      "file": null,
+      "finding_id": "FND-CONTAINER-3686ad447a1f",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-3686ad447a1f"
+      ],
+      "source_record_hash": "3a21476df38ed1ff11405b26cfed89e2555d1c84d97ebb56254e81d91f94d4b6",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-42497",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-48962",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-9B2BC3708B36",
+      "file": null,
+      "finding_id": "FND-CONTAINER-4a39d4c85743",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-4a39d4c85743"
+      ],
+      "source_record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-48962",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2025-69720",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-E35CE011A337",
+      "file": null,
+      "finding_id": "FND-CONTAINER-57b96cf12bee",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "6.5+20250216-2",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libtinfo6",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-57b96cf12bee"
+      ],
+      "source_record_hash": "3ac229e8856dc181256033ec8d9bb4dded74fc4cc2b8245e68e234e9a5bfd57c",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libtinfo6 CVE-2025-69720",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-42496",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
+      "due_date": "2026-01-04",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A8B16054EBB1",
+      "file": null,
+      "finding_id": "FND-CONTAINER-5ee1761422cc",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "critical",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 3,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 62.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-5ee1761422cc",
+        "FND-SUPPRESSIO-ef559061de8d"
+      ],
+      "source_record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-42496",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-54369",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "acl before version 2.4.0 contains a symlink traversal vulnerability in the libacl pathname-based functions acl_get_file(), acl_set_file(), acl_extended_file(), and acl_delete_def_file() that allows local attackers to escalate privileges by replacing any pathname component with a symbolic link. Attackers who control any component of a pathname processed by a privileged caller can redirect ACL read or write operations to arbitrary files or directories, enabling unauthorized manipulation of access control lists and local privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-6CA3E48D9DAE",
+      "file": null,
+      "finding_id": "FND-CONTAINER-6017bcc173f8",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.3.2-2+b1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libacl1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-6017bcc173f8"
+      ],
+      "source_record_hash": "3ce98785d3be341d733371c3d06aa6fe2ea500352786ea363bebf1e8a36e45bc",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libacl1 CVE-2026-54369",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2025-69720",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-4A54446E174D",
+      "file": null,
+      "finding_id": "FND-CONTAINER-6884a6a2aeb3",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "6.5+20250216-2",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libncursesw6",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-6884a6a2aeb3"
+      ],
+      "source_record_hash": "2845f44808a87dafc686cabe04e833369688e5baa00ef7990996345693ad9248",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libncursesw6 CVE-2025-69720",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2025-69720",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-736894FAE391",
+      "file": null,
+      "finding_id": "FND-CONTAINER-77763b149b4f",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "6.5+20250216-2",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "ncurses-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-77763b149b4f"
+      ],
+      "source_record_hash": "e752deac85ce054a71a56565faf368a170ad302e62ac146142b8d5b45f11de47",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "ncurses-base CVE-2025-69720",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-2A80FB5EC3F5",
+      "file": null,
+      "finding_id": "FND-CONTAINER-9360fa554791",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libuuid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-9360fa554791"
+      ],
+      "source_record_hash": "ed89248825b8988c24bcb1f273a16e309397226f8d5aa7092dd41e84dd3bb749",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libuuid1 CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-8376",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Perl versions through 5.43.10 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
+      "due_date": "2026-01-04",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A35403477103",
+      "file": null,
+      "finding_id": "FND-CONTAINER-95a38a1f2a20",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "5.40.1-6",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "critical",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 3,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 62.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-95a38a1f2a20",
+        "FND-SUPPRESSIO-5313851a0158"
+      ],
+      "source_record_hash": "bdfbd16f82bf62a362d2c5243e25e41b53e0ca06afec097827e94f2a6ef75a1c",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "perl-base CVE-2026-8376",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-F055D8A380A4",
+      "file": null,
+      "finding_id": "FND-CONTAINER-96b263718199",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "liblastlog2-2",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-96b263718199"
+      ],
+      "source_record_hash": "9adeef98729a64f59d05c91588eba760ce948447be9a7f0aa49d86815f32ca41",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "liblastlog2-2 CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-23E790462222",
+      "file": null,
+      "finding_id": "FND-CONTAINER-9bac41a1b5ac",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "util-linux",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-9bac41a1b5ac"
+      ],
+      "source_record_hash": "626385e63ddc2c999f9c43fd859bfee141a1575e4de93e7de36c9723fb59eaed",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "util-linux CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-D8D0F5136671",
+      "file": null,
+      "finding_id": "FND-CONTAINER-ba223b9333c9",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libsmartcols1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-ba223b9333c9"
+      ],
+      "source_record_hash": "17e283afb9f4765fa52222b7d79c3287457f9b0fa1c1bd5e388efa79ff70e905",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libsmartcols1 CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2025-69720",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based buffer overflow in analyze_string in progs/infocmp.c.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-BC7DAE053544",
+      "file": null,
+      "finding_id": "FND-CONTAINER-c1e6ced9904f",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "6.5+20250216-2",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "ncurses-bin",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-c1e6ced9904f"
+      ],
+      "source_record_hash": "523a039694be5bfee86918e0240ab8cbecd151480498b7cdaf012ba7df3b5596",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "ncurses-bin CVE-2025-69720",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-41992",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out\u2011of\u2011bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A04D71447940",
+      "file": null,
+      "finding_id": "FND-CONTAINER-c7563eb73df0",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1.13-1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "gzip",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-c7563eb73df0"
+      ],
+      "source_record_hash": "e21a715f787dbd62f33835df7ff922c7ffa88da153e5f57483608dceb3fae234",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "gzip CVE-2026-41992",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-CD9451796A65",
+      "file": null,
+      "finding_id": "FND-CONTAINER-d0df15bb32ed",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:4.16.0-2+really2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "login",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-d0df15bb32ed"
+      ],
+      "source_record_hash": "d626c5c7169b96509f9fa24734f1c94b621b7c521f788bd986cf2581ff9ab9bc",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "login CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-53615",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-C3A12BE5921F",
+      "file": null,
+      "finding_id": "FND-CONTAINER-ef0f3e5e6558",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41-5",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "mount",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-ef0f3e5e6558"
+      ],
+      "source_record_hash": "a4953d8ab310a0e7afc866456c7d90ed1841224bb1d3a23eb9289efe81e5aa20",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "mount CVE-2026-53615",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Future deployment identity risks remain until deployment workflows are activated.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-188501BE1507",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-0e84d1c52550",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-009",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-0e84d1c52550"
+      ],
+      "source_record_hash": "888056ce7dffb2529e5e956ee9f01a4febb7bf1665110dde96a54e98a958116c",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-CI-001"
+      ],
+      "title": "Residual design risk RR-009",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "A local application rate limiter is implemented for deterministic dynamic validation; production quota controls are not yet deployed.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-81C58FDA6403",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-17c88481ce5d",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-003",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-17c88481ce5d"
+      ],
+      "source_record_hash": "f7f53b7093b31244d6dece0fbed233048d0071e5b857827fbd05547fed86dcbd",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-API-005",
+        "THR-API-006"
+      ],
+      "title": "Residual design risk RR-003",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Core AppSec scanners are configured; release provenance and some local Docker-backed scans remain future or environment-dependent.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-6CD8A81614A0",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-667c88d66538",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-005",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-667c88d66538"
+      ],
+      "source_record_hash": "e0b3bb1094bc71b609da0f156ab3f3025460d993d91040b77a647ba2d281c5e5",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-SECRETS-001",
+        "THR-SUPPLY-001",
+        "THR-SUPPLY-002",
+        "THR-SUPPLY-003"
+      ],
+      "title": "Residual design risk RR-005",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Container hardening includes non-root runtime and pinned Trivy scan wiring, but local image scans depend on Docker availability.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-9289626FF591",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-77c7990be9b8",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-007",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-77c7990be9b8"
+      ],
+      "source_record_hash": "422b7bb1144efcbe6a81f228eb063b9416d7d6ba2dfedd1e755b8afa6119fb92",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-CONTAINER-001",
+        "THR-CONTAINER-002"
+      ],
+      "title": "Residual design risk RR-007",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Local RS256 JWT authentication exists; external production identity provider integration remains future work.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-B0D32A638B54",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-ac50e3235345",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-001",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-ac50e3235345"
+      ],
+      "source_record_hash": "54384db10434b5d2fcf0ed13bcba81e3d7afe30a41b7dcbaf5b96462c9f1ec41",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-AUTH-001",
+        "THR-AUTH-002"
+      ],
+      "title": "Residual design risk RR-001",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Cloud IAM, encrypted storage and Terraform controls are configured as code, but no cloud deployment exists.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-073E26724F4E",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-e7cd910bd1f6",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-006",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-e7cd910bd1f6"
+      ],
+      "source_record_hash": "2f0278b435c138638f675f66977509fa42651b0de1c3fd9d02f12a1643b21007",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-IAM-001",
+        "THR-IAM-002",
+        "THR-IAC-001",
+        "THR-IAC-002"
+      ],
+      "title": "Residual design risk RR-006",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "risk_accepted",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Security group is attached to the ECS service through a module output/input boundary that Checkov does not resolve.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": "2026-01-10",
+      "exception_id": "EXC-2a432868284d",
+      "exception_status": "active",
+      "export_record_id": "EXP-A5C3623EEAB8",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "risk_accepted",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "risk_accepted",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_security_group.ecs_tasks",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-1065083a8d4b"
+      ],
+      "source_record_hash": "668876439fba65825a37f42ccec2dfe42a993aa7434aa9a7e3563284fe4bed19",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "risk_accepted",
+      "suppression_id": "SUP-CHECKOV-SG-MODULE-GRAPH-002",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV2_AWS_5",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "assigned",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Secret value is populated outside Terraform; automatic rotation requires an application-specific rotation Lambda outside Milestone 5 scope.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": "2025-12-31",
+      "exception_id": "EXC-d7825aabab9c",
+      "exception_status": "expired",
+      "export_record_id": "EXP-D8BB06456282",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "assigned",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "assigned",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_secretsmanager_secret.application_config",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-47693ff859ed"
+      ],
+      "source_record_hash": "988923802bd6a9dc2468f1a9d5d5bc1d7685b5c3d70696327ec063201e99ad99",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "assigned",
+      "suppression_id": "SUP-CHECKOV-SECRETS-ROTATION-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV2_AWS_57",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Public port 80 is intentionally exposed only for HTTP-to-HTTPS redirect compatibility.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-FD6853EA0D53",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-65201925e5c5",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_security_group.alb",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-65201925e5c5"
+      ],
+      "source_record_hash": "a75acb1213420f66706220438f3cb82855c1739e4431ee9e4c7075fa43d3d2d0",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-ALB-PORT80-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_260",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Secret value is populated outside Terraform; automatic rotation requires an application-specific rotation Lambda outside Milestone 5 scope.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-7E9AC4CAA9D4",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-68e51d21b290",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_secretsmanager_secret.jwt_public_key",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-68e51d21b290"
+      ],
+      "source_record_hash": "ce61bc17686324738aef1c4ad94fc7072a144c13e7be44c8b1c958c34ee6f285",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-SECRETS-ROTATION-002",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV2_AWS_57",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "KMS key policies attached directly to a key must use Resource '*' while principals and actions carry the effective scope.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-5C16FC1CE63C",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_iam_policy_document.application_data",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-6dce772b98c3"
+      ],
+      "source_record_hash": "ab159a55d34124ca29c51c06f36ec6bb92a78a4d31be53da10a26cc806466904",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-KMS-KEYPOLICY-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_109,CKV_AWS_111,CKV_AWS_356",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "OIDC subject is exact but composed from Terraform variables across the environment/module boundary, which Checkov cannot resolve as a known organization.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A54AC0B4AE33",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_iam_policy_document.github_oidc_assume",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-713bb8f041d7"
+      ],
+      "source_record_hash": "05e22502a038b2e81f65903fc791b4c106105f0fc80109f4eb2502940471e1eb",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-GITHUB-OIDC-MODULE-GRAPH-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_358",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Port 80 listener is retained only to redirect HTTP clients to HTTPS; production has a Terraform precondition that prevents HTTP-only listener configuration.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-DD34A1A2257A",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_lb_listener.http",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-7b3ddcaa6af8"
+      ],
+      "source_record_hash": "35c48118274e8ddcc6ac946cd52f6710889396a0c862a14fbaef8566bf30e2ca",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-ALB-HTTP-REDIRECT-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_2",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Milestone 5 validates a single-region AWS reference architecture; cross-region CloudTrail log replication requires a second-region provider and destination bucket outside the current milestone scope.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-1F4ABC3EC90A",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-8632c434b354",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_s3_bucket.cloudtrail",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-8632c434b354"
+      ],
+      "source_record_hash": "b9e317b7d230a0ef62b39af8590c5ebed5ecf906ad2b2d02e3f0585b514a1930",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-AUDIT-REPLICATION-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_144",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Synthetic local-only RSA private key used to sign deterministic development JWTs.",
+      "due_date": "2027-01-12",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-8E2F390F01C5",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-974e196f7185",
+      "finding_type": "Secret",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "critical",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Application Engineering",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "resource": "tests/fixtures/keys/dev_private_key.pem",
+      "risk_owner": "Risk Owner",
+      "risk_score": 73.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-974e196f7185"
+      ],
+      "source_record_hash": "11baba3473bc75ccd175f22e09caf6db0ed4475d77b42045e49e2dfd2c7398b0",
+      "source_tools": [
+        "gitleaks"
+      ],
+      "squad": "Application Engineering",
+      "status": "triaged",
+      "suppression_id": "SUP-GITLEAKS-TEST-KEY-001",
+      "suppression_status": "active",
+      "technical_owner": "Application Engineering",
+      "threat_ids": [
+        "THR-API-001",
+        "THR-API-002"
+      ],
+      "title": "Suppressed gitleaks finding private-key",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "KMS key policies attached directly to a key must use Resource '*' while principals and actions carry the effective scope.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-E397BE2BFE69",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_iam_policy_document.secrets",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-b5c9f1d0aae2"
+      ],
+      "source_record_hash": "f10764c5d015fdb580dcc060e5eb09da7b736dd949683ddb36bc4313c7d9e97a",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-KMS-KEYPOLICY-002",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "KMS key policies attached directly to a key must use Resource '*' while principals and actions carry the effective scope.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-5BAB40D130C9",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-d403fca790bf",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_iam_policy_document.audit",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-d403fca790bf"
+      ],
+      "source_record_hash": "6b99530eff3c28e3cbf26070e1fd9dd5f6d04ab1856a3115d5177645709ebee1",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-KMS-KEYPOLICY-003",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_111,CKV_AWS_356",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "Security group is attached to the ALB through a module output/input boundary that Checkov does not resolve.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-89560C1D00BE",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-e0d3613118cd",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_security_group.alb",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-e0d3613118cd"
+      ],
+      "source_record_hash": "47438e238ec63b28d5e5e3fafb6aea158b880f2df13f86f337d23680fbb8c68c",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-SG-MODULE-GRAPH-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV2_AWS_5",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-TERRAFORM",
+      "asset_type": "infrastructure_code",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
+      "description": "TLS terminates at the ALB and backend traffic is restricted to the private ECS task security group on the application port.",
+      "due_date": "2027-01-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-D350D203BAEA",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-f1fb6d611749",
+      "finding_type": "IaC",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P2",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Cloud Security",
+      "remediation_sla_days": 376,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review reference infrastructure control before production deployment.",
+        "Review the suppression before expiry and keep compensating controls current."
+      ],
+      "required_approvals": [
+        "Cloud Security",
+        "Product Security",
+        "Risk Owner"
+      ],
+      "resource": "aws_lb_target_group.app",
+      "risk_owner": "Risk Owner",
+      "risk_score": 67.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-INFRA-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-f1fb6d611749"
+      ],
+      "source_record_hash": "386a5c518508ea5827d26bc647a50d928a9900beb040175b301d80f2f1ee6881",
+      "source_tools": [
+        "checkov"
+      ],
+      "squad": "Cloud Platform Security",
+      "status": "triaged",
+      "suppression_id": "SUP-CHECKOV-ALB-BACKEND-HTTP-001",
+      "suppression_status": "active",
+      "technical_owner": "Cloud Security",
+      "threat_ids": [
+        "THR-CLOUD-001"
+      ],
+      "title": "Suppressed checkov finding CKV_AWS_378",
+      "verification_status": "not_verified"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -39,8 +39,8 @@ def programme_summary() -> dict[str, Any]:
         "deployment_status": "not_deployed",
         "demonstration_data": True,
         "milestone_boundary": (
-            "Milestone 12 only; Repository 5 integration, dashboards and "
-            "Milestone 13 are not implemented."
+            "Milestone 12 champions evidence remains local and synthetic; Repository 5 "
+            "export is handled separately by the Milestone 13 integration contract."
         ),
     }
 

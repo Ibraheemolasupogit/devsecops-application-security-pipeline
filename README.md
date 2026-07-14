@@ -40,6 +40,8 @@ Milestone 11 adds developer security enablement: repository-specific secure deve
 
 Milestone 12 adds a local Security Champions programme: charter, role definition, onboarding, 90-day plan, monthly learning cadence, workshops, exercises, checklists, escalation model, metrics, maturity model, evidence and reports. It uses synthetic role-based records only and does not implement Repository 5 integration, dashboards, ticketing, messaging, deployment or AWS resource creation.
 
+Milestone 13 adds a versioned Repository 5 integration contract. It exports local product-security findings, lifecycle evidence, release-assurance evidence, lineage, ownership and metrics under `outputs/security/integration/` using contract `product-security-control-plane-export` version `1.0`. A consumer control plane can validate the bundle with `examples/integration-consumer/validate_bundle.py`. This milestone does not modify Repository 5, perform live ingestion, deploy, create AWS resources, upload externally, or start Milestone 14.
+
 ## Milestone 1 Scope
 
 Implemented:
@@ -449,14 +451,14 @@ Milestone 3 also implements local signed JWT authentication, RBAC, object-level 
 
 Milestone 4 adds secure AWS Terraform configuration for private ECS, least-privilege role separation, encrypted DynamoDB/Secrets/CloudTrail storage, CloudWatch/CloudTrail observability and secure remote-state design. These controls are configured and locally validated, not deployed.
 
-Planned future controls include external IdP integration, production rate limiting, Repository 5 integration and enterprise reporting.
+Planned future controls include external IdP integration, production rate limiting and later enterprise workflows beyond the local Milestone 13 export contract.
 
-This repository does not claim production-grade identity, monitoring, cloud deployment, vulnerability-management workflow or release-gate coverage.
+This repository does not claim production-grade identity, monitoring, cloud deployment, external Repository 5 ingestion, vulnerability-management workflow or release-gate coverage.
 
 ## Limitations
 
-State is in memory and resets when the app restarts. JWT keys under `tests/fixtures/keys/` are synthetic local development material only. Audit retrieval is a local demonstration endpoint restricted by role. Terraform is a non-deployed reference architecture; no AWS resource is created by the repository state. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances.
+State is in memory and resets when the app restarts. JWT keys under `tests/fixtures/keys/` are synthetic local development material only. Audit retrieval is a local demonstration endpoint restricted by role. Terraform is a non-deployed reference architecture; no AWS resource is created by the repository state. Threat-model risk ratings are qualitative portfolio artefacts, not production risk acceptances. The Repository 5 integration contract is a deterministic local export bundle only; no external transfer or consumer ingestion is performed.
 
 ## Future Milestones
 
-Later milestones may add external identity-provider integration, Repository 5 integration and enterprise reporting.
+Later milestones may add external identity-provider integration and enterprise reporting beyond the local export contract.

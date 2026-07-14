@@ -20,7 +20,7 @@
       "name": "Threat Model",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "a2dd4204aa4e1d3c1ab65cd2110c1cbd8c64b913749b8f4608de2586b34422df",
+      "source_checksum": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082",
       "source_manifest": "outputs/security/threat-model/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -112,7 +112,7 @@
       "name": "Security Champions",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "d3c8e2efd153ab5d85ba72075fe3987aa9d1f054e0270ad68b2320a8b088a356",
+      "source_checksum": "eafd7fe54b65afbeeb6efa3668e8049c8c639019f480d879008bd3275d8a31fd",
       "source_manifest": "outputs/security/champions/evidence-manifest.json",
       "verification_status": "passed"
     },

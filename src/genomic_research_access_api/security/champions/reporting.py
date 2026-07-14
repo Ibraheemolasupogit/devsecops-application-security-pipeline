@@ -51,8 +51,9 @@ for policy, release risk and formal acceptance.
 | Owner assignment | {metrics["owner_assignment_rate"]}% |
 | Verification completion | {metrics["verification_completion_rate"]}% |
 
-All programme records are synthetic demonstration data. No deployment, external messaging,
-ticketing or Repository 5 integration is implemented.
+All programme records are synthetic demonstration data. No deployment, external messaging
+or ticketing is implemented by the champions programme. Repository 5 export is handled
+separately by the Milestone 13 integration contract.
 """
 
 

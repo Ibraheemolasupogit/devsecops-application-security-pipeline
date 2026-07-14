@@ -1,5 +1,5 @@
 {
-  "control_count": 56,
+  "control_count": 60,
   "controls": [
     {
       "control_id": "SR-API-001",
@@ -698,6 +698,80 @@
       "verification_status": "validated_locally"
     },
     {
+      "control_id": "SR-INTEGRATION-001",
+      "deployment_dependency": "none",
+      "domain": "integration",
+      "evidence_references": [
+        "outputs/security/integration/integration-manifest.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-INTEGRATION-001"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001",
+        "THR-SUPPLY-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-INTEGRATION-002",
+      "deployment_dependency": "none",
+      "domain": "integration",
+      "evidence_references": [
+        "outputs/security/integration/finding-source-lineage.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-INTEGRATION-002"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-INTEGRATION-003",
+      "deployment_dependency": "none",
+      "domain": "integration",
+      "evidence_references": [
+        "outputs/security/integration/data-quality-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-INTEGRATION-003"
+      ],
+      "threat_ids": [
+        "THR-SECRETS-001",
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-INTEGRATION-004",
+      "deployment_dependency": "none",
+      "domain": "integration",
+      "evidence_references": [
+        "outputs/security/integration/compatibility-summary.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "product_security_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-INTEGRATION-004"
+      ],
+      "threat_ids": [
+        "THR-REVIEW-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
       "control_id": "SR-LIFECYCLE-001",
       "deployment_dependency": "none",
       "domain": "lifecycle",
@@ -1051,8 +1125,8 @@
   "coverage_by_status": {
     "implemented_as_code": 10,
     "planned": 2,
-    "validated_locally": 44
+    "validated_locally": 48
   },
-  "coverage_percentage": 96.43,
+  "coverage_percentage": 96.67,
   "schema_version": "1.0"
 }

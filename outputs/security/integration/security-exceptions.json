@@ -1,0 +1,161 @@
+{
+  "exceptions": [
+    {
+      "approved_at": "2026-01-01T00:00:00Z",
+      "approver_roles": [
+        "Product Security",
+        "Risk Owner"
+      ],
+      "business_justification": "Local portfolio demonstration requires explicit tracking of unresolved risk.",
+      "closed_at": null,
+      "compensating_controls": [
+        "The compute module consumes ecs_tasks_security_group_id in aws_ecs_service.app.network_configuration and Terraform validation covers module references."
+      ],
+      "decision": "approve",
+      "decision_reason": "Approved as a time-bound local portfolio exception.",
+      "effective_from": "2026-01-01",
+      "environment": "not_deployed",
+      "evidence_references": [
+        "outputs/security/findings/deduplicated-findings.json",
+        "outputs/security/release/release-gate-decision.json"
+      ],
+      "exception_id": "EXC-2a432868284d",
+      "expiry_date": "2026-01-10",
+      "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
+      "history": [
+        {
+          "actor_role": "Product Security",
+          "event_id": "EVT-f8046e6c7214",
+          "event_type": "exception_expiring",
+          "evidence_reference": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
+          "from_status": null,
+          "metadata": {
+            "exception_id": "EXC-2a432868284d"
+          },
+          "reason": "Controlled expiring exception fixture for local lifecycle governance.",
+          "timestamp": "2026-01-01T00:00:00Z",
+          "to_status": null,
+          "vulnerability_id": "VUL-676f647f505f"
+        }
+      ],
+      "maximum_duration_days": 30,
+      "requested_at": "2026-01-01T00:00:00Z",
+      "requested_by_role": "Technical Owner",
+      "residual_risk": "medium",
+      "review_date": "2026-01-10",
+      "revoked_at": null,
+      "risk_owner": "Risk Owner",
+      "schema_version": "1.0",
+      "scope": "vulnerability:VUL-676f647f505f;finding:FND-SUPPRESSIO-1065083a8d4b",
+      "status": "active",
+      "technical_owner": "Cloud Security",
+      "technical_rationale": "Finding remains visible while a time-bound exception records review context.",
+      "vulnerability_id": "VUL-676f647f505f"
+    },
+    {
+      "approved_at": "2026-01-01T00:00:00Z",
+      "approver_roles": [
+        "Product Security",
+        "Risk Owner"
+      ],
+      "business_justification": "Local portfolio demonstration requires explicit tracking of unresolved risk.",
+      "closed_at": null,
+      "compensating_controls": [
+        "No production deployment; evidence is local only."
+      ],
+      "decision": "approve",
+      "decision_reason": "Approved as a time-bound local portfolio exception.",
+      "effective_from": "2026-01-01",
+      "environment": "not_deployed",
+      "evidence_references": [
+        "outputs/security/findings/deduplicated-findings.json",
+        "outputs/security/release/release-gate-decision.json"
+      ],
+      "exception_id": "EXC-b94c077fed02",
+      "expiry_date": "2026-01-20",
+      "finding_id": "FND-CONTAINER-026cbd40a3d8",
+      "history": [
+        {
+          "actor_role": "Product Security",
+          "event_id": "EVT-01e2f1f92d3c",
+          "event_type": "exception_active",
+          "evidence_reference": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
+          "from_status": null,
+          "metadata": {
+            "exception_id": "EXC-b94c077fed02"
+          },
+          "reason": "Controlled active exception fixture for local lifecycle governance.",
+          "timestamp": "2026-01-01T00:00:00Z",
+          "to_status": null,
+          "vulnerability_id": "VUL-a8e391de2abc"
+        }
+      ],
+      "maximum_duration_days": 30,
+      "requested_at": "2026-01-01T00:00:00Z",
+      "requested_by_role": "Technical Owner",
+      "residual_risk": "medium",
+      "review_date": "2026-01-20",
+      "revoked_at": null,
+      "risk_owner": "Risk Owner",
+      "schema_version": "1.0",
+      "scope": "vulnerability:VUL-a8e391de2abc;finding:FND-CONTAINER-026cbd40a3d8",
+      "status": "active",
+      "technical_owner": "Platform Engineering",
+      "technical_rationale": "Finding remains visible while a time-bound exception records review context.",
+      "vulnerability_id": "VUL-a8e391de2abc"
+    },
+    {
+      "approved_at": "2025-12-01T00:00:00Z",
+      "approver_roles": [
+        "Product Security",
+        "Risk Owner"
+      ],
+      "business_justification": "Local portfolio demonstration requires explicit tracking of unresolved risk.",
+      "closed_at": null,
+      "compensating_controls": [
+        "Secret metadata is KMS encrypted, recovery window is enforced, and secret value management is explicitly external to Terraform."
+      ],
+      "decision": "approve",
+      "decision_reason": "Approved as a time-bound local portfolio exception.",
+      "effective_from": "2025-12-01",
+      "environment": "not_deployed",
+      "evidence_references": [
+        "outputs/security/findings/deduplicated-findings.json",
+        "outputs/security/release/release-gate-decision.json"
+      ],
+      "exception_id": "EXC-d7825aabab9c",
+      "expiry_date": "2025-12-31",
+      "finding_id": "FND-SUPPRESSIO-47693ff859ed",
+      "history": [
+        {
+          "actor_role": "Product Security",
+          "event_id": "EVT-681f3239c7f2",
+          "event_type": "exception_expired",
+          "evidence_reference": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
+          "from_status": null,
+          "metadata": {
+            "exception_id": "EXC-d7825aabab9c"
+          },
+          "reason": "Controlled expired exception fixture for local lifecycle governance.",
+          "timestamp": "2026-01-01T00:00:00Z",
+          "to_status": null,
+          "vulnerability_id": "VUL-3e4410d0f925"
+        }
+      ],
+      "maximum_duration_days": 30,
+      "requested_at": "2026-01-01T00:00:00Z",
+      "requested_by_role": "Technical Owner",
+      "residual_risk": "medium",
+      "review_date": "2025-12-31",
+      "revoked_at": null,
+      "risk_owner": "Risk Owner",
+      "schema_version": "1.0",
+      "scope": "vulnerability:VUL-3e4410d0f925;finding:FND-SUPPRESSIO-47693ff859ed",
+      "status": "expired",
+      "technical_owner": "Cloud Security",
+      "technical_rationale": "Finding remains visible while a time-bound exception records review context.",
+      "vulnerability_id": "VUL-3e4410d0f925"
+    }
+  ],
+  "schema_version": "1.0"
+}

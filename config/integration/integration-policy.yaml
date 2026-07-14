@@ -1,0 +1,17 @@
+{
+  "as_of_date_default": "2026-01-01",
+  "consumer": "enterprise-data-saas-security-control-plane",
+  "contract_name": "product-security-control-plane-export",
+  "contract_version": "1.0",
+  "deployment_status": "not_deployed",
+  "limitations": [
+    "Local export bundle only; no Repository 5 modification or live ingestion occurs.",
+    "No APIs, message queues, cloud resources, dashboards or external transfer are implemented.",
+    "Consumer-side identifiers are not fabricated."
+  ],
+  "minimum_consumer_version": "1.0",
+  "producer": "devsecops-application-security-pipeline",
+  "producer_repository": "devsecops-application-security-pipeline",
+  "producer_schema_version": "1.0",
+  "timestamp_default": "2026-01-01T00:00:00Z"
+}

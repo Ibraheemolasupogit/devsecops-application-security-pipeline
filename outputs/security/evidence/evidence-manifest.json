@@ -1,14 +1,14 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "bundle_id": "EVB-2b91719ce0bcd124",
-  "commit": "f59c4814548034976908a5129fc237ca895a38ee",
+  "bundle_id": "EVB-51743a7b28a9aa98",
+  "commit": "df654e3ac16249258cb8146ee18b0a95fd1a5281",
   "control_mapping_version": "1.0",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
   "deployment_status": "not_deployed",
   "failed_domains": 0,
   "input_checksums": {
-    "config/evidence/control-mapping.yaml": "053c311dea91a414ff5d1ce77fd1e8a9fbffa11b9532cde47455020da0ac3868",
+    "config/evidence/control-mapping.yaml": "825c0fbcb622e7975a93c761b71c56efe466a05d0125186ac5f345e5b2511785",
     "config/evidence/evidence-policy.yaml": "a36900c0a556a2142660f40ae55c45198651226db7aa90717275077e96aaf656",
     "config/evidence/metric-definitions.yaml": "09716c13ee49c2d1fc3fa6cbabdbcf7083b3fb70db25367e48a3727011802d9e",
     "config/evidence/report-policy.yaml": "4d79ec6380b2160ee71e268f822d8a9629ba72da99555217e01d960a03f35d46",
@@ -18,7 +18,7 @@
   "input_files": {
     "config/evidence/control-mapping.yaml": {
       "path": "config/evidence/control-mapping.yaml",
-      "sha256": "053c311dea91a414ff5d1ce77fd1e8a9fbffa11b9532cde47455020da0ac3868"
+      "sha256": "825c0fbcb622e7975a93c761b71c56efe466a05d0125186ac5f345e5b2511785"
     },
     "config/evidence/evidence-policy.yaml": {
       "path": "config/evidence/evidence-policy.yaml",
@@ -45,19 +45,19 @@
   "output_files": {
     "consolidated-evidence.json": {
       "path": "consolidated-evidence.json",
-      "sha256": "dc23759c0c72f856796337dc4faa3da64d89657984b9493362f2079db7b458a9"
+      "sha256": "59e0d8bd4e883a364c05b66d49bb738481aa4524d61d8bdd5ddc790da061205d"
     },
     "control-coverage.csv": {
       "path": "control-coverage.csv",
-      "sha256": "704003fe4dd75eac19b03f8e7343b2f8ed37f1672007559cf920db4a6276f130"
+      "sha256": "081fa1c9af16ccbaddebbefb6432528fc10d43ad01ea0b1a4e1b78b6207a732a"
     },
     "control-coverage.json": {
       "path": "control-coverage.json",
-      "sha256": "c805e701d94580e237b6c2a18de2a4dec1ece94fccb13a19ff6578d4ee5aac29"
+      "sha256": "590f3230451329b6b013d8c9bf47eeba8cf68bd6e2712cc174d7e2b5c9ae5257"
     },
     "evidence-domain-summary.json": {
       "path": "evidence-domain-summary.json",
-      "sha256": "d9c5d06f011dc9c1722ab57fdc081bed97a225c2dc7b2cfa7944e34136371a44"
+      "sha256": "c2850c34e786a77e15e4f78301d96f8c64fd1d2fc9eb885802365fa8125f8028"
     },
     "evidence-integrity-summary.json": {
       "path": "evidence-integrity-summary.json",
@@ -69,7 +69,7 @@
     },
     "portfolio-security-summary.json": {
       "path": "portfolio-security-summary.json",
-      "sha256": "1c7eecd97ef2f640a9164a38fcdce93374d0b1e12f2bacb12a8d67e9e8b0b4d0"
+      "sha256": "e1340ca446bfbad8bdac33d717da423738c777212a15c672d51e897f2943695b"
     },
     "release-assurance-summary.json": {
       "path": "release-assurance-summary.json",
@@ -81,11 +81,11 @@
     },
     "security-metrics.json": {
       "path": "security-metrics.json",
-      "sha256": "b698aaedbb7cdac993b6b574a5dc0680e986302383d6e7c908413090bfebd0b4"
+      "sha256": "5fa10e56a8ea5748784982f74c04573f5da6632c806caa738115199730700215"
     },
     "traceability-summary.json": {
       "path": "traceability-summary.json",
-      "sha256": "0a68211977cd58279afc4a5350ac003b436829d2b5e3941bdc6557f3080ae702"
+      "sha256": "ab7fede874430a96a78fd9499e150ea5e15c489e471453e7b1d61e3247f52343"
     },
     "vulnerability-management-summary.json": {
       "path": "vulnerability-management-summary.json",
@@ -107,13 +107,13 @@
   "source_manifest_checksums": {
     "api_security": "9220e28a605114c19f2838e8a503815ca13a68992446125f35b2287278171474",
     "appsec": "41ada5af4d052332124c9c717b86ba242ff3dfc5d59e032a28035bcf7fc560d9",
-    "champions": "d3c8e2efd153ab5d85ba72075fe3987aa9d1f054e0270ad68b2320a8b088a356",
+    "champions": "eafd7fe54b65afbeeb6efa3668e8049c8c639019f480d879008bd3275d8a31fd",
     "dynamic_security": "f69c09e7b53ae9e989da1d37cf5e13fcb27feec04fda2ba1c412ca09a242d968",
     "findings": "3b4a1ceaaa5aeb45876657c1424b4e68da3abcb262911e49a2d46d9680841bc7",
     "infrastructure": "8eea5e1dd1bc011c8c3d6e7f65b43c24c67b53d602f671427bbc06f947e03846",
     "lifecycle": "47cb445987a7cbddc94a47bdc80492d31affab4f1598d85b7e1ab3600ff022e5",
     "release_assurance": "f3f035abcca478af13055f4705141bebe92e5e5231bc49531fbb13caa052b8f6",
-    "threat_model": "a2dd4204aa4e1d3c1ab65cd2110c1cbd8c64b913749b8f4608de2586b34422df"
+    "threat_model": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082"
   },
   "source_manifests": {
     "api_security": "outputs/security/api-security/evidence-manifest.json",
