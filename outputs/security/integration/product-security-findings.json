@@ -527,7 +527,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-4a39d4c85743"
       ],
-      "source_record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
+      "source_record_hash": "8291982f4ea5fd923f8ac18a907866ffe94425629245212e64e76ae84496610d",
       "source_tools": [
         "trivy"
       ],
@@ -708,7 +708,7 @@
         "FND-CONTAINER-5ee1761422cc",
         "FND-SUPPRESSIO-ef559061de8d"
       ],
-      "source_record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
+      "source_record_hash": "6454878eb50cf52ca8af12586ee58c1abb95c63d597ed3059692c6b37890e437",
       "source_tools": [
         "trivy"
       ],
@@ -798,7 +798,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-6017bcc173f8"
       ],
-      "source_record_hash": "3ce98785d3be341d733371c3d06aa6fe2ea500352786ea363bebf1e8a36e45bc",
+      "source_record_hash": "986cca029a8ebb5c96044019e67a937e7021718734b9466e23f99d6e97575d9a",
       "source_tools": [
         "trivy"
       ],
@@ -2003,9 +2003,9 @@
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-17763A33B636",
+      "export_record_id": "EXP-6166F5BB25A6",
       "file": null,
-      "finding_id": "FND-DAST-8c69fdea3ac6",
+      "finding_id": "FND-DAST-7f68e8fb688f",
       "finding_type": "DAST",
       "first_detected": "2026-01-01",
       "fixed_version": null,
@@ -2042,7 +2042,7 @@
         "Review during normal maintenance."
       ],
       "required_approvals": [],
-      "resource": "http://host.docker.internal:8000/robots.txt",
+      "resource": "http://host.docker.internal:8000",
       "risk_owner": "Risk Owner",
       "risk_score": 52.25,
       "security_domain": "DAST",
@@ -2055,9 +2055,9 @@
         "outputs/security/dynamic/raw/zap-report.json"
       ],
       "source_finding_ids": [
-        "FND-DAST-8c69fdea3ac6"
+        "FND-DAST-7f68e8fb688f"
       ],
-      "source_record_hash": "220647597bb1d7379185ec64865d8d9d6ab30fc96b313696e566b70b5df5a193",
+      "source_record_hash": "847b463c68892e855b1a7efeaef67ce021b9a15162dee1c8d6f2d0749b9314e7",
       "source_tools": [
         "zap"
       ],
@@ -2146,7 +2146,7 @@
       "source_finding_ids": [
         "FND-DAST-e607d905531a"
       ],
-      "source_record_hash": "f54ed5ed5c2c60965a9a294b1ce6a31cb74af9e61323ae0b697a5b699103aa01",
+      "source_record_hash": "8330fbfce52141ab014839fabca28283273f987a0ab37142d1008ff44a7be3d5",
       "source_tools": [
         "zap"
       ],

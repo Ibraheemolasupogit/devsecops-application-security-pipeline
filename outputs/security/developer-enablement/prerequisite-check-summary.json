@@ -23,7 +23,7 @@
       "name": "docker_daemon",
       "native_path": "",
       "notes": "Required for Trivy, ZAP and Docker fallback execution.",
-      "status": "unavailable"
+      "status": "available"
     },
     {
       "name": "terraform",
@@ -35,13 +35,13 @@
       "name": "gitleaks",
       "native_path": "",
       "notes": "Native binary optional; pinned Docker image is supported.",
-      "status": "unavailable"
+      "status": "available_via_fallback"
     },
     {
       "name": "trivy",
       "native_path": "",
       "notes": "Native binary optional; pinned Docker image is supported.",
-      "status": "unavailable"
+      "status": "available_via_fallback"
     },
     {
       "name": "aws_credentials",
@@ -50,11 +50,11 @@
       "status": "not_required"
     }
   ],
-  "overall_status": "attention_required",
+  "overall_status": "ready_with_fallbacks",
   "schema_version": "1.0",
   "status_counts": {
-    "available": 4,
-    "not_required": 1,
-    "unavailable": 3
+    "available": 5,
+    "available_via_fallback": 2,
+    "not_required": 1
   }
 }

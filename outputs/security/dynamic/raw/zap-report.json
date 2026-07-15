@@ -1,8 +1,8 @@
 {
-  "@generated": "Tue, 14 Jul 2026 23:56:45",
+  "@generated": "Wed, 15 Jul 2026 08:39:45",
   "@programName": "ZAP",
   "@version": "2.16.1",
-  "created": "2026-07-14T23:56:45.177980258Z",
+  "created": "2026-07-15T08:39:45.151753429Z",
   "execution_status": "completed",
   "scan_mode": "baseline-passive",
   "sequences": [],
@@ -29,7 +29,7 @@
               "nodeName": null,
               "otherinfo": "The latest version of ZAP is 2.17.0",
               "param": "",
-              "uri": "http://host.docker.internal:8000/robots.txt"
+              "uri": "http://host.docker.internal:8000"
             }
           ],
           "name": "ZAP is Out of Date",
@@ -54,7 +54,7 @@
             {
               "attack": "",
               "evidence": "",
-              "id": "0",
+              "id": "4",
               "method": "GET",
               "nodeName": null,
               "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",
@@ -64,12 +64,12 @@
             {
               "attack": "",
               "evidence": "",
-              "id": "4",
+              "id": "1",
               "method": "GET",
               "nodeName": null,
               "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",
               "param": "",
-              "uri": "http://host.docker.internal:8000/robots.txt"
+              "uri": "http://host.docker.internal:8000/sitemap.xml"
             }
           ],
           "name": "Storable and Cacheable Content",
@@ -79,7 +79,7 @@
           "riskcode": "0",
           "riskdesc": "Informational (Medium)",
           "solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
-          "sourceid": "1",
+          "sourceid": "6",
           "systemic": false,
           "wascid": "13"
         }

@@ -518,13 +518,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
+          "record_hash": "8291982f4ea5fd923f8ac18a907866ffe94425629245212e64e76ae84496610d",
           "record_pointer": "/Results/0/Vulnerabilities/18",
           "summary": "perl-base CVE-2026-48962"
         }
       ],
       "source_finding_id": "CVE-2026-48962",
-      "source_record_hash": "d13acc55950699f88b91d72a69799a0d3f2c7b4ef9ec7156770b1f3a4ed9b629",
+      "source_record_hash": "8291982f4ea5fd923f8ac18a907866ffe94425629245212e64e76ae84496610d",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -700,13 +700,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
+          "record_hash": "6454878eb50cf52ca8af12586ee58c1abb95c63d597ed3059692c6b37890e437",
           "record_pointer": "/Results/0/Vulnerabilities/15",
           "summary": "perl-base CVE-2026-42496"
         }
       ],
       "source_finding_id": "CVE-2026-42496",
-      "source_record_hash": "9b33aee5d0c41dccd97909c5976df53cf9ef3cb15ff15b187c06711a0c102757",
+      "source_record_hash": "6454878eb50cf52ca8af12586ee58c1abb95c63d597ed3059692c6b37890e437",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -790,13 +790,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/appsec/raw/trivy.json",
-          "record_hash": "3ce98785d3be341d733371c3d06aa6fe2ea500352786ea363bebf1e8a36e45bc",
+          "record_hash": "986cca029a8ebb5c96044019e67a937e7021718734b9466e23f99d6e97575d9a",
           "record_pointer": "/Results/0/Vulnerabilities/2",
           "summary": "libacl1 CVE-2026-54369"
         }
       ],
       "source_finding_id": "CVE-2026-54369",
-      "source_record_hash": "3ce98785d3be341d733371c3d06aa6fe2ea500352786ea363bebf1e8a36e45bc",
+      "source_record_hash": "986cca029a8ebb5c96044019e67a937e7021718734b9466e23f99d6e97575d9a",
       "source_tool": "trivy",
       "source_type": "container_scan",
       "squad": "Platform Engineering",
@@ -1999,13 +1999,13 @@
       "cve": null,
       "cwe": "CWE-1104",
       "data_sensitivity": "high",
-      "deduplication_key": "dast|10116|http://host.docker.internal:8000/robots.txt",
+      "deduplication_key": "dast|10116|http://host.docker.internal:8000",
       "description": "<p>The version of ZAP you are using to test your app is out of date and is no longer being updated.</p><p>The risk level is set based on how out of date your ZAP version is.</p>",
       "due_date": "2026-03-02",
       "environment": "locally_validated",
       "exploitability": "unknown",
       "file": null,
-      "finding_id": "FND-DAST-8c69fdea3ac6",
+      "finding_id": "FND-DAST-7f68e8fb688f",
       "finding_type": "DAST",
       "first_detected": "2026-01-01",
       "fixed_version": null,
@@ -2039,7 +2039,7 @@
       "remediation_owner": "Application Engineering",
       "remediation_sla_days": 60,
       "repository": "devsecops-application-security-pipeline",
-      "resource": "http://host.docker.internal:8000/robots.txt",
+      "resource": "http://host.docker.internal:8000",
       "risk_owner": "Risk Owner",
       "risk_score": 52.25,
       "schema_version": "1.0",
@@ -2053,13 +2053,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/dynamic/raw/zap-report.json",
-          "record_hash": "220647597bb1d7379185ec64865d8d9d6ab30fc96b313696e566b70b5df5a193",
+          "record_hash": "847b463c68892e855b1a7efeaef67ce021b9a15162dee1c8d6f2d0749b9314e7",
           "record_pointer": "/site/0/alerts/0",
           "summary": "ZAP is Out of Date"
         }
       ],
       "source_finding_id": "10116",
-      "source_record_hash": "220647597bb1d7379185ec64865d8d9d6ab30fc96b313696e566b70b5df5a193",
+      "source_record_hash": "847b463c68892e855b1a7efeaef67ce021b9a15162dee1c8d6f2d0749b9314e7",
       "source_tool": "zap",
       "source_type": "dynamic_scan",
       "squad": "Application Engineering",
@@ -2145,13 +2145,13 @@
       "source_evidence": [
         {
           "path": "outputs/security/dynamic/raw/zap-report.json",
-          "record_hash": "f54ed5ed5c2c60965a9a294b1ce6a31cb74af9e61323ae0b697a5b699103aa01",
+          "record_hash": "8330fbfce52141ab014839fabca28283273f987a0ab37142d1008ff44a7be3d5",
           "record_pointer": "/site/0/alerts/1",
           "summary": "Storable and Cacheable Content"
         }
       ],
       "source_finding_id": "10049",
-      "source_record_hash": "f54ed5ed5c2c60965a9a294b1ce6a31cb74af9e61323ae0b697a5b699103aa01",
+      "source_record_hash": "8330fbfce52141ab014839fabca28283273f987a0ab37142d1008ff44a7be3d5",
       "source_tool": "zap",
       "source_type": "dynamic_scan",
       "squad": "Application Engineering",

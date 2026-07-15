@@ -291,13 +291,13 @@
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "finding_id": "FND-DAST-8c69fdea3ac6",
+      "finding_id": "FND-DAST-7f68e8fb688f",
       "lifecycle_status": "false_positive",
       "overdue": false,
       "previous_status": "triaged",
       "reopened_count": 0,
       "verification_status": "not_verified",
-      "vulnerability_id": "VUL-a86578cfcadc"
+      "vulnerability_id": "VUL-93adb5991eec"
     },
     {
       "due_date": "2026-04-01",

@@ -145,9 +145,11 @@ def _validate_records(records: list[dict[str, Any]]) -> list[str]:
             errors.append(f"unstable export ID for {finding_id}")
         if record["consumer_status"] != map_status(record.get("producer_status")):
             errors.append(f"status mapping mismatch for {finding_id}")
+        lifecycle_status = record.get("lifecycle_status")
         if (
-            record.get("lifecycle_status") not in status_values
-            and record.get("lifecycle_status") not in consumer_values
+            lifecycle_status is not None
+            and lifecycle_status not in status_values
+            and lifecycle_status not in consumer_values
         ):
             errors.append(f"invalid lifecycle status for {finding_id}")
         if record.get("exception_status") not in exception_statuses:

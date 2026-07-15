@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "8c9728f7247763b3164dc887ae7418d7c430e6851b005f99c08ccb6bf7013d2b"
+      "sha256": "b2aa2f0ee91b02aac7d72d5e1b630ed4124f9adb0b4cf7516112231af00d2d2c"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -71,15 +71,15 @@
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "58daa95d0aa7e9370e20233dc1fa093e05abdb85e93066cf3656382d002275a8"
+      "sha256": "9a7c315f0d8c1ddd027b769687f739f702506cdf8ab7db75ab58636c3d834bd2"
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
-      "sha256": "685d8e415dc46c1d1ed678b8400751ea3e3e2dc0d00f51d09d4e549774278e7b"
+      "sha256": "efcbee45806f5f3fa73db219c875fa0309d3733199fd87f3c303a18aa14bd20e"
     },
     "outputs/security/dynamic/raw/zap-report.json": {
       "path": "outputs/security/dynamic/raw/zap-report.json",
-      "sha256": "4f8f0b9c65575f8c76614cb43c2036581350435686e4403758cb3f51851caf2f"
+      "sha256": "dad4ac8ed624722a42455120dbaa906ae044bd84741fd66fd1d9970404bda459"
     },
     "outputs/security/dynamic/schemathesis-summary.json": {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
@@ -102,11 +102,11 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "ee3bcad04fbc47f142905e601181e2239fd32f2b32018e88bc23eed27c1f152a"
+      "sha256": "a22741d017d5f3654283c5cd83e72580206fb0a7e094697f0df174599b99a052"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
-      "sha256": "efa8735ef18cf6a6394f81bcb0d03d988a1fae3908139a18e0c427da4b2dcd2a"
+      "sha256": "2ccf0e5f843c9a64e2ff73ec0e62040bb24126fe2cd353cb0b69859b65d514e4"
     },
     "expired-suppressions.csv": {
       "path": "outputs/security/findings/expired-suppressions.csv",
@@ -114,7 +114,7 @@
     },
     "finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "8c8bfea65194251b12160ade07ce36c66b829081b25f9e287542dd35e62c7949"
+      "sha256": "238dba54d1b524f5f938e5841cfcdf2062c9d07e094d58d104c310fc8498f573"
     },
     "findings-summary.json": {
       "path": "outputs/security/findings/findings-summary.json",
@@ -122,11 +122,11 @@
     },
     "normalised-findings.csv": {
       "path": "outputs/security/findings/normalised-findings.csv",
-      "sha256": "a0c188693d2644439016b5f0debcdbdc03584838fba0bf7a16b2a281b53aaa5e"
+      "sha256": "703a1d497bb2816e40b3646f6f9a0b4aaba470578f699b401545f3a6df175819"
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "fa145c179813d648dbcfce67ea3ad90f9fd67c0f20620b2cfa3031c41f2270c8"
+      "sha256": "7397ffac504d5f43b00b37dcd0676c1a1d333b46c23b63f21baa7d4a38272d47"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",

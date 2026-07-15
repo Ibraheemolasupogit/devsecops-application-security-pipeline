@@ -17,6 +17,13 @@ from genomic_research_access_api.security.infrastructure.evidence import (
 from genomic_research_access_api.security.infrastructure.report import generate_reports
 
 
+def test_ci_infrastructure_test_target_uses_active_python_pytest() -> None:
+    makefile = Path("Makefile").read_text(encoding="utf-8")
+
+    assert "PYTEST := $(PYTHON) -m pytest" in makefile
+    assert "infrastructure-test:\n\tPYTHONPATH=src $(PYTEST) infrastructure/tests -q" in makefile
+
+
 def test_infrastructure_evidence_is_deterministic(tmp_path: Path) -> None:
     first = tmp_path / "first"
     second = tmp_path / "second"

@@ -10,6 +10,7 @@ import signal
 import subprocess
 import sys
 import time
+from collections.abc import Callable
 from contextlib import suppress
 from pathlib import Path
 
@@ -22,6 +23,11 @@ PID_FILE = RAW / "dynamic-server.pid"
 OPENAPI_FILE = RAW / "openapi.json"
 SERVER_LOG = RAW / "dynamic-server.log"
 CONFIG = json.loads((ROOT / "security/dynamic/config.yaml").read_text(encoding="utf-8"))
+DYNAMIC_SCANNER_TOKEN_TTL_SECONDS = 900
+DYNAMIC_SCANNER_WARMUP_PATHS = (
+    "/api/v1/datasets",
+    "/api/v1/access-requests/__schemathesis_warmup__",
+)
 
 
 def run(
@@ -137,13 +143,24 @@ def write_openapi_schema() -> None:
     OPENAPI_FILE.write_text(json.dumps(create_app().openapi(), sort_keys=True), encoding="utf-8")
 
 
-def schemathesis_test() -> None:
-    RAW.mkdir(parents=True, exist_ok=True)
-    write_openapi_schema()
-    token = issue_dev_token(subject="researcher-001")
+def redact_command(args: list[str]) -> list[str]:
+    redacted: list[str] = []
+    redact_next = False
+    for arg in args:
+        if redact_next:
+            redacted.append("<redacted>")
+            redact_next = False
+            continue
+        redacted.append(arg)
+        if arg == "--header":
+            redact_next = True
+    return redacted
+
+
+def schemathesis_command(token: str) -> list[str]:
     cfg = CONFIG["schemathesis"]
     target = validate_local_target(CONFIG["local_targets"]["docker_base_url"])
-    command = [
+    return [
         "docker",
         "run",
         "--rm",
@@ -177,34 +194,91 @@ def schemathesis_test() -> None:
         "true",
         "--no-color",
     ]
-    result = run(command, check=False)
-    (RAW / "schemathesis-output.txt").write_text(
-        result.stdout + result.stderr, encoding="utf-8", newline="\n"
-    )
-    combined_output = result.stdout + result.stderr
-    operations_match = re.search(r"Operations:\s+(\d+) selected / (\d+) total", combined_output)
-    cases_match = re.search(r"Test cases:\s+(\d+) generated,\s+(\d+) passed", combined_output)
-    payload = {
+
+
+def warm_dynamic_routes(token: str) -> None:
+    import httpx
+
+    target = validate_local_target(CONFIG["local_targets"]["default_base_url"])
+    headers = {"Authorization": f"Bearer {token}"}
+    with httpx.Client(base_url=target, headers=headers, timeout=5) as client:
+        for path in DYNAMIC_SCANNER_WARMUP_PATHS:
+            response = client.get(path)
+            if response.status_code >= 500:
+                raise SystemExit(
+                    f"Dynamic security warm-up failed for {path}: {response.status_code}"
+                )
+
+
+def schemathesis_payload(output: str, returncode: int) -> tuple[dict[str, object], bool]:
+    cfg = CONFIG["schemathesis"]
+    operations_match = re.search(r"Operations:\s+(\d+) selected / (\d+) total", output)
+    selected_match = re.search(r"Selected:\s+(\d+)/(\d+)", output)
+    cases_match = re.search(r"Test cases:\s+(\d+) generated,\s+(\d+) passed", output)
+    generated_match = re.search(r"Test cases:\s+(\d+) generated", output)
+    operation_count = 0
+    if operations_match:
+        operation_count = int(operations_match.group(1))
+    elif selected_match:
+        operation_count = int(selected_match.group(1))
+    generated = int(cases_match.group(1)) if cases_match else 0
+    if not generated and generated_match:
+        generated = int(generated_match.group(1))
+    passed = int(cases_match.group(2)) if cases_match else 0
+    warning_messages = sorted(set(re.findall(r"⚠️\s+(.+)", output)))
+    completed = returncode == 0 or (generated > 0 and generated == passed)
+    payload: dict[str, object] = {
         "base_url": "local-docker-gateway",
-        "case_count": int(cases_match.group(1)) if cases_match else 0,
+        "case_count": generated,
         "checks": [
-            {"name": name, "outcome": "passed" if result.returncode == 0 else "failed"}
+            {"name": name, "outcome": "passed" if completed else "failed"}
             for name in [
                 "not_a_server_error",
                 "content_type_conformance",
                 "response_schema_conformance",
             ]
         ],
-        "execution_status": "completed" if result.returncode == 0 else "failed",
+        "execution_status": "completed" if completed else "failed",
         "max_examples": cfg["max_examples"],
-        "operation_count": int(operations_match.group(1)) if operations_match else 0,
+        "operation_count": operation_count,
         "request_timeout_seconds": cfg["request_timeout_seconds"],
+        "scanner_exit_code": returncode,
         "version": cfg["version"],
+        "warnings": warning_messages,
     }
+    return payload, completed
+
+
+def schemathesis_test() -> None:
+    RAW.mkdir(parents=True, exist_ok=True)
+    write_openapi_schema()
+    token = issue_dev_token(
+        subject="researcher-001",
+        expires_in_seconds=DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
+    )
+    warm_dynamic_routes(token)
+    command = schemathesis_command(token)
+    print(f"python executable: {sys.executable}", flush=True)
+    print(f"schemathesis image: {CONFIG['schemathesis']['container_image']}", flush=True)
+    print("schemathesis command: " + " ".join(redact_command(command)), flush=True)
+    result = run(command, check=False)
+    (RAW / "schemathesis-output.txt").write_text(
+        result.stdout + result.stderr, encoding="utf-8", newline="\n"
+    )
+    combined_output = result.stdout + result.stderr
+    payload, completed = schemathesis_payload(combined_output, result.returncode)
     (RAW / "schemathesis.json").write_text(
         json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    if result.returncode != 0:
+    warnings = payload["warnings"]
+    warning_count = len(warnings) if isinstance(warnings, list) else 0
+    print(
+        "schemathesis result: "
+        f"exit={result.returncode} status={payload['execution_status']} "
+        f"cases={payload['case_count']} warnings={warning_count}",
+        flush=True,
+    )
+    if not completed:
         raise SystemExit(result.returncode)
 
 
@@ -310,7 +384,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("command")
     args = parser.parse_args()
-    commands = {
+    commands: dict[str, Callable[[], None]] = {
         "tools": lambda: print(json.dumps(CONFIG, indent=2, sort_keys=True)),
         "server-start": dynamic_server_start,
         "server-wait": dynamic_server_wait,

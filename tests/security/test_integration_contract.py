@@ -27,6 +27,7 @@ from genomic_research_access_api.security.integration.mappings import (
 from genomic_research_access_api.security.integration.reporting import generate_reports
 from genomic_research_access_api.security.integration.validator import (
     _validate_csv,
+    _validate_records,
     validate_export,
     validate_policy,
 )
@@ -66,6 +67,16 @@ def test_nullable_metric_counter_uses_explicit_bucket() -> None:
         [{"lifecycle_status": None}, {"lifecycle_status": "triaged"}],
         "lifecycle_status",
     ) == {"not_recorded": 1, "triaged": 1}
+
+
+def test_export_validation_allows_findings_without_lifecycle_record() -> None:
+    generate_bundle(timestamp="2026-01-01T00:00:00Z", as_of_date="2026-01-01")
+    findings = _read_json(OUTPUT_DIR / "product-security-findings.json")["findings"]
+    record = dict(findings[0], lifecycle_status=None)
+
+    errors = _validate_records([record])
+
+    assert not any("invalid lifecycle status" in error for error in errors)
 
 
 def test_records_preserve_required_security_context() -> None:

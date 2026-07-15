@@ -19,5 +19,11 @@
   "max_examples": 12,
   "operation_count": 9,
   "request_timeout_seconds": 5,
-  "version": "4.0.26"
+  "scanner_exit_code": 0,
+  "version": "4.0.26",
+  "warnings": [
+    "Missing authentication: 3 operations returned only 401/403 responses",
+    "Missing valid test data: 3 operations repeatedly returned 404 responses",
+    "Schema validation mismatch: 1 operation mostly rejected generated data"
+  ]
 }

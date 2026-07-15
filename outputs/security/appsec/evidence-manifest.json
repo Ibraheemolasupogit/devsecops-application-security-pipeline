@@ -6,7 +6,7 @@
   "input_files": {
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "8c9728f7247763b3164dc887ae7418d7c430e6851b005f99c08ccb6bf7013d2b"
+      "sha256": "b2aa2f0ee91b02aac7d72d5e1b630ed4124f9adb0b4cf7516112231af00d2d2c"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -30,11 +30,11 @@
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "58daa95d0aa7e9370e20233dc1fa093e05abdb85e93066cf3656382d002275a8"
+      "sha256": "9a7c315f0d8c1ddd027b769687f739f702506cdf8ab7db75ab58636c3d834bd2"
     },
     "outputs/security/appsec/sbom.cdx.json": {
       "path": "outputs/security/appsec/sbom.cdx.json",
-      "sha256": "3a2514092da667c1784c902a968c2126f4d30862d8dd3a1983cd47c0e9c80ec2"
+      "sha256": "46655d47ea6794b8510d7cf4828b208ec6a59c290ed5ca532e60653db9e3a83b"
     },
     "security/config/policy.yaml": {
       "path": "security/config/policy.yaml",

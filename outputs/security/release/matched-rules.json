@@ -780,10 +780,10 @@
     },
     {
       "decision": "warn",
-      "finding_id": "FND-DAST-8c69fdea3ac6",
+      "finding_id": "FND-DAST-7f68e8fb688f",
       "outcome": "matched",
       "priority": 210,
-      "rationale": "Finding FND-DAST-8c69fdea3ac6 is low or informational.",
+      "rationale": "Finding FND-DAST-7f68e8fb688f is low or informational.",
       "required_actions": [
         "Review during normal maintenance."
       ],
