@@ -117,7 +117,9 @@ def dynamic_pytest(selector: str = "tests/dynamic") -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     subprocess.run(
         [
-            str(ROOT / ".venv/bin/pytest"),
+            sys.executable,
+            "-m",
+            "pytest",
             selector,
             "-q",
             "--json-report",

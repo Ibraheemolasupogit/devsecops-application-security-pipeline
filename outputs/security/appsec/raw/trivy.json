@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2026-07-14T21:16:55.58085705Z",
+  "CreatedAt": "2026-07-15T00:04:30.227286834Z",
   "ArtifactName": "devsecops-application-security-pipeline:milestone5",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,7 +8,7 @@
       "Family": "debian",
       "Name": "13.6"
     },
-    "ImageID": "sha256:6fc6115583253cd89c0cb05408b89acbeb083f0b209421841b027906ef9a8c06",
+    "ImageID": "sha256:7750d43f1cdb4c203b0d889766da5d578527f478dea9f726ddccbcf6f05ccbd8",
     "DiffIDs": [
       "sha256:090e9c58f4748dd51573ae6f05678fa97237bbe946047a0433b0092ef6c4a704",
       "sha256:1e09695463df90596c8384bf3b8818aaf6775dc6f87a1abe68eabd730ff744c2",
@@ -16,18 +16,18 @@
       "sha256:5c1c2aa63cc672fb3b2819dd16432493ead0d3af26c732ffd82c10d667001c58",
       "sha256:c056a12af6178032a370550c94c8f099e988d5a9c2ab65016534a2b200a32217",
       "sha256:e58391a994176acb89d4fe81ea4ed58b2adb50e32e63f985d16e93fb0a290c41",
-      "sha256:30b1a7284d93d16c9ef6a03fdac97f4dd00ed76ba097d27b470403b82664059a",
-      "sha256:9c8aa972e03baf02c8f1d9326e7adab8f5937bd2281ccb09ce38003e4f2300e4"
+      "sha256:9527672c8f7feb28d72afcb72e6218cbc9808179ddfab14c769b33e489978cb6",
+      "sha256:285b5b52c483cbc74867011eaa13204ab7b3c7a8a8239000f2fdd73c3fa1ffcb"
     ],
     "RepoTags": [
       "devsecops-application-security-pipeline:milestone5"
     ],
     "RepoDigests": [
-      "devsecops-application-security-pipeline@sha256:6fc6115583253cd89c0cb05408b89acbeb083f0b209421841b027906ef9a8c06"
+      "devsecops-application-security-pipeline@sha256:7750d43f1cdb4c203b0d889766da5d578527f478dea9f726ddccbcf6f05ccbd8"
     ],
     "ImageConfig": {
       "architecture": "arm64",
-      "created": "2026-07-14T21:16:27.492168801Z",
+      "created": "2026-07-15T00:02:13.169942382Z",
       "history": [
         {
           "created": "2025-08-08T18:20:34Z",
@@ -102,35 +102,35 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-14T21:16:14Z",
+          "created": "2026-07-15T00:01:32Z",
           "created_by": "COPY /wheels /wheels # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-14T21:16:27Z",
+          "created": "2026-07-15T00:02:13Z",
           "created_by": "RUN /bin/sh -c apt-get update     \u0026\u0026 apt-get -y upgrade     \u0026\u0026 rm -rf /var/lib/apt/lists/*     \u0026\u0026 python -m pip install --no-cache-dir --no-index --find-links=/wheels genomic-research-access-api==0.1.0     \u0026\u0026 python -m pip uninstall -y pip setuptools wheel     \u0026\u0026 rm -rf /wheels /root/.cache/pip # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-14T21:16:27Z",
+          "created": "2026-07-15T00:02:13Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-14T21:16:27Z",
+          "created": "2026-07-15T00:02:13Z",
           "created_by": "EXPOSE map[8000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-14T21:16:27Z",
+          "created": "2026-07-15T00:02:13Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"python -c \\\"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).read()\\\"\"] \"30s\" \"5s\" \"10s\" \"0s\" '\\x03'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-14T21:16:27Z",
+          "created": "2026-07-15T00:02:13Z",
           "created_by": "CMD [\"uvicorn\" \"genomic_research_access_api.main:app\" \"--host\" \"0.0.0.0\" \"--port\" \"8000\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -146,8 +146,8 @@
           "sha256:5c1c2aa63cc672fb3b2819dd16432493ead0d3af26c732ffd82c10d667001c58",
           "sha256:c056a12af6178032a370550c94c8f099e988d5a9c2ab65016534a2b200a32217",
           "sha256:e58391a994176acb89d4fe81ea4ed58b2adb50e32e63f985d16e93fb0a290c41",
-          "sha256:30b1a7284d93d16c9ef6a03fdac97f4dd00ed76ba097d27b470403b82664059a",
-          "sha256:9c8aa972e03baf02c8f1d9326e7adab8f5937bd2281ccb09ce38003e4f2300e4"
+          "sha256:9527672c8f7feb28d72afcb72e6218cbc9808179ddfab14c769b33e489978cb6",
+          "sha256:285b5b52c483cbc74867011eaa13204ab7b3c7a8a8239000f2fdd73c3fa1ffcb"
         ]
       },
       "config": {

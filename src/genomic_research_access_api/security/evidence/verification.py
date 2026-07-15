@@ -121,10 +121,19 @@ def verify(output_dir: Path = OUTPUT_DIR) -> None:
     with tempfile.TemporaryDirectory() as temp_dir:
         from genomic_research_access_api.security.evidence.aggregation import generate
 
+        evidence = read_json(
+            resolve_manifest_reference(manifest_path, "consolidated-evidence.json")
+        )
         generate(
             Path(temp_dir),
             timestamp=manifest["controlled_timestamp"],
             as_of_date=manifest["as_of_date"],
+            repository_metadata={
+                "repository": manifest["repository"],
+                "branch": manifest["branch"],
+                "commit": manifest["commit"],
+                "dirty_worktree": bool(evidence["dirty_worktree"]),
+            },
         )
         for name, details in manifest["output_files"].items():
             if sha256_file(Path(temp_dir) / name) != details["sha256"]:

@@ -70,6 +70,32 @@ def test_generate_verify_and_tamper_detection(tmp_path: Path) -> None:
         verify(tmp_path)
 
 
+def test_verify_replays_recorded_repository_metadata(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    metadata = {
+        "repository": "recorded-repository",
+        "branch": "recorded-branch",
+        "commit": "recorded-commit",
+        "dirty_worktree": True,
+    }
+    generate(tmp_path, repository_metadata=metadata)
+
+    from genomic_research_access_api.security.evidence import aggregation
+
+    monkeypatch.setattr(
+        aggregation,
+        "_current_repository_metadata",
+        lambda: {
+            "repository": "different-repository",
+            "branch": "different-branch",
+            "commit": "different-commit",
+            "dirty_worktree": False,
+        },
+    )
+    verify(tmp_path)
+
+
 def test_lineage_references_are_supported_by_repository_artefacts() -> None:
     lineage = generate_lineage()
     assert len(lineage["edges"]) == 9

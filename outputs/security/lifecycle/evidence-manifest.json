@@ -34,18 +34,18 @@
     },
     "outputs/security/findings/deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "7008248e7440ec5b4340e1eac011eda2d854c788e938f8d652607b10956fdade"
+      "sha256": "ee3bcad04fbc47f142905e601181e2239fd32f2b32018e88bc23eed27c1f152a"
     },
     "outputs/security/findings/finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "238dba54d1b524f5f938e5841cfcdf2062c9d07e094d58d104c310fc8498f573"
+      "sha256": "8c8bfea65194251b12160ade07ce36c66b829081b25f9e287542dd35e62c7949"
     },
     "outputs/security/release/release-gate-decision.json": {
       "path": "outputs/security/release/release-gate-decision.json",
-      "sha256": "c53700857cb85a6cc1e81c32a01ae2b49fb98cec3ba87fda6a7c8fa7e61c28c0"
+      "sha256": "7de1a827d961333bdeb08a04019555b07e4515b75041a516164d9ad3e80354b6"
     }
   },
-  "input_findings_checksum": "7008248e7440ec5b4340e1eac011eda2d854c788e938f8d652607b10956fdade",
+  "input_findings_checksum": "ee3bcad04fbc47f142905e601181e2239fd32f2b32018e88bc23eed27c1f152a",
   "output_files": {
     "due-soon-findings.csv": {
       "path": "outputs/security/lifecycle/due-soon-findings.csv",
@@ -65,11 +65,11 @@
     },
     "false-positive-register.csv": {
       "path": "outputs/security/lifecycle/false-positive-register.csv",
-      "sha256": "c6deedf1f62bc3e4fa6074722fc1c1935548f9d7c0e2f9ec5b0e383af78d5718"
+      "sha256": "f2d7c0c9bd86c5ea672488d4c23bc332da919d0a5a200f64d17aee452e6b4b20"
     },
     "lifecycle-history.json": {
       "path": "outputs/security/lifecycle/lifecycle-history.json",
-      "sha256": "7d57ca1203994dea7f57191601e72af9de7c1c08431d122a8151060ba7a6129c"
+      "sha256": "cbe1d12df818de0ae95bc908adc0ec73927258b59ea81c6bf1e9e32b3699fa6b"
     },
     "lifecycle-summary.json": {
       "path": "outputs/security/lifecycle/lifecycle-summary.json",
@@ -101,11 +101,11 @@
     },
     "vulnerability-register.csv": {
       "path": "outputs/security/lifecycle/vulnerability-register.csv",
-      "sha256": "3775dac3449e0752067060f91eea6fdde365d2812003cd65025453d64fb4e85b"
+      "sha256": "8ab51b9471bcaab2a60eb6920a36664a9120ce0303bd46f65873c271ecf1c33e"
     },
     "vulnerability-register.json": {
       "path": "outputs/security/lifecycle/vulnerability-register.json",
-      "sha256": "a0bc4452e6f5e969eb3d98fecab7da663378ff3dac2aae596caffd0e9bbd03e2"
+      "sha256": "2552c6fe375eaebaa980b5a8634be67a30a944f6102e60bf56c9bc1e48d7a452"
     }
   },
   "policy_versions": {
@@ -118,7 +118,7 @@
     "config/lifecycle/verification-policy.yaml": "1.0"
   },
   "project_version": "0.1.0",
-  "release_decision_checksum": "c53700857cb85a6cc1e81c32a01ae2b49fb98cec3ba87fda6a7c8fa7e61c28c0",
+  "release_decision_checksum": "7de1a827d961333bdeb08a04019555b07e4515b75041a516164d9ad3e80354b6",
   "schema_version": "1.0",
   "verification_count": 0,
   "vulnerability_count": 44

@@ -2003,9 +2003,9 @@
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-6166F5BB25A6",
+      "export_record_id": "EXP-17763A33B636",
       "file": null,
-      "finding_id": "FND-DAST-7f68e8fb688f",
+      "finding_id": "FND-DAST-8c69fdea3ac6",
       "finding_type": "DAST",
       "first_detected": "2026-01-01",
       "fixed_version": null,
@@ -2042,7 +2042,7 @@
         "Review during normal maintenance."
       ],
       "required_approvals": [],
-      "resource": "http://host.docker.internal:8000",
+      "resource": "http://host.docker.internal:8000/robots.txt",
       "risk_owner": "Risk Owner",
       "risk_score": 52.25,
       "security_domain": "DAST",
@@ -2055,9 +2055,9 @@
         "outputs/security/dynamic/raw/zap-report.json"
       ],
       "source_finding_ids": [
-        "FND-DAST-7f68e8fb688f"
+        "FND-DAST-8c69fdea3ac6"
       ],
-      "source_record_hash": "10316e05fa27c0c4054af2b1e7fb94aed1d2512b7e050a32c24a590ddd8594ab",
+      "source_record_hash": "220647597bb1d7379185ec64865d8d9d6ab30fc96b313696e566b70b5df5a193",
       "source_tools": [
         "zap"
       ],
@@ -2146,7 +2146,7 @@
       "source_finding_ids": [
         "FND-DAST-e607d905531a"
       ],
-      "source_record_hash": "f91b936dd3dcff7e6bc40413cb5a39de6059fe6722dfbf88c01ccd1fe462c3c5",
+      "source_record_hash": "f54ed5ed5c2c60965a9a294b1ce6a31cb74af9e61323ae0b697a5b699103aa01",
       "source_tools": [
         "zap"
       ],

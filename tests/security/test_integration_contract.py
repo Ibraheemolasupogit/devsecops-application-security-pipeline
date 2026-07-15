@@ -16,7 +16,10 @@ from genomic_research_access_api.security.integration.enums import (
     CompatibilityStatus,
     ConsumerStatus,
 )
-from genomic_research_access_api.security.integration.exporter import generate_bundle
+from genomic_research_access_api.security.integration.exporter import (
+    _nullable_counter,
+    generate_bundle,
+)
 from genomic_research_access_api.security.integration.mappings import (
     map_status,
     stable_export_record_id,
@@ -56,6 +59,13 @@ def test_stable_export_id_and_mappings() -> None:
     assert map_status("triaged") == "triaged"
     assert map_status("suppressed") == "deferred"
     assert map_status("risk_accepted") == "risk_accepted"
+
+
+def test_nullable_metric_counter_uses_explicit_bucket() -> None:
+    assert _nullable_counter(
+        [{"lifecycle_status": None}, {"lifecycle_status": "triaged"}],
+        "lifecycle_status",
+    ) == {"not_recorded": 1, "triaged": 1}
 
 
 def test_records_preserve_required_security_context() -> None:

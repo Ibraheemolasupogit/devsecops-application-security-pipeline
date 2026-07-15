@@ -51,7 +51,8 @@ jobs:
         run: make developer-docs-validate
 
       - name: Upload Security Champions artifacts
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        # actions/upload-artifact v4.6.2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: security-champions
           path: |

@@ -504,9 +504,7 @@ def _metrics(
             1 for item in records if item.get("consumer_status") == "false_positive"
         ),
         "findings_by_domain": _counter(records, "security_domain"),
-        "findings_by_lifecycle_status": dict(
-            sorted(Counter(item["lifecycle_status"] for item in records).items())
-        ),
+        "findings_by_lifecycle_status": _nullable_counter(records, "lifecycle_status"),
         "findings_by_owner": _counter(records, "remediation_owner"),
         "findings_by_priority": _counter(records, "priority"),
         "findings_by_severity": dict(
@@ -558,6 +556,10 @@ def _data_quality(
 
 def _counter(records: list[dict[str, Any]], field: str) -> dict[str, int]:
     return dict(sorted(Counter(str(item.get(field)) for item in records).items()))
+
+
+def _nullable_counter(records: list[dict[str, Any]], field: str) -> dict[str, int]:
+    return dict(sorted(Counter(str(item.get(field) or "not_recorded") for item in records).items()))
 
 
 def _inputs() -> tuple[dict[str, str], dict[str, str]]:

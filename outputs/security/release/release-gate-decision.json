@@ -41,7 +41,7 @@
     "FND-SUPPRESSIO-f1fb6d611749"
   ],
   "decision": "conditional_pass",
-  "decision_id": "REL-53b297bb7b0a9e6a",
+  "decision_id": "REL-14e44eb34f910b75",
   "decision_timestamp": "2026-01-01T00:00:00Z",
   "deployment_status": "not_deployed",
   "environment": "dev",
@@ -52,7 +52,7 @@
     "outputs/security/release/matched-rules.json"
   ],
   "expired_suppression_finding_ids": [],
-  "findings_input_checksum": "7008248e7440ec5b4340e1eac011eda2d854c788e938f8d652607b10956fdade",
+  "findings_input_checksum": "ee3bcad04fbc47f142905e601181e2239fd32f2b32018e88bc23eed27c1f152a",
   "informational_finding_ids": [],
   "limitations": [
     "Portfolio demonstration policy, not Genomics England policy.",
@@ -96,7 +96,7 @@
   "schema_version": "1.0",
   "unowned_finding_ids": [],
   "warning_finding_ids": [
-    "FND-DAST-7f68e8fb688f",
+    "FND-DAST-8c69fdea3ac6",
     "FND-DAST-e607d905531a",
     "FND-SECUREDESI-0e84d1c52550",
     "FND-SECUREDESI-17c88481ce5d",

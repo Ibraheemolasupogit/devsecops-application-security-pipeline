@@ -69,7 +69,7 @@ WARN-NEW: Storable and Cacheable Content [10049] x 2
 	http://host.docker.internal:8000 (404 Not Found)
 	http://host.docker.internal:8000/robots.txt (404 Not Found)
 WARN-NEW: ZAP is Out of Date [10116] x 1
-	http://host.docker.internal:8000 (404 Not Found)
+	http://host.docker.internal:8000/robots.txt (404 Not Found)
 FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 2	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 65
 Automation plan warnings:
 	Job spider error accessing URL http://host.docker.internal:8000 status code returned : 404 expected 200

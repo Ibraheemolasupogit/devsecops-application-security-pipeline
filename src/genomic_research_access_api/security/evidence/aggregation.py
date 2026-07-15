@@ -33,6 +33,7 @@ def aggregate(
     *,
     timestamp: str = DEFAULT_TIMESTAMP,
     as_of_date: str = DEFAULT_AS_OF_DATE,
+    repository_metadata: dict[str, Any] | None = None,
 ) -> tuple[ConsolidatedEvidence, dict[str, Any]]:
     policy = load_config("evidence-policy.yaml")
     source_status = verify_sources()
@@ -96,10 +97,7 @@ def aggregate(
         source_status=source_status,
         controls=controls,
     )
-    repo = _git("rev-parse", "--show-toplevel")
-    branch = _git("branch", "--show-current")
-    commit = _git("rev-parse", "HEAD")
-    dirty = bool(_git("status", "--short"))
+    metadata = repository_metadata or _current_repository_metadata()
     bundle_id = _bundle_id(
         project_version=__version__,
         source_checksums=source_checksums,
@@ -111,10 +109,10 @@ def aggregate(
         evidence_bundle_id=bundle_id,
         project_name="devsecops-application-security-pipeline",
         project_version=__version__,
-        repository=Path(repo).name if repo else "devsecops-application-security-pipeline",
-        branch=branch,
-        commit=commit,
-        dirty_worktree=dirty,
+        repository=str(metadata["repository"]),
+        branch=str(metadata["branch"]),
+        commit=str(metadata["commit"]),
+        dirty_worktree=bool(metadata["dirty_worktree"]),
         controlled_timestamp=timestamp,
         as_of_date=as_of_date,
         deployment_status=policy["deployment_status"],
@@ -143,10 +141,15 @@ def generate(
     *,
     timestamp: str = DEFAULT_TIMESTAMP,
     as_of_date: str = DEFAULT_AS_OF_DATE,
+    repository_metadata: dict[str, Any] | None = None,
 ) -> list[Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
     SCHEMA_DIR.mkdir(parents=True, exist_ok=True)
-    evidence, validation = aggregate(timestamp=timestamp, as_of_date=as_of_date)
+    evidence, validation = aggregate(
+        timestamp=timestamp,
+        as_of_date=as_of_date,
+        repository_metadata=repository_metadata,
+    )
     lineage = generate_lineage()
     controls = evidence.control_coverage
     metrics = evidence.metrics
@@ -219,6 +222,16 @@ def generate(
 def _git(*args: str) -> str:
     result = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, check=False)
     return result.stdout.strip()
+
+
+def _current_repository_metadata() -> dict[str, Any]:
+    repo = _git("rev-parse", "--show-toplevel")
+    return {
+        "repository": Path(repo).name if repo else "devsecops-application-security-pipeline",
+        "branch": _git("branch", "--show-current"),
+        "commit": _git("rev-parse", "HEAD"),
+        "dirty_worktree": bool(_git("status", "--short")),
+    }
 
 
 def _bundle_id(
