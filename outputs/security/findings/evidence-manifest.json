@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "b2aa2f0ee91b02aac7d72d5e1b630ed4124f9adb0b4cf7516112231af00d2d2c"
+      "sha256": "39cf805ff034cd28943636da32d17cc7553976a9ea6513aabc6e5762edd49f52"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -67,19 +67,19 @@
     },
     "outputs/security/appsec/raw/semgrep.json": {
       "path": "outputs/security/appsec/raw/semgrep.json",
-      "sha256": "bfbbb5c6557f9d04693e747474edf2d7013b60f36e805398823cbb020463e219"
+      "sha256": "5d40339b610933e1c34edda083d69215047df77ba3680493e6ec17fa0b124ba5"
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "9a7c315f0d8c1ddd027b769687f739f702506cdf8ab7db75ab58636c3d834bd2"
+      "sha256": "43e5e916e19b094f1afabce6784c883cd2582d105aa2357d8938037280d0b3b0"
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
-      "sha256": "efcbee45806f5f3fa73db219c875fa0309d3733199fd87f3c303a18aa14bd20e"
+      "sha256": "8ead3cb559e6b770ebed8424529128d229fa3446110caf4bb9f219947303156d"
     },
     "outputs/security/dynamic/raw/zap-report.json": {
       "path": "outputs/security/dynamic/raw/zap-report.json",
-      "sha256": "dad4ac8ed624722a42455120dbaa906ae044bd84741fd66fd1d9970404bda459"
+      "sha256": "10278a51b121fb8a2b0b15f79616a228e82c04510c7468b8f2c6cf9349d31162"
     },
     "outputs/security/dynamic/schemathesis-summary.json": {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
@@ -102,7 +102,7 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "a22741d017d5f3654283c5cd83e72580206fb0a7e094697f0df174599b99a052"
+      "sha256": "cd957ef30f33ad12e7ac46f2ad415680581a769d7b9561054e8aea7830dd8a2e"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
@@ -126,7 +126,7 @@
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "7397ffac504d5f43b00b37dcd0676c1a1d333b46c23b63f21baa7d4a38272d47"
+      "sha256": "62da61e8239a61c79aa4ca0c2bc66e43b24e1b84f0aab548b8d87a287c2c7568"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",

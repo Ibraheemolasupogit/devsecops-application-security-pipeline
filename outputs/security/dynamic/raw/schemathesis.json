@@ -15,7 +15,10 @@
       "outcome": "passed"
     }
   ],
+  "distinct_failure_count": 0,
   "execution_status": "completed",
+  "failed_case_count": 0,
+  "failures": [],
   "max_examples": 12,
   "operation_count": 9,
   "request_timeout_seconds": 5,

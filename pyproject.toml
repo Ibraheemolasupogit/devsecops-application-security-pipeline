@@ -58,6 +58,7 @@ plugins = ["pydantic.mypy"]
 
 [tool.pytest.ini_options]
 addopts = "--strict-markers --strict-config"
+pythonpath = [".", "src"]
 testpaths = ["tests"]
 markers = [
   "dynamic_category(name): categorise Milestone 6 dynamic security tests for evidence generation",

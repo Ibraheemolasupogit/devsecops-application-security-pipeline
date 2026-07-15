@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+import importlib
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any, cast
 
@@ -8,7 +12,9 @@ import pytest
 from scripts.dynamic_security_tools import (
     DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
     DYNAMIC_SCANNER_WARMUP_PATHS,
+    print_schemathesis_failure_summary,
     redact_command,
+    schemathesis_failures,
     schemathesis_payload,
     warm_dynamic_routes,
 )
@@ -111,8 +117,132 @@ Test cases:
     assert completed is False
     assert payload["execution_status"] == "failed"
     assert payload["case_count"] == 64
+    assert payload["failed_case_count"] == 4
+    assert payload["distinct_failure_count"] == 4
     checks = cast(list[dict[str, Any]], payload["checks"])
     assert checks[0]["outcome"] == "failed"
+
+
+def test_scripts_package_imports_from_repository_root() -> None:
+    module = importlib.import_module("scripts.dynamic_security_tools")
+
+    assert module.__name__ == "scripts.dynamic_security_tools"
+
+
+def test_python_subprocess_imports_scripts_package_from_repository_root() -> None:
+    result = subprocess.run(
+        [sys.executable, "-c", "import scripts.dynamic_security_tools"],
+        cwd=Path.cwd(),
+        env=os.environ | {"PYTHONPATH": os.pathsep.join([".", "src"])},
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+
+
+def test_schemathesis_failure_detail_parsing_is_sanitised() -> None:
+    failures = schemathesis_failures(
+        """
+=================================== FAILURES ===================================
+_____________________________ GET /api/v1/datasets _____________________________
+1. Test Case ID: AbCd12
+
+- Response schema conformance failed
+
+[200] OK:
+
+    `{"dataset_id": 1}`
+
+Reproduce with:
+
+    curl -X GET -H 'Authorization: Bearer secret-token' http://host.docker.internal:8000/api/v1/datasets
+
+___________________ POST /api/v1/access-requests ___________________
+1. Test Case ID: EfGh34
+
+- Content-Type does not match the documented media type
+
+[422] Unprocessable Entity:
+
+Reproduce with:
+
+    curl -X POST -H 'Authorization: Bearer second-secret' http://host.docker.internal:8000/api/v1/access-requests
+"""
+    )
+
+    assert failures == [
+        {
+            "method": "GET",
+            "path": "/api/v1/datasets",
+            "test_case_id": "AbCd12",
+            "failed_check": "response_schema_conformance",
+            "failure_message": "Response schema conformance failed",
+            "response_status": "[200] OK",
+            "reproduction_command": (
+                "curl -X GET -H 'Authorization: <redacted>' "
+                "http://host.docker.internal:8000/api/v1/datasets"
+            ),
+        },
+        {
+            "method": "POST",
+            "path": "/api/v1/access-requests",
+            "test_case_id": "EfGh34",
+            "failed_check": "content_type_conformance",
+            "failure_message": "Content-Type does not match the documented media type",
+            "response_status": "[422] Unprocessable Entity",
+            "reproduction_command": (
+                "curl -X POST -H 'Authorization: <redacted>' "
+                "http://host.docker.internal:8000/api/v1/access-requests"
+            ),
+        },
+    ]
+
+
+def test_schemathesis_failure_summary_prints_bounded_redacted_details(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    payload, completed = schemathesis_payload(
+        """
+=================================== FAILURES ===================================
+___________________ GET /api/v1/datasets ___________________
+1. Test Case ID: Case01
+- Response time limit exceeded
+[200] OK:
+Reproduce with:
+    curl -X GET -H 'Authorization: Bearer secret-token' http://host.docker.internal:8000/api/v1/datasets
+
+Test cases:
+  39 generated, 1 found 1 unique failures
+""",
+        1,
+    )
+
+    assert completed is False
+    print_schemathesis_failure_summary(payload)
+    output = capsys.readouterr().out
+    assert "GET /api/v1/datasets" in output
+    assert "check=response_time" in output
+    assert "<redacted>" in output
+    assert "secret-token" not in output
+
+
+def test_successful_schemathesis_payload_has_no_failed_cases() -> None:
+    payload, completed = schemathesis_payload(
+        """
+API Operations:
+  Selected: 9/9
+Test cases:
+  64 generated, 64 passed
+""",
+        0,
+    )
+
+    assert completed is True
+    assert payload["case_count"] == 64
+    assert payload["failed_case_count"] == 0
+    assert payload["distinct_failure_count"] == 0
 
 
 def test_dynamic_route_warmup_uses_representative_authenticated_paths(

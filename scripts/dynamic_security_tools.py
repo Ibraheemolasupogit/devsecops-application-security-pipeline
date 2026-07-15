@@ -28,6 +28,7 @@ DYNAMIC_SCANNER_WARMUP_PATHS = (
     "/api/v1/datasets",
     "/api/v1/access-requests/__schemathesis_warmup__",
 )
+SCHEMATHESIS_FAILURE_SUMMARY_LIMIT = 3
 
 
 def run(
@@ -210,6 +211,76 @@ def warm_dynamic_routes(token: str) -> None:
                 )
 
 
+def sanitise_schemathesis_detail(value: str) -> str:
+    value = re.sub(r"(Authorization:\s*Bearer\s+)[^'\"\s]+", r"\1<redacted>", value)
+    value = re.sub(r"(Authorization:\s*)[^'\"\s]+", r"\1<redacted>", value)
+    value = re.sub(r"(-H\s+['\"]Authorization:\s*)[^'\"]+(['\"])", r"\1<redacted>\2", value)
+    return value
+
+
+def schemathesis_check_name(message: str) -> str:
+    lowered = message.lower()
+    if "response time" in lowered:
+        return "response_time"
+    if "content type" in lowered or "content-type" in lowered:
+        return "content_type_conformance"
+    if "schema" in lowered:
+        return "response_schema_conformance"
+    if "server error" in lowered or "[5" in lowered:
+        return "not_a_server_error"
+    return "schemathesis_check"
+
+
+def schemathesis_failure_count(output: str) -> int:
+    unique_match = re.search(r"(\d+) found (\d+) unique failures", output)
+    if unique_match:
+        return int(unique_match.group(2))
+    failure_match = re.search(r"=+\s+(\d+) failures?", output)
+    return int(failure_match.group(1)) if failure_match else 0
+
+
+def schemathesis_failures(output: str) -> list[dict[str, str]]:
+    failures: list[dict[str, str]] = []
+    current: dict[str, str] | None = None
+    capture_reproduction = False
+    operation_re = re.compile(r"^_+\s*(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\s+(.+?)\s*_+$")
+    for raw_line in output.splitlines():
+        line = sanitise_schemathesis_detail(raw_line.rstrip())
+        operation_match = operation_re.match(line.strip())
+        if operation_match:
+            if current is not None:
+                failures.append(current)
+            current = {
+                "method": operation_match.group(1),
+                "path": operation_match.group(2).strip(),
+            }
+            capture_reproduction = False
+            continue
+        if current is None:
+            continue
+        stripped = line.strip()
+        if stripped.startswith("1. Test Case ID:"):
+            current["test_case_id"] = stripped.split(":", maxsplit=1)[1].strip()
+            continue
+        if stripped.startswith("- ") and "failure_message" not in current:
+            message = stripped[2:].strip()
+            current["failed_check"] = schemathesis_check_name(message)
+            current["failure_message"] = message
+            continue
+        if re.match(r"^\[\d{3}\]", stripped):
+            current["response_status"] = stripped.rstrip(":")
+            continue
+        if stripped == "Reproduce with:":
+            capture_reproduction = True
+            continue
+        if capture_reproduction and stripped:
+            current["reproduction_command"] = stripped
+            capture_reproduction = False
+    if current is not None:
+        failures.append(current)
+    return failures[:SCHEMATHESIS_FAILURE_SUMMARY_LIMIT]
+
+
 def schemathesis_payload(output: str, returncode: int) -> tuple[dict[str, object], bool]:
     cfg = CONFIG["schemathesis"]
     operations_match = re.search(r"Operations:\s+(\d+) selected / (\d+) total", output)
@@ -227,9 +298,15 @@ def schemathesis_payload(output: str, returncode: int) -> tuple[dict[str, object
     passed = int(cases_match.group(2)) if cases_match else 0
     warning_messages = sorted(set(re.findall(r"⚠️\s+(.+)", output)))
     completed = returncode == 0 or (generated > 0 and generated == passed)
+    failures = schemathesis_failures(output)
+    distinct_failure_count = schemathesis_failure_count(output)
+    failed_case_count = generated - passed if cases_match else distinct_failure_count
     payload: dict[str, object] = {
         "base_url": "local-docker-gateway",
         "case_count": generated,
+        "distinct_failure_count": distinct_failure_count,
+        "failed_case_count": failed_case_count,
+        "failures": failures,
         "checks": [
             {"name": name, "outcome": "passed" if completed else "failed"}
             for name in [
@@ -247,6 +324,31 @@ def schemathesis_payload(output: str, returncode: int) -> tuple[dict[str, object
         "warnings": warning_messages,
     }
     return payload, completed
+
+
+def print_schemathesis_failure_summary(payload: dict[str, object]) -> None:
+    print("schemathesis failure summary:", flush=True)
+    print(f"  distinct failures: {payload['distinct_failure_count']}", flush=True)
+    failures = payload.get("failures", [])
+    if not isinstance(failures, list) or not failures:
+        print(
+            "  no bounded failure details parsed; inspect raw schemathesis-output.txt", flush=True
+        )
+        return
+    for index, failure in enumerate(failures, start=1):
+        if not isinstance(failure, dict):
+            continue
+        print(
+            "  "
+            f"{index}. {failure.get('method', 'UNKNOWN')} {failure.get('path', 'unknown')} "
+            f"check={failure.get('failed_check', 'unknown')} "
+            f"status={failure.get('response_status', 'unknown')} "
+            f"case={failure.get('test_case_id', 'unknown')}",
+            flush=True,
+        )
+        print(f"     message: {failure.get('failure_message', 'unknown')}", flush=True)
+        if failure.get("reproduction_command"):
+            print(f"     reproduce: {failure['reproduction_command']}", flush=True)
 
 
 def schemathesis_test() -> None:
@@ -279,6 +381,7 @@ def schemathesis_test() -> None:
         flush=True,
     )
     if not completed:
+        print_schemathesis_failure_summary(payload)
         raise SystemExit(result.returncode)
 
 

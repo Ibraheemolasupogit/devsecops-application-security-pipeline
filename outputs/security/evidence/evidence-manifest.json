@@ -1,8 +1,8 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "bundle_id": "EVB-cb1a5d35d045b2d6",
-  "commit": "6ab1c20203dc957d6c03aa94fa167ac0f7e71dec",
+  "bundle_id": "EVB-f9466d5b5280866f",
+  "commit": "2aec2f48ab61f14e7b8b60bc82c94e171c448ffe",
   "control_mapping_version": "1.0",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
   "deployment_status": "not_deployed",
@@ -45,7 +45,7 @@
   "output_files": {
     "consolidated-evidence.json": {
       "path": "consolidated-evidence.json",
-      "sha256": "cb150bb756bf4a751f4a2d714c666ff87336eaef1885fab9b03898f6824fbdb9"
+      "sha256": "08828d705276566d0d32b60bbd012d8b21a2bc94be5560ddb4e253834f2d6910"
     },
     "control-coverage.csv": {
       "path": "control-coverage.csv",
@@ -57,7 +57,7 @@
     },
     "evidence-domain-summary.json": {
       "path": "evidence-domain-summary.json",
-      "sha256": "acdae2dfdc97d367f868e6f5927f69e4776ff8e5bfc80efaef839ea0e6fc54c8"
+      "sha256": "0bae83b62c57fc3ce1e6b75c8eed87ed8d0594dce455915e7669613826864b5d"
     },
     "evidence-integrity-summary.json": {
       "path": "evidence-integrity-summary.json",
@@ -69,11 +69,11 @@
     },
     "portfolio-security-summary.json": {
       "path": "portfolio-security-summary.json",
-      "sha256": "1f3e2ebd74c79e6e20bf728a18c056fe33d8afe941a870aa6042bd9f28575b0f"
+      "sha256": "0930f414e723b1f2ce5f12b864ecd0ccd124df9f54dcaf62d997290573703acf"
     },
     "release-assurance-summary.json": {
       "path": "release-assurance-summary.json",
-      "sha256": "c264f2014398bc04cc68e47617cf91860ff651dadc22f09bdf8502d0600e67f8"
+      "sha256": "6e60a4aba52312bb58d097b1489b1a99af3fbe552ae156dc0c0688e81c6e5edc"
     },
     "security-exception-summary.json": {
       "path": "security-exception-summary.json",
@@ -106,13 +106,13 @@
   "schema_version": "1.0",
   "source_manifest_checksums": {
     "api_security": "9220e28a605114c19f2838e8a503815ca13a68992446125f35b2287278171474",
-    "appsec": "801db0c54efd0971a3eb050dbc82d983d806de6c79a302fd0b5c37634d334078",
+    "appsec": "79d0c867bd242c8a5645960b8835f429c4e83798cd926849a3e74897c7bb5be8",
     "champions": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
     "dynamic_security": "4847dee6f017483d0433c201de76df68123e74c124c8d9a94ba8785e55630e54",
-    "findings": "c5cd2be8e31435a508c80b9acf8d4a0452fd57af52d56ea0e18a47b04a6cb092",
+    "findings": "0cfe97872a3f5eb0dfa67488854d4327f7bd9d90399c3c679df201405fe241b7",
     "infrastructure": "8eea5e1dd1bc011c8c3d6e7f65b43c24c67b53d602f671427bbc06f947e03846",
-    "lifecycle": "9b16246239c3d3683ae1672038dfef65b9a1f67ace6842cb613917f30b0c32d3",
-    "release_assurance": "feb2afaf95502bd8273ecd584376f66c5f23c56c366cb2210e94f7e66888d559",
+    "lifecycle": "12a5b7add293b561aaa3ff401e8197d51294f11d5c90fd0140eeb0e52d7f995e",
+    "release_assurance": "73c59b5ca045a35d9051ab9b026518175c415e82d9aaf6dfdda459ee3eea54b4",
     "threat_model": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082"
   },
   "source_manifests": {
