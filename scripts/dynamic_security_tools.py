@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -35,6 +36,9 @@ DYNAMIC_SCANNER_WARMUP_PATHS = (
     "/api/v1/audit-events",
 )
 SCHEMATHESIS_FAILURE_SUMMARY_LIMIT = 3
+DIAGNOSTIC_TAIL_LINES = 160
+DIAGNOSTIC_TAIL_CHARS = 16_000
+JWT_RE = re.compile(r"\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b")
 
 
 @dataclass(frozen=True)
@@ -46,6 +50,38 @@ def run(
     args: list[str], *, check: bool = True, env: dict[str, str] | None = None
 ) -> subprocess.CompletedProcess[str]:
     return subprocess.run(args, cwd=ROOT, check=check, text=True, capture_output=True, env=env)
+
+
+def sanitise_diagnostic_text(value: str) -> str:
+    value = sanitise_schemathesis_detail(value)
+    value = JWT_RE.sub("<redacted-jwt>", value)
+    value = re.sub(
+        r"-----BEGIN [A-Z ]*PRIVATE KEY-----.*?-----END [A-Z ]*PRIVATE KEY-----",
+        "<redacted-private-key>",
+        value,
+        flags=re.S,
+    )
+    value = re.sub(r"(?i)(password|secret|token)\s*[:=]\s*[^'\"\s]+", r"\1=<redacted>", value)
+    value = value.replace(str(ROOT), "<repo>")
+    return value
+
+
+def bounded_text_tail(value: str, *, lines: int = DIAGNOSTIC_TAIL_LINES) -> str:
+    tail = "\n".join(value.splitlines()[-lines:])
+    if len(tail) > DIAGNOSTIC_TAIL_CHARS:
+        tail = tail[-DIAGNOSTIC_TAIL_CHARS:]
+    return sanitise_diagnostic_text(tail)
+
+
+def bounded_file_tail(path: Path, *, lines: int = DIAGNOSTIC_TAIL_LINES) -> str:
+    if not path.exists():
+        return f"{path.name} is not present"
+    return bounded_text_tail(path.read_text(encoding="utf-8", errors="replace"), lines=lines)
+
+
+def print_section(title: str, body: str) -> None:
+    print(f"--- {title} ---", flush=True)
+    print(body or "<empty>", flush=True)
 
 
 def server_env() -> dict[str, str]:
@@ -286,6 +322,32 @@ def schemathesis_failure_count(output: str) -> int:
     return int(failure_match.group(1)) if failure_match else 0
 
 
+def schemathesis_failure_classification(output: str, returncode: int) -> str:
+    lowered = output.lower()
+    if returncode == 0:
+        return "none"
+    if schemathesis_failure_count(output) > 0 or "failures" in lowered:
+        return "test_failures"
+    if "schema error" in lowered or "invalid schema" in lowered or "failed to load" in lowered:
+        return "schema_error"
+    if (
+        "connection refused" in lowered
+        or "name or service not known" in lowered
+        or "temporary failure in name resolution" in lowered
+        or "max retries exceeded" in lowered
+        or "network is unreachable" in lowered
+        or "failed to establish a new connection" in lowered
+    ):
+        return "network_error"
+    if "read timed out" in lowered or "timeout" in lowered or "timed out" in lowered:
+        return "timeout"
+    if "internal error" in lowered or "traceback" in lowered or "exception" in lowered:
+        return "scanner_error"
+    if "500 internal server error" in lowered or "server error" in lowered:
+        return "server_error"
+    return "unknown_failure"
+
+
 def schemathesis_failures(output: str) -> list[dict[str, str]]:
     failures: list[dict[str, str]] = []
     current: dict[str, str] | None = None
@@ -404,6 +466,7 @@ def schemathesis_payload(output: str, returncode: int) -> tuple[dict[str, object
         "base_url": "local-docker-gateway",
         "case_count": generated,
         "distinct_failure_count": distinct_failure_count,
+        "failure_classification": schemathesis_failure_classification(output, returncode),
         "failed_case_count": failed_case_count,
         "failures": failures,
         "checks": [
@@ -427,6 +490,7 @@ def schemathesis_payload(output: str, returncode: int) -> tuple[dict[str, object
 
 def print_schemathesis_failure_summary(payload: dict[str, object]) -> None:
     print("schemathesis failure summary:", flush=True)
+    print(f"  classification: {payload['failure_classification']}", flush=True)
     print(f"  distinct failures: {payload['distinct_failure_count']}", flush=True)
     failures = payload.get("failures", [])
     if not isinstance(failures, list) or not failures:
@@ -450,6 +514,69 @@ def print_schemathesis_failure_summary(payload: dict[str, object]) -> None:
             print(f"     reproduce: {failure['reproduction_command']}", flush=True)
 
 
+def print_schemathesis_diagnostics() -> None:
+    print_section(
+        "schemathesis raw output tail", bounded_file_tail(RAW / "schemathesis-output.txt")
+    )
+    result_file = RAW / "schemathesis.json"
+    print_section("schemathesis structured result", bounded_file_tail(result_file, lines=240))
+    print_section("dynamic server log tail", bounded_file_tail(SERVER_LOG, lines=120))
+
+
+def dynamic_preflight_diagnostics() -> None:
+    RAW.mkdir(parents=True, exist_ok=True)
+    docker_version = run(["docker", "--version"], check=False)
+    print_section(
+        "docker version",
+        bounded_text_tail(docker_version.stdout + docker_version.stderr),
+    )
+    cfg = CONFIG["schemathesis"]
+    print_section("schemathesis image", str(cfg["container_image"]))
+    if PID_FILE.exists():
+        pid = PID_FILE.read_text(encoding="utf-8").strip()
+        print_section("server pid state", f"pid_file={pid}\n{server_diagnostics()}")
+    else:
+        print_section("server pid state", "server pid file is not present")
+    if OPENAPI_FILE.exists():
+        digest = hashlib.sha256(OPENAPI_FILE.read_bytes()).hexdigest()
+        print_section(
+            "openapi file",
+            f"path={OPENAPI_FILE.name}\nsize={OPENAPI_FILE.stat().st_size}\nsha256={digest}",
+        )
+    else:
+        print_section("openapi file", "openapi.json is not present")
+    raw_stat = RAW.stat()
+    print_section("raw directory", f"path={RAW.name}\nmode={oct(raw_stat.st_mode & 0o777)}")
+
+
+def dynamic_diagnostics() -> None:
+    dynamic_preflight_diagnostics()
+    print_schemathesis_diagnostics()
+
+
+def docker_network_health_check() -> subprocess.CompletedProcess[str]:
+    target = validate_local_target(CONFIG["local_targets"]["docker_base_url"]) + "/health"
+    return run(
+        [
+            "docker",
+            "run",
+            "--rm",
+            "--add-host",
+            "host.docker.internal:host-gateway",
+            "--entrypoint",
+            "python",
+            CONFIG["schemathesis"]["container_image"],
+            "-c",
+            (
+                "import urllib.request; "
+                f"response=urllib.request.urlopen({target!r}, timeout=5); "
+                "print(response.status, response.read().decode())"
+            ),
+        ],
+        check=False,
+    )
+
+
 def schemathesis_test() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     token = issue_dev_token(
@@ -463,6 +590,14 @@ def schemathesis_test() -> None:
     command = schemathesis_command(token)
     print(f"python executable: {sys.executable}", flush=True)
     print(f"schemathesis image: {CONFIG['schemathesis']['container_image']}", flush=True)
+    dynamic_preflight_diagnostics()
+    network_check = docker_network_health_check()
+    print_section(
+        "container network health check",
+        bounded_text_tail(network_check.stdout + network_check.stderr),
+    )
+    if network_check.returncode != 0:
+        print(f"container network health check exit={network_check.returncode}", flush=True)
     print("schemathesis command: " + " ".join(redact_command(command)), flush=True)
     result = run(command, check=False)
     (RAW / "schemathesis-output.txt").write_text(
@@ -483,6 +618,7 @@ def schemathesis_test() -> None:
     )
     if not completed:
         print_schemathesis_failure_summary(payload)
+        print_schemathesis_diagnostics()
         raise SystemExit(result.returncode)
 
 
@@ -596,6 +732,7 @@ def main() -> None:
         "pytest": dynamic_pytest,
         "schemathesis": lambda: with_server("schemathesis"),
         "zap": lambda: with_server("zap"),
+        "diagnostics": dynamic_diagnostics,
         "evidence": dynamic_evidence,
         "report": dynamic_report,
         "full": dynamic_full,

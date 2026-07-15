@@ -1,8 +1,8 @@
 {
-  "@generated": "Wed, 15 Jul 2026 19:14:24",
+  "@generated": "Wed, 15 Jul 2026 20:35:53",
   "@programName": "ZAP",
   "@version": "2.16.1",
-  "created": "2026-07-15T19:14:24.325740220Z",
+  "created": "2026-07-15T20:35:53.701071596Z",
   "execution_status": "completed",
   "scan_mode": "baseline-passive",
   "sequences": [],
@@ -39,7 +39,7 @@
           "riskcode": "1",
           "riskdesc": "Low (High)",
           "solution": "<p>Download the latest version of ZAP from https://www.zaproxy.org/download/ and install it.</p>",
-          "sourceid": "1",
+          "sourceid": "7",
           "systemic": false,
           "wascid": "45"
         },
@@ -47,29 +47,19 @@
           "alert": "Storable and Cacheable Content",
           "alertRef": "10049-3",
           "confidence": "2",
-          "count": "2",
+          "count": "1",
           "cweid": "524",
           "desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
           "instances": [
             {
               "attack": "",
               "evidence": "",
-              "id": "4",
+              "id": "2",
               "method": "GET",
               "nodeName": null,
               "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",
               "param": "",
               "uri": "http://host.docker.internal:8000"
-            },
-            {
-              "attack": "",
-              "evidence": "",
-              "id": "0",
-              "method": "GET",
-              "nodeName": null,
-              "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",
-              "param": "",
-              "uri": "http://host.docker.internal:8000/robots.txt"
             }
           ],
           "name": "Storable and Cacheable Content",

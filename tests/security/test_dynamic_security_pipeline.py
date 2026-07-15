@@ -10,13 +10,17 @@ from typing import Any, cast
 
 import pytest
 from scripts.dynamic_security_tools import (
+    DIAGNOSTIC_TAIL_CHARS,
     DYNAMIC_SCANNER_ROLES,
     DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
     DYNAMIC_SCANNER_WARMUP_DATASET_ID,
     DYNAMIC_SCANNER_WARMUP_PATHS,
     DynamicWarmupState,
+    bounded_text_tail,
     print_schemathesis_failure_summary,
     redact_command,
+    sanitise_diagnostic_text,
+    schemathesis_failure_classification,
     schemathesis_failures,
     schemathesis_payload,
     warm_dynamic_routes,
@@ -130,6 +134,73 @@ Test cases:
     assert payload["distinct_failure_count"] == 4
     checks = cast(list[dict[str, Any]], payload["checks"])
     assert checks[0]["outcome"] == "failed"
+
+
+def test_schemathesis_exit_one_without_failure_blocks_is_classified_unknown() -> None:
+    payload, completed = schemathesis_payload(
+        """
+Schemathesis v4.0.26
+API Operations:
+  Selected: 9/9
+Test cases:
+  47 generated
+""",
+        1,
+    )
+
+    assert completed is False
+    assert payload["scanner_exit_code"] == 1
+    assert payload["case_count"] == 47
+    assert payload["distinct_failure_count"] == 0
+    assert payload["failure_classification"] == "unknown_failure"
+
+
+@pytest.mark.parametrize(
+    ("output", "expected"),
+    [
+        ("Connection refused while requesting http://host.docker.internal:8000", "network_error"),
+        ("Schema Error: Failed to load schema from /work/openapi.json", "schema_error"),
+        ("requests.exceptions.ReadTimeout: request timed out", "timeout"),
+        ("INTERNAL ERROR\nTraceback (most recent call last):", "scanner_error"),
+        ("500 Internal Server Error", "server_error"),
+        ("Test cases:\n  39 generated, 1 found 1 unique failures", "test_failures"),
+    ],
+)
+def test_schemathesis_failure_classification(output: str, expected: str) -> None:
+    assert schemathesis_failure_classification(output, 1) == expected
+
+
+def test_diagnostic_tail_is_bounded_and_redacted() -> None:
+    raw_jwt = "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJyZXNlYXJjaGVyLTAwMSJ9.signature"
+    raw = "\n".join(
+        [
+            f"line-{index} Authorization: Bearer secret-token token=secret-value {raw_jwt}"
+            for index in range(500)
+        ]
+    )
+
+    tail = bounded_text_tail(raw, lines=300)
+
+    assert len(tail) <= DIAGNOSTIC_TAIL_CHARS
+    assert "secret-token" not in tail
+    assert "secret-value" not in tail
+    assert raw_jwt not in tail
+    assert "<redacted" in tail
+
+
+def test_diagnostic_redaction_removes_private_key_material() -> None:
+    text = """
+-----BEGIN PRIVATE KEY-----
+not-a-real-key
+-----END PRIVATE KEY-----
+Authorization:Bearer abc.def.ghi
+"""
+
+    redacted = sanitise_diagnostic_text(text)
+
+    assert "not-a-real-key" not in redacted
+    assert "abc.def.ghi" not in redacted
+    assert "<redacted-private-key>" in redacted
 
 
 def test_scripts_package_imports_from_repository_root() -> None:
@@ -482,10 +553,23 @@ def test_documented_dynamic_pytest_target_uses_existing_wrapper() -> None:
     makefile = Path("Makefile").read_text(encoding="utf-8")
 
     assert "dynamic-pytest: dynamic-fast" in makefile
+    assert "dynamic-diagnostics:" in makefile
+    assert "scripts/dynamic_security_tools.py diagnostics" in makefile
     assert (
         "dynamic-fast:\n\tPYTHONPATH=src $(PYTHON) scripts/dynamic_security_tools.py pytest"
         in makefile
     )
+
+
+def test_api_dynamic_security_workflow_uploads_failure_diagnostics() -> None:
+    workflow = Path(".github/workflows/api-security.yml").read_text(encoding="utf-8")
+
+    assert "Print dynamic diagnostics on failure" in workflow
+    assert "if: failure()" in workflow
+    assert "make dynamic-diagnostics" in workflow
+    assert "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02" in workflow
+    assert "if: always()" in workflow
+    assert "outputs/security/dynamic/raw/" in workflow
 
 
 def test_schemathesis_command_redacts_auth_header() -> None:

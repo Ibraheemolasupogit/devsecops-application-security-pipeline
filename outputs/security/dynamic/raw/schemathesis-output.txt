@@ -13,11 +13,11 @@ Schemathesis v4.0.26
 
      Supports NULL byte in headers:    ✘
 
- ✅  Examples (in 1.10s)
+ ✅  Examples (in 0.96s)
 
      ✅ 1 passed  ⏭  8 skipped
 
- ✅  Fuzzing (in 0.73s)
+ ✅  Fuzzing (in 0.76s)
 
      ✅ 9 passed
 
@@ -68,4 +68,4 @@ Test cases:
 
 Seed: not used in the deterministic mode
 
-============================= 2 warnings in 1.85s ==============================
+============================= 2 warnings in 1.75s ==============================

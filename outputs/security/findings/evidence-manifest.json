@@ -75,11 +75,11 @@
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
-      "sha256": "b217aabb5f7947a63c0fb35894509379171899bdee9437f7f196db34fca62c5c"
+      "sha256": "646c50e35e0eb6711c822cb9f4debd48430380449d53386c5a84b79a6e5b4640"
     },
     "outputs/security/dynamic/raw/zap-report.json": {
       "path": "outputs/security/dynamic/raw/zap-report.json",
-      "sha256": "a47203d88f83144e9706c4790637da2db9b33ece316433f20b9aef5b10d5b5f0"
+      "sha256": "86ddb8d1a9dfc3eba87fbc7567a62e93472e442cbd80c92a2885cba9e409a8a3"
     },
     "outputs/security/dynamic/schemathesis-summary.json": {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
@@ -102,7 +102,7 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "9114ffd3009abaf291355465c05bae81736bc8976b91fb5d061d3f8cdb22c54b"
+      "sha256": "cada0ada312d96608ee403218c20e09eec734ee64a88eb6433da36e6c6d60b21"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
@@ -126,7 +126,7 @@
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "be45f86d6e00ae0408628482ae5f4c2f53d1d0197133e241cfb551004cb76166"
+      "sha256": "411340f9371d4c8aef59a22090231de6ac3f47da5806fa802d30614d0910d902"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",

@@ -41,6 +41,24 @@ jobs:
       - name: Schemathesis local API validation
         run: make schemathesis-test
 
+      - name: Print dynamic diagnostics on failure
+        if: failure()
+        run: make dynamic-diagnostics
+
+      - name: Upload dynamic diagnostics
+        if: always()
+        # actions/upload-artifact v4.6.2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dynamic-security-diagnostics
+          path: |
+            outputs/security/dynamic/raw/
+            outputs/security/dynamic/*.json
+            reports/security/dynamic-security-report.md
+            reports/security/zap-report.md
+          if-no-files-found: warn
+          retention-days: 14
+
       - name: OWASP ZAP local baseline
         run: make zap-baseline
 

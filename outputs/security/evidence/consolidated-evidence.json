@@ -1,7 +1,7 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "commit": "107814de93141f74e347d41967735eccd89cf094",
+  "commit": "c1f48a46b68d5826a41ceb2a4afefe919813f881",
   "control_coverage": {
     "control_count": 60,
     "controls": [
@@ -1294,7 +1294,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "221acd33f02653815ff261e9cc7fdfc650b65b916790da890989a7b11e69d6f9",
+      "source_checksum": "6d4219d7e2705c03cd10ce801983317e760c015306ab6e8bced66181f666e3a3",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -1316,7 +1316,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "5cc5173f3437afce86571e502dedb82814d3cc347ab5b63123ab7d40da0dde39",
+      "source_checksum": "f93f8fedd774163a080c89f18c1f83a0851b460bd525f26bc3e10d3bff3a1959",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -1340,12 +1340,12 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "72073c1ca9259c58c7b7c70dcaaa629141d8c542a2f430d4df7b5fb92e53b6ef",
+      "source_checksum": "a7b842b3292c1a4078bb7c52c6fb5881bd7df3d52799b5234015b48578ffc0bd",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }
   ],
-  "evidence_bundle_id": "EVB-341836fa5110a672",
+  "evidence_bundle_id": "EVB-919398ee4bcba257",
   "exception_summary": {
     "active_exceptions": 1,
     "exception_count": 3,
@@ -1415,10 +1415,10 @@
     "appsec": "79d0c867bd242c8a5645960b8835f429c4e83798cd926849a3e74897c7bb5be8",
     "champions": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
     "dynamic_security": "db68f7706fb686aa8e42f39619848ecb015f3dc580394f575bb6cfc2d667148c",
-    "findings": "221acd33f02653815ff261e9cc7fdfc650b65b916790da890989a7b11e69d6f9",
+    "findings": "6d4219d7e2705c03cd10ce801983317e760c015306ab6e8bced66181f666e3a3",
     "infrastructure": "8eea5e1dd1bc011c8c3d6e7f65b43c24c67b53d602f671427bbc06f947e03846",
-    "lifecycle": "72073c1ca9259c58c7b7c70dcaaa629141d8c542a2f430d4df7b5fb92e53b6ef",
-    "release_assurance": "5cc5173f3437afce86571e502dedb82814d3cc347ab5b63123ab7d40da0dde39",
+    "lifecycle": "a7b842b3292c1a4078bb7c52c6fb5881bd7df3d52799b5234015b48578ffc0bd",
+    "release_assurance": "f93f8fedd774163a080c89f18c1f83a0851b460bd525f26bc3e10d3bff3a1959",
     "threat_model": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082"
   },
   "input_manifests": {
@@ -1545,14 +1545,14 @@
     "schema_version": "1.0"
   },
   "output_checksums": {
-    "consolidated-evidence.json": "003f7e794c5afadb013e412b6257490f739e05e14a6d7153a4d9b2c7d8b0b7f4",
+    "consolidated-evidence.json": "4c248f6d7cecd2227cc83787e4f0b683bebc2799592fd5d63b6c31826f5f3b3b",
     "control-coverage.csv": "081fa1c9af16ccbaddebbefb6432528fc10d43ad01ea0b1a4e1b78b6207a732a",
     "control-coverage.json": "590f3230451329b6b013d8c9bf47eeba8cf68bd6e2712cc174d7e2b5c9ae5257",
-    "evidence-domain-summary.json": "f4bf527032808f44acd7f65be41ecec10767282bd952af15c4b1f5377c34a804",
+    "evidence-domain-summary.json": "fbdc0f65cbb167d7970e6adfe6550897142c8db128a3723c792b4e81e5d89b78",
     "evidence-integrity-summary.json": "b014cf6d8de114e00289e06dd9637886acb53a22e914060bdc78c4bffdef261c",
     "evidence-lineage.json": "556b86e1ce448006e6721ef395c2d02df337d2d6d85359f75d0b2cda69a579a1",
-    "portfolio-security-summary.json": "a6b468ef8f64f7adfbb69408c523e90ba762bd368f7c0824b78dc83a0858ac45",
-    "release-assurance-summary.json": "78c187b5aac2d560f7c2ab97d7e0bfe4e5cb890a871b16eba80b397ec0f2d090",
+    "portfolio-security-summary.json": "5cc1bdf7e61ade5e616cea138d6cac6683783c7e66f68d5e30b5638f2474b1df",
+    "release-assurance-summary.json": "b540ef7d3d9e4c05796ebea6dd7f5dc2df313c67ac9fd281f4f24c9aa4767d55",
     "security-exception-summary.json": "4c9df0a4a512225f2c7ef60c6fd7999432b72c155b552e9b0cda0968426ba3d8",
     "security-metrics.json": "5984f479b454d59172d8e86cc1b951c58ef97ae635b461d4b95321ad7296f133",
     "traceability-summary.json": "ab7fede874430a96a78fd9499e150ea5e15c489e471453e7b1d61e3247f52343",
@@ -1603,7 +1603,7 @@
       "FND-SUPPRESSIO-f1fb6d611749"
     ],
     "decision": "conditional_pass",
-    "decision_id": "REL-2004ea7d0318ce87",
+    "decision_id": "REL-48296a4d34a3fdc7",
     "decision_timestamp": "2026-01-01T00:00:00Z",
     "deployment_status": "not_deployed",
     "environment": "dev",
@@ -1614,7 +1614,7 @@
       "outputs/security/release/matched-rules.json"
     ],
     "expired_suppression_finding_ids": [],
-    "findings_input_checksum": "9114ffd3009abaf291355465c05bae81736bc8976b91fb5d061d3f8cdb22c54b",
+    "findings_input_checksum": "cada0ada312d96608ee403218c20e09eec734ee64a88eb6433da36e6c6d60b21",
     "informational_finding_ids": [],
     "limitations": [
       "Portfolio demonstration policy, not Genomics England policy.",

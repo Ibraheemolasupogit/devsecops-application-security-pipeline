@@ -18,6 +18,7 @@
   "distinct_failure_count": 0,
   "execution_status": "completed",
   "failed_case_count": 0,
+  "failure_classification": "none",
   "failures": [],
   "max_examples": 12,
   "operation_count": 9,
