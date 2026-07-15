@@ -8,9 +8,9 @@
   "local_only": true,
   "milestone_boundary": "Milestone 11 only; Milestone 12 Security Champions is not implemented.",
   "prerequisite_status_counts": {
-    "available": 5,
-    "available_via_fallback": 2,
-    "not_required": 1
+    "available": 4,
+    "not_required": 1,
+    "unavailable": 3
   },
   "pull_request_checklist_coverage": {
     "covered": 17,

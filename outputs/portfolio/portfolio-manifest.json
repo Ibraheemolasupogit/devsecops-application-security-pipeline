@@ -14,7 +14,7 @@
   ],
   "git": {
     "branch": "main",
-    "commit": "2aec2f48ab61",
+    "commit": "107814de9314",
     "dirty": "true"
   },
   "input_files": {
@@ -38,7 +38,7 @@
   "output_files": {
     "evidence-index.json": {
       "path": "outputs/security/portfolio/evidence-index.json",
-      "sha256": "050e7f31dc52d7ae794370950f013b5dd46ffceaa0c3218d9d7f0bbccc185071",
+      "sha256": "2cdf10c904402419e012d751c30e76adf79a7d2eb79c01bd8c63b714c6b953f5",
       "size_bytes": 2487
     },
     "milestone-completion.json": {
@@ -58,12 +58,12 @@
     },
     "portfolio-summary.json": {
       "path": "outputs/security/portfolio/portfolio-summary.json",
-      "sha256": "d6a26038e434e7af8f68502bbd3dadc591175988fcf5134f116147c63b66286e",
+      "sha256": "417b0a06f955045d2263795956eae7b943a797b704b377cfb3bd14bca98f9691",
       "size_bytes": 930
     },
     "report-index.json": {
       "path": "outputs/security/portfolio/report-index.json",
-      "sha256": "d539d52dbca865f240ddfcbb862d4e65b66d33fa5af589c6fc7688d1d8eb7757",
+      "sha256": "80d06b29d81fca03ee18b469e382bd5bd4988de6c81d426b477a889fecd87ccf",
       "size_bytes": 3239
     },
     "security-capability-matrix.json": {
@@ -72,6 +72,6 @@
       "size_bytes": 7933
     }
   },
-  "portfolio_id": "PF-a85617c55bbdd219",
+  "portfolio_id": "PF-7064eb6c6bfc28c7",
   "schema_version": "1.0"
 }

@@ -12,8 +12,10 @@ import sys
 import time
 from collections.abc import Callable
 from contextlib import suppress
+from dataclasses import dataclass
 from pathlib import Path
 
+from genomic_research_access_api.domain.enums import ActorRole
 from genomic_research_access_api.security.authentication.dev_tokens import issue_dev_token
 from genomic_research_access_api.security.dynamic.config import validate_local_target
 
@@ -24,11 +26,20 @@ OPENAPI_FILE = RAW / "openapi.json"
 SERVER_LOG = RAW / "dynamic-server.log"
 CONFIG = json.loads((ROOT / "security/dynamic/config.yaml").read_text(encoding="utf-8"))
 DYNAMIC_SCANNER_TOKEN_TTL_SECONDS = 900
+DYNAMIC_SCANNER_ROLES = (ActorRole.RESEARCHER, ActorRole.SECURITY_AUDITOR)
+DYNAMIC_SCANNER_WARMUP_DATASET_ID = "syn-rare-disease-001"
 DYNAMIC_SCANNER_WARMUP_PATHS = (
     "/api/v1/datasets",
-    "/api/v1/access-requests/__schemathesis_warmup__",
+    "/api/v1/access-requests",
+    "/api/v1/access-requests/{request_id}",
+    "/api/v1/audit-events",
 )
 SCHEMATHESIS_FAILURE_SUMMARY_LIMIT = 3
+
+
+@dataclass(frozen=True)
+class DynamicWarmupState:
+    request_id: str
 
 
 def run(
@@ -138,10 +149,16 @@ def dynamic_pytest(selector: str = "tests/dynamic") -> None:
     )
 
 
-def write_openapi_schema() -> None:
+def write_openapi_schema(state: DynamicWarmupState | None = None) -> None:
     from genomic_research_access_api.main import create_app
 
-    OPENAPI_FILE.write_text(json.dumps(create_app().openapi(), sort_keys=True), encoding="utf-8")
+    schema = create_app().openapi()
+    if state is not None:
+        paths = schema["paths"]
+        request_parameter = paths["/api/v1/access-requests/{request_id}"]["get"]["parameters"][0]
+        request_parameter["example"] = state.request_id
+        request_parameter["schema"]["examples"] = [state.request_id]
+    OPENAPI_FILE.write_text(json.dumps(schema, sort_keys=True), encoding="utf-8")
 
 
 def redact_command(args: list[str]) -> list[str]:
@@ -197,18 +214,43 @@ def schemathesis_command(token: str) -> list[str]:
     ]
 
 
-def warm_dynamic_routes(token: str) -> None:
+def warm_dynamic_routes(token: str) -> DynamicWarmupState:
     import httpx
 
     target = validate_local_target(CONFIG["local_targets"]["default_base_url"])
     headers = {"Authorization": f"Bearer {token}"}
     with httpx.Client(base_url=target, headers=headers, timeout=5) as client:
-        for path in DYNAMIC_SCANNER_WARMUP_PATHS:
+        dataset_response = client.get("/api/v1/datasets")
+        if dataset_response.status_code != 200:
+            raise SystemExit(
+                "Dynamic security warm-up failed for /api/v1/datasets: "
+                f"{dataset_response.status_code}"
+            )
+        create_response = client.post(
+            "/api/v1/access-requests",
+            json={
+                "dataset_id": DYNAMIC_SCANNER_WARMUP_DATASET_ID,
+                "research_purpose": "Schemathesis deterministic dynamic security warm-up.",
+                "requested_access_level": "aggregate_analysis",
+            },
+        )
+        if create_response.status_code != 201:
+            raise SystemExit(
+                "Dynamic security warm-up failed for /api/v1/access-requests: "
+                f"{create_response.status_code}"
+            )
+        request_id = str(create_response.json()["request_id"])
+        for path in (
+            "/api/v1/access-requests",
+            f"/api/v1/access-requests/{request_id}",
+            "/api/v1/audit-events",
+        ):
             response = client.get(path)
-            if response.status_code >= 500:
+            if response.status_code != 200:
                 raise SystemExit(
                     f"Dynamic security warm-up failed for {path}: {response.status_code}"
                 )
+    return DynamicWarmupState(request_id=request_id)
 
 
 def sanitise_schemathesis_detail(value: str) -> str:
@@ -224,7 +266,12 @@ def schemathesis_check_name(message: str) -> str:
         return "response_time"
     if "content type" in lowered or "content-type" in lowered:
         return "content_type_conformance"
-    if "schema" in lowered:
+    if (
+        "schema" in lowered
+        or "undocumented" in lowered
+        or "status code" in lowered
+        or "does not match any documented" in lowered
+    ):
         return "response_schema_conformance"
     if "server error" in lowered or "[5" in lowered:
         return "not_a_server_error"
@@ -243,32 +290,84 @@ def schemathesis_failures(output: str) -> list[dict[str, str]]:
     failures: list[dict[str, str]] = []
     current: dict[str, str] | None = None
     capture_reproduction = False
-    operation_re = re.compile(r"^_+\s*(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\s+(.+?)\s*_+$")
+    parsing_failures = "FAILURES" not in output
+    operation_re = re.compile(
+        r"^(?:[_=\-━─\s]+)?"
+        r"(?P<method>GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\s+"
+        r"(?P<path>/\S+?)"
+        r"(?:\s+[_=\-━─]+)?$"
+    )
+
+    def append_current() -> None:
+        if current is not None and (
+            "failure_message" in current
+            or "test_case_id" in current
+            or "response_status" in current
+            or "reproduction_command" in current
+        ):
+            failures.append(current)
+
     for raw_line in output.splitlines():
         line = sanitise_schemathesis_detail(raw_line.rstrip())
+        section = line.strip().strip("= ").upper()
+        if section == "FAILURES":
+            parsing_failures = True
+            continue
+        if section in {"WARNINGS", "SUMMARY"}:
+            append_current()
+            current = None
+            parsing_failures = False
+            continue
+        if not parsing_failures:
+            continue
         operation_match = operation_re.match(line.strip())
         if operation_match:
-            if current is not None:
-                failures.append(current)
+            append_current()
             current = {
-                "method": operation_match.group(1),
-                "path": operation_match.group(2).strip(),
+                "method": operation_match.group("method"),
+                "path": operation_match.group("path").strip(),
             }
             capture_reproduction = False
             continue
         if current is None:
             continue
         stripped = line.strip()
-        if stripped.startswith("1. Test Case ID:"):
-            current["test_case_id"] = stripped.split(":", maxsplit=1)[1].strip()
+        case_match = re.search(r"(?:Test\s+)?Case ID:\s*([A-Za-z0-9._:-]+)", stripped)
+        if case_match:
+            current["test_case_id"] = case_match.group(1)
+            continue
+        explicit_check = re.search(r"(?:Check|Failed check):\s*([A-Za-z0-9_.:-]+)", stripped)
+        if explicit_check:
+            current["failed_check"] = explicit_check.group(1)
             continue
         if stripped.startswith("- ") and "failure_message" not in current:
             message = stripped[2:].strip()
             current["failed_check"] = schemathesis_check_name(message)
             current["failure_message"] = message
             continue
-        if re.match(r"^\[\d{3}\]", stripped):
+        if stripped.lower().startswith(("failure:", "error:")) and "failure_message" not in current:
+            message = stripped.split(":", maxsplit=1)[1].strip()
+            current["failed_check"] = schemathesis_check_name(message)
+            current["failure_message"] = message
+            continue
+        bracket_status = re.match(r"^\[(\d{3})\]\s*(.*)", stripped)
+        plain_status = re.match(r"^(?:Status|Response status):\s*(\d{3})(?:\s+(.+))?", stripped)
+        received_status = re.search(
+            r"\b(?:received|returned|status(?: code)?)\D+(\d{3})\b", stripped, re.I
+        )
+        if bracket_status:
             current["response_status"] = stripped.rstrip(":")
+            continue
+        if plain_status:
+            current["response_status"] = " ".join(
+                part for part in plain_status.groups() if part
+            ).strip()
+            continue
+        if received_status and "response_status" not in current:
+            current["response_status"] = received_status.group(1)
+            if "failure_message" not in current:
+                current["failure_message"] = stripped
+                current["failed_check"] = schemathesis_check_name(stripped)
             continue
         if stripped == "Reproduce with:":
             capture_reproduction = True
@@ -277,7 +376,7 @@ def schemathesis_failures(output: str) -> list[dict[str, str]]:
             current["reproduction_command"] = stripped
             capture_reproduction = False
     if current is not None:
-        failures.append(current)
+        append_current()
     return failures[:SCHEMATHESIS_FAILURE_SUMMARY_LIMIT]
 
 
@@ -353,12 +452,14 @@ def print_schemathesis_failure_summary(payload: dict[str, object]) -> None:
 
 def schemathesis_test() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
-    write_openapi_schema()
     token = issue_dev_token(
         subject="researcher-001",
         expires_in_seconds=DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
+        roles=DYNAMIC_SCANNER_ROLES,
+        token_id="dynamic-schemathesis-scanner",
     )
-    warm_dynamic_routes(token)
+    state = warm_dynamic_routes(token)
+    write_openapi_schema(state)
     command = schemathesis_command(token)
     print(f"python executable: {sys.executable}", flush=True)
     print(f"schemathesis image: {CONFIG['schemathesis']['container_image']}", flush=True)

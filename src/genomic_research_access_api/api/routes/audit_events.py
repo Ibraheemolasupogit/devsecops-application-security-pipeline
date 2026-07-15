@@ -4,6 +4,7 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends, Request
 
+from genomic_research_access_api.api.responses import AUTHENTICATION_ERROR_RESPONSES
 from genomic_research_access_api.domain.enums import AuditEventType, AuditOutcome
 from genomic_research_access_api.schemas.audit import AuditEventResponse
 from genomic_research_access_api.security.authentication.dependencies import require_permission
@@ -13,7 +14,11 @@ from genomic_research_access_api.security.authorisation import Permission
 router = APIRouter(prefix="/api/v1/audit-events", tags=["audit events"])
 
 
-@router.get("", response_model=list[AuditEventResponse])
+@router.get(
+    "",
+    response_model=list[AuditEventResponse],
+    responses=AUTHENTICATION_ERROR_RESPONSES,
+)
 def list_audit_events(
     request: Request,
     principal: Annotated[

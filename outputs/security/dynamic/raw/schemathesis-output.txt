@@ -2,7 +2,7 @@ Schemathesis v4.0.26
 ━━━━━━━━━━━━━━━━━━━━
 
 
- ✅  Loaded specification from /work/openapi.json (in 0.31s)
+ ✅  Loaded specification from /work/openapi.json (in 0.32s)
 
      Base URL:         http://host.docker.internal:8000
      Specification:    Open API 3.1.0
@@ -13,20 +13,19 @@ Schemathesis v4.0.26
 
      Supports NULL byte in headers:    ✘
 
- ⏭   Examples (in 0.13s)
+ ✅  Examples (in 1.10s)
 
-     ⏭  9 skipped
+     ✅ 1 passed  ⏭  8 skipped
 
- ✅  Fuzzing (in 1.77s)
+ ✅  Fuzzing (in 0.73s)
 
      ✅ 9 passed
 
 =================================== WARNINGS ===================================
 
-Authentication failed: 3 operations returned authentication errors
+Authentication failed: 2 operations returned authentication errors
 
-403 Forbidden (3 operations):
-  - GET /api/v1/audit-events
+403 Forbidden (2 operations):
   - POST /api/v1/access-requests/{request_id}/approve
   - POST /api/v1/access-requests/{request_id}/reject
 
@@ -40,8 +39,9 @@ Missing test data: 3 operations repeatedly returned 404 Not Found, preventing te
 
 💡 Provide realistic parameter values in your config file so tests can access existing resources
 
-Schema validation mismatch: 1 operation mostly rejected generated data due to validation errors, indicating schema constraints don't match API validation
+Schema validation mismatch: 2 operations mostly rejected generated data due to validation errors, indicating schema constraints don't match API validation
 
+  - GET /api/v1/access-requests/{request_id}
   - POST /api/v1/access-requests
 
 💡 Check your schema constraints - API validation may be stricter than documented
@@ -53,19 +53,19 @@ API Operations:
   Tested: 9
 
 Test Phases:
-  ⏭  Examples
+  ✅ Examples
   ⏭  Coverage (disabled)
   ✅ Fuzzing
   ⏭  Stateful (disabled)
 
 Warnings:
-  ⚠️ Missing authentication: 3 operations returned only 401/403 responses
+  ⚠️ Missing authentication: 2 operations returned only 401/403 responses
   ⚠️ Missing valid test data: 3 operations repeatedly returned 404 responses
-  ⚠️ Schema validation mismatch: 1 operation mostly rejected generated data
+  ⚠️ Schema validation mismatch: 2 operations mostly rejected generated data
 
 Test cases:
-  64 generated, 64 passed
+  66 generated, 66 passed
 
 Seed: not used in the deterministic mode
 
-============================= 3 warnings in 1.92s ==============================
+============================= 2 warnings in 1.85s ==============================

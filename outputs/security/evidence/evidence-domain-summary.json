@@ -134,7 +134,7 @@
       "name": "Dynamic API Security",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "4847dee6f017483d0433c201de76df68123e74c124c8d9a94ba8785e55630e54",
+      "source_checksum": "db68f7706fb686aa8e42f39619848ecb015f3dc580394f575bb6cfc2d667148c",
       "source_manifest": "outputs/security/dynamic/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -156,7 +156,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "0cfe97872a3f5eb0dfa67488854d4327f7bd9d90399c3c679df201405fe241b7",
+      "source_checksum": "221acd33f02653815ff261e9cc7fdfc650b65b916790da890989a7b11e69d6f9",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -178,7 +178,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "73c59b5ca045a35d9051ab9b026518175c415e82d9aaf6dfdda459ee3eea54b4",
+      "source_checksum": "5cc5173f3437afce86571e502dedb82814d3cc347ab5b63123ab7d40da0dde39",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -202,7 +202,7 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "12a5b7add293b561aaa3ff401e8197d51294f11d5c90fd0140eeb0e52d7f995e",
+      "source_checksum": "72073c1ca9259c58c7b7c70dcaaa629141d8c542a2f430d4df7b5fb92e53b6ef",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }

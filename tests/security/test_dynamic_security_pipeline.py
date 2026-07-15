@@ -10,16 +10,25 @@ from typing import Any, cast
 
 import pytest
 from scripts.dynamic_security_tools import (
+    DYNAMIC_SCANNER_ROLES,
     DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
+    DYNAMIC_SCANNER_WARMUP_DATASET_ID,
     DYNAMIC_SCANNER_WARMUP_PATHS,
+    DynamicWarmupState,
     print_schemathesis_failure_summary,
     redact_command,
     schemathesis_failures,
     schemathesis_payload,
     warm_dynamic_routes,
+    write_openapi_schema,
 )
 
 from genomic_research_access_api.config import get_settings
+from genomic_research_access_api.domain.enums import ActorRole
+from genomic_research_access_api.main import create_app
+from genomic_research_access_api.security.authentication.dev_tokens import issue_dev_token
+from genomic_research_access_api.security.authentication.jwt_validator import JwtValidator
+from genomic_research_access_api.security.authorisation import Permission, permissions_for
 from genomic_research_access_api.security.dynamic.config import MANIFEST_PATH, validate_local_target
 from genomic_research_access_api.security.dynamic.evidence import (
     build_evidence,
@@ -200,6 +209,91 @@ Reproduce with:
     ]
 
 
+def test_schemathesis_4_failure_detail_format_is_parsed_and_redacted() -> None:
+    failures = schemathesis_failures(
+        """
+=================================== FAILURES ===================================
+GET /api/v1/access-requests
+1. Test Case ID: ci-list-001
+Failed check: response_schema_conformance
+Failure: Undocumented HTTP status code
+Response status: 403 Forbidden
+Reproduce with:
+    curl -X GET -H 'Authorization: Bearer ci-secret' http://host.docker.internal:8000/api/v1/access-requests
+
+GET /api/v1/access-requests/{request_id}
+1. Test Case ID: ci-read-001
+- Response violates schema: value is not a valid object
+[404] Not Found:
+Reproduce with:
+    curl -X GET -H 'Authorization:Bearer second-secret' http://host.docker.internal:8000/api/v1/access-requests/not-real
+
+GET /api/v1/audit-events
+1. Test Case ID: ci-audit-001
+Failure: Response status code 403 is not documented
+Status: 403 Forbidden
+Reproduce with:
+    curl -X GET -H "Authorization: Bearer third-secret" http://host.docker.internal:8000/api/v1/audit-events
+
+=================================== SUMMARY ====================================
+"""
+    )
+
+    assert failures == [
+        {
+            "method": "GET",
+            "path": "/api/v1/access-requests",
+            "test_case_id": "ci-list-001",
+            "failed_check": "response_schema_conformance",
+            "failure_message": "Undocumented HTTP status code",
+            "response_status": "403 Forbidden",
+            "reproduction_command": (
+                "curl -X GET -H 'Authorization: <redacted>' "
+                "http://host.docker.internal:8000/api/v1/access-requests"
+            ),
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/access-requests/{request_id}",
+            "test_case_id": "ci-read-001",
+            "failed_check": "response_schema_conformance",
+            "failure_message": "Response violates schema: value is not a valid object",
+            "response_status": "[404] Not Found",
+            "reproduction_command": (
+                "curl -X GET -H 'Authorization:<redacted>' "
+                "http://host.docker.internal:8000/api/v1/access-requests/not-real"
+            ),
+        },
+        {
+            "method": "GET",
+            "path": "/api/v1/audit-events",
+            "test_case_id": "ci-audit-001",
+            "failed_check": "response_schema_conformance",
+            "failure_message": "Response status code 403 is not documented",
+            "response_status": "403 Forbidden",
+            "reproduction_command": (
+                'curl -X GET -H "Authorization: <redacted>" '
+                "http://host.docker.internal:8000/api/v1/audit-events"
+            ),
+        },
+    ]
+
+
+def test_schemathesis_warning_operations_are_not_reported_as_failures() -> None:
+    failures = schemathesis_failures(
+        """
+=================================== WARNINGS ===================================
+403 Forbidden (3 operations):
+  - GET /api/v1/audit-events
+  - POST /api/v1/access-requests/{request_id}/approve
+  - POST /api/v1/access-requests/{request_id}/reject
+=================================== SUMMARY ====================================
+"""
+    )
+
+    assert failures == []
+
+
 def test_schemathesis_failure_summary_prints_bounded_redacted_details(
     capsys: pytest.CaptureFixture[str],
 ) -> None:
@@ -248,10 +342,15 @@ Test cases:
 def test_dynamic_route_warmup_uses_representative_authenticated_paths(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    calls: list[str] = []
+    calls: list[tuple[str, str]] = []
 
     class FakeResponse:
-        status_code = 404
+        def __init__(self, status_code: int, payload: dict[str, str] | None = None) -> None:
+            self.status_code = status_code
+            self._payload = payload or {}
+
+        def json(self) -> dict[str, str]:
+            return self._payload
 
     class FakeClient:
         def __init__(self, *, base_url: str, headers: dict[str, str], timeout: int) -> None:
@@ -266,14 +365,117 @@ def test_dynamic_route_warmup_uses_representative_authenticated_paths(
             return None
 
         def get(self, path: str) -> FakeResponse:
-            calls.append(path)
-            return FakeResponse()
+            calls.append(("GET", path))
+            return FakeResponse(200)
+
+        def post(self, path: str, *, json: dict[str, str]) -> FakeResponse:
+            calls.append(("POST", path))
+            assert json["dataset_id"] == DYNAMIC_SCANNER_WARMUP_DATASET_ID
+            return FakeResponse(201, {"request_id": "schemathesis-access-request-001"})
 
     monkeypatch.setattr("httpx.Client", FakeClient)
 
-    warm_dynamic_routes("token")
+    state = warm_dynamic_routes("token")
 
-    assert calls == list(DYNAMIC_SCANNER_WARMUP_PATHS)
+    assert state == DynamicWarmupState(request_id="schemathesis-access-request-001")
+    assert calls == [
+        ("GET", "/api/v1/datasets"),
+        ("POST", "/api/v1/access-requests"),
+        ("GET", "/api/v1/access-requests"),
+        ("GET", "/api/v1/access-requests/schemathesis-access-request-001"),
+        ("GET", "/api/v1/audit-events"),
+    ]
+    assert DYNAMIC_SCANNER_WARMUP_PATHS == (
+        "/api/v1/datasets",
+        "/api/v1/access-requests",
+        "/api/v1/access-requests/{request_id}",
+        "/api/v1/audit-events",
+    )
+
+
+def test_dynamic_scanner_token_uses_least_privileged_read_role_union() -> None:
+    token = issue_dev_token(
+        subject="researcher-001",
+        roles=DYNAMIC_SCANNER_ROLES,
+        expires_in_seconds=DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
+    )
+    settings = get_settings()
+    principal = JwtValidator(
+        public_key=settings.load_jwt_public_key(),
+        issuer=settings.jwt_issuer,
+        audience=settings.jwt_audience,
+        algorithm=settings.jwt_algorithm,
+        leeway_seconds=settings.jwt_clock_skew_seconds,
+        maximum_lifetime_seconds=settings.jwt_maximum_lifetime_seconds,
+    ).validate(token)
+
+    assert principal.roles == (ActorRole.RESEARCHER, ActorRole.SECURITY_AUDITOR)
+    assert ActorRole.APPLICATION_ADMIN not in principal.roles
+    assert {
+        Permission.ACCESS_REQUEST_CREATE,
+        Permission.ACCESS_REQUEST_LIST_OWN,
+        Permission.ACCESS_REQUEST_READ_OWN,
+        Permission.ACCESS_REQUEST_LIST_ALL,
+        Permission.ACCESS_REQUEST_READ_ALL,
+        Permission.AUDIT_EVENT_READ,
+    }.issubset(permissions_for(principal))
+
+
+def test_openapi_documents_dynamic_error_responses_and_request_id_example() -> None:
+    write_openapi_schema(DynamicWarmupState(request_id="schemathesis-access-request-001"))
+    schema = json.loads(Path("outputs/security/dynamic/raw/openapi.json").read_text())
+
+    assert sorted(schema["paths"]["/api/v1/access-requests"]["get"]["responses"]) == [
+        "200",
+        "401",
+        "403",
+        "429",
+    ]
+    request_responses = schema["paths"]["/api/v1/access-requests/{request_id}"]["get"]["responses"]
+    assert {"200", "401", "403", "404", "422", "429"}.issubset(request_responses)
+    parameter = schema["paths"]["/api/v1/access-requests/{request_id}"]["get"]["parameters"][0]
+    assert parameter["example"] == "schemathesis-access-request-001"
+    assert parameter["schema"]["examples"] == ["schemathesis-access-request-001"]
+    assert sorted(schema["paths"]["/api/v1/audit-events"]["get"]["responses"]) == [
+        "200",
+        "401",
+        "403",
+        "429",
+    ]
+
+
+def test_scanner_role_can_exercise_affected_operations() -> None:
+    app = create_app()
+    from fastapi.testclient import TestClient
+
+    token = issue_dev_token(
+        subject="researcher-001",
+        roles=DYNAMIC_SCANNER_ROLES,
+        expires_in_seconds=DYNAMIC_SCANNER_TOKEN_TTL_SECONDS,
+    )
+    headers = {"Authorization": f"Bearer {token}"}
+    with TestClient(app, raise_server_exceptions=False) as client:
+        created = client.post(
+            "/api/v1/access-requests",
+            json={
+                "dataset_id": DYNAMIC_SCANNER_WARMUP_DATASET_ID,
+                "research_purpose": "Schemathesis deterministic dynamic security warm-up.",
+                "requested_access_level": "aggregate_analysis",
+            },
+            headers=headers,
+        )
+        assert created.status_code == 201
+        request_id = created.json()["request_id"]
+
+        listed = client.get("/api/v1/access-requests", headers=headers)
+        fetched = client.get(f"/api/v1/access-requests/{request_id}", headers=headers)
+        audit = client.get("/api/v1/audit-events", headers=headers)
+
+    assert listed.status_code == 200
+    assert any(item["request_id"] == request_id for item in listed.json())
+    assert fetched.status_code == 200
+    assert fetched.json()["request_id"] == request_id
+    assert audit.status_code == 200
 
 
 def test_documented_dynamic_pytest_target_uses_existing_wrapper() -> None:

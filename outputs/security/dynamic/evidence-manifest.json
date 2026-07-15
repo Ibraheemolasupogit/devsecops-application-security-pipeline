@@ -39,7 +39,7 @@
     },
     {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
-      "sha256": "e29a2e1c214b5df334dcb81d63b45d57d105e16c8bd7522ffb9a02efb0a1f155"
+      "sha256": "406958eeb8c17665269960cccbbfe9ca055749a01960f945c8e35401fcf06eb7"
     },
     {
       "path": "outputs/security/dynamic/security-header-summary.json",

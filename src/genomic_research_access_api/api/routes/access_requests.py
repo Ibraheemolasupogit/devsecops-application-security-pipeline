@@ -2,11 +2,15 @@
 
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, Path, status
 
 from genomic_research_access_api.api.dependencies import (
     get_access_request_service,
     get_correlation_id,
+)
+from genomic_research_access_api.api.responses import (
+    AUTHENTICATION_ERROR_RESPONSES,
+    NOT_FOUND_RESPONSE,
 )
 from genomic_research_access_api.schemas.access_requests import (
     AccessRequestCreate,
@@ -42,7 +46,11 @@ def create_access_request(
     return AccessRequestResponse.model_validate(access_request, from_attributes=True)
 
 
-@router.get("", response_model=list[AccessRequestResponse])
+@router.get(
+    "",
+    response_model=list[AccessRequestResponse],
+    responses=AUTHENTICATION_ERROR_RESPONSES,
+)
 def list_access_requests(
     service: Annotated[AccessRequestService, Depends(get_access_request_service)],
     principal: Annotated[
@@ -61,9 +69,21 @@ def list_access_requests(
     ]
 
 
-@router.get("/{request_id}", response_model=AccessRequestResponse)
+@router.get(
+    "/{request_id}",
+    response_model=AccessRequestResponse,
+    responses=AUTHENTICATION_ERROR_RESPONSES | NOT_FOUND_RESPONSE,
+)
 def get_access_request(
-    request_id: str,
+    request_id: Annotated[
+        str,
+        Path(
+            min_length=1,
+            max_length=120,
+            pattern=r"^[A-Za-z0-9_.:-]+$",
+            examples=["schemathesis-access-request-001"],
+        ),
+    ],
     service: Annotated[AccessRequestService, Depends(get_access_request_service)],
     correlation_id: Annotated[str, Depends(get_correlation_id)],
     principal: Annotated[
