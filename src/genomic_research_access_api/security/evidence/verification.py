@@ -124,15 +124,21 @@ def verify(output_dir: Path = OUTPUT_DIR) -> None:
         evidence = read_json(
             resolve_manifest_reference(manifest_path, "consolidated-evidence.json")
         )
+        producer_metadata = manifest.get("producer_metadata") or {
+            "repository": manifest["repository"],
+            "branch": manifest["branch"],
+            "commit": manifest["commit"],
+            "dirty_worktree": bool(manifest.get("dirty_worktree", evidence["dirty_worktree"])),
+        }
         generate(
             Path(temp_dir),
             timestamp=manifest["controlled_timestamp"],
             as_of_date=manifest["as_of_date"],
             repository_metadata={
-                "repository": manifest["repository"],
-                "branch": manifest["branch"],
-                "commit": manifest["commit"],
-                "dirty_worktree": bool(evidence["dirty_worktree"]),
+                "repository": producer_metadata["repository"],
+                "branch": producer_metadata["branch"],
+                "commit": producer_metadata["commit"],
+                "dirty_worktree": bool(producer_metadata["dirty_worktree"]),
             },
         )
         for name, details in manifest["output_files"].items():

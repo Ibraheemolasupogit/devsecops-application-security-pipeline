@@ -27,7 +27,7 @@ Deduplicated count: 2
 - FND-CONTAINER-95a38a1f2a20: merged by exact key cve|CVE-2026-8376|perl-base across trivy; all source records retained
 - FND-CONTAINER-026cbd40a3d8: unique exact key
 - FND-DAST-e607d905531a: unique exact key
-- FND-DAST-7f68e8fb688f: unique exact key
+- FND-DAST-7938d4335d4a: unique exact key
 - FND-SUPPRESSIO-47693ff859ed: unique exact key
 - FND-SUPPRESSIO-68e51d21b290: unique exact key
 - FND-SUPPRESSIO-e0d3613118cd: unique exact key

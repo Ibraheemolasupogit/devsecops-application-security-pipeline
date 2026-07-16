@@ -22,6 +22,7 @@ def build_manifest(
     repository: str,
     branch: str,
     commit: str,
+    dirty_worktree: bool,
     verified_domains: int,
     failed_domains: int,
 ) -> dict[str, Any]:
@@ -34,6 +35,13 @@ def build_manifest(
         "repository": repository,
         "branch": branch,
         "commit": commit,
+        "dirty_worktree": dirty_worktree,
+        "producer_metadata": {
+            "repository": repository,
+            "branch": branch,
+            "commit": commit,
+            "dirty_worktree": dirty_worktree,
+        },
         "deployment_status": "not_deployed",
         "source_manifests": source_manifests,
         "source_manifest_checksums": source_checksums,

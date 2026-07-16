@@ -19,6 +19,7 @@ from scripts.dynamic_security_tools import (
     DynamicWarmupState,
     RunningDynamicServer,
     bounded_text_tail,
+    normalise_scanner_output,
     print_schemathesis_failure_summary,
     redact_command,
     sanitise_diagnostic_text,
@@ -208,6 +209,25 @@ def test_diagnostic_redaction_removes_private_key_material() -> None:
     assert "<redacted-private-key>" in redacted
 
 
+def test_scanner_output_normalisation_removes_terminal_padding() -> None:
+    raw = "loaded spec   \n\nsummary\t \n"
+
+    assert normalise_scanner_output(raw) == "loaded spec\n\nsummary\n"
+
+
+def test_dynamic_scanner_uses_linux_reachable_bind_and_split_client_hosts() -> None:
+    assert dynamic_tools.DYNAMIC_SERVER_HOST == "0.0.0.0"
+    assert dynamic_tools.DYNAMIC_CLIENT_HOST == "127.0.0.1"
+    assert dynamic_tools.DYNAMIC_CONTAINER_HOST == "host.docker.internal"
+    assert (
+        dynamic_tools.local_target_url(dynamic_tools.DYNAMIC_CLIENT_HOST) == "http://127.0.0.1:8000"
+    )
+    assert (
+        dynamic_tools.local_target_url(dynamic_tools.DYNAMIC_CONTAINER_HOST)
+        == "http://host.docker.internal:8000"
+    )
+
+
 def test_server_log_uses_file_not_unread_pipe(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -236,6 +256,33 @@ def test_server_log_uses_file_not_unread_pipe(
     assert popen_kwargs["cwd"] == dynamic_tools.ROOT
     assert popen_kwargs["env"]["PYTHONPATH"] == "src"
     assert popen_kwargs["start_new_session"] is True
+    assert server.log_handle is not None
+    server.log_handle.close()
+
+
+def test_dynamic_server_start_binds_to_all_interfaces(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    popen_args: list[str] = []
+
+    class FakePopen:
+        pid = 12345
+
+        def __init__(self, args: list[str], **_kwargs: Any) -> None:
+            popen_args.extend(args)
+
+        def poll(self) -> None:
+            return None
+
+    monkeypatch.setattr(dynamic_tools, "RAW", tmp_path)
+    monkeypatch.setattr(dynamic_tools, "PID_FILE", tmp_path / "dynamic-server.pid")
+    monkeypatch.setattr(dynamic_tools, "SERVER_LOG", tmp_path / "dynamic-server.log")
+    monkeypatch.setattr(subprocess, "Popen", FakePopen)
+    monkeypatch.setattr(dynamic_tools, "process_group_id", lambda _pid: 12345)
+
+    server = dynamic_tools.dynamic_server_start()
+
+    assert popen_args[popen_args.index("--host") + 1] == "0.0.0.0"
     assert server.log_handle is not None
     server.log_handle.close()
 

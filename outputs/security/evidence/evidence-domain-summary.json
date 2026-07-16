@@ -156,7 +156,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "937d5d9178d9d1962c6f3068b4e5bf2466742ff834de8dc3f25a012bb1c78742",
+      "source_checksum": "89a45b47a1611411903cccadd3923d32c65e497f523a8cb7f35e507dd5c5b164",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -178,7 +178,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "8bef5ffe0478e390857efff3bcd34eef5e11af22ac6739e2782aa778035cef47",
+      "source_checksum": "e5f744c5f4af2fe0dac908f76ade8a5e3a245410df081fb73cad9d50733b3d7e",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -202,7 +202,7 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "4c0b6be8c21154acffff5289625c8e3816cca44b183c4368f09dbd1a156a780d",
+      "source_checksum": "d24ac2f6349b6b8fc8ebb6b59c5716627d4e0c6346ccf8053d0e30b822e72493",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }

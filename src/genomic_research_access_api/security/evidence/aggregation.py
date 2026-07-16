@@ -210,6 +210,7 @@ def generate(
         repository=evidence.repository,
         branch=evidence.branch,
         commit=evidence.commit,
+        dirty_worktree=evidence.dirty_worktree,
         verified_domains=evidence.verified_domain_count,
         failed_domains=evidence.failed_domain_count,
     )

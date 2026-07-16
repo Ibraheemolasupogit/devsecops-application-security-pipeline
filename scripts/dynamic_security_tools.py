@@ -27,6 +27,9 @@ PID_FILE = RAW / "dynamic-server.pid"
 OPENAPI_FILE = RAW / "openapi.json"
 SERVER_LOG = RAW / "dynamic-server.log"
 CONFIG = json.loads((ROOT / "security/dynamic/config.yaml").read_text(encoding="utf-8"))
+DYNAMIC_SERVER_HOST = os.environ.get("DYNAMIC_SERVER_HOST", "0.0.0.0")
+DYNAMIC_CLIENT_HOST = os.environ.get("DYNAMIC_CLIENT_HOST", "127.0.0.1")
+DYNAMIC_CONTAINER_HOST = os.environ.get("DYNAMIC_CONTAINER_HOST", "host.docker.internal")
 DYNAMIC_SCANNER_TOKEN_TTL_SECONDS = 900
 DYNAMIC_SCANNER_ROLES = (ActorRole.RESEARCHER, ActorRole.SECURITY_AUDITOR)
 DYNAMIC_SCANNER_WARMUP_DATASET_ID = "syn-rare-disease-001"
@@ -88,6 +91,10 @@ def bounded_file_tail(path: Path, *, lines: int = DIAGNOSTIC_TAIL_LINES) -> str:
     return bounded_text_tail(path.read_text(encoding="utf-8", errors="replace"), lines=lines)
 
 
+def normalise_scanner_output(value: str) -> str:
+    return "\n".join(line.rstrip() for line in value.splitlines()) + "\n"
+
+
 def print_section(title: str, body: str) -> None:
     print(f"--- {title} ---", flush=True)
     print(body or "<empty>", flush=True)
@@ -100,6 +107,10 @@ def server_env() -> dict[str, str]:
     env["GRAA_RATE_LIMIT_REQUESTS"] = "500"
     env["GRAA_RATE_LIMIT_WINDOW_SECONDS"] = "60"
     return env
+
+
+def local_target_url(host: str) -> str:
+    return f"http://{host}:8000"
 
 
 def process_group_id(pid: int) -> int | None:
@@ -140,7 +151,7 @@ def dynamic_server_start() -> RunningDynamicServer:
             "uvicorn",
             "genomic_research_access_api.main:app",
             "--host",
-            "127.0.0.1",
+            DYNAMIC_SERVER_HOST,
             "--port",
             "8000",
         ],
@@ -163,7 +174,7 @@ def dynamic_server_start() -> RunningDynamicServer:
 def dynamic_server_wait(server: RunningDynamicServer | None = None) -> None:
     import httpx
 
-    url = validate_local_target(CONFIG["local_targets"]["default_base_url"]) + "/health"
+    url = validate_local_target(local_target_url(DYNAMIC_CLIENT_HOST)) + "/health"
     deadline = time.monotonic() + 30
     while time.monotonic() < deadline:
         assert_server_alive(server, "readiness")
@@ -307,7 +318,7 @@ def redact_command(args: list[str]) -> list[str]:
 
 def schemathesis_command(token: str) -> list[str]:
     cfg = CONFIG["schemathesis"]
-    target = validate_local_target(CONFIG["local_targets"]["docker_base_url"])
+    target = validate_local_target(local_target_url(DYNAMIC_CONTAINER_HOST))
     return [
         "docker",
         "run",
@@ -347,7 +358,7 @@ def schemathesis_command(token: str) -> list[str]:
 def warm_dynamic_routes(token: str) -> DynamicWarmupState:
     import httpx
 
-    target = validate_local_target(CONFIG["local_targets"]["default_base_url"])
+    target = validate_local_target(local_target_url(DYNAMIC_CLIENT_HOST))
     headers = {"Authorization": f"Bearer {token}"}
     with httpx.Client(base_url=target, headers=headers, timeout=5) as client:
         dataset_response = client.get("/api/v1/datasets")
@@ -626,6 +637,16 @@ def dynamic_preflight_diagnostics() -> None:
     )
     cfg = CONFIG["schemathesis"]
     print_section("schemathesis image", str(cfg["container_image"]))
+    print_section(
+        "dynamic server binding",
+        "\n".join(
+            [
+                f"server_bind_host={DYNAMIC_SERVER_HOST}",
+                f"host_health_url={local_target_url(DYNAMIC_CLIENT_HOST)}/health",
+                f"container_health_url={local_target_url(DYNAMIC_CONTAINER_HOST)}/health",
+            ]
+        ),
+    )
     if PID_FILE.exists():
         pid = PID_FILE.read_text(encoding="utf-8").strip()
         print_section("server pid state", f"pid_file={pid}\n{server_diagnostics()}")
@@ -649,7 +670,7 @@ def dynamic_diagnostics() -> None:
 
 
 def docker_network_health_check() -> subprocess.CompletedProcess[str]:
-    target = validate_local_target(CONFIG["local_targets"]["docker_base_url"]) + "/health"
+    target = validate_local_target(local_target_url(DYNAMIC_CONTAINER_HOST)) + "/health"
     return run(
         [
             "docker",
@@ -700,10 +721,10 @@ def schemathesis_test(server: RunningDynamicServer | None = None) -> None:
     assert_server_alive(server, "before-schemathesis")
     print("schemathesis command: " + " ".join(redact_command(command)), flush=True)
     result = run(command, check=False)
-    (RAW / "schemathesis-output.txt").write_text(
-        result.stdout + result.stderr, encoding="utf-8", newline="\n"
-    )
     combined_output = result.stdout + result.stderr
+    (RAW / "schemathesis-output.txt").write_text(
+        normalise_scanner_output(combined_output), encoding="utf-8", newline="\n"
+    )
     payload, completed = schemathesis_payload(combined_output, result.returncode)
     payload["server_lifecycle"] = {
         "alive_after_schemathesis": server_is_alive(server),
@@ -761,13 +782,20 @@ def zap_baseline() -> None:
         check=False,
     )
     (RAW / "zap-output.txt").write_text(
-        result.stdout + result.stderr, encoding="utf-8", newline="\n"
+        normalise_scanner_output(result.stdout + result.stderr), encoding="utf-8", newline="\n"
     )
     report_path = RAW / "zap-report.json"
     if report_path.exists():
         payload = json.loads(report_path.read_text(encoding="utf-8"))
     else:
         payload = {"site": [], "alerts": []}
+    html_report_path = RAW / "zap-report.html"
+    if html_report_path.exists():
+        html_report_path.write_text(
+            normalise_scanner_output(html_report_path.read_text(encoding="utf-8")),
+            encoding="utf-8",
+            newline="\n",
+        )
     payload["execution_status"] = "completed" if result.returncode == 0 else "failed"
     payload["scan_mode"] = "baseline-passive"
     payload["target"] = "local-docker-gateway"

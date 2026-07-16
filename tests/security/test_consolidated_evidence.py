@@ -94,6 +94,46 @@ def test_verify_replays_recorded_repository_metadata(
         },
     )
     verify(tmp_path)
+    manifest = read_json(tmp_path / "evidence-manifest.json")
+    assert manifest["producer_metadata"] == metadata
+    assert manifest["dirty_worktree"] is True
+
+
+def test_verify_replays_manifest_producer_metadata_at_later_commit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    generate(
+        tmp_path,
+        repository_metadata={
+            "repository": "repo-at-commit-a",
+            "branch": "main",
+            "commit": "commit-a",
+            "dirty_worktree": False,
+        },
+    )
+    manifest = read_json(tmp_path / "evidence-manifest.json")
+    manifest["producer_metadata"] = {
+        "repository": "repo-at-commit-a",
+        "branch": "main",
+        "commit": "commit-a",
+        "dirty_worktree": False,
+    }
+    write_json(tmp_path / "evidence-manifest.json", manifest)
+
+    from genomic_research_access_api.security.evidence import aggregation
+
+    monkeypatch.setattr(
+        aggregation,
+        "_current_repository_metadata",
+        lambda: {
+            "repository": "repo-at-commit-b",
+            "branch": "main",
+            "commit": "commit-b",
+            "dirty_worktree": True,
+        },
+    )
+
+    verify(tmp_path)
 
 
 def test_lineage_references_are_supported_by_repository_artefacts() -> None:
