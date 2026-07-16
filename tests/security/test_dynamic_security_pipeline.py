@@ -217,6 +217,7 @@ def test_scanner_output_normalisation_removes_terminal_padding() -> None:
 
 def test_dynamic_scanner_uses_linux_reachable_bind_and_split_client_hosts() -> None:
     assert dynamic_tools.DYNAMIC_SERVER_HOST == "0.0.0.0"
+    assert dynamic_tools.DYNAMIC_SCANNER_BIND_HOST == "0.0.0.0"
     assert dynamic_tools.DYNAMIC_CLIENT_HOST == "127.0.0.1"
     assert dynamic_tools.DYNAMIC_CONTAINER_HOST == "host.docker.internal"
     assert (
@@ -226,6 +227,15 @@ def test_dynamic_scanner_uses_linux_reachable_bind_and_split_client_hosts() -> N
         dynamic_tools.local_target_url(dynamic_tools.DYNAMIC_CONTAINER_HOST)
         == "http://host.docker.internal:8000"
     )
+
+
+def test_dynamic_scanner_bind_host_is_limited_to_local_scanner_hosts() -> None:
+    assert dynamic_tools.scanner_bind_host(None) == "0.0.0.0"
+    assert dynamic_tools.scanner_bind_host("127.0.0.1") == "127.0.0.1"
+    assert dynamic_tools.scanner_bind_host("localhost") == "localhost"
+
+    with pytest.raises(ValueError, match="unsupported dynamic scanner bind host"):
+        dynamic_tools.scanner_bind_host("192.0.2.10")
 
 
 def test_server_log_uses_file_not_unread_pipe(

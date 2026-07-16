@@ -243,12 +243,12 @@
       "trivy"
     ]
   },
-  "FND-DAST-7938d4335d4a": {
-    "deduplication_key": "dast|10116|http://host.docker.internal:8000/sitemap.xml",
-    "primary_finding_id": "FND-DAST-7938d4335d4a",
+  "FND-DAST-7f68e8fb688f": {
+    "deduplication_key": "dast|10116|http://host.docker.internal:8000",
+    "primary_finding_id": "FND-DAST-7f68e8fb688f",
     "rationale": "unique exact key",
     "source_finding_ids": [
-      "FND-DAST-7938d4335d4a"
+      "FND-DAST-7f68e8fb688f"
     ],
     "source_tools": [
       "zap"

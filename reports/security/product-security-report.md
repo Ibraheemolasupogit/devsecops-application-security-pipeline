@@ -2,7 +2,7 @@
 
 Architecture, threat model, application controls, authentication, authorisation, AppSec,
 dynamic testing, findings, release gates, lifecycle and exception governance are represented
-in bundle `EVB-76d5eb312bbb8e5f`.
+in bundle `EVB-ad14e86ea29f3b8b`.
 
 Canonical findings: 44
 

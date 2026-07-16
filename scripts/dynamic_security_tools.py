@@ -27,7 +27,10 @@ PID_FILE = RAW / "dynamic-server.pid"
 OPENAPI_FILE = RAW / "openapi.json"
 SERVER_LOG = RAW / "dynamic-server.log"
 CONFIG = json.loads((ROOT / "security/dynamic/config.yaml").read_text(encoding="utf-8"))
-DYNAMIC_SERVER_HOST = os.environ.get("DYNAMIC_SERVER_HOST", "0.0.0.0")
+# Safe for the temporary scanner-only DAST server: Docker host-gateway access requires
+# this bind, and with_server cleanup runs in finally.
+DYNAMIC_SCANNER_BIND_HOST = "0.0.0.0"  # nosec B104
+ALLOWED_DYNAMIC_SERVER_HOSTS = frozenset({DYNAMIC_SCANNER_BIND_HOST, "127.0.0.1", "localhost"})
 DYNAMIC_CLIENT_HOST = os.environ.get("DYNAMIC_CLIENT_HOST", "127.0.0.1")
 DYNAMIC_CONTAINER_HOST = os.environ.get("DYNAMIC_CONTAINER_HOST", "host.docker.internal")
 DYNAMIC_SCANNER_TOKEN_TTL_SECONDS = 900
@@ -56,6 +59,16 @@ class RunningDynamicServer:
     log_handle: TextIO | None
     pid: int
     process_group_id: int | None
+
+
+def scanner_bind_host(value: str | None = None) -> str:
+    host = value or DYNAMIC_SCANNER_BIND_HOST
+    if host not in ALLOWED_DYNAMIC_SERVER_HOSTS:
+        raise ValueError(f"unsupported dynamic scanner bind host: {host}")
+    return host
+
+
+DYNAMIC_SERVER_HOST = scanner_bind_host(os.environ.get("DYNAMIC_SERVER_HOST"))
 
 
 def run(

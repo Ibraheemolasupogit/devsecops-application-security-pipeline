@@ -152,6 +152,14 @@ def test_dynamic_diagnostic_fixture_does_not_match_gitleaks_private_key_rule() -
     assert re.search(private_key_rule["regex"], source) is None
 
 
+def test_bandit_configuration_keeps_subprocess_and_bind_rules_active() -> None:
+    config = Path("security/bandit/bandit.yaml").read_text(encoding="utf-8")
+
+    assert "skips: []" in config
+    assert "B104" not in config
+    assert "B603" not in config
+
+
 def test_sbom_generation_and_validation(tmp_path: Path) -> None:
     sbom = tmp_path / "sbom.cdx.json"
     generate_minimal_sbom(sbom)

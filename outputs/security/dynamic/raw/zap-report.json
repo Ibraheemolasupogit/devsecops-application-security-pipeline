@@ -1,8 +1,8 @@
 {
-  "@generated": "Thu, 16 Jul 2026 12:10:54",
+  "@generated": "Thu, 16 Jul 2026 16:23:02",
   "@programName": "ZAP",
   "@version": "2.16.1",
-  "created": "2026-07-16T12:10:54.540733131Z",
+  "created": "2026-07-16T16:23:02.331528258Z",
   "execution_status": "completed",
   "scan_mode": "baseline-passive",
   "sequences": [],
@@ -24,12 +24,12 @@
             {
               "attack": "",
               "evidence": "",
-              "id": "2",
+              "id": "3",
               "method": "GET",
               "nodeName": null,
               "otherinfo": "The latest version of ZAP is 2.17.0",
               "param": "",
-              "uri": "http://host.docker.internal:8000/sitemap.xml"
+              "uri": "http://host.docker.internal:8000"
             }
           ],
           "name": "ZAP is Out of Date",
@@ -39,7 +39,7 @@
           "riskcode": "1",
           "riskdesc": "Low (High)",
           "solution": "<p>Download the latest version of ZAP from https://www.zaproxy.org/download/ and install it.</p>",
-          "sourceid": "8",
+          "sourceid": "7",
           "systemic": false,
           "wascid": "45"
         },
@@ -47,14 +47,14 @@
           "alert": "Storable and Cacheable Content",
           "alertRef": "10049-3",
           "confidence": "2",
-          "count": "3",
+          "count": "2",
           "cweid": "524",
           "desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
           "instances": [
             {
               "attack": "",
               "evidence": "",
-              "id": "0",
+              "id": "4",
               "method": "GET",
               "nodeName": null,
               "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",
@@ -64,17 +64,7 @@
             {
               "attack": "",
               "evidence": "",
-              "id": "1",
-              "method": "GET",
-              "nodeName": null,
-              "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",
-              "param": "",
-              "uri": "http://host.docker.internal:8000/robots.txt"
-            },
-            {
-              "attack": "",
-              "evidence": "",
-              "id": "4",
+              "id": "2",
               "method": "GET",
               "nodeName": null,
               "otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.",

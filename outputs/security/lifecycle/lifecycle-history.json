@@ -392,20 +392,6 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-9af2de1e4d13",
-      "event_type": "false_positive_review",
-      "evidence_reference": "outputs/security/dynamic/zap-summary.json",
-      "from_status": "triaged",
-      "metadata": {
-        "source_evidence_retained": true
-      },
-      "reason": "Reviewed local scanner notice is retained as evidence but does not represent an application vulnerability.",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "to_status": "false_positive",
-      "vulnerability_id": "VUL-ff18a534d9fe"
-    },
-    {
-      "actor_role": "Product Security",
       "event_id": "EVT-9f64f3d9cf36",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -508,6 +494,20 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-f4d6b51b0b01"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-ae9816f15ba4",
+      "event_type": "false_positive_review",
+      "evidence_reference": "outputs/security/dynamic/zap-summary.json",
+      "from_status": "triaged",
+      "metadata": {
+        "source_evidence_retained": true
+      },
+      "reason": "Reviewed local scanner notice is retained as evidence but does not represent an application vulnerability.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "false_positive",
+      "vulnerability_id": "VUL-93adb5991eec"
     },
     {
       "actor_role": "Product Security",
@@ -631,21 +631,6 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-d1c5c0ec6a05",
-      "event_type": "initialise",
-      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
-      "from_status": null,
-      "metadata": {
-        "finding_id": "FND-DAST-7938d4335d4a",
-        "scanner_suppression_id": null
-      },
-      "reason": "Initialised from canonical finding evidence.",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "to_status": "false_positive",
-      "vulnerability_id": "VUL-ff18a534d9fe"
-    },
-    {
-      "actor_role": "Product Security",
       "event_id": "EVT-dd855cdd8cc9",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -658,6 +643,21 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-f0424a7c155e"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-e2c363245d66",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-DAST-7f68e8fb688f",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "false_positive",
+      "vulnerability_id": "VUL-93adb5991eec"
     },
     {
       "actor_role": "Product Security",

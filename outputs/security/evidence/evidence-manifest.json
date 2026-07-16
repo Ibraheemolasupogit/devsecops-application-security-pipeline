@@ -1,8 +1,8 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "bundle_id": "EVB-76d5eb312bbb8e5f",
-  "commit": "291b722fbb9fe7f41041675275754c4dbe59e681",
+  "bundle_id": "EVB-ad14e86ea29f3b8b",
+  "commit": "671e16eb5e64c1657126706c9b7069a31d3bd227",
   "control_mapping_version": "1.0",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
   "deployment_status": "not_deployed",
@@ -46,7 +46,7 @@
   "output_files": {
     "consolidated-evidence.json": {
       "path": "consolidated-evidence.json",
-      "sha256": "ed3d53c7e2960eb49bed4a25f37890deb4b82654113869be865bea839d4d8c2a"
+      "sha256": "3f18883bc23a3b970478d39f19ace598e8f9c7e90672c61fd6585b53ca195e16"
     },
     "control-coverage.csv": {
       "path": "control-coverage.csv",
@@ -58,7 +58,7 @@
     },
     "evidence-domain-summary.json": {
       "path": "evidence-domain-summary.json",
-      "sha256": "005e6a24a1f214d1f295475853157c29127a0313c1898a3f0dc8dc6c8de8194b"
+      "sha256": "aac7bbb9e1a476c9929af2d90f0f4a8949d096dd74d61227c50ce7f31358c1e3"
     },
     "evidence-integrity-summary.json": {
       "path": "evidence-integrity-summary.json",
@@ -70,11 +70,11 @@
     },
     "portfolio-security-summary.json": {
       "path": "portfolio-security-summary.json",
-      "sha256": "552c660ea8dd0a234c689079985dffa77e4507c28ec3e0110669576e478bb12e"
+      "sha256": "0eb2afcfd2b93754ff84cf5813310d1b940157f611d3dc32ebbc4d186bb39702"
     },
     "release-assurance-summary.json": {
       "path": "release-assurance-summary.json",
-      "sha256": "d649dd2f474278842cc77706f17a8fb0cc18d88d09765d49702cb766e6d88f15"
+      "sha256": "c4e35ac6ab46cfa8c694c70b34c8d358134582f7b0bc2f142d6a8a7ab766ce50"
     },
     "security-exception-summary.json": {
       "path": "security-exception-summary.json",
@@ -103,7 +103,7 @@
   },
   "producer_metadata": {
     "branch": "main",
-    "commit": "291b722fbb9fe7f41041675275754c4dbe59e681",
+    "commit": "671e16eb5e64c1657126706c9b7069a31d3bd227",
     "dirty_worktree": true,
     "repository": "devsecops-application-security-pipeline"
   },
@@ -113,13 +113,13 @@
   "schema_version": "1.0",
   "source_manifest_checksums": {
     "api_security": "9220e28a605114c19f2838e8a503815ca13a68992446125f35b2287278171474",
-    "appsec": "2ebf280b426e6b1218a2bbe3df1e0a08ee6c374297a941b2e29b947ed4bce6db",
+    "appsec": "c1784aa63d05fadc212c96e2328e8545641750bfaf9cf19ea828319706c12e3e",
     "champions": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
     "dynamic_security": "db68f7706fb686aa8e42f39619848ecb015f3dc580394f575bb6cfc2d667148c",
-    "findings": "89a45b47a1611411903cccadd3923d32c65e497f523a8cb7f35e507dd5c5b164",
+    "findings": "99dab00b283f084a7b46163d5b335b717f6a8d0ee66daa2518361f287936ad43",
     "infrastructure": "8eea5e1dd1bc011c8c3d6e7f65b43c24c67b53d602f671427bbc06f947e03846",
-    "lifecycle": "d24ac2f6349b6b8fc8ebb6b59c5716627d4e0c6346ccf8053d0e30b822e72493",
-    "release_assurance": "e5f744c5f4af2fe0dac908f76ade8a5e3a245410df081fb73cad9d50733b3d7e",
+    "lifecycle": "3448f4a3a299d6e4ef3cb210ee4bc6222eeda2ce8279b58873233c1a326c4928",
+    "release_assurance": "a8d7fa101be2c4c34c2df64f19db2003846301c1408ba386bfe809e2e2e11f3d",
     "threat_model": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082"
   },
   "source_manifests": {

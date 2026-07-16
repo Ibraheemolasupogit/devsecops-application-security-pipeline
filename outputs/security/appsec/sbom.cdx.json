@@ -1879,7 +1879,7 @@
       "version": "0.1.0"
     },
     {
-      "bom-ref": "BomRef.336075737139251.6916602059681227",
+      "bom-ref": "BomRef.8611791182579738.41160767676531684",
       "description": "Synthetic Genomic Research Access API for a DevSecOps portfolio milestone.",
       "licenses": [
         {
@@ -5180,7 +5180,7 @@
         "starlette==1.3.1",
         "uvicorn==0.35.0"
       ],
-      "ref": "BomRef.336075737139251.6916602059681227"
+      "ref": "BomRef.8611791182579738.41160767676531684"
     },
     {
       "dependsOn": [
