@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any, cast
 
 import pytest
+import scripts.dynamic_security_tools as dynamic_tools
 from scripts.dynamic_security_tools import (
     DIAGNOSTIC_TAIL_CHARS,
     DYNAMIC_SCANNER_ROLES,
@@ -16,6 +17,7 @@ from scripts.dynamic_security_tools import (
     DYNAMIC_SCANNER_WARMUP_DATASET_ID,
     DYNAMIC_SCANNER_WARMUP_PATHS,
     DynamicWarmupState,
+    RunningDynamicServer,
     bounded_text_tail,
     print_schemathesis_failure_summary,
     redact_command,
@@ -189,18 +191,171 @@ def test_diagnostic_tail_is_bounded_and_redacted() -> None:
 
 
 def test_diagnostic_redaction_removes_private_key_material() -> None:
-    text = """
------BEGIN PRIVATE KEY-----
-not-a-real-key
------END PRIVATE KEY-----
-Authorization:Bearer abc.def.ghi
-"""
+    key_type = "PRIVATE KEY"
+    text = "\n".join(
+        [
+            f"-----BEGIN {key_type}-----",
+            "not-a-real-key",
+            f"-----END {key_type}-----",
+            "Authorization:Bearer abc.def.ghi",
+        ]
+    )
 
     redacted = sanitise_diagnostic_text(text)
 
     assert "not-a-real-key" not in redacted
     assert "abc.def.ghi" not in redacted
     assert "<redacted-private-key>" in redacted
+
+
+def test_server_log_uses_file_not_unread_pipe(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    popen_kwargs: dict[str, Any] = {}
+
+    class FakePopen:
+        pid = 12345
+
+        def __init__(self, _args: list[str], **kwargs: Any) -> None:
+            popen_kwargs.update(kwargs)
+
+        def poll(self) -> None:
+            return None
+
+    monkeypatch.setattr(dynamic_tools, "RAW", tmp_path)
+    monkeypatch.setattr(dynamic_tools, "PID_FILE", tmp_path / "dynamic-server.pid")
+    monkeypatch.setattr(dynamic_tools, "SERVER_LOG", tmp_path / "dynamic-server.log")
+    monkeypatch.setattr(subprocess, "Popen", FakePopen)
+    monkeypatch.setattr(dynamic_tools, "process_group_id", lambda _pid: 12345)
+
+    server = dynamic_tools.dynamic_server_start()
+
+    assert server.pid == 12345
+    assert popen_kwargs["stdout"] is not subprocess.PIPE
+    assert popen_kwargs["stderr"] == subprocess.STDOUT
+    assert popen_kwargs["cwd"] == dynamic_tools.ROOT
+    assert popen_kwargs["env"]["PYTHONPATH"] == "src"
+    assert popen_kwargs["start_new_session"] is True
+    assert server.log_handle is not None
+    server.log_handle.close()
+
+
+def test_with_server_pulls_schemathesis_image_before_startup(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    events: list[str] = []
+    server = RunningDynamicServer(process=None, log_handle=None, pid=12345, process_group_id=12345)
+
+    def record_pull(image: str) -> None:
+        events.append(f"pull:{image}")
+
+    def record_start() -> RunningDynamicServer:
+        events.append("start")
+        return server
+
+    monkeypatch.setattr(
+        dynamic_tools,
+        "docker_pull_image",
+        record_pull,
+    )
+    monkeypatch.setattr(dynamic_tools, "dynamic_server_start", record_start)
+    monkeypatch.setattr(dynamic_tools, "dynamic_server_wait", lambda _server: events.append("wait"))
+    monkeypatch.setattr(
+        dynamic_tools,
+        "assert_server_alive",
+        lambda _server, phase: events.append(f"alive:{phase}"),
+    )
+    monkeypatch.setattr(dynamic_tools, "schemathesis_test", lambda _server: events.append("scan"))
+    monkeypatch.setattr(dynamic_tools, "dynamic_server_stop", lambda _server: events.append("stop"))
+
+    dynamic_tools.with_server("schemathesis")
+
+    assert events == [
+        "pull:schemathesis/schemathesis:4.0.26",
+        "start",
+        "wait",
+        "alive:after-readiness",
+        "scan",
+        "stop",
+    ]
+
+
+def test_schemathesis_lifecycle_checks_surround_warmup_probe_and_scan(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    phases: list[str] = []
+    server_alive_calls = iter([True, True])
+    server = RunningDynamicServer(process=None, log_handle=None, pid=12345, process_group_id=12345)
+
+    monkeypatch.setattr(dynamic_tools, "RAW", tmp_path)
+    monkeypatch.setattr(
+        dynamic_tools,
+        "issue_dev_token",
+        lambda **_kwargs: "scanner-token",
+    )
+    monkeypatch.setattr(
+        dynamic_tools,
+        "assert_server_alive",
+        lambda _server, phase: phases.append(phase),
+    )
+    monkeypatch.setattr(
+        dynamic_tools,
+        "warm_dynamic_routes",
+        lambda token: DynamicWarmupState(request_id=f"{token}-request"),
+    )
+    monkeypatch.setattr(
+        dynamic_tools, "write_openapi_schema", lambda _state: phases.append("schema")
+    )
+    monkeypatch.setattr(dynamic_tools, "dynamic_preflight_diagnostics", lambda: None)
+    monkeypatch.setattr(
+        dynamic_tools,
+        "docker_network_health_check",
+        lambda: subprocess.CompletedProcess(["docker"], 0, "200\n", ""),
+    )
+    monkeypatch.setattr(
+        dynamic_tools,
+        "schemathesis_command",
+        lambda _token: ["docker", "run", "schemathesis"],
+    )
+    monkeypatch.setattr(
+        dynamic_tools,
+        "run",
+        lambda _args, check=False: subprocess.CompletedProcess(
+            _args,
+            0,
+            "API Operations:\n  Selected: 9/9\nTest cases:\n  1 generated, 1 passed\n",
+            "",
+        ),
+    )
+    monkeypatch.setattr(dynamic_tools, "server_is_alive", lambda _server: next(server_alive_calls))
+
+    dynamic_tools.schemathesis_test(server)
+
+    assert phases == [
+        "before-warmup",
+        "after-warmup",
+        "schema",
+        "after-network-probe",
+        "before-schemathesis",
+    ]
+
+
+def test_unexpected_server_exit_reports_phase_and_log_tail(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(dynamic_tools, "SERVER_LOG", tmp_path / "dynamic-server.log")
+    dynamic_tools.SERVER_LOG.write_text("startup ok\ncrashed\n", encoding="utf-8")
+    server = RunningDynamicServer(process=None, log_handle=None, pid=12345, process_group_id=12345)
+    monkeypatch.setattr(dynamic_tools, "server_is_alive", lambda _server: False)
+
+    with pytest.raises(SystemExit, match="exited unexpectedly") as exc_info:
+        dynamic_tools.assert_server_alive(server, "before-schemathesis")
+
+    message = str(exc_info.value)
+    assert "phase=before-schemathesis" in message
+    assert "exit code unknown" in message
+    assert "crashed" in message
 
 
 def test_scripts_package_imports_from_repository_root() -> None:

@@ -1,4 +1,7 @@
 import json
+import re
+import subprocess
+import tomllib
 from importlib import util
 from pathlib import Path
 from types import ModuleType
@@ -139,6 +142,16 @@ def test_insecure_and_remediated_fixtures_are_scoped() -> None:
     ).read_text(encoding="utf-8")
 
 
+def test_dynamic_diagnostic_fixture_does_not_match_gitleaks_private_key_rule() -> None:
+    config = tomllib.loads(Path(".gitleaks.toml").read_text(encoding="utf-8"))
+    private_key_rule = next(
+        rule for rule in config["rules"] if rule["id"] == "jwt-signing-material-outside-fixtures"
+    )
+    source = Path("tests/security/test_dynamic_security_pipeline.py").read_text(encoding="utf-8")
+
+    assert re.search(private_key_rule["regex"], source) is None
+
+
 def test_sbom_generation_and_validation(tmp_path: Path) -> None:
     sbom = tmp_path / "sbom.cdx.json"
     generate_minimal_sbom(sbom)
@@ -179,6 +192,27 @@ def test_cyclonedx_sbom_normalisation_removes_local_file_references(tmp_path: Pa
 
     assert "externalReferences" not in payload["components"][0]
     assert details["component_count"] == 2
+
+
+def test_gitleaks_docker_mounts_linked_worktree_git_metadata(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    module = appsec_tools_module()
+    common_dir = tmp_path / "repo" / ".git"
+    worktree = tmp_path / "worktree"
+    common_dir.mkdir(parents=True)
+    worktree.mkdir()
+    (worktree / ".git").write_text(
+        f"gitdir: {common_dir / 'worktrees' / 'clean'}\n", encoding="utf-8"
+    )
+    monkeypatch.setattr(module, "ROOT", worktree)
+
+    class FakeResult:
+        stdout = str(common_dir)
+
+    monkeypatch.setattr(subprocess, "run", lambda *_args, **_kwargs: FakeResult())
+
+    assert module.linked_worktree_git_mounts() == ["-v", f"{common_dir}:{common_dir}:ro"]
 
 
 def test_appsec_evidence_is_deterministic(tmp_path: Path) -> None:

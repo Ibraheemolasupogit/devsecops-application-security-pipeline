@@ -24,6 +24,11 @@
   "operation_count": 9,
   "request_timeout_seconds": 5,
   "scanner_exit_code": 0,
+  "server_lifecycle": {
+    "alive_after_schemathesis": true,
+    "exit_code_after_schemathesis": null,
+    "phase": "after-schemathesis"
+  },
   "version": "4.0.26",
   "warnings": [
     "Missing authentication: 2 operations returned only 401/403 responses",

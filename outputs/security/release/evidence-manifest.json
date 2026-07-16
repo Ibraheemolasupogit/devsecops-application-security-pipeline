@@ -2,7 +2,7 @@
   "as_of_date": "2026-01-01",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
   "decision": "conditional_pass",
-  "decision_id": "REL-48296a4d34a3fdc7",
+  "decision_id": "REL-6152497da30b052e",
   "environment": "dev",
   "generator": "genomic_research_access_api.security.release.evidence",
   "input_files": {
@@ -32,11 +32,11 @@
     },
     "outputs/security/findings/deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "cada0ada312d96608ee403218c20e09eec734ee64a88eb6433da36e6c6d60b21"
+      "sha256": "7939f66038b5eff822b850ce4c2c56aa176b2c093734b35aece77b90db4004b6"
     },
     "outputs/security/findings/evidence-manifest.json": {
       "path": "outputs/security/findings/evidence-manifest.json",
-      "sha256": "6d4219d7e2705c03cd10ce801983317e760c015306ab6e8bced66181f666e3a3"
+      "sha256": "64bb9a64ba6582ce678d4a9a0d0c7bdf1e8cbd61e133458867fa50741d48b84c"
     }
   },
   "output_files": {
@@ -54,19 +54,19 @@
     },
     "release-actions.json": {
       "path": "outputs/security/release/release-actions.json",
-      "sha256": "9d690d3dd4da3158fab91bccd7825dc9d753dd045022645a5fbc09b67d4d820c"
+      "sha256": "15a821e1e916f4dd41bb4b9a7a62711b531501cb6dfb272ca313c805434003f0"
     },
     "release-gate-decision.json": {
       "path": "outputs/security/release/release-gate-decision.json",
-      "sha256": "b1ecfbee8e90f3acea03d6877aeee8c20d651e9f7dddee222892b79566272bbc"
+      "sha256": "60b8841c4d2e6100dc72d74805fffcd2ddc0b06c92130959b4a10c2542b70914"
     },
     "release-risk-summary.json": {
       "path": "outputs/security/release/release-risk-summary.json",
-      "sha256": "2af07908e05e921c81ecbe0ba86827dfa1f42aafaeec7681fe597847d089b088"
+      "sha256": "382ad14ccb810e3e854aac150e8fe3c2592fc00a982f6f1fba5986419fe2605a"
     },
     "required-approvals.json": {
       "path": "outputs/security/release/required-approvals.json",
-      "sha256": "724dd05f358e5fdfd9fad8a280556dd3f5cd7ee24bc55a94825d7e4c521df4af"
+      "sha256": "a40ddf7cd6a8d0668eab3ae1f54466f13922cc07de8707638df236639f36a131"
     }
   },
   "policy_version": "1.0",

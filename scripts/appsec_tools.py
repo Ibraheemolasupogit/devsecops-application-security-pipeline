@@ -34,6 +34,20 @@ def run(args: list[str], *, env: dict[str, str] | None = None) -> None:
     subprocess.run(args, cwd=ROOT, check=True, env=env)
 
 
+def linked_worktree_git_mounts() -> list[str]:
+    if not (ROOT / ".git").is_file():
+        return []
+    result = subprocess.run(
+        ["git", "rev-parse", "--git-common-dir"],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    common_dir = Path(result.stdout.strip()).resolve()
+    return ["-v", f"{common_dir}:{common_dir}:ro"]
+
+
 def semgrep_env() -> dict[str, str]:
     env = os.environ.copy()
     env["SEMGREP_SEND_METRICS"] = "off"
@@ -59,6 +73,7 @@ def gitleaks() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     binary = shutil.which("gitleaks")
     if binary is None:
+        git_mounts = linked_worktree_git_mounts()
         run(
             [
                 require("docker"),
@@ -66,6 +81,7 @@ def gitleaks() -> None:
                 "--rm",
                 "-v",
                 f"{ROOT}:/repo",
+                *git_mounts,
                 "-w",
                 "/repo",
                 tool_image("gitleaks"),

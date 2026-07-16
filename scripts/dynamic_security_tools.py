@@ -15,6 +15,7 @@ from collections.abc import Callable
 from contextlib import suppress
 from dataclasses import dataclass
 from pathlib import Path
+from typing import TextIO
 
 from genomic_research_access_api.domain.enums import ActorRole
 from genomic_research_access_api.security.authentication.dev_tokens import issue_dev_token
@@ -44,6 +45,14 @@ JWT_RE = re.compile(r"\beyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\b")
 @dataclass(frozen=True)
 class DynamicWarmupState:
     request_id: str
+
+
+@dataclass
+class RunningDynamicServer:
+    process: subprocess.Popen[str] | None
+    log_handle: TextIO | None
+    pid: int
+    process_group_id: int | None
 
 
 def run(
@@ -93,15 +102,37 @@ def server_env() -> dict[str, str]:
     return env
 
 
-def dynamic_server_start() -> None:
+def process_group_id(pid: int) -> int | None:
+    if hasattr(os, "getpgid"):
+        with suppress(OSError):
+            return os.getpgid(pid)
+    return None
+
+
+def docker_pull_image(image: str) -> subprocess.CompletedProcess[str]:
+    print_section("docker image pull", f"image={image}")
+    result = run(["docker", "pull", image], check=False)
+    print_section("docker image pull result", bounded_text_tail(result.stdout + result.stderr))
+    if result.returncode != 0:
+        raise SystemExit(result.returncode)
+    return result
+
+
+def dynamic_server_start() -> RunningDynamicServer:
     RAW.mkdir(parents=True, exist_ok=True)
     if PID_FILE.exists():
+        pid = int(PID_FILE.read_text(encoding="utf-8"))
         try:
-            os.kill(int(PID_FILE.read_text(encoding="utf-8")), 0)
-            return
+            os.kill(pid, 0)
+            return RunningDynamicServer(
+                process=None,
+                log_handle=None,
+                pid=pid,
+                process_group_id=process_group_id(pid),
+            )
         except OSError:
             PID_FILE.unlink()
-    log_handle = SERVER_LOG.open("w", encoding="utf-8")
+    log_handle = SERVER_LOG.open("w", encoding="utf-8", buffering=1)
     process = subprocess.Popen(
         [
             sys.executable,
@@ -117,16 +148,25 @@ def dynamic_server_start() -> None:
         env=server_env(),
         stdout=log_handle,
         stderr=subprocess.STDOUT,
+        start_new_session=True,
+        text=True,
     )
     PID_FILE.write_text(str(process.pid), encoding="utf-8")
+    return RunningDynamicServer(
+        process=process,
+        log_handle=log_handle,
+        pid=process.pid,
+        process_group_id=process_group_id(process.pid),
+    )
 
 
-def dynamic_server_wait() -> None:
+def dynamic_server_wait(server: RunningDynamicServer | None = None) -> None:
     import httpx
 
     url = validate_local_target(CONFIG["local_targets"]["default_base_url"]) + "/health"
     deadline = time.monotonic() + 30
     while time.monotonic() < deadline:
+        assert_server_alive(server, "readiness")
         try:
             response = httpx.get(url, timeout=1)
             if response.status_code == 200:
@@ -138,9 +178,37 @@ def dynamic_server_wait() -> None:
     )
 
 
-def server_diagnostics() -> str:
+def server_is_alive(server: RunningDynamicServer | None = None) -> bool:
+    if server is not None and server.process is not None:
+        return server.process.poll() is None
+    if server is not None:
+        pid = server.pid
+    elif PID_FILE.exists():
+        pid = int(PID_FILE.read_text(encoding="utf-8"))
+    else:
+        return False
+    with suppress(OSError):
+        os.kill(pid, 0)
+        return True
+    return False
+
+
+def server_exit_code(server: RunningDynamicServer | None = None) -> int | str | None:
+    if server is not None and server.process is not None:
+        return server.process.poll()
+    return "unknown"
+
+
+def server_diagnostics(server: RunningDynamicServer | None = None, phase: str | None = None) -> str:
     details = []
-    if PID_FILE.exists():
+    if phase is not None:
+        details.append(f"phase={phase}")
+    if server is not None:
+        details.append(f"server pid {server.pid}")
+        details.append(f"process group {server.process_group_id}")
+        details.append(f"exit code {server_exit_code(server)}")
+        details.append(f"server alive {server_is_alive(server)}")
+    elif PID_FILE.exists():
         pid = int(PID_FILE.read_text(encoding="utf-8"))
         with suppress(OSError):
             os.kill(pid, 0)
@@ -158,12 +226,38 @@ def server_diagnostics() -> str:
     return "\n".join(details)
 
 
-def dynamic_server_stop() -> None:
-    if not PID_FILE.exists():
+def assert_server_alive(server: RunningDynamicServer | None, phase: str) -> None:
+    if server_is_alive(server):
         return
-    pid = int(PID_FILE.read_text(encoding="utf-8"))
-    with suppress(OSError):
-        os.kill(pid, signal.SIGTERM)
+    diagnostic = server_diagnostics(server, phase)
+    print_section("dynamic server unexpected exit", diagnostic)
+    raise SystemExit("Dynamic security local server exited unexpectedly.\n" + diagnostic)
+
+
+def dynamic_server_stop(server: RunningDynamicServer | None = None) -> None:
+    if server is None and not PID_FILE.exists():
+        return
+    pid = server.pid if server is not None else int(PID_FILE.read_text(encoding="utf-8"))
+    pgid = server.process_group_id if server is not None else process_group_id(pid)
+    if pgid is not None:
+        with suppress(OSError):
+            os.killpg(pgid, signal.SIGTERM)
+    else:
+        with suppress(OSError):
+            os.kill(pid, signal.SIGTERM)
+    if server is not None and server.process is not None:
+        try:
+            server.process.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            if pgid is not None:
+                with suppress(OSError):
+                    os.killpg(pgid, signal.SIGKILL)
+            else:
+                with suppress(OSError):
+                    os.kill(pid, signal.SIGKILL)
+            server.process.wait(timeout=5)
+    if server is not None and server.log_handle is not None:
+        server.log_handle.close()
     PID_FILE.unlink(missing_ok=True)
 
 
@@ -577,7 +671,7 @@ def docker_network_health_check() -> subprocess.CompletedProcess[str]:
     )
 
 
-def schemathesis_test() -> None:
+def schemathesis_test(server: RunningDynamicServer | None = None) -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     token = issue_dev_token(
         subject="researcher-001",
@@ -585,7 +679,9 @@ def schemathesis_test() -> None:
         roles=DYNAMIC_SCANNER_ROLES,
         token_id="dynamic-schemathesis-scanner",
     )
+    assert_server_alive(server, "before-warmup")
     state = warm_dynamic_routes(token)
+    assert_server_alive(server, "after-warmup")
     write_openapi_schema(state)
     command = schemathesis_command(token)
     print(f"python executable: {sys.executable}", flush=True)
@@ -598,6 +694,10 @@ def schemathesis_test() -> None:
     )
     if network_check.returncode != 0:
         print(f"container network health check exit={network_check.returncode}", flush=True)
+        print_section("dynamic server state after failed network probe", server_diagnostics(server))
+        raise SystemExit(network_check.returncode)
+    assert_server_alive(server, "after-network-probe")
+    assert_server_alive(server, "before-schemathesis")
     print("schemathesis command: " + " ".join(redact_command(command)), flush=True)
     result = run(command, check=False)
     (RAW / "schemathesis-output.txt").write_text(
@@ -605,6 +705,11 @@ def schemathesis_test() -> None:
     )
     combined_output = result.stdout + result.stderr
     payload, completed = schemathesis_payload(combined_output, result.returncode)
+    payload["server_lifecycle"] = {
+        "alive_after_schemathesis": server_is_alive(server),
+        "exit_code_after_schemathesis": server_exit_code(server),
+        "phase": "after-schemathesis",
+    }
     (RAW / "schemathesis.json").write_text(
         json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
@@ -616,6 +721,10 @@ def schemathesis_test() -> None:
         f"cases={payload['case_count']} warnings={warning_count}",
         flush=True,
     )
+    if not server_is_alive(server):
+        print_section("dynamic server state after schemathesis", server_diagnostics(server))
+        print_schemathesis_diagnostics()
+        raise SystemExit(result.returncode or 1)
     if not completed:
         print_schemathesis_failure_summary(payload)
         print_schemathesis_diagnostics()
@@ -669,12 +778,18 @@ def zap_baseline() -> None:
 
 
 def with_server(command: str) -> None:
-    dynamic_server_start()
+    if command == "schemathesis":
+        docker_pull_image(CONFIG["schemathesis"]["container_image"])
+    server = dynamic_server_start()
     try:
-        dynamic_server_wait()
-        {"schemathesis": schemathesis_test, "zap": zap_baseline}[command]()
+        dynamic_server_wait(server)
+        assert_server_alive(server, "after-readiness")
+        if command == "schemathesis":
+            schemathesis_test(server)
+        else:
+            zap_baseline()
     finally:
-        dynamic_server_stop()
+        dynamic_server_stop(server)
 
 
 def dynamic_evidence() -> None:
@@ -724,7 +839,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("command")
     args = parser.parse_args()
-    commands: dict[str, Callable[[], None]] = {
+    commands: dict[str, Callable[[], object]] = {
         "tools": lambda: print(json.dumps(CONFIG, indent=2, sort_keys=True)),
         "server-start": dynamic_server_start,
         "server-wait": dynamic_server_wait,

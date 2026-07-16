@@ -2,7 +2,7 @@
   "blocking_findings": 0,
   "conditional_findings": 0,
   "decision": "conditional_pass",
-  "decision_id": "REL-48296a4d34a3fdc7",
+  "decision_id": "REL-6152497da30b052e",
   "required_approvals": [
     "Cloud Security",
     "Product Security",

@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "bfec8c3643fc30bf3dc773cff68508d24a1ddb8292c0c81d26998a1f5998a541"
+      "sha256": "137e68fab316549dc8389644834f13fb7ae9c5bbf28a8dc87f720ba84dc21af0"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -71,15 +71,15 @@
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "43e5e916e19b094f1afabce6784c883cd2582d105aa2357d8938037280d0b3b0"
+      "sha256": "2bd64184f10b50460e63a8e4fce32460d651bf89551a9290d45c3569e4a85da4"
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
-      "sha256": "646c50e35e0eb6711c822cb9f4debd48430380449d53386c5a84b79a6e5b4640"
+      "sha256": "1b28b53fd73c9aa3c22ec38e9106dec7d5d7038a819fb2e4f68baaa1df544059"
     },
     "outputs/security/dynamic/raw/zap-report.json": {
       "path": "outputs/security/dynamic/raw/zap-report.json",
-      "sha256": "86ddb8d1a9dfc3eba87fbc7567a62e93472e442cbd80c92a2885cba9e409a8a3"
+      "sha256": "ac3ef5954d9ffeaa12f8258abedb2c48292f212be9035eead3a0acb58e14f3f7"
     },
     "outputs/security/dynamic/schemathesis-summary.json": {
       "path": "outputs/security/dynamic/schemathesis-summary.json",
@@ -102,7 +102,7 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "cada0ada312d96608ee403218c20e09eec734ee64a88eb6433da36e6c6d60b21"
+      "sha256": "7939f66038b5eff822b850ce4c2c56aa176b2c093734b35aece77b90db4004b6"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
@@ -126,7 +126,7 @@
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "411340f9371d4c8aef59a22090231de6ac3f47da5806fa802d30614d0910d902"
+      "sha256": "72913c01ce2ab0bc5c972a74e1986a3b5e2b8f83424514c33fed5ccd3c0dda4b"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",
