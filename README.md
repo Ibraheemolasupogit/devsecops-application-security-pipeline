@@ -4,6 +4,8 @@ Portfolio repository for a synthetic FastAPI product secured through a full loca
 
 The application uses synthetic, non-identifiable demonstration data only. It is not a production genomics platform, is not affiliated with or endorsed by Genomics England, and does not deploy AWS resources.
 
+The current implementation remains non-deployed. The next architecture phase is EKS operationalisation; [Milestone 1 target architecture](docs/architecture/target-devsecops-platform.md) and its [migration roadmap](docs/architecture/eks-migration-roadmap.md) preserve the existing Product Security assurance model.
+
 ## 1. Portfolio Positioning
 
 This repository demonstrates how product-security practices can be implemented as reproducible engineering workflows rather than slideware. The core product is intentionally small so the security system around it is inspectable end to end.
