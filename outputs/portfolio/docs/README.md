@@ -4,6 +4,10 @@ Portfolio repository for a synthetic FastAPI product secured through a full loca
 
 The application uses synthetic, non-identifiable demonstration data only. It is not a production genomics platform, is not affiliated with or endorsed by Genomics England, and does not deploy AWS resources.
 
+The current implementation remains non-deployed. The next architecture phase is EKS operationalisation; [Milestone 1 target architecture](docs/architecture/target-devsecops-platform.md) and its [migration roadmap](docs/architecture/eks-migration-roadmap.md) preserve the existing Product Security assurance model.
+
+Repository preparation guidance: [artifact policy](docs/engineering/repository-artifact-policy.md), [EKS prerequisites](docs/engineering/eks-prerequisites.md), and [workflow migration plan](docs/engineering/workflow-rationalisation-plan.md). Existing Terraform is the retained ECS/Fargate reference; EKS is the planned primary runtime from M3.
+
 ## 1. Portfolio Positioning
 
 This repository demonstrates how product-security practices can be implemented as reproducible engineering workflows rather than slideware. The core product is intentionally small so the security system around it is inspectable end to end.

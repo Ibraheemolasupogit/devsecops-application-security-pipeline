@@ -170,6 +170,23 @@ def test_sbom_generation_and_validation(tmp_path: Path) -> None:
     assert details["component_count"] >= 4
 
 
+def test_fallback_sbom_tracks_changed_canonical_dependency_pins(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    (tmp_path / "pyproject.toml").write_text(
+        '[project]\nname = "genomic-research-access-api"\nversion = "0.1.0"\n'
+        'dependencies = ["PyJWT[crypto]==9.9.9", "example==1.2.3"]\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr("genomic_research_access_api.security.appsec.evidence.ROOT", tmp_path)
+    sbom = tmp_path / "sbom.json"
+    generate_minimal_sbom(sbom)
+    payload = json.loads(sbom.read_text(encoding="utf-8"))
+    libraries = {item["name"]: item["version"] for item in payload["components"][1:]}
+    assert libraries == {"PyJWT": "9.9.9", "example": "1.2.3"}
+    assert payload["dependencies"][0]["dependsOn"] == ["PyJWT", "example"]
+
+
 def test_cyclonedx_sbom_normalisation_removes_local_file_references(tmp_path: Path) -> None:
     sbom = tmp_path / "sbom.cdx.json"
     sbom.write_text(

@@ -23,3 +23,30 @@ terraform.tfvars
 *.auto.tfvars
 override.tf
 override.tf.json
+
+# Coverage working files and accidental local copies
+.coverage.*
+.coverage [0-9]*
+coverage.xml
+
+# OS/editor working files (do not ignore shared editor configuration)
+.DS_Store
+._*
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Scanner working directories; canonical raw results remain tracked
+/outputs/security/appsec/.semgrep-home/
+/outputs/security/appsec/raw/checkov-output/
+/outputs/security/dynamic/raw/dynamic-server.pid
+
+# Numbered copies are never canonical in these generated-output directories
+/outputs/portfolio/**/* [0-9]*.json
+/outputs/portfolio/**/* [0-9]*.md
+/outputs/security/appsec/raw/* [0-9]*.json
+
+# Terraform local plans/locking metadata, not provider dependency lockfiles
+*.tfplan
+.terraform.tfstate.lock.info

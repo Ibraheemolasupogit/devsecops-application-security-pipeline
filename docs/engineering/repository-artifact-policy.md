@@ -1,0 +1,49 @@
+# Repository Artifact Policy
+
+EKS evolution Milestone 2, 2026-10-11. Generated does not mean disposable: this repository intentionally versions deterministic assurance evidence. This policy preserves that operating model.
+
+## Classification and ownership
+
+| Candidate | Classification | Git disposition / regeneration |
+| --- | --- | --- |
+| outputs/security domain summaries, evidence manifests, findings, release/lifecycle/exception registers and integration checksums | canonical_tracked_evidence | Keep. Regenerate through domain Make targets and verify the complete dependent chain; never hand-edit checksum claims |
+| outputs/security/appsec/raw/{gitleaks,semgrep,bandit,pip-audit,checkov,trivy}.json and dynamic raw OpenAPI/Schemathesis/ZAP/pytest results | canonical_tracked_evidence | Keep reviewed native outputs; redact tokens/local paths where established wrappers require it. A historical result is not proof of a new scan |
+| outputs/security/appsec/sbom.cdx.json | canonical_tracked_evidence | Keep. Full CycloneDX environment output includes developer/scanner dependencies; minimal fallback covers direct runtime pins only and is not an image SBOM |
+| reports/security and reports/portfolio canonical filenames | reproducible_but_intentionally_tracked | Keep human-readable evidence; regenerate from canonical JSON. Older prose is not removed merely for age |
+| outputs/portfolio canonical package, copied docs/reports and four JSON indexes/summary/manifest | reproducible_but_intentionally_tracked | Keep. portfolio-full replaces this package from approved sources; do not put hand-authored content here |
+| schemas/security and policy/config/threat registers | canonical_tracked_evidence | Keep contracts and reviewed sources, including generated schema definitions; update compatibility deliberately |
+| security/fixtures, security/semgrep test cases, tests/fixtures/keys, config/*/fixtures | required_fixture | Keep synthetic insecure/negative/positive cases; not live secrets or real vulnerabilities to silently erase |
+| infrastructure/environments/*/.terraform.lock.hcl | reproducible_but_intentionally_tracked | Keep provider selections/checksums; dependency lockfiles are not Terraform caches |
+| .coverage, .coverage.*, .coverage N, coverage.xml, htmlcov | local_generated_artifact | Ignore. Run test-coverage for current metrics; binary working files are not assurance reports |
+| .venv, __pycache__, pyc, pytest/mypy/ruff caches, build/dist/egg-info | local_generated_artifact | Ignore; no tracked instances found except coverage copies below. Do not broadly delete installed environments |
+| .terraform directories/provider downloads, plan files, state/lock working files | local_generated_artifact | Ignore. State/plans may contain secrets; never commit. Preserve provider lockfiles |
+| dynamic-server.pid/log, AppSec .semgrep-home, raw/checkov-output temporary directory | local_generated_artifact | Ignore specifically; keep other canonical scanner raw outputs visible |
+| OS/editor temporary files (.DS_Store, AppleDouble, Thumbs.db, swap/backup files), local logs | local_generated_artifact | Ignore. Shared editor configuration is not globally ignored |
+| Numbered copies within outputs/portfolio and AppSec raw JSON | accidental_duplicate | Ignore scoped patterns; audit/remove known copies only. Do not ignore all numbered files repository-wide |
+| Old failed scan or obsolete report without a replacement/provenance proof | stale_obsolete_artifact only after review | No broad deletions approved. Preserve useful history/fixtures; link limitations instead of rewriting historical audit facts |
+
+## Audited tracked removals
+
+| File | Classification | Evidence | Action |
+| --- | --- | --- | --- |
+| `.coverage 2` | local_generated_artifact | Local coverage state; canonical `.coverage` | remove |
+| `.coverage 3` | local_generated_artifact | Local coverage state; canonical `.coverage` | remove |
+| `.coverage 4` | local_generated_artifact | Local coverage state; canonical `.coverage` | remove |
+| `outputs/portfolio/README 2.md` | accidental_duplicate | Byte-identical; canonical `outputs/portfolio/README.md` | remove |
+| `outputs/portfolio/evidence-index 2.json` | accidental_duplicate | Older IDs/index hashes/producer metadata; canonical `outputs/portfolio/evidence-index.json` | remove |
+| `outputs/portfolio/portfolio-manifest 2.json` | accidental_duplicate | Older IDs/index hashes/producer metadata; canonical `outputs/portfolio/portfolio-manifest.json` | remove |
+| `outputs/portfolio/portfolio-summary 2.json` | accidental_duplicate | Older IDs/index hashes/producer metadata; canonical `outputs/portfolio/portfolio-summary.json` | remove |
+| `outputs/portfolio/report-index 2.json` | accidental_duplicate | Older IDs/index hashes/producer metadata; canonical `outputs/portfolio/report-index.json` | remove |
+| `outputs/security/appsec/raw/gitleaks 2.json` | accidental_duplicate | Byte-identical; canonical `outputs/security/appsec/raw/gitleaks.json` | remove |
+
+The four numbered portfolio JSON copies differ from HEAD's canonical counterpart in IDs, indexes, hashes or Git metadata. Generators emit only unsuffixed names; no consumer/config/test names these copies. They are obsolete accidental snapshots, not required fixtures. Gitleaks 2.json is byte-identical to canonical gitleaks.json. The AppSec manifest previously picked it up through a broad raw JSON glob; removing that incidental dependency requires regenerated AppSec/downstream manifests, not preserving the clutter forever. Coverage copies are SQLite working databases; current coverage is re-measured.
+
+The user-authorised starting cleanup restored only 15 modified tracked evidence/report paths and removed 19 untracked numbered files: .coverage 5 plus 18 package copies in outputs/portfolio (README/index/manifest/summary variants 3/4, docs copies 2, and five report copies 2). Canonical counterparts exist. No source/config/documentation was restored. A clean main at 682ec76 was confirmed before this run's baseline.
+
+## Canonical generation and validation
+
+Source/policy/fixtures → raw scanner results → AppSec/dynamic summaries → canonical findings → release → lifecycle → consolidated evidence → integration export → portfolio package. Threat/API/infrastructure/Champions and enablement have their own manifests. When an input changes, run its producer and all affected verifiers/generators in order. Use controlled timestamps for existing fixture replay; never claim January timestamps prove an October live deployment. Live build/image attribution remains later work.
+
+Validation is not read-only: tests may regenerate enablement/release/integration reports and portfolio-full deletes/rebuilds outputs/portfolio. Run in a clean checkout when possible, inspect git diff/status before and after, and separate intentional evidence refresh from local machine metadata. Do not use broad git clean, reset or deletion of outputs/security/reports/security. Restore only proven validation side effects, never unrelated authored work. This milestone retains the dependency audit/SBOM and necessary linked evidence refresh; full Docker scan freshness is explicitly unverified.
+
+Never commit real credentials, tokens, secret values, .env, Terraform state/plans, private production keys, absolute local paths or scanner output containing sensitive payloads. Synthetic fixture keys are a narrow documented exception, not production credentials. Never weaken scanner or evidence policy to reduce diff noise. Review generated bundles/checksums just as source changes.

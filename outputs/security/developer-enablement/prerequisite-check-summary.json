@@ -3,13 +3,13 @@
   "checks": [
     {
       "name": "python",
-      "native_path": "",
+      "native_path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/.venv/bin/python",
       "notes": "Required for all workflows.",
       "status": "available"
     },
     {
       "name": "git",
-      "native_path": "/Users/privilege/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git",
+      "native_path": "/usr/bin/git",
       "notes": "Required for source control.",
       "status": "available"
     },
@@ -33,15 +33,15 @@
     },
     {
       "name": "gitleaks",
-      "native_path": "",
+      "native_path": "/opt/homebrew/bin/gitleaks",
       "notes": "Native binary optional; pinned Docker image is supported.",
-      "status": "unavailable"
+      "status": "available"
     },
     {
       "name": "trivy",
-      "native_path": "",
+      "native_path": "/opt/homebrew/bin/trivy",
       "notes": "Native binary optional; pinned Docker image is supported.",
-      "status": "unavailable"
+      "status": "available"
     },
     {
       "name": "aws_credentials",
@@ -53,8 +53,8 @@
   "overall_status": "attention_required",
   "schema_version": "1.0",
   "status_counts": {
-    "available": 4,
+    "available": 6,
     "not_required": 1,
-    "unavailable": 3
+    "unavailable": 1
   }
 }

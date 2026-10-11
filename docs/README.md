@@ -3,7 +3,14 @@
 This directory contains the product-security documentation for the DevSecOps Application Security Pipeline portfolio.
 
 - [Portfolio documents](portfolio/project-case-study.md)
-- [Architecture](architecture/application-architecture.md)
+- [Current implemented application](architecture/application-architecture.md)
+- [Retained ECS reference](../infrastructure/README.md)
+- [Planned EKS primary runtime](architecture/target-devsecops-platform.md)
+- [EKS migration roadmap](architecture/eks-migration-roadmap.md)
+- [Repository artifact policy](engineering/repository-artifact-policy.md)
+- [EKS prerequisites](engineering/eks-prerequisites.md)
+- [Workflow rationalisation plan](engineering/workflow-rationalisation-plan.md)
+- [Dependency remediation](engineering/dependency-hygiene.md)
 - [Architecture diagrams](architecture/diagrams/system-context.md)
 - [Threat model](threat-model/README.md)
 - [Security controls](security/local-security-workflow.md)

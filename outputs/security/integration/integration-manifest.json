@@ -1,7 +1,7 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "commit": "671e16eb5e64c1657126706c9b7069a31d3bd227",
+  "commit": "682ec76ca7ccf4e680b8521771888082524dca45",
   "compatibility_status": "compatible",
   "consumer": "enterprise-data-saas-security-control-plane",
   "contract_name": "product-security-control-plane-export",
@@ -16,12 +16,12 @@
     "schemas/security/integration/integration-manifest.schema.json"
   ],
   "input_checksums": {
-    "appsec": "c1784aa63d05fadc212c96e2328e8545641750bfaf9cf19ea828319706c12e3e",
+    "appsec": "87e4301677d4b254eaecddad61686e4107c77fe61ca28e7e35205ee0883492c4",
     "champions": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
-    "consolidated": "dfd3c89a72bfdf3f8b16566a3e5555188548baf04ed3342cac667d19d6bb1556",
-    "findings": "99dab00b283f084a7b46163d5b335b717f6a8d0ee66daa2518361f287936ad43",
+    "consolidated": "5da09623f5d56a044aa57a78a58656027a859dc52794dda5dcedcf41f4601f96",
+    "findings": "f70c8a5b8744e5f5fb0e32b01c5003638614acffbc17a6746caf0cd442f67248",
     "lifecycle": "3448f4a3a299d6e4ef3cb210ee4bc6222eeda2ce8279b58873233c1a326c4928",
-    "release": "a8d7fa101be2c4c34c2df64f19db2003846301c1408ba386bfe809e2e2e11f3d"
+    "release": "33c4b7fda8eb3b9e7c962273a9e59840d8037d548d09f88588dfa2150f15a02f"
   },
   "input_manifests": {
     "appsec": "outputs/security/appsec/evidence-manifest.json",

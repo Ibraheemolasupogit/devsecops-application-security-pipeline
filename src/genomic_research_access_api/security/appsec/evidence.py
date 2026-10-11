@@ -3,6 +3,7 @@
 import argparse
 import json
 import tempfile
+import tomllib
 from pathlib import Path
 from typing import Any
 
@@ -85,6 +86,11 @@ def pipeline_summary(summaries: dict[str, dict[str, Any]]) -> dict[str, Any]:
 
 
 def generate_minimal_sbom(path: Path = SBOM_PATH) -> None:
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    components = [{"type": "application", "name": project["name"], "version": project["version"]}]
+    for dependency in project["dependencies"]:
+        name, version = dependency.split("==", maxsplit=1)
+        components.append({"type": "library", "name": name.split("[")[0], "version": version})
     payload = {
         "bomFormat": "CycloneDX",
         "specVersion": "1.5",
@@ -103,17 +109,11 @@ def generate_minimal_sbom(path: Path = SBOM_PATH) -> None:
                 }
             ],
         },
-        "components": [
-            {"type": "application", "name": "genomic-research-access-api", "version": __version__},
-            {"type": "library", "name": "fastapi", "version": "0.139.0"},
-            {"type": "library", "name": "pydantic", "version": "2.11.7"},
-            {"type": "library", "name": "PyJWT", "version": "2.13.0"},
-            {"type": "library", "name": "starlette", "version": "1.3.1"},
-        ],
+        "components": components,
         "dependencies": [
             {
-                "ref": "genomic-research-access-api",
-                "dependsOn": ["fastapi", "pydantic", "PyJWT", "starlette"],
+                "ref": project["name"],
+                "dependsOn": [component["name"] for component in components[1:]],
             }
         ],
     }

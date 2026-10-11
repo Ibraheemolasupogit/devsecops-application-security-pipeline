@@ -17,11 +17,11 @@
     },
     "enablement-summary.json": {
       "path": "enablement-summary.json",
-      "sha256": "1bfd1aa0f081692bf035bf32452a16fdb591a6b6e718f9db1f7c703b651be5d7"
+      "sha256": "eb2933faf161b316fa5ecbe9a97b64bc24443793badb8b3d73cdd1d9595233c7"
     },
     "prerequisite-check-summary.json": {
       "path": "prerequisite-check-summary.json",
-      "sha256": "480d2c999ee5ce66b71a7856662e3e6f27ea90089b5ed5e257756c0acfcb2b69"
+      "sha256": "77513ef5049bd498fa677b24458b6d981f73fb1ba1abf60596dcd967888b6ecc"
     },
     "pull-request-checklist-summary.json": {
       "path": "pull-request-checklist-summary.json",

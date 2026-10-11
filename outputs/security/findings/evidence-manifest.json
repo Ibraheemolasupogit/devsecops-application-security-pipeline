@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "c43849c929b7ce48fc06039ac7f15d5c81f0ff499ffabcea15f6bc9a87270ba8"
+      "sha256": "54b02c85eaa3f4a742e687a1318c9bb6f6e618013a69653e81dc3a56bcec4356"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -63,7 +63,7 @@
     },
     "outputs/security/appsec/raw/pip-audit.json": {
       "path": "outputs/security/appsec/raw/pip-audit.json",
-      "sha256": "f11b091a5980720daa4643a2806328b3f1e005784313182e61b50e6fe7b77600"
+      "sha256": "1ba2255503f4d8dcb6aa9862053c6be131b7f1b928681e0ef623a384cca1a796"
     },
     "outputs/security/appsec/raw/semgrep.json": {
       "path": "outputs/security/appsec/raw/semgrep.json",
