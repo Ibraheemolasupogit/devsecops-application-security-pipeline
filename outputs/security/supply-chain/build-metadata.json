@@ -1,0 +1,34 @@
+{
+  "application_version": "0.1.0",
+  "base_image_reference": "python:3.11.17-slim-trixie@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce AS builder",
+  "build_command_policy": "docker buildx build --load --platform linux/amd64 with OCI source labels",
+  "builder": {
+    "docker_buildx": "github.com/docker/buildx v0.27.0-desktop.1 0ea7d3a2239bb57d1c598c691c5d00101ca936b7"
+  },
+  "built_image_reference": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812",
+  "container_scan_reference": "outputs/security/supply-chain/container-scan-summary.json",
+  "container_scan_sha256": "88a470cdb3649bc81d3cd1217843b24c8a10dd32236e92bcaa7c64fb75c26a0d",
+  "controlled_timestamp": "2026-10-12T11:21:32Z",
+  "dependency_definition_sha256": "a7d4b5321d5c7251804e9ab86458633553c4ccd752ccc03811dd933362cc11ba",
+  "dependency_inputs": [
+    "pyproject.toml"
+  ],
+  "dirty_worktree": true,
+  "dockerfile_sha256": "5a260d10297f75a3b6676c2175c6a1245595ce1f3ddcebad40b93b60f21fccca",
+  "dockerignore_sha256": "20d754a54d1890b43c4a220e921750e9ff5bfced834f2c397d0b4e1e83c5c55d",
+  "image_digest": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "image_id": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "publication_eligibility_reference": "outputs/security/supply-chain/publication-eligibility.json",
+  "publication_eligibility_status": "blocked",
+  "release_decision": "conditional_pass",
+  "release_decision_id": "REL-4e403b3e4f2106df",
+  "release_decision_reference": "outputs/security/release/release-gate-decision.json",
+  "release_decision_sha256": "b6192bbbbf2a91c5a6a929c690f23e51963a005c4cb8ffa3b64d01fbff00665a",
+  "repository_name": "devsecops-application-security-pipeline",
+  "sbom_reference": "outputs/security/supply-chain/container-sbom.cdx.json",
+  "sbom_sha256": "2e6c73c257fff01acadee31932ee036e12d9c77e477ac39f972c72539ab9e24a",
+  "schema_version": "1.0",
+  "source_commit": "7bc2106054f197fdd432ce11412aede926764812",
+  "source_repository": "https://github.com/Ibraheemolasupogit/devsecops-application-security-pipeline",
+  "target_platform": "linux/amd64"
+}

@@ -1,4 +1,7 @@
 .git
+.github
+.agents
+.codex
 .mypy_cache
 .pytest_cache
 .ruff_cache
@@ -6,7 +9,22 @@
 __pycache__
 *.pyc
 .coverage
+.coverage.*
+.coverage [0-9]*
 htmlcov
 dist
 build
 *.egg-info
+docs
+infrastructure
+kubernetes
+outputs
+reports
+schemas
+security
+scripts
+tests
+Makefile
+*.log
+*.tar
+*.oci

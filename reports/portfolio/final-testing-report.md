@@ -1,6 +1,6 @@
 # Final Testing Report
 
-Portfolio ID: `PF-28eb88bac202f831`
+Portfolio ID: `PF-98205664344d3d28`
 
 Readiness status: `ready_with_limitations`
 
@@ -8,12 +8,12 @@ Release decision: `conditional_pass`
 
 ## Key Metrics
 
-- Canonical findings: 45
-- Source findings: 47
+- Canonical findings: 69
+- Source findings: 69
 - Evidence domains: 9
-- Control coverage: 95.65%
-- Integration export records: 45
-- Repository integration lineage edges: 182
+- Control coverage: 97.1%
+- Integration export records: 69
+- Repository integration lineage edges: 276
 
 ## Readiness Failures
 

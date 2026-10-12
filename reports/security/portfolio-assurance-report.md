@@ -1,6 +1,6 @@
 # Portfolio Assurance Report
 
-Bundle: EVB-ddc507259755b22c
+Bundle: EVB-0945e41c756b6953
 
 Evidence domains: 9
 
@@ -8,6 +8,6 @@ Verified domains: 9
 
 Lineage edges: 9
 
-Control coverage: 95.65%
+Control coverage: 97.1%
 
 Deployment status: not_deployed

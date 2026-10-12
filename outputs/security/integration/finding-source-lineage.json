@@ -12,24 +12,34 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "01b64be78fb58edb4791cd39d0d21aad0bca3da3f9331ba2bbb279fa4fb6bce9",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-c118af042a95",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-c118af042a95",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "checksum": "004d7088c008f11bbbb8afa179a9491e0bc969d64ddfdb4526b765cef337dc01",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-cdafc2f07851",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-cdafc2f07851",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "046ea0cf87609b29863e172951b583cefcbe0e205720087131c547fcb0e51b7e",
-      "relationship": "evaluated_for_release",
+      "checksum": "00eb0e98967a211b289451494a18b19b84e730977673cbeed04b16c8491408f5",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-5464624f68ba",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-5464624f68ba",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "04657668907736ef85c07385d3c0bd33cb0f4559c6f2089b03ffc72f818617f3",
+      "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-c7563eb73df0",
+      "source_id": "FND-CONTAINER-b49f58b918ed",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-c7563eb73df0",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-b0346909d7d2",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "0598ad57b5b0d717347ce5d43dbbfeaac6c3d7cdcbe6b41157d7301177561523",
@@ -42,24 +52,54 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "06eaf4be04c5b22b49ac994d225fd9ef1cfb12fc75ae3f49d3129ff964aff7ba",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-4a39d4c85743",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-9B2BC3708B36",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "checksum": "076b4c3d819586bfdd8da3fa807f7c2e2b71522517fb8f22644e859711f6906c",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-452f02c62efd",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-452f02c62efd",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "08360d93da5e7a8614e0e0ca427e86b22c66942a4f60ac7301e9acd7a4ee47a2",
-      "relationship": "evaluated_for_release",
+      "checksum": "07c172030d8b0474cb75574790ef264e5329e087ca6cca8c3275c0ae08463588",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-8c4116b09936",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-8c4116b09936",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "083af8aaf8675ec85226203463eed4ede434afd2a16716875f5cab55bcc408dc",
+      "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-96b263718199",
+      "source_id": "FND-CONTAINER-a05776d7b2eb",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-96b263718199",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-f85db05c99ee",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "084d2ad84e01bd29f144eba34eea021be6be1c902d69ca81c4ce4bacea2e333e",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c269596a605e",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-04ae22ee8be8",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "085067d131a77960c5f1c15c8ef57584288bec686df65904a16f3e3ced594e68",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8c4116b09936",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-A89F673DD6D8",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "0868664c7dbbe273142599ca71d9b654b6a729b6b1f13493104fbb373a87794a",
@@ -112,26 +152,6 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "0bd4f6b70548c97241cb4b61e86852354edae91e9a092b170a4947753310cdc9",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-3686ad447a1f",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-3686ad447a1f",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
-    },
-    {
-      "checksum": "0e27aefe1e672e866a94f4987d26e49abd7cec572adc1ca23e7dfbd404e6b6fe",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-d0df15bb32ed",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-d0df15bb32ed",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
       "checksum": "0ec272b87a4dd2ed97c96628cf65abd96996c3b0e5b262de9d500b641b79188d",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -140,6 +160,46 @@
       "target_domain": "integration_export",
       "target_id": "EXP-5BAB40D130C9",
       "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "0f0052907ec012f36a3ce86cbe98cee0e58c9e3f78e038d244aeb0f9702271f6",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-65d0909407ea",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-BBEE8F3DDC17",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "0faa90b1b0bc9dbacb29a5e4ff807197017cf5482518d656869db127d57e9465",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c29de2c95e6d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-c29de2c95e6d",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "12e3a9fe919e046fc3883437cf93216f67d52ab5938f5e742fa1a870e5f5aec5",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-5a8d530b00be",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-ec079422b266",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "14560b1fc8ac6d67f9d5e75531c8441aadbf6848eeba99f91de500b7a3d18763",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a44acae763a2",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-a44acae763a2",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "14e6284d81a376195e2bbd88afe42433334fec6f3ebce0a920cc7b11c7301acd",
@@ -152,6 +212,16 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "159098dff74f9f4c4da48955ad34456b68d4f7879c799c609c006d25e0b134ec",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-3d855e8b31a4",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-3d855e8b31a4",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
       "checksum": "16d1951cbbf3825171c9e9036799590e1b10290273c6dbe3fa4ac980d07e7372",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -162,14 +232,14 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "1869ca7a2cd05074cd085d4df028355437bbdcbf0e67342a2c7f75fa2405cedb",
-      "relationship": "tracked_as_lifecycle_record",
+      "checksum": "17057b9099ef42c71a22906fc11afcad749e8733051ba2084ef680b34f09f4a4",
+      "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-35a70101ee98",
+      "source_id": "FND-CONTAINER-452f02c62efd",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-7beb96d909dc",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-452f02c62efd",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "1c06913da5690700b6852b38469dd463fb015df20261a36f04886a8206d8e58d",
@@ -182,24 +252,44 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "1c5b89193dc9bc1fb6f55dc3046e12d9d4eb996ac6138fd6c9e70db9c96086f8",
+      "checksum": "1d61fbd7dbb0b7b2e78ae81911d3e2a26023899e710e853828e27bdd546d106f",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-54f909a65e8d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-54f909a65e8d",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "1db02d811ed00f102d339be62c756019e7e939523870e9c52b03da382700d34f",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-e9c4b1dd55ff",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-e9c4b1dd55ff",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "1dba6f105d9e48b90a4f1b2c47c5a23441c7764586e9bcd3f8132b679f3d7e92",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-ba223b9333c9",
+      "source_id": "FND-CONTAINER-54f909a65e8d",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-d64dee6f78fd",
+      "target_id": "VUL-650419848c52",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "1d03636242cf92d74a24212ef06779098a0ffaf6dfd8ef1af3bd3d4335e453dd",
-      "relationship": "tracked_as_lifecycle_record",
+      "checksum": "1f036373d684ce5d1f1a37d46a30b941673af8b82273e750249e48c8db81939b",
+      "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-95a38a1f2a20",
+      "source_id": "FND-CONTAINER-cdafc2f07851",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-3c36ead265b5",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+      "target_domain": "integration_export",
+      "target_id": "EXP-052C661851F9",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "202cb58b25c6f77f5127c8622c6d808b4c8a0c4b83062da1cc2ff557da06cccb",
@@ -212,14 +302,44 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "24e023ed88a11dd093ffa1cf3b7f3fa6357ff279d8f86d5f1297ace1ea396d74",
-      "relationship": "exported_as_control_plane_record",
+      "checksum": "206105ed3895fb973001a0ad7e101a10fc02fd357a722d55e3934fc8216b738c",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-5a8d530b00be",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-5a8d530b00be",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "22c7eba737bc30eed6df9ca6e0f9f2764e768741bb472bb761dc91c597f9288e",
+      "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-c7563eb73df0",
+      "source_id": "FND-SUPPRESSIO-ef559061de8d",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-A04D71447940",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "target_domain": "release_assurance",
+      "target_id": "FND-SUPPRESSIO-ef559061de8d",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "253fe1b8b0c979249dbf37e98e6a953c1081c655a3a83e3cce2bcaef7ffbb3fa",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-e1d4cd41e57c",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-e1d4cd41e57c",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "2582cfced7c53e30239a3a3a857a71ec4979391a3ed1bab5b316bddbc89e3af4",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8c4116b09936",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-8c4116b09936",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "26113b23ac8ceb05428b38387a03ed5d4a2612ad8a29c606698df1a8b486bf55",
@@ -232,6 +352,16 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "26d038b9a2eb9762d41588bd1b284198efa6ff8054538658431d2fa4bd6c6fa1",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b49f58b918ed",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-D4427C22014D",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
       "checksum": "272df0dd15dc4a3f4bf52c57cf75c433d07a7d575f65a98bd051026f9d20b69f",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -242,14 +372,54 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "2a7300bf3a6e048ab27c00772b0e9e977b4ddcab6887e351c0888dcf466da76a",
+      "checksum": "27649e3c86742e93583b7cfee8bcc248a32f482139c1377c54b6169143225f47",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-65d0909407ea",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-0443feacb3ce",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "281779368142aeaa8231de1cc438aae04c6bf8bf1e690bb5b831f0e8465d83b3",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-c118af042a95",
+      "source_id": "FND-CONTAINER-43d127b610b8",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-c118af042a95",
+      "target_id": "FND-CONTAINER-43d127b610b8",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "285ab5e470620d6d45cd7c721df7e9ea9304f65ce30ef4a9111f5f4a626a044b",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-84d155fdc3d1",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-db0d70d48ad6",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "2949c7ba142cf889578bb9df15a65e9ca36abded2d901a7e19157c957c894e24",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a6116dba2666",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-8BAF6936296B",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "2c0badd7d45d39996b926641fc09e7aaed68527ce85a7cf1212191b06e52c005",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-3d855e8b31a4",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-95911e8c2313",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "2c4fad363a1cb31b0de2c50095581277d4317347e4f694af405a5ce8a2665845",
@@ -262,6 +432,96 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "2c8def08f5d14cf17ce12456fb3d6620819de20d308e0ce07903c0fe8a0b6803",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-e1d4cd41e57c",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-e1d4cd41e57c",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "2e27aa871232c7ff03cafac514c48f31111ed710773a248ce1637d92e2117fdc",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-866a375b43af",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-b9e1ce6ea390",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "302149e840bf7d9407ac822d6cb3fc1573c137fde2b4f897c0825a08859cbca8",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-85c29f2e1d67",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-85c29f2e1d67",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "313ab23ff15346ecc7e6a6a26ecbab52758794910017d50d94ef60a232e27fc1",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-8229cd4d151d",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-8229cd4d151d",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "31675b8fd06ec23d5e4281ab8b3fb69d1af54cac720a084a3bceff93ebca262d",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-SUPPRESSIO-5313851a0158",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-SUPPRESSIO-5313851a0158",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "32e3049e001c35b061de9fe06e15dc263a485a8e9f1db077f64b141b44c23a44",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-75484f7ebb4b",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-75484f7ebb4b",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "33e518135abf9fa96fdddb6a2a89ac5e80e299d5f07bc4700c85fd4b592296de",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-SUPPRESSIO-5313851a0158",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-SUPPRESSIO-5313851a0158",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "345bab34bbb98d33378697f8724f835ec6f8024bb0a64a99f9acf75f6053bd38",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-e1f2cc1c749d",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-e1f2cc1c749d",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "3634fd6a2293cb5e0a1a1676803cba804559e6c54d8c344c0b0542e5261a27f2",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a6116dba2666",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-a6116dba2666",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
       "checksum": "36606ce904ba32066f6f75e29058c81354de0f7e941462a555b0916023bf8f7a",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -270,16 +530,6 @@
       "target_domain": "release_assurance",
       "target_id": "FND-SUPPRESSIO-65201925e5c5",
       "target_reference": "outputs/security/release/finding-evaluations.json"
-    },
-    {
-      "checksum": "37976d6cd6763e753e890af872af2bc83d3f9e434dc59c4419a22cd7af763109",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-d0df15bb32ed",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-CD9451796A65",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "39aa68290f457ab6692c399e472e468be45a40b864f7df6dee9738cb4c34a172",
@@ -292,6 +542,16 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
+      "checksum": "39b25164f393ba5212bf6e5fb6f3d1cc90aa4833314bc4fd2421056ee561db3a",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-43d127b610b8",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-e67436cb77cc",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
       "checksum": "39b8ed4f1245b5beefb4216db09ed3bf813faa8971185bb9e79ea99dfca24692",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
@@ -302,23 +562,33 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "3c1716ac3f26392c507841e1f3b562ba89a20966fc02e26abb80c35e355f4ef8",
-      "relationship": "evaluated_for_release",
+      "checksum": "39febf09ff9f9cf6c99e33b93e2f37a94561e69a84321046dd86c0142cf2697d",
+      "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-5ee1761422cc",
+      "source_id": "FND-CONTAINER-85c29f2e1d67",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-5ee1761422cc",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-c3b2903eedb8",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "3cd98797ac29ccd04398e7b38a6198e047b16c98a4b4035975b75a92918896e1",
+      "checksum": "3c79068a002748e170518f947cbf491fc0fd1b114dc32191559c0b4ebce7eaa4",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-5ee1761422cc",
+      "source_id": "FND-CONTAINER-5464624f68ba",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "integration_export",
-      "target_id": "EXP-A8B16054EBB1",
+      "target_id": "EXP-5E568428C6BD",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "3e1eae0b8acd9c4e692b3c801cf29a15a31443c322728e194b85ee9dbeea6fd4",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a05776d7b2eb",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-A127D401B6CE",
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
@@ -352,14 +622,14 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "427fcbd3dc626d867690377d74cad6385beef2afa7fcff1b578f6d89d30d8610",
-      "relationship": "tracked_as_lifecycle_record",
+      "checksum": "41bbeb06745624e3585cfd4df3d4c19b0bc71a56732773611d0846a6aad72e2c",
+      "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-3686ad447a1f",
+      "source_id": "FND-CONTAINER-b9d1bbc8febf",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-535385b100fe",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+      "target_domain": "integration_export",
+      "target_id": "EXP-E7CBE7FA0FBB",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "42cf00380527a606e9deeada9322e777507b800f895636fe1d4c8b115d602d87",
@@ -369,6 +639,16 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-488f220bd590",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "43a1590cb2a64abcbe6d01bc03f46f07b9aa02c5ad63535258866902c1fe001e",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-f6f763380649",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-3fd891211c47",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
@@ -382,24 +662,14 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "4635bafb5805e2a3f5949184ab43cdea484a20915f76ed3c56a21a7c7211f6e7",
+      "checksum": "465b2ed58c7f45386a9d5b50c92f11e88f55d18ed3805beeb9c39b4dace231f2",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-3686ad447a1f",
+      "source_id": "FND-CONTAINER-54f909a65e8d",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "integration_export",
-      "target_id": "EXP-172E0B920741",
+      "target_id": "EXP-C7FD488DD06F",
       "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
-      "checksum": "464c29100e15abf3cd22f62909c5e0c06bcb8650a20d999bdb89ffbb0d26e45d",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-ef0f3e5e6558",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-ef0f3e5e6558",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "46936ddaadddd90fdb55451b53c5f0e68247b7cc23e8c792b451decba7102263",
@@ -412,14 +682,94 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "4cd4cf933d5b9eaed65845457beacac196da8169d7b158b41238ad0a14a4bd3b",
+      "checksum": "48584f223ae77ff3ed5ac5a7d885c56dd3f6aa94a838699e7f6fa55c7dfd0e07",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-9bac41a1b5ac",
+      "source_id": "FND-CONTAINER-452f02c62efd",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "integration_export",
-      "target_id": "EXP-23E790462222",
+      "target_id": "EXP-A32985B7AD53",
       "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "492eb9bb6942b7de90055a04de9a6b63d530aac4b432ebd3183248d23df2138e",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c29de2c95e6d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-a3fa0068a116",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "499c7a9133f746e139274174f2133d798a26932474f02d078212f7b4ee46abd3",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-4b3599117c60",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-4b3599117c60",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "49c80da50fb340c0cc520ddb976bfc2d6f2aa6804bd865204d4c896a6b876743",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-f6f763380649",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-AA91BBC0CC72",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "4a4179b273b47e04d4b675c9ae1960dd328576f41d57677b6e27a59b33ad8008",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-7401651d82c4",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-f86f40918545",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "4a461515055b0f3a0c332eee265ba7eb10990104913b15249c0319ee6466921a",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b9d1bbc8febf",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-b9d1bbc8febf",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "4a4e3dc0354bc7702da126188e692d1b8abf30cc3d9aa6df066faee800b3f667",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-3b7728ab6349",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-3b7728ab6349",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "4c1b941e3dc547d300a77e0884c3001c95f10dbf734f4b994b8d09caa2212ad1",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-65d0909407ea",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-65d0909407ea",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "4c85385c6ed86a9ceb05cc5c55571b8afe2b7df70dcd30d9d65c11a4d4823dec",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-87e329c9d3c9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-87e329c9d3c9",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "4e00a93bc128bddf0632b5a90198fa0db02f6a1a1c3601bc7e29e8a9a8ef748f",
@@ -442,14 +792,54 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "54e5e0441d617c1899a399d5f480a2a0aa55eee04619db99bdd6f8310cfb5287",
+      "checksum": "505fc670e081f0ee097aa3408f44e9857c33e1f58ee46bb8125bcd9dfec8789a",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-35a7a61eb9e3",
+      "source_id": "FND-CONTAINER-f6f763380649",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-35a7a61eb9e3",
+      "target_id": "FND-CONTAINER-f6f763380649",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "5426bf7939a16aab60217fc32ebb5513f240f138ece7379e310ffd577c12f704",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-8917d095a4d4",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-8917d095a4d4",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "54969cd3745d4e3ec630b93c229dd7d2646410f90b2428ff68f05772b3203b7e",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b49f58b918ed",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-b49f58b918ed",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "5507a55f37aef324041757f026b6c3d1284250d00aee16a967fdec8d99825201",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-c269596a605e",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-c269596a605e",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "55a926377cd54da77db3c9458a1b3209524c71f4f241271efd551e7825e7a3ac",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-85c29f2e1d67",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-85c29f2e1d67",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "577debe3981916340d01835c36319d8721c086b6e6e13c9d1e661d02eef9cc29",
@@ -459,6 +849,26 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-3e4410d0f925",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "5872eca00bf35f8072d0a63f24dedbde8591e20a19b4cbf44c6219a17f6cc7c7",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b11df2b9097e",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-c1247c8a27da",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "58a889965d608a9f659c368eea47ffee9de148b49ad03e615a9bea1de0d85ee1",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8c4116b09936",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-72b55409a109",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
@@ -482,6 +892,16 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "59a91658a738d1b29db82b124a19a537b707ead64e90801e943e2884c6ef97c4",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-b11df2b9097e",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-b11df2b9097e",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
       "checksum": "5a4cb459f95632bfb614cc43032085a04d51961569dea0e29d75f1534b8df786",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -492,24 +912,44 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "5a95ba78dd08125e3d9b0b1118edef29d7a7d00feddfd3b263aff4de8d25e954",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-5ee1761422cc",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-5ee1761422cc",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
-      "checksum": "5c23e50d8abf2e1daf80ba00fbd0b5c2b71dbdcc84b4ed5a7ec1a5207d55aa8a",
+      "checksum": "5ae9fe4990dd14c050bec498b5a8bb4e04e9c1e1407f701f2a86ae3b342cf83d",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-35a7a61eb9e3",
+      "source_id": "FND-CONTAINER-e9c4b1dd55ff",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-680d816e1f2e",
+      "target_id": "VUL-e3ad2902bcd5",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "5c7ac21920aa6941578ab89ad29b11d24aca85546278047a43abb25be64bb8c4",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-5464624f68ba",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-5464624f68ba",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "5d135d1bb9370d9fbb7f00aa82f01dc35e2f20f8dc5d2c53b40849aa9a4e2b35",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-866a375b43af",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-4043CC2BD38A",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "5df8a1034f4336066fcda7339b0728c4f12e0cefcc4f494e82279dea101e861c",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-3d855e8b31a4",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-EDB15263DB80",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "5e8a1a10e1124d1ca604808eb20e89aca30e5a5c7771cd2c72261f3720fab62d",
@@ -519,6 +959,16 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-efd857e25de6",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "5ed2ae388866b232d36435ff09de2dd5a88e53aa4bc74fd5efa3e948a63c8e79",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-452f02c62efd",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-3e6c8fa79f05",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
@@ -532,6 +982,16 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
+      "checksum": "5fec6c91a2871b3830ef1f0bd9a0a9dce151b181a9c4b909d4846cd537a7239e",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-cdafc2f07851",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-7af9536645c4",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
       "checksum": "5ff66b56700eb56bc83393f72705566ca06e2cca64d9d66e3970383e28d549e9",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "checkov",
@@ -542,14 +1002,34 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "62467e9d36db2173f3fc1e192848692abef6bccc0e0fa394afbec8d955396a67",
+      "checksum": "61323ca48a01fd54c5a30ee3b370c7464994d4b12f7fd64111b5d57c5d416ff2",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8917d095a4d4",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-8917d095a4d4",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "623d73ca0a40f60351fc17b3e0dde091c9b3dc4289c659480cbb5d271f79ee24",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-c118af042a95",
+      "source_id": "FND-CONTAINER-75484f7ebb4b",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-ec5befd85504",
+      "target_id": "VUL-b146a3668a88",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "6333231b9f04cce7e4cbc55945ade3538511c3fe793da1e27c612d30752226c8",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-97d0d191781c",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-97d0d191781c",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "6448b1f6121a2a85f9ec78fa37de389df0262b7b9323976b8e626a071687bebe",
@@ -572,14 +1052,24 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "652c5b48c21c238bcf0bc26cbd983955c08fbbf4841d0242e8304a7d88f04df3",
-      "relationship": "exported_as_control_plane_record",
+      "checksum": "65a99cb3111e81f2641b9423b1634a63b887eddef41cb6c6e70a23e75874819b",
+      "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-ba223b9333c9",
+      "source_id": "FND-CONTAINER-9448e15df1ef",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-D8D0F5136671",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-4bdf62bdfb94",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "665c44d1411975d663169c0780919a144c5a1ace81ba2f420116243b18d6d841",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a6116dba2666",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-86b224dc01e9",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "66d8b6ad14db9abf8d3c7b2c1956c02eef409f54306710fc4c3a42de438d4c64",
@@ -592,16 +1082,6 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "67bb9d141948b7620b0792ed561415f85b58e9ff2bd399def351b8aa8c75a52c",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-033201244a2b",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-033201244a2b",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
       "checksum": "6904a687a5ff1acde12d7f22c2f5fc2f069853cdcad4e02fdcabefe5d2b584e0",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
@@ -610,6 +1090,36 @@
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-2a7a40f3e0a5",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "69798e0952d5f3304b4cb78b0886f2ed9d8b7a0018e717954e09a217f32fa87d",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-5464624f68ba",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-d120d8886f8f",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "6983390f7027234dedcd5ce29cca5cefbc45134560c382e7954ccdf7cf2be494",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-cdafc2f07851",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-cdafc2f07851",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "69dae6ff0c1a428ebd5f018650baf72a3747ee2fb718665cec07ace7b9f4ad40",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-54f909a65e8d",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-54f909a65e8d",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "6a36252c1c65e48f44f7c9d0a76143810104f203e19feafc408d01af46c1e1c9",
@@ -622,6 +1132,36 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
+      "checksum": "6a4493c28442bae7b27afd53821acf31e5dfd01cdfae2a7afb5d3257d6e21b14",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-65d0909407ea",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-65d0909407ea",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "6b33ee38a09bcc4360d59d7833d031f7874ec68d4d91e5c3364e1df3d12c71f7",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8229cd4d151d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-EA44EED74680",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "6be49a4995714f1f472731842aca0e241a725ae0ef6f722f5c5aaa13b070013f",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-9448e15df1ef",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-9448e15df1ef",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
       "checksum": "6c040e3e0cf46eaaa74384ced826af2df1275975bcd12bb23a0a99d29d20dff7",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "threat-model",
@@ -632,14 +1172,24 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "6c3fb809cc5a054f546c1f17cd0ca653556667f05d22d1a104d592cb75ff668c",
-      "relationship": "evaluated_for_release",
+      "checksum": "6ee5e12d381d6aec6481951f87be016b6ecadca833031b97abdd04bfc9c2c52f",
+      "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-b26883cf2982",
+      "source_id": "FND-CONTAINER-8917d095a4d4",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-b26883cf2982",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "integration_export",
+      "target_id": "EXP-1A318B3CF861",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "6f41b32fb09e45923f25816b46beb79edb29373b70272996744069ed88f56070",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-65d75e6eba4f",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-8A91F1F679BE",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "6f59b7dd93a836c8f950c5ae047ec381c57475e85668c6ab451588c1fa9e1a46",
@@ -662,6 +1212,16 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
+      "checksum": "72c9182e406c130006cf5326e10b1d1a3a5b5321ce639c8ed1400fb34f8b9b9a",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-7401651d82c4",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-7A7E760A4336",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
       "checksum": "7332cbe70f1ed120c5d636fff22ad7a6e5d53ecd61ea2aece08017e4f97dafa2",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -670,6 +1230,16 @@
       "target_domain": "integration_export",
       "target_id": "EXP-E397BE2BFE69",
       "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "7380cd65f63c55ee9aeb6079e888dfe6016b04318e487e51c56d5ca80f92474c",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-866a375b43af",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-866a375b43af",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "73d9af958fbe4f1811a72ae544e9143cc76105802d2daab81c86405332bd9b15",
@@ -692,14 +1262,14 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "74430f130452c11566b5931cf39ddfa685a1d059bdde4b57f34b0363705243a3",
-      "relationship": "evaluated_for_release",
+      "checksum": "7408d8c447a39a198cd14166d9759b5fed9f1dbbee7bea1fbef7a51a55f10a6a",
+      "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-9360fa554791",
+      "source_id": "FND-CONTAINER-c29de2c95e6d",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-9360fa554791",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "integration_export",
+      "target_id": "EXP-0AF736180C28",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "759da7956f175f2ff6dc6d42798d2b32ae47512942dfa9edd097d54ccf5c823a",
@@ -712,6 +1282,26 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "76367ba65a49c9fa83ac6d53bd12cd85f1a6af6b4a35fc3d50b4d0e487a9daa2",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-84d155fdc3d1",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-29A3C0355B3E",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "765f9240542011448dcf60cfd419491c5e23022dc02f49a5f95aa5f654915f9b",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c31d90a0dae9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-B2F9C8656AE4",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
       "checksum": "779c28a5d23a85b403691ce520212f60390f6104db588f58690ae975c6973780",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -722,14 +1312,24 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "77bb3adc466d41e9851b962d8c7b60cdfdeb0236524ba63fd099c91f36c5f7e8",
-      "relationship": "evaluated_for_release",
+      "checksum": "77efd677442530ad5dfc4fbf519cb5a0b8d29f58cce8f7e215f171743872c498",
+      "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-ba223b9333c9",
+      "source_id": "FND-CONTAINER-3b7728ab6349",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-ba223b9333c9",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "integration_export",
+      "target_id": "EXP-ED7833F29560",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "78cd2f4520aa365078a6f0e9c0052e34232fae6bd8b44ddddf3c861a24d4b2ad",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-SUPPRESSIO-ef559061de8d",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-SUPPRESSIO-ef559061de8d",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "78fd58cb5965431ac5e51deaebfa67c86429b253c41783ad9a33d0d5e498235d",
@@ -742,24 +1342,34 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "7a25c2249afe8a2c919f88348ae6ebdb7533424d4f74c5be39bb48b9df4e15de",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-4a39d4c85743",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-62837edcf861",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+      "checksum": "79eacfbdbd8def972599253cdc155cf112317cb435627eaac4538456f79bb762",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-7401651d82c4",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-7401651d82c4",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "7b4550dc80802a11ced4706567827548b3123bb91bd426557c38a2b21141bf30",
-      "relationship": "exported_as_control_plane_record",
+      "checksum": "7a9b1516a7aeb363339c3110e8ec60cb2dfb6018f2f2743b80205c66028724f7",
+      "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-9360fa554791",
+      "source_id": "FND-CONTAINER-e1f2cc1c749d",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-2A80FB5EC3F5",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-e1f2cc1c749d",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "7af26d3e9f41d3098abd3f04e0b52ebde919355225bf33cf8edb1b2887968833",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-65d75e6eba4f",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-65d75e6eba4f",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "7b602047311b23d84813a2d75c603d089999553b10f30c763fc9d54ea01c37c7",
@@ -772,6 +1382,16 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
+      "checksum": "7c14b5127dcd3bc8d045473236f1f6b5c9dbfd54eb13ad53e82909dd32ab02db",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-43d127b610b8",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-D8581C4FA533",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
       "checksum": "7d2419118bfb2c2b9f34d00485687d9f151698900dfaa9d7466ca24733d86a4f",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "checkov",
@@ -782,13 +1402,33 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "7dfac3883adacda2a065f5ad23b9db7de70520b85c9d16e7726c48e0b1fd62e5",
+      "checksum": "7d46674036408d8fa789cb13b24bb8499c758f586cad4081d3a416213b7ad892",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8229cd4d151d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-8c678fdbfd5a",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "7d8a2d938be3a5bfc2ed5bd141008cd32ee6458a373b9b7932aa1608066a3053",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-5a8d530b00be",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-C740466068CB",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "7e749f1134f6957da5983bd1030a7f0a8b29b9d2b4e30016925fa76879e6491f",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-95a38a1f2a20",
+      "source_id": "FND-CONTAINER-b11df2b9097e",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-95a38a1f2a20",
+      "target_id": "FND-CONTAINER-b11df2b9097e",
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
@@ -812,14 +1452,24 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "7f6ac4729a3dad125adbdfa095a14298abf33f1ecfaa25fc2a27e3ca78ea60b6",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-35a70101ee98",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-35a70101ee98",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+      "checksum": "81684cbac81d01b3716444db8b15fbb1f844f32edbe7e93bfb83efaa11ab2c9c",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c31d90a0dae9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-fe6e8af57976",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "824a1ec4de71d65654505cbf20d6fc8622645342a2106cde9b91e48d18593ab1",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-e1d4cd41e57c",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-833EE702A150",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "8253b238cd657cc101c6c7bf69e1f419d9bc650d58c64ca1c034662f50bd1fb3",
@@ -830,6 +1480,36 @@
       "target_domain": "canonical_findings",
       "target_id": "FND-SUPPRESSIO-68e51d21b290",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "827069ebbd7155974ee24ec741d7a9d55e2297d9b934f7cee07a20b546db25e8",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-75484f7ebb4b",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-C481AC04F466",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "82cab082e9acc0fbfab30dacfe35366bdff7f167aebe86190c58d25c9e876ca9",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-6e659fb03bfe",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-3945868fe01b",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "82ccc4d02bd21465af245ed46a4507005835d996af660e74dde395fc01f23db2",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-97d0d191781c",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-57DE2C67FCE9",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "833b65f3513ad28f5e2df3d3b8846f4b87946521f8cc3db8327525b317b3dfc0",
@@ -852,6 +1532,16 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
+      "checksum": "84308eb4708c6cbc40cb99db375bcbd7ca32af731a3b83d7970ca652873e20de",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-65d75e6eba4f",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-65d75e6eba4f",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
       "checksum": "843c78d7a946a74bdc4d49b771434aa260e03015f83589ade470b400057e2d22",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -870,6 +1560,16 @@
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-d59c985e42d9",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "85903637f129fd13ce01bcc22f653d6b0a1f26bcc2c33f356fd5c846d6cabfeb",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-87e329c9d3c9",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-87e329c9d3c9",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "85bbd1d56cca4d47819ebf874f6ac59a88b64132cedc8136c23019a991c6b720",
@@ -892,14 +1592,54 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "886daac51f6cd00c2a8cbb82fd3ec227ebec0aea129f1dfe886f12ae2fde1564",
+      "checksum": "86ceb39727f28999d1b6fe8e82de58d788262b30e0475ec52c8d8ae36214c132",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-87e329c9d3c9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-A5684C97C0AA",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "86df70e21f7a8fc573f3519a301ace6c8752b9cde85ce873a3742bf9d6f480df",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-866a375b43af",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-866a375b43af",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "87523e61412f60004901623a516890a8eea965d2fcb39065334025b9b8cfee0a",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-ba223b9333c9",
+      "source_id": "FND-CONTAINER-3d855e8b31a4",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-ba223b9333c9",
+      "target_id": "FND-CONTAINER-3d855e8b31a4",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "87d93ef9fc086a519a57a11b6cb9a972bea92d0e6ce6ccfc1f2672c057321e84",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-8229cd4d151d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-8229cd4d151d",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "87e679c57bf12bf34e5480a70e9c06a54277bb54a814d70dae84d36bbc1da4e3",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-e1f2cc1c749d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-25A272A23690",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "887cca5e36a00c6b04ac9fade525bb6533852b087d924790ca2f96bfd43ffce2",
@@ -912,6 +1652,16 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
+      "checksum": "89f1aaa0d789c150f48f74a3976098c53f7bf8e5f27855f497a4e557eed8956d",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-75484f7ebb4b",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-75484f7ebb4b",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
       "checksum": "8a2de2a051ff182d6bcded824f9851418291bf7584771f4bfd1f67001c99d786",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
@@ -920,6 +1670,16 @@
       "target_domain": "canonical_findings",
       "target_id": "FND-CONTAINER-6884a6a2aeb3",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "8a64d8e7715b40a1fac552c5e77a56e4e3d09cbfe76429049f2ce029e4301beb",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-e1f2cc1c749d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-3dd199011de7",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "8a84e226312c7ed5b84a4672a492cf6d2524742a5c0b5cb5b56d8d4003f376b1",
@@ -962,13 +1722,33 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "8fbd5de7226a5b6f07296a27c2f51d68f35b555122d95e335252d50a59b4f61f",
+      "checksum": "8e5d0ee8901380dd4b32243ebe6150b40c46102651c6862a05669d85d2e090d4",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b32479e41fff",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-b32479e41fff",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "8e9eb64748dfc4ea3d4c0f9651e56d3f9cb3d2c0d3a4163009162cb4ab09cc64",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-97d0d191781c",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-c73f1499d5c2",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "9071557ba6d132b5af939176a0233008cdcfb226f339f732daa22fcc64786a06",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-ef0f3e5e6558",
+      "source_id": "FND-CONTAINER-c29de2c95e6d",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-ef0f3e5e6558",
+      "target_id": "FND-CONTAINER-c29de2c95e6d",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
@@ -980,6 +1760,16 @@
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-9d1dd0128110",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "91307dd908518f4e33ee3647531429d5b1ed68a615d60ed9652f4841ba7f271d",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a05776d7b2eb",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-a05776d7b2eb",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "91797a878a19c7bb8b9551e915c8e42e06a2640f85f4d2630ade237c49627b0a",
@@ -1002,16 +1792,6 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "91c08e1530611a24890f7ea2f0f7a5f65ad664855de58897bcaf6befe94baff7",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-3686ad447a1f",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-3686ad447a1f",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
       "checksum": "92e0ae9cb845a1cd039343480ee2d6005f3964c04df77536e6df9b46e22dda22",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "threat-model",
@@ -1020,16 +1800,6 @@
       "target_domain": "canonical_findings",
       "target_id": "FND-SECUREDESI-77c7990be9b8",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
-      "checksum": "947d7ed8477dc54f10393ac3f807ffe67c86020977ab3981986023ce67234906",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-c118af042a95",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-683CAE9975BE",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "9522e185536e2b6b45fc873f3c9d771fadafb237201c48e3c39a434d6ee3f153",
@@ -1049,6 +1819,26 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "release_assurance",
       "target_id": "FND-SECUREDESI-ac50e3235345",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "961e5c126db2eb6509ae186585f7c9206440c38b7f8107360a08fe10a15e5223",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b11df2b9097e",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-0C587B98A272",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "96dd8eeb3a5c02d205300b3971a5225461204945be205670a1e95976a8265fc0",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-84d155fdc3d1",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-84d155fdc3d1",
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
@@ -1092,14 +1882,14 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "9abb79752541645ace7fabe8107b9a915e2a45d96540ea1f5b208fd9515c33aa",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-96b263718199",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-96b263718199",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+      "checksum": "9b9bf0359338346a6e8f2677d3bc5d575cac33c3fddfe30113da8781d86a8fa1",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-3b7728ab6349",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-17f8dcabdae2",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "9dabf92f7a0344bf6b7e2d7b6aa053ed4d9e6b31b0268f63e97cb87aabcc710d",
@@ -1132,16 +1922,6 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "a0d59e74a007c0399fdee50fe5bf048567c2aefb904fe359583f082521595937",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-SUPPRESSIO-ef559061de8d",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-5ee1761422cc",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
       "checksum": "a0d7ea9eae070f8dd61f8e32893e7d63d5e26e81a2ab777af4c5184fe878cef2",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -1150,6 +1930,26 @@
       "target_domain": "release_assurance",
       "target_id": "FND-CONTAINER-6884a6a2aeb3",
       "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "a1a383e520aa716b587ca618f098705a7079a11242387d1cbd7ffe34374f2bb9",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-4b3599117c60",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-4b3599117c60",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "a1a4baa962a54481317c0522d66b47e0b96b4abed9fbf117c0620f4e0fd15672",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-d7e9ab84f9e9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-176849B8C9B4",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "a28b1733684c60e716288f2edafcc5f17d7f55913d39ce7ba57040101f2bdcc9",
@@ -1162,24 +1962,14 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "a6ee50f94fbf04792136a4a8af47ad30beb252d59b33be057945907746d0aa4a",
+      "checksum": "a57b1e00770c29726514e628107adbe1c306132054a9545ef82e6f1c564b81b8",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-35a7a61eb9e3",
+      "source_id": "FND-CONTAINER-b32479e41fff",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "integration_export",
-      "target_id": "EXP-E5078D61EA75",
+      "target_id": "EXP-7A36D65AD644",
       "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
-      "checksum": "a6f1aaccf56300e97445c7019c384ba52370fcc5fd5f9617c58362484374c304",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-96b263718199",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-07ec5cfe733f",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "a707087144dee17dcb250181eb95b6f1ccd839de047e028ad08961d1dda27d84",
@@ -1192,6 +1982,46 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "a712c05f939e9c8640e53fd9d58c08aa65deb3420845d108eccf8eca15a65013",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-6e659fb03bfe",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-6e659fb03bfe",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "a753369fa410851128cf02046d1f4267f874a0cf5960f66274ac0312e8dc3eb0",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-4b3599117c60",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-D743674E1E1F",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "a76def950e125dea441f44837b41bce00711aa36d51526543805dbf202a6dea8",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-a44acae763a2",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-164d4245cfbe",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "a7b40b7e8cf5e0fd5035ec578a54fbd9ae3db1b9732ac4de2e62a26cbc06a153",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-d7e9ab84f9e9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-5072e2eff63c",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
       "checksum": "aab1949969b14db8c6ec829bbb98bf377ee008faef214f64899a4b92adb72789",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
@@ -1202,14 +2032,14 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "ab490f0afab2b722233083c89bea41cd37b2b54efaf6fe14cfd59e82b0c705f6",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-9bac41a1b5ac",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-9bac41a1b5ac",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+      "checksum": "aab5df5c44a6d7b1d7f760286a7f51b50140d1a7297a7b250d20bb54071388dc",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-65d75e6eba4f",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-e4d5485dda12",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "ab6ee33b044c3aa72200bead118de830e1a3109a76b888ffbf9f6f43f46290df",
@@ -1222,13 +2052,13 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "abd99f5af55fb405d6c3517c8fe1b377f3a130cecdb18a972bec9bc1de6f2b20",
+      "checksum": "ab7c537a06168f99de1e68a261d877477a060bc7402efc506c1414aaf3966130",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-96b263718199",
+      "source_id": "FND-CONTAINER-a44acae763a2",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "integration_export",
-      "target_id": "EXP-F055D8A380A4",
+      "target_id": "EXP-8DB597DF8692",
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
@@ -1242,23 +2072,13 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "aeef9e0539f8ed75488cf47c45dcb34706787de91d4120122a692b0b527c0a91",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-d0df15bb32ed",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-36cafa8f2eed",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
-    },
-    {
-      "checksum": "afc793e4b5c2b83f503db834092ff491853e8e03d3d423e24053f718dde7513d",
+      "checksum": "ad48989136d85886e3cc92e690fa6a9d0a13e74271ff4593cf82a11b61b40245",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-9bac41a1b5ac",
+      "source_id": "FND-CONTAINER-e9c4b1dd55ff",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-9bac41a1b5ac",
+      "target_id": "FND-CONTAINER-e9c4b1dd55ff",
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
@@ -1272,14 +2092,24 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
-      "checksum": "b6775fce1886798055a0b3ce4ca6581a1d789c739a203c029aff74e8a4942ae0",
-      "relationship": "evaluated_for_release",
+      "checksum": "b502287d24ede7a9cb6f4578b1887f80482d598a0cd68e1f6357bd4051d7c84f",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-84d155fdc3d1",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-84d155fdc3d1",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "b513401b13b776ea8bfc460e3609cef2c7b61067126bdec521ea176788f04fbf",
+      "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-033201244a2b",
+      "source_id": "FND-CONTAINER-b9d1bbc8febf",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-033201244a2b",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-72e9f205d0d6",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "b79d5bdcfd5b104103faf59e2c6bd8c41568b97f38414b0d96307888ef9f5310",
@@ -1292,16 +2122,6 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "b9ca95dfb23428a41b6898efa897b88c25a1195f096f9eb9d5bf477dc7319ab9",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-ef0f3e5e6558",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-319df8d00bbb",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
-    },
-    {
       "checksum": "ba70e7b002add05d23a06ce63ddc3cd2c37e35697fb1daec810c2476b4e2d799",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
@@ -1312,6 +2132,16 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
+      "checksum": "bbee24b979b066453f4f590ffa09e33b898bf57fcd3a578d030afdcaf7d853b2",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-85c29f2e1d67",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-213A430BACDF",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
       "checksum": "bdf016f541ae22849032f1ee47ae3d0e1b0a342ef68769937038d10478d7b81f",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -1320,16 +2150,6 @@
       "target_domain": "integration_export",
       "target_id": "EXP-89560C1D00BE",
       "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
-      "checksum": "be8139c3237db5a12b11bbaa3892b2d5320e3fae3444537c1cff91133bcf9fa4",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-d0df15bb32ed",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-d0df15bb32ed",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "bec24a99d639558111221f4de7a413c237ddfdca94b9650e353aa67f17861830",
@@ -1352,14 +2172,14 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "c0d9aca9b35973faa6a646315fba97188c5078f63bd672dd041ba01a8e050f1a",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-95a38a1f2a20",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-A35403477103",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "checksum": "c1a71f0a841dc4134d8f495598b072d6221dd9c4bbb6bb6122db21caf6e63ed2",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-b49f58b918ed",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-b49f58b918ed",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "c2371aadd0a81293da7469098f9319a1cb5328261328c403dd1ae2a74ed1e11a",
@@ -1372,6 +2192,36 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "c2559074943d1376e5d4cde8b30b5e0f47619db64415de24b4d92f408798569b",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-6e659fb03bfe",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-9A74F6122E23",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "c4c02d721743c297ec19268ff2426f1b0f6c9faf984ef251e575f579ed91cf32",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c269596a605e",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-c269596a605e",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "c4fbf87bd3020cd27c27ee4b9b082a4b05e78227cb9743b2d43227c55bb7b601",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-9448e15df1ef",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-826255DCD4EA",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
       "checksum": "c684fa099021cfec88c71a75b474b7b3ecbdddf5ada2a950770b3978ad9d3f99",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -1382,23 +2232,43 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "c84f7b95b3f863396e6ecab965af9633fa8080c4b57756b0045bcf858ede77c7",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-b26883cf2982",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-7D2AEEEFA44A",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "checksum": "c6dc31d3adc0c12e421d66ecdc26cee1023015cf70c446435b966c70c7b082a6",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-a05776d7b2eb",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-a05776d7b2eb",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "c8affe8a19518e947fea170c5e5165d4564f66c29feff73bdbc2303f795d8898",
+      "checksum": "c7b50e281ca5e49f2844154a0343f22d9c23de1639477d9a9166b1ab53545d9d",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-35a7a61eb9e3",
+      "source_id": "FND-CONTAINER-d7e9ab84f9e9",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-35a7a61eb9e3",
+      "target_id": "FND-CONTAINER-d7e9ab84f9e9",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "c7e1ff256c500e498c00e792fc61bcf1e4bd8b5de28cc3f6a53c6d8fbb168297",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-a6116dba2666",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-a6116dba2666",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "c83ca52a6b0af978532e70619e085cfb94e962862985995690e6894c16c8ecd5",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-c31d90a0dae9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-c31d90a0dae9",
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
@@ -1412,13 +2282,13 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "cc096181ab6bd691057aba4311054675dfdd71d4cf03addf76374dad26aef3ae",
+      "checksum": "cdb22cff9f4bd9636bc6573dea8f09abcd5362f324b9863a394362d11b3cd2d9",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-SUPPRESSIO-5313851a0158",
+      "source_id": "FND-CONTAINER-d7e9ab84f9e9",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-95a38a1f2a20",
+      "target_id": "FND-CONTAINER-d7e9ab84f9e9",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
@@ -1452,14 +2322,14 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
-      "checksum": "cf2490d2c4f24aa2ccdb2eb781845aa8c0c730f708f2660e38a1c3e9b5a63a6a",
-      "relationship": "tracked_as_lifecycle_record",
+      "checksum": "cfee607524552d8efbe7c32d04bf120b9e01c7787035ee3f228578f9fc2f3634",
+      "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-b26883cf2982",
+      "source_id": "FND-CONTAINER-7401651d82c4",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-f0424a7c155e",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-7401651d82c4",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "d07ffce52c7ca61935edffdbc3130088be31e8ccb3255e7470a37a4f0a172793",
@@ -1472,24 +2342,14 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "d2ce73cfbe7d674329f2a7274ddbb9aef4c5a92e5fa578c798ea9e1f7e41d84a",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-9360fa554791",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-9360fa554791",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
-      "checksum": "d3cd29ec51623762129e969dc8736cf3fda8537c8c457cd0a66cfe575443a6e9",
-      "relationship": "tracked_as_lifecycle_record",
+      "checksum": "d14b1b1b144ba45bd45ba15de4dc98b09748a076e1a94957f1601dc33231ca0a",
+      "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-c7563eb73df0",
+      "source_id": "FND-CONTAINER-c269596a605e",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-64faf13bbdae",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+      "target_domain": "integration_export",
+      "target_id": "EXP-4AB7C75CE13A",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "d4360fd19b6c61c2b311cf583d193edfae009e6fb9f1769587c391958d8bd626",
@@ -1502,36 +2362,6 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "d51fc91e04e75d73294ad39eb6d4ea7db83e6a1b9ce50e48f8a38313082aad85",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-4a39d4c85743",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-4a39d4c85743",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
-      "checksum": "d6507d1a6fbeda87bdeb69c07b4358e80ed3ac3c63bc567ad6981e909c30bcf9",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-9bac41a1b5ac",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-1a8a6cdaadda",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
-    },
-    {
-      "checksum": "d65b227e6c67d1d206a754d43dfcc9c05a33fc35ec01e4b9ee03fff320fbaaa3",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-ef0f3e5e6558",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-C3A12BE5921F",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
       "checksum": "d96c48ff6c6743f8a3da49abc86110ecfb294b8596d944d305b31936b8ad933d",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -1540,16 +2370,6 @@
       "target_domain": "integration_export",
       "target_id": "EXP-A54AC0B4AE33",
       "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
-      "checksum": "da5b36f84ac398b1ceb10ed6f96f4533ce135e4f7ad15cdd8ef172091bf2c222",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-4a39d4c85743",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-4a39d4c85743",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "da9a2bb1561ded225b9db9e23aed5930bbc0bd3113bfd8bbdd3b016aa4180827",
@@ -1572,6 +2392,16 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
+      "checksum": "dc3db6e8d4e346913cb76589106ecc3781df1f20fbc554efe2885d4034a8762f",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-97d0d191781c",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-97d0d191781c",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
       "checksum": "dd6971ddf45f7907e6409965d8c678dfba48a1e0444a755d33bd021b2470a29a",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "gitleaks",
@@ -1582,24 +2412,14 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "de128584800c7b9e3a41eddb021562f92881f45739d977a0064380e8c6c2b6a6",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-033201244a2b",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-409a5ea1d699",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
-    },
-    {
-      "checksum": "df82a566c9d3b34163f673e7c704ab14f86fa17dbeddfc1603544fe4787740f7",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-35a70101ee98",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-CCA138759A8B",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
+      "checksum": "de505b61c302a9c07f142bc7a0e95f9aacd288b5b97a6e35ea2139d4faa52e28",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-c31d90a0dae9",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-c31d90a0dae9",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "e06dffdca16d05f6b0da60055f7cf523f1b1506acd0f0ab3c1d5ca2b7955d632",
@@ -1609,6 +2429,16 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "release_assurance",
       "target_id": "FND-SUPPRESSIO-6dce772b98c3",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "e134b3d9fdc9382d209a51aa52489792d75fc5d9dec65804dbe70ab0efd51a88",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-6e659fb03bfe",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-6e659fb03bfe",
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
@@ -1622,24 +2452,14 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "e1746b75f59d48e5200a913205249401dfe7be4c158641eae2ad8cb5da5fd442",
+      "checksum": "e3426b4b827c339e07427019928d7dc308acb9ae9eb76e813b528dffd629fd5e",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-033201244a2b",
+      "source_id": "FND-SUPPRESSIO-5313851a0158",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "integration_export",
-      "target_id": "EXP-BFB6E8BF1D59",
+      "target_id": "EXP-A25D1760A517",
       "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
-      "checksum": "e2e6f554c21a8f8abc8412e6ba47055b23973b069c2d76d87dea92c6406fd664",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-c7563eb73df0",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-c7563eb73df0",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "e387c50603f4d97698b23767d349fdae1049653f05963c62ffbfa11affbc856b",
@@ -1652,13 +2472,23 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "e63c4e694b471aef080eb69d85edc44dd2be735cf29aae1ed22d2023118af32c",
+      "checksum": "e458dbb97c91833f84fa0a59c6f30a4f3c894daad0270d6a34c6a7b12278033f",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-5a8d530b00be",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-5a8d530b00be",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "e715b448dca52cb65d0e90954f3b6f9a0bc899c7f57f1a75b42e436c1a5fd0ec",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-9360fa554791",
+      "source_id": "FND-CONTAINER-4b3599117c60",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-7fe2093e27f6",
+      "target_id": "VUL-f0592667d50e",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
@@ -1672,6 +2502,26 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
+      "checksum": "e73ee87b2b10ed309b0f7ff62745bd736d4f71bd90d51d6908e321243cdc9fff",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-SUPPRESSIO-5313851a0158",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-b44d66dd0cda",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "e7e0985a389891145a2a0b7c4857a121025b22cfbd8c470d7d2dbba8d36e16a5",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-f6f763380649",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-f6f763380649",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
       "checksum": "e86939382da210ea66108244138b753abf1386b64ef3d025d405046967f27e48",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
@@ -1679,6 +2529,26 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
       "target_id": "VUL-5a09ed00559e",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
+      "checksum": "e86e00fc1ccb3add523a6ae3b6763c76d6c53a15096ca66354d3e5df9c53e0b1",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-9448e15df1ef",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-9448e15df1ef",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "e9481c69304ba8458487f4b329dfa21e08daf972015a4dc46774e01ebf4f98dd",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-SUPPRESSIO-ef559061de8d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-b1a69851e6a4",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
@@ -1692,6 +2562,16 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
+      "checksum": "ed3bf3c5cb20ecd4be4d8b4caa72106336eef3562975a9078cd6ec032b331b77",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-e1d4cd41e57c",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-1863021b0a9c",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
       "checksum": "eebaa454e8fd15c463bacc4c73d22b26ba9bd67517fb31bf6b50491b23f71431",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -1700,6 +2580,16 @@
       "target_domain": "release_assurance",
       "target_id": "FND-SUPPRESSIO-1065083a8d4b",
       "target_reference": "outputs/security/release/finding-evaluations.json"
+    },
+    {
+      "checksum": "ef3b6d21401ad07d03023f852187e62f942c6a67fc27d44194754ea9b9f3d077",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-87e329c9d3c9",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-0784eda86673",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "ef526fe4d946914f162d105c0de1d93bd8c70cde0a8061387a903503d9e07226",
@@ -1712,24 +2602,54 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "f3a5b60a6056a173323595ca65f0c7841b07de940f41af3b347e4fa9cb3873a7",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-35a70101ee98",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-CONTAINER-35a70101ee98",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
-    },
-    {
-      "checksum": "f43fb25104c2f59236cb8b63b43e5109e6ddca599bf262a948bcf9316515d955",
+      "checksum": "ef80f78d98c7a9fa275209a582cbb10a3c12f1997074463255d482bc07a93149",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-b26883cf2982",
+      "source_id": "FND-CONTAINER-3b7728ab6349",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-b26883cf2982",
+      "target_id": "FND-CONTAINER-3b7728ab6349",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "f1f09673dab9bc4512292dab254fd1e8c8783abe76fc1639feea372934c7387e",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-e9c4b1dd55ff",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-F43EFCADEAE4",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "f3f081c7976d6c56a9aab6b2a844d85f19d8f7aa2aabfcf3061f4bdae683be09",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-b9d1bbc8febf",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-b9d1bbc8febf",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
+      "checksum": "f4b5e4f17052685afd196f9df1a17c6871ad60504a7b20371b397e71a941f407",
+      "relationship": "exported_as_control_plane_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-SUPPRESSIO-ef559061de8d",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "integration_export",
+      "target_id": "EXP-307A86E606EE",
+      "target_reference": "outputs/security/integration/product-security-findings.json"
+    },
+    {
+      "checksum": "f60d92b2f09ea118198bb1d15dfc34488b80c2ec472dad888013db3bbec4e8c6",
+      "relationship": "evaluated_for_release",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-43d127b610b8",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "release_assurance",
+      "target_id": "FND-CONTAINER-43d127b610b8",
+      "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
       "checksum": "f68bba71f0155a57263283eb482b3bbf0729a54f754df7ac402764c2b6230a69",
@@ -1752,6 +2672,16 @@
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
+      "checksum": "f6e8091c7356e7e970f528b60631fec7d914ac0735cf22e2693d763f5cc3e59d",
+      "relationship": "normalised_to_canonical_finding",
+      "source_domain": "trivy",
+      "source_id": "FND-CONTAINER-a44acae763a2",
+      "source_reference": "outputs/security/appsec/raw",
+      "target_domain": "canonical_findings",
+      "target_id": "FND-CONTAINER-a44acae763a2",
+      "target_reference": "outputs/security/findings/deduplicated-findings.json"
+    },
+    {
       "checksum": "f7b72f0ae588478a76e706de6dced4737e134025ac3539ded7037c72b410f7c4",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
@@ -1772,13 +2702,13 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "fa59d87bf8831ba80d4a054f7ed40fb09dbd36be48feab664929d92176a0c7f2",
+      "checksum": "f9df65844847f6830eb2245cbe6bc969be1c569d0280f0d4bb639db318a3d9e4",
       "relationship": "tracked_as_lifecycle_record",
       "source_domain": "canonical_findings",
-      "source_id": "FND-CONTAINER-5ee1761422cc",
+      "source_id": "FND-CONTAINER-8917d095a4d4",
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-722413c096a8",
+      "target_id": "VUL-05cdfb3497e8",
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
@@ -1792,6 +2722,16 @@
       "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
+      "checksum": "fce94602a6c82a79da10b415d24801986bd3e029ff625c012e3c2b23a10de2be",
+      "relationship": "tracked_as_lifecycle_record",
+      "source_domain": "canonical_findings",
+      "source_id": "FND-CONTAINER-b32479e41fff",
+      "source_reference": "outputs/security/findings/deduplicated-findings.json",
+      "target_domain": "vulnerability_lifecycle",
+      "target_id": "VUL-0ff0cf010410",
+      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
+    },
+    {
       "checksum": "fd11c5b832eab36e2991cbda082f09397ff778fc84a62be8d4d7ca377e2c5f1a",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
@@ -1802,13 +2742,13 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "fe206089f110cce453289043d9065a7791d771b990ce0bf1f9d08a8edfa74aec",
+      "checksum": "fe0f0f2bd726df1f0e24b72fb41e9f3e4d91f500a40e337391233dfff1ec36f7",
       "relationship": "normalised_to_canonical_finding",
       "source_domain": "trivy",
-      "source_id": "FND-CONTAINER-95a38a1f2a20",
+      "source_id": "FND-CONTAINER-b32479e41fff",
       "source_reference": "outputs/security/appsec/raw",
       "target_domain": "canonical_findings",
-      "target_id": "FND-CONTAINER-95a38a1f2a20",
+      "target_id": "FND-CONTAINER-b32479e41fff",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {

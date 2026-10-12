@@ -1302,12 +1302,12 @@
   },
   {
     "category": "supply_chain",
-    "description": "Future build artefacts and images must be attributable to reviewed source and protected from alteration.",
-    "evidence_reference": "future artefact evidence",
-    "implementation_reference": "Not implemented; release provenance is deferred.",
-    "implementation_status": "planned",
+    "description": "The release image must be built once from an identified source commit, scanned and associated with SBOM/provenance evidence, then published and promoted only by immutable digest.",
+    "evidence_reference": "outputs/security/supply-chain/supply-chain-manifest.json; outputs/security/supply-chain/release-artifact.json",
+    "implementation_reference": "scripts/container_supply_chain.py; src/genomic_research_access_api/security/supply_chain; .github/workflows/build-publish.yml",
+    "implementation_status": "implemented",
     "owner": "platform_engineer",
-    "planned_milestone": "Milestone 7",
+    "planned_milestone": "Milestone 6",
     "priority": "high",
     "requirement_id": "SR-SUPPLY-003",
     "residual_risk": "medium",
@@ -1315,9 +1315,9 @@
       "THR-SUPPLY-003"
     ],
     "status": "active",
-    "title": "Artefact provenance",
-    "verification_method": "future provenance verification",
-    "verification_reference": "future release evidence"
+    "title": "Build-once immutable artefact provenance",
+    "verification_method": "supply-chain metadata, image SBOM, Trivy image scan, provenance and digest consistency tests",
+    "verification_reference": "make supply-chain-full; make verify-supply-chain-evidence; tests/security/test_supply_chain.py"
   },
   {
     "category": "supply_chain",

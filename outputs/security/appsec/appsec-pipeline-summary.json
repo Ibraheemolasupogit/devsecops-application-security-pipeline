@@ -1,7 +1,7 @@
 {
-  "blocking_count": 1,
+  "blocking_count": 0,
   "not_run": [],
-  "policy_decision": "block",
+  "policy_decision": "pass",
   "scanner_count": 5,
   "suppression_count": 16,
   "tool_versions": {

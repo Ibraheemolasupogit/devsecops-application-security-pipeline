@@ -1728,8 +1728,8 @@
   },
   {
     "threat_id": "THR-SUPPLY-003",
-    "title": "Unsigned or altered build artefact",
-    "description": "A future artefact or image is altered after build or lacks provenance.",
+    "title": "Build artefact substitution or provenance mismatch",
+    "description": "A built image is substituted by a mutable tag, rebuilt between assurance and promotion, or associated with mismatched SBOM, scan or source evidence.",
     "status": "active",
     "scope": "future",
     "stride_category": "tampering",
@@ -1762,18 +1762,21 @@
     "impact": "high",
     "inherent_risk": "high",
     "existing_controls": [
-      "no deployment exists",
-      "Docker build validation only"
+      "Build metadata records Git SHA, Dockerfile and dependency checksums",
+      "Container scan and CycloneDX SBOM bind to the built digest",
+      "Publication eligibility consumes canonical release assurance",
+      "ECR publication verifies the returned digest against the candidate"
     ],
     "planned_controls": [
-      "artefact signing and protected release workflow in later milestone"
+      "artifact signing and admission-time signature verification are later work"
     ],
     "required_controls": [
       "SR-SUPPLY-003",
       "SR-CI-003"
     ],
     "verification_methods": [
-      "future provenance verification"
+      "make supply-chain-full and make verify-supply-chain-evidence",
+      "immutable digest mismatch and evidence tampering tests"
     ],
     "residual_risk": "medium",
     "risk_owner": "platform_engineer",

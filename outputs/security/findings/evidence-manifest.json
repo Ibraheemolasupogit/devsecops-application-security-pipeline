@@ -14,7 +14,7 @@
   },
   "as_of_date": "2026-01-01",
   "controlled_timestamp": "2026-01-01T00:00:00Z",
-  "deduplication_count": 2,
+  "deduplication_count": 0,
   "deployment_status": "not deployed",
   "input_files": {
     "config/findings/asset-context.yaml": {
@@ -51,7 +51,7 @@
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
-      "sha256": "54b02c85eaa3f4a742e687a1318c9bb6f6e618013a69653e81dc3a56bcec4356"
+      "sha256": "91e079575b0e6dd34d67bfaa27fecc75504e7a6196044a4d609241c8f8c9d706"
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
@@ -67,11 +67,11 @@
     },
     "outputs/security/appsec/raw/semgrep.json": {
       "path": "outputs/security/appsec/raw/semgrep.json",
-      "sha256": "e02435ac595385a4927741544cc5dca88ee9d8134be6ee9b66e7fbceabb3ba57"
+      "sha256": "da48ddd20cae7546c9d76f00458e218c6115613bc6b175cdcc7dee3c1a93054a"
     },
     "outputs/security/appsec/raw/trivy.json": {
       "path": "outputs/security/appsec/raw/trivy.json",
-      "sha256": "1bad3d4145ed491d26ce13ca5fa1d7497e58a4b9a9122d11e029f15895fb2509"
+      "sha256": "a8fb92174c62bc59c130d399a0715e1a4ef1813cdcaf33f564dc8b543bef8f66"
     },
     "outputs/security/dynamic/raw/pytest-dynamic.json": {
       "path": "outputs/security/dynamic/raw/pytest-dynamic.json",
@@ -94,7 +94,7 @@
       "sha256": "4f56188bea83765d6ba11cf83557e7be3f1500dc3b11c8ab3d7c5f2f9fc8b6d1"
     }
   },
-  "normalisation_count": 47,
+  "normalisation_count": 69,
   "output_files": {
     "asset-inventory.json": {
       "path": "outputs/security/findings/asset-inventory.json",
@@ -102,11 +102,11 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "2bc62f567a5b0bb01c35e35c46af7ce0f04864105d5a9fd8f55e11107bd56070"
+      "sha256": "cb2e23464504ff71a93995004fd45e168a8df6041ec7f5e5fb2c3fad64f66b08"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
-      "sha256": "4ed700c5be60a18978b736b476a070b5d9f933f2f2f65451fbc090eee0d74977"
+      "sha256": "ed72dacbc2aa59800e9422b25c3ea5cd9fb7cfe708d6727fe3a1f6a0ce079574"
     },
     "expired-suppressions.csv": {
       "path": "outputs/security/findings/expired-suppressions.csv",
@@ -114,31 +114,31 @@
     },
     "finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "355ebc3eacf115779e9f18c338defeda6a9d27dcd32fdbf6cf2814659d9786bf"
+      "sha256": "495d408849a09e20d4a39cc6507400498c45ae8d1ecc3739111a3413c76ac35d"
     },
     "findings-summary.json": {
       "path": "outputs/security/findings/findings-summary.json",
-      "sha256": "fa35151d4febd9ed456607b7c2efd0066f470b72f7c3c61301411ff45a03b545"
+      "sha256": "ce216fc49132c8321fa96a2298c710153d5176a75440bf0384176d912c26176b"
     },
     "normalised-findings.csv": {
       "path": "outputs/security/findings/normalised-findings.csv",
-      "sha256": "b0757a5f33964b9183dade656c0a567cba9086edde2a7825359f16d246e18041"
+      "sha256": "4c141ae46094d46f04d7f822da36b13b9eb1fc94b8f232613c1753408adbbbdf"
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "3d79faa858f0d66fc44f261b786f135f80074398872214a4f1a14ddbe8ee6f5a"
+      "sha256": "cb2e23464504ff71a93995004fd45e168a8df6041ec7f5e5fb2c3fad64f66b08"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",
-      "sha256": "8710cd7015a9c50285dcfe24b02319a35985212e7591a4f128e002d833dc750b"
+      "sha256": "8b6880934155b37218f4c7d55ffeb1c6bbb75695d49ad047e2e44a297b755b25"
     },
     "risk-summary.json": {
       "path": "outputs/security/findings/risk-summary.json",
-      "sha256": "a472e3a7e99fde601c09cbad16ba5b38b604d32ead8f41473afe03acc315d9d0"
+      "sha256": "d21c2e3e539af21cab881cca9ce914fb2e05be9810f6a100fff831b1fee63115"
     },
     "sla-summary.json": {
       "path": "outputs/security/findings/sla-summary.json",
-      "sha256": "ede95b177c2a986b6b139c45c5ba280f81f5013a72aa83d1d5ec64b958950e06"
+      "sha256": "80ddac8b9ee95114cbed9870fad41fbd1083899148fa71571e5169a31b3c11b6"
     },
     "suppressed-findings.csv": {
       "path": "outputs/security/findings/suppressed-findings.csv",

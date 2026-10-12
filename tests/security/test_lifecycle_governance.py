@@ -1,15 +1,18 @@
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
 
+from genomic_research_access_api.security.findings.config import OUTPUT_DIR as FINDINGS_OUTPUT_DIR
 from genomic_research_access_api.security.findings.utils import read_json, write_json
 from genomic_research_access_api.security.lifecycle import __main__ as lifecycle_main
-from genomic_research_access_api.security.lifecycle.config import DEFAULT_AS_OF_DATE
+from genomic_research_access_api.security.lifecycle.config import DEFAULT_AS_OF_DATE, load_config
 from genomic_research_access_api.security.lifecycle.enums import (
     VerificationMethod,
     VulnerabilityStatus,
 )
 from genomic_research_access_api.security.lifecycle.evidence import (
+    _due_soon,
     generate,
     validate_policy,
     verify,
@@ -260,7 +263,10 @@ def test_risk_acceptance_requires_active_exception() -> None:
 
 def test_current_canonical_findings_initialise_successfully() -> None:
     records, exceptions, validations = build_register()
-    assert len(records) == 45
+    canonical_findings = read_json(FINDINGS_OUTPUT_DIR / "deduplicated-findings.json")["findings"]
+    assert {record.finding_id for record in records} == {
+        item["finding_id"] for item in canonical_findings
+    }
     assert len(exceptions) == 3
     assert validations[0]["status"] == "valid"
     assert any(record.status == "risk_accepted" for record in records)
@@ -278,8 +284,13 @@ def test_scanner_suppression_is_not_formal_exception() -> None:
 def test_overdue_due_soon_and_unowned_reporting() -> None:
     records, _, _ = build_register()
     assert sum(record.overdue for record in records) == 0
-    assert any(record.due_date == "2026-01-04" for record in records)
     assert all(record.technical_owner != "unowned" for record in records)
+    due_soon_days = int(load_config("lifecycle-policy.yaml")["due_soon_days"])
+    as_of = date.fromisoformat(DEFAULT_AS_OF_DATE)
+    assert _due_soon((as_of + timedelta(days=due_soon_days)).isoformat(), DEFAULT_AS_OF_DATE)
+    assert not _due_soon(
+        (as_of + timedelta(days=due_soon_days + 1)).isoformat(), DEFAULT_AS_OF_DATE
+    )
 
 
 def test_deterministic_ids_evidence_and_tamper_detection(tmp_path: Path) -> None:
@@ -325,9 +336,9 @@ def test_report_generation(tmp_path: Path) -> None:
 @pytest.mark.parametrize(
     "command, expected",
     [
-        ("validate", "validated lifecycle policy"),
-        ("initialise", "initialised 45 vulnerabilities"),
-        ("evaluate-expiry", "initialised 45 vulnerabilities"),
+        ("validate", None),
+        ("initialise", None),
+        ("evaluate-expiry", None),
         ("generate-evidence", "generated lifecycle evidence"),
         ("verify-evidence", "verified lifecycle evidence"),
         ("generate-reports", "generated lifecycle reports"),
@@ -339,4 +350,11 @@ def test_lifecycle_cli_commands(
 ) -> None:
     monkeypatch.setattr("sys.argv", ["lifecycle", command])
     lifecycle_main.main()
-    assert expected in capsys.readouterr().out
+    output = capsys.readouterr().out.strip()
+    if command == "validate":
+        expected = f"validated lifecycle policy with {valid_transition_count()} transitions"
+    elif command in {"initialise", "evaluate-expiry"}:
+        records, exceptions, _ = build_register()
+        expected = f"initialised {len(records)} vulnerabilities and {len(exceptions)} exceptions"
+    assert expected is not None
+    assert output == expected

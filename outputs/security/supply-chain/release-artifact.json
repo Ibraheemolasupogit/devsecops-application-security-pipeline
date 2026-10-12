@@ -1,0 +1,17 @@
+{
+  "build_timestamp": "2026-10-12T11:21:32Z",
+  "container_scan_reference": "outputs/security/supply-chain/container-scan-summary.json",
+  "ecr_repository_url": null,
+  "image_repository": "genomic-research-access-api",
+  "local_digest": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "provenance_reference": "outputs/security/supply-chain/provenance.json",
+  "publication_decision": "blocked",
+  "published_digest": null,
+  "release_decision": "conditional_pass",
+  "release_decision_id": "REL-4e403b3e4f2106df",
+  "sbom_reference": "outputs/security/supply-chain/container-sbom.cdx.json",
+  "schema_version": "1.0",
+  "source_commit": "7bc2106054f197fdd432ce11412aede926764812",
+  "source_image_tag": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812",
+  "verification_status": "blocked"
+}

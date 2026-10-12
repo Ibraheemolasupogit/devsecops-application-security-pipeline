@@ -2,11 +2,11 @@
 
 Canonical schema version: 1.0
 
-Total source findings: 47
+Total source findings: 69
 
-Total canonical findings: 45
+Total canonical findings: 69
 
-Deduplicated count: 2
+Deduplicated count: 0
 
 ## Source Tools
 
@@ -20,15 +20,15 @@ Deduplicated count: 2
 | schemathesis | 0 |
 | semgrep | 0 |
 | threat-model | 7 |
-| trivy | 24 |
+| trivy | 46 |
 | zap | 2 |
 
 ## Severity
 
 | Name | Count |
 | --- | ---: |
-| critical | 5 |
-| high | 31 |
+| critical | 2 |
+| high | 58 |
 | informational | 1 |
 | low | 1 |
 | medium | 7 |

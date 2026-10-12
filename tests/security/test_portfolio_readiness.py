@@ -84,10 +84,22 @@ def test_missing_evidence_and_broken_link_detection(tmp_path: Path) -> None:
 
 def test_metric_reconciliation_with_current_repository() -> None:
     metrics = build_metrics()
-    assert metrics["canonical_findings"] == 45
-    assert metrics["source_findings"] == 47
-    assert metrics["integration_export_records"] == 45
-    assert metrics["integration_lineage_edges"] == 182
+    findings_summary = read_json(Path("outputs/security/findings/findings-summary.json"))
+    canonical = read_json(Path("outputs/security/findings/deduplicated-findings.json"))["findings"]
+    source = read_json(Path("outputs/security/findings/normalised-findings.json"))["findings"]
+    lifecycle = read_json(Path("outputs/security/lifecycle/vulnerability-register.json"))[
+        "vulnerabilities"
+    ]
+    integration = read_json(Path("outputs/security/integration/integration-summary.json"))
+    metrics_payload = read_json(Path("outputs/security/evidence/security-metrics.json"))["metrics"]
+    assert metrics["canonical_findings"] == findings_summary["total_canonical_findings"]
+    assert metrics["canonical_findings"] == len(canonical) == len(lifecycle)
+    assert metrics["source_findings"] == findings_summary["total_source_findings"] == len(source)
+    assert metrics["integration_export_records"] == integration["export_record_count"]
+    assert metrics["integration_export_records"] == len(canonical)
+    assert metrics["integration_lineage_edges"] == integration["lineage_edge_count"]
+    assert metrics["integration_lineage_edges"] == 4 * len(canonical)
+    assert metrics["release_decision"] == metrics_payload["release_decision"]
     assert metrics["overdue_findings"] == 0
     assert metrics["unowned_findings"] == 0
 

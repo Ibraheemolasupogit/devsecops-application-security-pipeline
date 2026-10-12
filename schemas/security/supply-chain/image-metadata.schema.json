@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Image metadata",
+  "type": "object",
+  "required": ["schema_version", "source_commit", "repository", "tag", "tag_is_authoritative", "image_id", "digest", "target_platform"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "source_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "repository": {"type": "string"},
+    "tag": {"type": "string", "pattern": "^git-[a-f0-9]{40}$"},
+    "tag_is_authoritative": {"const": false},
+    "image_id": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "target_platform": {"type": "string"}
+  },
+  "additionalProperties": false
+}

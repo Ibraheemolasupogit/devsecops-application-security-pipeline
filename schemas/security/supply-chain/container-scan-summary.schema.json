@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Container scan summary",
+  "type": "object",
+  "required": ["schema_version", "scanner", "scanner_version", "execution_status", "image_reference", "image_digest", "finding_count", "counts_by_severity", "suppressed_count", "blocking_count", "policy_outcome", "canonical_findings_reference", "raw_evidence_reference", "raw_evidence_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "scanner": {"const": "Trivy"},
+    "scanner_version": {"type": "string"},
+    "execution_status": {"enum": ["completed", "not_run", "failed"]},
+    "image_reference": {"type": "string"},
+    "image_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "finding_count": {"type": "integer", "minimum": 0},
+    "counts_by_severity": {"type": "object", "required": ["CRITICAL", "HIGH", "MEDIUM", "LOW", "UNKNOWN"], "additionalProperties": {"type": "integer", "minimum": 0}},
+    "suppressed_count": {"type": "integer", "minimum": 0},
+    "blocking_count": {"type": "integer", "minimum": 0},
+    "policy_outcome": {"enum": ["pass", "block", "not_evaluated"]},
+    "canonical_findings_reference": {"type": "string"},
+    "raw_evidence_reference": {"type": "string"},
+    "raw_evidence_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

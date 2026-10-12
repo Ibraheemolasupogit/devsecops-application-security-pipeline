@@ -1,5 +1,5 @@
 {
-  "deduplicated_count": 2,
+  "deduplicated_count": 0,
   "groups": [
     {
       "deduplication_key": "cve|CVE-2025-69720|libncursesw6",
@@ -46,22 +46,22 @@
       ]
     },
     {
-      "deduplication_key": "cve|CVE-2026-13221|perl-base",
-      "primary_finding_id": "FND-CONTAINER-b26883cf2982",
+      "deduplication_key": "cve|CVE-2026-16742|libsystemd0",
+      "primary_finding_id": "FND-CONTAINER-85c29f2e1d67",
       "rationale": "unique exact key",
       "source_finding_ids": [
-        "FND-CONTAINER-b26883cf2982"
+        "FND-CONTAINER-85c29f2e1d67"
       ],
       "source_tools": [
         "trivy"
       ]
     },
     {
-      "deduplication_key": "cve|CVE-2026-41992|gzip",
-      "primary_finding_id": "FND-CONTAINER-c7563eb73df0",
+      "deduplication_key": "cve|CVE-2026-16742|libudev1",
+      "primary_finding_id": "FND-CONTAINER-b49f58b918ed",
       "rationale": "unique exact key",
       "source_finding_ids": [
-        "FND-CONTAINER-c7563eb73df0"
+        "FND-CONTAINER-b49f58b918ed"
       ],
       "source_tools": [
         "trivy"
@@ -69,132 +69,10 @@
     },
     {
       "deduplication_key": "cve|CVE-2026-42496|perl-base",
-      "primary_finding_id": "FND-CONTAINER-5ee1761422cc",
-      "rationale": "merged by exact key cve|CVE-2026-42496|perl-base across trivy; all source records retained",
+      "primary_finding_id": "FND-SUPPRESSIO-ef559061de8d",
+      "rationale": "unique exact key",
       "source_finding_ids": [
-        "FND-CONTAINER-5ee1761422cc",
         "FND-SUPPRESSIO-ef559061de8d"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-42497|perl-base",
-      "primary_finding_id": "FND-CONTAINER-3686ad447a1f",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-3686ad447a1f"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-48962|perl-base",
-      "primary_finding_id": "FND-CONTAINER-4a39d4c85743",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-4a39d4c85743"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|bsdutils",
-      "primary_finding_id": "FND-CONTAINER-033201244a2b",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-033201244a2b"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|libblkid1",
-      "primary_finding_id": "FND-CONTAINER-35a70101ee98",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-35a70101ee98"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|liblastlog2-2",
-      "primary_finding_id": "FND-CONTAINER-96b263718199",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-96b263718199"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|libmount1",
-      "primary_finding_id": "FND-CONTAINER-35a7a61eb9e3",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-35a7a61eb9e3"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|libsmartcols1",
-      "primary_finding_id": "FND-CONTAINER-ba223b9333c9",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-ba223b9333c9"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|libuuid1",
-      "primary_finding_id": "FND-CONTAINER-9360fa554791",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-9360fa554791"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|login",
-      "primary_finding_id": "FND-CONTAINER-d0df15bb32ed",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-d0df15bb32ed"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|mount",
-      "primary_finding_id": "FND-CONTAINER-ef0f3e5e6558",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-ef0f3e5e6558"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-53615|util-linux",
-      "primary_finding_id": "FND-CONTAINER-9bac41a1b5ac",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-CONTAINER-9bac41a1b5ac"
       ],
       "source_tools": [
         "trivy"
@@ -212,11 +90,396 @@
       ]
     },
     {
-      "deduplication_key": "cve|CVE-2026-57432|perl-base",
-      "primary_finding_id": "FND-CONTAINER-c118af042a95",
+      "deduplication_key": "cve|CVE-2026-76642|bsdutils",
+      "primary_finding_id": "FND-CONTAINER-f6f763380649",
       "rationale": "unique exact key",
       "source_finding_ids": [
-        "FND-CONTAINER-c118af042a95"
+        "FND-CONTAINER-f6f763380649"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|libblkid1",
+      "primary_finding_id": "FND-CONTAINER-e1f2cc1c749d",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-e1f2cc1c749d"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|liblastlog2-2",
+      "primary_finding_id": "FND-CONTAINER-a05776d7b2eb",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-a05776d7b2eb"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|libmount1",
+      "primary_finding_id": "FND-CONTAINER-84d155fdc3d1",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-84d155fdc3d1"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|libsmartcols1",
+      "primary_finding_id": "FND-CONTAINER-65d0909407ea",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-65d0909407ea"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|libuuid1",
+      "primary_finding_id": "FND-CONTAINER-6e659fb03bfe",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-6e659fb03bfe"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|login",
+      "primary_finding_id": "FND-CONTAINER-54f909a65e8d",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-54f909a65e8d"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|mount",
+      "primary_finding_id": "FND-CONTAINER-452f02c62efd",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-452f02c62efd"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-76642|util-linux",
+      "primary_finding_id": "FND-CONTAINER-a6116dba2666",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-a6116dba2666"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|bsdutils",
+      "primary_finding_id": "FND-CONTAINER-b11df2b9097e",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-b11df2b9097e"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|libblkid1",
+      "primary_finding_id": "FND-CONTAINER-65d75e6eba4f",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-65d75e6eba4f"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|liblastlog2-2",
+      "primary_finding_id": "FND-CONTAINER-5a8d530b00be",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-5a8d530b00be"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|libmount1",
+      "primary_finding_id": "FND-CONTAINER-8c4116b09936",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-8c4116b09936"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|libsmartcols1",
+      "primary_finding_id": "FND-CONTAINER-5464624f68ba",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-5464624f68ba"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|libuuid1",
+      "primary_finding_id": "FND-CONTAINER-b9d1bbc8febf",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-b9d1bbc8febf"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|login",
+      "primary_finding_id": "FND-CONTAINER-3b7728ab6349",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-3b7728ab6349"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|mount",
+      "primary_finding_id": "FND-CONTAINER-8229cd4d151d",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-8229cd4d151d"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78408|util-linux",
+      "primary_finding_id": "FND-CONTAINER-c31d90a0dae9",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-c31d90a0dae9"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|bsdutils",
+      "primary_finding_id": "FND-CONTAINER-e9c4b1dd55ff",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-e9c4b1dd55ff"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|libblkid1",
+      "primary_finding_id": "FND-CONTAINER-e1d4cd41e57c",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-e1d4cd41e57c"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|liblastlog2-2",
+      "primary_finding_id": "FND-CONTAINER-4b3599117c60",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-4b3599117c60"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|libmount1",
+      "primary_finding_id": "FND-CONTAINER-75484f7ebb4b",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-75484f7ebb4b"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|libsmartcols1",
+      "primary_finding_id": "FND-CONTAINER-87e329c9d3c9",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-87e329c9d3c9"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|libuuid1",
+      "primary_finding_id": "FND-CONTAINER-9448e15df1ef",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-9448e15df1ef"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|login",
+      "primary_finding_id": "FND-CONTAINER-cdafc2f07851",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-cdafc2f07851"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|mount",
+      "primary_finding_id": "FND-CONTAINER-b32479e41fff",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-b32479e41fff"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78409|util-linux",
+      "primary_finding_id": "FND-CONTAINER-c29de2c95e6d",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-c29de2c95e6d"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|bsdutils",
+      "primary_finding_id": "FND-CONTAINER-a44acae763a2",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-a44acae763a2"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|libblkid1",
+      "primary_finding_id": "FND-CONTAINER-97d0d191781c",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-97d0d191781c"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|liblastlog2-2",
+      "primary_finding_id": "FND-CONTAINER-866a375b43af",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-866a375b43af"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|libmount1",
+      "primary_finding_id": "FND-CONTAINER-c269596a605e",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-c269596a605e"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|libsmartcols1",
+      "primary_finding_id": "FND-CONTAINER-d7e9ab84f9e9",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-d7e9ab84f9e9"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|libuuid1",
+      "primary_finding_id": "FND-CONTAINER-43d127b610b8",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-43d127b610b8"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|login",
+      "primary_finding_id": "FND-CONTAINER-3d855e8b31a4",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-3d855e8b31a4"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|mount",
+      "primary_finding_id": "FND-CONTAINER-7401651d82c4",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-7401651d82c4"
+      ],
+      "source_tools": [
+        "trivy"
+      ]
+    },
+    {
+      "deduplication_key": "cve|CVE-2026-78410|util-linux",
+      "primary_finding_id": "FND-CONTAINER-8917d095a4d4",
+      "rationale": "unique exact key",
+      "source_finding_ids": [
+        "FND-CONTAINER-8917d095a4d4"
       ],
       "source_tools": [
         "trivy"
@@ -224,10 +487,9 @@
     },
     {
       "deduplication_key": "cve|CVE-2026-8376|perl-base",
-      "primary_finding_id": "FND-CONTAINER-95a38a1f2a20",
-      "rationale": "merged by exact key cve|CVE-2026-8376|perl-base across trivy; all source records retained",
+      "primary_finding_id": "FND-SUPPRESSIO-5313851a0158",
+      "rationale": "unique exact key",
       "source_finding_ids": [
-        "FND-CONTAINER-95a38a1f2a20",
         "FND-SUPPRESSIO-5313851a0158"
       ],
       "source_tools": [

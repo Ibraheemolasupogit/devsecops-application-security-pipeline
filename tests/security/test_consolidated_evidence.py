@@ -45,9 +45,11 @@ def test_aggregate_bundle_metrics_and_domain_counts() -> None:
     assert evidence.deployment_status == "not_deployed"
     assert metrics["total_threats"] == 31
     assert metrics["security_requirements"] == 69
-    assert metrics["canonical_findings"] == 45
+    findings_summary = read_json(Path("outputs/security/findings/findings-summary.json"))
+    lifecycle_summary = read_json(Path("outputs/security/lifecycle/lifecycle-summary.json"))
+    assert metrics["canonical_findings"] == findings_summary["total_canonical_findings"]
     assert metrics["release_decision"] == evidence.release_decision["decision"]
-    assert metrics["vulnerability_records"] == 45
+    assert metrics["vulnerability_records"] == lifecycle_summary["total_vulnerabilities"]
     assert metrics["active_exceptions"] == 1
     assert metrics["expired_exceptions"] == 1
     assert metrics["verification_records"] == 0
@@ -149,7 +151,7 @@ def test_control_coverage_aggregation_and_percentage() -> None:
     assert coverage["control_count"] == 69
     assert 0 <= coverage["coverage_percentage"] <= 100
     assert coverage["coverage_by_status"]["validated_locally"] >= 1
-    assert coverage["coverage_by_status"]["planned"] == 3
+    assert coverage["coverage_by_status"]["planned"] == 2
 
 
 def test_sensitive_content_detection(tmp_path: Path) -> None:

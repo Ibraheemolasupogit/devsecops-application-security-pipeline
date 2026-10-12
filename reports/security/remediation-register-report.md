@@ -1,22 +1,22 @@
 # Remediation Register Report
 
-- VUL-07ec5cfe733f: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-1a8a6cdaadda: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-0443feacb3ce: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-04ae22ee8be8: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-05cdfb3497e8: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-0784eda86673: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-0ff0cf010410: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-164d4245cfbe: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-17f8dcabdae2: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-1863021b0a9c: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
 - VUL-1d4cb087f02a: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.
 - VUL-2a7a40f3e0a5: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.
 - VUL-2cec88a2db04: triaged - Track and remediate according to policy.
-- VUL-319df8d00bbb: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-36cafa8f2eed: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-3c36ead265b5: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-3945868fe01b: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-3dd199011de7: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
 - VUL-3e4410d0f925: assigned - Review suppression before expiry; remediate if compensating control is no longer valid.
-- VUL-409a5ea1d699: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-3e6c8fa79f05: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-3fd891211c47: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
 - VUL-488f220bd590: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-4bdf62bdfb94: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
+- VUL-5072e2eff63c: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
 - VUL-50c075b292d2: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.
-- VUL-535385b100fe: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-574b561e6517: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.
-- VUL-5a09ed00559e: triaged - Track and remediate according to policy.
-- VUL-600d5210d2c3: triaged - Review suppression before expiry; remediate if compensating control is no longer valid.
-- VUL-62837edcf861: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-64faf13bbdae: triaged - Rebuild on an updated base image or apply a compensating control when no fix exists.
-- VUL-6645322fa337: triaged - Track and remediate according to policy.
-- VUL-676f647f505f: risk_accepted - Review suppression before expiry; remediate if compensating control is no longer valid.

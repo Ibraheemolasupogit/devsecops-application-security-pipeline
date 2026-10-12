@@ -1,23 +1,23 @@
 {
   "metrics": {
-    "canonical_findings": 45,
+    "canonical_findings": 69,
     "champion_coverage_percentage": 100.0,
     "ci_workflow_count": 16,
-    "control_coverage_percentage": 95.65,
+    "control_coverage_percentage": 97.1,
     "evidence_domains": 9,
-    "implemented_requirements": 66,
-    "integration_export_records": 45,
-    "integration_lineage_edges": 182,
-    "markdown_document_count": 191,
+    "implemented_requirements": 67,
+    "integration_export_records": 69,
+    "integration_lineage_edges": 276,
+    "markdown_document_count": 195,
     "overdue_findings": 0,
     "release_decision": "conditional_pass",
     "scanner_tools_executed": 5,
     "security_champion_asset_count": 33,
     "security_requirements": 69,
-    "source_findings": 47,
+    "source_findings": 69,
     "suppressed_findings": 16,
     "unowned_findings": 0,
-    "vulnerability_records": 45
+    "vulnerability_records": 69
   },
   "schema_version": "1.0"
 }

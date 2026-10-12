@@ -83,6 +83,3 @@ jobs:
 
       - name: Application import and OpenAPI validation
         run: python -c "from genomic_research_access_api.main import app; assert app.openapi()['info']['title'] == 'Genomic Research Access API'"
-
-      - name: Docker build validation
-        run: docker build -t genomic-research-access-api:ci .

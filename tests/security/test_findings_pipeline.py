@@ -71,8 +71,48 @@ def test_deduplicates_exact_cve_without_losing_sources() -> None:
     cve_findings = [item for item in findings if item.cve and item.package_name]
     assert cve_findings
     deduped, source_map = deduplicate(findings)
-    assert len(deduped) < len(findings)
-    assert any(len(group["source_finding_ids"]) > 1 for group in source_map.values())
+    assert len(deduped) == len(source_map)
+    assert len({item.finding_id for item in deduped}) == len(deduped)
+    assert set(source_map) == {item.finding_id for item in deduped}
+    assert {
+        source_id for group in source_map.values() for source_id in group["source_finding_ids"]
+    } == {item.finding_id for item in findings}
+
+
+def test_deduplication_merges_same_cve_and_preserves_both_sources() -> None:
+    source = next(
+        item
+        for item in enrich(normalise(DEFAULT_AS_OF_DATE), DEFAULT_AS_OF_DATE)
+        if item.cve and item.package_name
+    )
+    shared = {
+        "cve": "CVE-2099-12345",
+        "package_name": "synthetic-package",
+        "deduplication_key": "synthetic-cve-package",
+    }
+    first = source.model_copy(
+        update={
+            **shared,
+            "finding_id": "FND-SYNTHETIC-1",
+            "source_finding_id": "SRC-SYNTHETIC-1",
+            "source_tool": "trivy",
+        }
+    )
+    second = source.model_copy(
+        update={
+            **shared,
+            "finding_id": "FND-SYNTHETIC-2",
+            "source_finding_id": "SRC-SYNTHETIC-2",
+            "source_tool": "pip-audit",
+        }
+    )
+
+    deduped, source_map = deduplicate([first, second])
+
+    assert len(deduped) == 1
+    group = source_map[deduped[0].finding_id]
+    assert group["source_finding_ids"] == ["FND-SYNTHETIC-1", "FND-SYNTHETIC-2"]
+    assert group["source_tools"] == ["pip-audit", "trivy"]
 
 
 def test_unrelated_titles_are_not_deduplicated() -> None:
@@ -133,21 +173,24 @@ def test_report_generation(tmp_path: Path) -> None:
 
 
 @pytest.mark.parametrize(
-    "command, expected",
-    [
-        ("normalise", "normalised 47 source findings"),
-        ("deduplicate", "deduplicated 2 findings"),
-        ("enrich", "enriched 47 source findings"),
-        ("validate", "validated 45 canonical findings"),
-        ("evidence", "generated findings evidence"),
-        ("verify", "verified findings evidence"),
-        ("report", "generated findings reports"),
-        ("full", "completed findings full workflow"),
-    ],
+    "command",
+    ["normalise", "deduplicate", "enrich", "validate", "evidence", "verify", "report", "full"],
 )
 def test_findings_cli_commands(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], command: str, expected: str
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], command: str
 ) -> None:
+    source, canonical, _ = build(DEFAULT_AS_OF_DATE)
+    enriched = enrich(normalise(DEFAULT_AS_OF_DATE), DEFAULT_AS_OF_DATE)
+    expected = {
+        "normalise": f"normalised {len(source)} source findings",
+        "deduplicate": f"deduplicated {len(source) - len(canonical)} findings",
+        "enrich": f"enriched {len(enriched)} source findings",
+        "validate": f"validated {len(canonical)} canonical findings",
+        "evidence": "generated findings evidence",
+        "verify": "verified findings evidence",
+        "report": "generated findings reports",
+        "full": "completed findings full workflow",
+    }[command]
     monkeypatch.setattr("sys.argv", ["findings", command])
     findings_main.main()
-    assert expected in capsys.readouterr().out
+    assert capsys.readouterr().out.strip() == expected

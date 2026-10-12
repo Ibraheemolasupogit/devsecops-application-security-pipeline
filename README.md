@@ -4,7 +4,7 @@ Portfolio repository for a synthetic FastAPI product secured through a full loca
 
 The application uses synthetic, non-identifiable demonstration data only. It is not a production genomics platform, is not affiliated with or endorsed by Genomics England, and does not deploy AWS resources.
 
-The current implementation remains non-deployed. M3 adds the EKS Terraform foundation and M4 models the application workload offline with [Kustomize](docs/architecture/kubernetes-workload-model.md); neither has been applied or deployed. The [Milestone 1 target architecture](docs/architecture/target-devsecops-platform.md) and [migration roadmap](docs/architecture/eks-migration-roadmap.md) preserve the existing Product Security assurance model.
+The current implementation remains non-deployed. M3 adds the EKS Terraform foundation and M4 models the application workload offline with [Kustomize](docs/architecture/kubernetes-workload-model.md); neither has been applied or deployed. M6 adds the build-once, digest-based [supply-chain contract](docs/architecture/software-supply-chain.md); ECR publication is an explicitly gated workflow action. The [target architecture](docs/architecture/target-devsecops-platform.md) and [migration roadmap](docs/architecture/eks-migration-roadmap.md) preserve the existing Product Security assurance model.
 
 Repository preparation guidance: [artifact policy](docs/engineering/repository-artifact-policy.md), [EKS prerequisites](docs/engineering/eks-prerequisites.md), and [workflow migration plan](docs/engineering/workflow-rationalisation-plan.md). ECS/Fargate remains the retained Terraform reference; EKS is the planned primary runtime.
 
@@ -60,7 +60,7 @@ Terraform under [infrastructure](infrastructure/README.md) models ECS Fargate, A
 
 ## 10. AppSec Pipeline
 
-Milestone 5 added Gitleaks, Semgrep, Bandit, pip-audit, CycloneDX SBOM, Checkov, Docker image build validation and Trivy container scanning through pinned wrappers and governed evidence.
+Milestone 5 added Gitleaks, Semgrep, Bandit, pip-audit, CycloneDX SBOM, Checkov, Docker image build validation and Trivy container scanning through pinned wrappers and governed evidence. Milestone 6 ties the actual built image, container SBOM, Trivy findings, release decision and optional immutable ECR publication together in [one candidate workflow](docs/engineering/build-once-promote-by-digest.md).
 
 ## 11. Dynamic Security
 

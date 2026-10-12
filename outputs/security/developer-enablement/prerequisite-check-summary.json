@@ -27,7 +27,7 @@
     },
     {
       "name": "terraform",
-      "native_path": "/tmp/m5-terraform/terraform",
+      "native_path": "/opt/homebrew/bin/terraform",
       "notes": "Required for Terraform init/validate/test.",
       "status": "available"
     },

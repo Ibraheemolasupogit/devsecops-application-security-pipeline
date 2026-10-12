@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Supply-chain evidence manifest",
+  "type": "object",
+  "required": ["schema_version", "source_commit", "artifact_digest", "publication_decision", "files"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "source_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "artifact_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "publication_decision": {"enum": ["eligible", "conditionally_eligible", "blocked"]},
+    "files": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

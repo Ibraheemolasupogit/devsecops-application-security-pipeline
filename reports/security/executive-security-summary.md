@@ -10,13 +10,13 @@ Overall assurance posture: pass
 
 Release decision: conditional_pass
 
-Control coverage: 95.65%
+Control coverage: 97.1%
 
-Critical/high findings: 36
+Critical/high findings: 60
 
 Security exceptions: active 1, expired 1, expiring 1
 
-Lifecycle summary: 45 vulnerabilities; 0 overdue.
+Lifecycle summary: 69 vulnerabilities; 0 overdue.
 
 Evidence integrity: 9 verified domains, 0 failed domains.
 

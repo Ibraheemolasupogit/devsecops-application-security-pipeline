@@ -68,6 +68,6 @@
 | SR-SECRETS-001 | secrets | implemented | Milestone 5 |
 | SR-SUPPLY-001 | supply_chain | implemented | Milestone 5 |
 | SR-SUPPLY-002 | supply_chain | implemented | Milestone 5 |
-| SR-SUPPLY-003 | supply_chain | planned | Milestone 7 |
+| SR-SUPPLY-003 | supply_chain | implemented | Milestone 6 |
 | SR-SUPPLY-004 | supply_chain | implemented | Milestone 5 |
 | SR-TM-001 | secure_design | implemented | Milestone 2 |

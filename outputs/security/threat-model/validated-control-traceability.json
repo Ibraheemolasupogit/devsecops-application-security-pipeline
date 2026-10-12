@@ -602,12 +602,14 @@
   },
   {
     "evidence_references": [
-      "future release evidence"
+      "outputs/security/supply-chain/supply-chain-manifest.json",
+      "outputs/security/supply-chain/release-artifact.json"
     ],
     "implementation_references": [
-      "future release workflow"
+      "scripts/container_supply_chain.py",
+      ".github/workflows/build-publish.yml"
     ],
-    "notes": "Release provenance is planned for later milestones.",
+    "notes": "M6 records source SHA, build inputs, image digest, container SBOM and scan checksums; the same digest is the only future QA/production identity. Signing and admission verification remain deferred.",
     "requirement_ids": [
       "SR-CI-003",
       "SR-SUPPLY-003"
@@ -616,7 +618,9 @@
     "threat_id": "THR-SUPPLY-003",
     "traceability_id": "TRACE-030",
     "verification_methods": [
-      "future provenance checks"
+      "make supply-chain-full",
+      "make verify-supply-chain-evidence",
+      "digest and evidence tampering tests"
     ]
   },
   {

@@ -8,7 +8,7 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "risk_accepted",
       "contract_version": "1.0",
       "control_ids": [],
@@ -27,7 +27,7 @@
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "5.40.1-6",
+      "installed_version": "5.40.1-6+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "risk_accepted",
@@ -77,7 +77,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-026cbd40a3d8"
       ],
-      "source_record_hash": "645d5a23522565a31c372ecba40f38143da73f7524a37babe5e2721ebbb98721",
+      "source_record_hash": "460f1acddb0a7bee7bf0f00342e07007b74b26658e53db62299771207618b8fd",
       "source_tools": [
         "trivy"
       ],
@@ -98,26 +98,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78408",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-BFB6E8BF1D59",
+      "export_record_id": "EXP-ED7833F29560",
       "file": null,
-      "finding_id": "FND-CONTAINER-033201244a2b",
+      "finding_id": "FND-CONTAINER-3b7728ab6349",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "1:2.41-5",
+      "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -129,7 +129,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "bsdutils",
+      "package_name": "login",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -165,9 +165,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-033201244a2b"
+        "FND-CONTAINER-3b7728ab6349"
       ],
-      "source_record_hash": "c71bf688d215324d8b37ff0ff94cf20a7fca5f5e3b35c51da51e57a617879d6a",
+      "source_record_hash": "fd853374e769fae530d91a326b7393e8c19282e808fb6c27dc8dd19a58932c30",
       "source_tools": [
         "trivy"
       ],
@@ -179,7 +179,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "bsdutils CVE-2026-53615",
+      "title": "login CVE-2026-78408",
       "verification_status": "not_verified"
     },
     {
@@ -188,26 +188,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78410",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-CCA138759A8B",
+      "export_record_id": "EXP-EDB15263DB80",
       "file": null,
-      "finding_id": "FND-CONTAINER-35a70101ee98",
+      "finding_id": "FND-CONTAINER-3d855e8b31a4",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "2.41-5",
+      "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -219,7 +219,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "libblkid1",
+      "package_name": "login",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -255,9 +255,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-35a70101ee98"
+        "FND-CONTAINER-3d855e8b31a4"
       ],
-      "source_record_hash": "b8bf848b2d1631bbe3176d9a1e1c8f4f9bc89d94f24f488aa52e4f0a585be8bd",
+      "source_record_hash": "8b4969613679c153e3ae0c6c1a68d225e20a5cb3dfdeb22c456004e4c1fa67fd",
       "source_tools": [
         "trivy"
       ],
@@ -269,7 +269,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "libblkid1 CVE-2026-53615",
+      "title": "login CVE-2026-78410",
       "verification_status": "not_verified"
     },
     {
@@ -278,26 +278,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78410",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-E5078D61EA75",
+      "export_record_id": "EXP-D8581C4FA533",
       "file": null,
-      "finding_id": "FND-CONTAINER-35a7a61eb9e3",
+      "finding_id": "FND-CONTAINER-43d127b610b8",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "2.41-5",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -309,7 +309,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "libmount1",
+      "package_name": "libuuid1",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -345,9 +345,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-35a7a61eb9e3"
+        "FND-CONTAINER-43d127b610b8"
       ],
-      "source_record_hash": "6cdc5d372d0bfa9fb74d1f170837019b4ccda08cba704eeb047ebe015ad85c70",
+      "source_record_hash": "94325cea414b3c093e27d0a57b82bd904d8d7096eb91ae7bf5bb497cc4d8b9c9",
       "source_tools": [
         "trivy"
       ],
@@ -359,7 +359,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "libmount1 CVE-2026-53615",
+      "title": "libuuid1 CVE-2026-78410",
       "verification_status": "not_verified"
     },
     {
@@ -368,26 +368,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-42497",
+      "cve": "CVE-2026-76642",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to link() without validating it against absolute paths or .. segments, creating a hardlink that shares the victim file's inode.\n\nA subsequent write through the extracted name modifies the victim file, and the post-extraction chmod, chown, and utime block in _extract_file() (guarded only against symlinks via -l) applies the tar header's mode, owner, and timestamps to the shared inode during extraction alone.",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-172E0B920741",
+      "export_record_id": "EXP-A32985B7AD53",
       "file": null,
-      "finding_id": "FND-CONTAINER-3686ad447a1f",
+      "finding_id": "FND-CONTAINER-452f02c62efd",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "5.40.1-6",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -399,7 +399,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "perl-base",
+      "package_name": "mount",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -435,9 +435,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-3686ad447a1f"
+        "FND-CONTAINER-452f02c62efd"
       ],
-      "source_record_hash": "3a21476df38ed1ff11405b26cfed89e2555d1c84d97ebb56254e81d91f94d4b6",
+      "source_record_hash": "bee4e712da1d584f0e5091f7e0ef12945da4c495cb35d4f074d2d0a1e1273ecd",
       "source_tools": [
         "trivy"
       ],
@@ -449,7 +449,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "perl-base CVE-2026-42497",
+      "title": "mount CVE-2026-76642",
       "verification_status": "not_verified"
     },
     {
@@ -458,26 +458,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-48962",
+      "cve": "CVE-2026-78409",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "IO::Compress versions before 2.220 for Perl can execute arbitrary code in File::GlobMapper via an attacker-controlled output glob.\n\n_parseOutputGlob() wraps the caller-supplied output glob string in double quotes and stores it in the parser state; _getFiles() then runs the stored expression through eval STRING. A literal double quote in the output glob closes the dquote wrapper, and the characters that follow are evaluated as Perl.\n\nArbitrary Perl in the output glob executes at the calling process's privilege.",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-9B2BC3708B36",
+      "export_record_id": "EXP-D743674E1E1F",
       "file": null,
-      "finding_id": "FND-CONTAINER-4a39d4c85743",
+      "finding_id": "FND-CONTAINER-4b3599117c60",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "5.40.1-6",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -489,7 +489,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "perl-base",
+      "package_name": "liblastlog2-2",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -525,9 +525,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-4a39d4c85743"
+        "FND-CONTAINER-4b3599117c60"
       ],
-      "source_record_hash": "b17a80e35359a072cfd9579b3125fb4f91cc92627265b5c40f1b2c764e7acebd",
+      "source_record_hash": "ea79e9b07d8ff2d71a9ae4796db77d570ec4ad7628fe7902ae67e5b14ad0ae4c",
       "source_tools": [
         "trivy"
       ],
@@ -539,7 +539,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "perl-base CVE-2026-48962",
+      "title": "liblastlog2-2 CVE-2026-78409",
       "verification_status": "not_verified"
     },
     {
@@ -548,7 +548,187 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78408",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-5E568428C6BD",
+      "file": null,
+      "finding_id": "FND-CONTAINER-5464624f68ba",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libsmartcols1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-5464624f68ba"
+      ],
+      "source_record_hash": "2887529e1b047056596c560bf61813b02e81b0d6cee85693ef89176fc0035f4e",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libsmartcols1 CVE-2026-78408",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-C7FD488DD06F",
+      "file": null,
+      "finding_id": "FND-CONTAINER-54f909a65e8d",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "login",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-54f909a65e8d"
+      ],
+      "source_record_hash": "901a14bd9a867b278e032f575fbb4f1b02eada930bb4516c3e12ae580b3ef69d",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "login CVE-2026-76642",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
@@ -617,7 +797,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-57b96cf12bee"
       ],
-      "source_record_hash": "3ac229e8856dc181256033ec8d9bb4dded74fc4cc2b8245e68e234e9a5bfd57c",
+      "source_record_hash": "1461a2638d850ca4185d4e10e5db3cf8e9901fc0d93bf046c4ef7ae00bd04052",
       "source_tools": [
         "trivy"
       ],
@@ -638,26 +818,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-42496",
+      "cve": "CVE-2026-78408",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Archive::Tar versions before 3.08 for Perl extract symlinks with attacker controlled targets outside the extraction directory.\n\n_make_special_file() passes the tar header's linkname to symlink() without validating it against absolute paths or .. segments. The secure-extract mode check that guards regular file extraction does not cover the symlink target.\n\nA subsequent open through the extracted name reads or writes the attacker chosen path.",
-      "due_date": "2026-01-04",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-A8B16054EBB1",
+      "export_record_id": "EXP-C740466068CB",
       "file": null,
-      "finding_id": "FND-CONTAINER-5ee1761422cc",
+      "finding_id": "FND-CONTAINER-5a8d530b00be",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "5.40.1-6",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -666,11 +846,11 @@
         "outputs/security/integration/finding-source-lineage.json",
         "outputs/security/findings/finding-source-map.json"
       ],
-      "normalised_severity": "critical",
+      "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "perl-base",
-      "priority": "P2",
+      "package_name": "liblastlog2-2",
+      "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
         "deployment_status": "not_deployed",
@@ -684,7 +864,7 @@
       "release_impact": "conditional_pass",
       "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
       "remediation_owner": "Platform Engineering",
-      "remediation_sla_days": 3,
+      "remediation_sla_days": 14,
       "repository": "devsecops-application-security-pipeline",
       "required_actions": [
         "Track upstream fix availability and rebuild the image when a fix is published."
@@ -695,7 +875,7 @@
       ],
       "resource": null,
       "risk_owner": "Risk Owner",
-      "risk_score": 62.25,
+      "risk_score": 56.25,
       "security_domain": "Container",
       "security_requirement_ids": [
         "SR-CONTAINER-001"
@@ -705,10 +885,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-5ee1761422cc",
-        "FND-SUPPRESSIO-ef559061de8d"
+        "FND-CONTAINER-5a8d530b00be"
       ],
-      "source_record_hash": "962c0e6ff01eb2f0e72a183aa35f092ae1ebdfa10e98a8307dd1b0b1fa8a7280",
+      "source_record_hash": "dfafa86a1813953b3fc9c694170922320b969720009da85efc063c9d65a9459f",
       "source_tools": [
         "trivy"
       ],
@@ -720,7 +899,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "perl-base CVE-2026-42496",
+      "title": "liblastlog2-2 CVE-2026-78408",
       "verification_status": "not_verified"
     },
     {
@@ -729,7 +908,7 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
@@ -798,7 +977,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-6017bcc173f8"
       ],
-      "source_record_hash": "986cca029a8ebb5c96044019e67a937e7021718734b9466e23f99d6e97575d9a",
+      "source_record_hash": "3c09a5266c8ec085575154558b9fc3f7fc2132f9ecfac67181a5fbcc882122fb",
       "source_tools": [
         "trivy"
       ],
@@ -819,7 +998,187 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-BBEE8F3DDC17",
+      "file": null,
+      "finding_id": "FND-CONTAINER-65d0909407ea",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libsmartcols1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-65d0909407ea"
+      ],
+      "source_record_hash": "c7aa5db0f5d25a593120b66910e6d921c09c39118347abf1993f9538822ca09d",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libsmartcols1 CVE-2026-76642",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78408",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-8A91F1F679BE",
+      "file": null,
+      "finding_id": "FND-CONTAINER-65d75e6eba4f",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libblkid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-65d75e6eba4f"
+      ],
+      "source_record_hash": "897c5c5308249db97f3102d8d6f665bf185c6d33aa1201ecb0a76dad214e7fb5",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libblkid1 CVE-2026-78408",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
@@ -888,7 +1247,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-6884a6a2aeb3"
       ],
-      "source_record_hash": "2845f44808a87dafc686cabe04e833369688e5baa00ef7990996345693ad9248",
+      "source_record_hash": "c12a6bfb841c27ba37b98e271b32fb86ed97092236e898546822e00ddec3b5d3",
       "source_tools": [
         "trivy"
       ],
@@ -909,7 +1268,277 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-9A74F6122E23",
+      "file": null,
+      "finding_id": "FND-CONTAINER-6e659fb03bfe",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libuuid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-6e659fb03bfe"
+      ],
+      "source_record_hash": "76494e178c02ae5b3ae50b6bfed4825dde6d715a31799fc7d14c0682080b2d5e",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libuuid1 CVE-2026-76642",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78410",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-7A7E760A4336",
+      "file": null,
+      "finding_id": "FND-CONTAINER-7401651d82c4",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "mount",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-7401651d82c4"
+      ],
+      "source_record_hash": "a65165c0c0f1eda999d82dffb9d26f01b03e5dd902dd7fdd40185cd847062ec9",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "mount CVE-2026-78410",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78409",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-C481AC04F466",
+      "file": null,
+      "finding_id": "FND-CONTAINER-75484f7ebb4b",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libmount1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-75484f7ebb4b"
+      ],
+      "source_record_hash": "5604fd3f7ea5c62942d650b21a29d9f0351e6face168bf4a6bf5c1b824b44d17",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libmount1 CVE-2026-78409",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
@@ -978,7 +1607,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-77763b149b4f"
       ],
-      "source_record_hash": "e752deac85ce054a71a56565faf368a170ad302e62ac146142b8d5b45f11de47",
+      "source_record_hash": "27411c72ec670c82e69ef15936fe8e1b340afcdb6617397b95648ac6e5d6e985",
       "source_tools": [
         "trivy"
       ],
@@ -999,26 +1628,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78408",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-2A80FB5EC3F5",
+      "export_record_id": "EXP-EA44EED74680",
       "file": null,
-      "finding_id": "FND-CONTAINER-9360fa554791",
+      "finding_id": "FND-CONTAINER-8229cd4d151d",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "2.41-5",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1030,7 +1659,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "libuuid1",
+      "package_name": "mount",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -1066,9 +1695,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-9360fa554791"
+        "FND-CONTAINER-8229cd4d151d"
       ],
-      "source_record_hash": "ed89248825b8988c24bcb1f273a16e309397226f8d5aa7092dd41e84dd3bb749",
+      "source_record_hash": "f796c97b75602d8ff980320a57f95b87dc814b152525ae9361bf0fe0436efeaa",
       "source_tools": [
         "trivy"
       ],
@@ -1080,7 +1709,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "libuuid1 CVE-2026-53615",
+      "title": "mount CVE-2026-78408",
       "verification_status": "not_verified"
     },
     {
@@ -1089,26 +1718,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-8376",
+      "cve": "CVE-2026-76642",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Perl versions through 5.43.10 have a heap buffer overflow when compiling regular expressions with a repeated fixed string on 32-bit builds.\n\nPerl_study_chunk in regcomp_study.c checked the size of the joined substring buffer in characters rather than bytes. For a quantified fixed substring with a large minimum count, the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW allocation; the subsequent copy writes past the end of the buffer.\n\nA caller that compiles an attacker-controlled regular expression on a 32-bit perl build triggers a heap buffer overflow at compile time.",
-      "due_date": "2026-01-04",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-A35403477103",
+      "export_record_id": "EXP-29A3C0355B3E",
       "file": null,
-      "finding_id": "FND-CONTAINER-95a38a1f2a20",
+      "finding_id": "FND-CONTAINER-84d155fdc3d1",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "5.40.1-6",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1117,11 +1746,11 @@
         "outputs/security/integration/finding-source-lineage.json",
         "outputs/security/findings/finding-source-map.json"
       ],
-      "normalised_severity": "critical",
+      "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "perl-base",
-      "priority": "P2",
+      "package_name": "libmount1",
+      "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
         "deployment_status": "not_deployed",
@@ -1135,7 +1764,7 @@
       "release_impact": "conditional_pass",
       "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
       "remediation_owner": "Platform Engineering",
-      "remediation_sla_days": 3,
+      "remediation_sla_days": 14,
       "repository": "devsecops-application-security-pipeline",
       "required_actions": [
         "Track upstream fix availability and rebuild the image when a fix is published."
@@ -1146,7 +1775,7 @@
       ],
       "resource": null,
       "risk_owner": "Risk Owner",
-      "risk_score": 62.25,
+      "risk_score": 56.25,
       "security_domain": "Container",
       "security_requirement_ids": [
         "SR-CONTAINER-001"
@@ -1156,10 +1785,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-95a38a1f2a20",
-        "FND-SUPPRESSIO-5313851a0158"
+        "FND-CONTAINER-84d155fdc3d1"
       ],
-      "source_record_hash": "bdfbd16f82bf62a362d2c5243e25e41b53e0ca06afec097827e94f2a6ef75a1c",
+      "source_record_hash": "9372b7b2f3efe2bdf1a19e4e9239622c12e34748921715804ddd838181bdcd97",
       "source_tools": [
         "trivy"
       ],
@@ -1171,7 +1799,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "perl-base CVE-2026-8376",
+      "title": "libmount1 CVE-2026-76642",
       "verification_status": "not_verified"
     },
     {
@@ -1180,26 +1808,116 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-16742",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-F055D8A380A4",
+      "export_record_id": "EXP-213A430BACDF",
       "file": null,
-      "finding_id": "FND-CONTAINER-96b263718199",
+      "finding_id": "FND-CONTAINER-85c29f2e1d67",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "2.41-5",
+      "installed_version": "257.13-1~deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libsystemd0",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-85c29f2e1d67"
+      ],
+      "source_record_hash": "8d0cfeb1e78b55868253b5267617fef698ab5a3a4503a43ac97c55775654b31f",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libsystemd0 CVE-2026-16742",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78410",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-4043CC2BD38A",
+      "file": null,
+      "finding_id": "FND-CONTAINER-866a375b43af",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1247,9 +1965,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-96b263718199"
+        "FND-CONTAINER-866a375b43af"
       ],
-      "source_record_hash": "9adeef98729a64f59d05c91588eba760ce948447be9a7f0aa49d86815f32ca41",
+      "source_record_hash": "b519dc63b460111e2e0daaab9b077c8ee757eb5221d00582d8216a41092fb68d",
       "source_tools": [
         "trivy"
       ],
@@ -1261,7 +1979,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "liblastlog2-2 CVE-2026-53615",
+      "title": "liblastlog2-2 CVE-2026-78410",
       "verification_status": "not_verified"
     },
     {
@@ -1270,206 +1988,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78409",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-23E790462222",
+      "export_record_id": "EXP-A5684C97C0AA",
       "file": null,
-      "finding_id": "FND-CONTAINER-9bac41a1b5ac",
+      "finding_id": "FND-CONTAINER-87e329c9d3c9",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "2.41-5",
-      "internet_exposure": "not_deployed",
-      "last_detected": "2026-01-01",
-      "lifecycle_status": "triaged",
-      "line": null,
-      "lineage_references": [
-        "outputs/security/integration/finding-source-lineage.json",
-        "outputs/security/findings/finding-source-map.json"
-      ],
-      "normalised_severity": "high",
-      "overdue": false,
-      "owasp_category": null,
-      "package_name": "util-linux",
-      "priority": "P3",
-      "producer_metadata": {
-        "contract_name": "product-security-control-plane-export",
-        "deployment_status": "not_deployed",
-        "producer": "devsecops-application-security-pipeline",
-        "producer_repository": "devsecops-application-security-pipeline",
-        "producer_schema_version": "1.0"
-      },
-      "producer_status": "triaged",
-      "region": null,
-      "release_decision": "conditional_pass",
-      "release_impact": "conditional_pass",
-      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
-      "remediation_owner": "Platform Engineering",
-      "remediation_sla_days": 14,
-      "repository": "devsecops-application-security-pipeline",
-      "required_actions": [
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ],
-      "resource": null,
-      "risk_owner": "Risk Owner",
-      "risk_score": 56.25,
-      "security_domain": "Container",
-      "security_requirement_ids": [
-        "SR-CONTAINER-001"
-      ],
-      "service": null,
-      "source_evidence": [
-        "outputs/security/appsec/raw/trivy.json"
-      ],
-      "source_finding_ids": [
-        "FND-CONTAINER-9bac41a1b5ac"
-      ],
-      "source_record_hash": "626385e63ddc2c999f9c43fd859bfee141a1575e4de93e7de36c9723fb59eaed",
-      "source_tools": [
-        "trivy"
-      ],
-      "squad": "Platform Engineering",
-      "status": "triaged",
-      "suppression_id": null,
-      "suppression_status": null,
-      "technical_owner": "Platform Engineering",
-      "threat_ids": [
-        "THR-SUPPLY-001"
-      ],
-      "title": "util-linux CVE-2026-53615",
-      "verification_status": "not_verified"
-    },
-    {
-      "application": "genomic-research-access-api",
-      "asset_criticality": "high",
-      "asset_id": "AST-CONTAINER",
-      "asset_type": "container_image",
-      "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
-      "consumer_status": "triaged",
-      "contract_version": "1.0",
-      "control_ids": [],
-      "cve": "CVE-2026-13221",
-      "cwe": null,
-      "data_sensitivity": "medium",
-      "description": "Perl versions through 5.43.9 produce silently incorrect regular expression matches when an alternation of more than 65535 fixed string branches is compiled into a trie in Perl_study_chunk.\n\nWhen such branches are combined into a trie, the delta between the first branch and the shared tail is stored in a 16-bit field. A branch count above 65535 overflows the field, and the trie's match decision table is truncated with no warning or error.\n\nA pattern of this shape produces false positive matches (matching strings it should not) and false negative matches (failing to match strings it should). When such a pattern gates an access or filtering decision, the result is wrong.",
-      "due_date": "2026-01-04",
-      "environment": "not_deployed",
-      "exception_expiry": null,
-      "exception_id": null,
-      "exception_status": null,
-      "export_record_id": "EXP-7D2AEEEFA44A",
-      "file": null,
-      "finding_id": "FND-CONTAINER-b26883cf2982",
-      "finding_type": "Container",
-      "first_detected": "2026-01-01",
-      "fixed_version": null,
-      "installed_version": "5.40.1-6",
-      "internet_exposure": "not_deployed",
-      "last_detected": "2026-01-01",
-      "lifecycle_status": "triaged",
-      "line": null,
-      "lineage_references": [
-        "outputs/security/integration/finding-source-lineage.json",
-        "outputs/security/findings/finding-source-map.json"
-      ],
-      "normalised_severity": "critical",
-      "overdue": false,
-      "owasp_category": null,
-      "package_name": "perl-base",
-      "priority": "P2",
-      "producer_metadata": {
-        "contract_name": "product-security-control-plane-export",
-        "deployment_status": "not_deployed",
-        "producer": "devsecops-application-security-pipeline",
-        "producer_repository": "devsecops-application-security-pipeline",
-        "producer_schema_version": "1.0"
-      },
-      "producer_status": "triaged",
-      "region": null,
-      "release_decision": "conditional_pass",
-      "release_impact": "conditional_pass",
-      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
-      "remediation_owner": "Platform Engineering",
-      "remediation_sla_days": 3,
-      "repository": "devsecops-application-security-pipeline",
-      "required_actions": [
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ],
-      "resource": null,
-      "risk_owner": "Risk Owner",
-      "risk_score": 62.25,
-      "security_domain": "Container",
-      "security_requirement_ids": [
-        "SR-CONTAINER-001"
-      ],
-      "service": null,
-      "source_evidence": [
-        "outputs/security/appsec/raw/trivy.json"
-      ],
-      "source_finding_ids": [
-        "FND-CONTAINER-b26883cf2982"
-      ],
-      "source_record_hash": "fb55e00b7d20f255597e5b151718556562d83b5f811cf7a5a88d0d673a9a0872",
-      "source_tools": [
-        "trivy"
-      ],
-      "squad": "Platform Engineering",
-      "status": "triaged",
-      "suppression_id": null,
-      "suppression_status": null,
-      "technical_owner": "Platform Engineering",
-      "threat_ids": [
-        "THR-SUPPLY-001"
-      ],
-      "title": "perl-base CVE-2026-13221",
-      "verification_status": "not_verified"
-    },
-    {
-      "application": "genomic-research-access-api",
-      "asset_criticality": "high",
-      "asset_id": "AST-CONTAINER",
-      "asset_type": "container_image",
-      "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
-      "consumer_status": "triaged",
-      "contract_version": "1.0",
-      "control_ids": [],
-      "cve": "CVE-2026-53615",
-      "cwe": null,
-      "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
-      "due_date": "2026-01-15",
-      "environment": "not_deployed",
-      "exception_expiry": null,
-      "exception_id": null,
-      "exception_status": null,
-      "export_record_id": "EXP-D8D0F5136671",
-      "file": null,
-      "finding_id": "FND-CONTAINER-ba223b9333c9",
-      "finding_type": "Container",
-      "first_detected": "2026-01-01",
-      "fixed_version": null,
-      "installed_version": "2.41-5",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1517,9 +2055,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-ba223b9333c9"
+        "FND-CONTAINER-87e329c9d3c9"
       ],
-      "source_record_hash": "17e283afb9f4765fa52222b7d79c3287457f9b0fa1c1bd5e388efa79ff70e905",
+      "source_record_hash": "4d109b3cfaf94ebfac51310bf9b946c6e816132d3a48ce1e7c745032be6eff58",
       "source_tools": [
         "trivy"
       ],
@@ -1531,7 +2069,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "libsmartcols1 CVE-2026-53615",
+      "title": "libsmartcols1 CVE-2026-78409",
       "verification_status": "not_verified"
     },
     {
@@ -1540,26 +2078,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-57432",
+      "cve": "CVE-2026-78410",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Perl versions through 5.43.10 have an integer overflow in S_measure_struct leading to an out-of-bounds heap read in pack and unpack.\n\nS_measure_struct adds each item's size times its repeat count to a running total with no overflow check, so a large repeat count in a pack or unpack template wraps the signed SSize_t total negative. The @, X, and x position codes then guard their moves with a signed length comparison that passes when the length is negative, advancing the buffer pointer out of bounds.\n\nA template derived from untrusted input can read heap memory past the buffer and return it to the caller.",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-683CAE9975BE",
+      "export_record_id": "EXP-1A318B3CF861",
       "file": null,
-      "finding_id": "FND-CONTAINER-c118af042a95",
+      "finding_id": "FND-CONTAINER-8917d095a4d4",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "5.40.1-6",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1571,7 +2109,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "perl-base",
+      "package_name": "util-linux",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -1607,9 +2145,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-c118af042a95"
+        "FND-CONTAINER-8917d095a4d4"
       ],
-      "source_record_hash": "c81534c25309c7ab9561b4560c15999208bbb8a6cebc3a0c3af6a3d24b0ae4a3",
+      "source_record_hash": "af384ed09dbc5f5a920faea18e46ccef5cf0cf4f66df120d088d6b08edded922",
       "source_tools": [
         "trivy"
       ],
@@ -1621,7 +2159,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "perl-base CVE-2026-57432",
+      "title": "util-linux CVE-2026-78410",
       "verification_status": "not_verified"
     },
     {
@@ -1630,7 +2168,907 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78408",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A89F673DD6D8",
+      "file": null,
+      "finding_id": "FND-CONTAINER-8c4116b09936",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libmount1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-8c4116b09936"
+      ],
+      "source_record_hash": "1dee3c1b5b9a832916f69a3d9eeca73d90095411c98081079e7f0f6f531d3907",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libmount1 CVE-2026-78408",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78409",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-826255DCD4EA",
+      "file": null,
+      "finding_id": "FND-CONTAINER-9448e15df1ef",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libuuid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-9448e15df1ef"
+      ],
+      "source_record_hash": "0ce143f9d5244853193eed9b0739ca27b365c61ccef77db028e13730cf328113",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libuuid1 CVE-2026-78409",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78410",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-57DE2C67FCE9",
+      "file": null,
+      "finding_id": "FND-CONTAINER-97d0d191781c",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libblkid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-97d0d191781c"
+      ],
+      "source_record_hash": "6f47c598de5ac4cead683317a6599f396d621717feae7e9a8697f033751f4a78",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libblkid1 CVE-2026-78410",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A127D401B6CE",
+      "file": null,
+      "finding_id": "FND-CONTAINER-a05776d7b2eb",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "liblastlog2-2",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-a05776d7b2eb"
+      ],
+      "source_record_hash": "915a573692a1a7c121f3ac483c08365cb63ebcf29f4f340d591886682255c6ed",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "liblastlog2-2 CVE-2026-76642",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78410",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-8DB597DF8692",
+      "file": null,
+      "finding_id": "FND-CONTAINER-a44acae763a2",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "bsdutils",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-a44acae763a2"
+      ],
+      "source_record_hash": "387cb9bea603261d1bb763186b4ec1a9599ebcc802512c30662cb7b15f343d03",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "bsdutils CVE-2026-78410",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-8BAF6936296B",
+      "file": null,
+      "finding_id": "FND-CONTAINER-a6116dba2666",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "util-linux",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-a6116dba2666"
+      ],
+      "source_record_hash": "b84ab507c3663c6aeeb0041e1d56f8e6fab50b9845e7c58a543065e2ccb3e550",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "util-linux CVE-2026-76642",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78408",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-0C587B98A272",
+      "file": null,
+      "finding_id": "FND-CONTAINER-b11df2b9097e",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "bsdutils",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-b11df2b9097e"
+      ],
+      "source_record_hash": "bca29cdcd434fec237b3fcc7476e679181ad842ea2a2a99e6ce1d4a051888b43",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "bsdutils CVE-2026-78408",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78409",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-7A36D65AD644",
+      "file": null,
+      "finding_id": "FND-CONTAINER-b32479e41fff",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "mount",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-b32479e41fff"
+      ],
+      "source_record_hash": "5f834f1099fe96fbc1e6a942fc2701027456f9707c3ec7fa091adc6d0144d40f",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "mount CVE-2026-78409",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-16742",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "systemd-homed contains a local privilege escalation bug via arbitrary system group addition to a local, logged in, homed-managed user",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-D4427C22014D",
+      "file": null,
+      "finding_id": "FND-CONTAINER-b49f58b918ed",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "257.13-1~deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libudev1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-b49f58b918ed"
+      ],
+      "source_record_hash": "18b06355f8b2a9a74d22ae55dac6c369f1dcaeb7bc150041d153de370c6448ba",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libudev1 CVE-2026-16742",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78408",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-E7CBE7FA0FBB",
+      "file": null,
+      "finding_id": "FND-CONTAINER-b9d1bbc8febf",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libuuid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-b9d1bbc8febf"
+      ],
+      "source_record_hash": "ebffe662dfa2c719f94d9a707f88b9e11b8239b67d2d3568f7558fbe9ab65b68",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libuuid1 CVE-2026-78408",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
@@ -1699,7 +3137,7 @@
       "source_finding_ids": [
         "FND-CONTAINER-c1e6ced9904f"
       ],
-      "source_record_hash": "523a039694be5bfee86918e0240ab8cbecd151480498b7cdaf012ba7df3b5596",
+      "source_record_hash": "006839d19b6802bf1aa447e35399bbaf6434cec28d117f16a750f3d370456b50",
       "source_tools": [
         "trivy"
       ],
@@ -1720,26 +3158,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-41992",
+      "cve": "CVE-2026-78410",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "GNU gzip contains a global buffer overflow vulnerability in the LZH decompression logic caused by improper reuse of shared global state between different decompression formats within a single execution. GNU gzip maintains a global array that is shared across the LZ77, LZW, and LZH decompression routines and is not reinitialized between files processed in the same invocation.\nBy decompressing a specially crafted LZW file followed by a specially crafted LZH file in a single gzip -d command, an attacker can poison the shared global state and subsequently trigger an out\u2011of\u2011bounds read in the LZH decoder. The LZH decompression logic follows stale values left in the shared array, causing reads past the end of the allocated global buffer.\n\nThis issue has been fixed in the commit 63dbf6b3b9e6e781df1a6a64e609b10e23969681",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-A04D71447940",
+      "export_record_id": "EXP-4AB7C75CE13A",
       "file": null,
-      "finding_id": "FND-CONTAINER-c7563eb73df0",
+      "finding_id": "FND-CONTAINER-c269596a605e",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "1.13-1",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1751,7 +3189,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "gzip",
+      "package_name": "libmount1",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -1787,9 +3225,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-c7563eb73df0"
+        "FND-CONTAINER-c269596a605e"
       ],
-      "source_record_hash": "e21a715f787dbd62f33835df7ff922c7ffa88da153e5f57483608dceb3fae234",
+      "source_record_hash": "dd93377ca80b3e738e9693a4e0cbd0648c43c2ca5726b6655d98b7d6c581fb61",
       "source_tools": [
         "trivy"
       ],
@@ -1801,7 +3239,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "gzip CVE-2026-41992",
+      "title": "libmount1 CVE-2026-78410",
       "verification_status": "not_verified"
     },
     {
@@ -1810,26 +3248,206 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78409",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-CD9451796A65",
+      "export_record_id": "EXP-0AF736180C28",
       "file": null,
-      "finding_id": "FND-CONTAINER-d0df15bb32ed",
+      "finding_id": "FND-CONTAINER-c29de2c95e6d",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "1:4.16.0-2+really2.41-5",
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "util-linux",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-c29de2c95e6d"
+      ],
+      "source_record_hash": "9eeb7802d42ab6b68bf3f75d860e53e9b3de54cd16bc593e48e653a6867dee58",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "util-linux CVE-2026-78409",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78408",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-B2F9C8656AE4",
+      "file": null,
+      "finding_id": "FND-CONTAINER-c31d90a0dae9",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "util-linux",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-c31d90a0dae9"
+      ],
+      "source_record_hash": "d520d6e8a6008575ed8de21b1d89d2930bdc3bf6fea59c74e435378d9e1989c5",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "util-linux CVE-2026-78408",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78409",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-052C661851F9",
+      "file": null,
+      "finding_id": "FND-CONTAINER-cdafc2f07851",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1877,9 +3495,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-d0df15bb32ed"
+        "FND-CONTAINER-cdafc2f07851"
       ],
-      "source_record_hash": "d626c5c7169b96509f9fa24734f1c94b621b7c521f788bd986cf2581ff9ab9bc",
+      "source_record_hash": "a5e8de7edeecab6ef8a323a2128c6ff0e1a40215220051ccc16dd545e811857e",
       "source_tools": [
         "trivy"
       ],
@@ -1891,7 +3509,7 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "login CVE-2026-53615",
+      "title": "login CVE-2026-78409",
       "verification_status": "not_verified"
     },
     {
@@ -1900,26 +3518,26 @@
       "asset_id": "AST-CONTAINER",
       "asset_type": "container_image",
       "cloud_provider": null,
-      "component": "devsecops-application-security-pipeline:milestone5 (debian 13.6)",
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
       "consumer_status": "triaged",
       "contract_version": "1.0",
       "control_ids": [],
-      "cve": "CVE-2026-53615",
+      "cve": "CVE-2026-78410",
       "cwe": null,
       "data_sensitivity": "medium",
-      "description": "Package updates are available for Amazon Linux 2023 that fix the following vulnerabilities:\nCVE-2026-53615:\n\tInteger Overflow or Wraparound in libblkid/src/partitions/dos.c\n",
+      "description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
       "due_date": "2026-01-15",
       "environment": "not_deployed",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
-      "export_record_id": "EXP-C3A12BE5921F",
+      "export_record_id": "EXP-176849B8C9B4",
       "file": null,
-      "finding_id": "FND-CONTAINER-ef0f3e5e6558",
+      "finding_id": "FND-CONTAINER-d7e9ab84f9e9",
       "finding_type": "Container",
       "first_detected": "2026-01-01",
       "fixed_version": null,
-      "installed_version": "2.41-5",
+      "installed_version": "2.41.5-0+deb13u1",
       "internet_exposure": "not_deployed",
       "last_detected": "2026-01-01",
       "lifecycle_status": "triaged",
@@ -1931,7 +3549,7 @@
       "normalised_severity": "high",
       "overdue": false,
       "owasp_category": null,
-      "package_name": "mount",
+      "package_name": "libsmartcols1",
       "priority": "P3",
       "producer_metadata": {
         "contract_name": "product-security-control-plane-export",
@@ -1967,9 +3585,9 @@
         "outputs/security/appsec/raw/trivy.json"
       ],
       "source_finding_ids": [
-        "FND-CONTAINER-ef0f3e5e6558"
+        "FND-CONTAINER-d7e9ab84f9e9"
       ],
-      "source_record_hash": "a4953d8ab310a0e7afc866456c7d90ed1841224bb1d3a23eb9289efe81e5aa20",
+      "source_record_hash": "d11e8f3b6efde1d764bd24eb35a0cb010d4eea1cf94119b92bf9e755e42c198d",
       "source_tools": [
         "trivy"
       ],
@@ -1981,7 +3599,367 @@
       "threat_ids": [
         "THR-SUPPLY-001"
       ],
-      "title": "mount CVE-2026-53615",
+      "title": "libsmartcols1 CVE-2026-78410",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78409",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-833EE702A150",
+      "file": null,
+      "finding_id": "FND-CONTAINER-e1d4cd41e57c",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libblkid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-e1d4cd41e57c"
+      ],
+      "source_record_hash": "d9d952407a0be3a567e52add63af9f03eb3f5636880fd0b47dc6d5714c58650b",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libblkid1 CVE-2026-78409",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-25A272A23690",
+      "file": null,
+      "finding_id": "FND-CONTAINER-e1f2cc1c749d",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "libblkid1",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-e1f2cc1c749d"
+      ],
+      "source_record_hash": "3d2d7f96075982bad56292f8516ccf3b6e9b1595c029a75d39a8e37a1d863e68",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "libblkid1 CVE-2026-76642",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-78409",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-F43EFCADEAE4",
+      "file": null,
+      "finding_id": "FND-CONTAINER-e9c4b1dd55ff",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "bsdutils",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-e9c4b1dd55ff"
+      ],
+      "source_record_hash": "e006c46874cd86ede506e5c1d531d46295e4bb6312b206e0d50d6b8ff518c624",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "bsdutils CVE-2026-78409",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812 (debian 13.7)",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-76642",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+      "due_date": "2026-01-15",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-AA91BBC0CC72",
+      "file": null,
+      "finding_id": "FND-CONTAINER-f6f763380649",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": "1:2.41.5-0+deb13u1",
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "bsdutils",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Rebuild on an updated base image or apply a compensating control when no fix exists.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 14,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": null,
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Container",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "outputs/security/appsec/raw/trivy.json"
+      ],
+      "source_finding_ids": [
+        "FND-CONTAINER-f6f763380649"
+      ],
+      "source_record_hash": "2745e6400fbaa4e89f22cd8e85a5538752a87c360d83c12531a465e12479f8dd",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "bsdutils CVE-2026-76642",
       "verification_status": "not_verified"
     },
     {
@@ -2969,6 +4947,97 @@
         "THR-CLOUD-001"
       ],
       "title": "Suppressed checkov finding CKV2_AWS_57",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-8376",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Trivy reports this critical Debian 13 perl-base vulnerability with no fixed version available after moving to the current supported slim-trixie base and applying apt upgrades.",
+      "due_date": "2026-10-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-A25D1760A517",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-5313851a0158",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 284,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current.",
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": "perl-base",
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-5313851a0158"
+      ],
+      "source_record_hash": "86dcb873c95e4ffb6d47ea75ef7aaa67c724ca9147a6807375122cb9d3a6c1eb",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": "SUP-TRIVY-PERL-BASE-CRITICAL-002",
+      "suppression_status": "active",
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "Suppressed trivy finding CVE-2026-8376",
       "verification_status": "not_verified"
     },
     {
@@ -3979,6 +6048,97 @@
         "THR-CLOUD-001"
       ],
       "title": "Suppressed checkov finding CKV2_AWS_5",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-CONTAINER",
+      "asset_type": "container_image",
+      "cloud_provider": null,
+      "component": null,
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": "CVE-2026-42496",
+      "cwe": null,
+      "data_sensitivity": "medium",
+      "description": "Trivy reports this critical Debian 13 perl-base vulnerability with no fixed version available after moving to the current supported slim-trixie base and applying apt upgrades.",
+      "due_date": "2026-10-12",
+      "environment": "not_deployed",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-307A86E606EE",
+      "file": null,
+      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
+      "finding_type": "Container",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "not_deployed",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "high",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": "perl-base",
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "conditional_pass",
+      "remediation_guidance": "Review suppression before expiry; remediate if compensating control is no longer valid.",
+      "remediation_owner": "Platform Engineering",
+      "remediation_sla_days": 284,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Review the suppression before expiry and keep compensating controls current.",
+        "Track upstream fix availability and rebuild the image when a fix is published."
+      ],
+      "required_approvals": [
+        "Product Security",
+        "Technical Owner"
+      ],
+      "resource": "perl-base",
+      "risk_owner": "Risk Owner",
+      "risk_score": 56.25,
+      "security_domain": "Suppression Governance",
+      "security_requirement_ids": [
+        "SR-CONTAINER-001"
+      ],
+      "service": null,
+      "source_evidence": [
+        "security/config/suppressions.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SUPPRESSIO-ef559061de8d"
+      ],
+      "source_record_hash": "e2c718465bf8475247b12fad394f1eb8232073c636d377f084279a1033c4da38",
+      "source_tools": [
+        "trivy"
+      ],
+      "squad": "Platform Engineering",
+      "status": "triaged",
+      "suppression_id": "SUP-TRIVY-PERL-BASE-CRITICAL-001",
+      "suppression_status": "active",
+      "technical_owner": "Platform Engineering",
+      "threat_ids": [
+        "THR-SUPPLY-001"
+      ],
+      "title": "Suppressed trivy finding CVE-2026-42496",
       "verification_status": "not_verified"
     },
     {

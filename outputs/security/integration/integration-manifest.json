@@ -1,7 +1,7 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "commit": "70919b45e7eaf952a1056106dc2f6ad7e4081eca",
+  "commit": "7bc2106054f197fdd432ce11412aede926764812",
   "compatibility_status": "compatible",
   "consumer": "enterprise-data-saas-security-control-plane",
   "contract_name": "product-security-control-plane-export",
@@ -16,12 +16,12 @@
     "schemas/security/integration/integration-manifest.schema.json"
   ],
   "input_checksums": {
-    "appsec": "06d19d96c8be4cf1a0b8c823acc5c69ff7d6584de459104d20311fe6d0ac69e4",
-    "champions": "d09281678df931f4d26ec779a8ab09cc88aea4daea44f354594dabe044810054",
-    "consolidated": "757d3e6e71d288aa9686ded9299a94c49b5b675efacc1ae8b6b3089cd590a429",
-    "findings": "f7eaed0d1367d8a43e513fd2b7f00b1af0384d6711eae52345c159e21184e29f",
-    "lifecycle": "b948ad320ee712c1145ccd8c1be3dc04c9c3580f7453bfa3c672997aea7f22e6",
-    "release": "c2e1d43e8108b32f94b0eba7da946d0a97098978f656659834acc60a51310752"
+    "appsec": "eb6f855ab3ad1eff3fdd393203aa3f5bcda7feea097b75f4e9c0624d729b8757",
+    "champions": "ef7a08ecba92711c1fccfb36c198afae1df88c902e347f7f339ffb5591964abb",
+    "consolidated": "f43fbfef8ca58f59442fd470a4277add4730e6663a357e7ddccfd35c4cedec2f",
+    "findings": "d3ccbc560590e78a48f18c94f9af78617f2952eb940a6ca63766c7ec63754aa1",
+    "lifecycle": "916552395ecad6c167f7637c116f37b81cb2bf4edc56d67041645bcf267d4d05",
+    "release": "e1546a886aafdb9a9de9c73c6596bf4f070cb763d02f209736ed20e30738d45a"
   },
   "input_manifests": {
     "appsec": "outputs/security/appsec/evidence-manifest.json",
@@ -31,29 +31,29 @@
     "lifecycle": "outputs/security/lifecycle/evidence-manifest.json",
     "release": "outputs/security/release/evidence-manifest.json"
   },
-  "lifecycle_record_count": 45,
+  "lifecycle_record_count": 69,
   "limitations": [
     "This is a local export bundle only; no Repository 5 files are modified.",
     "No deployment, external upload, API integration or AWS resource creation occurs.",
     "Consumer-side identifiers and ingestion status are intentionally absent."
   ],
-  "lineage_edge_count": 182,
+  "lineage_edge_count": 276,
   "minimum_consumer_version": "1.0",
   "output_checksums": {
     "compatibility-summary.json": "380c887441e647607ff675340edc1a023400043ce8257ff0d79c42af5120fb89",
-    "control-traceability.json": "55907fa8f72465aacc7e036b47234b5f5f7eef2dbbf55c8cfb955d66fef395e8",
-    "data-quality-summary.json": "24f43daa6ee4130d6330dfe3984ee7d3f35dee794bd441672e93c1aa698e8e80",
+    "control-traceability.json": "b83de2e320f3a0372cdbc7998141aff075ae77f1bea00b213021980f9498345a",
+    "data-quality-summary.json": "e801cc4367d363f3c18bcdc82fb91fdb2b81ef7d600dbdf70a2d1af8b786d950",
     "field-mapping-summary.json": "9547fdb3ef578a5f17287097b860898e4d8fc5dfb9b0e604881b74c472e44480",
-    "finding-lifecycle-status.json": "05aba263e9141331c45d02f3e29351cceb598159f926ed826e72abb821323506",
-    "finding-release-impact.json": "03bc0791f93d96df55f9acbde2061d4937b96cedf17b87a286e872f6a719717d",
-    "finding-source-lineage.json": "ef7c9f1911eeadd70f46aee1606e94d5af5f04b64eaeb44adee7d43f9cdc804a",
-    "integration-summary.json": "a7ece7a5487c5af2a7bcf212712b34ae353d891d80efa3d9ece253468444f7e3",
-    "integration-validation-summary.json": "24f43daa6ee4130d6330dfe3984ee7d3f35dee794bd441672e93c1aa698e8e80",
-    "ownership-and-sla.json": "2dd055b25d730cb5046847a189c2e2ea6410480bd33817f638161be47c5aab0f",
-    "product-security-findings.csv": "c392bf632f89074c020ca6c0f62cd2a73a33c2c60bfb4e274924b44cf328355f",
-    "product-security-findings.json": "8b64560bad9e8c8b5e72d33b89e2a78782d437759f11ef15921cf48b50921e09",
+    "finding-lifecycle-status.json": "1b928054eb5935e6a73c4ff52bb77eb59fc60f891c2dde4810ca1418e3793e00",
+    "finding-release-impact.json": "fc2bc8558460cbd3aa4198cf539e2f16d151e54c03e67c601163b7991e339d9f",
+    "finding-source-lineage.json": "220d723226e50cc0df1ee7bd0eefaa9d00d8c893280e4cb9c238c0367ceac67d",
+    "integration-summary.json": "b52dd1c0d679eb2d4e3c147fb4b01d1aebcb77aab056e73e05023be626558205",
+    "integration-validation-summary.json": "e801cc4367d363f3c18bcdc82fb91fdb2b81ef7d600dbdf70a2d1af8b786d950",
+    "ownership-and-sla.json": "cc4305b2800a025b24982bf3872fd1935c1721932fa0ab116d33f8ee4df7d469",
+    "product-security-findings.csv": "93f6ebc61a52539d7326cf3d7ac2b98a680b385781d861f8c2ebe4b5ea11f4a5",
+    "product-security-findings.json": "ddd0935531ff28347bd51b457b47a50888f510ef31f05c75319242d1b3f97b32",
     "security-exceptions.json": "2db211d3ca6b1aa3b270fade2695ea79c09bdb76fea31b85bfecc31dce081601",
-    "security-metrics.json": "f5016cd847292dfa2280e9d726ac58b726c19dbc8562dc42270d3970b5cb9fb2",
+    "security-metrics.json": "fbae5d1a1d8387472a9c3d94fa7c5c5f8217dd22770c89eab759c07b50ab640b",
     "verification-status.json": "fc71cef80f522038c9ac9d686eb1d7cd87f5d50052af01912f72a44a8b1a61be"
   },
   "output_files": [
@@ -77,8 +77,8 @@
   "producer_project_version": "0.1.0",
   "producer_repository": "devsecops-application-security-pipeline",
   "producer_schema_version": "1.0",
-  "record_count": 45,
-  "source_finding_count": 47,
+  "record_count": 69,
+  "source_finding_count": 69,
   "source_schemas": [
     "schemas/security/findings/canonical-finding.schema.json",
     "schemas/security/release/release-gate-decision.schema.json",

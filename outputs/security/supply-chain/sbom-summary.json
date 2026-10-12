@@ -1,0 +1,11 @@
+{
+  "artifact_digest": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "component_count": 109,
+  "format": "CycloneDX JSON",
+  "generator": "Trivy",
+  "generator_version": "Version: 0.72.0",
+  "sbom_reference": "outputs/security/supply-chain/container-sbom.cdx.json",
+  "schema_version": "1.0",
+  "sha256": "2e6c73c257fff01acadee31932ee036e12d9c77e477ac39f972c72539ab9e24a",
+  "spec_version": "1.7"
+}

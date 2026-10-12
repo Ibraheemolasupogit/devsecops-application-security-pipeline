@@ -1740,21 +1740,23 @@
       "DF-009",
       "DF-010"
     ],
-    "description": "A future artefact or image is altered after build or lacks provenance.",
+    "description": "A built image is substituted by a mutable tag, rebuilt between assurance and promotion, or associated with mismatched SBOM, scan or source evidence.",
     "entry_point_ids": [
       "EP-012",
       "EP-014"
     ],
     "existing_controls": [
-      "no deployment exists",
-      "Docker build validation only"
+      "Build metadata records Git SHA, Dockerfile and dependency checksums",
+      "Container scan and CycloneDX SBOM bind to the built digest",
+      "Publication eligibility consumes canonical release assurance",
+      "ECR publication verifies the returned digest against the candidate"
     ],
     "impact": "high",
     "inherent_risk": "high",
     "likelihood": "medium",
     "owasp_api_category": "API8:2023 Security Misconfiguration",
     "planned_controls": [
-      "artefact signing and protected release workflow in later milestone"
+      "artifact signing and admission-time signature verification are later work"
     ],
     "preconditions": [
       "future registry and deployment flow exist"
@@ -1774,13 +1776,14 @@
     "stride_category": "tampering",
     "technical_owner": "platform_engineer",
     "threat_id": "THR-SUPPLY-003",
-    "title": "Unsigned or altered build artefact",
+    "title": "Build artefact substitution or provenance mismatch",
     "trust_boundary_ids": [
       "TB-006",
       "TB-007"
     ],
     "verification_methods": [
-      "future provenance verification"
+      "make supply-chain-full and make verify-supply-chain-evidence",
+      "immutable digest mismatch and evidence tampering tests"
     ]
   }
 ]

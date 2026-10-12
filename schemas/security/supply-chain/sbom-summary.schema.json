@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Container SBOM summary",
+  "type": "object",
+  "required": ["schema_version", "format", "spec_version", "generator", "generator_version", "component_count", "artifact_digest", "sbom_reference", "sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "format": {"const": "CycloneDX JSON"},
+    "spec_version": {"type": ["string", "null"]},
+    "generator": {"const": "Trivy"},
+    "generator_version": {"type": "string"},
+    "component_count": {"type": "integer", "minimum": 1},
+    "artifact_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "sbom_reference": {"type": "string"},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

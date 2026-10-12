@@ -1,6 +1,6 @@
 # Deduplication Report
 
-Deduplicated count: 2
+Deduplicated count: 0
 
 ## Groups
 
@@ -8,23 +8,47 @@ Deduplicated count: 2
 - FND-CONTAINER-57b96cf12bee: unique exact key
 - FND-CONTAINER-77763b149b4f: unique exact key
 - FND-CONTAINER-c1e6ced9904f: unique exact key
-- FND-CONTAINER-b26883cf2982: unique exact key
-- FND-CONTAINER-c7563eb73df0: unique exact key
-- FND-CONTAINER-5ee1761422cc: merged by exact key cve|CVE-2026-42496|perl-base across trivy; all source records retained
-- FND-CONTAINER-3686ad447a1f: unique exact key
-- FND-CONTAINER-4a39d4c85743: unique exact key
-- FND-CONTAINER-033201244a2b: unique exact key
-- FND-CONTAINER-35a70101ee98: unique exact key
-- FND-CONTAINER-96b263718199: unique exact key
-- FND-CONTAINER-35a7a61eb9e3: unique exact key
-- FND-CONTAINER-ba223b9333c9: unique exact key
-- FND-CONTAINER-9360fa554791: unique exact key
-- FND-CONTAINER-d0df15bb32ed: unique exact key
-- FND-CONTAINER-ef0f3e5e6558: unique exact key
-- FND-CONTAINER-9bac41a1b5ac: unique exact key
+- FND-CONTAINER-85c29f2e1d67: unique exact key
+- FND-CONTAINER-b49f58b918ed: unique exact key
+- FND-SUPPRESSIO-ef559061de8d: unique exact key
 - FND-CONTAINER-6017bcc173f8: unique exact key
-- FND-CONTAINER-c118af042a95: unique exact key
-- FND-CONTAINER-95a38a1f2a20: merged by exact key cve|CVE-2026-8376|perl-base across trivy; all source records retained
+- FND-CONTAINER-f6f763380649: unique exact key
+- FND-CONTAINER-e1f2cc1c749d: unique exact key
+- FND-CONTAINER-a05776d7b2eb: unique exact key
+- FND-CONTAINER-84d155fdc3d1: unique exact key
+- FND-CONTAINER-65d0909407ea: unique exact key
+- FND-CONTAINER-6e659fb03bfe: unique exact key
+- FND-CONTAINER-54f909a65e8d: unique exact key
+- FND-CONTAINER-452f02c62efd: unique exact key
+- FND-CONTAINER-a6116dba2666: unique exact key
+- FND-CONTAINER-b11df2b9097e: unique exact key
+- FND-CONTAINER-65d75e6eba4f: unique exact key
+- FND-CONTAINER-5a8d530b00be: unique exact key
+- FND-CONTAINER-8c4116b09936: unique exact key
+- FND-CONTAINER-5464624f68ba: unique exact key
+- FND-CONTAINER-b9d1bbc8febf: unique exact key
+- FND-CONTAINER-3b7728ab6349: unique exact key
+- FND-CONTAINER-8229cd4d151d: unique exact key
+- FND-CONTAINER-c31d90a0dae9: unique exact key
+- FND-CONTAINER-e9c4b1dd55ff: unique exact key
+- FND-CONTAINER-e1d4cd41e57c: unique exact key
+- FND-CONTAINER-4b3599117c60: unique exact key
+- FND-CONTAINER-75484f7ebb4b: unique exact key
+- FND-CONTAINER-87e329c9d3c9: unique exact key
+- FND-CONTAINER-9448e15df1ef: unique exact key
+- FND-CONTAINER-cdafc2f07851: unique exact key
+- FND-CONTAINER-b32479e41fff: unique exact key
+- FND-CONTAINER-c29de2c95e6d: unique exact key
+- FND-CONTAINER-a44acae763a2: unique exact key
+- FND-CONTAINER-97d0d191781c: unique exact key
+- FND-CONTAINER-866a375b43af: unique exact key
+- FND-CONTAINER-c269596a605e: unique exact key
+- FND-CONTAINER-d7e9ab84f9e9: unique exact key
+- FND-CONTAINER-43d127b610b8: unique exact key
+- FND-CONTAINER-3d855e8b31a4: unique exact key
+- FND-CONTAINER-7401651d82c4: unique exact key
+- FND-CONTAINER-8917d095a4d4: unique exact key
+- FND-SUPPRESSIO-5313851a0158: unique exact key
 - FND-CONTAINER-026cbd40a3d8: unique exact key
 - FND-DAST-e607d905531a: unique exact key
 - FND-DAST-7f68e8fb688f: unique exact key

@@ -65,6 +65,6 @@ SR-REVIEW-001,SR-REVIEW-001,THR-REVIEW-001,findings,validated_locally,verified,o
 SR-SECRETS-001,SR-SECRETS-001,THR-SECRETS-001,appsec,implemented_as_code,validated_locally,outputs/security/appsec/secret-scan-summary.json,application_admin,future_deployment,medium
 SR-SUPPLY-001,SR-SUPPLY-001,THR-SUPPLY-001;THR-SUPPLY-002,appsec,validated_locally,verified,outputs/security/appsec/dependency-scan-summary.json,product_security_engineer,none,medium
 SR-SUPPLY-002,SR-SUPPLY-002,THR-SUPPLY-001,appsec,validated_locally,verified,outputs/security/appsec/sbom.cdx.json,product_security_engineer,none,medium
-SR-SUPPLY-003,SR-SUPPLY-003,THR-SUPPLY-003,appsec,planned,planned,future artefact evidence,platform_engineer,future_deployment,medium
+SR-SUPPLY-003,SR-SUPPLY-003,THR-SUPPLY-003,appsec,validated_locally,verified,outputs/security/supply-chain/supply-chain-manifest.json; outputs/security/supply-chain/release-artifact.json,platform_engineer,none,medium
 SR-SUPPLY-004,SR-SUPPLY-004,THR-SECRETS-001,appsec,validated_locally,verified,outputs/security/appsec/secret-scan-summary.json,product_security_engineer,none,medium
 SR-TM-001,SR-TM-001,THR-REVIEW-001,threat_model,validated_locally,verified,outputs/security/threat-model/evidence-manifest.json,product_security_engineer,none,low

@@ -1,4 +1,4 @@
-.PHONY: help setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop dynamic-diagnostics schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-pytest dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full release-policy-validate release-gate-evaluate release-gate-enforce release-evidence verify-release-evidence release-report release-full lifecycle-policy-validate lifecycle-initialise lifecycle-validate lifecycle-expiry lifecycle-evidence verify-lifecycle-evidence lifecycle-report lifecycle-full evidence-source-validate evidence-aggregate evidence-generate verify-consolidated-evidence evidence-report evidence-full integration-policy-validate integration-export integration-validate verify-integration-evidence integration-report integration-full portfolio-evidence verify-portfolio-evidence portfolio-report portfolio-full final-validation security-assurance-full security-doctor developer-docs-validate developer-enablement-evidence verify-developer-enablement-evidence developer-enablement-report developer-enablement-full champions-policy-validate champions-metrics champions-evidence verify-champions-evidence champions-report champions-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
+.PHONY: help setup install format format-check lint type-check test test-coverage auth-test api-security-test terraform-fmt terraform-fmt-check terraform-init terraform-validate terraform-test infrastructure-test infrastructure-evidence verify-infrastructure-evidence infrastructure-report security-tools secrets-scan sast sast-semgrep sast-bandit bandit semgrep-test sca dependency-audit sbom verify-sbom iac-scan checkov-scan container-build-security container-scan container-build container-inspect container-sbom container-scan-image supply-chain-evidence verify-supply-chain-evidence publication-decision supply-chain-full appsec-fast appsec-full appsec-evidence verify-appsec-evidence appsec-report dynamic-tools dynamic-server-start dynamic-server-wait dynamic-server-stop dynamic-diagnostics schemathesis-test api-schema-security-test zap-baseline zap-api-scan auth-boundary-test authorisation-boundary-test object-access-test input-mutation-test security-header-test cors-test resource-consumption-test audit-dynamic-test dast dynamic-evidence verify-dynamic-evidence dynamic-report dynamic-pytest dynamic-fast dynamic-full findings-normalise findings-deduplicate findings-enrich findings-validate findings-evidence verify-findings-evidence findings-report findings-full release-policy-validate release-gate-evaluate release-gate-enforce release-evidence verify-release-evidence release-report release-full lifecycle-policy-validate lifecycle-initialise lifecycle-validate lifecycle-expiry lifecycle-evidence verify-lifecycle-evidence lifecycle-report lifecycle-full evidence-source-validate evidence-aggregate evidence-generate verify-consolidated-evidence evidence-report evidence-full integration-policy-validate integration-export integration-validate verify-integration-evidence integration-report integration-full portfolio-evidence verify-portfolio-evidence portfolio-report portfolio-full final-validation security-assurance-full security-doctor developer-docs-validate developer-enablement-evidence verify-developer-enablement-evidence developer-enablement-report developer-enablement-full champions-policy-validate champions-metrics champions-evidence verify-champions-evidence champions-report champions-full pre-commit-install pre-commit-run quality run docker-build docker-run threat-model-validate threat-model-evidence verify-threat-model-evidence threat-model-report api-security-evidence verify-api-security-evidence api-security-report dev-token-researcher dev-token-approver dev-token-auditor clean
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -124,11 +124,41 @@ checkov-scan:
 
 iac-scan: checkov-scan
 
-container-build-security:
-	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py container-build
+container-build-security: container-build
 
-container-scan:
-	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py trivy
+container-scan: container-scan-image
+
+container-build:
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py build
+
+container-inspect:
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py inspect
+
+container-sbom:
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py sbom
+
+container-scan-image:
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py scan
+
+supply-chain-evidence:
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py provenance
+
+verify-supply-chain-evidence:
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py verify
+
+publication-decision: supply-chain-evidence
+	PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py publication-manifest
+
+supply-chain-full: appsec-fast sbom verify-sbom checkov-scan
+	@if [ "$(SUPPLY_CHAIN_REUSE_EXISTING)" = "1" ]; then \
+		PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py inspect >/dev/null && \
+		PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py sbom && \
+		PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py scan && \
+		PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py provenance && \
+		PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py verify; \
+	else \
+		PYTHONPATH=src $(PYTHON) scripts/container_supply_chain.py full; \
+	fi
 
 appsec-evidence:
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.appsec.evidence --timestamp 2026-01-01T00:00:00Z
@@ -141,7 +171,7 @@ appsec-report:
 
 appsec-fast: secrets-scan sast dependency-audit
 
-appsec-full: appsec-fast sbom verify-sbom checkov-scan container-build-security container-scan appsec-evidence verify-appsec-evidence appsec-report
+appsec-full: supply-chain-full appsec-evidence verify-appsec-evidence appsec-report
 
 dynamic-tools:
 	PYTHONPATH=src $(PYTHON) scripts/dynamic_security_tools.py tools

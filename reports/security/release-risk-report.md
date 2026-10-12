@@ -1,20 +1,20 @@
 # Release Risk Report
 
-Decision ID: REL-82f2cb952ffbc9ea
+Decision ID: REL-4e403b3e4f2106df
 
 Findings by severity:
-- critical: 5
-- high: 31
+- critical: 2
+- high: 58
 - informational: 1
 - low: 1
 - medium: 7
 
 Findings by priority:
-- P2: 17
-- P3: 28
+- P2: 14
+- P3: 55
 
 Findings by decision contribution:
-- conditional_pass: 36
+- conditional_pass: 60
 - warn: 9
 
 Highest risk findings:

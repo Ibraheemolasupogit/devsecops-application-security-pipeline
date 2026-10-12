@@ -1,0 +1,10 @@
+{
+  "digest": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "image_id": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "repository": "genomic-research-access-api",
+  "schema_version": "1.0",
+  "source_commit": "7bc2106054f197fdd432ce11412aede926764812",
+  "tag": "git-7bc2106054f197fdd432ce11412aede926764812",
+  "tag_is_authoritative": false,
+  "target_platform": "linux/amd64"
+}

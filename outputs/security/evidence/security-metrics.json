@@ -2,32 +2,32 @@
   "metrics": {
     "active_exceptions": 1,
     "blocking_findings": 0,
-    "canonical_findings": 45,
+    "canonical_findings": 69,
     "closed_findings": 0,
     "conditional_findings": 0,
-    "control_coverage_percentage": 95.65,
-    "due_soon_findings": 3,
+    "control_coverage_percentage": 97.1,
+    "due_soon_findings": 0,
     "expired_exceptions": 1,
     "expired_suppressions": 0,
     "expiring_exceptions": 1,
     "failed_evidence_domains": 0,
     "false_positives": 1,
     "findings_by_priority": {
-      "P2": 17,
-      "P3": 28
+      "P2": 14,
+      "P3": 55
     },
     "findings_by_severity": {
-      "critical": 5,
-      "high": 31,
+      "critical": 2,
+      "high": 58,
       "informational": 1,
       "low": 1,
       "medium": 7
     },
     "high_critical_threats": 19,
-    "implemented_requirements": 66,
+    "implemented_requirements": 67,
     "overdue_findings": 0,
     "partially_implemented_requirements": 0,
-    "planned_requirements": 3,
+    "planned_requirements": 2,
     "release_decision": "conditional_pass",
     "resolved_but_unverified_findings": 0,
     "risk_accepted_findings": 2,
@@ -40,7 +40,7 @@
       "schemathesis": 0,
       "semgrep": 0,
       "threat-model": 7,
-      "trivy": 24,
+      "trivy": 46,
       "zap": 2
     },
     "scanner_tools_executed": 5,
@@ -54,9 +54,9 @@
       "assigned": 1,
       "false_positive": 1,
       "risk_accepted": 2,
-      "triaged": 41
+      "triaged": 65
     },
-    "vulnerability_records": 45,
+    "vulnerability_records": 69,
     "warning_findings": 0
   },
   "schema_version": "1.0"

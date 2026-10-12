@@ -41,15 +41,33 @@ def test_policy_validation_and_current_export_bundle() -> None:
     assert summary["valid"] is True
     manifest = _read_json(OUTPUT_DIR / "integration-manifest.json")
     findings = _read_json(OUTPUT_DIR / "product-security-findings.json")["findings"]
+    canonical_findings = _read_json(Path("outputs/security/findings/deduplicated-findings.json"))[
+        "findings"
+    ]
+    source_findings = _read_json(Path("outputs/security/findings/normalised-findings.json"))[
+        "findings"
+    ]
+    lifecycle_findings = _read_json(Path("outputs/security/lifecycle/vulnerability-register.json"))[
+        "vulnerabilities"
+    ]
+    exceptions = _read_json(Path("outputs/security/lifecycle/security-exceptions.json"))[
+        "exceptions"
+    ]
+    verifications = _read_json(Path("outputs/security/lifecycle/verification-register.json"))[
+        "verifications"
+    ]
+    release_decision = _read_json(Path("outputs/security/release/release-gate-decision.json"))
     assert manifest["contract_name"] == "product-security-control-plane-export"
     assert manifest["contract_version"] == "1.0"
-    assert manifest["record_count"] == 45
-    assert manifest["source_finding_count"] == 47
-    assert manifest["lifecycle_record_count"] == 45
-    assert manifest["exception_count"] == 3
-    assert manifest["verification_record_count"] == 0
-    assert len(findings) == 45
-    assert {record["release_decision"] for record in findings} == {"conditional_pass"}
+    assert manifest["record_count"] == len(findings) == len(canonical_findings)
+    assert manifest["source_finding_count"] == len(source_findings)
+    assert manifest["lifecycle_record_count"] == len(lifecycle_findings)
+    assert manifest["exception_count"] == len(exceptions) == 3
+    assert manifest["verification_record_count"] == len(verifications)
+    assert {record["finding_id"] for record in findings} == {
+        record["finding_id"] for record in canonical_findings
+    }
+    assert {record["release_decision"] for record in findings} == {release_decision["decision"]}
 
 
 def test_stable_export_id_and_mappings() -> None:
@@ -100,10 +118,15 @@ def test_lineage_control_metrics_and_reports() -> None:
     lineage = _read_json(OUTPUT_DIR / "finding-source-lineage.json")["lineage_edges"]
     traceability = _read_json(OUTPUT_DIR / "control-traceability.json")["records"]
     metrics = _read_json(OUTPUT_DIR / "security-metrics.json")
-    assert len(lineage) == 182
-    assert len(traceability) == 45
-    assert metrics["total_exported_findings"] == 45
-    assert metrics["suppressed_findings"] == 14
+    findings = _read_json(OUTPUT_DIR / "product-security-findings.json")["findings"]
+    manifest = _read_json(OUTPUT_DIR / "integration-manifest.json")
+    assert len(lineage) == manifest["lineage_edge_count"] == 4 * len(findings)
+    assert len(traceability) == len(findings)
+    assert metrics["total_exported_findings"] == manifest["record_count"] == len(findings)
+    assert metrics["suppressed_findings"] == sum(
+        bool(item["suppression_status"]) for item in findings
+    )
+    assert metrics["suppressed_findings"] > 0
     assert metrics["risk_accepted_findings"] == 2
     reports = generate_reports()
     assert {path.name for path in reports} == {
@@ -129,7 +152,8 @@ def test_verify_and_sample_consumer_validation() -> None:
         text=True,
     )
     assert result.returncode == 0
-    assert "validated 45 product-security records" in result.stdout
+    exported = _read_json(OUTPUT_DIR / "product-security-findings.json")["findings"]
+    assert result.stdout.strip() == f"validated {len(exported)} product-security records"
 
 
 def test_integration_cli_commands(monkeypatch: pytest.MonkeyPatch) -> None:

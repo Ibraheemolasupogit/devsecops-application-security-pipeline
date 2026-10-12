@@ -1232,12 +1232,12 @@
     },
     {
       "control_id": "SR-SUPPLY-003",
-      "deployment_dependency": "future_deployment",
+      "deployment_dependency": "none",
       "domain": "appsec",
       "evidence_references": [
-        "future artefact evidence"
+        "outputs/security/supply-chain/supply-chain-manifest.json; outputs/security/supply-chain/release-artifact.json"
       ],
-      "implementation_status": "planned",
+      "implementation_status": "validated_locally",
       "owner": "platform_engineer",
       "residual_risk": "medium",
       "security_requirement_ids": [
@@ -1246,7 +1246,7 @@
       "threat_ids": [
         "THR-SUPPLY-003"
       ],
-      "verification_status": "planned"
+      "verification_status": "verified"
     },
     {
       "control_id": "SR-SUPPLY-004",
@@ -1287,9 +1287,9 @@
   ],
   "coverage_by_status": {
     "implemented_as_code": 12,
-    "planned": 3,
-    "validated_locally": 54
+    "planned": 2,
+    "validated_locally": 55
   },
-  "coverage_percentage": 95.65,
+  "coverage_percentage": 97.1,
   "schema_version": "1.0"
 }

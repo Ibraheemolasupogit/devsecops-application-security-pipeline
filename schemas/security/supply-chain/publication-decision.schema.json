@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Artifact publication eligibility",
+  "type": "object",
+  "required": ["schema_version", "status", "publication_allowed", "blockers", "conditions", "release_decision", "artifact_digest"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "status": {"enum": ["eligible", "conditionally_eligible", "blocked"]},
+    "publication_allowed": {"type": "boolean"},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "conditions": {"type": "array", "items": {"type": "string"}},
+    "release_decision": {"type": "string"},
+    "artifact_digest": {"type": ["string", "null"], "pattern": "^sha256:[a-f0-9]{64}$"},
+    "release_decision_id": {"type": "string"},
+    "container_findings": {"type": "array", "items": {"type": "string"}},
+    "container_scan_reference": {"type": "string"},
+    "sbom_reference": {"type": "string"},
+    "provenance_reference": {"type": "string"}
+  },
+  "additionalProperties": false
+}

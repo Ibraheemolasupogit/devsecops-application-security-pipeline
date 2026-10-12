@@ -1,0 +1,22 @@
+{
+  "blocking_count": 0,
+  "canonical_findings_reference": "outputs/security/findings/deduplicated-findings.json",
+  "counts_by_severity": {
+    "CRITICAL": 0,
+    "HIGH": 44,
+    "LOW": 0,
+    "MEDIUM": 0,
+    "UNKNOWN": 0
+  },
+  "execution_status": "completed",
+  "finding_count": 44,
+  "image_digest": "sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec",
+  "image_reference": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812",
+  "policy_outcome": "pass",
+  "raw_evidence_reference": "outputs/security/appsec/raw/trivy.json",
+  "raw_evidence_sha256": "a8fb92174c62bc59c130d399a0715e1a4ef1813cdcaf33f564dc8b543bef8f66",
+  "scanner": "Trivy",
+  "scanner_version": "Version: 0.72.0",
+  "schema_version": "1.0",
+  "suppressed_count": 0
+}

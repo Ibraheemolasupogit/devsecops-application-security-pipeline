@@ -152,6 +152,22 @@ def test_dynamic_diagnostic_fixture_does_not_match_gitleaks_private_key_rule() -
     assert re.search(private_key_rule["regex"], source) is None
 
 
+def test_gitleaks_private_key_rule_requires_a_complete_pem_block() -> None:
+    config = tomllib.loads(Path(".gitleaks.toml").read_text(encoding="utf-8"))
+    private_key_rule = next(
+        rule for rule in config["rules"] if rule["id"] == "jwt-signing-material-outside-fixtures"
+    )
+    marker_only = "-----BEGIN PRIVATE KEY-----"
+    redacted_fixture = (
+        "-----BEGIN PRIVATE KEY-----\n<redacted synthetic key material>\n-----END PRIVATE KEY-----"
+    )
+    synthetic_pem_block = "-----BEGIN PRIVATE KEY-----\n" + "A" * 48 + "\n-----END PRIVATE KEY-----"
+
+    assert re.search(private_key_rule["regex"], marker_only) is None
+    assert re.search(private_key_rule["regex"], redacted_fixture) is None
+    assert re.search(private_key_rule["regex"], synthetic_pem_block)
+
+
 def test_bandit_configuration_keeps_subprocess_and_bind_rules_active() -> None:
     config = Path("security/bandit/bandit.yaml").read_text(encoding="utf-8")
 

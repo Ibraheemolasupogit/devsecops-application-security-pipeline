@@ -2,48 +2,93 @@
   "history": [
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-027c9547ca40",
+      "event_id": "EVT-0f6d29d416aa",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-9360fa554791",
+        "finding_id": "FND-CONTAINER-c29de2c95e6d",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-7fe2093e27f6"
+      "vulnerability_id": "VUL-a3fa0068a116"
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-03d91bd500e7",
+      "event_id": "EVT-1146d7fddc5e",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-9bac41a1b5ac",
+        "finding_id": "FND-CONTAINER-97d0d191781c",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-1a8a6cdaadda"
+      "vulnerability_id": "VUL-c73f1499d5c2"
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-125aa0f363f5",
+      "event_id": "EVT-1547d6f87aec",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-ba223b9333c9",
+        "finding_id": "FND-CONTAINER-84d155fdc3d1",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-d64dee6f78fd"
+      "vulnerability_id": "VUL-db0d70d48ad6"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-161c5cfc212b",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-a6116dba2666",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-86b224dc01e9"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-190b8a26e151",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-4b3599117c60",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-f0592667d50e"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-192513a44771",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-65d0909407ea",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-0443feacb3ce"
     },
     {
       "actor_role": "Product Security",
@@ -62,18 +107,18 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-28893f5c9b05",
+      "event_id": "EVT-25fb6f0a8a40",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-95a38a1f2a20",
-        "scanner_suppression_id": null
+        "finding_id": "FND-SUPPRESSIO-5313851a0158",
+        "scanner_suppression_id": "SUP-TRIVY-PERL-BASE-CRITICAL-002"
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-3c36ead265b5"
+      "vulnerability_id": "VUL-b44d66dd0cda"
     },
     {
       "actor_role": "Product Security",
@@ -92,6 +137,21 @@
     },
     {
       "actor_role": "Product Security",
+      "event_id": "EVT-2b3a03b7447c",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-b9d1bbc8febf",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-72e9f205d0d6"
+    },
+    {
+      "actor_role": "Product Security",
       "event_id": "EVT-33710033e5d7",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -107,6 +167,36 @@
     },
     {
       "actor_role": "Product Security",
+      "event_id": "EVT-3591aa7c5a72",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-a44acae763a2",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-164d4245cfbe"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-3665612b7b8b",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-e1f2cc1c749d",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-3dd199011de7"
+    },
+    {
+      "actor_role": "Product Security",
       "event_id": "EVT-3a3def91f980",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -119,6 +209,21 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "assigned",
       "vulnerability_id": "VUL-3e4410d0f925"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-3c08a9462b14",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-5464624f68ba",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-d120d8886f8f"
     },
     {
       "actor_role": "Product Security",
@@ -152,33 +257,48 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-455c3d44d863",
+      "event_id": "EVT-40b029844f7c",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-ef0f3e5e6558",
+        "finding_id": "FND-CONTAINER-8917d095a4d4",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-319df8d00bbb"
+      "vulnerability_id": "VUL-05cdfb3497e8"
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-4c72195151da",
+      "event_id": "EVT-473b4b264889",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-033201244a2b",
+        "finding_id": "FND-CONTAINER-9448e15df1ef",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-409a5ea1d699"
+      "vulnerability_id": "VUL-4bdf62bdfb94"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-4806302c3771",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-c31d90a0dae9",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-fe6e8af57976"
     },
     {
       "actor_role": "Product Security",
@@ -209,6 +329,36 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-ef9b8b14427b"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-58c37f90cd60",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-a05776d7b2eb",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-f85db05c99ee"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-594acebac152",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-SUPPRESSIO-ef559061de8d",
+        "scanner_suppression_id": "SUP-TRIVY-PERL-BASE-CRITICAL-001"
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-b1a69851e6a4"
     },
     {
       "actor_role": "Product Security",
@@ -257,36 +407,6 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-66bca1eaaad9",
-      "event_type": "initialise",
-      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
-      "from_status": null,
-      "metadata": {
-        "finding_id": "FND-CONTAINER-4a39d4c85743",
-        "scanner_suppression_id": null
-      },
-      "reason": "Initialised from canonical finding evidence.",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "to_status": "triaged",
-      "vulnerability_id": "VUL-62837edcf861"
-    },
-    {
-      "actor_role": "Product Security",
-      "event_id": "EVT-69b338c1830e",
-      "event_type": "initialise",
-      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
-      "from_status": null,
-      "metadata": {
-        "finding_id": "FND-CONTAINER-3686ad447a1f",
-        "scanner_suppression_id": null
-      },
-      "reason": "Initialised from canonical finding evidence.",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "to_status": "triaged",
-      "vulnerability_id": "VUL-535385b100fe"
-    },
-    {
-      "actor_role": "Product Security",
       "event_id": "EVT-71136d6d6d17",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -299,6 +419,36 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-9d1dd0128110"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-712d97d576fb",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-54f909a65e8d",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-650419848c52"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-739f64d02b71",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-3d855e8b31a4",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-95911e8c2313"
     },
     {
       "actor_role": "Product Security",
@@ -317,6 +467,21 @@
     },
     {
       "actor_role": "Product Security",
+      "event_id": "EVT-7c4d1c12b218",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-3b7728ab6349",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-17f8dcabdae2"
+    },
+    {
+      "actor_role": "Product Security",
       "event_id": "EVT-7c8076ba580d",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -332,18 +497,18 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-83fe904522a1",
+      "event_id": "EVT-85df87c20981",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-c7563eb73df0",
+        "finding_id": "FND-CONTAINER-cdafc2f07851",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-64faf13bbdae"
+      "vulnerability_id": "VUL-7af9536645c4"
     },
     {
       "actor_role": "Product Security",
@@ -362,33 +527,48 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-9000db8cd675",
+      "event_id": "EVT-8aa460fcadb6",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-35a7a61eb9e3",
+        "finding_id": "FND-CONTAINER-b11df2b9097e",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-680d816e1f2e"
+      "vulnerability_id": "VUL-c1247c8a27da"
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-9832b92e1e7f",
+      "event_id": "EVT-98121a2fa8e3",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-c118af042a95",
+        "finding_id": "FND-CONTAINER-65d75e6eba4f",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-ec5befd85504"
+      "vulnerability_id": "VUL-e4d5485dda12"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-982e7c2c9449",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-452f02c62efd",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-3e6c8fa79f05"
     },
     {
       "actor_role": "Product Security",
@@ -482,18 +662,33 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-ab0906d82fcb",
+      "event_id": "EVT-a81199cbe166",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-5ee1761422cc",
+        "finding_id": "FND-CONTAINER-b49f58b918ed",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-722413c096a8"
+      "vulnerability_id": "VUL-b0346909d7d2"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-ab39e5e162ce",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-8c4116b09936",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-72b55409a109"
     },
     {
       "actor_role": "Product Security",
@@ -509,6 +704,36 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-f4d6b51b0b01"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-ad53824a2d7e",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-c269596a605e",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-04ae22ee8be8"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-ad8d3611d0ae",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-e1d4cd41e57c",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-1863021b0a9c"
     },
     {
       "actor_role": "Product Security",
@@ -556,21 +781,6 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-b8e21052ba5f",
-      "event_type": "initialise",
-      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
-      "from_status": null,
-      "metadata": {
-        "finding_id": "FND-CONTAINER-35a70101ee98",
-        "scanner_suppression_id": null
-      },
-      "reason": "Initialised from canonical finding evidence.",
-      "timestamp": "2026-01-01T00:00:00Z",
-      "to_status": "triaged",
-      "vulnerability_id": "VUL-7beb96d909dc"
-    },
-    {
-      "actor_role": "Product Security",
       "event_id": "EVT-bae13fc0f648",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
@@ -583,6 +793,21 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-e92f363a27c3"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-bdcafb5fa201",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-8229cd4d151d",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-8c678fdbfd5a"
     },
     {
       "actor_role": "Product Security",
@@ -616,48 +841,78 @@
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-c1bedc964198",
+      "event_id": "EVT-c2707736a962",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-96b263718199",
+        "finding_id": "FND-CONTAINER-85c29f2e1d67",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-07ec5cfe733f"
+      "vulnerability_id": "VUL-c3b2903eedb8"
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-cf94731a6bab",
+      "event_id": "EVT-c5a9ef284fe1",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-d0df15bb32ed",
+        "finding_id": "FND-CONTAINER-6e659fb03bfe",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-36cafa8f2eed"
+      "vulnerability_id": "VUL-3945868fe01b"
     },
     {
       "actor_role": "Product Security",
-      "event_id": "EVT-dd855cdd8cc9",
+      "event_id": "EVT-cf8723385994",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
       "from_status": null,
       "metadata": {
-        "finding_id": "FND-CONTAINER-b26883cf2982",
+        "finding_id": "FND-CONTAINER-5a8d530b00be",
         "scanner_suppression_id": null
       },
       "reason": "Initialised from canonical finding evidence.",
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
-      "vulnerability_id": "VUL-f0424a7c155e"
+      "vulnerability_id": "VUL-ec079422b266"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-d75110c70f28",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-f6f763380649",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-3fd891211c47"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-dba87f455fe9",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-e9c4b1dd55ff",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-e3ad2902bcd5"
     },
     {
       "actor_role": "Product Security",
@@ -688,6 +943,111 @@
       "timestamp": "2026-01-01T00:00:00Z",
       "to_status": "triaged",
       "vulnerability_id": "VUL-2a7a40f3e0a5"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-e55dc24cfe52",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-b32479e41fff",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-0ff0cf010410"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-e63d36ab778d",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-d7e9ab84f9e9",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-5072e2eff63c"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-e85085751f0b",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-43d127b610b8",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-e67436cb77cc"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-ed1e55173aa6",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-87e329c9d3c9",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-0784eda86673"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-f0d8381d5a76",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-7401651d82c4",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-f86f40918545"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-f9651c3f9139",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-866a375b43af",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-b9e1ce6ea390"
+    },
+    {
+      "actor_role": "Product Security",
+      "event_id": "EVT-fd48857fb8bb",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-CONTAINER-75484f7ebb4b",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-b146a3668a88"
     },
     {
       "actor_role": "Product Security",
