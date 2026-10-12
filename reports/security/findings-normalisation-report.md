@@ -2,9 +2,9 @@
 
 Canonical schema version: 1.0
 
-Total source findings: 46
+Total source findings: 47
 
-Total canonical findings: 44
+Total canonical findings: 45
 
 Deduplicated count: 2
 
@@ -19,7 +19,7 @@ Deduplicated count: 2
 | pip-audit | 0 |
 | schemathesis | 0 |
 | semgrep | 0 |
-| threat-model | 6 |
+| threat-model | 7 |
 | trivy | 24 |
 | zap | 2 |
 
@@ -31,4 +31,4 @@ Deduplicated count: 2
 | high | 31 |
 | informational | 1 |
 | low | 1 |
-| medium | 6 |
+| medium | 7 |

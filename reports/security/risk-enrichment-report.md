@@ -7,7 +7,7 @@ Formula: 30% severity + 20% exploitability + 15% internet exposure + 15% asset c
 | Name | Count |
 | --- | ---: |
 | P2 | 17 |
-| P3 | 27 |
+| P3 | 28 |
 
 ## Highest Risk
 

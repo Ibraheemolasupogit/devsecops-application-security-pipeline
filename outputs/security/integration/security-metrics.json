@@ -5,8 +5,8 @@
   "conditional_findings": 36,
   "control_coverage": {
     "complete_traceability": 0,
-    "incomplete_traceability": 44,
-    "percentage": 96.67
+    "incomplete_traceability": 45,
+    "percentage": 95.45
   },
   "due_soon_findings": 3,
   "expired_exceptions": 1,
@@ -14,36 +14,36 @@
   "findings_by_domain": {
     "Container": 22,
     "DAST": 2,
-    "Secure Design": 6,
+    "Secure Design": 7,
     "Suppression Governance": 14
   },
   "findings_by_lifecycle_status": {
     "assigned": 1,
     "false_positive": 1,
     "risk_accepted": 2,
-    "triaged": 40
+    "triaged": 41
   },
   "findings_by_owner": {
     "Application Engineering": 4,
     "Cloud Security": 12,
     "Platform Engineering": 22,
-    "Product Security": 6
+    "Product Security": 7
   },
   "findings_by_priority": {
     "P2": 17,
-    "P3": 27
+    "P3": 28
   },
   "findings_by_severity": {
     "critical": 5,
     "high": 31,
     "informational": 1,
     "low": 1,
-    "medium": 6
+    "medium": 7
   },
   "findings_by_source_tool": {
     "checkov": 12,
     "gitleaks": 2,
-    "threat-model": 6,
+    "threat-model": 7,
     "trivy": 22,
     "zap": 2
   },
@@ -51,19 +51,19 @@
     "Application Engineering": 4,
     "Cloud Platform Security": 12,
     "Platform Engineering": 22,
-    "Product Security": 6
+    "Product Security": 7
   },
   "overdue_findings": 0,
-  "record_count": 44,
+  "record_count": 45,
   "release_decision": "conditional_pass",
   "risk_accepted_findings": 2,
   "schema_version": "1.0",
   "source_metrics_reference": "outputs/security/evidence/security-metrics.json",
   "suppressed_findings": 14,
-  "total_exported_findings": 44,
+  "total_exported_findings": 45,
   "unowned_findings": 0,
   "verification_records": 0,
   "verified_findings": 0,
-  "vulnerability_records": 44,
-  "warning_findings": 8
+  "vulnerability_records": 45,
+  "warning_findings": 9
 }

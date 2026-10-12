@@ -43,6 +43,12 @@
 | SR-INTEGRATION-002 | integration_contract | implemented | Milestone 13 |
 | SR-INTEGRATION-003 | integration_contract | implemented | Milestone 13 |
 | SR-INTEGRATION-004 | integration_contract | implemented | Milestone 13 |
+| SR-K8S-001 | runtime | implemented | Milestone 4 |
+| SR-K8S-002 | supply_chain | implemented | Milestone 4 |
+| SR-K8S-003 | identity | implemented | Milestone 4 |
+| SR-K8S-004 | environment_separation | implemented | Milestone 4 |
+| SR-K8S-005 | network_security | planned | Milestone 12 |
+| SR-K8S-006 | availability | implemented | Milestone 4 |
 | SR-LIFECYCLE-001 | vulnerability_management | implemented | Milestone 9 |
 | SR-LIFECYCLE-002 | vulnerability_management | implemented | Milestone 9 |
 | SR-LIFECYCLE-003 | governance | implemented | Milestone 9 |

@@ -1,6 +1,6 @@
 # Findings and Risk Report
 
-Canonical findings: 44
+Canonical findings: 45
 
 Suppressed findings: 16
 
@@ -11,4 +11,4 @@ By severity:
 - high: 31
 - informational: 1
 - low: 1
-- medium: 6
+- medium: 7

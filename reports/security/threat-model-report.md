@@ -2,7 +2,7 @@
 
 | Metric | Value |
 | --- | --- |
-| Total threats | 30 |
+| Total threats | 31 |
 | Validation status | passed |
 | Orphaned threats | None |
 | Orphaned requirements | None |
@@ -34,6 +34,7 @@
 | THR-IAC-002 | information_disclosure | high |
 | THR-IAM-001 | elevation_of_privilege | high |
 | THR-IAM-002 | information_disclosure | high |
+| THR-K8S-001 | elevation_of_privilege | high |
 | THR-REVIEW-001 | repudiation | medium |
 | THR-SECRETS-001 | information_disclosure | high |
 | THR-SUPPLY-001 | elevation_of_privilege | high |

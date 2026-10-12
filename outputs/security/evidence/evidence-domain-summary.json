@@ -20,7 +20,7 @@
       "name": "Threat Model",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "b2d3277fd3d5a10c27929ada31c5855b084993eab09fd06d3f8f44a4d3939082",
+      "source_checksum": "6598907b938517a418c6ad83bf69e7eb69206ae3147098811e6eda43bdd607c9",
       "source_manifest": "outputs/security/threat-model/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -112,7 +112,7 @@
       "name": "Security Champions",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "9eb28068ad08dceb8a56598d8038ddd10614e826a63b37a3b754d7365a1c5fad",
+      "source_checksum": "d09281678df931f4d26ec779a8ab09cc88aea4daea44f354594dabe044810054",
       "source_manifest": "outputs/security/champions/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -156,7 +156,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "8f2dc5a02869ff2211d1d8499e7393d2da8e2b7329b7c1fefdf0920570e73fd0",
+      "source_checksum": "c6bb7cd7a6d69e294b99e749ddd8493cad74b243fca8955068e86efa2a171d03",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -178,7 +178,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "069437aa03ce451ecb91ac83afbedacb4c5da92c3f70a5bb5d54e2da076fc93f",
+      "source_checksum": "a9045dcc4cc15a49c8b5494c2b1a868f9cba8e5ffa4713b9024e1e6ba8c95a58",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -202,7 +202,7 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "3448f4a3a299d6e4ef3cb210ee4bc6222eeda2ce8279b58873233c1a326c4928",
+      "source_checksum": "81b1b2421af56353fe30513c4b0891d23f740182436c95f1480fb08c02e04f37",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }

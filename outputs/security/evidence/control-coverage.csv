@@ -40,6 +40,12 @@ SR-INTEGRATION-001,SR-INTEGRATION-001,THR-REVIEW-001;THR-SUPPLY-001,integration,
 SR-INTEGRATION-002,SR-INTEGRATION-002,THR-REVIEW-001,integration,validated_locally,verified,outputs/security/integration/finding-source-lineage.json,product_security_engineer,none,low
 SR-INTEGRATION-003,SR-INTEGRATION-003,THR-SECRETS-001;THR-REVIEW-001,integration,validated_locally,verified,outputs/security/integration/data-quality-summary.json,product_security_engineer,none,low
 SR-INTEGRATION-004,SR-INTEGRATION-004,THR-REVIEW-001,integration,validated_locally,verified,outputs/security/integration/compatibility-summary.json,product_security_engineer,none,low
+SR-K8S-001,SR-K8S-001,THR-CONTAINER-002,threat_model,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,platform_engineer,none,low
+SR-K8S-002,SR-K8S-002,THR-CONTAINER-001;THR-SUPPLY-001,appsec,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,platform_engineer,none,low
+SR-K8S-003,SR-K8S-003,THR-IAM-001,threat_model,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,platform_engineer,none,low
+SR-K8S-004,SR-K8S-004,THR-CI-001,threat_model,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,platform_engineer,none,low
+SR-K8S-005,SR-K8S-005,THR-K8S-001,threat_model,planned,planned,outputs/security/threat-model/validated-security-requirements.json,platform_engineer,future_deployment,medium
+SR-K8S-006,SR-K8S-006,THR-API-005,threat_model,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,platform_engineer,none,low
 SR-LIFECYCLE-001,SR-LIFECYCLE-001,THR-REVIEW-001;THR-SUPPLY-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/vulnerability-register.json,product_security_engineer,none,medium
 SR-LIFECYCLE-002,SR-LIFECYCLE-002,THR-REVIEW-001,lifecycle,validated_locally,verified,outputs/security/lifecycle/verification-register.json,product_security_engineer,none,low
 SR-LIFECYCLE-003,SR-LIFECYCLE-003,THR-REVIEW-001;THR-SUPPLY-001,findings,validated_locally,verified,outputs/security/lifecycle/security-exceptions.json,risk_owner,none,medium

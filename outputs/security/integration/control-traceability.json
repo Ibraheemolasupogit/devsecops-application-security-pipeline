@@ -577,6 +577,27 @@
       "complete": false,
       "control_ids": [],
       "evidence_references": [],
+      "finding_id": "FND-SECUREDESI-8d30e56473d9",
+      "implementation_references": [],
+      "lifecycle_status": "triaged",
+      "missing_links": [
+        "control_ids",
+        "control_evidence"
+      ],
+      "release_impact": "warn",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "test_references": [],
+      "threat_ids": [
+        "THR-K8S-001"
+      ]
+    },
+    {
+      "complete": false,
+      "control_ids": [],
+      "evidence_references": [],
       "finding_id": "FND-SECUREDESI-ac50e3235345",
       "implementation_references": [],
       "lifecycle_status": "triaged",

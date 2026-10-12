@@ -1,10 +1,10 @@
 # Control Coverage Report
 
-Controls: 60
+Controls: 66
 
-Coverage: 96.67%
+Coverage: 95.45%
 
 By status:
 - implemented_as_code: 10
-- planned: 2
-- validated_locally: 48
+- planned: 3
+- validated_locally: 53

@@ -73,6 +73,22 @@ verify-infrastructure-evidence:
 infrastructure-report:
 	PYTHONPATH=src $(PYTHON) -m genomic_research_access_api.security.infrastructure.report
 
+.PHONY: k8s-render k8s-validate k8s-security k8s-test k8s-full
+
+k8s-render:
+	PYTHONPATH=src $(PYTHON) scripts/kubernetes_workload.py render
+
+k8s-validate:
+	PYTHONPATH=src $(PYTHON) scripts/kubernetes_workload.py validate
+
+k8s-security:
+	PYTHONPATH=src $(PYTHON) scripts/kubernetes_workload.py security
+
+k8s-test:
+	PYTHONPATH=src $(PYTEST) tests/security/test_kubernetes_workload.py -q
+
+k8s-full: k8s-render k8s-validate k8s-security k8s-test
+
 security-tools:
 	PYTHONPATH=src $(PYTHON) scripts/appsec_tools.py security-tools
 

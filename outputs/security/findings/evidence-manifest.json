@@ -47,7 +47,7 @@
     },
     "docs/threat-model/residual-risk-register.yaml": {
       "path": "docs/threat-model/residual-risk-register.yaml",
-      "sha256": "ddf57a3856d7f8ff76e848fb65c64679c7af1230638174ef39c62156118d9242"
+      "sha256": "4870fafdeaffc9d418da2908db97272e2beaeffcc7ebfba87221fd167a2a7e0b"
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
@@ -94,7 +94,7 @@
       "sha256": "4f56188bea83765d6ba11cf83557e7be3f1500dc3b11c8ab3d7c5f2f9fc8b6d1"
     }
   },
-  "normalisation_count": 46,
+  "normalisation_count": 47,
   "output_files": {
     "asset-inventory.json": {
       "path": "outputs/security/findings/asset-inventory.json",
@@ -102,11 +102,11 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "78a3e36728e1e25b3da71877e60635926b0f3d02bc7345f178c1d02648c19bc5"
+      "sha256": "93f2c2ad06ebd0fd3a8a2a2df368ee3d858189f0a9179014b48ed4459ed37f78"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
-      "sha256": "2ccf0e5f843c9a64e2ff73ec0e62040bb24126fe2cd353cb0b69859b65d514e4"
+      "sha256": "4ed700c5be60a18978b736b476a070b5d9f933f2f2f65451fbc090eee0d74977"
     },
     "expired-suppressions.csv": {
       "path": "outputs/security/findings/expired-suppressions.csv",
@@ -114,31 +114,31 @@
     },
     "finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "238dba54d1b524f5f938e5841cfcdf2062c9d07e094d58d104c310fc8498f573"
+      "sha256": "355ebc3eacf115779e9f18c338defeda6a9d27dcd32fdbf6cf2814659d9786bf"
     },
     "findings-summary.json": {
       "path": "outputs/security/findings/findings-summary.json",
-      "sha256": "df4180c90d089d284a8771db1599e690a3fc2062e2e75a176c161626f956750b"
+      "sha256": "fa35151d4febd9ed456607b7c2efd0066f470b72f7c3c61301411ff45a03b545"
     },
     "normalised-findings.csv": {
       "path": "outputs/security/findings/normalised-findings.csv",
-      "sha256": "703a1d497bb2816e40b3646f6f9a0b4aaba470578f699b401545f3a6df175819"
+      "sha256": "b0757a5f33964b9183dade656c0a567cba9086edde2a7825359f16d246e18041"
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "5e83faab148cdc1b069fad5a55cf6e0e676b57740c522974de2ce1533764f5de"
+      "sha256": "3406a6148807b8391ff7d3f088615691d7c16b26c80e06fb51a8e214f8f9861a"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",
-      "sha256": "d793b22326d790f564784e34caf527ebc0525ee42bce0a185b57d0ed720970e0"
+      "sha256": "8710cd7015a9c50285dcfe24b02319a35985212e7591a4f128e002d833dc750b"
     },
     "risk-summary.json": {
       "path": "outputs/security/findings/risk-summary.json",
-      "sha256": "5a4ffe655d691028c56a1de40e371ca1b68bc7312c8da0fbe625c9e28b663d85"
+      "sha256": "a472e3a7e99fde601c09cbad16ba5b38b604d32ead8f41473afe03acc315d9d0"
     },
     "sla-summary.json": {
       "path": "outputs/security/findings/sla-summary.json",
-      "sha256": "8fa532a9ba85b26b8210c0cec4ab52eecd7d0e1665fdab29fdaf2246ca2effd3"
+      "sha256": "ede95b177c2a986b6b139c45c5ba280f81f5013a72aa83d1d5ec64b958950e06"
     },
     "suppressed-findings.csv": {
       "path": "outputs/security/findings/suppressed-findings.csv",

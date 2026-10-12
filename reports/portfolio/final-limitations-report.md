@@ -1,6 +1,6 @@
 # Final Limitations Report
 
-Portfolio ID: `PF-0cde1774f705d21f`
+Portfolio ID: `PF-567667d0fd82a564`
 
 Readiness status: `ready_with_limitations`
 
@@ -8,12 +8,12 @@ Release decision: `conditional_pass`
 
 ## Key Metrics
 
-- Canonical findings: 44
-- Source findings: 46
+- Canonical findings: 45
+- Source findings: 47
 - Evidence domains: 9
-- Control coverage: 96.67%
-- Integration export records: 44
-- Repository integration lineage edges: 178
+- Control coverage: 95.45%
+- Integration export records: 45
+- Repository integration lineage edges: 182
 
 ## Readiness Failures
 

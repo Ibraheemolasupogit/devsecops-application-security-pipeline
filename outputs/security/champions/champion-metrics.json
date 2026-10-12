@@ -13,14 +13,14 @@
     "Application Engineering": 4,
     "Cloud Platform Security": 12,
     "Platform Engineering": 22,
-    "Product Security": 6
+    "Product Security": 7
   },
   "overdue_findings_by_squad": {},
   "owner_assignment_rate": 100.0,
   "repeated_vulnerability_categories": {
     "Container": 22,
     "DAST": 2,
-    "Secure Design": 6,
+    "Secure Design": 7,
     "Suppression Governance": 14
   },
   "schema_version": "1.0",

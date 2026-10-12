@@ -27,6 +27,7 @@ FND-SECUREDESI-0e84d1c52550,RR-009,threat-model,Threat Model,Secure Design,Resid
 FND-SECUREDESI-17c88481ce5d,RR-003,threat-model,Threat Model,Secure Design,Residual design risk RR-003,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
 FND-SECUREDESI-667c88d66538,RR-005,threat-model,Threat Model,Secure Design,Residual design risk RR-005,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
 FND-SECUREDESI-77c7990be9b8,RR-007,threat-model,Threat Model,Secure Design,Residual design risk RR-007,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
+FND-SECUREDESI-8d30e56473d9,RR-010,threat-model,Threat Model,Secure Design,Residual design risk RR-010,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
 FND-SECUREDESI-ac50e3235345,RR-001,threat-model,Threat Model,Secure Design,Residual design risk RR-001,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
 FND-SECUREDESI-e7cd910bd1f6,RR-006,threat-model,Threat Model,Secure Design,Residual design risk RR-006,medium,P3,59.75,AST-APP-FASTAPI,Product Security,Product Security,2026-01-31,,,,,,,
 FND-SUPPRESSIO-1065083a8d4b,SUP-CHECKOV-SG-MODULE-GRAPH-002,checkov,IaC,Suppression Governance,Suppressed checkov finding CKV2_AWS_5,high,P2,67.25,AST-TERRAFORM,Cloud Security,Cloud Security,2027-01-12,SUP-CHECKOV-SG-MODULE-GRAPH-002,active,,,,,

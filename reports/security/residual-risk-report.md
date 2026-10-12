@@ -11,3 +11,4 @@
 | RR-007 | medium | mitigate | THR-CONTAINER-001, THR-CONTAINER-002 |
 | RR-008 | low | accept | THR-API-001, THR-API-002, THR-API-003, THR-API-004, THR-API-007, THR-API-008, THR-AUDIT-003, THR-AUTHZ-004, THR-REVIEW-001 |
 | RR-009 | medium | mitigate | THR-CI-001 |
+| RR-010 | medium | mitigate | THR-K8S-001 |

@@ -1443,6 +1443,63 @@
   },
   {
     "actor_ids": [
+      "ACT-013",
+      "ACT-017"
+    ],
+    "asset_ids": [
+      "ASSET-016"
+    ],
+    "attack_scenario": "After exploiting the API container, an attacker uses unrestricted Pod networking to scan or access unrelated services in the cluster.",
+    "data_flow_ids": [
+      "DF-010"
+    ],
+    "description": "A compromised API Pod can probe or reach unrelated workloads and control-plane-adjacent services when cluster network policy enforcement is absent or too broad.",
+    "entry_point_ids": [
+      "EP-012"
+    ],
+    "existing_controls": [
+      "EKS worker placement in private subnets"
+    ],
+    "impact": "high",
+    "inherent_risk": "high",
+    "likelihood": "medium",
+    "owasp_api_category": "API8:2023 Security Misconfiguration",
+    "planned_controls": [
+      "default-deny-oriented NetworkPolicy",
+      "EKS network-policy enforcement verified before deployment"
+    ],
+    "preconditions": [
+      "API Pod is compromised",
+      "network-policy enforcement is missing or permissive"
+    ],
+    "references": [
+      "Kubernetes NetworkPolicy semantics",
+      "AWS VPC CNI network policy"
+    ],
+    "required_controls": [
+      "SR-K8S-005"
+    ],
+    "residual_risk": "medium",
+    "review_date": "2026-10-12",
+    "risk_owner": "platform_engineer",
+    "scope": "future",
+    "status": "active",
+    "stride_category": "elevation_of_privilege",
+    "technical_owner": "platform_engineer",
+    "threat_id": "THR-K8S-001",
+    "title": "Compromised workload lateral movement",
+    "trust_boundary_ids": [
+      "TB-006",
+      "TB-008"
+    ],
+    "verification_methods": [
+      "rendered NetworkPolicy tests",
+      "Checkov Kubernetes scan",
+      "future in-cluster policy enforcement test"
+    ]
+  },
+  {
+    "actor_ids": [
       "ACT-008",
       "ACT-009"
     ],

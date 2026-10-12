@@ -12,13 +12,13 @@
   "risk_accepted": 2,
   "schema_version": "1.0",
   "security_exception_count": 3,
-  "total_vulnerabilities": 44,
+  "total_vulnerabilities": 45,
   "unowned_findings": 0,
   "valid_transition_count": 16,
   "validations": [
     {
       "checked_exceptions": 3,
-      "checked_records": 44,
+      "checked_records": 45,
       "status": "valid"
     }
   ],
@@ -26,19 +26,19 @@
   "verified_but_not_closed": 0,
   "vulnerabilities_by_priority": {
     "P2": 17,
-    "P3": 27
+    "P3": 28
   },
   "vulnerabilities_by_severity": {
     "critical": 5,
     "high": 31,
     "informational": 1,
     "low": 1,
-    "medium": 6
+    "medium": 7
   },
   "vulnerabilities_by_status": {
     "assigned": 1,
     "false_positive": 1,
     "risk_accepted": 2,
-    "triaged": 40
+    "triaged": 41
   }
 }

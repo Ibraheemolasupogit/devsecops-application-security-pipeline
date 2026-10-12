@@ -5,7 +5,7 @@
   "output_files": {
     "champion-metrics.json": {
       "path": "champion-metrics.json",
-      "sha256": "f46867503b675d79e14fd1f2eda549d053304639f28e52f9dc76799e652d0077"
+      "sha256": "0f1de740e3debef3658429b2019d9469e9dbf7c0757dd079f5b8a2c084a3ae93"
     },
     "champion-roster.json": {
       "path": "champion-roster.json",

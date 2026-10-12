@@ -817,6 +817,121 @@
     "verification_reference": "examples/integration-consumer/validate_bundle.py"
   },
   {
+    "requirement_id": "SR-K8S-001",
+    "title": "Restricted API Pod execution",
+    "description": "The API workload must run as a fixed non-root UID, drop all Linux capabilities, disable privilege escalation, use RuntimeDefault seccomp and a read-only root filesystem.",
+    "category": "runtime",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-CONTAINER-002"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "kubernetes/base/deployment.yaml",
+    "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
+    "verification_reference": "tests/security/test_kubernetes_workload.py",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "owner": "platform_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 4"
+  },
+  {
+    "requirement_id": "SR-K8S-002",
+    "title": "Digest-pinned workload image",
+    "description": "QA and production workloads must consume the same immutable ECR image digest; mutable image tags are prohibited.",
+    "category": "supply_chain",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-CONTAINER-001",
+      "THR-SUPPLY-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "kubernetes/base/deployment.yaml",
+    "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
+    "verification_reference": "tests/security/test_kubernetes_workload.py",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "owner": "platform_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 4"
+  },
+  {
+    "requirement_id": "SR-K8S-003",
+    "title": "Isolated application service account",
+    "description": "The API must use a dedicated ServiceAccount with token automount disabled and no Kubernetes RBAC unless a reviewed API requirement is added.",
+    "category": "identity",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-IAM-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "kubernetes/base/service-account.yaml",
+    "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
+    "verification_reference": "tests/security/test_kubernetes_workload.py",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "owner": "platform_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 4"
+  },
+  {
+    "requirement_id": "SR-K8S-004",
+    "title": "Environment and cluster separation",
+    "description": "QA targets the qa namespace in shared non-production; production targets the production namespace in its separate cluster. Namespace labels and Restricted Pod Security Admission supplement and do not replace cluster isolation.",
+    "category": "environment_separation",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "kubernetes/overlays/qa/namespace.yaml; kubernetes/overlays/prod/namespace.yaml",
+    "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
+    "verification_reference": "tests/security/test_kubernetes_workload.py",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "owner": "platform_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 4"
+  },
+  {
+    "requirement_id": "SR-K8S-005",
+    "title": "Restricted workload network paths",
+    "description": "API network access must be limited to the approved future ingress path and cluster DNS; AWS-service egress and effective enforcement must be designed and verified for the selected EKS networking implementation.",
+    "category": "network_security",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-K8S-001"
+    ],
+    "implementation_status": "planned",
+    "implementation_reference": "kubernetes/base/network-policy.yaml",
+    "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
+    "verification_reference": "tests/security/test_kubernetes_workload.py",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "owner": "platform_engineer",
+    "residual_risk": "medium",
+    "planned_milestone": "Milestone 12"
+  },
+  {
+    "requirement_id": "SR-K8S-006",
+    "title": "Bounded namespace compute use",
+    "description": "API Pods must define CPU and memory requests and limits, and each environment namespace must enforce bounded Pod and aggregate compute quotas.",
+    "category": "availability",
+    "priority": "high",
+    "status": "active",
+    "source_threat_ids": [
+      "THR-API-005"
+    ],
+    "implementation_status": "implemented",
+    "implementation_reference": "kubernetes/overlays/qa/resource-quota.yaml; kubernetes/overlays/prod/resource-quota.yaml",
+    "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
+    "verification_reference": "tests/security/test_kubernetes_workload.py",
+    "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",
+    "owner": "platform_engineer",
+    "residual_risk": "low",
+    "planned_milestone": "Milestone 4"
+  },
+  {
     "category": "vulnerability_management",
     "description": "Canonical findings must be represented in a deterministic vulnerability register with explicit lifecycle states and validated transitions.",
     "evidence_reference": "outputs/security/lifecycle/vulnerability-register.json",

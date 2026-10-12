@@ -2532,6 +2532,94 @@
       "cve": null,
       "cwe": null,
       "data_sensitivity": "high",
+      "description": "Kubernetes network restrictions are authored and statically validated, but no live EKS cluster or enforcing CNI network-policy dataplane has been configured or tested.",
+      "due_date": "2026-01-31",
+      "environment": "locally_validated",
+      "exception_expiry": null,
+      "exception_id": null,
+      "exception_status": null,
+      "export_record_id": "EXP-123771FD9C8E",
+      "file": null,
+      "finding_id": "FND-SECUREDESI-8d30e56473d9",
+      "finding_type": "Threat Model",
+      "first_detected": "2026-01-01",
+      "fixed_version": null,
+      "installed_version": null,
+      "internet_exposure": "planned",
+      "last_detected": "2026-01-01",
+      "lifecycle_status": "triaged",
+      "line": null,
+      "lineage_references": [
+        "outputs/security/integration/finding-source-lineage.json",
+        "outputs/security/findings/finding-source-map.json"
+      ],
+      "normalised_severity": "medium",
+      "overdue": false,
+      "owasp_category": null,
+      "package_name": null,
+      "priority": "P3",
+      "producer_metadata": {
+        "contract_name": "product-security-control-plane-export",
+        "deployment_status": "not_deployed",
+        "producer": "devsecops-application-security-pipeline",
+        "producer_repository": "devsecops-application-security-pipeline",
+        "producer_schema_version": "1.0"
+      },
+      "producer_status": "triaged",
+      "region": null,
+      "release_decision": "conditional_pass",
+      "release_impact": "warn",
+      "remediation_guidance": null,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "repository": "devsecops-application-security-pipeline",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "resource": "RR-010",
+      "risk_owner": "Risk Owner",
+      "risk_score": 59.75,
+      "security_domain": "Secure Design",
+      "security_requirement_ids": [
+        "SR-API-001",
+        "SR-API-003"
+      ],
+      "service": null,
+      "source_evidence": [
+        "docs/threat-model/residual-risk-register.yaml"
+      ],
+      "source_finding_ids": [
+        "FND-SECUREDESI-8d30e56473d9"
+      ],
+      "source_record_hash": "e3ebf1149cfd2c3221213f19838569464171ed83364b31e10691868b92857745",
+      "source_tools": [
+        "threat-model"
+      ],
+      "squad": "Product Security",
+      "status": "triaged",
+      "suppression_id": null,
+      "suppression_status": null,
+      "technical_owner": "Product Security",
+      "threat_ids": [
+        "THR-K8S-001"
+      ],
+      "title": "Residual design risk RR-010",
+      "verification_status": "not_verified"
+    },
+    {
+      "application": "genomic-research-access-api",
+      "asset_criticality": "high",
+      "asset_id": "AST-APP-FASTAPI",
+      "asset_type": "application",
+      "cloud_provider": null,
+      "component": "threat-model",
+      "consumer_status": "triaged",
+      "contract_version": "1.0",
+      "control_ids": [],
+      "cve": null,
+      "cwe": null,
+      "data_sensitivity": "high",
       "description": "Local RS256 JWT authentication exists; external production identity provider integration remains future work.",
       "due_date": "2026-01-31",
       "environment": "locally_validated",

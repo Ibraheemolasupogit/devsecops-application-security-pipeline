@@ -84,10 +84,10 @@ def test_missing_evidence_and_broken_link_detection(tmp_path: Path) -> None:
 
 def test_metric_reconciliation_with_current_repository() -> None:
     metrics = build_metrics()
-    assert metrics["canonical_findings"] == 44
-    assert metrics["source_findings"] == 46
-    assert metrics["integration_export_records"] == 44
-    assert metrics["integration_lineage_edges"] == 178
+    assert metrics["canonical_findings"] == 45
+    assert metrics["source_findings"] == 47
+    assert metrics["integration_export_records"] == 45
+    assert metrics["integration_lineage_edges"] == 182
     assert metrics["overdue_findings"] == 0
     assert metrics["unowned_findings"] == 0
 

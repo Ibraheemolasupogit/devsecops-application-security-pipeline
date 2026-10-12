@@ -239,5 +239,29 @@
     "risk_owner": "platform_engineer",
     "status": "mitigation_planned",
     "treatment": "mitigate"
+  },
+  {
+    "control_limitations": [
+      "Kubernetes NetworkPolicy enforcement depends on the selected CNI configuration",
+      "Standard NetworkPolicy cannot express all AWS service or FQDN egress constraints",
+      "No cluster deployment or runtime policy test is in scope"
+    ],
+    "current_controls": [
+      "Default-deny-oriented ingress and egress rules in the versioned workload model",
+      "Offline parsed-manifest and Checkov verification"
+    ],
+    "description": "Kubernetes network restrictions are authored and statically validated, but no live EKS cluster or enforcing CNI network-policy dataplane has been configured or tested.",
+    "planned_milestone": "Milestone 12",
+    "related_threat_ids": [
+      "THR-K8S-001"
+    ],
+    "residual_impact": "high",
+    "residual_likelihood": "medium",
+    "residual_rating": "medium",
+    "review_date": "2026-10-12",
+    "risk_id": "RR-010",
+    "risk_owner": "platform_engineer",
+    "status": "mitigation_planned",
+    "treatment": "mitigate"
   }
 ]

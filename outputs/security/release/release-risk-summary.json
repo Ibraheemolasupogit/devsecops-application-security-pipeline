@@ -1,21 +1,21 @@
 {
   "by_decision": {
     "conditional_pass": 36,
-    "warn": 8
+    "warn": 9
   },
   "by_priority": {
     "P2": 17,
-    "P3": 27
+    "P3": 28
   },
   "by_severity": {
     "critical": 5,
     "high": 31,
     "informational": 1,
     "low": 1,
-    "medium": 6
+    "medium": 7
   },
-  "decision_id": "REL-1218ed01dad630ad",
-  "finding_count": 44,
+  "decision_id": "REL-9b1cae7c53a71c2f",
+  "finding_count": 45,
   "schema_version": "1.0",
   "top_risk_findings": [
     {

@@ -4,9 +4,9 @@ Portfolio repository for a synthetic FastAPI product secured through a full loca
 
 The application uses synthetic, non-identifiable demonstration data only. It is not a production genomics platform, is not affiliated with or endorsed by Genomics England, and does not deploy AWS resources.
 
-The current implementation remains non-deployed. The next architecture phase is EKS operationalisation; [Milestone 1 target architecture](docs/architecture/target-devsecops-platform.md) and its [migration roadmap](docs/architecture/eks-migration-roadmap.md) preserve the existing Product Security assurance model.
+The current implementation remains non-deployed. M3 adds the EKS Terraform foundation and M4 models the application workload offline with [Kustomize](docs/architecture/kubernetes-workload-model.md); neither has been applied or deployed. The [Milestone 1 target architecture](docs/architecture/target-devsecops-platform.md) and [migration roadmap](docs/architecture/eks-migration-roadmap.md) preserve the existing Product Security assurance model.
 
-Repository preparation guidance: [artifact policy](docs/engineering/repository-artifact-policy.md), [EKS prerequisites](docs/engineering/eks-prerequisites.md), and [workflow migration plan](docs/engineering/workflow-rationalisation-plan.md). Existing Terraform is the retained ECS/Fargate reference; EKS is the planned primary runtime from M3.
+Repository preparation guidance: [artifact policy](docs/engineering/repository-artifact-policy.md), [EKS prerequisites](docs/engineering/eks-prerequisites.md), and [workflow migration plan](docs/engineering/workflow-rationalisation-plan.md). ECS/Fargate remains the retained Terraform reference; EKS is the planned primary runtime.
 
 ## 1. Portfolio Positioning
 
@@ -20,14 +20,14 @@ The reference product is a Genomic Research Access API with dataset catalogue, a
 
 - 14 documented milestones completed.
 - 25 product-security capabilities mapped to evidence.
-- 44 canonical findings under deterministic ownership, release and lifecycle governance.
-- 46 source findings preserved with source lineage.
-- 178 integration lineage edges exported for downstream validation.
+- 45 canonical findings under deterministic ownership, release and lifecycle governance.
+- 47 source findings preserved with source lineage.
+- 182 integration lineage edges exported for downstream validation.
 - 9 consolidated evidence domains verified locally.
 
 ## 4. Evidence Boundary
 
-All assurance evidence is generated locally from repository files, local tests, local scanner wrappers, and deterministic timestamps. AWS architecture is Terraform reference code only. Repository 5 integration is a contract export only and does not modify another repository.
+All assurance evidence is generated locally from repository files, local tests, local scanner wrappers, and deterministic timestamps. ECS reference and EKS foundation Terraform plus Kubernetes workload manifests are code-only; no AWS resources or application deployments exist. Repository 5 integration is a contract export only and does not modify another repository.
 
 ## 5. Architecture
 

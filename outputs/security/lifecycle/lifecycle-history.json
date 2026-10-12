@@ -242,6 +242,21 @@
     },
     {
       "actor_role": "Product Security",
+      "event_id": "EVT-6405eb212b9b",
+      "event_type": "initialise",
+      "evidence_reference": "outputs/security/findings/deduplicated-findings.json",
+      "from_status": null,
+      "metadata": {
+        "finding_id": "FND-SECUREDESI-8d30e56473d9",
+        "scanner_suppression_id": null
+      },
+      "reason": "Initialised from canonical finding evidence.",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "to_status": "triaged",
+      "vulnerability_id": "VUL-2cec88a2db04"
+    },
+    {
+      "actor_role": "Product Security",
       "event_id": "EVT-66bca1eaaad9",
       "event_type": "initialise",
       "evidence_reference": "outputs/security/findings/deduplicated-findings.json",

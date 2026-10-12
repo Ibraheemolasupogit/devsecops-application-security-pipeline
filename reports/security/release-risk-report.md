@@ -1,21 +1,21 @@
 # Release Risk Report
 
-Decision ID: REL-1218ed01dad630ad
+Decision ID: REL-9b1cae7c53a71c2f
 
 Findings by severity:
 - critical: 5
 - high: 31
 - informational: 1
 - low: 1
-- medium: 6
+- medium: 7
 
 Findings by priority:
 - P2: 17
-- P3: 27
+- P3: 28
 
 Findings by decision contribution:
 - conditional_pass: 36
-- warn: 8
+- warn: 9
 
 Highest risk findings:
 - FND-SUPPRESSIO-836cb2a2770d: P2 score 73.25 - Suppressed gitleaks finding jwt-signing-material-outside-fixtures

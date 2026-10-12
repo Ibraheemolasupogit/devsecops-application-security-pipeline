@@ -309,6 +309,17 @@
       "threat-model"
     ]
   },
+  "FND-SECUREDESI-8d30e56473d9": {
+    "deduplication_key": "threat-model|RR-010",
+    "primary_finding_id": "FND-SECUREDESI-8d30e56473d9",
+    "rationale": "unique exact key",
+    "source_finding_ids": [
+      "FND-SECUREDESI-8d30e56473d9"
+    ],
+    "source_tools": [
+      "threat-model"
+    ]
+  },
   "FND-SECUREDESI-ac50e3235345": {
     "deduplication_key": "threat-model|RR-001",
     "primary_finding_id": "FND-SECUREDESI-ac50e3235345",

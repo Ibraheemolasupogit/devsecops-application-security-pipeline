@@ -1,5 +1,5 @@
 {
-  "control_count": 60,
+  "control_count": 66,
   "controls": [
     {
       "control_id": "SR-API-001",
@@ -772,6 +772,115 @@
       "verification_status": "verified"
     },
     {
+      "control_id": "SR-K8S-001",
+      "deployment_dependency": "none",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/validated-security-requirements.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "platform_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-K8S-001"
+      ],
+      "threat_ids": [
+        "THR-CONTAINER-002"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-K8S-002",
+      "deployment_dependency": "none",
+      "domain": "appsec",
+      "evidence_references": [
+        "outputs/security/threat-model/validated-security-requirements.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "platform_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-K8S-002"
+      ],
+      "threat_ids": [
+        "THR-CONTAINER-001",
+        "THR-SUPPLY-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-K8S-003",
+      "deployment_dependency": "none",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/validated-security-requirements.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "platform_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-K8S-003"
+      ],
+      "threat_ids": [
+        "THR-IAM-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-K8S-004",
+      "deployment_dependency": "none",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/validated-security-requirements.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "platform_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-K8S-004"
+      ],
+      "threat_ids": [
+        "THR-CI-001"
+      ],
+      "verification_status": "verified"
+    },
+    {
+      "control_id": "SR-K8S-005",
+      "deployment_dependency": "future_deployment",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/validated-security-requirements.json"
+      ],
+      "implementation_status": "planned",
+      "owner": "platform_engineer",
+      "residual_risk": "medium",
+      "security_requirement_ids": [
+        "SR-K8S-005"
+      ],
+      "threat_ids": [
+        "THR-K8S-001"
+      ],
+      "verification_status": "planned"
+    },
+    {
+      "control_id": "SR-K8S-006",
+      "deployment_dependency": "none",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/validated-security-requirements.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "platform_engineer",
+      "residual_risk": "low",
+      "security_requirement_ids": [
+        "SR-K8S-006"
+      ],
+      "threat_ids": [
+        "THR-API-005"
+      ],
+      "verification_status": "verified"
+    },
+    {
       "control_id": "SR-LIFECYCLE-001",
       "deployment_dependency": "none",
       "domain": "lifecycle",
@@ -1124,9 +1233,9 @@
   ],
   "coverage_by_status": {
     "implemented_as_code": 10,
-    "planned": 2,
-    "validated_locally": 48
+    "planned": 3,
+    "validated_locally": 53
   },
-  "coverage_percentage": 96.67,
+  "coverage_percentage": 95.45,
   "schema_version": "1.0"
 }

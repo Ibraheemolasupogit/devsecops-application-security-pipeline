@@ -756,6 +756,18 @@
     },
     {
       "decision": "warn",
+      "finding_id": "FND-SECUREDESI-8d30e56473d9",
+      "outcome": "matched",
+      "priority": 200,
+      "rationale": "Medium finding FND-SECUREDESI-8d30e56473d9 remains within SLA.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "rule_id": "RG-WARN-001"
+    },
+    {
+      "decision": "warn",
       "finding_id": "FND-SECUREDESI-ac50e3235345",
       "outcome": "matched",
       "priority": 200,

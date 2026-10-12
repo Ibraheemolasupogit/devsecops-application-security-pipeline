@@ -631,6 +631,26 @@
       "due_status": "within_sla",
       "effective_severity": "medium",
       "environment": "locally_validated",
+      "finding_id": "FND-SECUREDESI-8d30e56473d9",
+      "fix_status": "no_fix_available",
+      "matched_rule_ids": [
+        "RG-WARN-001"
+      ],
+      "owner_status": "owned",
+      "priority": "P3",
+      "rationale": "FND-SECUREDESI-8d30e56473d9 contributes warn through RG-WARN-001.",
+      "required_actions": [
+        "Track remediation within SLA."
+      ],
+      "required_approvals": [],
+      "risk_score": 59.75,
+      "suppression_status": null
+    },
+    {
+      "decision_contribution": "warn",
+      "due_status": "within_sla",
+      "effective_severity": "medium",
+      "environment": "locally_validated",
       "finding_id": "FND-SECUREDESI-ac50e3235345",
       "fix_status": "no_fix_available",
       "matched_rule_ids": [

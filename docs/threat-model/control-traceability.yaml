@@ -945,5 +945,124 @@
       "sample consumer validation",
       "integration contract tests"
     ]
+  },
+  {
+    "traceability_id": "TRACE-045",
+    "threat_id": "THR-CONTAINER-002",
+    "requirement_ids": [
+      "SR-K8S-001"
+    ],
+    "implementation_references": [
+      "kubernetes/base/deployment.yaml",
+      "Dockerfile"
+    ],
+    "verification_methods": [
+      "Kustomize render and parsed manifest tests",
+      "Kubernetes Checkov policy scan"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py"
+    ],
+    "residual_risk_id": "RR-008",
+    "notes": "Static manifest tests verify Restricted Pod controls; no live Pod is claimed."
+  },
+  {
+    "traceability_id": "TRACE-046",
+    "threat_id": "THR-SUPPLY-001",
+    "requirement_ids": [
+      "SR-K8S-002"
+    ],
+    "implementation_references": [
+      "kubernetes/base/deployment.yaml"
+    ],
+    "verification_methods": [
+      "Kustomize render and parsed manifest tests",
+      "Kubernetes Checkov policy scan"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py"
+    ],
+    "residual_risk_id": "RR-008",
+    "notes": "The base requires a digest-form reference; M6 supplies a built image digest."
+  },
+  {
+    "traceability_id": "TRACE-047",
+    "threat_id": "THR-IAM-001",
+    "requirement_ids": [
+      "SR-K8S-003"
+    ],
+    "implementation_references": [
+      "kubernetes/base/service-account.yaml",
+      "kubernetes/base/deployment.yaml"
+    ],
+    "verification_methods": [
+      "Kustomize render and parsed manifest tests",
+      "Kubernetes Checkov policy scan"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py"
+    ],
+    "residual_risk_id": "RR-008",
+    "notes": "The application has no Kubernetes API or AWS credentials in this milestone."
+  },
+  {
+    "traceability_id": "TRACE-048",
+    "threat_id": "THR-CI-001",
+    "requirement_ids": [
+      "SR-K8S-004"
+    ],
+    "implementation_references": [
+      "kubernetes/overlays/qa/namespace.yaml",
+      "kubernetes/overlays/prod/namespace.yaml"
+    ],
+    "verification_methods": [
+      "Kustomize render and parsed manifest tests",
+      "Kubernetes Checkov policy scan"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py"
+    ],
+    "residual_risk_id": "RR-009",
+    "notes": "Namespace naming and PSA labels are rendered; M7/M10 cluster targeting remains future work."
+  },
+  {
+    "traceability_id": "TRACE-049",
+    "threat_id": "THR-K8S-001",
+    "requirement_ids": [
+      "SR-K8S-005"
+    ],
+    "implementation_references": [
+      "kubernetes/base/network-policy.yaml"
+    ],
+    "verification_methods": [
+      "Kustomize render and parsed manifest tests",
+      "Kubernetes Checkov policy scan"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py"
+    ],
+    "residual_risk_id": "RR-010",
+    "notes": "Policy intent is tested offline; M12 must prove the EKS dataplane enforces it."
+  },
+  {
+    "traceability_id": "TRACE-050",
+    "threat_id": "THR-API-005",
+    "requirement_ids": [
+      "SR-K8S-006"
+    ],
+    "implementation_references": [
+      "kubernetes/base/deployment.yaml",
+      "kubernetes/overlays/qa/resource-quota.yaml",
+      "kubernetes/overlays/prod/resource-quota.yaml"
+    ],
+    "verification_methods": [
+      "Kustomize render and parsed manifest tests",
+      "Kubernetes Checkov policy scan"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py"
+    ],
+    "residual_risk_id": "RR-003",
+    "notes": "Rendered requests, limits and quotas constrain modeled compute consumption."
   }
 ]

@@ -1,0 +1,108 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genomic-research-access-api
+  labels:
+    app.kubernetes.io/name: genomic-research-access-api
+    app.kubernetes.io/component: api
+    app.kubernetes.io/part-of: genomic-research-access-platform
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: genomic-research-access-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: genomic-research-access-api
+        app.kubernetes.io/component: api
+        app.kubernetes.io/part-of: genomic-research-access-platform
+    spec:
+      serviceAccountName: genomic-research-access-api
+      automountServiceAccountToken: false
+      hostNetwork: false
+      hostPID: false
+      hostIPC: false
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        fsGroupChangePolicy: OnRootMismatch
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: api
+          image: "<ACCOUNT>.dkr.ecr.<REGION>.amazonaws.com/genomic-research-access-api@sha256:<DIGEST>"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: api-config
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            capabilities:
+              drop:
+                - ALL
+          volumeMounts:
+            - name: api-identity
+              mountPath: /var/run/api-identity
+              readOnly: true
+            - name: tmp
+              mountPath: /tmp
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 30
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+      volumes:
+        - name: api-identity
+          secret:
+            secretName: api-identity
+            optional: false
+            defaultMode: 0440
+            items:
+              - key: jwt_public_key.pem
+                path: jwt_public_key.pem
+        - name: tmp
+          emptyDir:
+            sizeLimit: 64Mi

@@ -18,8 +18,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH="/home/appuser/.local/bin:${PATH}"
 
-RUN addgroup --system appuser \
-    && adduser --system --ingroup appuser --home /home/appuser appuser
+RUN addgroup --system --gid 10001 appuser \
+    && adduser --system --uid 10001 --ingroup appuser --home /home/appuser appuser
 
 WORKDIR /app
 COPY --from=builder /wheels /wheels

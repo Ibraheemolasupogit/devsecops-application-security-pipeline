@@ -7,44 +7,49 @@
     "audit_logging": 4,
     "authentication": 1,
     "authorisation": 4,
+    "availability": 1,
     "ci_cd": 3,
     "configuration": 1,
     "container_security": 2,
     "data_protection": 3,
     "developer_enablement": 4,
+    "environment_separation": 1,
     "governance": 5,
     "iam": 2,
+    "identity": 1,
     "infrastructure_security": 2,
     "integration_contract": 4,
+    "network_security": 1,
     "release_assurance": 4,
+    "runtime": 1,
     "secrets": 1,
     "secure_design": 3,
     "security_champions": 4,
-    "supply_chain": 4,
+    "supply_chain": 5,
     "vulnerability_management": 2,
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 58,
-    "planned": 2
+    "implemented": 63,
+    "planned": 3
   },
   "residual_risks_by_rating": {
     "low": 3,
-    "medium": 6
+    "medium": 7
   },
   "threats_by_inherent_risk": {
     "critical": 3,
-    "high": 15,
+    "high": 16,
     "medium": 12
   },
   "threats_by_stride_category": {
     "denial_of_service": 2,
-    "elevation_of_privilege": 9,
+    "elevation_of_privilege": 10,
     "information_disclosure": 8,
     "repudiation": 3,
     "spoofing": 2,
     "tampering": 6
   },
-  "total_threats": 30,
+  "total_threats": 31,
   "validation_status": "passed"
 }

@@ -282,6 +282,16 @@
     },
     {
       "due_date": "2026-01-31",
+      "finding_id": "FND-SECUREDESI-8d30e56473d9",
+      "overdue": false,
+      "remediation_owner": "Product Security",
+      "remediation_sla_days": 30,
+      "risk_owner": "Risk Owner",
+      "squad": "Product Security",
+      "technical_owner": "Product Security"
+    },
+    {
+      "due_date": "2026-01-31",
       "finding_id": "FND-SECUREDESI-ac50e3235345",
       "overdue": false,
       "remediation_owner": "Product Security",
