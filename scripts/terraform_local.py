@@ -16,6 +16,7 @@ ENVIRONMENTS = [
     EKS / "artifacts",
     EKS / "environments" / "nonprod",
     EKS / "environments" / "prod",
+    EKS / "bootstrap",
 ]
 
 

@@ -29,7 +29,7 @@ CodeBuild projects are conditional on a pre-authorized CodeConnections GitHub Ap
 
 Each account must own exactly one GitHub OIDC provider. The artifacts, nonprod and prod compositions create one when `github_oidc_provider_arn` is null or reuse the ARN provided by its owner state. If compositions share an AWS account, create the provider in the first state and pass its output to the others; separate accounts each need their own provider. Future jobs route to each project's exact CodeBuild label using the run ID and attempt. The project name is only runner routing; OIDC and namespace RBAC remain separate identity/authorisation controls.
 
-Read [EKS infrastructure](../docs/architecture/eks-infrastructure.md), [cost controls](../docs/engineering/eks-cost-controls.md) and [validation record](../docs/engineering/eks-foundation-validation.md). Terraform 1.15.8 / AWS provider 6.21.0 are pinned for EKS; the ECS reference retains its original constraints. No AWS account, backend, credentials or real resources are assumed.
+Read [EKS infrastructure](../docs/architecture/eks-infrastructure.md), [cost controls](../docs/engineering/eks-cost-controls.md) and [validation record](../docs/engineering/eks-foundation-validation.md). EKS Terraform pins Terraform 1.16.5 / AWS provider 6.68.0; the ECS reference retains its original constraints. No AWS account, backend, credentials or real resources are assumed.
 
 ## Retained ECS structure
 
@@ -60,7 +60,13 @@ make verify-infrastructure-evidence
 make infrastructure-report
 ```
 
-Targets initialize/validate all three EKS roots and both ECS reference environments; test runs cover the EKS roots and three focused modules using mock providers only. Local Terraform commands use `terraform init -backend=false` where applicable. If Terraform is not installed, the Terraform-specific targets report that and skip without deploying.
+Targets initialize/validate all four EKS roots (bootstrap, artifacts, nonprod, prod) and both ECS reference environments; test runs cover those roots and focused modules using mock providers only. Local Terraform commands use `terraform init -backend=false` where applicable. If Terraform is not installed, the Terraform-specific targets report that and skip without deploying.
+
+## M7 activation boundary
+
+`terraform/bootstrap` is an independent, backend-free state foundation composition for a versioned/private S3 bucket, rotating KMS encryption, TLS-only policy and deletion safeguards. It has not been applied. Backend examples use native S3 lockfiles (`use_lockfile = true`) and distinct `eks/nonprod`, `eks/prod`, and `eks/artifacts` keys. Bootstrap state starts local and must be migrated only after the reviewed bucket exists. Keep the bucket/key outside nonprod teardown.
+
+M7 splits nonprod AWS activation and clean artifact publication from M8 QA deployment. No M7 apply, resource creation, live OIDC, CodeBuild run, ECR push, or Kubernetes deployment is authorized. The validation machine lacked AWS CLI, had Terraform 1.15.8 versus required 1.16.5, and has no selected account/region; thus no live plan or exact resource count is available. See the [activation runbook](../docs/runbooks/nonprod-platform-activation.md), [cost readiness](../docs/engineering/nonprod-aws-cost-readiness.md), and [validation record](../docs/engineering/milestone-7-validation.md).
 
 ## Deployment Boundary
 

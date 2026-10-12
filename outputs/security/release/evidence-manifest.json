@@ -36,7 +36,7 @@
     },
     "outputs/security/findings/evidence-manifest.json": {
       "path": "outputs/security/findings/evidence-manifest.json",
-      "sha256": "d3ccbc560590e78a48f18c94f9af78617f2952eb940a6ca63766c7ec63754aa1"
+      "sha256": "960838be10b4bb98622a994014ce956779e29014e61873fccde6e1cc57006b41"
     }
   },
   "output_files": {

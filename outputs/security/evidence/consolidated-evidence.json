@@ -1,7 +1,7 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "commit": "7bc2106054f197fdd432ce11412aede926764812",
+  "commit": "361ddad2009cd8d09bf3d9b766f9e0b02add5907",
   "control_coverage": {
     "control_count": 69,
     "controls": [
@@ -1367,7 +1367,7 @@
       "name": "AWS Terraform Architecture",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "c423a1216f22ef4496eaf4da0e0de7ba3333917ca652612bfb72cbc9360d4d0b",
+      "source_checksum": "30df6b85f903301dc629cdc6271b03db206bf7c42d7fd57aabc44bc537162f58",
       "source_manifest": "outputs/security/infrastructure/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -1390,7 +1390,7 @@
       "name": "AppSec Pipeline",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "eb6f855ab3ad1eff3fdd393203aa3f5bcda7feea097b75f4e9c0624d729b8757",
+      "source_checksum": "3e41e0e6bf5ba32535a1a5e805d59d81fd4c72d81ffb2ae526a1d3742c748443",
       "source_manifest": "outputs/security/appsec/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -1457,7 +1457,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "d3ccbc560590e78a48f18c94f9af78617f2952eb940a6ca63766c7ec63754aa1",
+      "source_checksum": "960838be10b4bb98622a994014ce956779e29014e61873fccde6e1cc57006b41",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -1479,7 +1479,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "e1546a886aafdb9a9de9c73c6596bf4f070cb763d02f209736ed20e30738d45a",
+      "source_checksum": "31dfa4988271601d602e9e4ca3cdbf84aa02d8fefd6ffe2327d09709ddac4f06",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -1508,7 +1508,7 @@
       "verification_status": "passed"
     }
   ],
-  "evidence_bundle_id": "EVB-0945e41c756b6953",
+  "evidence_bundle_id": "EVB-72f6d83c7422c64c",
   "exception_summary": {
     "active_exceptions": 1,
     "exception_count": 3,
@@ -1575,13 +1575,13 @@
   },
   "input_checksums": {
     "api_security": "9220e28a605114c19f2838e8a503815ca13a68992446125f35b2287278171474",
-    "appsec": "eb6f855ab3ad1eff3fdd393203aa3f5bcda7feea097b75f4e9c0624d729b8757",
+    "appsec": "3e41e0e6bf5ba32535a1a5e805d59d81fd4c72d81ffb2ae526a1d3742c748443",
     "champions": "ef7a08ecba92711c1fccfb36c198afae1df88c902e347f7f339ffb5591964abb",
     "dynamic_security": "db68f7706fb686aa8e42f39619848ecb015f3dc580394f575bb6cfc2d667148c",
-    "findings": "d3ccbc560590e78a48f18c94f9af78617f2952eb940a6ca63766c7ec63754aa1",
-    "infrastructure": "c423a1216f22ef4496eaf4da0e0de7ba3333917ca652612bfb72cbc9360d4d0b",
+    "findings": "960838be10b4bb98622a994014ce956779e29014e61873fccde6e1cc57006b41",
+    "infrastructure": "30df6b85f903301dc629cdc6271b03db206bf7c42d7fd57aabc44bc537162f58",
     "lifecycle": "916552395ecad6c167f7637c116f37b81cb2bf4edc56d67041645bcf267d4d05",
-    "release_assurance": "e1546a886aafdb9a9de9c73c6596bf4f070cb763d02f209736ed20e30738d45a",
+    "release_assurance": "31dfa4988271601d602e9e4ca3cdbf84aa02d8fefd6ffe2327d09709ddac4f06",
     "threat_model": "05684e71d3825f8e45442ecd603ae03f77a579d0ee85dd09803f21cc89f5049f"
   },
   "input_manifests": {
@@ -1708,13 +1708,13 @@
     "schema_version": "1.0"
   },
   "output_checksums": {
-    "consolidated-evidence.json": "d8df587d19d303d97bbe83f5df73820986cfabc05c5fd3219dbfabbcb2b78d3b",
+    "consolidated-evidence.json": "45836f0534ac0aef715668e29d9790c65f4695b02fa100e5c73d4ff03e0ffdf4",
     "control-coverage.csv": "0b292d68e63be1ca4d589cf59d470b5a3ca3099cce7316baeafbd79fde1be64a",
     "control-coverage.json": "671113f06f9a71c35331af2be515465020d83c745b43419cbe0bb387c8c46cd4",
-    "evidence-domain-summary.json": "d3b42ee386c7f08a70e66b2fa0a1c2bc88ed2df34805a219dd13afde05fea621",
+    "evidence-domain-summary.json": "a1ca37568112c271604a4420625c3f548592f817bc2227f37139187524852608",
     "evidence-integrity-summary.json": "b014cf6d8de114e00289e06dd9637886acb53a22e914060bdc78c4bffdef261c",
     "evidence-lineage.json": "556b86e1ce448006e6721ef395c2d02df337d2d6d85359f75d0b2cda69a579a1",
-    "portfolio-security-summary.json": "b18a5865e5648db33829e420786014544020008906953adeaf4023b5aba9dd5c",
+    "portfolio-security-summary.json": "f7b829d8264203b645bdcc52482629497d2a42f11176fc9dbd74be0da36c3f94",
     "release-assurance-summary.json": "e7d7476eb806f6a93cf0050af75850898a2246ab56fdfcbc71105d99912c2e1d",
     "security-exception-summary.json": "4c9df0a4a512225f2c7ef60c6fd7999432b72c155b552e9b0cda0968426ba3d8",
     "security-metrics.json": "cd80ad80987ae63fc432de12375636bba0efe6ea09abf4476f66894848d10f3a",

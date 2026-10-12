@@ -4,7 +4,7 @@
 
 The candidate key is the source repository and full Git commit SHA. The local convenience tag is `genomic-research-access-api:git-<full-commit>` and is never authoritative. Buildx returns a manifest digest (`sha256:<64 lowercase hex>`); metadata also stores Docker's image config ID separately. The Python base image uses its official multi-platform index digest. The ECR registry manifest digest is captured after publication and must equal the locally assured digest before the publication manifest becomes `published_verified`.
 
-The same digest is validated in QA and promoted to production. M7 consumes `outputs/security/supply-chain/release-artifact.json`; M10 must copy/promote or retag the existing ECR artifact by digest, then verify the production reference resolves to that exact digest. Rebuilding for QA or production is prohibited. An auxiliary Git-SHA tag helps discovery only and ECR tag immutability prevents reuse of that tag.
+The same digest is validated in QA and promoted to production. M7 publishes the clean eligible `outputs/security/supply-chain/release-artifact.json` candidate; M8 deploys it to QA; M11 must copy/promote or retag the existing ECR artifact by digest, then verify the production reference resolves to that exact digest. Rebuilding for QA or production is prohibited. An auxiliary Git-SHA tag helps discovery only and ECR tag immutability prevents reuse of that tag.
 
 ## Build path
 

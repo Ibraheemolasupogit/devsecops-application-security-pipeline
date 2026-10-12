@@ -1,0 +1,7 @@
+# After Stage A creates the bucket, migrate protected local bootstrap state here.
+bucket       = "<approved-state-bucket>"
+key          = "bootstrap/terraform.tfstate"
+region       = "<approved-primary-region>"
+encrypt      = true
+kms_key_id   = "<approved-state-kms-arn>"
+use_lockfile = true

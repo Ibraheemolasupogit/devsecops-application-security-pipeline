@@ -1,0 +1,6 @@
+region           = "<approved-region>"
+state_bucket_name = "<approved-globally-unique-state-bucket>"
+tags = {
+  CostCenter = "<approved-cost-center>"
+  Owner      = "<named-platform-owner>"
+}

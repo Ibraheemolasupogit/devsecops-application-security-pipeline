@@ -55,7 +55,7 @@
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
-      "sha256": "ca7df8192d1f04a9fedeb0d3c40e8a3cd1c7d4917f14100171717c9d404be075"
+      "sha256": "4bf06d8ca42d5a285a3872c6c130b2e667f696cdf78e836d4aa2640fe201c89f"
     },
     "outputs/security/appsec/raw/gitleaks.json": {
       "path": "outputs/security/appsec/raw/gitleaks.json",

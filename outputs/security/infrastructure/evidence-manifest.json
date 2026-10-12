@@ -165,6 +165,22 @@
       "path": "infrastructure/terraform/artifacts/versions.tf",
       "sha256": "9916837522ef367346d0064dd2ccac7a11ffd3caa089d0c9fca10f565f57664c"
     },
+    "infrastructure/terraform/bootstrap/main.tf": {
+      "path": "infrastructure/terraform/bootstrap/main.tf",
+      "sha256": "a1f34a1d1fa3001ad43e08001afaae7e6593faba0e4f91bdd81e96e0f8e6589e"
+    },
+    "infrastructure/terraform/bootstrap/outputs.tf": {
+      "path": "infrastructure/terraform/bootstrap/outputs.tf",
+      "sha256": "3169e9193618ff416bf3dca3b0d3e8dc321025abe0cd366110d48f0e17012b28"
+    },
+    "infrastructure/terraform/bootstrap/variables.tf": {
+      "path": "infrastructure/terraform/bootstrap/variables.tf",
+      "sha256": "a4c28751ef9f7ef1b29c029f494911f073721096e67f87f21e54b6aedb757ee5"
+    },
+    "infrastructure/terraform/bootstrap/versions.tf": {
+      "path": "infrastructure/terraform/bootstrap/versions.tf",
+      "sha256": "dcb5cf18bede7e5aeffa3e585836ce4a80ca7d1f84a089df23e455b6543f828f"
+    },
     "infrastructure/terraform/environments/nonprod/main.tf": {
       "path": "infrastructure/terraform/environments/nonprod/main.tf",
       "sha256": "8e7f544482ac50b2b3b2a9659f43075aceabdead2f9aa8aa88fbfc8c57e723ed"

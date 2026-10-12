@@ -1,0 +1,24 @@
+terraform {
+  required_version = "= 1.16.5"
+
+  backend "s3" {}
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "= 6.68.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = var.region
+
+  default_tags {
+    tags = merge(var.tags, {
+      ManagedBy = "Terraform"
+      Purpose   = "TerraformState"
+      Project   = "devsecops-application-security-pipeline"
+    })
+  }
+}

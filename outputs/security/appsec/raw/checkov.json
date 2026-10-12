@@ -1,1 +1,1 @@
-{"check_type": "terraform", "results": {"failed_checks": []}, "summary": {"passed": 484, "failed": 0, "skipped": 42, "parsing_errors": 0, "resource_count": 138, "checkov_version": "3.2.281"}}
+{"check_type": "terraform", "results": {"failed_checks": []}, "summary": {"passed": 512, "failed": 0, "skipped": 48, "parsing_errors": 0, "resource_count": 147, "checkov_version": "3.2.281"}}

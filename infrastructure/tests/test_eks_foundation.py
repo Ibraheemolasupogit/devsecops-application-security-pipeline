@@ -91,7 +91,7 @@ def test_tagging_and_scoped_log_key_policy() -> None:
 
 def test_mock_tests_cannot_execute_live_provider_or_apply() -> None:
     tests = list(EKS.rglob("*.tftest.hcl"))
-    assert len(tests) == 9
+    assert len(tests) == 10
     for path in tests:
         text = path.read_text()
         assert 'mock_provider "aws"' in text

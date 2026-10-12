@@ -53,11 +53,12 @@ The NetworkPolicy selects only this API and allows ingress from a clearly reserv
 
 QA runs one replica with 100m/128Mi requests and 500m/256Mi limits. Production models two replicas with 200m/256Mi requests and 1 CPU/512Mi limits per Pod. Both namespaces have explicit Pod, aggregate CPU/memory ResourceQuota and container LimitRange bounds. The production PDB allows one voluntary disruption while retaining at least one of two replicas; QA's one-replica PDB allows one disruption so a drain cannot become permanently blocked. Requests, limits, quotas and two replicas are starting portfolio values. Production sizing requires workload/load testing, durable persistence, headroom and review of node autoscaling and rollout capacity.
 
-## M5–M7 consumers
+## M5–M8 consumers
 
 - **M5** establishes protected GitHub-to-AWS federation and private execution connectivity; it does not need to change this workload contract.
 - **M6** supplies the real immutable ECR image digest and supply-chain evidence to the overlay.
-- **M7** renders and deploys QA only after its image, auth settings, required Secret source, network-policy enforcement and runtime persistence implications are resolved. It validates rollout, Service reachability and the actual running digest.
+- **M7** activates the nonproduction platform and publishes a clean, eligible immutable digest; it does not deploy workloads.
+- **M8** renders and deploys QA only after its image, auth settings, required Secret source, network-policy enforcement and runtime persistence implications are resolved. It validates rollout, Service reachability and the actual running digest.
 - Later edge, secret synchronization, production approval/promotion and runtime assurance remain outside M4.
 
 ## Workload diagram
