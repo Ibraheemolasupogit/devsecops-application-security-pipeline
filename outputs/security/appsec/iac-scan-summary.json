@@ -4,6 +4,6 @@
   "finding_count": 0,
   "limitations": "",
   "policy_decision": "pass",
-  "suppressed_count": 27,
+  "suppressed_count": 42,
   "tool": "checkov"
 }

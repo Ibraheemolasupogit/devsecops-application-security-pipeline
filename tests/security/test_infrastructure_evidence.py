@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from genomic_research_access_api.security.infrastructure.evidence import (
     architecture_inventory,
     build_summary,
@@ -41,6 +43,11 @@ def test_infrastructure_evidence_is_deterministic(tmp_path: Path) -> None:
 
 def test_infrastructure_summaries_reflect_required_controls() -> None:
     assert architecture_inventory()["compute"] == "AWS ECS Fargate"
+    assert architecture_inventory()["primary_runtime"]["environments"] == ["nonprod", "prod"]
+    assert architecture_inventory()["primary_runtime"]["status"] == "configured, not deployed"
+    assert architecture_inventory()["primary_runtime"]["kubernetes_version"] == "1.36"
+    assert provider_constraints()["eks_terraform"] == "= 1.16.5"
+    assert provider_constraints()["eks_aws"] == "= 6.68.0"
     assert iam_role_inventory()["separation"] == "configured"
     assert iam_policy_summary()["wildcard_actions"] is False
     assert network_security_summary()["ecs_assign_public_ip"] == "false"
@@ -60,3 +67,32 @@ def test_infrastructure_reports_are_generated(tmp_path: Path) -> None:
     assert "iam-security-report.md" in report_names
     assert "infrastructure-validation-report.md" in report_names
     assert "not deployed" in (tmp_path / "aws-architecture-report.md").read_text(encoding="utf-8")
+
+
+def test_infrastructure_verifier_rejects_changed_input_checksum(tmp_path: Path) -> None:
+    from genomic_research_access_api.security.threat_model.validation import (
+        ThreatModelValidationError,
+    )
+
+    generate_evidence(tmp_path)
+    path = tmp_path / "evidence-manifest.json"
+    manifest = json.loads(path.read_text())
+    first = next(iter(manifest["input_files"]))
+    manifest["input_files"][first]["sha256"] = "0" * 64
+    path.write_text(json.dumps(manifest))
+    with pytest.raises(ThreatModelValidationError, match="source checksum mismatch"):
+        verify_evidence(tmp_path)
+
+
+def test_infrastructure_verifier_rejects_missing_source_inventory(tmp_path: Path) -> None:
+    from genomic_research_access_api.security.threat_model.validation import (
+        ThreatModelValidationError,
+    )
+
+    generate_evidence(tmp_path)
+    path = tmp_path / "evidence-manifest.json"
+    manifest = json.loads(path.read_text())
+    manifest["input_files"].pop(next(iter(manifest["input_files"])))
+    path.write_text(json.dumps(manifest))
+    with pytest.raises(ThreatModelValidationError, match="source inventory changed"):
+        verify_evidence(tmp_path)

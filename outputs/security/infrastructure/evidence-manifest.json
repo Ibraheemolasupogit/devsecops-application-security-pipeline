@@ -7,7 +7,7 @@
   "input_files": {
     "infrastructure/environments/dev/main.tf": {
       "path": "infrastructure/environments/dev/main.tf",
-      "sha256": "1398dc85311d6a9a4899abe625eec496050c25950049f9449a74abe7bbf99958"
+      "sha256": "4d4085c7c521093e925397010dea8887398770b57c9f67c46f576d36ba0fe3e0"
     },
     "infrastructure/environments/dev/outputs.tf": {
       "path": "infrastructure/environments/dev/outputs.tf",
@@ -23,7 +23,7 @@
     },
     "infrastructure/environments/prod/main.tf": {
       "path": "infrastructure/environments/prod/main.tf",
-      "sha256": "afeb1e1a3d527cd91280f9153437253d32db568ee8598a2136cf4760d089ed15"
+      "sha256": "7fe3f1deb256f0dfbc0bbbe29a572d8988035f582d88ddbdb6085e50687ded18"
     },
     "infrastructure/environments/prod/outputs.tf": {
       "path": "infrastructure/environments/prod/outputs.tf",
@@ -43,7 +43,7 @@
     },
     "infrastructure/modules/audit/main.tf": {
       "path": "infrastructure/modules/audit/main.tf",
-      "sha256": "e89f17ef90c41303e9c6413fe85df1a5afc33ea0cd415b584be86cbc62657c60"
+      "sha256": "bf078c2009d963cc6be6e3676a05790c17ab628e3487a7acf5d27acd0a8619d3"
     },
     "infrastructure/modules/audit/outputs.tf": {
       "path": "infrastructure/modules/audit/outputs.tf",
@@ -51,11 +51,11 @@
     },
     "infrastructure/modules/audit/variables.tf": {
       "path": "infrastructure/modules/audit/variables.tf",
-      "sha256": "5a401aed9842e280952ec78c54446f4ea91eb51a29b8bfd09b1ccd80963cb45c"
+      "sha256": "640f804c480572581eeb6df4fe070533121134c1eaa3d269bac4bf28381d5a34"
     },
     "infrastructure/modules/compute/main.tf": {
       "path": "infrastructure/modules/compute/main.tf",
-      "sha256": "11250025327bd75b22605b23d98d903ec965448133a3b308589d8d482241c7c8"
+      "sha256": "221fd851701fc4ebca2f8d1d617da78c5b9cad35ac5f3acd2bc48dae86604e84"
     },
     "infrastructure/modules/compute/outputs.tf": {
       "path": "infrastructure/modules/compute/outputs.tf",
@@ -63,7 +63,7 @@
     },
     "infrastructure/modules/compute/variables.tf": {
       "path": "infrastructure/modules/compute/variables.tf",
-      "sha256": "f0a69ef5f0c72853ee5480143f960e34cfdace1d5b2d0d97dabf40f17698574c"
+      "sha256": "aefde059939b2440e38994f387954e00db70f380be7e4abadd782fe825101f92"
     },
     "infrastructure/modules/datastore/main.tf": {
       "path": "infrastructure/modules/datastore/main.tf",
@@ -91,7 +91,7 @@
     },
     "infrastructure/modules/iam/main.tf": {
       "path": "infrastructure/modules/iam/main.tf",
-      "sha256": "80c34cbe67ac45c261721e68bdd70dbe88dc9b1c8ffd266038b8ecaf45f8adbc"
+      "sha256": "1bd7e248fbcb6f4b32510579b2f8a6e913202d549e7e859918f7f93dfbdcec8e"
     },
     "infrastructure/modules/iam/outputs.tf": {
       "path": "infrastructure/modules/iam/outputs.tf",
@@ -99,11 +99,11 @@
     },
     "infrastructure/modules/iam/variables.tf": {
       "path": "infrastructure/modules/iam/variables.tf",
-      "sha256": "b5872716804bd748c40363d6f4fc0379bfe114154ccb82f1d9c8aecee9391af0"
+      "sha256": "47c588084b620684882619be74ba2613fd68e97f2028d2bb341ff6c221b55b8c"
     },
     "infrastructure/modules/kms/main.tf": {
       "path": "infrastructure/modules/kms/main.tf",
-      "sha256": "96e47f2ffa420050576c3a09373b2894a4659f51b0b8d67e371d62a7310fc5aa"
+      "sha256": "75d579045b4035332e5e8a125f501071f84d7e672aaf22cb98983d6ec18bb5a8"
     },
     "infrastructure/modules/kms/outputs.tf": {
       "path": "infrastructure/modules/kms/outputs.tf",
@@ -115,7 +115,7 @@
     },
     "infrastructure/modules/networking/main.tf": {
       "path": "infrastructure/modules/networking/main.tf",
-      "sha256": "5de8be9b2317ca2a0e7549da3e5b8e98c80547d36c307f0b8d0b2b9b5748cc05"
+      "sha256": "0646e1655f3fbabf7d311ef5bb260d9708be0937e994a90accbb8edcbf29d293"
     },
     "infrastructure/modules/networking/outputs.tf": {
       "path": "infrastructure/modules/networking/outputs.tf",
@@ -139,7 +139,7 @@
     },
     "infrastructure/modules/secrets/main.tf": {
       "path": "infrastructure/modules/secrets/main.tf",
-      "sha256": "01667e98a99e00c3bda475370f5d564b684d005b44de372c74e211f5c1bcfe8b"
+      "sha256": "e91a67c7d128b55bb14009edb03c4a4fbd527175d8bb907a883186e25fc4f988"
     },
     "infrastructure/modules/secrets/outputs.tf": {
       "path": "infrastructure/modules/secrets/outputs.tf",
@@ -157,6 +157,166 @@
       "path": "infrastructure/providers.tf",
       "sha256": "f92dc2c2cac15aa6d895faec98c401388f6647e8dcd26ee1d9bd39543976d76c"
     },
+    "infrastructure/terraform/artifacts/main.tf": {
+      "path": "infrastructure/terraform/artifacts/main.tf",
+      "sha256": "2aa3c77f4c157b94e828ab1e45ecba78628c2438bdc49a3a0078f49ebc091374"
+    },
+    "infrastructure/terraform/artifacts/versions.tf": {
+      "path": "infrastructure/terraform/artifacts/versions.tf",
+      "sha256": "9916837522ef367346d0064dd2ccac7a11ffd3caa089d0c9fca10f565f57664c"
+    },
+    "infrastructure/terraform/environments/nonprod/main.tf": {
+      "path": "infrastructure/terraform/environments/nonprod/main.tf",
+      "sha256": "2a2c8eb5e1c5654f495f3bcf723126a43b5c78026ddfd9c1064460209baf5f19"
+    },
+    "infrastructure/terraform/environments/nonprod/outputs.tf": {
+      "path": "infrastructure/terraform/environments/nonprod/outputs.tf",
+      "sha256": "fa87480d7cad9870aced817ef1dea30ac4d36e009f8889e25c26fafcf2cfd75b"
+    },
+    "infrastructure/terraform/environments/nonprod/providers.tf": {
+      "path": "infrastructure/terraform/environments/nonprod/providers.tf",
+      "sha256": "424a6d777223ba89f9319adfd29b76cb0a18af9dc42d2983d006f9a3d492b46a"
+    },
+    "infrastructure/terraform/environments/nonprod/variables.tf": {
+      "path": "infrastructure/terraform/environments/nonprod/variables.tf",
+      "sha256": "af88a84f747c204ea1732f8f371c1ee90cc0efacba1f7cbefa507244245ff197"
+    },
+    "infrastructure/terraform/environments/nonprod/versions.tf": {
+      "path": "infrastructure/terraform/environments/nonprod/versions.tf",
+      "sha256": "9916837522ef367346d0064dd2ccac7a11ffd3caa089d0c9fca10f565f57664c"
+    },
+    "infrastructure/terraform/environments/prod/main.tf": {
+      "path": "infrastructure/terraform/environments/prod/main.tf",
+      "sha256": "a0f3f51c0fe1addcc6500422915ca85342235fb8fc4a636bba05ebf66363926a"
+    },
+    "infrastructure/terraform/environments/prod/outputs.tf": {
+      "path": "infrastructure/terraform/environments/prod/outputs.tf",
+      "sha256": "fa87480d7cad9870aced817ef1dea30ac4d36e009f8889e25c26fafcf2cfd75b"
+    },
+    "infrastructure/terraform/environments/prod/providers.tf": {
+      "path": "infrastructure/terraform/environments/prod/providers.tf",
+      "sha256": "424a6d777223ba89f9319adfd29b76cb0a18af9dc42d2983d006f9a3d492b46a"
+    },
+    "infrastructure/terraform/environments/prod/variables.tf": {
+      "path": "infrastructure/terraform/environments/prod/variables.tf",
+      "sha256": "af88a84f747c204ea1732f8f371c1ee90cc0efacba1f7cbefa507244245ff197"
+    },
+    "infrastructure/terraform/environments/prod/versions.tf": {
+      "path": "infrastructure/terraform/environments/prod/versions.tf",
+      "sha256": "9916837522ef367346d0064dd2ccac7a11ffd3caa089d0c9fca10f565f57664c"
+    },
+    "infrastructure/terraform/modules/ecr/main.tf": {
+      "path": "infrastructure/terraform/modules/ecr/main.tf",
+      "sha256": "25a79e285c5de95c708c0ba907199ac37264c1f22ef1eb9af65cc7c983f4d608"
+    },
+    "infrastructure/terraform/modules/ecr/outputs.tf": {
+      "path": "infrastructure/terraform/modules/ecr/outputs.tf",
+      "sha256": "9169efe5ee7d377d91509bdc504eed4fb577132b38f76088543004c78cb238f9"
+    },
+    "infrastructure/terraform/modules/ecr/variables.tf": {
+      "path": "infrastructure/terraform/modules/ecr/variables.tf",
+      "sha256": "9a9a2f8464fe2504e1e228cafbaf31e9b811755fbe5585e0fe36744072a428fa"
+    },
+    "infrastructure/terraform/modules/ecr/versions.tf": {
+      "path": "infrastructure/terraform/modules/ecr/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
+    "infrastructure/terraform/modules/eks/main.tf": {
+      "path": "infrastructure/terraform/modules/eks/main.tf",
+      "sha256": "27c52b57eaa5f0c293bb10e8d003aceb60d502ea8defc98c2ba6dc0fcded6ad2"
+    },
+    "infrastructure/terraform/modules/eks/outputs.tf": {
+      "path": "infrastructure/terraform/modules/eks/outputs.tf",
+      "sha256": "ac75273f616fc4b4e67038603748b6d17f8144033256a2eec329ad7e2647b62c"
+    },
+    "infrastructure/terraform/modules/eks/variables.tf": {
+      "path": "infrastructure/terraform/modules/eks/variables.tf",
+      "sha256": "8a403a315cbca496910ec3afad1d613c81e1c1612d5720f3f2b2166a8763ce25"
+    },
+    "infrastructure/terraform/modules/eks/versions.tf": {
+      "path": "infrastructure/terraform/modules/eks/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
+    "infrastructure/terraform/modules/iam/main.tf": {
+      "path": "infrastructure/terraform/modules/iam/main.tf",
+      "sha256": "fa4c9245595619aee2683589130e425049aa0c7cabddc9ee8f2e37836083624d"
+    },
+    "infrastructure/terraform/modules/iam/outputs.tf": {
+      "path": "infrastructure/terraform/modules/iam/outputs.tf",
+      "sha256": "15de7ff5d9bc973268150fedd7a04ced4a80ca231a2c0033177050140457d361"
+    },
+    "infrastructure/terraform/modules/iam/variables.tf": {
+      "path": "infrastructure/terraform/modules/iam/variables.tf",
+      "sha256": "f561710c1bbc3530af16e892c21425d33b1070419b0c3302fbb18f2c8455aa91"
+    },
+    "infrastructure/terraform/modules/iam/versions.tf": {
+      "path": "infrastructure/terraform/modules/iam/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
+    "infrastructure/terraform/modules/kms/main.tf": {
+      "path": "infrastructure/terraform/modules/kms/main.tf",
+      "sha256": "9a84d919d7b2016613bdcbb41e350897d034a35dc6191ca547546fa50a188b51"
+    },
+    "infrastructure/terraform/modules/kms/outputs.tf": {
+      "path": "infrastructure/terraform/modules/kms/outputs.tf",
+      "sha256": "121ca5545fe51f5852f6a752817cf9d6cf044ed3f831e591e05d47981fb7823d"
+    },
+    "infrastructure/terraform/modules/kms/variables.tf": {
+      "path": "infrastructure/terraform/modules/kms/variables.tf",
+      "sha256": "2e90c1ef1513970ea6b1cfc2cf96926c0b9d5fbeb27efadc9d42cf9398c05c66"
+    },
+    "infrastructure/terraform/modules/kms/versions.tf": {
+      "path": "infrastructure/terraform/modules/kms/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
+    "infrastructure/terraform/modules/logging/main.tf": {
+      "path": "infrastructure/terraform/modules/logging/main.tf",
+      "sha256": "ec0c1db6e1716f680ef54041116e8f445a27902b83a37945fbd2265e738b26ed"
+    },
+    "infrastructure/terraform/modules/logging/outputs.tf": {
+      "path": "infrastructure/terraform/modules/logging/outputs.tf",
+      "sha256": "d0e371e051c996368308dfb34d76cc3643d55553493bf3b2e4f7a2664201d4ba"
+    },
+    "infrastructure/terraform/modules/logging/variables.tf": {
+      "path": "infrastructure/terraform/modules/logging/variables.tf",
+      "sha256": "1e157593ab22e9f475d8928fb74cd2b52f0a1c0bd2c46fdf497a5dea7a5bb63a"
+    },
+    "infrastructure/terraform/modules/logging/versions.tf": {
+      "path": "infrastructure/terraform/modules/logging/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
+    "infrastructure/terraform/modules/networking/main.tf": {
+      "path": "infrastructure/terraform/modules/networking/main.tf",
+      "sha256": "33a3537b2baf4965271a3f90b0e56969f29f38e3248958582afba6b3ae679ce9"
+    },
+    "infrastructure/terraform/modules/networking/outputs.tf": {
+      "path": "infrastructure/terraform/modules/networking/outputs.tf",
+      "sha256": "6be23adc69fa26219b82aa54ee11590b57c2088b350ff8a121a938493bc13834"
+    },
+    "infrastructure/terraform/modules/networking/variables.tf": {
+      "path": "infrastructure/terraform/modules/networking/variables.tf",
+      "sha256": "3d6ae3c67fd00274151ceb4088fbd2cd8130c1edfda48eb9ca32ce7759ef33dd"
+    },
+    "infrastructure/terraform/modules/networking/versions.tf": {
+      "path": "infrastructure/terraform/modules/networking/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
+    "infrastructure/terraform/modules/platform/main.tf": {
+      "path": "infrastructure/terraform/modules/platform/main.tf",
+      "sha256": "839343a8d871b12d95b1d46874d5e9e33a1a688cca02032afdba9ef6565eb08a"
+    },
+    "infrastructure/terraform/modules/platform/outputs.tf": {
+      "path": "infrastructure/terraform/modules/platform/outputs.tf",
+      "sha256": "7d400ded2543aa602146160b2d02d38ff951ee34593594d26936c839608ad55d"
+    },
+    "infrastructure/terraform/modules/platform/variables.tf": {
+      "path": "infrastructure/terraform/modules/platform/variables.tf",
+      "sha256": "de4d114478161990690f1487763926752001b0ccb3240e024b94e2de505bed26"
+    },
+    "infrastructure/terraform/modules/platform/versions.tf": {
+      "path": "infrastructure/terraform/modules/platform/versions.tf",
+      "sha256": "5fbaa64c01e3e30351a3412bcc2a0e35b9d980c4d5c4bfdeab95c160e1423663"
+    },
     "infrastructure/variables.tf": {
       "path": "infrastructure/variables.tf",
       "sha256": "3a44ba1352680e68f3d5ee0f76dd57f6507ba9874765766d7bfb98120da8ca86"
@@ -169,7 +329,7 @@
   "output_files": {
     "architecture-inventory.json": {
       "path": "architecture-inventory.json",
-      "sha256": "462893d75092163f148868a8cd0f168cb623c9cfdfa2bb9f84aacc4677c2f504"
+      "sha256": "6bcb2a6a0cd4560a2e663dce680417c045ccec88d4f367e06a1bb80432f6b16f"
     },
     "encryption-control-summary.json": {
       "path": "encryption-control-summary.json",
@@ -203,6 +363,8 @@
   "project_version": "0.1.0",
   "provider_constraints": {
     "aws": "~> 5.70",
+    "eks_aws": "= 6.68.0",
+    "eks_terraform": "= 1.16.5",
     "terraform": ">= 1.8.0, < 2.0.0"
   },
   "run_id": "infrastructure-2026-01-01T00:00:00Z",

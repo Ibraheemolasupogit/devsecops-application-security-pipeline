@@ -10,7 +10,7 @@
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
-      "sha256": "81127f69d8453e5ce3e50c7b16d29407cd8be679051f112544dfe6ec60ed4f15"
+      "sha256": "45987611e906e0fac19ef8a547667e3eccab55c6439c9d1f669bf827e37a35ae"
     },
     "outputs/security/appsec/raw/gitleaks.json": {
       "path": "outputs/security/appsec/raw/gitleaks.json",
@@ -60,7 +60,7 @@
     },
     "iac-scan-summary.json": {
       "path": "iac-scan-summary.json",
-      "sha256": "fe21b06df6411803e950ca0fa8a77c00f04eb44bc2a1424a25dd673c18eb1530"
+      "sha256": "a053830db68699c3149c65a1c29382877be64c69c4807b61ba9d4e5a1224bc82"
     },
     "sast-summary.json": {
       "path": "sast-summary.json",

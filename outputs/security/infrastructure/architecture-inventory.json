@@ -13,6 +13,19 @@
     "private ECS subnets",
     "VPC endpoints"
   ],
+  "primary_runtime": {
+    "artifact_state": "independent shared ECR",
+    "compute": "Amazon EKS managed node groups",
+    "environments": [
+      "nonprod",
+      "prod"
+    ],
+    "kubernetes_version": "1.36",
+    "private_endpoint": true,
+    "status": "configured, not deployed",
+    "workload_manifests": "not implemented"
+  },
+  "scope": "retained ECS reference; primary EKS foundation tracked separately",
   "supporting_services": [
     "ECR",
     "Secrets Manager",

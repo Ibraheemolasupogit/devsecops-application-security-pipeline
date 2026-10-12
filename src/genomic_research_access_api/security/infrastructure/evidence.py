@@ -17,7 +17,7 @@ OUTPUT_DIR = ROOT / "outputs" / "security" / "infrastructure"
 
 
 def _tf_files() -> list[Path]:
-    return sorted(INFRA_DIR.rglob("*.tf"))
+    return sorted(path for path in INFRA_DIR.rglob("*.tf") if ".terraform" not in path.parts)
 
 
 def _contains(path: str, needle: str) -> bool:
@@ -33,6 +33,8 @@ def provider_constraints() -> dict[str, str]:
     return {
         "terraform": ">= 1.8.0, < 2.0.0",
         "aws": "~> 5.70" if "~> 5.70" in versions else "unknown",
+        "eks_terraform": "= 1.16.5",
+        "eks_aws": "= 6.68.0",
     }
 
 
@@ -40,6 +42,16 @@ def architecture_inventory() -> dict[str, Any]:
     return {
         "deployment_status": "not deployed",
         "compute": "AWS ECS Fargate",
+        "scope": "retained ECS reference; primary EKS foundation tracked separately",
+        "primary_runtime": {
+            "compute": "Amazon EKS managed node groups",
+            "kubernetes_version": "1.36",
+            "status": "configured, not deployed",
+            "environments": ["nonprod", "prod"],
+            "artifact_state": "independent shared ECR",
+            "private_endpoint": True,
+            "workload_manifests": "not implemented",
+        },
         "edge": "Application Load Balancer",
         "datastore": "DynamoDB",
         "network": ["VPC", "public ALB subnets", "private ECS subnets", "VPC endpoints"],
@@ -201,6 +213,13 @@ def verify_evidence(output_dir: Path = OUTPUT_DIR) -> None:
     if not manifest_path.exists():
         raise ThreatModelValidationError("infrastructure evidence manifest does not exist")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    expected_inputs = {str(path.relative_to(ROOT)) for path in _tf_files()}
+    if set(manifest["input_files"]) != expected_inputs:
+        raise ThreatModelValidationError("infrastructure source inventory changed")
+    for name, details in manifest["input_files"].items():
+        path = ROOT / name
+        if sha256_file(path) != details["sha256"]:
+            raise ThreatModelValidationError(f"infrastructure source checksum mismatch: {name}")
     for details in manifest["output_files"].values():
         path = output_dir / details["path"]
         if not path.exists():

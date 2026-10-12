@@ -3,7 +3,9 @@
 | Area | Configured Value |
 | --- | --- |
 | Deployment status | not deployed |
-| Compute | AWS ECS Fargate |
+| Reference compute | AWS ECS Fargate |
+| Primary target | Amazon EKS managed node groups |
+| Primary status | configured, not deployed |
 | Edge | Application Load Balancer |
 | Datastore | DynamoDB |
 | Network | VPC, public ALB subnets, private ECS subnets, VPC endpoints |

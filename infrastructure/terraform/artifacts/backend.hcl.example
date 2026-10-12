@@ -1,0 +1,6 @@
+bucket = "<approved-state-bucket>"
+key = "eks/artifacts/terraform.tfstate"
+region = "<approved-state-region>"
+encrypt = true
+kms_key_id = "<approved-state-kms-arn>"
+use_lockfile = true

@@ -1,0 +1,7 @@
+# Replace placeholders only in an untracked deployment-specific backend file.
+bucket = "<approved-state-bucket>"
+key = "eks/nonprod/terraform.tfstate"
+region = "<approved-state-region>"
+encrypt = true
+kms_key_id = "<approved-state-kms-arn>"
+use_lockfile = true

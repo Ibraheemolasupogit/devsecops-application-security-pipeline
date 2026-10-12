@@ -3,7 +3,7 @@
   "checks": [
     {
       "name": "python",
-      "native_path": "/Users/privilege/Desktop/GitHub_repository/devsecops-application-security-pipeline/.venv/bin/python",
+      "native_path": "",
       "notes": "Required for all workflows.",
       "status": "available"
     },

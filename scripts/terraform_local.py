@@ -9,7 +9,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INFRA = ROOT / "infrastructure"
-ENVIRONMENTS = [INFRA / "environments" / "dev", INFRA / "environments" / "prod"]
+EKS = INFRA / "terraform"
+ENVIRONMENTS = [
+    INFRA / "environments" / "dev",
+    INFRA / "environments" / "prod",
+    EKS / "artifacts",
+    EKS / "environments" / "nonprod",
+    EKS / "environments" / "prod",
+]
 
 
 def _terraform() -> str | None:
@@ -43,7 +50,13 @@ def validate() -> None:
 
 
 def test() -> None:
-    _run(["test"])
+    # Every test uses mock_provider and command=plan; never a live provider/apply.
+    for environment in [
+        *ENVIRONMENTS[2:],
+        *(EKS / "modules" / name for name in ("eks", "networking", "ecr")),
+    ]:
+        _run(["init", "-backend=false"], cwd=environment)
+        _run(["test"], cwd=environment)
 
 
 def main() -> None:

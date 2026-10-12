@@ -14,7 +14,7 @@
   ],
   "git": {
     "branch": "main",
-    "commit": "682ec76ca7cc",
+    "commit": "0e59bfc45c99",
     "dirty": "true"
   },
   "input_files": {
@@ -38,8 +38,8 @@
   "output_files": {
     "evidence-index.json": {
       "path": "outputs/security/portfolio/evidence-index.json",
-      "sha256": "0f66730b954df0c6c4ed6a929917a53a938f299507bd2242e9a98c38ad4fbac7",
-      "size_bytes": 2487
+      "sha256": "9ba9d4139118126d9e15572464073ff07dda7933eaf8a0ecb1eb290e18d532e1",
+      "size_bytes": 2488
     },
     "milestone-completion.json": {
       "path": "outputs/security/portfolio/milestone-completion.json",
@@ -48,7 +48,7 @@
     },
     "portfolio-metrics.json": {
       "path": "outputs/security/portfolio/portfolio-metrics.json",
-      "sha256": "fd56fd4c2306716daac5ad7825e9ec10e558a7375ef283df1a70ab751675daaa",
+      "sha256": "a2e78876a46325d6453311c0c76a8d6aba874d8363afd182ed7bc28d93d79e08",
       "size_bytes": 664
     },
     "portfolio-readiness.json": {
@@ -58,12 +58,12 @@
     },
     "portfolio-summary.json": {
       "path": "outputs/security/portfolio/portfolio-summary.json",
-      "sha256": "3713c2e23efb1a82a53683b5df8cb39f5f59edb88b2e30a474b8dc6849efa0d6",
+      "sha256": "58ab3c246024066b6c51c1e0d5b65d2bb783bcb06e8709ca6cb1917ae02fd1fe",
       "size_bytes": 930
     },
     "report-index.json": {
       "path": "outputs/security/portfolio/report-index.json",
-      "sha256": "21d4618f54e4e7d2ff3695b91b17b6d081b45ecdc0758200f5d5b384e01d99ca",
+      "sha256": "501075d51ea30e4d00eaa804520305c8ebf50b3f6eaa0cf809b926cc7dd8e38a",
       "size_bytes": 3239
     },
     "security-capability-matrix.json": {
@@ -72,6 +72,6 @@
       "size_bytes": 7933
     }
   },
-  "portfolio_id": "PF-13221f161fd779e1",
+  "portfolio_id": "PF-0cde1774f705d21f",
   "schema_version": "1.0"
 }

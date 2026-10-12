@@ -1,0 +1,13 @@
+# These are placeholders, not deployable account configuration.
+region = "<approved-region>"
+availability_zones = ["<approved-az-a>", "<approved-az-b>"]
+administrator_role_arns = ["<existing-platform-admin-role-arn>"]
+artifact_repository_url = "<shared-artifact-stack-output>"
+cost_center = "<approved-budget-owner>"
+addon_versions = {
+  vpc-cni = "<approved-version>"
+  kube-proxy = "<approved-version>"
+  coredns = "<approved-version>"
+  eks-pod-identity-agent = "<approved-version>"
+}
+api_client_security_group_ids = [] # Private runner connectivity is a separately provisioned M5 prerequisite.

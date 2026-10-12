@@ -40,7 +40,9 @@ def generate_reports(report_dir: Path = REPORT_DIR) -> list[Path]:
             ["Area", "Configured Value"],
             [
                 ["Deployment status", architecture["deployment_status"]],
-                ["Compute", architecture["compute"]],
+                ["Reference compute", architecture["compute"]],
+                ["Primary target", architecture["primary_runtime"]["compute"]],
+                ["Primary status", architecture["primary_runtime"]["status"]],
                 ["Edge", architecture["edge"]],
                 ["Datastore", architecture["datastore"]],
                 ["Network", ", ".join(architecture["network"])],
@@ -53,7 +55,9 @@ def generate_reports(report_dir: Path = REPORT_DIR) -> list[Path]:
             ["Control", "Value"],
             [
                 ["Terraform constraint", provider_constraints()["terraform"]],
-                ["AWS provider constraint", provider_constraints()["aws"]],
+                ["Reference AWS provider constraint", provider_constraints()["aws"]],
+                ["EKS Terraform pin", provider_constraints()["eks_terraform"]],
+                ["EKS AWS provider pin", provider_constraints()["eks_aws"]],
                 ["Deployment status", summary["deployment_status"]],
                 ["State created", str(summary["terraform_state_created"])],
                 ["Terraform validation mode", validation["local_validation_mode"]],
