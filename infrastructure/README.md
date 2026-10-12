@@ -16,10 +16,18 @@ See [ECS → EKS decision](../docs/architecture/0007-ecs-to-eks.md), [target pla
 
 - `terraform/modules/{networking,iam,kms,logging,eks,ecr}`: reusable cloud foundations.
 - `terraform/modules/platform`: common cluster composition.
+- `terraform/modules/github-oidc` and `github-actions-role`: account-local GitHub identity model plus distinct ECR publisher and QA/production deploy roles.
+- `terraform/modules/codebuild-runner`: optional per-environment private CodeBuild-hosted ephemeral runner, webhook, no-inbound SG and non-deploying service role.
 - `terraform/environments/nonprod`: one shared QA/test cluster (namespace separation later).
 - `terraform/environments/prod`: separate production cluster.
 - `terraform/artifacts`: one environment-neutral ECR repository, no extra cluster.
 - `terraform/**/tests/*.tftest.hcl`: mock-provider plan assertions and rejection tests.
+
+M5 outputs include publisher/deployer/provider ARNs, cluster name/region, namespace group, and optional CodeBuild project, service role and runner security group. Deploy roles receive only `eks:DescribeCluster` on their intended EKS cluster. EKS access entries map them to separate Kubernetes groups; offline Roles/RoleBindings in `kubernetes/rbac/` grant each group only namespaced workload/configuration governance operations. Namespace creation and governance labels in `kubernetes/platform/` are privileged platform bootstrap work; CI cannot create namespaces, read Secrets, mutate cluster-scoped resources or change RBAC.
+
+CodeBuild projects are conditional on a pre-authorized CodeConnections GitHub App connection ARN. Null example values keep projects and runner SGs absent. A later authorised deployment can configure each project on only its destination VPC private subnets; its SG is admitted to that cluster's private API on TCP 443 with no inbound rules. OIDC authenticates a job to STS; it does not provide VPC routing. The CodeBuild service role is separate and limited to runner logs, VPC ENI lifecycle and use of the bootstrapped source connection. It has no EKS, ECR publish, PassRole or deployment-role assumption permissions. No GitHub or AWS connection credential belongs in this repository.
+
+Each account must own exactly one GitHub OIDC provider. The artifacts, nonprod and prod compositions create one when `github_oidc_provider_arn` is null or reuse the ARN provided by its owner state. If compositions share an AWS account, create the provider in the first state and pass its output to the others; separate accounts each need their own provider. Future jobs route to each project's exact CodeBuild label using the run ID and attempt. The project name is only runner routing; OIDC and namespace RBAC remain separate identity/authorisation controls.
 
 Read [EKS infrastructure](../docs/architecture/eks-infrastructure.md), [cost controls](../docs/engineering/eks-cost-controls.md) and [validation record](../docs/engineering/eks-foundation-validation.md). Terraform 1.15.8 / AWS provider 6.21.0 are pinned for EKS; the ECS reference retains its original constraints. No AWS account, backend, credentials or real resources are assumed.
 
@@ -67,4 +75,4 @@ terraform -chdir=infrastructure/terraform/environments/prod init -backend=false
 terraform -chdir=infrastructure/terraform/environments/prod validate
 ```
 
-Remote S3 state/KMS/lockfile bootstrap is documented but not created. Example backend files contain placeholders. A real operator/runner private access path and approved add-on versions are prerequisites; no live plan/apply or Kubernetes application configuration is included. M4 consumes outputs for Kustomize workload/readiness work; M5 establishes operational CI/workload identity boundaries.
+Remote S3 state/KMS/lockfile bootstrap, GitHub CodeConnections authorization and GitHub Environment protections are documented but not created by this repository. Example backend files contain placeholders. Runner infrastructure is modelled but remains disabled while the connection ARN input is null. No live plan/apply, federation, CodeBuild runner execution or Kubernetes application deployment is included.

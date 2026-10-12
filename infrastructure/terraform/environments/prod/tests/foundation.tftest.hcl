@@ -14,6 +14,7 @@ variables {
   api_client_security_group_ids = ["sg-00000000000000000"]
   cost_center                   = "mock-only"
   artifact_repository_url       = "000000000000.dkr.ecr.eu-west-2.amazonaws.com/test-api"
+  github_oidc_provider_arn      = "arn:aws:iam::000000000000:oidc-provider/token.actions.githubusercontent.com"
   addon_versions                = { "vpc-cni" = "v1.20.0-eksbuild.1", "kube-proxy" = "v1.36.0-eksbuild.1", "coredns" = "v1.13.0-eksbuild.1", "eks-pod-identity-agent" = "v1.3.0-eksbuild.1" }
 }
 run "environment_contract" {
@@ -21,6 +22,13 @@ run "environment_contract" {
   assert {
     condition     = output.cluster_name == "graa-prod" && output.region == "eu-west-2" && output.ecr_repository_url == var.artifact_repository_url
     error_message = "Environment identity/shared artifact contract changed."
+  }
+}
+run "production_oidc_and_runner_boundaries" {
+  command = plan
+  assert {
+    condition     = output.production_kubernetes_group == "github:production-deployer" && output.production_codebuild_runner_project_name == null && output.production_runner_security_group_id == null
+    error_message = "Production has a distinct protected-environment role/access group and runner stays disabled until bootstrap."
   }
 }
 run "reject_wrong_region_az" {

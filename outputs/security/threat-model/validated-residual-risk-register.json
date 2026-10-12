@@ -219,22 +219,25 @@
   },
   {
     "control_limitations": [
-      "OIDC role is not used by CI yet and requires deployment governance before activation"
+      "OIDC token and audience have not been verified in a live GitHub workflow",
+      "GitHub Environment reviewer/branch settings and CodeConnections authorization require external configuration",
+      "CodeBuild runner, EKS access entries, and namespace RBAC have not been applied or runtime-tested"
     ],
     "current_controls": [
       "current CI has read-only repository permissions",
       "no deployment steps",
-      "GitHub OIDC deployment role configured as code"
+      "repository-scoped OIDC roles and EKS access entries are modelled in Terraform",
+      "CodeBuild runner and Kubernetes RBAC contracts are statically validated"
     ],
     "description": "Future deployment identity risks remain until deployment workflows are activated.",
-    "planned_milestone": "Milestone 4",
+    "planned_milestone": "Milestone 6",
     "related_threat_ids": [
       "THR-CI-001"
     ],
     "residual_impact": "high",
     "residual_likelihood": "medium",
     "residual_rating": "medium",
-    "review_date": "2026-07-11",
+    "review_date": "2026-10-12",
     "risk_id": "RR-009",
     "risk_owner": "platform_engineer",
     "status": "mitigation_planned",

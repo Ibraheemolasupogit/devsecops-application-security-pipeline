@@ -25,3 +25,9 @@ output "kms_key_arn" {
 output "node_role_arn" {
   value = module.iam.node_role_arn
 }
+output "github_oidc_provider_arn" { value = module.github_oidc.provider_arn }
+output "deployment_role_arn" { value = module.deployment_identity.role_arn }
+output "deployment_kubernetes_group" { value = "github:${local.github_environment}-deployer" }
+output "codebuild_runner_project_name" { value = length(module.codebuild_runner) == 0 ? null : module.codebuild_runner[0].project_name }
+output "codebuild_runner_security_group_id" { value = length(module.codebuild_runner) == 0 ? null : module.codebuild_runner[0].security_group_id }
+output "codebuild_runner_service_role_arn" { value = length(module.codebuild_runner) == 0 ? null : module.codebuild_runner[0].service_role_arn }

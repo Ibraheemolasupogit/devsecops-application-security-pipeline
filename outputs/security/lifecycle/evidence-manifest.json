@@ -34,7 +34,7 @@
     },
     "outputs/security/findings/deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "93f2c2ad06ebd0fd3a8a2a2df368ee3d858189f0a9179014b48ed4459ed37f78"
+      "sha256": "2bc62f567a5b0bb01c35e35c46af7ce0f04864105d5a9fd8f55e11107bd56070"
     },
     "outputs/security/findings/finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
@@ -42,10 +42,10 @@
     },
     "outputs/security/release/release-gate-decision.json": {
       "path": "outputs/security/release/release-gate-decision.json",
-      "sha256": "57aa794f6958066c12d27eb9381739fb8e3887a661676065a31910cb42f725f8"
+      "sha256": "13df244498a97d74aee7a960cfebaa60841e4bdd5e47a5456244c3132d5f09e6"
     }
   },
-  "input_findings_checksum": "93f2c2ad06ebd0fd3a8a2a2df368ee3d858189f0a9179014b48ed4459ed37f78",
+  "input_findings_checksum": "2bc62f567a5b0bb01c35e35c46af7ce0f04864105d5a9fd8f55e11107bd56070",
   "output_files": {
     "due-soon-findings.csv": {
       "path": "outputs/security/lifecycle/due-soon-findings.csv",
@@ -118,7 +118,7 @@
     "config/lifecycle/verification-policy.yaml": "1.0"
   },
   "project_version": "0.1.0",
-  "release_decision_checksum": "57aa794f6958066c12d27eb9381739fb8e3887a661676065a31910cb42f725f8",
+  "release_decision_checksum": "13df244498a97d74aee7a960cfebaa60841e4bdd5e47a5456244c3132d5f09e6",
   "schema_version": "1.0",
   "verification_count": 0,
   "vulnerability_count": 45

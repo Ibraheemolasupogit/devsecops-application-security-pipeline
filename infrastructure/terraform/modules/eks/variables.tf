@@ -44,3 +44,5 @@ variable "tags" {
 variable "api_client_security_group_ids" {
   type = set(string)
 }
+variable "deployment_role_arn" { type = string }
+variable "deployment_kubernetes_group" { type = string }

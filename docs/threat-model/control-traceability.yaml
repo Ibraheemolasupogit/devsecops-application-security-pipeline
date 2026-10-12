@@ -1012,8 +1012,8 @@
       "SR-K8S-004"
     ],
     "implementation_references": [
-      "kubernetes/overlays/qa/namespace.yaml",
-      "kubernetes/overlays/prod/namespace.yaml"
+      "kubernetes/platform/nonprod/namespace.yaml",
+      "kubernetes/platform/prod/namespace.yaml"
     ],
     "verification_methods": [
       "Kustomize render and parsed manifest tests",
@@ -1064,5 +1064,73 @@
     ],
     "residual_risk_id": "RR-003",
     "notes": "Rendered requests, limits and quotas constrain modeled compute consumption."
+  },
+  {
+    "traceability_id": "TRACE-051",
+    "threat_id": "THR-CI-001",
+    "requirement_ids": [
+      "SR-CI-002",
+      "SR-CI-004"
+    ],
+    "implementation_references": [
+      "infrastructure/terraform/modules/github-oidc/main.tf",
+      "infrastructure/terraform/modules/github-actions-role/main.tf",
+      "infrastructure/terraform/modules/platform/main.tf"
+    ],
+    "verification_methods": [
+      "Terraform mock-provider tests",
+      "Offline exact-subject and role-separation policy tests"
+    ],
+    "evidence_references": [
+      "infrastructure/tests/test_ci_identity.py",
+      "infrastructure/terraform/modules/github-actions-role/tests/trust.tftest.hcl"
+    ],
+    "residual_risk_id": "RR-009",
+    "notes": "IaC restricts audience, repository, branch/environment subject, and per-environment AWS role; no live token was requested."
+  },
+  {
+    "traceability_id": "TRACE-052",
+    "threat_id": "THR-CI-001",
+    "requirement_ids": [
+      "SR-CI-005"
+    ],
+    "implementation_references": [
+      "infrastructure/terraform/modules/codebuild-runner/main.tf",
+      "infrastructure/terraform/modules/platform/main.tf"
+    ],
+    "verification_methods": [
+      "Terraform mock-provider runner tests",
+      "Offline private-subnet/security-group/service-role tests"
+    ],
+    "evidence_references": [
+      "infrastructure/tests/test_ci_identity.py",
+      "infrastructure/terraform/modules/codebuild-runner/tests/runner.tftest.hcl"
+    ],
+    "residual_risk_id": "RR-009",
+    "notes": "Runner projects are conditional on an externally authorized connection; the service role has no EKS, ECR publish, or deployment-role assumption permissions."
+  },
+  {
+    "traceability_id": "TRACE-053",
+    "threat_id": "THR-CI-001",
+    "requirement_ids": [
+      "SR-CI-006"
+    ],
+    "implementation_references": [
+      "infrastructure/terraform/modules/eks/main.tf",
+      "kubernetes/rbac/qa/role.yaml",
+      "kubernetes/rbac/prod/role.yaml",
+      "kubernetes/rbac/qa/role-binding.yaml",
+      "kubernetes/rbac/prod/role-binding.yaml"
+    ],
+    "verification_methods": [
+      "Kustomize render and RBAC manifest invariants",
+      "Terraform access-entry contract tests"
+    ],
+    "evidence_references": [
+      "tests/security/test_kubernetes_workload.py",
+      "infrastructure/tests/test_ci_identity.py"
+    ],
+    "residual_risk_id": "RR-009",
+    "notes": "QA and production groups have separate RoleBindings in pre-created namespaces and receive no Secret read or cluster-scoped mutation."
   }
 ]

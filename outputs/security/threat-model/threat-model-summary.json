@@ -8,7 +8,7 @@
     "authentication": 1,
     "authorisation": 4,
     "availability": 1,
-    "ci_cd": 3,
+    "ci_cd": 6,
     "configuration": 1,
     "container_security": 2,
     "data_protection": 3,
@@ -30,7 +30,7 @@
     "workflow_integrity": 1
   },
   "requirements_by_implementation_status": {
-    "implemented": 63,
+    "implemented": 66,
     "planned": 3
   },
   "residual_risks_by_rating": {

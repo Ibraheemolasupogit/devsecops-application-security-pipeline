@@ -21,7 +21,7 @@
     },
     "prerequisite-check-summary.json": {
       "path": "prerequisite-check-summary.json",
-      "sha256": "c95cbb3c6c0e27401404abba8e1d351a5a737c7d056a78f15f5d4cb24e1bebf3"
+      "sha256": "1216cff25306df94e83d2395d5cbf6d69ee42c2c238423f29e8536bd5610976c"
     },
     "pull-request-checklist-summary.json": {
       "path": "pull-request-checklist-summary.json",

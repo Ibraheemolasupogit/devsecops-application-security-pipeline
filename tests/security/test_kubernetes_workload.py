@@ -6,7 +6,7 @@ import re
 from typing import Any
 
 import pytest
-from scripts.kubernetes_workload import documents, render
+from scripts.kubernetes_workload import documents, render, render_root
 
 ENVIRONMENTS = {"qa": "qa", "prod": "production"}
 
@@ -53,7 +53,11 @@ def test_environment_namespace_and_pod_security_admission(
 ) -> None:
     for environment, namespace in ENVIRONMENTS.items():
         resources = rendered[environment][1]
-        namespace_object = one(resources, "Namespace")
+        assert not by_kind(resources, "Namespace")
+        namespace_object = one(
+            documents(render_root("platform", "nonprod" if environment == "qa" else "prod")),
+            "Namespace",
+        )
         assert namespace_object["metadata"]["name"] == namespace
         labels = namespace_object["metadata"]["labels"]
         assert labels["platform.example.com/environment"] == namespace
@@ -66,6 +70,53 @@ def test_environment_namespace_and_pod_security_admission(
         )
         assert deployment(resources)["metadata"]["namespace"] == namespace
     assert ENVIRONMENTS["qa"] != ENVIRONMENTS["prod"]
+
+
+def test_deployment_overlay_does_not_create_or_mutate_namespace() -> None:
+    for environment, namespace in ENVIRONMENTS.items():
+        resources = documents(render_root("rbac", "qa" if environment == "qa" else "prod"))
+        assert {resource["kind"] for resource in resources} == {"Role", "RoleBinding"}
+        assert all(
+            isinstance(resource["metadata"], dict)
+            and resource["metadata"].get("namespace") == namespace
+            for resource in resources
+        )
+
+
+def test_deployment_rbac_is_namespace_scoped_and_excludes_secrets() -> None:
+    expected = {
+        "qa": ("qa", "github:qa-deployer", "github-qa-deployer"),
+        "prod": ("production", "github:production-deployer", "github-production-deployer"),
+    }
+    for environment, (namespace, group, role_name) in expected.items():
+        resources = documents(render_root("rbac", environment))
+        role = one(resources, "Role")
+        binding = one(resources, "RoleBinding")
+        assert role["metadata"]["namespace"] == namespace
+        assert binding["metadata"]["namespace"] == namespace
+        assert binding["subjects"] == [
+            {"kind": "Group", "name": group, "apiGroup": "rbac.authorization.k8s.io"}
+        ]
+        assert binding["roleRef"]["name"] == role_name
+        rules = role["rules"]
+        assert all(
+            "*" not in rule["apiGroups"] + rule["resources"] + rule["verbs"] for rule in rules
+        )
+        grants = {
+            (api_group, resource, verb)
+            for rule in rules
+            for api_group in rule["apiGroups"]
+            for resource in rule["resources"]
+            for verb in rule["verbs"]
+        }
+        assert not any(resource == "secrets" or verb == "escalate" for _, resource, verb in grants)
+        assert not any(api_group == "*" for api_group, _, _ in grants)
+        assert not {"ClusterRole", "ClusterRoleBinding", "Namespace"} & {
+            item["kind"] for item in resources
+        }
+        assert ("apps", "deployments", "patch") in grants
+        assert ("apps", "replicasets", "watch") in grants
+        assert ("", "configmaps", "update") in grants
 
 
 def test_one_immutable_image_contract_is_shared_between_environments(

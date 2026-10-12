@@ -14,6 +14,7 @@ variables {
   api_client_security_group_ids = ["sg-00000000000000000"]
   cost_center                   = "mock-only"
   artifact_repository_url       = "000000000000.dkr.ecr.eu-west-2.amazonaws.com/test-api"
+  github_oidc_provider_arn      = "arn:aws:iam::000000000000:oidc-provider/token.actions.githubusercontent.com"
   addon_versions                = { "vpc-cni" = "v1.20.0-eksbuild.1", "kube-proxy" = "v1.36.0-eksbuild.1", "coredns" = "v1.13.0-eksbuild.1", "eks-pod-identity-agent" = "v1.3.0-eksbuild.1" }
 }
 run "environment_contract" {
@@ -21,6 +22,13 @@ run "environment_contract" {
   assert {
     condition     = output.cluster_name == "graa-nonprod" && output.region == "eu-west-2" && output.ecr_repository_url == var.artifact_repository_url
     error_message = "Environment identity/shared artifact contract changed."
+  }
+}
+run "qa_oidc_and_runner_boundaries" {
+  command = plan
+  assert {
+    condition     = output.qa_kubernetes_group == "github:qa-deployer" && output.qa_codebuild_runner_project_name == null && output.qa_runner_security_group_id == null
+    error_message = "QA has a dedicated OIDC role/access group and runner stays disabled until its connection is bootstrapped."
   }
 }
 run "reject_wrong_region_az" {

@@ -1,7 +1,7 @@
 {
   "as_of_date": "2026-01-01",
   "branch": "main",
-  "commit": "c82b97395df8c44311d22575efa034dbd78b5479",
+  "commit": "70919b45e7eaf952a1056106dc2f6ad7e4081eca",
   "compatibility_status": "compatible",
   "consumer": "enterprise-data-saas-security-control-plane",
   "contract_name": "product-security-control-plane-export",
@@ -18,10 +18,10 @@
   "input_checksums": {
     "appsec": "06d19d96c8be4cf1a0b8c823acc5c69ff7d6584de459104d20311fe6d0ac69e4",
     "champions": "d09281678df931f4d26ec779a8ab09cc88aea4daea44f354594dabe044810054",
-    "consolidated": "cb6cdd196ddfdd9b7ea53909859e6ef4ac73873d98e4d8e70f84d6f159792cda",
-    "findings": "c6bb7cd7a6d69e294b99e749ddd8493cad74b243fca8955068e86efa2a171d03",
-    "lifecycle": "81b1b2421af56353fe30513c4b0891d23f740182436c95f1480fb08c02e04f37",
-    "release": "a9045dcc4cc15a49c8b5494c2b1a868f9cba8e5ffa4713b9024e1e6ba8c95a58"
+    "consolidated": "757d3e6e71d288aa9686ded9299a94c49b5b675efacc1ae8b6b3089cd590a429",
+    "findings": "f7eaed0d1367d8a43e513fd2b7f00b1af0384d6711eae52345c159e21184e29f",
+    "lifecycle": "b948ad320ee712c1145ccd8c1be3dc04c9c3580f7453bfa3c672997aea7f22e6",
+    "release": "c2e1d43e8108b32f94b0eba7da946d0a97098978f656659834acc60a51310752"
   },
   "input_manifests": {
     "appsec": "outputs/security/appsec/evidence-manifest.json",
@@ -45,15 +45,15 @@
     "data-quality-summary.json": "24f43daa6ee4130d6330dfe3984ee7d3f35dee794bd441672e93c1aa698e8e80",
     "field-mapping-summary.json": "9547fdb3ef578a5f17287097b860898e4d8fc5dfb9b0e604881b74c472e44480",
     "finding-lifecycle-status.json": "05aba263e9141331c45d02f3e29351cceb598159f926ed826e72abb821323506",
-    "finding-release-impact.json": "6b83a302b136753d6ef11415273f0fa46db1bc7037943681e282d3c79c6437a1",
+    "finding-release-impact.json": "03bc0791f93d96df55f9acbde2061d4937b96cedf17b87a286e872f6a719717d",
     "finding-source-lineage.json": "ef7c9f1911eeadd70f46aee1606e94d5af5f04b64eaeb44adee7d43f9cdc804a",
     "integration-summary.json": "a7ece7a5487c5af2a7bcf212712b34ae353d891d80efa3d9ece253468444f7e3",
     "integration-validation-summary.json": "24f43daa6ee4130d6330dfe3984ee7d3f35dee794bd441672e93c1aa698e8e80",
     "ownership-and-sla.json": "2dd055b25d730cb5046847a189c2e2ea6410480bd33817f638161be47c5aab0f",
-    "product-security-findings.csv": "66e96d5f745301f8eeda21ed229ee270eeb41d8f59427e418951f92ca35d685d",
-    "product-security-findings.json": "c47bed49b2cc47ec2a9d6af6d595299c62aa8dcce8d89968050fff664a2904d0",
+    "product-security-findings.csv": "c392bf632f89074c020ca6c0f62cd2a73a33c2c60bfb4e274924b44cf328355f",
+    "product-security-findings.json": "8b64560bad9e8c8b5e72d33b89e2a78782d437759f11ef15921cf48b50921e09",
     "security-exceptions.json": "2db211d3ca6b1aa3b270fade2695ea79c09bdb76fea31b85bfecc31dce081601",
-    "security-metrics.json": "614237c09a2fe7376862fd7ec242091470d546ae893fcea6d204e6264b5f0068",
+    "security-metrics.json": "f5016cd847292dfa2280e9d726ac58b726c19dbc8562dc42270d3970b5cb9fb2",
     "verification-status.json": "fc71cef80f522038c9ac9d686eb1d7cd87f5d50052af01912f72a44a8b1a61be"
   },
   "output_files": [

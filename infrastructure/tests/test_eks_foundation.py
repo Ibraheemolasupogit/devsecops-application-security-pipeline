@@ -62,12 +62,15 @@ def test_no_foundation_ci_admin_or_application_implementation() -> None:
         'resource "kubernetes_',
         'resource "helm_',
         'resource "aws_eks_fargate_profile"',
-        'resource "aws_iam_openid_connect_provider"',
     )
     assert all(value not in text for value in forbidden)
+    assert (
+        'resource "aws_iam_openid_connect_provider"'
+        in (EKS / "modules" / "github-oidc" / "main.tf").read_text()
+    )
     assert len(re.findall(r'resource "aws_eks_cluster"', text)) == 1
     assert len(re.findall(r'resource "aws_eks_node_group"', text)) == 1
-    assert "sts:AssumeRoleWithWebIdentity" not in text  # M5 owns CI roles.
+    assert "sts:AssumeRoleWithWebIdentity" in text  # Exact-subject M5 trust is modeled.
 
 
 def test_tagging_and_scoped_log_key_policy() -> None:
@@ -88,7 +91,7 @@ def test_tagging_and_scoped_log_key_policy() -> None:
 
 def test_mock_tests_cannot_execute_live_provider_or_apply() -> None:
     tests = list(EKS.rglob("*.tftest.hcl"))
-    assert len(tests) == 6
+    assert len(tests) == 9
     for path in tests:
         text = path.read_text()
         assert 'mock_provider "aws"' in text

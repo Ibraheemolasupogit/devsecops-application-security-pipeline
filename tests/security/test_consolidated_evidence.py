@@ -44,7 +44,7 @@ def test_aggregate_bundle_metrics_and_domain_counts() -> None:
     assert evidence.failed_domain_count == 0
     assert evidence.deployment_status == "not_deployed"
     assert metrics["total_threats"] == 31
-    assert metrics["security_requirements"] == 66
+    assert metrics["security_requirements"] == 69
     assert metrics["canonical_findings"] == 45
     assert metrics["release_decision"] == evidence.release_decision["decision"]
     assert metrics["vulnerability_records"] == 45
@@ -146,7 +146,7 @@ def test_lineage_references_are_supported_by_repository_artefacts() -> None:
 
 def test_control_coverage_aggregation_and_percentage() -> None:
     coverage = aggregate_control_coverage()
-    assert coverage["control_count"] == 66
+    assert coverage["control_count"] == 69
     assert 0 <= coverage["coverage_percentage"] <= 100
     assert coverage["coverage_by_status"]["validated_locally"] >= 1
     assert coverage["coverage_by_status"]["planned"] == 3

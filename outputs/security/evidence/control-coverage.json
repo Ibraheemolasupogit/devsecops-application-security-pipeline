@@ -1,5 +1,5 @@
 {
-  "control_count": 66,
+  "control_count": 69,
   "controls": [
     {
       "control_id": "SR-API-001",
@@ -340,6 +340,60 @@
         "THR-SUPPLY-003"
       ],
       "verification_status": "planned"
+    },
+    {
+      "control_id": "SR-CI-004",
+      "deployment_dependency": "future_deployment",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/evidence-manifest.json"
+      ],
+      "implementation_status": "implemented_as_code",
+      "owner": "platform_engineer",
+      "residual_risk": "medium",
+      "security_requirement_ids": [
+        "SR-CI-004"
+      ],
+      "threat_ids": [
+        "THR-CI-001"
+      ],
+      "verification_status": "validated_locally"
+    },
+    {
+      "control_id": "SR-CI-005",
+      "deployment_dependency": "future_deployment",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/evidence-manifest.json"
+      ],
+      "implementation_status": "implemented_as_code",
+      "owner": "platform_engineer",
+      "residual_risk": "medium",
+      "security_requirement_ids": [
+        "SR-CI-005"
+      ],
+      "threat_ids": [
+        "THR-CI-001"
+      ],
+      "verification_status": "validated_locally"
+    },
+    {
+      "control_id": "SR-CI-006",
+      "deployment_dependency": "none",
+      "domain": "threat_model",
+      "evidence_references": [
+        "outputs/security/threat-model/evidence-manifest.json"
+      ],
+      "implementation_status": "validated_locally",
+      "owner": "platform_engineer",
+      "residual_risk": "medium",
+      "security_requirement_ids": [
+        "SR-CI-006"
+      ],
+      "threat_ids": [
+        "THR-CI-001"
+      ],
+      "verification_status": "verified"
     },
     {
       "control_id": "SR-CONTAINER-001",
@@ -1232,10 +1286,10 @@
     }
   ],
   "coverage_by_status": {
-    "implemented_as_code": 10,
+    "implemented_as_code": 12,
     "planned": 3,
-    "validated_locally": 53
+    "validated_locally": 54
   },
-  "coverage_percentage": 95.45,
+  "coverage_percentage": 95.65,
   "schema_version": "1.0"
 }

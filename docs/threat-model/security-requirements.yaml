@@ -325,10 +325,10 @@
     "category": "ci_cd",
     "description": "Future deployment workflows must use short-lived credentials rather than static secrets.",
     "evidence_reference": "outputs/security/infrastructure/iam-role-inventory.json",
-    "implementation_reference": "infrastructure/modules/iam/main.tf",
+    "implementation_reference": "infrastructure/terraform/modules/github-actions-role/main.tf",
     "implementation_status": "implemented",
     "owner": "platform_engineer",
-    "planned_milestone": "Milestone 4",
+    "planned_milestone": "Milestone 5",
     "priority": "high",
     "requirement_id": "SR-CI-002",
     "residual_risk": "medium",
@@ -337,8 +337,8 @@
     ],
     "status": "active",
     "title": "Short-lived CI/CD credentials",
-    "verification_method": "local infrastructure policy tests for GitHub OIDC trust",
-    "verification_reference": "infrastructure/tests/test_infrastructure_policy.py"
+    "verification_method": "Terraform mock-provider tests and offline CI identity policy tests",
+    "verification_reference": "infrastructure/tests/test_ci_identity.py"
   },
   {
     "category": "ci_cd",
@@ -361,6 +361,63 @@
     "title": "Protected release workflow",
     "verification_method": "future release gate tests",
     "verification_reference": "future release evidence"
+  },
+  {
+    "category": "ci_cd",
+    "description": "AWS CI roles must trust only the exact repository, STS audience, intended protected ref or named GitHub Environment, and environment-specific purpose.",
+    "evidence_reference": "outputs/security/threat-model/evidence-manifest.json",
+    "implementation_reference": "infrastructure/terraform/modules/github-actions-role/main.tf",
+    "implementation_status": "implemented",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 5",
+    "priority": "critical",
+    "requirement_id": "SR-CI-004",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
+    "status": "active",
+    "title": "Repository and environment-scoped OIDC trust",
+    "verification_method": "Terraform tests and offline trust-policy invariants",
+    "verification_reference": "infrastructure/tests/test_ci_identity.py"
+  },
+  {
+    "category": "ci_cd",
+    "description": "Deployment jobs must execute on environment-isolated ephemeral private runners whose CodeBuild service role cannot deploy, publish, or assume deployment identities.",
+    "evidence_reference": "outputs/security/threat-model/evidence-manifest.json",
+    "implementation_reference": "infrastructure/terraform/modules/codebuild-runner/main.tf",
+    "implementation_status": "implemented",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 5",
+    "priority": "high",
+    "requirement_id": "SR-CI-005",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
+    "status": "active",
+    "title": "Ephemeral private runner identity separation",
+    "verification_method": "Terraform mock-provider tests and offline CodeBuild boundary tests",
+    "verification_reference": "infrastructure/tests/test_ci_identity.py"
+  },
+  {
+    "category": "ci_cd",
+    "description": "CI deployment identities must be bound to a pre-created target namespace by namespaced Kubernetes RBAC and must not read Secret values or mutate cluster-scoped resources.",
+    "evidence_reference": "outputs/security/threat-model/evidence-manifest.json",
+    "implementation_reference": "kubernetes/rbac/",
+    "implementation_status": "implemented",
+    "owner": "platform_engineer",
+    "planned_milestone": "Milestone 5",
+    "priority": "high",
+    "requirement_id": "SR-CI-006",
+    "residual_risk": "medium",
+    "source_threat_ids": [
+      "THR-CI-001"
+    ],
+    "status": "active",
+    "title": "Namespace-scoped Kubernetes deployment authorisation",
+    "verification_method": "Kustomize render and parsed RBAC tests",
+    "verification_reference": "tests/security/test_kubernetes_workload.py"
   },
   {
     "category": "container_security",
@@ -885,7 +942,7 @@
       "THR-CI-001"
     ],
     "implementation_status": "implemented",
-    "implementation_reference": "kubernetes/overlays/qa/namespace.yaml; kubernetes/overlays/prod/namespace.yaml",
+    "implementation_reference": "kubernetes/platform/nonprod/namespace.yaml; kubernetes/platform/prod/namespace.yaml",
     "verification_method": "Kustomize-rendered manifest tests and Kubernetes Checkov policy scan",
     "verification_reference": "tests/security/test_kubernetes_workload.py",
     "evidence_reference": "outputs/security/threat-model/validated-security-requirements.json",

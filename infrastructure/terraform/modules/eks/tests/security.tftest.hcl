@@ -2,6 +2,13 @@ mock_provider "aws" {
   mock_data "aws_iam_policy_document" { defaults = { json = "{\"Version\":\"2012-10-17\",\"Statement\":[]}" } }
   mock_resource "aws_kms_key" { defaults = { arn = "arn:aws:kms:eu-west-2:000000000000:key/00000000-0000-0000-0000-000000000000", key_id = "00000000-0000-0000-0000-000000000000" } }
   mock_resource "aws_iam_role" { defaults = { arn = "arn:aws:iam::000000000000:role/mock-role" } }
+  mock_resource "aws_eks_access_entry" {
+    defaults = {
+      principal_arn     = "arn:aws:iam::000000000000:role/qa-deployer"
+      kubernetes_groups = ["github:qa-deployer"]
+      type              = "STANDARD"
+    }
+  }
   mock_resource "aws_cloudwatch_log_group" { defaults = { arn = "arn:aws:logs:eu-west-2:000000000000:log-group:mock-log" } }
   mock_data "aws_caller_identity" { defaults = { account_id = "000000000000" } }
   mock_data "aws_partition" { defaults = { partition = "aws" } }
@@ -20,6 +27,8 @@ variables {
   deletion_protection           = false
   administrator_role_arns       = ["arn:aws:iam::000000000000:role/test-admin"]
   api_client_security_group_ids = ["sg-00000000000000000"]
+  deployment_role_arn           = "arn:aws:iam::000000000000:role/qa-deployer"
+  deployment_kubernetes_group   = "github:qa-deployer"
   addon_versions                = { "vpc-cni" = "v1.20.0-eksbuild.1", "kube-proxy" = "v1.36.0-eksbuild.1", "coredns" = "v1.13.0-eksbuild.1", "eks-pod-identity-agent" = "v1.3.0-eksbuild.1" }
   tags                          = { Environment = "mock", ManagedBy = "Terraform" }
 }

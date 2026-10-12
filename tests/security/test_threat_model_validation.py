@@ -47,7 +47,7 @@ def test_committed_threat_model_passes_validation() -> None:
     model = validate_threat_model()
 
     assert len(model.threats) == 31
-    assert len(model.requirements) == 66
+    assert len(model.requirements) == 69
     assert len(model.assets) == 18
 
 

@@ -20,7 +20,7 @@
       "name": "Threat Model",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "6598907b938517a418c6ad83bf69e7eb69206ae3147098811e6eda43bdd607c9",
+      "source_checksum": "d072a4117e47348c75c0a3c6475720c847eb0afbfda8c287fdf2432318464359",
       "source_manifest": "outputs/security/threat-model/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -66,7 +66,7 @@
       "name": "AWS Terraform Architecture",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "487d2ac0d2606ce183446d21e2d2d212e7749b10a716859b9d393902e012fa17",
+      "source_checksum": "c423a1216f22ef4496eaf4da0e0de7ba3333917ca652612bfb72cbc9360d4d0b",
       "source_manifest": "outputs/security/infrastructure/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -156,7 +156,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "c6bb7cd7a6d69e294b99e749ddd8493cad74b243fca8955068e86efa2a171d03",
+      "source_checksum": "f7eaed0d1367d8a43e513fd2b7f00b1af0384d6711eae52345c159e21184e29f",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -178,7 +178,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "a9045dcc4cc15a49c8b5494c2b1a868f9cba8e5ffa4713b9024e1e6ba8c95a58",
+      "source_checksum": "c2e1d43e8108b32f94b0eba7da946d0a97098978f656659834acc60a51310752",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -202,7 +202,7 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "81b1b2421af56353fe30513c4b0891d23f740182436c95f1480fb08c02e04f37",
+      "source_checksum": "b948ad320ee712c1145ccd8c1be3dc04c9c3580f7453bfa3c672997aea7f22e6",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }

@@ -1,0 +1,6 @@
+# Placeholders only. The GitHub publisher role trusts this repository on main.
+region = "<approved-region>"
+cost_center = "<approved-budget-owner>"
+github_owner = "Ibraheemolasupogit"
+github_repository = "devsecops-application-security-pipeline"
+github_oidc_provider_arn = null # Supply an existing provider ARN only when this account already owns one.

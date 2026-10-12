@@ -6,7 +6,7 @@
   "control_coverage": {
     "complete_traceability": 0,
     "incomplete_traceability": 45,
-    "percentage": 95.45
+    "percentage": 95.65
   },
   "due_soon_findings": 3,
   "expired_exceptions": 1,

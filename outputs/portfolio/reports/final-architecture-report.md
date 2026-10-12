@@ -1,6 +1,6 @@
 # Final Architecture Report
 
-Portfolio ID: `PF-567667d0fd82a564`
+Portfolio ID: `PF-28eb88bac202f831`
 
 Readiness status: `ready_with_limitations`
 
@@ -11,7 +11,7 @@ Release decision: `conditional_pass`
 - Canonical findings: 45
 - Source findings: 47
 - Evidence domains: 9
-- Control coverage: 95.45%
+- Control coverage: 95.65%
 - Integration export records: 45
 - Repository integration lineage edges: 182
 

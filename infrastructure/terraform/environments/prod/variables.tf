@@ -51,13 +51,42 @@ variable "artifact_repository_url" {
     error_message = "Supply the private shared ECR repository URL."
   }
 }
+variable "github_owner" {
+  type        = string
+  default     = "Ibraheemolasupogit"
+  description = "Exact GitHub repository owner discovered from origin; change only with matching trust review."
+  validation {
+    condition     = can(regex("^[A-Za-z0-9_.-]+$", var.github_owner))
+    error_message = "GitHub owner must be one exact owner name without wildcards."
+  }
+}
+variable "github_repository" {
+  type        = string
+  default     = "devsecops-application-security-pipeline"
+  description = "Exact repository name discovered from origin; change only with matching trust review."
+  validation {
+    condition     = can(regex("^[A-Za-z0-9_.-]+$", var.github_repository))
+    error_message = "GitHub repository must be one exact repository name without wildcards."
+  }
+}
+variable "github_connection_arn" {
+  type        = string
+  default     = null
+  nullable    = true
+  description = "Pre-created AVAILABLE CodeConnections GitHub App connection ARN for this AWS account/region; null leaves ephemeral runner disabled."
+  validation {
+    condition     = var.github_connection_arn == null || can(regex("^arn:[^:]+:(codeconnections|codestar-connections):[^:]+:[0-9]{12}:connection/.+$", var.github_connection_arn))
+    error_message = "Supply an exact AWS CodeConnections connection ARN or null."
+  }
+}
 variable "github_oidc_provider_arn" {
   type        = string
   default     = null
-  description = "Optional existing GitHub federation provider ARN, inventoried only; no CI deployment role in M3."
+  nullable    = true
+  description = "Reuse the existing account-local provider ARN, or create one in this environment state when null. Create only once per AWS account."
   validation {
-    condition     = var.github_oidc_provider_arn == null ? true : can(regex("^arn:[^:]+:iam::[0-9]{12}:oidc-provider/token\\.actions\\.githubusercontent\\.com$", var.github_oidc_provider_arn))
-    error_message = "Use the existing exact GitHub OIDC provider ARN or null."
+    condition     = var.github_oidc_provider_arn == null || can(regex("^arn:[^:]+:iam::[0-9]{12}:oidc-provider/token\\.actions\\.githubusercontent\\.com$", var.github_oidc_provider_arn))
+    error_message = "Supply the exact account-local GitHub Actions OIDC provider ARN or null to create it."
   }
 }
 variable "cost_center" {

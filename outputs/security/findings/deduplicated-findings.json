@@ -2200,10 +2200,12 @@
       "metadata": {
         "asset_name": "FastAPI application",
         "control_limitations": [
-          "OIDC role is not used by CI yet and requires deployment governance before activation"
+          "OIDC token and audience have not been verified in a live GitHub workflow",
+          "GitHub Environment reviewer/branch settings and CodeConnections authorization require external configuration",
+          "CodeBuild runner, EKS access entries, and namespace RBAC have not been applied or runtime-tested"
         ],
         "deduplication_rationale": "unique exact key",
-        "planned_milestone": "Milestone 4",
+        "planned_milestone": "Milestone 6",
         "risk_factors": {
           "age_or_recurrence": 0.4,
           "asset_criticality": 0.8,
@@ -2241,13 +2243,13 @@
       "source_evidence": [
         {
           "path": "docs/threat-model/residual-risk-register.yaml",
-          "record_hash": "888056ce7dffb2529e5e956ee9f01a4febb7bf1665110dde96a54e98a958116c",
+          "record_hash": "0a827348aca258b0b99a61bc718a03a1ece78e0893edae83329774eedf939a33",
           "record_pointer": "/8",
           "summary": "Residual design risk RR-009"
         }
       ],
       "source_finding_id": "RR-009",
-      "source_record_hash": "888056ce7dffb2529e5e956ee9f01a4febb7bf1665110dde96a54e98a958116c",
+      "source_record_hash": "0a827348aca258b0b99a61bc718a03a1ece78e0893edae83329774eedf939a33",
       "source_tool": "threat-model",
       "source_type": "threat_model",
       "squad": "Product Security",

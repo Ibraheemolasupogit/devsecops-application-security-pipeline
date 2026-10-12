@@ -15,4 +15,8 @@ module "platform" {
   administrator_role_arns       = var.administrator_role_arns
   addon_versions                = var.addon_versions
   tags                          = { CostCenter = var.cost_center, Owner = "platform-security" }
+  github_owner                  = var.github_owner
+  github_repository             = var.github_repository
+  github_oidc_provider_arn      = var.github_oidc_provider_arn
+  github_connection_arn         = var.github_connection_arn
 }

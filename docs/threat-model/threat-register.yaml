@@ -1095,10 +1095,16 @@
     ],
     "planned_controls": [
       "short-lived deployment identity",
-      "protected release workflow"
+      "protected release workflow",
+      "exact repository and environment OIDC trust",
+      "environment-specific ephemeral runner with non-deploying service role",
+      "namespace-scoped Kubernetes RBAC without Secret read"
     ],
     "required_controls": [
       "SR-CI-002",
+      "SR-CI-004",
+      "SR-CI-005",
+      "SR-CI-006",
       "SR-CI-003"
     ],
     "verification_methods": [
@@ -1108,7 +1114,7 @@
     "residual_risk": "medium",
     "risk_owner": "platform_engineer",
     "technical_owner": "platform_engineer",
-    "review_date": "2026-07-11",
+    "review_date": "2026-10-12",
     "references": [
       "least privilege CI/CD"
     ]

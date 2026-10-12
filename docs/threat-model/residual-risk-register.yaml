@@ -226,18 +226,21 @@
     "current_controls": [
       "current CI has read-only repository permissions",
       "no deployment steps",
-      "GitHub OIDC deployment role configured as code"
+      "repository-scoped OIDC roles and EKS access entries are modelled in Terraform",
+      "CodeBuild runner and Kubernetes RBAC contracts are statically validated"
     ],
     "control_limitations": [
-      "OIDC role is not used by CI yet and requires deployment governance before activation"
+      "OIDC token and audience have not been verified in a live GitHub workflow",
+      "GitHub Environment reviewer/branch settings and CodeConnections authorization require external configuration",
+      "CodeBuild runner, EKS access entries, and namespace RBAC have not been applied or runtime-tested"
     ],
     "residual_likelihood": "medium",
     "residual_impact": "high",
     "residual_rating": "medium",
     "risk_owner": "platform_engineer",
     "treatment": "mitigate",
-    "planned_milestone": "Milestone 4",
-    "review_date": "2026-07-11",
+    "planned_milestone": "Milestone 6",
+    "review_date": "2026-10-12",
     "status": "mitigation_planned"
   },
   {

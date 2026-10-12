@@ -53,7 +53,17 @@ def test() -> None:
     # Every test uses mock_provider and command=plan; never a live provider/apply.
     for environment in [
         *ENVIRONMENTS[2:],
-        *(EKS / "modules" / name for name in ("eks", "networking", "ecr")),
+        *(
+            EKS / "modules" / name
+            for name in (
+                "eks",
+                "networking",
+                "ecr",
+                "github-oidc",
+                "github-actions-role",
+                "codebuild-runner",
+            )
+        ),
     ]:
         _run(["init", "-backend=false"], cwd=environment)
         _run(["test"], cwd=environment)

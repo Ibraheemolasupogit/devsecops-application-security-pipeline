@@ -27,4 +27,9 @@ output "node_role_arn" {
 }
 output "ecr_repository_url" { value = var.artifact_repository_url }
 output "region" { value = var.region }
-output "github_oidc_provider_arn" { value = var.github_oidc_provider_arn }
+output "github_oidc_provider_arn" { value = module.platform.github_oidc_provider_arn }
+output "production_deployment_role_arn" { value = module.platform.deployment_role_arn }
+output "production_kubernetes_group" { value = module.platform.deployment_kubernetes_group }
+output "production_codebuild_runner_project_name" { value = module.platform.codebuild_runner_project_name }
+output "production_runner_security_group_id" { value = module.platform.codebuild_runner_security_group_id }
+output "production_runner_service_role_arn" { value = module.platform.codebuild_runner_service_role_arn }

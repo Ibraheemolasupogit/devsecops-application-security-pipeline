@@ -18,8 +18,11 @@
 | SR-CHAMP-003 | security_champions | implemented | Milestone 12 |
 | SR-CHAMP-004 | security_champions | implemented | Milestone 12 |
 | SR-CI-001 | ci_cd | implemented | Milestone 2 |
-| SR-CI-002 | ci_cd | implemented | Milestone 4 |
+| SR-CI-002 | ci_cd | implemented | Milestone 5 |
 | SR-CI-003 | ci_cd | planned | Milestone 7 |
+| SR-CI-004 | ci_cd | implemented | Milestone 5 |
+| SR-CI-005 | ci_cd | implemented | Milestone 5 |
+| SR-CI-006 | ci_cd | implemented | Milestone 5 |
 | SR-CONTAINER-001 | container_security | implemented | Milestone 5 |
 | SR-CONTAINER-002 | container_security | implemented | Milestone 1 |
 | SR-DATA-001 | data_protection | implemented | Milestone 1 |

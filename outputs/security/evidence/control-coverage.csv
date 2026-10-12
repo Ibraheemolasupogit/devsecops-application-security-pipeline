@@ -17,6 +17,9 @@ SR-CHAMP-004,SR-CHAMP-004,THR-REVIEW-001;THR-AUTH-001;THR-AUTHZ-001,champions,va
 SR-CI-001,SR-CI-001,THR-SUPPLY-002,threat_model,validated_locally,verified,outputs/security/threat-model/evidence-manifest.json,software_engineer,none,medium
 SR-CI-002,SR-CI-002,THR-CI-001,threat_model,implemented_as_code,validated_locally,outputs/security/infrastructure/iam-role-inventory.json,platform_engineer,future_deployment,medium
 SR-CI-003,SR-CI-003,THR-API-008;THR-AUTH-002;THR-CI-001;THR-SUPPLY-003,threat_model,planned,planned,future release evidence,product_security_engineer,future_deployment,medium
+SR-CI-004,SR-CI-004,THR-CI-001,threat_model,implemented_as_code,validated_locally,outputs/security/threat-model/evidence-manifest.json,platform_engineer,future_deployment,medium
+SR-CI-005,SR-CI-005,THR-CI-001,threat_model,implemented_as_code,validated_locally,outputs/security/threat-model/evidence-manifest.json,platform_engineer,future_deployment,medium
+SR-CI-006,SR-CI-006,THR-CI-001,threat_model,validated_locally,verified,outputs/security/threat-model/evidence-manifest.json,platform_engineer,none,medium
 SR-CONTAINER-001,SR-CONTAINER-001,THR-CONTAINER-001,appsec,validated_locally,verified,outputs/security/appsec/container-scan-summary.json,platform_engineer,future_deployment,medium
 SR-CONTAINER-002,SR-CONTAINER-002,THR-CONTAINER-002,appsec,implemented_as_code,validated_locally,outputs/security/infrastructure/architecture-inventory.json,platform_engineer,none,low
 SR-DATA-001,SR-DATA-001,THR-API-003,infrastructure,validated_locally,verified,outputs/security/threat-model/validated-security-requirements.json,data_custodian,none,low

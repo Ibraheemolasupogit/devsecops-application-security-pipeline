@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: github-production-deployer
+  namespace: production
+subjects:
+  - kind: Group
+    name: github:production-deployer
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: github-production-deployer
+  apiGroup: rbac.authorization.k8s.io

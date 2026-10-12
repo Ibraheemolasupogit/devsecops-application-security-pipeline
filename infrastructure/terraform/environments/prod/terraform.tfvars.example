@@ -10,4 +10,8 @@ addon_versions = {
   coredns = "<approved-version>"
   eks-pod-identity-agent = "<approved-version>"
 }
-api_client_security_group_ids = [] # Private runner connectivity is a separately provisioned M5 prerequisite.
+api_client_security_group_ids = [] # Additional operator clients only; the M5 runner SG is attached by the composition.
+github_owner = "Ibraheemolasupogit"
+github_repository = "devsecops-application-security-pipeline"
+github_oidc_provider_arn = null # Separate-account default: create once here. If sharing an AWS account, pass the existing provider ARN.
+github_connection_arn = null # Set only to the already-authorized CodeConnections GitHub App connection ARN.

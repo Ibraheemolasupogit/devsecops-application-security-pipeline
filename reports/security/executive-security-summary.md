@@ -10,7 +10,7 @@ Overall assurance posture: pass
 
 Release decision: conditional_pass
 
-Control coverage: 95.45%
+Control coverage: 95.65%
 
 Critical/high findings: 36
 

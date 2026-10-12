@@ -47,7 +47,7 @@
     },
     "docs/threat-model/residual-risk-register.yaml": {
       "path": "docs/threat-model/residual-risk-register.yaml",
-      "sha256": "4870fafdeaffc9d418da2908db97272e2beaeffcc7ebfba87221fd167a2a7e0b"
+      "sha256": "f670e2332b4d1a34ef066b5f9ef661d25937e16dd9d9d661930f0ae7b5fbee13"
     },
     "outputs/security/appsec/raw/bandit.json": {
       "path": "outputs/security/appsec/raw/bandit.json",
@@ -55,7 +55,7 @@
     },
     "outputs/security/appsec/raw/checkov.json": {
       "path": "outputs/security/appsec/raw/checkov.json",
-      "sha256": "45987611e906e0fac19ef8a547667e3eccab55c6439c9d1f669bf827e37a35ae"
+      "sha256": "ca7df8192d1f04a9fedeb0d3c40e8a3cd1c7d4917f14100171717c9d404be075"
     },
     "outputs/security/appsec/raw/gitleaks.json": {
       "path": "outputs/security/appsec/raw/gitleaks.json",
@@ -102,7 +102,7 @@
     },
     "deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "93f2c2ad06ebd0fd3a8a2a2df368ee3d858189f0a9179014b48ed4459ed37f78"
+      "sha256": "2bc62f567a5b0bb01c35e35c46af7ce0f04864105d5a9fd8f55e11107bd56070"
     },
     "deduplication-summary.json": {
       "path": "outputs/security/findings/deduplication-summary.json",
@@ -126,7 +126,7 @@
     },
     "normalised-findings.json": {
       "path": "outputs/security/findings/normalised-findings.json",
-      "sha256": "3406a6148807b8391ff7d3f088615691d7c16b26c80e06fb51a8e214f8f9861a"
+      "sha256": "3d79faa858f0d66fc44f261b786f135f80074398872214a4f1a14ddbe8ee6f5a"
     },
     "ownership-summary.json": {
       "path": "outputs/security/findings/ownership-summary.json",

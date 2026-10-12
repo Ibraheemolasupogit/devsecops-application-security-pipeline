@@ -45,6 +45,13 @@ resource "aws_eks_access_policy_association" "administrator" {
   policy_arn    = "arn:${data.aws_partition.current.partition}:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
   access_scope { type = "cluster" }
 }
+resource "aws_eks_access_entry" "deployer" {
+  cluster_name      = aws_eks_cluster.this.name
+  principal_arn     = var.deployment_role_arn
+  type              = "STANDARD"
+  kubernetes_groups = [var.deployment_kubernetes_group]
+  tags              = var.tags
+}
 resource "aws_security_group" "nodes" {
   name        = "${var.name}-private-nodes"
   description = "Private nodes: cluster and node traffic only"
