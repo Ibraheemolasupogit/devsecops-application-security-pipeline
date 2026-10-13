@@ -12,11 +12,11 @@ Release decision: conditional_pass
 
 Control coverage: 97.1%
 
-Critical/high findings: 60
+Critical/high findings: 58
 
-Security exceptions: active 1, expired 1, expiring 1
+Security exceptions: active 0, expired 3, expiring 0
 
-Lifecycle summary: 69 vulnerabilities; 0 overdue.
+Lifecycle summary: 67 vulnerabilities; 0 overdue.
 
 Evidence integrity: 9 verified domains, 0 failed domains.
 

@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.72.0"
   },
-  "ReportID": "01a130d0-ddbf-717a-8010-af47b7383ded",
-  "CreatedAt": "2026-10-12T16:52:37.055098+01:00",
+  "ReportID": "01a13388-4f0b-7115-b5c8-2814f2236f80",
+  "CreatedAt": "2026-10-13T05:32:13.579073+01:00",
   "ArtifactID": "sha256:d0a10e84b7aa3016551e44f270553046c24d35411297635826472bc14353eec5",
   "ArtifactName": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812",
   "ArtifactType": "container_image",

@@ -14,7 +14,7 @@
   "image_reference": "genomic-research-access-api:git-7bc2106054f197fdd432ce11412aede926764812",
   "policy_outcome": "pass",
   "raw_evidence_reference": "outputs/security/appsec/raw/trivy.json",
-  "raw_evidence_sha256": "a8fb92174c62bc59c130d399a0715e1a4ef1813cdcaf33f564dc8b543bef8f66",
+  "raw_evidence_sha256": "3dd4e9e9dba89ea2f3670d1c0a711416769ce62a79cd96f14b80552712891283",
   "scanner": "Trivy",
   "scanner_version": "Version: 0.72.0",
   "schema_version": "1.0",

@@ -1,1 +1,2 @@
 vulnerability_id,finding_id,title,severity,priority,risk_score,status,technical_owner,risk_owner,remediation_owner,squad,due_date,overdue,verification_status,exception_id,review_date
+VUL-50c075b292d2,FND-SUPPRESSIO-836cb2a2770d,Suppressed gitleaks finding jwt-signing-material-outside-fixtures,critical,P2,73.25,triaged,Application Engineering,Risk Owner,Application Engineering,Application Engineering,2026-10-14,False,not_verified,,

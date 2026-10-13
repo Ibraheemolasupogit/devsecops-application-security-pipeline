@@ -1,5 +1,5 @@
 {
-  "decision_id": "REL-4e403b3e4f2106df",
+  "decision_id": "REL-d65797fa59025938",
   "enforcement_exit_code": 1,
   "missing_approvals": [
     "Cloud Security",
@@ -75,7 +75,6 @@
         "FND-CONTAINER-f6f763380649",
         "FND-SUPPRESSIO-1065083a8d4b",
         "FND-SUPPRESSIO-47693ff859ed",
-        "FND-SUPPRESSIO-5313851a0158",
         "FND-SUPPRESSIO-65201925e5c5",
         "FND-SUPPRESSIO-68e51d21b290",
         "FND-SUPPRESSIO-6dce772b98c3",
@@ -87,7 +86,6 @@
         "FND-SUPPRESSIO-b5c9f1d0aae2",
         "FND-SUPPRESSIO-d403fca790bf",
         "FND-SUPPRESSIO-e0d3613118cd",
-        "FND-SUPPRESSIO-ef559061de8d",
         "FND-SUPPRESSIO-f1fb6d611749"
       ],
       "role": "Product Security",
@@ -156,9 +154,7 @@
         "FND-CONTAINER-e1d4cd41e57c",
         "FND-CONTAINER-e1f2cc1c749d",
         "FND-CONTAINER-e9c4b1dd55ff",
-        "FND-CONTAINER-f6f763380649",
-        "FND-SUPPRESSIO-5313851a0158",
-        "FND-SUPPRESSIO-ef559061de8d"
+        "FND-CONTAINER-f6f763380649"
       ],
       "role": "Technical Owner",
       "status": "missing"

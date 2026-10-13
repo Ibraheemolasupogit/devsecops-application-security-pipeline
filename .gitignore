@@ -53,3 +53,5 @@ Thumbs.db
 
 # Operator-specific partial EKS backend files; retain placeholder examples
 /infrastructure/terraform/**/backend.hcl
+# Bootstrap backend declaration is activated locally only after S3/KMS exist.
+/infrastructure/terraform/bootstrap/backend.tf

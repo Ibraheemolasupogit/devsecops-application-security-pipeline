@@ -1,4 +1,6 @@
-region           = "<approved-region>"
+# Copy to ignored terraform.tfvars for the initial local-state Stage A plan.
+# Leave backend.tf.example inactive until the reviewed bootstrap apply succeeds.
+region            = "<approved-region>"
 state_bucket_name = "<approved-globally-unique-state-bucket>"
 tags = {
   CostCenter = "<approved-cost-center>"

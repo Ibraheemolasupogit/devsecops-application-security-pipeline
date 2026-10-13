@@ -1,17 +1,17 @@
 {
   "errors": [],
-  "generated_at": "2026-10-12T15:52:27Z",
+  "generated_at": "2026-10-13T04:32:03Z",
   "metrics": {
     "_totals": {
-      "CONFIDENCE.HIGH": 37,
+      "CONFIDENCE.HIGH": 39,
       "CONFIDENCE.LOW": 0,
       "CONFIDENCE.MEDIUM": 5,
       "CONFIDENCE.UNDEFINED": 0,
       "SEVERITY.HIGH": 0,
-      "SEVERITY.LOW": 42,
+      "SEVERITY.LOW": 44,
       "SEVERITY.MEDIUM": 0,
       "SEVERITY.UNDEFINED": 0,
-      "loc": 14312,
+      "loc": 14433,
       "nosec": 0,
       "skipped_tests": 1
     },
@@ -38,6 +38,19 @@
       "SEVERITY.MEDIUM": 0,
       "SEVERITY.UNDEFINED": 0,
       "loc": 286,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "scripts/aws_readiness.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 85,
       "nosec": 0,
       "skipped_tests": 0
     },
@@ -128,7 +141,20 @@
       "SEVERITY.LOW": 2,
       "SEVERITY.MEDIUM": 0,
       "SEVERITY.UNDEFINED": 0,
-      "loc": 69,
+      "loc": 70,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "scripts/terraform_plan_summary.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 35,
       "nosec": 0,
       "skipped_tests": 0
     },

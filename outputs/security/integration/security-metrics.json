@@ -1,41 +1,40 @@
 {
-  "active_exceptions": 2,
+  "active_exceptions": 0,
   "blocking_findings": 0,
   "closed_findings": 0,
-  "conditional_findings": 60,
+  "conditional_findings": 58,
   "control_coverage": {
     "complete_traceability": 0,
-    "incomplete_traceability": 69,
+    "incomplete_traceability": 67,
     "percentage": 97.1
   },
-  "due_soon_findings": 0,
-  "expired_exceptions": 1,
+  "due_soon_findings": 1,
+  "expired_exceptions": 3,
   "false_positives": 1,
   "findings_by_domain": {
     "Container": 44,
     "DAST": 2,
     "Secure Design": 7,
-    "Suppression Governance": 16
+    "Suppression Governance": 14
   },
   "findings_by_lifecycle_status": {
-    "assigned": 1,
+    "assigned": 3,
     "false_positive": 1,
-    "risk_accepted": 2,
-    "triaged": 65
+    "triaged": 63
   },
   "findings_by_owner": {
     "Application Engineering": 4,
     "Cloud Security": 12,
-    "Platform Engineering": 46,
+    "Platform Engineering": 44,
     "Product Security": 7
   },
   "findings_by_priority": {
     "P2": 14,
-    "P3": 55
+    "P3": 53
   },
   "findings_by_severity": {
     "critical": 2,
-    "high": 58,
+    "high": 56,
     "informational": 1,
     "low": 1,
     "medium": 7
@@ -44,26 +43,26 @@
     "checkov": 12,
     "gitleaks": 2,
     "threat-model": 7,
-    "trivy": 46,
+    "trivy": 44,
     "zap": 2
   },
   "findings_by_squad": {
     "Application Engineering": 4,
     "Cloud Platform Security": 12,
-    "Platform Engineering": 46,
+    "Platform Engineering": 44,
     "Product Security": 7
   },
   "overdue_findings": 0,
-  "record_count": 69,
+  "record_count": 67,
   "release_decision": "conditional_pass",
-  "risk_accepted_findings": 2,
+  "risk_accepted_findings": 0,
   "schema_version": "1.0",
   "source_metrics_reference": "outputs/security/evidence/security-metrics.json",
-  "suppressed_findings": 16,
-  "total_exported_findings": 69,
+  "suppressed_findings": 14,
+  "total_exported_findings": 67,
   "unowned_findings": 0,
   "verification_records": 0,
   "verified_findings": 0,
-  "vulnerability_records": 69,
+  "vulnerability_records": 67,
   "warning_findings": 9
 }

@@ -127,7 +127,13 @@ def test_source_preservation_suppression_and_fix_available() -> None:
     suppressed = [item for item in findings if item.suppression_id]
     assert suppressed
     assert all(item.source_evidence for item in findings)
-    assert any(item.cve == "CVE-2026-42496" for item in suppressed)
+    by_suppression_id = {item.suppression_id: item for item in suppressed}
+    records = read_json(Path("security/config/suppressions.yaml"))["suppressions"]
+    for record in records:
+        finding = by_suppression_id[record["suppression_id"]]
+        assert finding.suppression_expiry == record["expiry_date"]
+        assert finding.suppression_reason == record["reason"]
+        assert finding.metadata["approved_by"] == record["approved_by"]
 
 
 def test_asset_ownership_risk_priority_and_sla() -> None:

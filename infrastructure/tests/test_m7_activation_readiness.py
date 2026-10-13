@@ -110,7 +110,7 @@ def test_current_supply_chain_contract_forbids_latest_and_unpublished_promotion(
 
 def test_stage_a_does_not_run_implicitly() -> None:
     docs = (ROOT / "docs/runbooks/nonprod-platform-activation.md").read_text()
-    assert "No Stage A action has run" in docs
+    assert "No Stage A apply or migration has run" in docs
     assert "A separate explicit approval is required" in docs
     assert "terraform apply bootstrap.tfplan" in docs  # documented, never a target
 

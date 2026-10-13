@@ -1,6 +1,6 @@
 # Non-production platform activation runbook
 
-This is an approval plan, not authorization to execute. No Stage A action has run. Record the approved AWS account, principal, region, cost ceiling, owner, and change window before any stage. Stop if identity, plan, trust, or cost differs from reviewed inputs. Production is excluded from M7.
+This runbook is not authorization to execute. Stage A init/validate/plan may run under explicit diagnostic authorization; apply and migration require separate approval. No Stage A apply or migration has run. Record the approved AWS account, principal, region, cost ceiling, owner, and change window before any stage. Stop if identity, plan, trust, or cost differs from reviewed inputs. Production is excluded from M7.
 
 ## Preconditions
 
@@ -12,9 +12,31 @@ This is an approval plan, not authorization to execute. No Stage A action has ru
 
 ## Stage A — remote-state bootstrap (approval required)
 
-**After approval only:** from `infrastructure/terraform/bootstrap`, run `terraform init -backend=false`, `terraform validate`, `terraform plan -var-file=terraform.tfvars -out=bootstrap.tfplan`, and inspect `terraform show bootstrap.tfplan`. A separate explicit approval is required before `terraform apply bootstrap.tfplan`; never use `-auto-approve`. These commands have not been run against AWS.
+The initial bootstrap root has **no active backend block**, so Terraform uses local state (`terraform.tfstate`). `backend.tf.example` is an inactive template and is not loaded by Terraform. Keep it inactive for the initial plan/apply: the S3 bucket and KMS key do not exist yet. Do not use `init -backend=false` to bypass an active S3 backend; that allows validation but cannot initialize the backend needed by a normal plan.
 
-Expected: one S3 bucket, ownership controls, public-access block, versioning, KMS encryption/key/alias, TLS-only bucket policy. Bucket/key have `prevent_destroy`, and force deletion is false. Before Stage A, verify central CloudTrail data-event auditing for the state bucket or add a separately reviewed audit control; this composition does not create its own second logging bucket. Verify private access, encryption/versioning, and restore a prior object version before state migration. Then copy the approved backend example to ignored `backend.hcl` and migrate bootstrap state to `bootstrap/terraform.tfstate` using `terraform init -migrate-state -backend-config=backend.hcl`. Put the same approved bucket/KMS values in each environment's ignored backend file; migrate only nonprod and artifacts states after separate state review. Production's configuration remains untouched during M7. **Rollback:** preserve state; restore versions only under lock with reviewed procedure. Do not destroy bootstrap. **Cost:** S3 versions/requests and KMS.
+**After diagnostic/plan approval only:** copy `terraform.tfvars.example` to ignored `terraform.tfvars` and fill approved values. From `infrastructure/terraform/bootstrap`, run:
+
+```sh
+terraform init -reconfigure
+terraform validate
+terraform plan -var-file=terraform.tfvars -out=bootstrap.tfplan
+terraform show bootstrap.tfplan
+```
+
+A separate explicit approval is required before `terraform apply bootstrap.tfplan`; never use `-auto-approve`. A successful diagnostic plan does not authorize apply. Protect local state, its backups, and saved plans as sensitive operator artifacts; they and live variable/backend files are excluded from Git.
+
+Expected: one S3 bucket, ownership controls, public-access block, versioning, incomplete-upload lifecycle rule, KMS encryption/key/alias, TLS-only bucket policy. Bucket/key have `prevent_destroy`, and force deletion is false. Before Stage A apply, verify central CloudTrail data-event auditing for the state bucket or add a separately reviewed audit control; this composition does not create its own second logging bucket.
+
+**Post-bootstrap migration, only after the reviewed apply succeeds:** verify the S3/KMS resources exist, private access, encryption/versioning, and restore a prior object version before state migration. Preserve a protected backup of local state. Copy `backend.hcl.example` to ignored `backend.hcl` and fill the approved bucket, region and KMS ARN from bootstrap outputs. Keep `key = "bootstrap/terraform.tfstate"`, `encrypt = true`, and `use_lockfile = true` (native S3 locking). Activate the S3 backend declaration and migrate through Terraform:
+
+```sh
+cp backend.tf.example backend.tf
+terraform init -migrate-state -backend-config=backend.hcl
+```
+
+Review and accept Terraform's state-copy prompt only under migration approval. Do not use `-reconfigure` for this migration, as it does not copy local state. Verify `terraform state list` and the remote `bootstrap/terraform.tfstate` object/version after migration. Retain ignored `backend.tf` and `backend.hcl` for subsequent bootstrap operations; do not remove the active backend and revert to local state. Never move/edit state manually to perform migration. The lifecycle is **local bootstrap state → reviewed bootstrap apply → S3/KMS backend exists → activate S3 backend configuration → `terraform init -migrate-state` → `bootstrap/terraform.tfstate` stored remotely**.
+
+Put the same approved bucket/KMS values in each environment's ignored backend file; migrate only nonprod and artifacts states after separate state review. Production's configuration remains untouched during M7. **Rollback:** preserve state; restore versions only under lock with reviewed procedure. Do not destroy bootstrap. **Cost:** S3 versions/requests and KMS.
 
 ## Stage B — nonprod platform Terraform (separate approval required)
 

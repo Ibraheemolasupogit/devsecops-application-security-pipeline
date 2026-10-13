@@ -68,17 +68,6 @@
       ]
     },
     {
-      "deduplication_key": "cve|CVE-2026-42496|perl-base",
-      "primary_finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-SUPPRESSIO-ef559061de8d"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
       "deduplication_key": "cve|CVE-2026-54369|libacl1",
       "primary_finding_id": "FND-CONTAINER-6017bcc173f8",
       "rationale": "unique exact key",
@@ -480,17 +469,6 @@
       "rationale": "unique exact key",
       "source_finding_ids": [
         "FND-CONTAINER-8917d095a4d4"
-      ],
-      "source_tools": [
-        "trivy"
-      ]
-    },
-    {
-      "deduplication_key": "cve|CVE-2026-8376|perl-base",
-      "primary_finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "rationale": "unique exact key",
-      "source_finding_ids": [
-        "FND-SUPPRESSIO-5313851a0158"
       ],
       "source_tools": [
         "trivy"

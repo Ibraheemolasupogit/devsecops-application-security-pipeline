@@ -1,0 +1,5 @@
+# Activate only after the reviewed Stage A apply creates the S3/KMS backend.
+# Copy to ignored backend.tf, then init -migrate-state -backend-config=backend.hcl.
+terraform {
+  backend "s3" {}
+}

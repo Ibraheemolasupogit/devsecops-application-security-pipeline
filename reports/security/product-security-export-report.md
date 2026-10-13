@@ -1,9 +1,9 @@
 # Product Security Export
 
-Exported findings: 69
-Source findings represented: 69
+Exported findings: 67
+Source findings represented: 67
 Release decision: `conditional_pass`
-Suppressed findings: 16
-Risk-accepted findings: 2
-Active exceptions: 2
-Expired exceptions: 1
+Suppressed findings: 14
+Risk-accepted findings: 0
+Active exceptions: 0
+Expired exceptions: 3

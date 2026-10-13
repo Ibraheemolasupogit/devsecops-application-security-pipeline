@@ -1,9 +1,9 @@
 # Security Exception Report
 
-Active exceptions: 1
+Active exceptions: 0
 
-Expired exceptions: 1
+Expired exceptions: 3
 
-Expiring exceptions: 1
+Expiring exceptions: 0
 
-Risk accepted findings: 2
+Risk accepted findings: 0

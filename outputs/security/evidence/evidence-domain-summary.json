@@ -5,7 +5,7 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "threat_model",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "threat-model-summary.json",
         "validated-control-traceability.json",
@@ -28,7 +28,7 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "api_security",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "api-security-summary.json",
         "authentication-control-summary.json",
@@ -51,7 +51,7 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "infrastructure",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "infrastructure-security-summary.json",
         "iam-policy-summary.json",
@@ -66,7 +66,7 @@
       "name": "AWS Terraform Architecture",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "30df6b85f903301dc629cdc6271b03db206bf7c42d7fd57aabc44bc537162f58",
+      "source_checksum": "dd9398045c8a2d489d6c3ea5829287b8b04792cda9b67614fb3a67158aa9403b",
       "source_manifest": "outputs/security/infrastructure/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -74,14 +74,14 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "appsec",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "appsec-pipeline-summary.json",
         "sast-summary.json",
         "dependency-scan-summary.json",
         "container-scan-summary.json"
       ],
-      "generated_at": "2026-01-01T00:00:00Z",
+      "generated_at": "2026-10-13T04:40:43Z",
       "limitations": [
         "Local deterministic portfolio evidence only."
       ],
@@ -89,7 +89,7 @@
       "name": "AppSec Pipeline",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "3e41e0e6bf5ba32535a1a5e805d59d81fd4c72d81ffb2ae526a1d3742c748443",
+      "source_checksum": "54b9626c14bba3eeec2a2ab23df3d0917cdea9ec14c8b9f35b0a9d394b8cc464",
       "source_manifest": "outputs/security/appsec/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -97,7 +97,7 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "champions",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "programme-summary.json",
         "champion-roster.json",
@@ -112,7 +112,7 @@
       "name": "Security Champions",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "ef7a08ecba92711c1fccfb36c198afae1df88c902e347f7f339ffb5591964abb",
+      "source_checksum": "e0589ebe8e700320711959dad8241359aaef6b049f43ebbb5154fe2675508e2d",
       "source_manifest": "outputs/security/champions/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -120,13 +120,13 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "dynamic_security",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "dynamic-security-summary.json",
         "schemathesis-summary.json",
         "zap-summary.json"
       ],
-      "generated_at": "2026-01-01T00:00:00Z",
+      "generated_at": "2026-10-13T04:40:43Z",
       "limitations": [
         "Local deterministic portfolio evidence only."
       ],
@@ -142,13 +142,13 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "findings",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "findings-summary.json",
         "deduplicated-findings.json",
         "normalised-findings.json"
       ],
-      "generated_at": "2026-01-01T00:00:00Z",
+      "generated_at": "2026-10-13T04:40:43Z",
       "limitations": [
         "Local deterministic portfolio evidence only."
       ],
@@ -156,7 +156,7 @@
       "name": "Canonical Findings",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "960838be10b4bb98622a994014ce956779e29014e61873fccde6e1cc57006b41",
+      "source_checksum": "78b0cb34acf0d2a7ee8f145ffed4f503d5032abc440b94275e26f7e97455522e",
       "source_manifest": "outputs/security/findings/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -164,13 +164,13 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "release_assurance",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "release-gate-decision.json",
         "release-risk-summary.json",
         "required-approvals.json"
       ],
-      "generated_at": "2026-01-01T00:00:00Z",
+      "generated_at": "2026-10-13T04:40:43Z",
       "limitations": [
         "Local deterministic portfolio evidence only."
       ],
@@ -178,7 +178,7 @@
       "name": "Release Assurance",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "31dfa4988271601d602e9e4ca3cdbf84aa02d8fefd6ffe2327d09709ddac4f06",
+      "source_checksum": "6baf711d087ec5827cc442e6e5b53c40b49beafc980f8ed57356bc4f685c3ce2",
       "source_manifest": "outputs/security/release/evidence-manifest.json",
       "verification_status": "passed"
     },
@@ -186,14 +186,14 @@
       "checksum_failures": [],
       "deployment_status": "not_deployed",
       "domain_id": "lifecycle",
-      "evidence_timestamp": "2026-01-01T00:00:00Z",
+      "evidence_timestamp": "2026-10-13T04:40:43Z",
       "expected_outputs": [
         "vulnerability-register.json",
         "security-exceptions.json",
         "lifecycle-summary.json",
         "verification-register.json"
       ],
-      "generated_at": "2026-01-01T00:00:00Z",
+      "generated_at": "2026-10-13T04:40:43Z",
       "limitations": [
         "Local deterministic portfolio evidence only.",
         "Lifecycle records are not production tickets."
@@ -202,7 +202,7 @@
       "name": "Vulnerability Lifecycle",
       "required": true,
       "schema_version": "1.0",
-      "source_checksum": "916552395ecad6c167f7637c116f37b81cb2bf4edc56d67041645bcf267d4d05",
+      "source_checksum": "96a94810754dc30407630cf46d0d19c6f3f922238180b4c4bc12c2953d06efe6",
       "source_manifest": "outputs/security/lifecycle/evidence-manifest.json",
       "verification_status": "passed"
     }

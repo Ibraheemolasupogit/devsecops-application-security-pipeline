@@ -196,34 +196,6 @@
       "expiry_date": "2027-01-12",
       "compensating_control": "Secret metadata is KMS encrypted, recovery window is enforced, and secret value management is explicitly external to Terraform.",
       "status": "active"
-    },
-    {
-      "suppression_id": "SUP-TRIVY-PERL-BASE-CRITICAL-001",
-      "tool": "trivy",
-      "rule_or_advisory_id": "CVE-2026-42496",
-      "resource_or_path": "perl-base",
-      "reason": "Trivy reports this critical Debian 13 perl-base vulnerability with no fixed version available after moving to the current supported slim-trixie base and applying apt upgrades.",
-      "owner": "platform-engineering",
-      "approved_by": "product_security_engineer",
-      "created_date": "2026-07-12",
-      "review_date": "2026-08-12",
-      "expiry_date": "2026-10-12",
-      "compensating_control": "Runtime image does not invoke Perl for the Python API; package remains only as a Debian base dependency and the image is rebuilt with package updates during validation.",
-      "status": "active"
-    },
-    {
-      "suppression_id": "SUP-TRIVY-PERL-BASE-CRITICAL-002",
-      "tool": "trivy",
-      "rule_or_advisory_id": "CVE-2026-8376",
-      "resource_or_path": "perl-base",
-      "reason": "Trivy reports this critical Debian 13 perl-base vulnerability with no fixed version available after moving to the current supported slim-trixie base and applying apt upgrades.",
-      "owner": "platform-engineering",
-      "approved_by": "product_security_engineer",
-      "created_date": "2026-07-12",
-      "review_date": "2026-08-12",
-      "expiry_date": "2026-10-12",
-      "compensating_control": "Runtime image does not invoke Perl for the Python API; package remains only as a Debian base dependency and the image is rebuilt with package updates during validation.",
-      "status": "active"
     }
   ]
 }

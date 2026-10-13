@@ -662,36 +662,6 @@
     },
     {
       "decision": "conditional_pass",
-      "finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "outcome": "suppressed",
-      "priority": 100,
-      "rationale": "No-fix runtime finding FND-SUPPRESSIO-5313851a0158 is conditionally accepted for the non-deployed image.",
-      "required_actions": [
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ],
-      "rule_id": "RG-COND-001"
-    },
-    {
-      "decision": "conditional_pass",
-      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "outcome": "suppressed",
-      "priority": 100,
-      "rationale": "No-fix runtime finding FND-SUPPRESSIO-ef559061de8d is conditionally accepted for the non-deployed image.",
-      "required_actions": [
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ],
-      "rule_id": "RG-COND-001"
-    },
-    {
-      "decision": "conditional_pass",
       "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
       "outcome": "suppressed",
       "priority": 110,
@@ -710,20 +680,6 @@
       "outcome": "suppressed",
       "priority": 110,
       "rationale": "Finding FND-SUPPRESSIO-47693ff859ed has an active governed suppression with compensating control.",
-      "required_actions": [
-        "Review the suppression before expiry and keep compensating controls current."
-      ],
-      "required_approvals": [
-        "Product Security"
-      ],
-      "rule_id": "RG-COND-002"
-    },
-    {
-      "decision": "conditional_pass",
-      "finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "outcome": "suppressed",
-      "priority": 110,
-      "rationale": "Finding FND-SUPPRESSIO-5313851a0158 has an active governed suppression with compensating control.",
       "required_actions": [
         "Review the suppression before expiry and keep compensating controls current."
       ],
@@ -878,20 +834,6 @@
       "outcome": "suppressed",
       "priority": 110,
       "rationale": "Finding FND-SUPPRESSIO-e0d3613118cd has an active governed suppression with compensating control.",
-      "required_actions": [
-        "Review the suppression before expiry and keep compensating controls current."
-      ],
-      "required_approvals": [
-        "Product Security"
-      ],
-      "rule_id": "RG-COND-002"
-    },
-    {
-      "decision": "conditional_pass",
-      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "outcome": "suppressed",
-      "priority": 110,
-      "rationale": "Finding FND-SUPPRESSIO-ef559061de8d has an active governed suppression with compensating control.",
       "required_actions": [
         "Review the suppression before expiry and keep compensating controls current."
       ],
@@ -1201,6 +1143,20 @@
       ],
       "required_approvals": [],
       "rule_id": "RG-WARN-002"
+    },
+    {
+      "decision": "warn",
+      "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
+      "outcome": "suppressed",
+      "priority": 220,
+      "rationale": "Suppression for FND-SUPPRESSIO-836cb2a2770d is approaching expiry.",
+      "required_actions": [
+        "Review suppression before expiry."
+      ],
+      "required_approvals": [
+        "Product Security"
+      ],
+      "rule_id": "RG-WARN-003"
     }
   ],
   "schema_version": "1.0"

@@ -3,7 +3,7 @@
   "not_run": [],
   "policy_decision": "pass",
   "scanner_count": 5,
-  "suppression_count": 16,
+  "suppression_count": 14,
   "tool_versions": {
     "bandit": "1.7.10",
     "checkov": "3.2.281",

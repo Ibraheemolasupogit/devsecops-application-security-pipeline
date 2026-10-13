@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:46464657-35c2-43d9-8c00-b27f65afac4b",
+  "serialNumber": "urn:uuid:c8c5fb31-d136-4f0a-9148-87747114d08a",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-12T15:52:36+00:00",
+    "timestamp": "2026-10-13T04:32:12+00:00",
     "tools": {
       "components": [
         {
@@ -106,7 +106,7 @@
   },
   "components": [
     {
-      "bom-ref": "f4cec5ed-db49-4871-af5a-c2f38dd81e0d",
+      "bom-ref": "479fc4d8-e61b-4e74-85d2-60ccf5034800",
       "type": "operating-system",
       "name": "debian",
       "version": "13.7",
@@ -7673,7 +7673,7 @@
   ],
   "dependencies": [
     {
-      "ref": "f4cec5ed-db49-4871-af5a-c2f38dd81e0d",
+      "ref": "479fc4d8-e61b-4e74-85d2-60ccf5034800",
       "dependsOn": [
         "pkg:deb/debian/apt@3.0.3?arch=amd64&distro=debian-13.7",
         "pkg:deb/debian/bash@5.2.37-2%2Bb10?arch=amd64&distro=debian-13.7",
@@ -8266,7 +8266,7 @@
     {
       "ref": "pkg:oci/genomic-research-access-api@sha256:4cf7c5e4472e227388bb9fed5b87781bc1b8d0833dc699edce96f3116bee28ec?arch=amd64&repository_url=index.docker.io%2Flibrary%2Fgenomic-research-access-api",
       "dependsOn": [
-        "f4cec5ed-db49-4871-af5a-c2f38dd81e0d",
+        "479fc4d8-e61b-4e74-85d2-60ccf5034800",
         "pkg:pypi/annotated-doc@0.0.5",
         "pkg:pypi/annotated-types@0.8.0",
         "pkg:pypi/anyio@4.15.1",

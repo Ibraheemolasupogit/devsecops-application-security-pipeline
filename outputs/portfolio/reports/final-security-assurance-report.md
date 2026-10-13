@@ -1,6 +1,6 @@
 # Final Security Assurance Report
 
-Portfolio ID: `PF-c4215c5f3efb16da`
+Portfolio ID: `PF-e0004a094b479d59`
 
 Readiness status: `ready_with_limitations`
 
@@ -8,12 +8,12 @@ Release decision: `conditional_pass`
 
 ## Key Metrics
 
-- Canonical findings: 69
-- Source findings: 69
+- Canonical findings: 67
+- Source findings: 67
 - Evidence domains: 9
 - Control coverage: 97.1%
-- Integration export records: 69
-- Repository integration lineage edges: 276
+- Integration export records: 67
+- Repository integration lineage edges: 268
 
 ## Readiness Failures
 

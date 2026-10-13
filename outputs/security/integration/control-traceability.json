@@ -6,7 +6,7 @@
       "evidence_references": [],
       "finding_id": "FND-CONTAINER-026cbd40a3d8",
       "implementation_references": [],
-      "lifecycle_status": "risk_accepted",
+      "lifecycle_status": "assigned",
       "missing_links": [
         "control_ids",
         "control_evidence"
@@ -1086,7 +1086,7 @@
       "evidence_references": [],
       "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
       "implementation_references": [],
-      "lifecycle_status": "risk_accepted",
+      "lifecycle_status": "assigned",
       "missing_links": [
         "control_ids",
         "control_evidence"
@@ -1118,26 +1118,6 @@
       "test_references": [],
       "threat_ids": [
         "THR-CLOUD-001"
-      ]
-    },
-    {
-      "complete": false,
-      "control_ids": [],
-      "evidence_references": [],
-      "finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "implementation_references": [],
-      "lifecycle_status": "triaged",
-      "missing_links": [
-        "control_ids",
-        "control_evidence"
-      ],
-      "release_impact": "conditional_pass",
-      "security_requirement_ids": [
-        "SR-CONTAINER-001"
-      ],
-      "test_references": [],
-      "threat_ids": [
-        "THR-SUPPLY-001"
       ]
     },
     {
@@ -1362,26 +1342,6 @@
       "test_references": [],
       "threat_ids": [
         "THR-CLOUD-001"
-      ]
-    },
-    {
-      "complete": false,
-      "control_ids": [],
-      "evidence_references": [],
-      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "implementation_references": [],
-      "lifecycle_status": "triaged",
-      "missing_links": [
-        "control_ids",
-        "control_evidence"
-      ],
-      "release_impact": "conditional_pass",
-      "security_requirement_ids": [
-        "SR-CONTAINER-001"
-      ],
-      "test_references": [],
-      "threat_ids": [
-        "THR-SUPPLY-001"
       ]
     },
     {

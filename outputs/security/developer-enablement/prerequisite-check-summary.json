@@ -23,7 +23,7 @@
       "name": "docker_daemon",
       "native_path": "",
       "notes": "Required for Trivy, ZAP and Docker fallback execution.",
-      "status": "unavailable"
+      "status": "available"
     },
     {
       "name": "terraform",
@@ -50,11 +50,10 @@
       "status": "not_required"
     }
   ],
-  "overall_status": "attention_required",
+  "overall_status": "ready_with_fallbacks",
   "schema_version": "1.0",
   "status_counts": {
-    "available": 6,
-    "not_required": 1,
-    "unavailable": 1
+    "available": 7,
+    "not_required": 1
   }
 }

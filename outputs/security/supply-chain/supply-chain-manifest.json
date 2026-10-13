@@ -3,15 +3,15 @@
   "files": {
     "build-metadata.json": {
       "path": "build-metadata.json",
-      "sha256": "d9ab41ee13d2f9b6553734fac9b4b18e20e5f7674a5e646fa91af442bc3574f9"
+      "sha256": "2b1a3c52f2b263b798a1e14d6d06512b0b6f5b5ebd0d1a7016a416bf132da51e"
     },
     "container-sbom.cdx.json": {
       "path": "container-sbom.cdx.json",
-      "sha256": "2e6c73c257fff01acadee31932ee036e12d9c77e477ac39f972c72539ab9e24a"
+      "sha256": "e94b93e4a7bf40bb76366518361372c01de6fa0520d3c8a79dbb6625bb47ea8f"
     },
     "container-scan-summary.json": {
       "path": "container-scan-summary.json",
-      "sha256": "88a470cdb3649bc81d3cd1217843b24c8a10dd32236e92bcaa7c64fb75c26a0d"
+      "sha256": "5422b3d0bd3e22d6c6a9880e67db27e80e480878af3c78757011cffc15125cc2"
     },
     "image-metadata.json": {
       "path": "image-metadata.json",
@@ -19,19 +19,19 @@
     },
     "provenance.json": {
       "path": "provenance.json",
-      "sha256": "5a037049447268a5743b9ee024ad176c038afa8351142da67a38d08586e81a50"
+      "sha256": "52f6167486c225a26d2ca081d6721079c7223374a0b5573ed250c9ba9d50637b"
     },
     "publication-eligibility.json": {
       "path": "publication-eligibility.json",
-      "sha256": "b948b29064303fe22758885194e2f9e35cefd3fcba1641a6b088c2653ea33994"
+      "sha256": "14425bba9f591980c5e0ccc65eeee02350fa2577681f30f4c18cb4103d69b844"
     },
     "release-artifact.json": {
       "path": "release-artifact.json",
-      "sha256": "90610a9ea6f178bd3da2862c9356552bde8d956b3d59141d92603050d07121db"
+      "sha256": "fe158fc5eb8dc2229e6fdf353802bcc67452133fbbe7e224e9149abb5ba3b092"
     },
     "sbom-summary.json": {
       "path": "sbom-summary.json",
-      "sha256": "c6a41c626542c9a06762a7460e43a6cec6a32531f87a434eb6bb258f94f7f416"
+      "sha256": "a956429b103b0a9d613fdefd6f7677e993cb8fca6b6616e1d0656d502dac4878"
     }
   },
   "publication_decision": "blocked",

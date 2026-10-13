@@ -312,16 +312,6 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "22c7eba737bc30eed6df9ca6e0f9f2764e768741bb472bb761dc91c597f9288e",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-SUPPRESSIO-ef559061de8d",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-SUPPRESSIO-ef559061de8d",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
-    },
-    {
       "checksum": "253fe1b8b0c979249dbf37e98e6a953c1081c655a3a83e3cce2bcaef7ffbb3fa",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -472,16 +462,6 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "31675b8fd06ec23d5e4281ab8b3fb69d1af54cac720a084a3bceff93ebca262d",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-SUPPRESSIO-5313851a0158",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-SUPPRESSIO-5313851a0158",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
       "checksum": "32e3049e001c35b061de9fe06e15dc263a485a8e9f1db077f64b141b44c23a44",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -489,16 +469,6 @@
       "source_reference": "outputs/security/findings/deduplicated-findings.json",
       "target_domain": "release_assurance",
       "target_id": "FND-CONTAINER-75484f7ebb4b",
-      "target_reference": "outputs/security/release/finding-evaluations.json"
-    },
-    {
-      "checksum": "33e518135abf9fa96fdddb6a2a89ac5e80e299d5f07bc4700c85fd4b592296de",
-      "relationship": "evaluated_for_release",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-SUPPRESSIO-5313851a0158",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "release_assurance",
-      "target_id": "FND-SUPPRESSIO-5313851a0158",
       "target_reference": "outputs/security/release/finding-evaluations.json"
     },
     {
@@ -1320,16 +1290,6 @@
       "target_domain": "integration_export",
       "target_id": "EXP-ED7833F29560",
       "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
-      "checksum": "78cd2f4520aa365078a6f0e9c0052e34232fae6bd8b44ddddf3c861a24d4b2ad",
-      "relationship": "normalised_to_canonical_finding",
-      "source_domain": "trivy",
-      "source_id": "FND-SUPPRESSIO-ef559061de8d",
-      "source_reference": "outputs/security/appsec/raw",
-      "target_domain": "canonical_findings",
-      "target_id": "FND-SUPPRESSIO-ef559061de8d",
-      "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
       "checksum": "78fd58cb5965431ac5e51deaebfa67c86429b253c41783ad9a33d0d5e498235d",
@@ -2452,16 +2412,6 @@
       "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
-      "checksum": "e3426b4b827c339e07427019928d7dc308acb9ae9eb76e813b528dffd629fd5e",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-SUPPRESSIO-5313851a0158",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-A25D1760A517",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
-    },
-    {
       "checksum": "e387c50603f4d97698b23767d349fdae1049653f05963c62ffbfa11affbc856b",
       "relationship": "exported_as_control_plane_record",
       "source_domain": "canonical_findings",
@@ -2502,16 +2452,6 @@
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
     },
     {
-      "checksum": "e73ee87b2b10ed309b0f7ff62745bd736d4f71bd90d51d6908e321243cdc9fff",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-SUPPRESSIO-5313851a0158",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-b44d66dd0cda",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
-    },
-    {
       "checksum": "e7e0985a389891145a2a0b7c4857a121025b22cfbd8c470d7d2dbba8d36e16a5",
       "relationship": "evaluated_for_release",
       "source_domain": "canonical_findings",
@@ -2540,16 +2480,6 @@
       "target_domain": "release_assurance",
       "target_id": "FND-CONTAINER-9448e15df1ef",
       "target_reference": "outputs/security/release/finding-evaluations.json"
-    },
-    {
-      "checksum": "e9481c69304ba8458487f4b329dfa21e08daf972015a4dc46774e01ebf4f98dd",
-      "relationship": "tracked_as_lifecycle_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-SUPPRESSIO-ef559061de8d",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "vulnerability_lifecycle",
-      "target_id": "VUL-b1a69851e6a4",
-      "target_reference": "outputs/security/lifecycle/vulnerability-register.json"
     },
     {
       "checksum": "ebd0a81842230a7733a827d0f735b71a38e272abc5833a741c8a71762520dc2d",
@@ -2630,16 +2560,6 @@
       "target_domain": "canonical_findings",
       "target_id": "FND-CONTAINER-b9d1bbc8febf",
       "target_reference": "outputs/security/findings/deduplicated-findings.json"
-    },
-    {
-      "checksum": "f4b5e4f17052685afd196f9df1a17c6871ad60504a7b20371b397e71a941f407",
-      "relationship": "exported_as_control_plane_record",
-      "source_domain": "canonical_findings",
-      "source_id": "FND-SUPPRESSIO-ef559061de8d",
-      "source_reference": "outputs/security/findings/deduplicated-findings.json",
-      "target_domain": "integration_export",
-      "target_id": "EXP-307A86E606EE",
-      "target_reference": "outputs/security/integration/product-security-findings.json"
     },
     {
       "checksum": "f60d92b2f09ea118198bb1d15dfc34488b80c2ec472dad888013db3bbec4e8c6",

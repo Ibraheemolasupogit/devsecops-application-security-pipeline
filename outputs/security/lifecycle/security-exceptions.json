@@ -1,7 +1,7 @@
 {
   "exceptions": [
     {
-      "approved_at": "2026-01-01T00:00:00Z",
+      "approved_at": "2026-10-13T04:40:43Z",
       "approver_roles": [
         "Product Security",
         "Risk Owner"
@@ -25,7 +25,7 @@
       "history": [
         {
           "actor_role": "Product Security",
-          "event_id": "EVT-f8046e6c7214",
+          "event_id": "EVT-a22a21e8c8b6",
           "event_type": "exception_expiring",
           "evidence_reference": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
           "from_status": null,
@@ -33,13 +33,13 @@
             "exception_id": "EXC-2a432868284d"
           },
           "reason": "Controlled expiring exception fixture for local lifecycle governance.",
-          "timestamp": "2026-01-01T00:00:00Z",
+          "timestamp": "2026-10-13T04:40:43Z",
           "to_status": null,
           "vulnerability_id": "VUL-676f647f505f"
         }
       ],
       "maximum_duration_days": 30,
-      "requested_at": "2026-01-01T00:00:00Z",
+      "requested_at": "2026-10-13T04:40:43Z",
       "requested_by_role": "Technical Owner",
       "residual_risk": "medium",
       "review_date": "2026-01-10",
@@ -47,13 +47,13 @@
       "risk_owner": "Risk Owner",
       "schema_version": "1.0",
       "scope": "vulnerability:VUL-676f647f505f;finding:FND-SUPPRESSIO-1065083a8d4b",
-      "status": "active",
+      "status": "expired",
       "technical_owner": "Cloud Security",
       "technical_rationale": "Finding remains visible while a time-bound exception records review context.",
       "vulnerability_id": "VUL-676f647f505f"
     },
     {
-      "approved_at": "2026-01-01T00:00:00Z",
+      "approved_at": "2026-10-13T04:40:43Z",
       "approver_roles": [
         "Product Security",
         "Risk Owner"
@@ -77,7 +77,7 @@
       "history": [
         {
           "actor_role": "Product Security",
-          "event_id": "EVT-01e2f1f92d3c",
+          "event_id": "EVT-f7e8a466f713",
           "event_type": "exception_active",
           "evidence_reference": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
           "from_status": null,
@@ -85,13 +85,13 @@
             "exception_id": "EXC-b94c077fed02"
           },
           "reason": "Controlled active exception fixture for local lifecycle governance.",
-          "timestamp": "2026-01-01T00:00:00Z",
+          "timestamp": "2026-10-13T04:40:43Z",
           "to_status": null,
           "vulnerability_id": "VUL-a8e391de2abc"
         }
       ],
       "maximum_duration_days": 30,
-      "requested_at": "2026-01-01T00:00:00Z",
+      "requested_at": "2026-10-13T04:40:43Z",
       "requested_by_role": "Technical Owner",
       "residual_risk": "medium",
       "review_date": "2026-01-20",
@@ -99,7 +99,7 @@
       "risk_owner": "Risk Owner",
       "schema_version": "1.0",
       "scope": "vulnerability:VUL-a8e391de2abc;finding:FND-CONTAINER-026cbd40a3d8",
-      "status": "active",
+      "status": "expired",
       "technical_owner": "Platform Engineering",
       "technical_rationale": "Finding remains visible while a time-bound exception records review context.",
       "vulnerability_id": "VUL-a8e391de2abc"
@@ -129,7 +129,7 @@
       "history": [
         {
           "actor_role": "Product Security",
-          "event_id": "EVT-681f3239c7f2",
+          "event_id": "EVT-8a7a7e0226a2",
           "event_type": "exception_expired",
           "evidence_reference": "config/lifecycle/fixtures/lifecycle-overrides.yaml",
           "from_status": null,
@@ -137,13 +137,13 @@
             "exception_id": "EXC-d7825aabab9c"
           },
           "reason": "Controlled expired exception fixture for local lifecycle governance.",
-          "timestamp": "2026-01-01T00:00:00Z",
+          "timestamp": "2026-10-13T04:40:43Z",
           "to_status": null,
           "vulnerability_id": "VUL-3e4410d0f925"
         }
       ],
       "maximum_duration_days": 30,
-      "requested_at": "2026-01-01T00:00:00Z",
+      "requested_at": "2026-10-13T04:40:43Z",
       "requested_by_role": "Technical Owner",
       "residual_risk": "medium",
       "review_date": "2025-12-31",

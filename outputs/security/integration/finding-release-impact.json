@@ -1,7 +1,7 @@
 {
   "records": [
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-026cbd40a3d8",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-3b7728ab6349",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-3d855e8b31a4",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-43d127b610b8",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-452f02c62efd",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-4b3599117c60",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -103,7 +103,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-5464624f68ba",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-54f909a65e8d",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-57b96cf12bee",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-5a8d530b00be",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-6017bcc173f8",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -188,7 +188,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-65d0909407ea",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-65d75e6eba4f",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -222,7 +222,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-6884a6a2aeb3",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -239,7 +239,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-6e659fb03bfe",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-7401651d82c4",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -273,7 +273,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-75484f7ebb4b",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -290,7 +290,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-77763b149b4f",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -307,7 +307,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-8229cd4d151d",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -324,7 +324,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-84d155fdc3d1",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-85c29f2e1d67",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -358,7 +358,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-866a375b43af",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-87e329c9d3c9",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -392,7 +392,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-8917d095a4d4",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -409,7 +409,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-8c4116b09936",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -426,7 +426,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-9448e15df1ef",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -443,7 +443,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-97d0d191781c",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -460,7 +460,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-a05776d7b2eb",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -477,7 +477,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-a44acae763a2",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -494,7 +494,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-a6116dba2666",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -511,7 +511,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-b11df2b9097e",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -528,7 +528,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-b32479e41fff",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -545,7 +545,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-b49f58b918ed",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -562,7 +562,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-b9d1bbc8febf",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -579,7 +579,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-c1e6ced9904f",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -596,7 +596,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-c269596a605e",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -613,7 +613,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-c29de2c95e6d",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -630,7 +630,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-c31d90a0dae9",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -647,7 +647,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-cdafc2f07851",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -664,7 +664,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-d7e9ab84f9e9",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -681,7 +681,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-e1d4cd41e57c",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -698,7 +698,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-e1f2cc1c749d",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -715,7 +715,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-e9c4b1dd55ff",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -732,7 +732,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-CONTAINER-f6f763380649",
       "matched_release_rule_ids": [
         "RG-COND-001"
@@ -749,7 +749,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-DAST-7f68e8fb688f",
       "matched_release_rule_ids": [
         "RG-WARN-002"
@@ -763,7 +763,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-DAST-e607d905531a",
       "matched_release_rule_ids": [
         "RG-WARN-002"
@@ -777,7 +777,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-0e84d1c52550",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -791,7 +791,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-17c88481ce5d",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -805,7 +805,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-667c88d66538",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -819,7 +819,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-77c7990be9b8",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -833,7 +833,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-8d30e56473d9",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -847,7 +847,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-ac50e3235345",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -861,7 +861,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SECUREDESI-e7cd910bd1f6",
       "matched_release_rule_ids": [
         "RG-WARN-001"
@@ -875,7 +875,7 @@
       "required_approvals": []
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -895,7 +895,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-47693ff859ed",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -915,26 +915,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
-      "finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "matched_release_rule_ids": [
-        "RG-COND-001",
-        "RG-COND-002"
-      ],
-      "policy_version": "1.0",
-      "release_decision": "conditional_pass",
-      "release_impact": "conditional_pass",
-      "required_actions": [
-        "Review the suppression before expiry and keep compensating controls current.",
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ]
-    },
-    {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-65201925e5c5",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -954,7 +935,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-68e51d21b290",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -974,7 +955,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-6dce772b98c3",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -994,7 +975,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-713bb8f041d7",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -1014,7 +995,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-7b3ddcaa6af8",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -1034,15 +1015,17 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
       "matched_release_rule_ids": [
-        "RG-COND-002"
+        "RG-COND-002",
+        "RG-WARN-003"
       ],
       "policy_version": "1.0",
       "release_decision": "conditional_pass",
       "release_impact": "conditional_pass",
       "required_actions": [
+        "Review suppression before expiry.",
         "Review the suppression before expiry and keep compensating controls current."
       ],
       "required_approvals": [
@@ -1050,7 +1033,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-8632c434b354",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -1070,7 +1053,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-974e196f7185",
       "matched_release_rule_ids": [
         "RG-COND-002"
@@ -1086,7 +1069,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-b5c9f1d0aae2",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -1106,7 +1089,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-d403fca790bf",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -1126,7 +1109,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-e0d3613118cd",
       "matched_release_rule_ids": [
         "RG-COND-002",
@@ -1146,26 +1129,7 @@
       ]
     },
     {
-      "decision_id": "REL-4e403b3e4f2106df",
-      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "matched_release_rule_ids": [
-        "RG-COND-001",
-        "RG-COND-002"
-      ],
-      "policy_version": "1.0",
-      "release_decision": "conditional_pass",
-      "release_impact": "conditional_pass",
-      "required_actions": [
-        "Review the suppression before expiry and keep compensating controls current.",
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ]
-    },
-    {
-      "decision_id": "REL-4e403b3e4f2106df",
+      "decision_id": "REL-d65797fa59025938",
       "finding_id": "FND-SUPPRESSIO-f1fb6d611749",
       "matched_release_rule_ids": [
         "RG-COND-002",

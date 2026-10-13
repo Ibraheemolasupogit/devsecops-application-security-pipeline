@@ -5,14 +5,14 @@
   "critical_high_findings_by_squad": {
     "Application Engineering": 2,
     "Cloud Platform Security": 12,
-    "Platform Engineering": 46
+    "Platform Engineering": 44
   },
   "demonstration_data": true,
   "exception_review_completion_rate": 100.0,
   "findings_by_squad": {
     "Application Engineering": 4,
     "Cloud Platform Security": 12,
-    "Platform Engineering": 46,
+    "Platform Engineering": 44,
     "Product Security": 7
   },
   "overdue_findings_by_squad": {},
@@ -21,7 +21,7 @@
     "Container": 44,
     "DAST": 2,
     "Secure Design": 7,
-    "Suppression Governance": 16
+    "Suppression Governance": 14
   },
   "schema_version": "1.0",
   "squads_with_active_champion": 4,

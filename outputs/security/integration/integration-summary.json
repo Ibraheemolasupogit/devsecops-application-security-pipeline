@@ -1,12 +1,12 @@
 {
-  "as_of_date": "2026-01-01",
+  "as_of_date": "2026-10-13",
   "compatibility_status": "compatible",
   "contract_name": "product-security-control-plane-export",
   "contract_version": "1.0",
-  "controlled_timestamp": "2026-01-01T00:00:00Z",
-  "export_record_count": 69,
-  "lineage_edge_count": 276,
+  "controlled_timestamp": "2026-10-13T04:40:43Z",
+  "export_record_count": 67,
+  "lineage_edge_count": 268,
   "release_decision": "conditional_pass",
-  "source_finding_count": 69,
+  "source_finding_count": 67,
   "validation_status": "passed"
 }

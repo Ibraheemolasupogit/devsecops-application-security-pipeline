@@ -8,7 +8,7 @@
   "publication_decision": "blocked",
   "published_digest": null,
   "release_decision": "conditional_pass",
-  "release_decision_id": "REL-4e403b3e4f2106df",
+  "release_decision_id": "REL-d65797fa59025938",
   "sbom_reference": "outputs/security/supply-chain/container-sbom.cdx.json",
   "schema_version": "1.0",
   "source_commit": "7bc2106054f197fdd432ce11412aede926764812",

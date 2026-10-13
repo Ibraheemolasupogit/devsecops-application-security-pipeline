@@ -179,7 +179,7 @@
     },
     "infrastructure/terraform/bootstrap/versions.tf": {
       "path": "infrastructure/terraform/bootstrap/versions.tf",
-      "sha256": "dcb5cf18bede7e5aeffa3e585836ce4a80ca7d1f84a089df23e455b6543f828f"
+      "sha256": "82701073bcd9942e0167dfc213b68353997f2c531e8839582c6cb8f2092070ba"
     },
     "infrastructure/terraform/environments/nonprod/main.tf": {
       "path": "infrastructure/terraform/environments/nonprod/main.tf",

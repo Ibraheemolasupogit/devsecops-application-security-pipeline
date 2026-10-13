@@ -1,7 +1,7 @@
 {
   "build_command_policy": "docker buildx build --load --platform linux/amd64 with OCI source labels",
   "build_metadata_reference": "outputs/security/supply-chain/build-metadata.json",
-  "build_metadata_sha256": "d9ab41ee13d2f9b6553734fac9b4b18e20e5f7674a5e646fa91af442bc3574f9",
+  "build_metadata_sha256": "2b1a3c52f2b263b798a1e14d6d06512b0b6f5b5ebd0d1a7016a416bf132da51e",
   "canonical_trivy_finding_ids": [
     "FND-CONTAINER-026cbd40a3d8",
     "FND-CONTAINER-3b7728ab6349",
@@ -46,12 +46,10 @@
     "FND-CONTAINER-e1d4cd41e57c",
     "FND-CONTAINER-e1f2cc1c749d",
     "FND-CONTAINER-e9c4b1dd55ff",
-    "FND-CONTAINER-f6f763380649",
-    "FND-SUPPRESSIO-5313851a0158",
-    "FND-SUPPRESSIO-ef559061de8d"
+    "FND-CONTAINER-f6f763380649"
   ],
   "container_scan_reference": "outputs/security/supply-chain/container-scan-summary.json",
-  "container_scan_sha256": "88a470cdb3649bc81d3cd1217843b24c8a10dd32236e92bcaa7c64fb75c26a0d",
+  "container_scan_sha256": "5422b3d0bd3e22d6c6a9880e67db27e80e480878af3c78757011cffc15125cc2",
   "dependency_definition_sha256": "a7d4b5321d5c7251804e9ab86458633553c4ccd752ccc03811dd933362cc11ba",
   "dockerfile_sha256": "5a260d10297f75a3b6676c2175c6a1245595ce1f3ddcebad40b93b60f21fccca",
   "dockerignore_sha256": "20d754a54d1890b43c4a220e921750e9ff5bfced834f2c397d0b4e1e83c5c55d",
@@ -59,11 +57,11 @@
   "predicate_type": "https://devsecops.example/supply-chain/provenance/v1",
   "publication_eligibility_reference": "outputs/security/supply-chain/publication-eligibility.json",
   "release_decision": "conditional_pass",
-  "release_decision_id": "REL-4e403b3e4f2106df",
+  "release_decision_id": "REL-d65797fa59025938",
   "release_decision_reference": "outputs/security/release/release-gate-decision.json",
-  "release_decision_sha256": "b6192bbbbf2a91c5a6a929c690f23e51963a005c4cb8ffa3b64d01fbff00665a",
+  "release_decision_sha256": "7e90ad9ac25755a6ad0bf13964dfa1bf5853bd7bd201e9c45456823b9cf412ee",
   "sbom_reference": "outputs/security/supply-chain/container-sbom.cdx.json",
-  "sbom_sha256": "2e6c73c257fff01acadee31932ee036e12d9c77e477ac39f972c72539ab9e24a",
+  "sbom_sha256": "e94b93e4a7bf40bb76366518361372c01de6fa0520d3c8a79dbb6625bb47ea8f",
   "schema_version": "1.0",
   "source_commit": "7bc2106054f197fdd432ce11412aede926764812",
   "source_repository": "https://github.com/Ibraheemolasupogit/devsecops-application-security-pipeline"

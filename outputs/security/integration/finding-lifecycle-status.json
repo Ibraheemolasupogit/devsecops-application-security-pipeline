@@ -1,20 +1,20 @@
 {
   "records": [
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": "2026-01-20",
       "exception_id": "EXC-b94c077fed02",
-      "exception_status": "active",
+      "exception_status": "expired",
       "finding_id": "FND-CONTAINER-026cbd40a3d8",
-      "lifecycle_status": "risk_accepted",
+      "lifecycle_status": "assigned",
       "overdue": false,
-      "previous_status": "triaged",
+      "previous_status": "risk_accepted",
       "reopened_count": 0,
       "verification_status": "not_verified",
       "vulnerability_id": "VUL-a8e391de2abc"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -27,7 +27,7 @@
       "vulnerability_id": "VUL-17f8dcabdae2"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -40,7 +40,7 @@
       "vulnerability_id": "VUL-95911e8c2313"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -53,7 +53,7 @@
       "vulnerability_id": "VUL-e67436cb77cc"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -66,7 +66,7 @@
       "vulnerability_id": "VUL-3e6c8fa79f05"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -79,7 +79,7 @@
       "vulnerability_id": "VUL-f0592667d50e"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -92,7 +92,7 @@
       "vulnerability_id": "VUL-d120d8886f8f"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -105,7 +105,7 @@
       "vulnerability_id": "VUL-650419848c52"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -118,7 +118,7 @@
       "vulnerability_id": "VUL-bb6814c0cfb0"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -131,7 +131,7 @@
       "vulnerability_id": "VUL-ec079422b266"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -144,7 +144,7 @@
       "vulnerability_id": "VUL-efd857e25de6"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -157,7 +157,7 @@
       "vulnerability_id": "VUL-0443feacb3ce"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -170,7 +170,7 @@
       "vulnerability_id": "VUL-e4d5485dda12"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -183,7 +183,7 @@
       "vulnerability_id": "VUL-488f220bd590"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -196,7 +196,7 @@
       "vulnerability_id": "VUL-3945868fe01b"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -209,7 +209,7 @@
       "vulnerability_id": "VUL-f86f40918545"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -222,7 +222,7 @@
       "vulnerability_id": "VUL-b146a3668a88"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -235,7 +235,7 @@
       "vulnerability_id": "VUL-d6855e7ea678"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -248,7 +248,7 @@
       "vulnerability_id": "VUL-8c678fdbfd5a"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -261,7 +261,7 @@
       "vulnerability_id": "VUL-db0d70d48ad6"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -274,7 +274,7 @@
       "vulnerability_id": "VUL-c3b2903eedb8"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -287,7 +287,7 @@
       "vulnerability_id": "VUL-b9e1ce6ea390"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -300,7 +300,7 @@
       "vulnerability_id": "VUL-0784eda86673"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -313,7 +313,7 @@
       "vulnerability_id": "VUL-05cdfb3497e8"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -326,7 +326,7 @@
       "vulnerability_id": "VUL-72b55409a109"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -339,7 +339,7 @@
       "vulnerability_id": "VUL-4bdf62bdfb94"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -352,7 +352,7 @@
       "vulnerability_id": "VUL-c73f1499d5c2"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -365,7 +365,7 @@
       "vulnerability_id": "VUL-f85db05c99ee"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -378,7 +378,7 @@
       "vulnerability_id": "VUL-164d4245cfbe"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -391,7 +391,7 @@
       "vulnerability_id": "VUL-86b224dc01e9"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -404,7 +404,7 @@
       "vulnerability_id": "VUL-c1247c8a27da"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -417,7 +417,7 @@
       "vulnerability_id": "VUL-0ff0cf010410"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -430,7 +430,7 @@
       "vulnerability_id": "VUL-b0346909d7d2"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -443,7 +443,7 @@
       "vulnerability_id": "VUL-72e9f205d0d6"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -456,7 +456,7 @@
       "vulnerability_id": "VUL-e92f363a27c3"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -469,7 +469,7 @@
       "vulnerability_id": "VUL-04ae22ee8be8"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -482,7 +482,7 @@
       "vulnerability_id": "VUL-a3fa0068a116"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -495,7 +495,7 @@
       "vulnerability_id": "VUL-fe6e8af57976"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -508,7 +508,7 @@
       "vulnerability_id": "VUL-7af9536645c4"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -521,7 +521,7 @@
       "vulnerability_id": "VUL-5072e2eff63c"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -534,7 +534,7 @@
       "vulnerability_id": "VUL-1863021b0a9c"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -547,7 +547,7 @@
       "vulnerability_id": "VUL-3dd199011de7"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -560,7 +560,7 @@
       "vulnerability_id": "VUL-e3ad2902bcd5"
     },
     {
-      "due_date": "2026-01-15",
+      "due_date": "2026-10-27",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -573,7 +573,7 @@
       "vulnerability_id": "VUL-3fd891211c47"
     },
     {
-      "due_date": "2026-03-02",
+      "due_date": "2026-12-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -586,7 +586,7 @@
       "vulnerability_id": "VUL-93adb5991eec"
     },
     {
-      "due_date": "2026-04-01",
+      "due_date": "2027-01-11",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -599,7 +599,7 @@
       "vulnerability_id": "VUL-a867e38043f3"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -612,7 +612,7 @@
       "vulnerability_id": "VUL-933f35b5a867"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -625,7 +625,7 @@
       "vulnerability_id": "VUL-ef9b8b14427b"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -638,7 +638,7 @@
       "vulnerability_id": "VUL-d59c985e42d9"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -651,7 +651,7 @@
       "vulnerability_id": "VUL-5a09ed00559e"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -664,7 +664,7 @@
       "vulnerability_id": "VUL-2cec88a2db04"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -677,7 +677,7 @@
       "vulnerability_id": "VUL-88b565825e90"
     },
     {
-      "due_date": "2026-01-31",
+      "due_date": "2026-11-12",
       "exception_expiry": null,
       "exception_id": null,
       "exception_status": null,
@@ -693,11 +693,11 @@
       "due_date": "2027-01-12",
       "exception_expiry": "2026-01-10",
       "exception_id": "EXC-2a432868284d",
-      "exception_status": "active",
+      "exception_status": "expired",
       "finding_id": "FND-SUPPRESSIO-1065083a8d4b",
-      "lifecycle_status": "risk_accepted",
+      "lifecycle_status": "assigned",
       "overdue": false,
-      "previous_status": "triaged",
+      "previous_status": "risk_accepted",
       "reopened_count": 0,
       "verification_status": "not_verified",
       "vulnerability_id": "VUL-676f647f505f"
@@ -714,19 +714,6 @@
       "reopened_count": 0,
       "verification_status": "not_verified",
       "vulnerability_id": "VUL-3e4410d0f925"
-    },
-    {
-      "due_date": "2026-10-12",
-      "exception_expiry": null,
-      "exception_id": null,
-      "exception_status": null,
-      "finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "lifecycle_status": "triaged",
-      "overdue": false,
-      "previous_status": null,
-      "reopened_count": 0,
-      "verification_status": "not_verified",
-      "vulnerability_id": "VUL-b44d66dd0cda"
     },
     {
       "due_date": "2027-01-12",
@@ -870,19 +857,6 @@
       "reopened_count": 0,
       "verification_status": "not_verified",
       "vulnerability_id": "VUL-f4d6b51b0b01"
-    },
-    {
-      "due_date": "2026-10-12",
-      "exception_expiry": null,
-      "exception_id": null,
-      "exception_status": null,
-      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "lifecycle_status": "triaged",
-      "overdue": false,
-      "previous_status": null,
-      "reopened_count": 0,
-      "verification_status": "not_verified",
-      "vulnerability_id": "VUL-b1a69851e6a4"
     },
     {
       "due_date": "2027-01-12",

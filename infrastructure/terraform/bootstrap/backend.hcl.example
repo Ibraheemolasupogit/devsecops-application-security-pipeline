@@ -1,4 +1,6 @@
-# After Stage A creates the bucket, migrate protected local bootstrap state here.
+# After the reviewed Stage A apply creates S3/KMS, copy to ignored backend.hcl.
+# Fill approved outputs, activate backend.tf.example as backend.tf, then run:
+# terraform init -migrate-state -backend-config=backend.hcl
 bucket       = "<approved-state-bucket>"
 key          = "bootstrap/terraform.tfstate"
 region       = "<approved-primary-region>"

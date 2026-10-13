@@ -1,7 +1,7 @@
 {
   "archive_limitation": "No archive is created to avoid platform-specific tar metadata drift.",
-  "as_of_date": "2026-01-01",
-  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "as_of_date": "2026-10-13",
+  "controlled_timestamp": "2026-10-13T04:40:43Z",
   "deterministic_archive_created": false,
   "generated_artifacts": [
     "evidence-index.json",
@@ -14,7 +14,7 @@
   ],
   "git": {
     "branch": "main",
-    "commit": "361ddad2009c",
+    "commit": "53d0f36d559a",
     "dirty": "true"
   },
   "input_files": {
@@ -38,7 +38,7 @@
   "output_files": {
     "evidence-index.json": {
       "path": "outputs/security/portfolio/evidence-index.json",
-      "sha256": "940d362532fdeb9567fd95bb6d370384b2868285f124d7365f7eae324def222e",
+      "sha256": "3aa529a79ff15d97b476281463004e22f6e05afe547993de58efebc21a4e8a54",
       "size_bytes": 2488
     },
     "milestone-completion.json": {
@@ -48,7 +48,7 @@
     },
     "portfolio-metrics.json": {
       "path": "outputs/security/portfolio/portfolio-metrics.json",
-      "sha256": "85ee551e01923efe1b75a956f068e0fec22dd5d62753f956e105aaa65e8eb2b1",
+      "sha256": "7e872130a33d9652d307b31d1a58fd176805fd10027d8ef7bbd1e0285106f925",
       "size_bytes": 663
     },
     "portfolio-readiness.json": {
@@ -58,12 +58,12 @@
     },
     "portfolio-summary.json": {
       "path": "outputs/security/portfolio/portfolio-summary.json",
-      "sha256": "5d51061fcc8e55c4dc8203aa0c29b9faab7332385b2a68894bb36272daca44e2",
+      "sha256": "b3fad2efedf4dacf59bb8297a0fa34b85389f02c61b7545f39c7744148b4a45e",
       "size_bytes": 930
     },
     "report-index.json": {
       "path": "outputs/security/portfolio/report-index.json",
-      "sha256": "ae0cc023f9218c6ef65a966eaec530eb42645acd6eb9f0d107f3e9a6ac4cc2f4",
+      "sha256": "9ec7adb68495e43e5b98782c0839ad25d2a0129275b60d47473d8970b2f501f6",
       "size_bytes": 3240
     },
     "security-capability-matrix.json": {
@@ -72,6 +72,6 @@
       "size_bytes": 7933
     }
   },
-  "portfolio_id": "PF-c4215c5f3efb16da",
+  "portfolio_id": "PF-e0004a094b479d59",
   "schema_version": "1.0"
 }

@@ -1249,31 +1249,6 @@
       "due_status": "within_sla",
       "effective_severity": "high",
       "environment": "not_deployed",
-      "finding_id": "FND-SUPPRESSIO-5313851a0158",
-      "fix_status": "no_fix_available",
-      "matched_rule_ids": [
-        "RG-COND-001",
-        "RG-COND-002"
-      ],
-      "owner_status": "owned",
-      "priority": "P3",
-      "rationale": "FND-SUPPRESSIO-5313851a0158 contributes conditional_pass through RG-COND-001, RG-COND-002.",
-      "required_actions": [
-        "Review the suppression before expiry and keep compensating controls current.",
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ],
-      "risk_score": 56.25,
-      "suppression_status": "active"
-    },
-    {
-      "decision_contribution": "conditional_pass",
-      "due_status": "within_sla",
-      "effective_severity": "high",
-      "environment": "not_deployed",
       "finding_id": "FND-SUPPRESSIO-65201925e5c5",
       "fix_status": "no_fix_available",
       "matched_rule_ids": [
@@ -1401,18 +1376,20 @@
     },
     {
       "decision_contribution": "conditional_pass",
-      "due_status": "within_sla",
+      "due_status": "due_soon",
       "effective_severity": "critical",
       "environment": "locally_validated",
       "finding_id": "FND-SUPPRESSIO-836cb2a2770d",
       "fix_status": "no_fix_available",
       "matched_rule_ids": [
-        "RG-COND-002"
+        "RG-COND-002",
+        "RG-WARN-003"
       ],
       "owner_status": "owned",
       "priority": "P2",
-      "rationale": "FND-SUPPRESSIO-836cb2a2770d contributes conditional_pass through RG-COND-002.",
+      "rationale": "FND-SUPPRESSIO-836cb2a2770d contributes conditional_pass through RG-COND-002, RG-WARN-003.",
       "required_actions": [
+        "Review suppression before expiry.",
         "Review the suppression before expiry and keep compensating controls current."
       ],
       "required_approvals": [
@@ -1545,31 +1522,6 @@
         "Risk Owner"
       ],
       "risk_score": 67.25,
-      "suppression_status": "active"
-    },
-    {
-      "decision_contribution": "conditional_pass",
-      "due_status": "within_sla",
-      "effective_severity": "high",
-      "environment": "not_deployed",
-      "finding_id": "FND-SUPPRESSIO-ef559061de8d",
-      "fix_status": "no_fix_available",
-      "matched_rule_ids": [
-        "RG-COND-001",
-        "RG-COND-002"
-      ],
-      "owner_status": "owned",
-      "priority": "P3",
-      "rationale": "FND-SUPPRESSIO-ef559061de8d contributes conditional_pass through RG-COND-001, RG-COND-002.",
-      "required_actions": [
-        "Review the suppression before expiry and keep compensating controls current.",
-        "Track upstream fix availability and rebuild the image when a fix is published."
-      ],
-      "required_approvals": [
-        "Product Security",
-        "Technical Owner"
-      ],
-      "risk_score": 56.25,
       "suppression_status": "active"
     },
     {

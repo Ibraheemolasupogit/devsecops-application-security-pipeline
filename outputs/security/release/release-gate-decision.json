@@ -1,6 +1,6 @@
 {
   "application": "genomic-research-access-api",
-  "as_of_date": "2026-01-01",
+  "as_of_date": "2026-10-13",
   "blocking_finding_ids": [],
   "conditional_finding_ids": [
     "FND-CONTAINER-026cbd40a3d8",
@@ -49,7 +49,6 @@
     "FND-CONTAINER-f6f763380649",
     "FND-SUPPRESSIO-1065083a8d4b",
     "FND-SUPPRESSIO-47693ff859ed",
-    "FND-SUPPRESSIO-5313851a0158",
     "FND-SUPPRESSIO-65201925e5c5",
     "FND-SUPPRESSIO-68e51d21b290",
     "FND-SUPPRESSIO-6dce772b98c3",
@@ -61,22 +60,21 @@
     "FND-SUPPRESSIO-b5c9f1d0aae2",
     "FND-SUPPRESSIO-d403fca790bf",
     "FND-SUPPRESSIO-e0d3613118cd",
-    "FND-SUPPRESSIO-ef559061de8d",
     "FND-SUPPRESSIO-f1fb6d611749"
   ],
   "decision": "conditional_pass",
-  "decision_id": "REL-4e403b3e4f2106df",
-  "decision_timestamp": "2026-01-01T00:00:00Z",
+  "decision_id": "REL-d65797fa59025938",
+  "decision_timestamp": "2026-10-13T04:40:43Z",
   "deployment_status": "not_deployed",
   "environment": "dev",
-  "evaluated_finding_count": 69,
+  "evaluated_finding_count": 67,
   "evidence_references": [
     "outputs/security/findings/deduplicated-findings.json",
     "outputs/security/release/finding-evaluations.json",
     "outputs/security/release/matched-rules.json"
   ],
   "expired_suppression_finding_ids": [],
-  "findings_input_checksum": "cb2e23464504ff71a93995004fd45e168a8df6041ec7f5e5fb2c3fad64f66b08",
+  "findings_input_checksum": "e76e1c00a79d1389bcc33b870ab78d00b5af7881904f9bbb3d099ccddeb63bb0",
   "informational_finding_ids": [],
   "limitations": [
     "Portfolio demonstration policy, not Genomics England policy.",
@@ -85,11 +83,12 @@
   ],
   "overdue_finding_ids": [],
   "policy_version": "1.0",
-  "rationale": "Release is conditionally passable with required approvals for 60 finding(s).",
+  "rationale": "Release is conditionally passable with required approvals for 58 finding(s).",
   "repository": "devsecops-application-security-pipeline",
   "required_actions": [
     "Review during normal maintenance.",
     "Review reference infrastructure control before production deployment.",
+    "Review suppression before expiry.",
     "Review the suppression before expiry and keep compensating controls current.",
     "Track remediation within SLA.",
     "Track upstream fix availability and rebuild the image when a fix is published."
@@ -100,13 +99,14 @@
     "Risk Owner",
     "Technical Owner"
   ],
-  "rules_evaluated": 828,
+  "rules_evaluated": 804,
   "rules_matched": [
     "RG-COND-001",
     "RG-COND-002",
     "RG-COND-003",
     "RG-WARN-001",
-    "RG-WARN-002"
+    "RG-WARN-002",
+    "RG-WARN-003"
   ],
   "rules_not_matched": [
     "RG-BLOCK-001",
@@ -114,8 +114,7 @@
     "RG-BLOCK-003",
     "RG-BLOCK-004",
     "RG-BLOCK-005",
-    "RG-BLOCK-006",
-    "RG-WARN-003"
+    "RG-BLOCK-006"
   ],
   "schema_version": "1.0",
   "unowned_finding_ids": [],

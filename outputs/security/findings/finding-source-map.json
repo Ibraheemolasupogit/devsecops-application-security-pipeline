@@ -604,17 +604,6 @@
       "checkov"
     ]
   },
-  "FND-SUPPRESSIO-5313851a0158": {
-    "deduplication_key": "cve|CVE-2026-8376|perl-base",
-    "primary_finding_id": "FND-SUPPRESSIO-5313851a0158",
-    "rationale": "unique exact key",
-    "source_finding_ids": [
-      "FND-SUPPRESSIO-5313851a0158"
-    ],
-    "source_tools": [
-      "trivy"
-    ]
-  },
   "FND-SUPPRESSIO-65201925e5c5": {
     "deduplication_key": "suppression|checkov|CKV_AWS_260|aws_security_group.alb",
     "primary_finding_id": "FND-SUPPRESSIO-65201925e5c5",
@@ -734,17 +723,6 @@
     ],
     "source_tools": [
       "checkov"
-    ]
-  },
-  "FND-SUPPRESSIO-ef559061de8d": {
-    "deduplication_key": "cve|CVE-2026-42496|perl-base",
-    "primary_finding_id": "FND-SUPPRESSIO-ef559061de8d",
-    "rationale": "unique exact key",
-    "source_finding_ids": [
-      "FND-SUPPRESSIO-ef559061de8d"
-    ],
-    "source_tools": [
-      "trivy"
     ]
   },
   "FND-SUPPRESSIO-f1fb6d611749": {

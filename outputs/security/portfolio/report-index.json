@@ -3,80 +3,80 @@
   "items": [
     {
       "path": "reports/portfolio/final-project-report.md",
-      "sha256": "547eca4913a185c50e5e00e5b75893374d976c53321e5e0be231bce4f29a98e8",
+      "sha256": "2c3135cdb23817ba097ef4006e4cb073db3bf96fff802be5753c1303ab5e8d9f",
       "size_bytes": 711,
       "type": "report"
     },
     {
       "path": "reports/portfolio/final-security-assurance-report.md",
-      "sha256": "16f198740c0ef2c6ea436bf10d957cf0fc2c855808eb4f1996201fc925805037",
+      "sha256": "2f62704084a823473636ff8079575fefc0ae2b67de0cb2ee7b76cb7a5036a062",
       "size_bytes": 722,
       "type": "report"
     },
     {
       "path": "reports/portfolio/final-architecture-report.md",
-      "sha256": "be3ad0f900c29d9b6d980ffa595dace1fd54584c3cd63ae0f09a8a8fd983f364",
+      "sha256": "aa9c442ff2a503461f76920fac951a8d56bf112634096f83e7c95dced4c773d6",
       "size_bytes": 716,
       "type": "report"
     },
     {
       "path": "reports/portfolio/final-testing-report.md",
-      "sha256": "b7801c49d6ea723d2477038f3f1b61a7690c460b8229588e97601df72f3cce1d",
+      "sha256": "9f05b09846d43fe57b92f3403b35de30a6f3979c5f6f400dec6a0983c89b2be7",
       "size_bytes": 711,
       "type": "report"
     },
     {
       "path": "reports/portfolio/final-evidence-report.md",
-      "sha256": "630445aaa88daa25c67dc6e5718b53ec7f5d2e18f64ef8bffa7f26eb40af3cf5",
+      "sha256": "7b0d500fc888e244c8c1c8a8790ebf846e2e206d6e24304372e7ad1211a2d7f8",
       "size_bytes": 712,
       "type": "report"
     },
     {
       "path": "reports/portfolio/final-limitations-report.md",
-      "sha256": "74c7561f009ab7c35cfa361e87e471fcce3f797bc609e4e691b44584545d2be2",
+      "sha256": "e215f6b141110113f481e2a26c0abc4666fb350596a0eec3ce610648dcb3815c",
       "size_bytes": 715,
       "type": "report"
     },
     {
       "path": "reports/portfolio/final-portfolio-readiness-report.md",
-      "sha256": "698237919bb69665b1318df6a5696ec01d3cbee0b87997053a2fa216aa27f097",
+      "sha256": "21ce799561257c8cd8f357b4114577465404d0363af56aca0389bf3a6c1b092f",
       "size_bytes": 723,
       "type": "report"
     },
     {
       "path": "reports/security/executive-security-summary.md",
-      "sha256": "3945edb3f12a74503f132f49962bcca42ca6d1249779ac60048856735c3cc1e8",
+      "sha256": "96c5084b3d5268dc944c7a0984d17afd04f49a9cb4c3edfec3cb8a091f775b40",
       "size_bytes": 696,
       "type": "report"
     },
     {
       "path": "reports/security/security-evidence-report.md",
-      "sha256": "f1e698b25af8ffd341b481397d0e55a84f39860fa4f9453b3854eaf0efbe7a8d",
+      "sha256": "3ec9a257246c5de08dd16a4facc775731889444bcaa74751369938a9e818fe8d",
       "size_bytes": 260,
       "type": "report"
     },
     {
       "path": "reports/security/portfolio-assurance-report.md",
-      "sha256": "6dea9d4c63012bd5420abaa2bb77cba2e0b15444aa24112c19dbfc9939ffdfb8",
+      "sha256": "5e03d116a8801a7f9dab94331eb2281fc72d65b1de4bbf590d79c02d91650e24",
       "size_bytes": 177,
       "type": "report"
     },
     {
       "path": "reports/security/product-security-export-report.md",
-      "sha256": "b1c8fb212acd77aeb2507d2b99b14eec1d75eabc5cab6368b10b853ec0752770",
+      "sha256": "1575b9f1bae674ba72cdd0238ce33af1fef349c194e7454413915368b0a91400",
       "size_bytes": 211,
       "type": "report"
     },
     {
       "path": "reports/security/vulnerability-lifecycle-report.md",
-      "sha256": "560b0fa686e23b3cda3e254cf2be1afbe8af0b3b5a87553bb45e7c342f649b7f",
-      "size_bytes": 218,
+      "sha256": "765b5762664a82d39c5bed6b3fd08732cb7eb16f93633be4c5ef14ddbe1fa4bc",
+      "size_bytes": 199,
       "type": "report"
     },
     {
       "path": "reports/security/release-gate-report.md",
-      "sha256": "b6ebbff2a5f9b9259792b9ce86bda887d6e8bb313ee43c628f2e679396ef62c1",
-      "size_bytes": 12768,
+      "sha256": "75eaca4d9d68b52c8460cfee082dec58736c39a19b7acdfb5489b551ece4384e",
+      "size_bytes": 12329,
       "type": "report"
     },
     {

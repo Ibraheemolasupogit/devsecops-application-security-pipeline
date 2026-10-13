@@ -1,12 +1,12 @@
 {
-  "as_of_date": "2026-01-01",
-  "canonical_findings": 69,
+  "as_of_date": "2026-10-13",
+  "canonical_findings": 67,
   "capability_count": 25,
-  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "controlled_timestamp": "2026-10-13T04:40:43Z",
   "deployment_status": "not_deployed",
   "evidence_sources": 11,
   "milestones_completed": 14,
-  "portfolio_id": "PF-c4215c5f3efb16da",
+  "portfolio_id": "PF-e0004a094b479d59",
   "portfolio_package": "outputs/portfolio",
   "project_name": "DevSecOps Application Security Pipeline",
   "readiness_limitations": [
@@ -19,5 +19,5 @@
   "release_decision": "conditional_pass",
   "reports_indexed": 15,
   "schema_version": "1.0",
-  "source_findings": 69
+  "source_findings": 67
 }

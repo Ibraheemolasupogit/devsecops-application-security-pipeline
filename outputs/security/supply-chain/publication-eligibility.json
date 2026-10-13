@@ -50,15 +50,13 @@
     "FND-CONTAINER-e1d4cd41e57c",
     "FND-CONTAINER-e1f2cc1c749d",
     "FND-CONTAINER-e9c4b1dd55ff",
-    "FND-CONTAINER-f6f763380649",
-    "FND-SUPPRESSIO-5313851a0158",
-    "FND-SUPPRESSIO-ef559061de8d"
+    "FND-CONTAINER-f6f763380649"
   ],
   "container_scan_reference": "outputs/security/supply-chain/container-scan-summary.json",
   "provenance_reference": "outputs/security/supply-chain/provenance.json",
   "publication_allowed": false,
   "release_decision": "conditional_pass",
-  "release_decision_id": "REL-4e403b3e4f2106df",
+  "release_decision_id": "REL-d65797fa59025938",
   "sbom_reference": "outputs/security/supply-chain/container-sbom.cdx.json",
   "schema_version": "1.0",
   "status": "blocked"

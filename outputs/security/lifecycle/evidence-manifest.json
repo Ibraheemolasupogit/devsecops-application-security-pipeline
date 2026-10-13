@@ -1,6 +1,6 @@
 {
-  "as_of_date": "2026-01-01",
-  "controlled_timestamp": "2026-01-01T00:00:00Z",
+  "as_of_date": "2026-10-13",
+  "controlled_timestamp": "2026-10-13T04:40:43Z",
   "deployment_status": "not_deployed",
   "exception_count": 3,
   "input_files": {
@@ -34,46 +34,46 @@
     },
     "outputs/security/findings/deduplicated-findings.json": {
       "path": "outputs/security/findings/deduplicated-findings.json",
-      "sha256": "cb2e23464504ff71a93995004fd45e168a8df6041ec7f5e5fb2c3fad64f66b08"
+      "sha256": "e76e1c00a79d1389bcc33b870ab78d00b5af7881904f9bbb3d099ccddeb63bb0"
     },
     "outputs/security/findings/finding-source-map.json": {
       "path": "outputs/security/findings/finding-source-map.json",
-      "sha256": "495d408849a09e20d4a39cc6507400498c45ae8d1ecc3739111a3413c76ac35d"
+      "sha256": "6ea0fd1b1f9f5fa8dd220444310b3d54a22ad3261e2d435b70bc83b8778fb9e6"
     },
     "outputs/security/release/release-gate-decision.json": {
       "path": "outputs/security/release/release-gate-decision.json",
-      "sha256": "b6192bbbbf2a91c5a6a929c690f23e51963a005c4cb8ffa3b64d01fbff00665a"
+      "sha256": "7e90ad9ac25755a6ad0bf13964dfa1bf5853bd7bd201e9c45456823b9cf412ee"
     }
   },
-  "input_findings_checksum": "cb2e23464504ff71a93995004fd45e168a8df6041ec7f5e5fb2c3fad64f66b08",
+  "input_findings_checksum": "e76e1c00a79d1389bcc33b870ab78d00b5af7881904f9bbb3d099ccddeb63bb0",
   "output_files": {
     "due-soon-findings.csv": {
       "path": "outputs/security/lifecycle/due-soon-findings.csv",
-      "sha256": "f61f6df186ccce574a7f88affbb8f28c4cd7abe34c1e5280bcd9d03c1fc0e1fe"
+      "sha256": "7e8f4f549473311eb9314390e8b0d66274e467bac1da3795181aa352c7279d2a"
     },
     "exception-history.json": {
       "path": "outputs/security/lifecycle/exception-history.json",
-      "sha256": "68505e196a9aa3b2e3c0db681d5aae96a30ccefdb972cf9deae597a0931f1c87"
+      "sha256": "bdef3151c1568cd65dcbc656b9ab9791955ac06b92665b45fdbb461c91bd5db2"
     },
     "expired-exceptions.csv": {
       "path": "outputs/security/lifecycle/expired-exceptions.csv",
-      "sha256": "0297a948c4e7425c11d0abc0e51a5e9743d501d15c2584577011324429e0fd62"
+      "sha256": "70305ac42fd7511aa443c8b45a02b36219e8f8062d5d228d9ebd6d7b096bf560"
     },
     "expiring-exceptions.csv": {
       "path": "outputs/security/lifecycle/expiring-exceptions.csv",
-      "sha256": "afe2dd8ef53a59746ecf9f02ecb3480d403faa792801a811e751636d325c521f"
+      "sha256": "f4fb9a40f435cb02e7d8589ebb8f2dafd4b6e7c950f9deeb377cb728ffec68df"
     },
     "false-positive-register.csv": {
       "path": "outputs/security/lifecycle/false-positive-register.csv",
-      "sha256": "c6deedf1f62bc3e4fa6074722fc1c1935548f9d7c0e2f9ec5b0e383af78d5718"
+      "sha256": "8c6edd5eefefe934486c75b4c2de5e45907745c5bcfee29b2582107d9750163a"
     },
     "lifecycle-history.json": {
       "path": "outputs/security/lifecycle/lifecycle-history.json",
-      "sha256": "9a9982ed5772a3e662dd0d17a2c8e008665db357ee14eac083bd4c12c87c66cc"
+      "sha256": "0f8e2a86b22e60d583d4695eb1a400672406dbeb46ac4b2d7ae7e4c7931710ad"
     },
     "lifecycle-summary.json": {
       "path": "outputs/security/lifecycle/lifecycle-summary.json",
-      "sha256": "8e589b14503a15710ebd49a4a371654adadf2da8bedd51e66a77e4e7dacf02b0"
+      "sha256": "4efac438424956350abc2d97e107d01c36a7e337d707ba494a4a48345c57ac22"
     },
     "overdue-findings.csv": {
       "path": "outputs/security/lifecycle/overdue-findings.csv",
@@ -81,11 +81,11 @@
     },
     "risk-accepted-findings.csv": {
       "path": "outputs/security/lifecycle/risk-accepted-findings.csv",
-      "sha256": "5010b39fe2e0b0ddc95cb5818825b24651dbabb88ae5b1aeac0fe477de15453b"
+      "sha256": "f61f6df186ccce574a7f88affbb8f28c4cd7abe34c1e5280bcd9d03c1fc0e1fe"
     },
     "security-exceptions.json": {
       "path": "outputs/security/lifecycle/security-exceptions.json",
-      "sha256": "2db211d3ca6b1aa3b270fade2695ea79c09bdb76fea31b85bfecc31dce081601"
+      "sha256": "0b9aeb54c20533334221c9295916fa1df81ecc0b0ad04a406dca4f4ec31ba925"
     },
     "unowned-findings.csv": {
       "path": "outputs/security/lifecycle/unowned-findings.csv",
@@ -101,11 +101,11 @@
     },
     "vulnerability-register.csv": {
       "path": "outputs/security/lifecycle/vulnerability-register.csv",
-      "sha256": "da5ee0bf5cc3a3041897d888abcd3872394e8b3a9a57a10bccfbb08c3a514434"
+      "sha256": "b9da7159dd1e2ad693e9243d9bf4dc1cfc3b4c48f8c90f07fa8b75cde68a0966"
     },
     "vulnerability-register.json": {
       "path": "outputs/security/lifecycle/vulnerability-register.json",
-      "sha256": "9c762e9c713709f0d671994f397ecec71b642b4e904fa8a391faf6e45eef54ae"
+      "sha256": "aca00af1701e6d4919d701760ddd96703a7189029b87887d6c27d6998e72be07"
     }
   },
   "policy_versions": {
@@ -118,8 +118,8 @@
     "config/lifecycle/verification-policy.yaml": "1.0"
   },
   "project_version": "0.1.0",
-  "release_decision_checksum": "b6192bbbbf2a91c5a6a929c690f23e51963a005c4cb8ffa3b64d01fbff00665a",
+  "release_decision_checksum": "7e90ad9ac25755a6ad0bf13964dfa1bf5853bd7bd201e9c45456823b9cf412ee",
   "schema_version": "1.0",
   "verification_count": 0,
-  "vulnerability_count": 69
+  "vulnerability_count": 67
 }
